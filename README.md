@@ -10,8 +10,8 @@
 <img alt="Version" src="https://img.shields.io/badge/version-1.4.0-3f51b5.svg?style=flat-square"/>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.2%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/Downloads-1.75M-brightgreen.svg?style=flat-square"/></a>
-<img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/>
+<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/Download-1.75M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 </p>
 
 
@@ -53,7 +53,7 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 
 ## License 许可证
 
-<img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/>
+<a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 
 
 Open sourced under the GPL v3.0 license.
