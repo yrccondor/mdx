@@ -30,8 +30,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 <p><?php _e('更改未能保存。', 'mdx'); ?></p>
 </div>
 <?php
-}
-?>
+}?>
 <form method="post" action="">
 <?php
 wp_nonce_field('mdx_options_update');

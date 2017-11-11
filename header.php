@@ -52,5 +52,4 @@ if(get_option('mdx_chrome_color')=='true'){?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/mdui/css/mdui.min.css">
 <?php wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
-<?php echo get_option('mdx_header_js');?>
 </head>

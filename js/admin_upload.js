@@ -105,6 +105,9 @@ jQuery(".mdx_stbs2").click(function(){
 jQuery("#change-color").click(function(){
     jQuery('#mdx_svg_color').val('--SaveToUseTheThemeColor--');
 });
+jQuery("#use-api").click(function(){
+    jQuery('#mdx_footer_say').val('--HitokotoAPIActivated--');
+});
 function img1(){
     var img1=jQuery("#mdx_index_img").val();
     jQuery('#img1').attr('src',img1);

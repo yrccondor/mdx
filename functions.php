@@ -5,10 +5,11 @@ add_theme_support('post-formats', array('image','link','status','video','audio')
 register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //更新时初始化新功能
-if(get_option('mdx_version')=="1.3"){
-	update_option('mdx_version', '1.4');
-}else if(get_option('mdx_version')!="1.3" && get_option('mdx_version')!="1.4"){
-	update_option('mdx_version', '1.4');
+$mdx_version_base = get_option('mdx_version');
+if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
+	update_option('mdx_version', '1.4.1');
+}else if($mdx_version_base!="1.4.1"){
+	update_option('mdx_version', '1.4.1');
 	update_option('mdx_img_box', 'true');
 }
 

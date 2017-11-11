@@ -90,8 +90,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 <p><?php _e('更改未能保存。', 'mdx'); ?></p>
 </div>
 <?php
-}
-?>
+}?>
 <form method="post" action="">
 <?php
 wp_nonce_field('mdx_options_update');
@@ -291,7 +290,8 @@ wp_nonce_field('mdx_options_update');
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(get_option('mdx_footer_say'))?>">
-<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。', 'mdx');?></p></td>
+<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言API', 'mdx');?></button>
+<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言API，则每次页面刷新后都会显示不同的格言。此API来自 <a href="https://blog.lwl12.com/read/hitokoto-api.html" target="_blank">LWL</a>，虽然此来源较为安全，但还请注意安全风险。', 'mdx');?></p></td>
 </tr>
 <tr>
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>

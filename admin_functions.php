@@ -18,6 +18,21 @@ function mdx_display_sub_function_two(){
 }
 function mdx_display_sub_function_three(){
     if(function_exists('file_get_contents')){
+        $opt2 = array(
+            'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
+        );
+        $contexts2 = stream_context_create($opt2);
+        $mdx_data2 = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getnews', false, $contexts2);
+        $mdx_news = '';
+        if($mdx_data2 != ''){
+            $mdx_news = '<div class="notice notice-info">
+            <p>'.__('通知：', 'mdx').$mdx_data2.'</p></div>';
+        }
+    }else{
+        $mdx_news = '';
+    }
+
+    if(function_exists('file_get_contents')){
         $opt1 = array(
             'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
         );
@@ -28,16 +43,29 @@ function mdx_display_sub_function_three(){
         $mdx_now_version = '版本号获取失败';
     }
 
+    if($mdx_now_version != get_option('mdx_version')){
+        $mdx_update_notice = '<p style="font-size:15px;"><strong>'.__('新版本已经发布。去<a href="update-core.php">更新</a>。').'</strong></p>';
+    }
+
+    $mdx_php_content = file_get_contents(get_theme_root()."/mdx/footer.php");
+    $mdx_results = strpos($mdx_php_content, '<a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a>');
+    $mdx_ifedit = '';
+    if($mdx_results === false){
+        $mdx_ifedit = '<div class="notice notice-error">
+        <p>'.__("警告：你可能修改了主题底部的版权信息，请将其重新改正。MDx主题要求你保留版权信息。", "mdx").'</p></div>';
+    }
+
 echo '<div class="wrap">
-<h1>'.__('MDx主题 - 关于', 'mdx').'</h1>
+<h1>'.__('MDx主题 - 关于', 'mdx').'</h1>'.$mdx_ifedit.$mdx_news.'
 <br>
 <h2 style="font-size:19px;">'.__('感谢使用MDx主题', 'mdx').'</h2>
 <p style="font-size:15px;">'.__('我是Axton Yao，这个主题由我开发。我的网站是', 'mdx').'<a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
 <p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://flyhigher.top/mdx-docs-cn" target="_blank">'.__('主题文档', 'mdx').'</a></p>
+<p style="font-size:15px;">'.__('这个项目的Github地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求Star。', 'mdx').'</p>
 <p style="font-size:15px;">'.__('这个主题的诞生离不开MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
 <br>
 <p style="font-size:12px;">'.__('当前版本 v', 'mdx').get_option('mdx_version').'</p>
-<p style="font-size:12px;">'.__('最新版本 v', 'mdx').$mdx_now_version.'</p>
+<p style="font-size:12px;">'.__('最新版本 v', 'mdx').$mdx_now_version.'</p>'.$mdx_update_notice.'
 <br>
 <p style="font-size:17px;"><strong>'.__('这款主题献给Demi Zhou', 'mdx').'</strong></p>
 </div>';
