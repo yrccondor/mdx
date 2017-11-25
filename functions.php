@@ -43,6 +43,48 @@ add_filter('nav_menu_css_class','mdx_menu_classes',1,3);
 //激活链接功能
 add_filter('pre_option_link_manager_enabled','__return_true');
 
+//载入css & js
+function mdx_css(){
+	wp_register_style('mdx_mdui_css', get_template_directory_uri().'/mdui/css/mdui.min.css', '', '', 'all');
+	wp_register_style('mdx_style_css', get_template_directory_uri().'/style.css', '', '', 'all'); 
+	wp_enqueue_style('mdx_mdui_css');
+	wp_enqueue_style('mdx_style_css');
+}
+add_action('wp_enqueue_scripts', 'mdx_css');
+function mdx_js(){
+	wp_register_script('mdx_jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
+	wp_register_script('mdx_mdui_js', get_template_directory_uri().'/mdui/js/mdui.min.js', false, '', true);
+	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/smooth-lazyload.js', false, '', true);
+	if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}
+	wp_register_script('mdx_main_js', get_template_directory_uri().'/js/'.$mdx_js_name.'.js', false, '', true);
+	wp_enqueue_script('mdx_jquery');
+	wp_enqueue_script('mdx_mdui_js');
+	wp_enqueue_script('mdx_sl_js');
+	wp_enqueue_script('mdx_main_js');
+	if(get_option("mdx_auto_night_style")=="true"){
+		wp_register_script('mdx_ns_js', get_template_directory_uri().'/js/nsc.js', false, '', true);
+		wp_enqueue_script('mdx_ns_js');
+	}
+	if(get_option("mdx_real_search")=="true"){
+		wp_register_script('mdx_rs_js', get_template_directory_uri().'/js/search.js', false, '', true);
+		wp_enqueue_script('mdx_rs_js');
+	}
+	if(is_home()){
+		wp_register_script('mdx_ajax_js', get_template_directory_uri().'/js/ajax.js', false, '', true);
+		wp_enqueue_script('mdx_ajax_js');
+	}else if(is_category()||is_archive()||is_search()){
+		wp_register_script('mdx_ajax_js', get_template_directory_uri().'/js/ajax_other.js', false, '', true);
+		wp_enqueue_script('mdx_ajax_js');
+	}
+	if(is_single() || is_page()){
+		wp_register_script('mdx_ra_js', get_template_directory_uri().'/js/ra.js', false, '', true);
+		wp_register_script('mdx_qr_js', get_template_directory_uri().'/js/qr.js', false, '', true);
+		wp_enqueue_script('mdx_ra_js');
+		wp_enqueue_script('mdx_qr_js');
+	}
+}
+add_action('wp_enqueue_scripts', 'mdx_js');
+
 //Ajax评论
 require('ajax-comment/main.php');
 

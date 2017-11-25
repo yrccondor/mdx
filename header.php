@@ -49,7 +49,5 @@ if(get_option('mdx_chrome_color')=='true'){?>
 <meta name="theme-color" content="<?php echo get_option('mdx_styles_hex');?>">
 <?php }?>
 <link rel="pingback" href="<?php bloginfo('pingback_url');?>">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/mdui/css/mdui.min.css">
 <?php wp_head(); ?>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
 </head>
