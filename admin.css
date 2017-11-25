@@ -1,0 +1,28 @@
+#wpcontent {
+    background: #23282d;
+    min-height: 100vh;
+}
+.wrap {
+    color: white!important;
+}
+.wrap a {
+    color: #00b9eb!important;
+}
+.wrap div.notice {
+    color: #444;
+}
+.wrap > h1, .wrap > h2 {
+    color: white!important;
+}
+.mdx-admin-img {
+    width: 100%;
+    text-align: center;
+}
+.mdx-admin-img > img {
+    width: 100%;
+    max-width: 800px;
+    display: inline-block;
+}
+ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after {
+    border-right-color: #23282d;
+}

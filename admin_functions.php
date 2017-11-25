@@ -17,6 +17,8 @@ function mdx_display_sub_function_two(){
     require_once('admin_fn.php');
 }
 function mdx_display_sub_function_three(){
+    wp_register_style('mdx_admin', get_template_directory_uri().'/admin.css');
+    wp_enqueue_style('mdx_admin');
     if(function_exists('file_get_contents')){
         $opt2 = array(
             'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
@@ -57,7 +59,7 @@ function mdx_display_sub_function_three(){
 
 echo '<div class="wrap">
 <h1>'.__('MDx主题 - 关于', 'mdx').'</h1>'.$mdx_ifedit.$mdx_news.'
-<br>
+<p class="mdx-admin-img"><img src="../wp-content/themes/mdx/img/admin.jpg"></p>
 <h2 style="font-size:19px;">'.__('感谢使用MDx主题', 'mdx').'</h2>
 <p style="font-size:15px;">'.__('我是Axton Yao，这个主题由我开发。我的网站是', 'mdx').'<a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
 <p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://flyhigher.top/mdx-docs-cn" target="_blank">'.__('主题文档', 'mdx').'</a></p>
