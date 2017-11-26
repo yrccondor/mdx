@@ -89,7 +89,6 @@ function mdx_js(){
 		wp_enqueue_script('mdx_qr_js');
 	}
 	wp_enqueue_script('mdx_sl_js');
-	wp_enqueue_script('mdx_main_js');
 }
 add_action('wp_enqueue_scripts', 'mdx_js');
 
