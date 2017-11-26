@@ -2,7 +2,6 @@
       <footer class="foot mdui-text-center"><?php echo get_option('mdx_footer');?><br><a href="http://www.miitbeian.gov.cn" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><script>lwlhitokoto()</script>';}?></footer>
     </div>
     <?php $pageType=get_post_meta($wp_query->get_queried_object_id(),'_wp_page_template',true);?>
-    <?php wp_footer();?>
     <?php if(get_option('mdx_real_search')=='true'){?>
     <script>
     var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车转到搜索结果页面','mdx');?>';
@@ -62,5 +61,6 @@
      })
 </script>
 <?php }?>
+<?php wp_footer();?>
   </body>
 </html>

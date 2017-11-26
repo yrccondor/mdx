@@ -67,8 +67,6 @@ function mdx_js(){
 	wp_register_script('mdx_main_js', get_template_directory_uri().'/js/'.$mdx_js_name.'.js', false, '', true);
 	wp_enqueue_script('mdx_jquery');
 	wp_enqueue_script('mdx_mdui_js');
-	wp_enqueue_script('mdx_sl_js');
-	wp_enqueue_script('mdx_main_js');
 	if(get_option("mdx_auto_night_style")=="true"){
 		wp_register_script('mdx_ns_js', get_template_directory_uri().'/js/nsc.js', false, '', true);
 		wp_enqueue_script('mdx_ns_js');
@@ -90,6 +88,8 @@ function mdx_js(){
 		wp_enqueue_script('mdx_ra_js');
 		wp_enqueue_script('mdx_qr_js');
 	}
+	wp_enqueue_script('mdx_sl_js');
+	wp_enqueue_script('mdx_main_js');
 }
 add_action('wp_enqueue_scripts', 'mdx_js');
 
