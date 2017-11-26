@@ -265,7 +265,7 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_comment_emj" value="true" <?php if($mdx_v_comment_emj=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_comment_emj" value="false" <?php if($mdx_v_comment_emj=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html" target="_blank">MDx文档</a> 下载更适用于 MDx 的魔改版，或前往 <a href="https://github.com/mayuko2012/WP-Alu2Button" target="_blank">Github</a> 下载原版插件。注意：原版插件经测试可能不兼容 MDx。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href="https://flyhigher.top/mdx-docs-cn" target="_blank">MDx文档</a> 下载更适用于 MDx 的魔改版，或前往 <a href="https://github.com/mayuko2012/WP-Alu2Button" target="_blank">Github</a> 下载原版插件。注意：原版插件经测试可能不兼容 MDx。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
