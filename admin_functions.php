@@ -104,8 +104,11 @@ function mdx_init_theme(){
         update_option('mdx_open_side', 'true');
         update_option('mdx_img_box', 'true');
         update_option('mdx_read_pro', 'true');
+        update_option('mdx_pro_save', 'true');
         update_option('mdx_auto_scroll', 'false');
         update_option('mdx_load_pro', 'true');
+        update_option('mdx_post_list_1', 'view');
+        update_option('mdx_post_list_2', 'time');
         update_option('mdx_real_search', 'false');
         update_option('mdx_seo_key', '');
         update_option('mdx_auto_des', 'true');
@@ -126,6 +129,8 @@ function mdx_init_theme(){
         update_option('mdx_side_name', '');
         update_option('mdx_side_more', '');
         update_option('mdx_index_say', 'Hello, MDx!');
+        update_option('mdx_comment_emj', 'true');
+        update_option('mdx_say_after', '');
         update_option('mdx_logo', '');
         update_option('mdx_safari', 'false');
         update_option('mdx_svg', '');

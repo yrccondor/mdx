@@ -6,11 +6,19 @@ register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
-	update_option('mdx_version', '1.4.1');
-}else if($mdx_version_base!="1.4.1"){
-	update_option('mdx_version', '1.4.1');
+if($mdx_version_base=="1.3" || $mdx_version_base=="1.4" || $mdx_version_base=="1.4.1"){
+	update_option('mdx_version', '1.5.0');
+	update_option('mdx_comment_emj', 'true');
+	update_option('mdx_say_after', '');
+	update_option('mdx_post_list_1', 'view');
+	update_option('mdx_post_list_2', 'time');
+}else if($mdx_version_base!="1.5.0"){
+	update_option('mdx_version', '1.5.0');
 	update_option('mdx_img_box', 'true');
+	update_option('mdx_comment_emj', 'true');
+	update_option('mdx_say_after', '');
+	update_option('mdx_post_list_1', 'view');
+	update_option('mdx_post_list_2', 'time');
 }
 
 //后台菜单添加

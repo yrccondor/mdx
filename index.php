@@ -1,6 +1,17 @@
 <?php flush();?>
 <?php get_header();?>
-<?php $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
+<?php $mdx_index_img=get_option('mdx_index_img');
+if(substr($mdx_index_img,0,6)=="--Bing"){
+  $mdx_img_bing = substr($mdx_index_img,22,2);
+  if(substr($mdx_img_bing,1,1)==")"){
+    $mdx_img_bing = substr($mdx_img_bing,0,1);
+  }
+  $str=file_get_contents('https://cn.bing.com/HPImageArchive.aspx?n=1&idx='.$mdx_img_bing);
+     if(preg_match("/<url>(.+?)<\/url>/ies",$str,$matches)){
+         $mdx_index_img='https://cn.bing.com'.str_replace('1366x768','1920x1080',$matches[1]);
+     }
+}
+$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
   <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="fullScreen sea-close"></div>
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">

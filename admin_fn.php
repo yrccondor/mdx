@@ -15,6 +15,8 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
+	update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
+	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
 	update_option('mdx_real_search', $_POST['mdx_real_search']);
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	update_option('mdx_auto_des', $_POST['mdx_auto_des']);
@@ -55,7 +57,7 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="true" <?php if($mdx_v_auto_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="false" <?php if($mdx_v_auto_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天5:30之间打开页面时自动加载夜间模式。优先级高于用户自行设置。', 'mdx');?></p>
+	<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天5:30之间打开页面时自动加载夜间模式。优先级低于用户自行设置。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -117,6 +119,30 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_load_pro" value="false" <?php if($mdx_v_load_pro=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），页面加载完成后消失。', 'mdx');?></p>
 	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_styles"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_list_1=get_option('mdx_post_list_1');?>
+<select name="mdx_post_list_1" id="mdx_post_list_1">
+	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>>浏览量</option>
+	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>>发表时间</option>
+	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>>评论数</option>
+</select>
+<p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_styles"><?php _e('文章列表详细信息 - 位置2', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_list_2=get_option('mdx_post_list_2');?>
+<select name="mdx_post_list_2" id="mdx_post_list_2">
+	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>>浏览量</option>
+	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>>发表时间</option>
+	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>>评论数</option>
+</select>
+<p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
 </tr>
 <tr>

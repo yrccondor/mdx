@@ -69,6 +69,8 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_side_name', $_POST['mdx_side_name']);
 	update_option('mdx_side_more', $_POST['mdx_side_more']);
 	update_option('mdx_index_say', $_POST['mdx_index_say']);
+	update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
+	update_option('mdx_say_after', $_POST['mdx_say_after']);
 	update_option('mdx_logo', $_POST['mdx_logo']);
 	update_option('mdx_safari', $_POST['mdx_safari']);
 	update_option('mdx_svg', $_POST['mdx_svg']);
@@ -200,9 +202,9 @@ wp_nonce_field('mdx_options_update');
 <tr>
 <th scope="row"><?php _e('首页图片', 'mdx');?></th>
 <td>
-<input name="mdx_index_img" type="url" id="mdx_index_img" value="<?php echo esc_attr(get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
-<button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button>
-<p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
+<input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
+<button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
+<p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>
@@ -255,6 +257,22 @@ wp_nonce_field('mdx_options_update');
 <input name="mdx_index_say" type="text" id="mdx_index_say" value="<?php echo esc_attr(get_option('mdx_index_say'))?>" class="regular-text">
 <p class="description"><?php _e('这句话会展示在首页。', 'mdx');?></p>
 </td>
+</tr>
+<tr>
+<th scope="row"><?php _e('评论表情', 'mdx');?></th>
+<td>
+<?php $mdx_v_comment_emj=get_option('mdx_comment_emj');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_comment_emj" value="true" <?php if($mdx_v_comment_emj=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_comment_emj" value="false" <?php if($mdx_v_comment_emj=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html" target="_blank">MDx文档</a> 下载更适用于 MDx 的魔改版，或前往 <a href="https://github.com/mayuko2012/WP-Alu2Button" target="_blank">Github</a> 下载原版插件。注意：原版插件经测试可能不兼容 MDx。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+	<th scope="row"><label for="mdx_say_after"><?php _e('文末信息', 'mdx');?></label></th>
+	<td><textarea name="mdx_say_after" id="mdx_say_after" rows="7" cols="50"><?php echo get_option('mdx_say_after')?></textarea>
+	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('网站Logo', 'mdx');?></th>
