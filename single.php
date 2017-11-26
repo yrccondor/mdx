@@ -45,11 +45,13 @@
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
                     <?php echo get_option('mdx_say_after');?>
                     </div>
                 </div>
+                <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                     <li class="mdui-menu-item">
@@ -89,11 +91,13 @@
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
                     <?php echo get_option('mdx_say_after');?>
                     </div>
                 </div>
+                <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                     <li class="mdui-menu-item">
@@ -134,11 +138,13 @@
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
                     <?php echo get_option('mdx_say_after');?>
                     </div>
                 </div>
+                <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                     <li class="mdui-menu-item">
