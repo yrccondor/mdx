@@ -6,14 +6,20 @@ register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.3" || $mdx_version_base=="1.4" || $mdx_version_base=="1.4.1"){
-	update_option('mdx_version', '1.5.0');
+if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
+	update_option('mdx_version', '1.5.1');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
 	update_option('mdx_post_list_2', 'time');
-}else if($mdx_version_base!="1.5.0"){
-	update_option('mdx_version', '1.5.0');
+}else if($mdx_version_base=="1.4.1"){
+	update_option('mdx_version', '1.5.1');
+	update_option('mdx_comment_emj', 'true');
+	update_option('mdx_say_after', '');
+	update_option('mdx_post_list_1', 'view');
+	update_option('mdx_post_list_2', 'time');
+}else if($mdx_version_base!="1.5.1"){
+	update_option('mdx_version', '1.5.1');
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -63,8 +69,8 @@ function mdx_js(){
 	wp_register_script('mdx_jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
 	wp_register_script('mdx_mdui_js', get_template_directory_uri().'/mdui/js/mdui.min.js', false, '', true);
 	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/smooth-lazyload.js', false, '', true);
-	if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}
-	wp_register_script('mdx_main_js', get_template_directory_uri().'/js/'.$mdx_js_name.'.js', false, '', true);
+	// if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}
+	// wp_register_script('mdx_main_js', get_template_directory_uri().'/js/'.$mdx_js_name.'.js', false, '', true);
 	wp_enqueue_script('mdx_jquery');
 	wp_enqueue_script('mdx_mdui_js');
 	if(get_option("mdx_auto_night_style")=="true"){
