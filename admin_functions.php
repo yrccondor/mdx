@@ -96,47 +96,8 @@ function mdx_init_theme(){
             update_option('mdx_first_init', 'false');
         }
 
-        update_option('mdx_version', '1.3');
-        
-        update_option('mdx_night_style', 'true');
-        update_option('mdx_auto_night_style', 'true');
-        update_option('mdx_notice', '');
-        update_option('mdx_open_side', 'true');
-        update_option('mdx_img_box', 'true');
-        update_option('mdx_read_pro', 'true');
-        update_option('mdx_pro_save', 'true');
-        update_option('mdx_auto_scroll', 'false');
-        update_option('mdx_load_pro', 'true');
-        update_option('mdx_post_list_1', 'view');
-        update_option('mdx_post_list_2', 'time');
-        update_option('mdx_real_search', 'false');
-        update_option('mdx_seo_key', '');
-        update_option('mdx_auto_des', 'true');
-        update_option('mdx_seo_des', '');
-
-        update_option('mdx_styles', 'indigo');
-        update_option('mdx_styles_hex', '#3f51b5');
-        update_option('mdx_styles_act', 'pink');
-        update_option('mdx_act_hex', '#ff4081');
-        update_option('mdx_chrome_color', 'true');
-        update_option('mdx_title_bar', 'false');
-        update_option('mdx_default_style', '1');
-        update_option('mdx_post_style', '0');
-        update_option('mdx_index_img', get_bloginfo("template_url").'/img/def_index.jpg');
-        update_option('mdx_side_img', get_bloginfo("template_url").'/img/def_side.jpg');
-        update_option('mdx_side_info', 'false');
-        update_option('mdx_side_head', '');
-        update_option('mdx_side_name', '');
-        update_option('mdx_side_more', '');
-        update_option('mdx_index_say', 'Hello, MDx!');
-        update_option('mdx_comment_emj', 'true');
-        update_option('mdx_say_after', '');
-        update_option('mdx_logo', '');
-        update_option('mdx_safari', 'false');
-        update_option('mdx_svg', '');
-        update_option('mdx_svg_color', '');
-        update_option('mdx_footer_say', 'Hello, MDx!');
-        update_option('mdx_footer', '');
+        include_once('admin_init_fn.php')
+        include_once('admin_init_style.php');
     }
     add_action('admin_notices', 'mdx_custom_admin_notice');
 }
