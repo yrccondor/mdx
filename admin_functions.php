@@ -96,7 +96,7 @@ function mdx_init_theme(){
             update_option('mdx_first_init', 'false');
         }
 
-        include_once('admin_init_fn.php')
+        include_once('admin_init_fn.php');
         include_once('admin_init_style.php');
     }
     add_action('admin_notices', 'mdx_custom_admin_notice');
