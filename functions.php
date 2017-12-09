@@ -69,8 +69,6 @@ function mdx_js(){
 	wp_register_script('mdx_jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
 	wp_register_script('mdx_mdui_js', get_template_directory_uri().'/mdui/js/mdui.min.js', false, '', true);
 	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/smooth-lazyload.js', false, '', true);
-	// if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}
-	// wp_register_script('mdx_main_js', get_template_directory_uri().'/js/'.$mdx_js_name.'.js', false, '', true);
 	wp_enqueue_script('mdx_jquery');
 	wp_enqueue_script('mdx_mdui_js');
 	if(get_option("mdx_auto_night_style")=="true"){
@@ -182,14 +180,6 @@ function comment_add_at( $comment_text, $comment=''){
 	return $comment_text;
     }
 add_filter('comment_text', 'comment_add_at', 10, 2);
-
-//图片评论
-function comments_embed_img($comment) {
-    $size = auto;
-    $comment = preg_replace(array('#(http://([^\s]*)\.(jpg|gif|png|JPG|GIF|PNG))#','#(https://([^\s]*)\.(jpg|gif|png|JPG|GIF|PNG))#'),'<img src="$1" alt="评论图片" style="width:'.$size.'; height:'.$size.'" />', $comment);
-    return $comment;
-}
-add_action('comment_text', 'comments_embed_img', 2);
 
 //PostLazyLoad
 function mdx_lazyload_image($content){
