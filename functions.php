@@ -292,4 +292,103 @@ function mdx_breadcrumbs() {
 		}
 	}
 }
+
+//shortcodes & buttons
+function mdx_shortcode_hide($atts, $content = null){
+    extract(shortcode_atts(array("title" => __('被折叠内容','mdx')), $atts));
+    return '<div class="mdui-panel mdui-panel-gapless" mdui-panel>
+	<div class="mdui-panel-item">
+	  <div class="mdui-panel-item-header">
+		<div class="mdui-panel-item-title">'.$title.'</div>
+		<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+	  </div>
+	  <div class="mdui-panel-item-body">
+		<p>'.$content.'</p>
+	  </div>
+	</div>
+  </div>';
+}
+add_shortcode("mdx_fold", "mdx_shortcode_hide");
+
+function mdx_shortcode_warning($atts, $content = null){
+    extract(shortcode_atts(array("title" => __('警告','mdx')), $atts));
+    return '<div class="mdx-warning"><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'
+		<p>'.$content.'</p>
+  </div>';
+}
+add_shortcode("mdx_warning", "mdx_shortcode_warning");
+
+function mdx_shortcode_table($atts, $content = ''){
+    extract( shortcode_atts(array(
+		'header' => 'false',
+		'hover' => 'true'
+    ), $atts));
+	$output = '';
+	$output2 = '';
+	$trs = explode("\n&#8212;&#8211;", $content);
+	$mdx_table_i = 0;
+    foreach($trs as $tr){
+		if($mdx_table_i == 0 && $header == 'true'){
+        	$tr = trim($tr);
+        	if($tr){
+            	$tds = explode("<br />", $tr);
+            	$output2 .= '<tr>';
+            	foreach($tds as $td){
+                	$td = trim($td);
+                	if($td){
+                    	$output2 .= '<th>'.$td.'</th>';
+                	}
+            	}
+            	$output2 .= '</tr>';
+			}
+		}else{
+        	$tr = trim($tr);
+        	if($tr){
+            	$tds = explode("<br />", $tr);
+            	$output .= '<tr>';
+            	foreach($tds as $td){
+                	$td = trim($td);
+                	if($td){
+                    	$output .= '<td>'.$td.'</td>';
+                	}
+            	}
+            	$output .= '</tr>';
+			}
+		}
+		$mdx_table_i++;
+	}
+	$hoverable = '';
+	if($hover == 'true'){
+		$hoverable = ' mdui-table-hoverable';
+	}
+	if($header == 'true'){
+		$output2 = '<thead>'.$output2.'</thead>';
+	}
+    $output = '<div class="mdui-table-fluid'.$hoverable.'"><table class="mdui-table">'.$output2.'<tbody>'.$output.'</tbody></table></div>';
+    return $output;
+}
+add_shortcode('mdx_table', 'mdx_shortcode_table');
+
+function mdx_add_button_fold(){
+	if(!current_user_can('edit_posts') && !current_user_can('edit_pages')){
+		return;
+	}
+	if(get_user_option('rich_editing') == 'true'){
+		add_filter('mce_external_plugins', 'mdx_add_plugin');
+		add_filter('mce_buttons', 'mdx_register_button');
+	}
+}
+add_action('init', 'mdx_add_button_fold');
+function mdx_register_button($buttons){
+	array_push($buttons, "|", "mdx_fold");
+	array_push($buttons, "", "mdx_warning");
+	array_push($buttons, "", "mdx_table");
+	return $buttons;
+}
+function mdx_add_plugin($plugin_array){
+	$plugin_array['mdx_fold'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc2.js';
+	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc3.js';
+	return $plugin_array;
+}
 ?>
