@@ -1904,6 +1904,22 @@ article div.mdui-panel.mdui-panel-gapless > div.mdui-panel-item p {
 article div.mdui-table-fluid {
 	overflow-y: hidden;
 }
+.mdx-reply-time {
+	display: block;
+	position: absolute;
+	font-size: 12px;
+	color: rgba(0,0,0,.37);
+	top: 15px;
+	right: 10px;
+}
+.mdui-theme-layout-dark .mdx-reply-time {
+	display: block;
+	position: absolute;
+	font-size: 12px;
+	color: rgba(255,255,255,.37);
+	top: 15px;
+	right: 10px;
+}
 @media(max-width:1024px) {
 	#indic {
 		right: 14px;
