@@ -44,7 +44,7 @@ if(function_exists('alu_get_wpsmiliestrans') && (get_option('mdx_comment_emj')==
 <?php }?>
 <?php if(have_comments()){?>
 <nav id="comments-navi">
-    <?php paginate_comments_links('prev_text='.__('上一页','mdx').'&next_text='.__('下一页','mdx'));?>
+    <?php paginate_comments_links('prev_text=<i class="mdui-icon material-icons">navigate_before</i>&next_text=<i class="mdui-icon material-icons">navigate_next</i>');?>
 </nav>
 <?php }?>
 <div class="mdx-comments-loading"><div class="mdui-valign"><div><div class="mdui-spinner"></div></div></div></div>

@@ -167,7 +167,7 @@ $GLOBALS['comment'] = $comment;?>
     <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar($comment, 80);}?></div>
     <div class="mdui-list-item-content outbu" id="comment-<?php comment_ID();?>">
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?></div>
-    <div class="mdui-list-item-text">
+    <div class="mdui-list-item-text mdui-typo">
     <?php comment_text();?>
     </div><?php comment_reply_link(array_merge($args,array('reply_text'=>'回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
 <?php }

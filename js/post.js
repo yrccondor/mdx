@@ -293,6 +293,9 @@ $('#comments').on('click', '#comments-navi > a', function(e){
                 effect : "fadeIn",
                 threshold : 200,
             });
+            $("div#comments ul li p").addClass('mdui-typo');
+            $('.comment-reply-link').addClass("mdui-btn");
+            $('.comment-reply-link').css("opacity","0");
         }
     });
 });
