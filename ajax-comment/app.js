@@ -31,7 +31,8 @@ jQuery(document).ready(function(jQuery) {
 					post = t.I('comment_post_ID').value,
 					parent = t.I('comment_parent').value;
 				if (parent != '0') {
-					jQuery('#respond').before('<ul class="children">' + data + '</ul>');
+					jQuery('#respond').parent('li.mdui-list-item').after('<li><li class="mdui-divider-inset mdui-m-y-0"></li><ul class="children">' + data + '</ul></li>');
+					jQuery('ul.children').next('li').remove();
 				} else if (!jQuery('.' + __list ).length) {
 					if (ajaxcomment.formpostion == 'bottom') {
 						jQuery('#respond').before('<ul class="' + __list + '">' + data + '</ul>');
