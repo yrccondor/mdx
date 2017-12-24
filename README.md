@@ -2,7 +2,7 @@
 <img src="https://img.flyhigher.top/head.jpg" alt="MDx">
 </p>
 
-<h1 align="center"><a href="https:mdx.flyhigher.top" target="_blank">MDx</a></h1>
+<h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
 
 > 轻于形，悦于心
 
