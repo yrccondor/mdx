@@ -408,4 +408,153 @@ function mdx_add_plugin($plugin_array){
 	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc4.js';
 	return $plugin_array;
 }
+
+//Add Metaboxes
+function mdx_post_metaboxes_2() {
+    global $post;
+		$meta_box_value = get_post_meta($post->ID, 'informations_value', true);
+		//$meta_box_value = $post->ID;
+        echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+        echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>
+		<p class="description">在这里为这篇文章设置单独的文末信息。若留空则跟随全局设置。</p>';
+}
+function mdx_post_metaboxes_1() {
+    global $post;
+        $meta_box_value = get_post_meta($post->ID, 'settings_value', true);
+		echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+		?>
+		<h4><?php _e('文章主题颜色','mdx');?></h4>
+		<?php $mdx_v_styles=get_post_meta($post->ID, "mdx_styles", true);?>
+        <select name="mdx_styles" id="mdx_styles">
+		<option value="def" <?php if($mdx_v_styles=='def' || $mdx_v_styles==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
+		<option value="red" <?php if($mdx_v_styles=='red'){?>selected="selected"<?php }?>>Red</option>
+		<option value="pink" <?php if($mdx_v_styles=='pink'){?>selected="selected"<?php }?>>Pink</option>
+		<option value="purple" <?php if($mdx_v_styles=='purple'){?>selected="selected"<?php }?>>Purple</option>
+		<option value="deep-purple" <?php if($mdx_v_styles=='deep-purple'){?>selected="selected"<?php }?>>Deep Purple</option>
+		<option value="indigo" <?php if($mdx_v_styles=='indigo'){?>selected="selected"<?php }?>>Indigo</option>
+		<option value="blue" <?php if($mdx_v_styles=='blue'){?>selected="selected"<?php }?>>Blue</option>
+		<option value="light-blue" <?php if($mdx_v_styles=='light-blue'){?>selected="selected"<?php }?>>Light Blue</option>
+		<option value="cyan" <?php if($mdx_v_styles=='cyan'){?>selected="selected"<?php }?>>Cyan</option>
+		<option value="teal" <?php if($mdx_v_styles=='teal'){?>selected="selected"<?php }?>>Teal</option>
+		<option value="green" <?php if($mdx_v_styles=='green'){?>selected="selected"<?php }?>>Green</option>
+		<option value="light-green" <?php if($mdx_v_styles=='light-green'){?>selected="selected"<?php }?>>Light Green</option>
+		<option value="lime" <?php if($mdx_v_styles=='lime'){?>selected="selected"<?php }?>>Lime</option>
+		<option value="yellow" <?php if($mdx_v_styles=='yellow'){?>selected="selected"<?php }?>>Yellow</option>
+		<option value="amber" <?php if($mdx_v_styles=='amber'){?>selected="selected"<?php }?>>Amber</option>
+		<option value="orange" <?php if($mdx_v_styles=='orange'){?>selected="selected"<?php }?>>Orange</option>
+		<option value="deep-orange" <?php if($mdx_v_styles=='deep-orange'){?>selected="selected"<?php }?>>Deep Orange</option>
+		<option value="brown" <?php if($mdx_v_styles=='brown'){?>selected="selected"<?php }?>>Brown</option>
+		<option value="grey" <?php if($mdx_v_styles=='grey'){?>selected="selected"<?php }?>>Grey</option>
+		<option value="blue-grey" <?php if($mdx_v_styles=='blue-grey'){?>selected="selected"<?php }?>>Blue Grey</option>
+	</select>
+	<p class="description"><?php _e('在这里为这篇文章设置单独的主题颜色。', 'mdx');?></p>
+	<br>
+	<h4><?php _e('文章强调色','mdx');?></h4>
+	<?php $mdx_v_styles_act=get_post_meta($post->ID, "mdx_styles_act", true);?>
+	<select name="mdx_styles_act" id="mdx_styles_act">
+	<option value="def" <?php if($mdx_v_styles_act=='def' || $mdx_v_styles_act==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
+	<option value="red" <?php if($mdx_v_styles_act=='red'){?>selected="selected"<?php }?>>Red</option>
+	<option value="pink" <?php if($mdx_v_styles_act=='pink'){?>selected="selected"<?php }?>>Pink</option>
+	<option value="purple" <?php if($mdx_v_styles_act=='purple'){?>selected="selected"<?php }?>>Purple</option>
+	<option value="deep-purple" <?php if($mdx_v_styles_act=='deep-purple'){?>selected="selected"<?php }?>>Deep Purple</option>
+	<option value="indigo" <?php if($mdx_v_styles_act=='indigo'){?>selected="selected"<?php }?>>Indigo</option>
+	<option value="blue" <?php if($mdx_v_styles_act=='blue'){?>selected="selected"<?php }?>>Blue</option>
+	<option value="light-blue" <?php if($mdx_v_styles_act=='light-blue'){?>selected="selected"<?php }?>>Light Blue</option>
+	<option value="cyan" <?php if($mdx_v_styles_act=='cyan'){?>selected="selected"<?php }?>>Cyan</option>
+	<option value="teal" <?php if($mdx_v_styles_act=='teal'){?>selected="selected"<?php }?>>Teal</option>
+	<option value="green" <?php if($mdx_v_styles_act=='green'){?>selected="selected"<?php }?>>Green</option>
+	<option value="light-green" <?php if($mdx_v_styles_act=='light-green'){?>selected="selected"<?php }?>>Light Green</option>
+	<option value="lime" <?php if($mdx_v_styles_act=='lime'){?>selected="selected"<?php }?>>Lime</option>
+	<option value="yellow" <?php if($mdx_v_styles_act=='yellow'){?>selected="selected"<?php }?>>Yellow</option>
+	<option value="amber" <?php if($mdx_v_styles_act=='amber'){?>selected="selected"<?php }?>>Amber</option>
+	<option value="orange" <?php if($mdx_v_styles_act=='orange'){?>selected="selected"<?php }?>>Orange</option>
+	<option value="deep-orange" <?php if($mdx_v_styles_act=='deep-orange'){?>selected="selected"<?php }?>>Deep Orange</option>
+	</select>
+	<p class="description"><?php _e('在这里为这篇文章设置单独的强调色。', 'mdx');?></p>
+	<br>
+	<h4><?php _e('文章样式','mdx');?></h4>
+	<?php $mdx_v_post_style=get_post_meta($post->ID, "mdx_post_style", true);?>
+	<select name="mdx_post_style" id="mdx_post_style">
+	<option value="def" <?php if($mdx_v_post_styles=='def' || $mdx_v_post_styles==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
+	<option value="0" <?php if($mdx_v_post_style=='0'){?>selected="selected"<?php }?>><?php _e('标准', 'mdx');?></option>
+	<option value="1" <?php if($mdx_v_post_style=='1'){?>selected="selected"<?php }?>><?php _e('简洁', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
+	</select>
+	<p class="description"><?php _e('在这里为这篇文章设置单独的样式。', 'mdx');?></p>
+	<br>
+	<h4><?php _e('文章展示模式','mdx');?></h4>
+	<?php $mdx_v_post_show=get_post_meta($post->ID, "mdx_post_show", true);?>
+	<select name="mdx_post_show" id="mdx_post_show">
+	<option value="0" <?php if($mdx_v_post_show=='0' || $mdx_v_post_show==''){?>selected="selected"<?php }?>><?php _e('正常显示', 'mdx');?></option>
+	<option value="1" <?php if($mdx_v_post_show=='1'){?>selected="selected"<?php }?>><?php _e('404模式', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_post_show=='2'){?>selected="selected"<?php }?>><?php _e('隐藏模式', 'mdx');?></option>
+	</select>
+	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404模式：当访客进入此文章时，会显示404页面<br>隐藏模式：当访客进入此文章时，会显示“因相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404头。', 'mdx');?></p>
+	</fieldset>
+	<?php
+}
+function create_meta_box(){
+	add_meta_box('mdx_post_metaboxes_1', '文章设置', 'mdx_post_metaboxes_1', 'post', 'side', 'low');
+	add_meta_box('mdx_post_metaboxes_2', '文末信息', 'mdx_post_metaboxes_2', 'post', 'normal', 'low');
+}
+add_action('admin_menu', 'create_meta_box');
+
+function mdx_save_postdata_1($post_id){
+    global $post;
+        if(!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
+            return $post->ID;
+        }
+        if('page' == $_POST['post_type']){
+            if(!current_user_can('edit_page', $post_id))
+                return $post->ID;
+        }
+        else{
+            if(!current_user_can('edit_post', $post_id))
+                return $post->ID;
+        }
+        $data = $_POST["informations_value"];
+        if(get_post_meta((int)$post->ID, "informations_value") == ""){
+            add_post_meta((int)$post->ID, "informations_value", (string)$data, true);
+		}elseif($data != get_post_meta($post->ID, "informations_value", true)){
+            update_post_meta((int)$post->ID, "informations_value", (string)$data);
+		}elseif($data == ""){
+			delete_post_meta((int)$post->ID, "informations_value", get_post_meta($post->ID, "informations_value", true));
+		}
+			if(!wp_verify_nonce($_POST['settings_noncename'], plugin_basename(__FILE__))){
+				return $post->ID;
+			}
+			if('page' == $_POST['post_type']){
+				if(!current_user_can('edit_page', $post_id))
+					return $post->ID;
+			}
+			else{
+				if(!current_user_can('edit_post', $post_id))
+					return $post->ID;
+			}
+			$data1 = $_POST["mdx_styles"];
+			if(get_post_meta((int)$post->ID, "mdx_styles") == ""){
+				add_post_meta((int)$post->ID, "mdx_styles", (string)$data1, true);
+			}elseif($data != get_post_meta($post->ID, "mdx_styles", true)){
+				update_post_meta((int)$post->ID, "mdx_styles", (string)$data1);
+			}
+			$data2 = $_POST["mdx_styles_act"];
+			if(get_post_meta((int)$post->ID, "mdx_styles_act") == ""){
+				add_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2, true);
+			}elseif($data != get_post_meta($post->ID, "mdx_styles_act", true)){
+				update_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2);
+			}
+			$data3 = $_POST["mdx_post_style"];
+			if(get_post_meta((int)$post->ID, "mdx_post_style") == ""){
+				add_post_meta((int)$post->ID, "mdx_post_style", (string)$data3, true);
+			}elseif($data != get_post_meta($post->ID, "mdx_post_style", true)){
+				update_post_meta((int)$post->ID, "mdx_post_style", (string)$data3);
+			}
+			$data4 = $_POST['mdx_post_show'];
+			if(get_post_meta((int)$post->ID, "mdx_post_show") == ""){
+				add_post_meta((int)$post->ID, "mdx_post_show", (string)$data4, true);
+			}elseif($data != get_post_meta($post->ID, "mdx_post_show", true)){
+				update_post_meta((int)$post->ID, "mdx_post_show", (string)$data4);
+			}
+}
+add_action('save_post', 'mdx_save_postdata_1');
 ?>

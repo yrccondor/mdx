@@ -1,8 +1,25 @@
 <?php get_header(); ?>
-<?php $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
+<?php
+$mdx_post_show = get_post_meta((int)$post->ID, "mdx_post_show", true);
+if($mdx_post_show=='' || $mdx_post_show=="0"){
+$mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
     <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
-    <?php $post_style=get_option('mdx_post_style');?>
-    <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}?>">
+    <?php $mdx_style = get_post_meta((int)$post->ID, "mdx_styles", true);
+    if($mdx_style=="" || $mdx_style=="def"){
+        $mdx_style = get_option('mdx_styles');
+    }
+    $mdx_style_act = get_post_meta((int)$post->ID, "mdx_styles_act", true);
+    if($mdx_style_act=="" || $mdx_style_act=="def"){
+        $mdx_style_act = get_option('mdx_styles_act');
+    }
+    ?>
+    <?php
+    $post_style=get_post_meta((int)$post->ID, "mdx_post_style", true);
+    if($post_style == '' || $post_style == 'def'){
+        $post_style=get_option('mdx_post_style');
+    }
+    ?>
+    <body class="mdui-theme-primary-<?php echo $mdx_style?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}?>">
     <div class="fullScreen sea-close"></div>
     <?php if(get_option('mdx_load_pro')=='true'){?>
     <div class="mdui-progress mdui-color-white">
@@ -48,7 +65,13 @@
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
-                    <?php echo get_option('mdx_say_after');?>
+                    <?php 
+                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
+                        if($mdx_info == ''){
+                            $mdx_info = get_option('mdx_say_after');
+                        }
+                    ?>
+                    <?php echo $mdx_info;?>
                     </div>
                 </div>
                 <?php }?>
@@ -94,7 +117,13 @@
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
-                    <?php echo get_option('mdx_say_after');?>
+                    <?php 
+                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
+                        if($mdx_info == ''){
+                            $mdx_info = get_option('mdx_say_after');
+                        }
+                    ?>
+                    <?php echo $mdx_info;?>
                     </div>
                 </div>
                 <?php }?>
@@ -141,7 +170,13 @@
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
-                    <?php echo get_option('mdx_say_after');?>
+                    <?php 
+                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
+                        if($mdx_info == ''){
+                            $mdx_info = get_option('mdx_say_after');
+                        }
+                    ?>
+                    <?php echo $mdx_info;?>
                     </div>
                 </div>
                 <?php }?>
@@ -174,5 +209,54 @@
             </div>
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
-      <?php }?>
-<?php get_footer();?>
+      <?php }get_footer();
+}elseif ($mdx_post_show=='1') {
+?>
+    <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
+    <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
+        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面貌似旅游去了','mdx');?></span></span>
+    </div>
+    <div class="mdui-valign mdx-main-404">
+        <div>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
+            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
+        <div>
+    </div>
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/nsc.js"></script>
+    <script>
+    $(function(){
+        if(sessionStorage.getItem('ns_night-styles')=='true'){
+            $("body").toggleClass("mdui-theme-layout-dark");
+            $("meta[name='theme-color']").attr('content',"#212121");
+        }
+    })
+    </script>
+</body>
+</html>
+<?php }elseif ($mdx_post_show=='2') {
+?>
+    <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
+    <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
+        <span><?php _e('诶呀...','mdx');?><span class="mdui-typo-headline"><?php _e('因相关法律法规，此文章暂时不予显示','mdx');?></span></span>
+    </div>
+    <div class="mdui-valign mdx-main-404">
+        <div>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
+            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
+        <div>
+    </div>
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/nsc.js"></script>
+    <script>
+    $(function(){
+        if(sessionStorage.getItem('ns_night-styles')=='true'){
+            $("body").toggleClass("mdui-theme-layout-dark");
+            $("meta[name='theme-color']").attr('content',"#212121");
+        }
+    })
+    </script>
+</body>
+</html>
+<?php }
+?>
