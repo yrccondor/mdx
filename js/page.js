@@ -41,7 +41,7 @@ function scrollDiff(){
 };
 
 window.onload=function() {
-    $('.mdui-progress').fadeOut(200);
+    $('body > .mdui-progress').fadeOut(200);
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         var postHight3 = $(".ArtMain").height() + $(".ArtMain").offset().top - document.documentElement.clientHeight;

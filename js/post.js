@@ -72,7 +72,7 @@ function scrollDiff(){
 };
 
 window.onload=function() {
-    $('.mdui-progress').fadeOut(200);
+    $('body > .mdui-progress').fadeOut(200);
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         if($(".ArtMain").length > 0){

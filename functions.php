@@ -371,6 +371,13 @@ function mdx_shortcode_table($atts, $content = ''){
 }
 add_shortcode('mdx_table', 'mdx_shortcode_table');
 
+function mdx_shortcode_progress($atts, $content = '0'){
+    return '<div class="mdui-progress">
+	<div class="mdui-progress-determinate" style="width: '.$content.'%;"></div>
+  </div>';
+}
+add_shortcode("mdx_progress", "mdx_shortcode_progress");
+
 function mdx_add_button_fold(){
 	if(!current_user_can('edit_posts') && !current_user_can('edit_pages')){
 		return;
@@ -385,12 +392,14 @@ function mdx_register_button($buttons){
 	array_push($buttons, "|", "mdx_fold");
 	array_push($buttons, "", "mdx_warning");
 	array_push($buttons, "", "mdx_table");
+	array_push($buttons, "", "mdx_progress");
 	return $buttons;
 }
 function mdx_add_plugin($plugin_array){
 	$plugin_array['mdx_fold'] = get_bloginfo('template_url').'/js/sc1.js';
 	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc2.js';
 	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc3.js';
+	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc4.js';
 	return $plugin_array;
 }
 ?>

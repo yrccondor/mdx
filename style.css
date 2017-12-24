@@ -652,12 +652,12 @@ li.current-menu-item,li.current_page_item {
 	height: 100%;
 	pointer-events: none;
 }
-#loading,.mdui-progress {
+#loading,body > .mdui-progress {
 	position: fixed;
 	top: 0;
 	width: 100%;
 }
-.mdui-progress {
+body > .mdui-progress {
 	left: 0;
 	z-index: 10001;
 	border-radius: 0;
@@ -1273,8 +1273,11 @@ ul#mdxshare,ul#mdxshare a {
 	color: #fff;
 	text-decoration: none;
 }
-.mdui-theme-layout-dark .mdui-progress {
+body.mdui-theme-layout-dark > .mdui-progress {
 	background-color: #212121!important;
+}
+article > .mdui-progress {
+	margin: 10px 0;
 }
 .afterrespan {
 	clear: both;
