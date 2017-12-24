@@ -3,7 +3,12 @@ settings_errors();
 $trueon=__('开启', 'mdx');
 $falseoff=__('关闭', 'mdx');
 
+wp_enqueue_script('media-upload');
 wp_enqueue_script('my-tag', get_bloginfo('template_url' ).'/js/admin_tag.js');
+//加载上传图片的js
+wp_enqueue_script('thickbox');
+//加载css(wp自带)
+wp_enqueue_style('thickbox');
 ?>
 <div class="wrap"><h1><?php _e('MDx主题 - 功能', 'mdx');?></h1>
 <?php
@@ -14,6 +19,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_open_side', $_POST['mdx_open_side']);
 	update_option('mdx_img_box', $_POST['mdx_img_box']);
 	update_option("mdx_readmore", $_POST['mdx_readmore']);
+	update_option("mdx_post_money", $_POST['mdx_post_money']);
 	update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
@@ -95,6 +101,15 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><label for="mdx_readmore"><?php _e('“阅读更多”文本自定义', 'mdx');?></label></th>
 <td><input name="mdx_readmore" type="text" id="mdx_readmore" value="<?php echo esc_attr(get_option('mdx_readmore'))?>" class="regular-text">
 <p class="description" id="mdx_footer"><?php _e('在此自定义“阅读更多”按钮上的文本。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><?php _e('赞赏二维码', 'mdx');?></th>
+<td>
+<input name="mdx_post_money" type="text" id="mdx_post_money" value="<?php echo esc_attr(get_option('mdx_post_money'))?>" class="regular-text">
+<button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button>
+<p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部显示赞赏按钮。', 'mdx');?></p>
+<img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
+</td>
 </tr>
 <tr>
 <th scope="row"><?php _e('阅读进度展示', 'mdx');?></th>

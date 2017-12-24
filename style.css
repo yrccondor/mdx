@@ -1910,6 +1910,25 @@ article div.mdui-table-fluid {
 .mdui-theme-layout-dark .mdx-reply-time {
 	color: rgba(255,255,255,.37);
 }
+.mdx-post-money {
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+}
+.mdx-post-money > button {
+	width: 70px;
+	height: 70px;
+}
+#mdx-qrcode-money {
+	overflow: hidden;
+	padding: 7px;
+	height: 164px;
+	min-width: 164px;
+	background-color: #fff!important;
+}
+#mdx-qrcode-money > img {
+	height: 150px;
+}
 @media(max-width:1024px) {
 	#indic {
 		right: 14px;

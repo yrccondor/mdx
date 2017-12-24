@@ -62,6 +62,14 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_post_money')!=''){?>
+                <div class="mdx-post-money">
+                    <button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '<?php _e("赞赏","mdx");?>'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe8dc;</i></button>
+                    <div class="mdui-menu" id="mdx-qrcode-money">
+                        <img alt="<?php _e('赞赏','mdx');?>" src="<?php echo get_option('mdx_post_money');?>">
+                    </div>
+                </div>
+                <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
@@ -114,6 +122,14 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_post_money')!=''){?>
+                <div class="mdx-post-money">
+                    <button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '<?php _e("赞赏","mdx");?>'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe8dc;</i></button>
+                    <div class="mdui-menu" id="mdx-qrcode-money">
+                        <img alt="<?php _e('赞赏','mdx');?>" src="<?php echo get_option('mdx_post_money');?>">
+                    </div>
+                </div>
+                <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
@@ -167,6 +183,14 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
+                <?php if(get_option('mdx_post_money')!=''){?>
+                <div class="mdx-post-money">
+                    <button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '<?php _e("赞赏","mdx");?>'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe8dc;</i></button>
+                    <div class="mdui-menu" id="mdx-qrcode-money">
+                        <img alt="<?php _e('赞赏','mdx');?>" src="<?php echo get_option('mdx_post_money');?>">
+                    </div>
+                </div>
+                <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
