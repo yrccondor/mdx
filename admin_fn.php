@@ -12,6 +12,8 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
 	update_option('mdx_notice', $_POST['mdx_notice']);
 	update_option('mdx_open_side', $_POST['mdx_open_side']);
+	update_option('mdx_img_box', $_POST['mdx_img_box']);
+	update_option("mdx_readmore", $_POST['mdx_readmore']);
 	update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
@@ -21,6 +23,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	update_option('mdx_auto_des', $_POST['mdx_auto_des']);
 	update_option('mdx_seo_des', $_POST['mdx_seo_des']);
+	
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -87,6 +90,11 @@ wp_nonce_field('mdx_options_update');
 	<p class="description"><?php _e('开启后，对于文章内包裹在链接中的图片可点击查看大图。', 'mdx');?></p>
 	</fieldset>
 </td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_readmore"><?php _e('“阅读更多”文本自定义', 'mdx');?></label></th>
+<td><input name="mdx_readmore" type="text" id="mdx_readmore" value="<?php echo esc_attr(get_option('mdx_readmore'))?>" class="regular-text">
+<p class="description" id="mdx_footer"><?php _e('在此自定义“阅读更多”按钮上的文本。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('阅读进度展示', 'mdx');?></th>
@@ -156,7 +164,6 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
-<tr>
 <tr>
 <th scope="row"><label for="mdx_seo_key"><?php _e('SEO关键词', 'mdx');?></label></th>
 <td><input name="mdx_seo_key" type="text" id="mdx_seo_key" value="<?php echo esc_attr(get_option('mdx_seo_key'))?>" class="regular-text">

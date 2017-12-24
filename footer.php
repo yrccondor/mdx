@@ -7,7 +7,7 @@
     <script>
     var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车转到搜索结果页面','mdx');?>';
     var snackMuti = '<?php _e('无法连接到实时搜索服务','mdx');?>';
-    var moreMuti = '<?php _e('去围观','mdx');?>';
+    var moreMuti = '<?php echo get_option("mdx_readmore");?>';
     </script>
     <?php }?>
     <?php wp_enqueue_script('comment-reply');?>

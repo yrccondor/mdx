@@ -1,5 +1,5 @@
 <?php
-update_option('mdx_version', '1.5.1');
+update_option('mdx_version', '1.7.0');
 update_option('mdx_night_style', 'true');
 update_option('mdx_auto_night_style', 'true');
 update_option('mdx_notice', '');
@@ -15,4 +15,5 @@ update_option('mdx_real_search', 'false');
 update_option('mdx_seo_key', '');
 update_option('mdx_auto_des', 'true');
 update_option('mdx_seo_des', '');
+update_option("mdx_readmore", __('去围观', 'mdx'));
 ?>
