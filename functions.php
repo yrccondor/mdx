@@ -295,9 +295,13 @@ function mdx_breadcrumbs() {
 
 //shortcodes & buttons
 function mdx_shortcode_hide($atts, $content = null){
-    extract(shortcode_atts(array("title" => __('被折叠内容','mdx')), $atts));
+	extract(shortcode_atts(array("title" => __('被折叠内容','mdx'),'open' => 'false'), $atts));
+	$mdx_open = '';
+	if($open=='true'){
+		$mdx_open = ' mdui-panel-item-open';
+	}
     return '<div class="mdui-panel mdui-panel-gapless" mdui-panel>
-	<div class="mdui-panel-item">
+	<div class="mdui-panel-item'.$mdx_open.'">
 	  <div class="mdui-panel-item-header">
 		<div class="mdui-panel-item-title">'.$title.'</div>
 		<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
@@ -312,9 +316,7 @@ add_shortcode("mdx_fold", "mdx_shortcode_hide");
 
 function mdx_shortcode_warning($atts, $content = null){
     extract(shortcode_atts(array("title" => __('警告','mdx')), $atts));
-    return '<div class="mdx-warning"><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'
-		<p>'.$content.'</p>
-  </div>';
+    return '<blockquote class="mdx-warning"><p><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'<br><strong>'.$content.'</strong></p></blockquote>';
 }
 add_shortcode("mdx_warning", "mdx_shortcode_warning");
 
