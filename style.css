@@ -1734,6 +1734,9 @@ body.mdui-theme-primary-brown #comments-navi span,body.mdui-theme-primary-brown 
 body.mdui-theme-primary-grey #comments-navi span,body.mdui-theme-primary-grey li.current-menu-item,body.mdui-theme-primary-grey li.current-menu-item i.mdui-icon,body.mdui-theme-primary-grey li.current_page_item,body.mdui-theme-primary-grey li.current_page_item i.mdui-icon {
 	color: #000;
 }
+body.mdui-theme-primary-grey.mdui-theme-layout-dark #comments-navi span,body.mdui-theme-primary-grey li.current-menu-item,body.mdui-theme-primary-grey.mdui-theme-layout-dark li.current-menu-item i.mdui-icon,body.mdui-theme-primary-grey .mdui-theme-layout-darkli.current_page_item,body.mdui-theme-primary-grey.mdui-theme-layout-dark li.current_page_item i.mdui-icon {
+	color: #9e9e9e;
+}
 body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-blue-grey li.current-menu-item,body.mdui-theme-primary-blue-grey li.current-menu-item i.mdui-icon,body.mdui-theme-primary-blue-grey li.current_page_item,body.mdui-theme-primary-blue-grey li.current_page_item i.mdui-icon {
 	color: #607d8b;
 }
