@@ -1929,6 +1929,16 @@ article div.mdui-table-fluid {
 #mdx-qrcode-money > img {
 	height: 150px;
 }
+.mdx-admin {
+	font-size: 13px;
+	color: white;
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: rgba(0,0,0,.2);
+	padding: 0 3px;
+	border-radius: 3px;
+	margin: 0 5px;
+}
 @media(max-width:1024px) {
 	#indic {
 		right: 14px;
