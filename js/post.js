@@ -224,12 +224,12 @@ $("#oth-div").click(function(){
     }
     now_url = window.location.href.replace(window.location.search, "")+'?_pro='+nowPro2;
     $('#qrcode').html("");
-    $('#qrcode').qrcode({
-        render : "canvas",
-        width : 150,
-        height : 150,
-        text : now_url
-      });
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: now_url,
+        width: 150,
+        height: 150,
+        correctLevel : QRCode.CorrectLevel.M
+    });
 });
 
 //Search
@@ -269,6 +269,20 @@ $(function() {
         threshold : 200,
     });
 });
+
+//Share img
+var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
+    text: window.location.href,
+    width: 70,
+    height: 70,
+    correctLevel : QRCode.CorrectLevel.L
+});
+
+$(function(){
+html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
+    document.body.appendChild(canvas);
+});
+})
 
 // 评论分页
 $('#comments').on('click', '#comments-navi > a', function(e){

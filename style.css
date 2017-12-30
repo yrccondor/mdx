@@ -1939,6 +1939,72 @@ article div.mdui-table-fluid {
 	border-radius: 3px;
 	margin: 0 5px;
 }
+.mdx-share-img {
+	position: relative;
+	width: 310px;
+	height: 500px;
+	background-color: white;
+}
+.mdx-si-head {
+	height: 61.8%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-position: center center;
+	background-size: cover;
+}
+.mdx-si-head span {
+	font-size: 27px;
+	color: white;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+}
+.mdx-si-head p {
+	font-size: 18px;
+	color: white;
+	display: block;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	margin: 0;
+}
+.mdx-si-qr {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+#qrcode img, .mdx-si-qr img {
+	-webkit-filter: brightness(1);
+	filter: brightness(1);
+}
+.mdx-si-sum {
+	font-size: 16px;
+	color: black;
+	padding: 15px;
+	box-sizing: border-box;
+	height: 38.2%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	line-height: 20px;
+}
+.mdx-si-time {
+	font-size: 13px;
+	color: white;
+	box-sizing: border-box;
+	background-color: rgb(0,0,0);
+	padding: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+}
 @media(max-width:1024px) {
 	#indic {
 		right: 14px;
