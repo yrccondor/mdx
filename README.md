@@ -7,7 +7,7 @@
 > 轻于形，悦于心
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.4.0-3f51b5.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/version-1.7.0Beta-3f51b5.svg?style=flat-square"/>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.2%2B-blue.svg?style=flat-square"/>
 <a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-1.09M-brightgreen.svg?style=flat-square"/></a>
