@@ -271,6 +271,7 @@ $(function() {
 });
 
 //Share img
+$(function(){
 var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
     text: window.location.href,
     width: 70,
@@ -281,7 +282,7 @@ var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
 
 var mdx_post_time = $('.mdx-si-time').html().split("-");
 $('.mdx-si-time').html(mdx_post_time[2]+'<br><span class="mdx-si-time-2">'+mdx_post_time[0]+'/'+mdx_post_time[1]+'</span>');
-
+})
 function convertCanvasToImage(canvas) {
     var image = new Image();
     image.src = canvas.toDataURL("image/png");
