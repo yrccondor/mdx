@@ -49,7 +49,7 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
       $style=get_option('mdx_default_style');
       $post_num=0;
       while(have_posts()):the_post();$post_num++;
-        if($post_num == 1){
+        if($post_num == 1 || get_option('mdx_lazy_load_mode')=='seo2'){
         get_template_part('template-parts/content-first-'.$style, get_post_format());
         }else{
           get_template_part('template-parts/content-'.$style, get_post_format());

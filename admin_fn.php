@@ -20,6 +20,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_img_box', $_POST['mdx_img_box']);
 	update_option("mdx_readmore", $_POST['mdx_readmore']);
 	update_option("mdx_post_money", $_POST['mdx_post_money']);
+	update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
 	update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
@@ -120,6 +121,18 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_read_pro" value="false" <?php if($mdx_v_read_pro=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，会在文章/单独页面展示阅读进度。', 'mdx');?></p>
 	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_lazy_load_mode"><?php _e('LazyLoad 模式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_lazy_load_mode=get_option('mdx_lazy_load_mode');?>
+<select name="mdx_lazy_load_mode" id="mdx_lazy_load_mode">
+	<option value="speed" <?php if($mdx_v_lazy_load_mode=='speed'){?>selected="selected"<?php }?>><?php _e('速度优先', 'mdx');?></option>
+	<option value="seo1" <?php if($mdx_v_lazy_load_mode=='seo1'){?>selected="selected"<?php }?>><?php _e('SEO优先（轻度）', 'mdx');?></option>
+	<option value="seo2" <?php if($mdx_v_lazy_load_mode=='seo2'){?>selected="selected"<?php }?>><?php _e('SEO优先（重度）', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用', 'mdx');?></p>
 </td>
 </tr>
 <tr>

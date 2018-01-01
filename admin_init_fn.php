@@ -7,6 +7,7 @@ update_option('mdx_open_side', 'true');
 update_option('mdx_img_box', 'true');
 update_option("mdx_readmore", __('去围观', 'mdx'));
 update_option("mdx_post_money", '');
+update_option("mdx_lazy_load_mode", 'speed');
 update_option('mdx_read_pro', 'true');
 update_option('mdx_pro_save', 'true');
 update_option('mdx_auto_scroll', 'false');

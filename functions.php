@@ -10,6 +10,7 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option('mdx_version', '1.7.0');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
+	update_option("mdx_lazy_load_mode", 'speed');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	update_option('mdx_version', '1.7.0');
 	update_option('mdx_comment_emj', 'true');
@@ -18,6 +19,7 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option('mdx_post_list_2', 'time');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
+	update_option("mdx_lazy_load_mode", 'speed');
 }else if($mdx_version_base=="1.4.1"){
 	update_option('mdx_version', '1.7.0');
 	update_option('mdx_comment_emj', 'true');
@@ -26,6 +28,7 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option('mdx_post_list_2', 'time');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
+	update_option("mdx_lazy_load_mode", 'speed');
 }else if($mdx_version_base!="1.7.0"){
 	update_option('mdx_version', '1.7.0');
 	update_option('mdx_img_box', 'true');
@@ -35,6 +38,7 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option('mdx_post_list_2', 'time');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
+	update_option("mdx_lazy_load_mode", 'speed');
 }
 
 //后台菜单添加
@@ -211,7 +215,7 @@ function mdx_process_image( $matches ) {
     $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" data-original-srcset="'.$img['srcset']['value'].'" sizes="'.$img['sizes']['value'].'">';
     return $html;
 }
-if(!is_admin()){
+if(!is_admin() && get_option('mdx_lazy_load_mode')=='speed'){
     add_filter('the_content','mdx_lazyload_image', 99);
     add_filter('get_avatar','mdx_lazyload_image', 11);
 }
