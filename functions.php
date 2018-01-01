@@ -423,10 +423,13 @@ function mdx_add_plugin($plugin_array){
 function mdx_post_metaboxes_2() {
     global $post;
 		$meta_box_value = get_post_meta($post->ID, 'informations_value', true);
+		if($meta_box_value==''){
+			$meta_box_value = '-----Nothing-----';
+		}
 		//$meta_box_value = $post->ID;
         echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
         echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>
-		<p class="description">在这里为这篇文章设置单独的文末信息。若留空则跟随全局设置。</p>';
+		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>';
 }
 function mdx_post_metaboxes_1() {
     global $post;
@@ -511,7 +514,7 @@ add_action('admin_menu', 'create_meta_box');
 
 function mdx_save_postdata_1($post_id){
     global $post;
-        if(!wp_verify_nonce($_POST['informations_noncename'])){
+        if(!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
             return $post->ID;
         }
         if('page' == $_POST['post_type']){
