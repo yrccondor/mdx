@@ -511,7 +511,7 @@ add_action('admin_menu', 'create_meta_box');
 
 function mdx_save_postdata_1($post_id){
     global $post;
-        if(!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
+        if(!wp_verify_nonce($_POST['informations_noncename'])){
             return $post->ID;
         }
         if('page' == $_POST['post_type']){
@@ -525,22 +525,9 @@ function mdx_save_postdata_1($post_id){
         $data = $_POST["informations_value"];
         if(get_post_meta((int)$post->ID, "informations_value") == ""){
             add_post_meta((int)$post->ID, "informations_value", (string)$data, true);
-		}elseif($data != get_post_meta($post->ID, "informations_value", true)){
+		}else{
             update_post_meta((int)$post->ID, "informations_value", (string)$data);
-		}elseif($data == ""){
-			delete_post_meta((int)$post->ID, "informations_value", get_post_meta($post->ID, "informations_value", true));
 		}
-			if(!wp_verify_nonce($_POST['settings_noncename'], plugin_basename(__FILE__))){
-				return $post->ID;
-			}
-			if('page' == $_POST['post_type']){
-				if(!current_user_can('edit_page', $post_id))
-					return $post->ID;
-			}
-			else{
-				if(!current_user_can('edit_post', $post_id))
-					return $post->ID;
-			}
 			$data1 = $_POST["mdx_styles"];
 			if(get_post_meta((int)$post->ID, "mdx_styles") == ""){
 				add_post_meta((int)$post->ID, "mdx_styles", (string)$data1, true);
