@@ -68,11 +68,11 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !='-----Nothing-----' || $mdx_info !=''){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions">
                         <?php 
-                            if($mdx_info == '' || $mdx_info !='-----Nothing-----'){
+                            if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = get_option('mdx_say_after');
                             }
                         ?>
@@ -128,11 +128,11 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !='-----Nothing-----' || $mdx_info !=''){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions">
                         <?php 
-                            if($mdx_info == '' || $mdx_info !='-----Nothing-----'){
+                            if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = get_option('mdx_say_after');
                             }
                         ?>
@@ -189,11 +189,11 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !='-----Nothing-----' || $mdx_info !=''){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions">
                         <?php 
-                            if($mdx_info == '' || $mdx_info !='-----Nothing-----'){
+                            if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = get_option('mdx_say_after');
                             }
                         ?>
