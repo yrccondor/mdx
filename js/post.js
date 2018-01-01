@@ -275,12 +275,23 @@ var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
     text: window.location.href,
     width: 70,
     height: 70,
-    correctLevel : QRCode.CorrectLevel.L
+    correctLevel : QRCode.CorrectLevel.L,
+    colorLight: '#f5f5f5'
 });
+
+var mdx_post_time = $('.mdx-si-time').html().split("-");
+$('.mdx-si-time').html(mdx_post_time[2]+'<br><span class="mdx-si-time-2">'+mdx_post_time[0]+'/'+mdx_post_time[1]+'</span>');
+
+function convertCanvasToImage(canvas) {
+    var image = new Image();
+    image.src = canvas.toDataURL("image/png");
+    document.body.appendChild(image);
+}
 
 $(function(){
 html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
     document.body.appendChild(canvas);
+    //convertCanvasToImage(canvas);
 });
 })
 

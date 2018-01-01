@@ -1941,9 +1941,12 @@ article div.mdui-table-fluid {
 }
 .mdx-share-img {
 	position: relative;
-	width: 310px;
-	height: 500px;
-	background-color: white;
+	width: 430px;
+	height: 700px;
+	background-color: rgb(255, 255, 255);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 .mdx-si-head {
 	height: 61.8%;
@@ -1955,7 +1958,7 @@ article div.mdui-table-fluid {
 	background-size: cover;
 }
 .mdx-si-head span {
-	font-size: 27px;
+	font-size: 37px;
 	color: white;
 	display: block;
 	position: absolute;
@@ -1963,47 +1966,67 @@ article div.mdui-table-fluid {
 	left: 15px;
 }
 .mdx-si-head p {
-	font-size: 18px;
+	font-size: 24px;
 	color: white;
 	display: block;
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	top: 20px;
+	left: 20px;
 	margin: 0;
+	max-height: 40px;
 }
 .mdx-si-qr {
 	height: 70px;
 	width: 70px;
-	position: absolute;
-	bottom: 15px;
-	right: 15px;
+	float: right;
 }
 #qrcode img, .mdx-si-qr img {
 	-webkit-filter: brightness(1);
 	filter: brightness(1);
 }
 .mdx-si-sum {
-	font-size: 16px;
+	font-size: 18px;
 	color: black;
-	padding: 15px;
+	padding: 18px;
 	box-sizing: border-box;
 	height: 38.2%;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	line-height: 20px;
+	line-height: 25px;
+}
+.mdx-si-box {
+	position: absolute;
+	bottom: 15px;
+	left: 2.5%;
+	width: 95%;
+	border-radius: 7px;
+	background-color: #f5f5f5;
+	box-sizing: border-box;
+	padding: 8px;
+	padding-left: 12px;
+	font-size: 18px;
+	line-height: 70px;
+	color: #8d8d8d;
 }
 .mdx-si-time {
-	font-size: 13px;
+	font-size: 52px;
 	color: white;
 	box-sizing: border-box;
-	background-color: rgb(0,0,0);
 	padding: 5px;
 	border-radius: 5px;
 	position: absolute;
-	bottom: 15px;
-	left: 15px;
+	top: 22px;
+	right: 22px;
+	text-align: center;
+	line-height: 33px
+}
+.mdx-si-time-2 {
+	font-size: 17px;
+	opacity: .5;
+	border-top: white solid 2px;
+	padding-top: 3px
 }
 @media(max-width:1024px) {
 	#indic {
