@@ -41,7 +41,12 @@
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
       </script>
     <?php }?>
-    <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){?>
+    <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
+      $mdx_style_act = get_post_meta((int)$post->ID, "mdx_styles_act", true);
+      if($mdx_style_act=="" || $mdx_style_act=="def"){
+          $mdx_style_act = get_option('mdx_styles_act');
+      }
+      ?>
     <script>
       //Show Read Pro'
       $('#indic').radialIndicator({
@@ -50,7 +55,7 @@
         barColor: '#ffffff',
         roundCorner: false,
         barWidth: 3,
-        barBgColor: '<?php echo get_option("mdx_act_hex");?>',
+        barBgColor: '<?php echo $mdx_style_act;?>',
       });
       var ind = $('#indic').data('radialIndicator');
 </script>

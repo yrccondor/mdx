@@ -12,8 +12,6 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
     if($mdx_style_act=="" || $mdx_style_act=="def"){
         $mdx_style_act = get_option('mdx_styles_act');
     }
-    ?>
-    <?php
     $post_style=get_post_meta((int)$post->ID, "mdx_post_style", true);
     if($post_style == '' || $post_style == 'def'){
         $post_style=get_option('mdx_post_style');
