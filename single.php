@@ -70,19 +70,18 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php if(get_option('mdx_say_after')!=''){?>
-                <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions">
-                    <?php 
-                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
-                        if($mdx_info == ''){
-                            $mdx_info = get_option('mdx_say_after');
-                        }
-                    ?>
-                    <?php echo $mdx_info;?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !=''){?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions">
+                        <?php 
+                            if($mdx_info == ''){
+                                $mdx_info = get_option('mdx_say_after');
+                            }
+                        ?>
+                        <?php echo $mdx_info;?>
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                    <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -131,19 +130,18 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php if(get_option('mdx_say_after')!=''){?>
-                <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions">
-                    <?php 
-                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
-                        if($mdx_info == ''){
-                            $mdx_info = get_option('mdx_say_after');
-                        }
-                    ?>
-                    <?php echo $mdx_info;?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !=''){?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions">
+                        <?php 
+                            if($mdx_info == ''){
+                                $mdx_info = get_option('mdx_say_after');
+                            }
+                        ?>
+                        <?php echo $mdx_info;?>
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                    <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -193,11 +191,10 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                     </div>
                 </div>
                 <?php }?>
-                <?php if(get_option('mdx_say_after')!=''){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(get_option('mdx_say_after')!='' || $mdx_info !=''){?>
                 <div class="mdui-card mdx-say-after">
                     <div class="mdui-card-actions">
                     <?php 
-                        $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);
                         if($mdx_info == ''){
                             $mdx_info = get_option('mdx_say_after');
                         }
