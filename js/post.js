@@ -285,14 +285,42 @@ $('.mdx-si-time').html(mdx_post_time[2]+'<br><span class="mdx-si-time-2">'+mdx_p
 function convertCanvasToImage(canvas) {
     var image = new Image();
     image.src = canvas.toDataURL("image/png");
-    document.body.appendChild(image);
+    document.getElementById('img-box').appendChild(image);
 }
 
-$(function(){
-html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
-    document.body.appendChild(canvas);
-    //convertCanvasToImage(canvas);
-});
+function mdx_show_img(){
+    $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"><button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white mdui-valign mdui-text-center" id="close-img-box"><i class="mdui-icon material-icons">&#xe5cd;</i></button><div class="mdx-si-tip"><p>长按/右键保存图片</p></div></div>');
+    $('#mdx-share-img').show();
+    $(function(){
+        html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
+            //document.getElementById('mdx-share-img-d').appendChild(canvas);
+            convertCanvasToImage(canvas);
+            $('#img-box > img').addClass('imgInBox');
+            $('#img-box > img').addClass('mdui-center');
+            $('#img-box > img').attr('id','imgInBox');
+            $('#imgInBox').css('opacity','1');
+    var w = 430;
+    var h = 700;
+    var wincli = document.body.clientWidth/$(window).height();
+    var piccli = w/h;
+        if(wincli <= piccli){
+            $('#imgInBox').css({'width':'100%','height':'auto'});
+        }else{
+            $('#imgInBox').css({'height':'100%','width':'auto'});
+        }
+        if((document.body.clientWidth > w) && ($(window).height() > h)){
+            $('#imgInBox').css('width',w);
+            $('#imgInBox').css('height',h);
+        }
+        $('#img-box').css({'opacity':'1','pointer-events':'auto'});
+        $('.mdx-si-tip').addClass('mdx-si-tip-showed');
+        $('#mdx-share-img').hide();
+        });
+    })
+}
+$('body').on('click','#close-img-box',function(){
+    $('#img-box').css({'opacity':'0','pointer-events':'none'});
+    window.setTimeout("afterCloseImgBox()",200);
 })
 
 // 评论分页

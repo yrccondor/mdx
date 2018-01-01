@@ -2028,6 +2028,41 @@ article div.mdui-table-fluid {
 	border-top: white solid 2px;
 	padding-top: 3px
 }
+i.material-icons.mdx-share-icon {
+	color: #575757;
+}
+.mdx-s-img-li {
+	cursor: pointer;
+}
+.mdx-si-tip {
+	position: fixed;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	z-index: 7777;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.mdx-si-tip-showed {
+	bottom: 10px;
+}
+.mdx-si-tip > p {
+	background-color: rgba(0,0,0,.7);
+	color: rgba(255, 255, 255, .7);
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 50px;
+	font-size: 17px;
+	margin: 0 auto;
+	width: 250px;
+	text-align: center;
+}
+#mdx-share-img {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 @media(max-width:1024px) {
 	#indic {
 		right: 14px;
