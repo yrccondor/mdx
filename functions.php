@@ -6,13 +6,15 @@ register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
-	update_option('mdx_version', '1.7.0');
+if($mdx_version_base=="1.7.0"){
+	update_option('mdx_version', '1.7.1');
+}else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
+	update_option('mdx_version', '1.7.1');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
-	update_option('mdx_version', '1.7.0');
+	update_option('mdx_version', '1.7.1');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
@@ -21,7 +23,7 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
 }else if($mdx_version_base=="1.4.1"){
-	update_option('mdx_version', '1.7.0');
+	update_option('mdx_version', '1.7.1');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
@@ -29,8 +31,8 @@ if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
-}else if($mdx_version_base!="1.7.0"){
-	update_option('mdx_version', '1.7.0');
+}else if($mdx_version_base!="1.7.1"){
+	update_option('mdx_version', '1.7.1');
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
