@@ -42,9 +42,9 @@
       </script>
     <?php }?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
-      $mdx_style_act = get_post_meta((int)$post->ID, "mdx_styles_act", true);
-      if($mdx_style_act=="" || $mdx_style_act=="def"){
-          $mdx_style_act = get_option('mdx_styles_act');
+      $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
+      if($mdx_style_act_hex=="" || $mdx_style_act_hex=="def"){
+          $mdx_style_act_hex = get_option('mdx_act_hex');
       }
       ?>
     <script>
@@ -55,7 +55,7 @@
         barColor: '#ffffff',
         roundCorner: false,
         barWidth: 3,
-        barBgColor: '<?php echo $mdx_style_act;?>',
+        barBgColor: '<?php echo $mdx_style_act_hex;?>',
       });
       var ind = $('#indic').data('radialIndicator');
 </script>
