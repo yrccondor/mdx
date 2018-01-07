@@ -45,8 +45,14 @@ if($mdx_des!=''){if($mdx_a_des=='true'){if(is_single()||is_page()){?>
 <?php }}if($mdx_s_key!=''){?>
 <meta name="keywords" content="<?php bloginfo('name');echo ','.$mdx_s_key;?>">
 <?php }}
-if(get_option('mdx_chrome_color')=='true'){?>
-<meta name="theme-color" content="<?php echo get_option('mdx_styles_hex');?>">
+if(get_option('mdx_chrome_color')=='true'){
+    $mdx_theme_color = get_option('mdx_styles_hex');
+if(is_single()){
+    $mdx_theme_color_page = get_post_meta($post->ID, "mdx_styles_hex", true);
+if(!$mdx_theme_color_page=='def'||!$mdx_theme_color_page==''){
+    $mdx_theme_color = $mdx_theme_color_page;
+}}?>
+<meta name="theme-color" content="<?php echo $mdx_theme_color;?>">
 <?php }?>
 <link rel="pingback" href="<?php bloginfo('pingback_url');?>">
 <?php wp_head(); ?>

@@ -537,6 +537,33 @@ function mdx_save_postdata_1($post_id){
 			}elseif($data != get_post_meta($post->ID, "mdx_styles", true)){
 				update_post_meta((int)$post->ID, "mdx_styles", (string)$data1);
 			}
+			$mdx_color_arr=array(
+				'red'=>'#f44336',
+				'pink'=>'#e91e63',
+				'purple'=>'#9c27b0',
+				'deep-purple'=>'#673ab7',
+				'indigo'=>'#3f51b5',
+				'blue'=>'#2196f3',
+				'light-blue'=>'#03a9f4',
+				'cyan'=>'#00bcd4',
+				'teal'=>'#009688',
+				'green'=>'#4caf50',
+				'light-green'=>'#8bc34a',
+				'lime'=>'#cddc39',
+				'yellow'=>'#ffeb3b',
+				'amber'=>'#ffc107',
+				'orange'=>'#ff9800',
+				'deep-orange'=>'#ff5722',
+				'brown'=>'#795548',
+				'grey'=>'#9e9e9e',
+				'blue-grey'=>'#607d8b',
+				'def'=>'def',
+			);
+			if(get_post_meta((int)$post->ID, "mdx_styles_hex") == ""){
+				add_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true);
+			}elseif($data != get_post_meta($post->ID, "mdx_styles_hex", true)){
+				update_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1]);
+			}
 			$data2 = $_POST["mdx_styles_act"];
 			if(get_post_meta((int)$post->ID, "mdx_styles_act") == ""){
 				add_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2, true);
