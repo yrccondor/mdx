@@ -42,9 +42,13 @@
       </script>
     <?php }?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
-      $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
-      if($mdx_style_act_hex=="" || $mdx_style_act_hex=="def"){
+      if(is_single()){
+        $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
+        if($mdx_style_act_hex=="" || $mdx_style_act_hex=="def"){
           $mdx_style_act_hex = get_option('mdx_act_hex');
+        }
+      }else{
+        $mdx_style_act_hex = get_option('mdx_act_hex');
       }
       ?>
     <script>
