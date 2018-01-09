@@ -49,7 +49,7 @@ if(get_option('mdx_chrome_color')=='true'){
     $mdx_theme_color = get_option('mdx_styles_hex');
 if(is_single()){
     $mdx_theme_color_page = get_post_meta($post->ID, "mdx_styles_hex", true);
-if(!$mdx_theme_color_page=='def'||!$mdx_theme_color_page==''){
+if($mdx_theme_color_page=='def' && $mdx_theme_color_page==''){
     $mdx_theme_color = $mdx_theme_color_page;
 }}?>
 <meta name="theme-color" content="<?php echo $mdx_theme_color;?>">
