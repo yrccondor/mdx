@@ -2036,7 +2036,7 @@ i.material-icons.mdx-share-icon {
 }
 .mdx-si-tip {
 	position: fixed;
-	bottom: -20px;
+	bottom: -50px;
 	left: 0;
 	width: 100%;
 	z-index: 7777;
@@ -2063,13 +2063,13 @@ i.material-icons.mdx-share-icon {
 	top: 0;
 	left: 0;
 }
-@media(max-width:2000px) {
+@media(max-width:2100px) {
 	.ArtMain0 {
-		width: 50%;
+		width: 47%;
 		max-width: 3000px;
 	}
 }
-@media(max-width:1400px) {
+@media(max-width:1500px) {
 	.ArtMain0 {
 		width: 100%;
 		max-width: 680px;
