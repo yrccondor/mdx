@@ -2031,6 +2031,9 @@ article div.mdui-table-fluid {
 i.material-icons.mdx-share-icon {
 	color: #575757;
 }
+.mdui-theme-layout-dark i.material-icons.mdx-share-icon {
+	color: #d7d7d7;
+}
 .mdx-s-img-li {
 	cursor: pointer;
 }
@@ -2062,6 +2065,9 @@ i.material-icons.mdx-share-icon {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+.mdui-theme-layout-dark #mdx-qrcode-money img {
+	filter: brightness(1);
 }
 @media(max-width:2100px) {
 	.ArtMain0 {
