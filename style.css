@@ -263,8 +263,8 @@ body.mdui-theme-layout-dark .ct1-p {
 	z-index: 3;
 	box-sizing: border-box;
 	margin-bottom: 30px;
-	width: 100%;
-	max-width: 680px;
+	width: 40%;
+	max-width: 5000px;
 	border-radius: 7px 7px;
 	background-color: #fff;
 }
@@ -2062,6 +2062,18 @@ i.material-icons.mdx-share-icon {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+@media(max-width:2000px) {
+	.ArtMain0 {
+		width: 50%;
+		max-width: 3000px;
+	}
+}
+@media(max-width:1400px) {
+	.ArtMain0 {
+		width: 100%;
+		max-width: 680px;
+	}
 }
 @media(max-width:1024px) {
 	#indic {
