@@ -1,5 +1,5 @@
 <?php
-update_option('mdx_version', '1.7.2');
+require_once('admin_init_ver.php');
 update_option('mdx_night_style', 'true');
 update_option('mdx_auto_night_style', 'true');
 update_option('mdx_notice', '');
