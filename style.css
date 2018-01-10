@@ -2069,6 +2069,9 @@ i.material-icons.mdx-share-icon {
 .mdui-theme-layout-dark #mdx-qrcode-money img {
 	filter: brightness(1);
 }
+article .mdui-panel-item-title {
+	width: 90% !important;
+}
 @media(max-width:2100px) {
 	.ArtMain0 {
 		width: 47%;
