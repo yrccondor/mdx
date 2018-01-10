@@ -76,7 +76,7 @@ $("#tgns").click(function(){
 
 $(function(){
     if(sessionStorage.getItem('ns_night-styles')=='true'){
-        $("body").toggleClass("mdui-theme-layout-dark");
+        $("body").addClass("mdui-theme-layout-dark");
         $("meta[name='theme-color']").attr('content',"#212121");
     }
 
