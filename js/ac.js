@@ -4,8 +4,13 @@ var whetherChangeToTop = 0;
 var blogName = $('div.mdui-toolbar > a.mdui-typo-headline').html();
 var blogUrl = $('div.mdui-toolbar > a.mdui-typo-headline').attr("href");
 var now_color = $("meta[name='theme-color']").attr('content');
+var ticking = false;
 window.onscroll=function(){
-    scrollDiff();
+    if(!ticking) {
+        requestAnimationFrame(scrollDiff);
+        ticking = true;
+    }
+    //scrollDiff();
 }
 function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -29,6 +34,7 @@ function scrollDiff(){
         $("div.mdui-toolbar > a.mdui-typo-headline").attr("href",blogUrl);
         whetherChangeToTop = 0;
     }
+    ticking = false;
 };
 
 //Scroll To the Top

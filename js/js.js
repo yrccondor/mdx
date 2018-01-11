@@ -1,8 +1,13 @@
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var now_color = $("meta[name='theme-color']").attr('content');
+var ticking = false;
 window.onscroll=function(){
-    scrollDiff();
+    if(!ticking) {
+        requestAnimationFrame(scrollDiff);
+        ticking = true;
+    }
+    //scrollDiff();
 }
 function scrollDiff(){
     var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -32,10 +37,11 @@ function scrollDiff(){
         opacityHeight = 1;
     }
     $(".theFirstPage").css('opacity',opacityHeight);
+    ticking = false;
 };
 
 //Scroll To the Top
-$(".scrollToTop").mousedown(function(){
+$(".scrollToTop").click(function(){
     $("body,html").animate({scrollTop:0},500);
 });
 

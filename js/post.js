@@ -6,13 +6,18 @@ var postTitle = $('div.PostTitle').text();
 var blogUrl = $('div.mdui-toolbar > a.mdui-typo-headline').attr("href");
 var now_color = $("meta[name='theme-color']").attr('content');
 var url_hash;
+var ticking = false;
 if($('.PostMain2').length > 0){
     var postStyle2 = true;
 }else{
     var postStyle2 = false;
 }
 window.onscroll=function(){
-    scrollDiff();
+    if(!ticking) {
+        requestAnimationFrame(scrollDiff);
+        ticking = true;
+    }
+    //scrollDiff();
 }
 function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -70,6 +75,7 @@ function scrollDiff(){
     }else if(nowPro >=100){
         ind.value(100);
     }
+    ticking = false;
 };
 
 window.onload=function() {
