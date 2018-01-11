@@ -36,6 +36,9 @@ div.mdui-card>div>div>div>a {
 .click:hover {
 	opacity: .5;
 }
+body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+	top: 32px;
+}
 .theFirstPage {
 	z-index: 2;
 	background-position: center center;
@@ -75,6 +78,7 @@ div.mdui-card>div>div>div>a {
 #titleBarinPost,.mdui-toolbar,.titleBarinAc {
 	-webkit-transition: all .3s;
 	transition: all .3s;
+	top: 0;
 }
 .info a {
 	color: #000;
@@ -2099,6 +2103,11 @@ article .mdui-panel-item-title {
 		font-size: 37px;
 	}
 }
+@media(max-width:782px) {
+	body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+		top: 46px;
+	}
+}
 @media(max-width:720px) {
 	.ArtMain0,.mdxNotice {
 		border-radius: 0;
@@ -2177,6 +2186,9 @@ article .mdui-panel-item-title {
 	}
 	#menu,button.seai,div.mdui-toolbar>.mdui-typo-headline {
 		margin: 0 2px!important;
+	}
+	body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+		top: 0;
 	}
 }
 @media (max-width: 599px){
