@@ -2072,6 +2072,10 @@ i.material-icons.mdx-share-icon {
 article .mdui-panel-item-title {
 	width: 90% !important;
 }
+.mdui-col-xs-2.mdx-first-box {
+    width: auto;
+    max-width: 100%;
+}
 @media(max-width:2100px) {
 	.ArtMain0 {
 		width: 47%;
@@ -2173,6 +2177,14 @@ article .mdui-panel-item-title {
 	}
 	#menu,button.seai,div.mdui-toolbar>.mdui-typo-headline {
 		margin: 0 2px!important;
+	}
+}
+@media (max-width: 599px){
+	.mdui-hidden-xs-down.mdx-first-1 {
+    	display: inline!important;
+	}
+	.mdui-hidden-xs-down.mdx-first-2 {
+    	display: block!important;
 	}
 }
 @media(max-width:500px) {
