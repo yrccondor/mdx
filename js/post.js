@@ -73,7 +73,6 @@ function scrollDiff(){
 };
 
 window.onload=function() {
-    url_hash = md5(window.location.href);
     $('body > .mdui-progress').fadeOut(200);
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
@@ -112,6 +111,7 @@ $("#tgns").click(function(){
 });
 
 $(function(){
+    url_hash = md5(window.location.href);
     if(sessionStorage.getItem('ns_night-styles')=='true'){
         $("body").addClass("mdui-theme-layout-dark");
         $("meta[name='theme-color']").attr('content',"#212121");
