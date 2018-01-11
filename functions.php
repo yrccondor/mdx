@@ -104,8 +104,10 @@ function mdx_js(){
 	}
 	if(is_single() || is_page()){
 		wp_register_script('mdx_qr_js', get_template_directory_uri().'/js/qr.js', false, '', true);
+		wp_register_script('mdx_ra_js', get_template_directory_uri().'/js/ra.js', false, '', true);
 		wp_register_script('mdx_h2c_js', get_template_directory_uri().'/js/h2c.js', false, '', true);
 		wp_enqueue_script('mdx_qr_js');
+		wp_enqueue_script('mdx_ra_js');
 		wp_enqueue_script('mdx_h2c_js');
 	}
 	wp_enqueue_script('mdx_sl_js');
