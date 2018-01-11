@@ -171,12 +171,14 @@ $(function(){
                     }
             }
             $('#img-box').css({'opacity':'1','pointer-events':'auto'});
+            $("meta[name='theme-color']").attr('content',"#212121");
             $('#imgInBox').on('load', function(){
                 $('div.mdx-loading-img').remove();
             })
         })
         $('body').on('click','#close-img-box',function(){
             $('#img-box').css({'opacity':'0','pointer-events':'none'});
+            $("meta[name='theme-color']").attr('content',now_color);
             window.setTimeout("afterCloseImgBox()",200);
         })
     }
@@ -303,8 +305,8 @@ function mdx_show_img(){
     $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"><button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white mdui-valign mdui-text-center" id="close-img-box"><i class="mdui-icon material-icons">&#xe5cd;</i></button><div class="mdx-si-tip"><p>长按/右键保存图片</p></div></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
     mdui.updateSpinners();
     $('#img-box').css({'opacity':'1','pointer-events':'auto'});
+    $("meta[name='theme-color']").attr('content',"#212121");
     $('#mdx-share-img').show();
-    $(function(){
         if(!sessionStorage.getItem('si_imgdata_'+url_hash)){
         html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
             convertCanvasToImage(canvas);
@@ -325,7 +327,6 @@ function mdx_show_img(){
                 $('#imgInBox').css('width',w);
                 $('#imgInBox').css('height',h);
             }
-            $('#img-box').css({'opacity':'1','pointer-events':'auto'});
             $('.mdx-si-tip').addClass('mdx-si-tip-showed');
             $('#mdx-share-img').hide();
             $('div.mdx-loading-img').remove();
@@ -351,15 +352,14 @@ function mdx_show_img(){
                 $('#imgInBox').css('width',w);
                 $('#imgInBox').css('height',h);
             }
-            $('#img-box').css({'opacity':'1','pointer-events':'auto'});
             $('.mdx-si-tip').addClass('mdx-si-tip-showed');
             $('#mdx-share-img').hide();
             $('div.mdx-loading-img').remove();
         }
-    })
 }
 $('body').on('click','#close-img-box',function(){
     $('#img-box').css({'opacity':'0','pointer-events':'none'});
+    $("meta[name='theme-color']").attr('content',now_color);
     window.setTimeout("afterCloseImgBox()",200);
 })
 

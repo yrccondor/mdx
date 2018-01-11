@@ -134,12 +134,14 @@ $(function(){
                     }
             }
             $('#img-box').css({'opacity':'1','pointer-events':'auto'});
+            $("meta[name='theme-color']").attr('content',"#212121");
             $('#imgInBox').on('load',function(){
                 $('div.mdx-loading-img').remove();
             })
         })
         $('body').on('click','#close-img-box',function(){
             $('#img-box').css({'opacity':'0','pointer-events':'none'});
+            $("meta[name='theme-color']").attr('content',now_color);
             window.setTimeout("afterCloseImgBox()",200);
         })
     }
