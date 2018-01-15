@@ -635,6 +635,9 @@ li.current-menu-item,li.current_page_item {
 	background-color: rgba(0,0,0,.5);
 	z-index: 99999;
 }
+body.customize-support #close-img-box {
+	top: 42px;
+}
 #close-img-box:hover {
 	background-color: rgba(0,0,0,.1);
 }
@@ -2081,6 +2084,9 @@ article .mdui-panel-item-title {
     width: auto;
     max-width: 100%;
 }
+article a.mdx-img-in-post-with-link:before {
+	content: none;
+}
 @media(max-width:2100px) {
 	.ArtMain0 {
 		width: 47%;
@@ -2106,6 +2112,9 @@ article .mdui-panel-item-title {
 }
 @media(max-width:782px) {
 	body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+		top: 46px;
+	}
+	body.customize-support #close-img-box {
 		top: 46px;
 	}
 }
@@ -2190,6 +2199,9 @@ article .mdui-panel-item-title {
 	}
 	body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
 		top: 0;
+	}
+	body.customize-support #close-img-box {
+		top: 10px;
 	}
 }
 @media (max-width: 599px){
