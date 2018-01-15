@@ -633,6 +633,7 @@ li.current-menu-item,li.current_page_item {
 	top: 10px;
 	right: 10px;
 	background-color: rgba(0,0,0,.5);
+	z-index: 99999;
 }
 #close-img-box:hover {
 	background-color: rgba(0,0,0,.1);
