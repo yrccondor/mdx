@@ -172,12 +172,6 @@ function mdx_search_filter_page($query){
 }
 add_filter('pre_get_posts','mdx_search_filter_page');
 
-//添加特色图片提示
-function mdx_add_featured_image_instruction($content){
-	return $content .= '<p>'.__('你目前启用的主题将特色图片作为页面设计的重要元素，如没有手动添加特色图片，将会使用默认图片。', 'mdx').'</p>';
-}
-add_filter('admin_post_thumbnail_html', 'mdx_add_featured_image_instruction');
-
 //评论回调
 function mdx_comment_format($comment, $args, $depth){
 $GLOBALS['comment'] = $comment;?>
