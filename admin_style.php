@@ -153,13 +153,13 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><?php _e('移动Chrome标题栏颜色', 'mdx');?></th>
+<th scope="row"><?php _e('移动 Chrome 标题栏颜色', 'mdx');?></th>
 <td>
 <?php $mdx_v_chrome_color=get_option('mdx_chrome_color');?>
 	<fieldset>
 	<label><input type="radio" name="mdx_chrome_color" value="true" <?php if($mdx_v_chrome_color=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_chrome_color" value="false" <?php if($mdx_v_chrome_color=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，移动Chrome访问时，其标题栏的背景颜色会随主题颜色变化。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，移动 Chrome 访问时，其标题栏的背景颜色会随主题颜色变化。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -275,41 +275,41 @@ wp_nonce_field('mdx_options_update');
 	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。', 'mdx');?></p></td>
 </tr>
 <tr>
-<th scope="row"><?php _e('网站Logo', 'mdx');?></th>
+<th scope="row"><?php _e('网站 Logo', 'mdx');?></th>
 <td>
 <input name="mdx_logo" type="url" id="mdx_logo" value="<?php echo esc_attr(get_option('mdx_logo'))?>" class="regular-text">
 <button type="button" id="insert-media-button-2" class="button"><?php _e('选择图片', 'mdx');?></button>
-<p class="description"><?php _e('选择一张图片作为网站Logo，若留空则会显示网站名称。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
+<p class="description"><?php _e('选择一张图片作为网站 Logo，若留空则会显示网站名称。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
 <img id="img4" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>
 <tr>
-<th scope="row"><?php _e('Safari Touch Bar图标支持', 'mdx');?></th>
+<th scope="row"><?php _e('Safari Touch Bar 图标支持', 'mdx');?></th>
 <td>
 <?php $mdx_v_safari=get_option('mdx_safari');?>
 	<fieldset>
 	<label><input class="mdx_stbs" type="radio" name="mdx_safari" value="true" <?php if($mdx_v_safari=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input class="mdx_stbs" type="radio" name="mdx_safari" value="false" <?php if($mdx_v_safari=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	</fieldset>
-	<p class="description"><?php _e('开启后会启用对Safari Touch Bar图标的支持，请在下方完成相关设置。<a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html" target="_blank">详细了解</a>', 'mdx');?>
+	<p class="description"><?php _e('开启后会启用对 Safari Touch Bar 图标的支持，请在下方完成相关设置。<a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html" target="_blank">详细了解</a>', 'mdx');?>
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_svg"><?php _e('Touch Bar图标地址', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_svg"><?php _e('Touch Bar 图标地址', 'mdx');?></label></th>
 <td><input class="mdx_stbsip regular-text mdx_stbsip3" name="mdx_svg" type="text" id="mdx_svg" value="<?php echo esc_attr(get_option('mdx_svg'))?>" required="required">
-<p class="description" id="mdx_footer"><?php _e('请设置Touch Bar图标地址。格式为SVG，必须为单层，viewbox属性必须为"0 0 16 16"。', 'mdx');?></p></td>
+<p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为"0 0 16 16"。', 'mdx');?></p></td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_svg_color"><?php _e('Touch Bar图标背景颜色', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_svg_color"><?php _e('Touch Bar 图标背景颜色', 'mdx');?></label></th>
 <td><input class="mdx_stbsip regular-text mdx_stbsip3" name="mdx_svg_color" type="text" id="mdx_svg_color" value="<?php echo esc_attr(get_option('mdx_svg_color'))?>" required="required">
 <button type="button" id="change-color" class="button mdx_stbsip5"><?php _e('使用当前主题颜色', 'mdx');?></button>
-<p class="description" id="mdx_footer"><?php _e('请设置Touch Bar图标背景颜色。16进制颜色或RGB颜色。', 'mdx');?></p></td>
+<p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(get_option('mdx_footer_say'))?>">
-<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言API', 'mdx');?></button>
-<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言API，则每次页面刷新后都会显示不同的格言。此API来自 <a href="https://blog.lwl12.com/read/hitokoto-api.html" target="_blank">LWL</a>，虽然此来源较为安全，但还请注意安全风险。', 'mdx');?></p></td>
+<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API', 'mdx');?></button>
+<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自 <a href="https://blog.lwl12.com/read/hitokoto-api.html" target="_blank">LWL</a>，虽然此来源较为安全，但还请注意安全风险。', 'mdx');?></p></td>
 </tr>
 <tr>
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
@@ -318,4 +318,4 @@ wp_nonce_field('mdx_options_update');
 </tr>
 <tr>
 <th scope="row"></th>
-<td><p class="description" id="mdx_des"><?php _e('MDx主题兼容WordPress中文版ICP备案号功能，如使用中文版，请在 <i>WordPress设置-常规</i> 中填写备案号，MDx会将其显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站。留空则不会显示。', 'mdx');?></p></td></tr></table><?php submit_button(); ?></form></div>
+<td><p class="description" id="mdx_des"><?php _e('MDx 主题兼容 WordPress 中文版ICP备案号功能，如使用中文版，请在 <i>WordPress 设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站。留空则不会显示。', 'mdx');?></p></td></tr></table><?php submit_button(); ?></form></div>

@@ -186,7 +186,7 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_share_area=get_option('mdx_share_area');?>
 <select name="mdx_share_area" id="mdx_share_area">
-	<option value="all" <?php if($mdx_v_share_area=='all'){?>selected="selected"<?php }?>>所有服务</option>
+	<option value="all" <?php if($mdx_v_share_area=='all'){?>selected="selected"<?php }?>>所有服务商</option>
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>>只有中国国内服务商</option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>>只有国际服务商</option>
 </select>
@@ -227,12 +227,12 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_real_search" value="true" <?php if($mdx_v_real_search=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_real_search" value="false" <?php if($mdx_v_real_search=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要WordPress REST API支持。此API默认开启，请确保你没有将其关闭。</strong>', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_seo_key"><?php _e('SEO关键词', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_seo_key"><?php _e('SEO 关键词', 'mdx');?></label></th>
 <td><input name="mdx_seo_key" type="text" id="mdx_seo_key" value="<?php echo esc_attr(get_option('mdx_seo_key'))?>" class="regular-text">
 <p class="description" id="mdx_footer"><?php _e('用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。', 'mdx');?></p></td>
 </tr>
@@ -243,13 +243,13 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_auto_des" value="true" <?php if($mdx_v_auto_des=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_auto_des" value="false" <?php if($mdx_v_auto_des=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，会自动生成SEO网页描述。<strong>对首页无效，请在下方输入首页描述。</strong>', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，会自动生成 SEO 网页描述。<strong>对首页无效，请在下方输入首页描述。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
 <tr>
-	<th scope="row"><label for="mdx_seo_des"><?php _e('SEO描述', 'mdx');?></label></th>
+	<th scope="row"><label for="mdx_seo_des"><?php _e('SEO 描述', 'mdx');?></label></th>
 	<td><textarea name="mdx_seo_des" id="mdx_seo_des" rows="7" cols="50"><?php echo esc_attr(get_option('mdx_seo_des'))?></textarea>
-	<p class="description"><?php _e('在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面会自动生成网页描述。此空留空则表示关闭全局SEO描述功能。', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。', 'mdx');?></p></td>
 </tr>
 </table><?php submit_button(); ?></form></div>
