@@ -53,7 +53,7 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
 	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
-}else if($mdx_version_base!="1.7.2"){
+}else if($mdx_version_base!="1.7.3"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');

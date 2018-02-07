@@ -26,6 +26,10 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
+	update_option('mdx_share_area', $_POST['mdx_share_area']);
+	update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
+	update_option('mdx_you_may_like', $_POST['mdx_you_may_like']);
+	update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	update_option('mdx_real_search', $_POST['mdx_real_search']);
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	update_option('mdx_auto_des', $_POST['mdx_auto_des']);
