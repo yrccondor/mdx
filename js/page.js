@@ -86,11 +86,6 @@ $(function(){
         $("meta[name='theme-color']").attr('content',"#212121");
     }
 
-    if($('#comments > ul').length == 0){
-        $('.ArtMain #respond').css('border-radius','0 0 7px 7px');
-        $('.ArtMain .mdx-comment-login-needed').css('border-radius','0 0 7px 7px');
-    }
-
     scrollDiff();
     
         //ImgBox
@@ -255,3 +250,10 @@ $('#comments').on('click', '#comments-navi > a', function(e){
         }
     });
 });
+
+//tap tp top
+$('.mdui-typo-headline').click(function(){
+    if(mdx_tapToTop==1){
+        $("body,html").animate({scrollTop:0},500);
+    }
+})

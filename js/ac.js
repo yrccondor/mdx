@@ -98,3 +98,10 @@ $(function() {
 
       scrollDiff();
  });
+
+ //tap tp top
+ $('.mdui-typo-headline').click(function(){
+     if(mdx_tapToTop==1){
+         $("body,html").animate({scrollTop:0},500);
+     }
+ })

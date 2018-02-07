@@ -31,6 +31,10 @@
       <?php if(get_option('mdx_img_box')=='true'){?>
         mdx_imgBox = 1;
       <?php }?>
+      var mdx_tapToTop = 0;
+      <?php if(get_option('mdx_tap_to_top')=='true'){?>
+        mdx_tapToTop = 1;
+      <?php }?>
       </script>
     <?php if(is_search()){?>
       <script>
