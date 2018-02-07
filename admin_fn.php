@@ -182,6 +182,45 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_share_area"><?php _e('分享到的服务商', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_share_area=get_option('mdx_share_area');?>
+<select name="mdx_share_area" id="mdx_share_area">
+	<option value="all" <?php if($mdx_v_share_area=='all'){?>selected="selected"<?php }?>>所有服务</option>
+	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>>只有中国国内服务商</option>
+	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>>只有国际服务商</option>
+</select>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Google+、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。同时，由于微信 SDK 限制，MDx 无法集成微信分享，你可以自行完善。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('点击顶部栏返回顶部', 'mdx');?></th>
+<td>
+<?php $mdx_v_tap_to_top=get_option('mdx_tap_to_top');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_tap_to_top" value="true" <?php if($mdx_v_tap_to_top=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_tap_to_top" value="false" <?php if($mdx_v_tap_to_top=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，点击顶部栏可以返回页面顶部，具体效果参考 知乎/QQ 空间 客户端。此设置影响所有页面。</strong>', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('文末推荐文章', 'mdx');?></th>
+<td>
+<?php $mdx_v_you_may_like=get_option('mdx_you_may_like');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_you_may_like" value="true" <?php if($mdx_v_you_may_like=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_you_may_like" value="false" <?php if($mdx_v_you_may_like=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，文章末会展示最多7篇相似文章。相似文章基于相同分类或相同标签的文章。</strong>', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_you_may_like_text"><?php _e('推荐文章标题', 'mdx');?></label></th>
+<td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(get_option('mdx_you_may_like_text'))?>" class="regular-text" require>
+<p class="description"><?php _e('在此设置推荐文章模块的标题。', 'mdx');?></p></td>
+</tr>
+<tr>
 <th scope="row"><?php _e('实时搜索', 'mdx');?></th>
 <td>
 <?php $mdx_v_real_search=get_option('mdx_real_search');?>

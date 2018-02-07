@@ -11,13 +11,13 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	require_once('admin_init_ver.php');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
@@ -26,7 +26,7 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -39,7 +39,7 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }else if($mdx_version_base=="1.4.1"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -52,7 +52,7 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }else if($mdx_version_base!="1.7.2"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
@@ -66,7 +66,7 @@ if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
 	update_option('mdx_you_may_like', 'false');
-	update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 }
 
 //后台菜单添加

@@ -17,7 +17,7 @@ update_option('mdx_post_list_2', 'time');
 update_option('mdx_share_area', 'all');
 update_option('mdx_tap_to_top', 'true');
 update_option('mdx_you_may_like', 'false');
-update_option('mdx_you_may_like_text', __('你可能感兴趣的文章', 'mdx'));
+update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 update_option('mdx_real_search', 'false');
 update_option('mdx_seo_key', '');
 update_option('mdx_auto_des', 'true');
