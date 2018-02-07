@@ -62,7 +62,7 @@
         barBgColor: '<?php echo $mdx_style_act_hex;?>',
       });
       var ind = $('#indic').data('radialIndicator');
-      var mdx_si_i18n = <?php _e('长按/右键保存图片','mdx'); ?>;
+      var mdx_si_i18n = '<?php _e('长按/右键保存图片','mdx'); ?>';
 </script>
 <?php }?>
 <?php if(function_exists('alu_get_wpsmiliestrans') && (get_option('mdx_comment_emj')=="true") && (is_single() || is_page())){?>
