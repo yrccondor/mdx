@@ -94,7 +94,7 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_img_box" value="true" <?php if($mdx_v_img_box=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_img_box" value="false" <?php if($mdx_v_img_box=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，对于文章内包裹在链接中的图片可点击查看大图。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
