@@ -87,7 +87,8 @@ $(function(){
     }
 
     if($('#comments > ul').length == 0){
-        $('#respond').css('border-radius','0 0 7px 7px')
+        $('.ArtMain #respond').css('border-radius','0 0 7px 7px');
+        $('.ArtMain .mdx-comment-login-needed').css('border-radius','0 0 7px 7px');
     }
 
     scrollDiff();
@@ -152,6 +153,8 @@ $(function(){
         $("div#comments ul li p").addClass('mdui-typo');
         $('.comment-reply-link').addClass("mdui-btn");
         $('.comment-reply-link').css("opacity","0");
+        $('.comment-reply-login').addClass("mdui-btn");
+        $('.comment-reply-login').css("opacity","0");
         $('p.form-submit').prepend('<a mdui-tooltip="{content: '+moreinput+', position: '+"'top'"+'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>');
         var ifOpenComm = 0;
         $('a.moreInComm').click(function(){
@@ -247,6 +250,8 @@ $('#comments').on('click', '#comments-navi > a', function(e){
             $("div#comments ul li p").addClass('mdui-typo');
             $('.comment-reply-link').addClass("mdui-btn");
             $('.comment-reply-link').css("opacity","0");
+            $('.comment-reply-login').addClass("mdui-btn");
+            $('.comment-reply-login').css("opacity","0");
         }
     });
 });

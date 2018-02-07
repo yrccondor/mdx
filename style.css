@@ -900,7 +900,7 @@ ul ul.children {
 div#comments ul li {
 	cursor: auto;
 }
-.comment-reply-link {
+.comment-reply-link, .comment-reply-login {
 	position: absolute;
 	right: 0;
 	bottom: 5px;
@@ -910,6 +910,9 @@ div#comments ul li {
 	color: rgba(0,0,0,.5);
 	font-size: 9pt;
 	line-height: 30px;
+}
+.comment-reply-login {
+	padding: 0 5px;
 }
 .mdui-divider-inset.mdui-m-y-0 {
 	list-style-type: none;
@@ -990,7 +993,7 @@ div#comments ul li {
 .mdui-theme-layout-dark #respond {
 	background-color: #292929;
 }
-.mdui-theme-layout-dark .comment-reply-link {
+.mdui-theme-layout-dark .comment-reply-link, .mdui-theme-layout-dark .comment-reply-login {
 	color: hsla(0,0%,100%,.87)!important;
 }
 .mdui-theme-layout-dark .foot {
@@ -1130,7 +1133,7 @@ p.form-submit {
 	transition: all .2s;
 	pointer-events: none;
 }
-div#comments li.mdui-list-item:hover .comment-reply-link {
+div#comments li.mdui-list-item:hover .comment-reply-link, div#comments li.mdui-list-item:hover .comment-reply-login {
 	opacity: 1!important;
 }
 li[id^=li-comment] {
@@ -2086,6 +2089,31 @@ article .mdui-panel-item-title {
 }
 article a.mdx-img-in-post-with-link:before {
 	content: none;
+}
+.mdx-comment-login-needed {
+	display: block!important;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    padding: 30px 30px 30px;
+    width: 90%;
+    max-width: 50pc;
+    border-radius: 5px;
+	background-color: #ededed;
+}
+.ArtMain0 .mdx-comment-login-needed {
+	display: block!important;
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 30px 30px 30px;
+    width: 100%;
+    max-width: 6250pc;
+    border-radius: 0;
+    background-color: #ededed;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgba(0,0,0,.08);
 }
 @media(max-width:2100px) {
 	.ArtMain0 {
