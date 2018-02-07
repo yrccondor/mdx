@@ -158,7 +158,7 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_styles"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_post_list_1"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_post_list_1=get_option('mdx_post_list_1');?>
 <select name="mdx_post_list_1" id="mdx_post_list_1">
@@ -170,7 +170,7 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_styles"><?php _e('文章列表详细信息 - 位置2', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_post_list_2"><?php _e('文章列表详细信息 - 位置2', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_post_list_2=get_option('mdx_post_list_2');?>
 <select name="mdx_post_list_2" id="mdx_post_list_2">
