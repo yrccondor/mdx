@@ -931,7 +931,7 @@ div#comments ul li {
 .mdui-theme-layout-dark .logged-in-as a {
 	color: hsla(0,0%,100%,.5)!important;
 }
-#respond {
+#respond, .mdx-same-posts {
 	display: block!important;
 	box-sizing: border-box;
 	margin-top: 20px;
@@ -942,6 +942,10 @@ div#comments ul li {
 	max-width: 50pc;
 	border-radius: 5px;
 	background-color: #ededed;
+}
+.mdx-same-posts {
+	padding: 0;
+	padding-top: 5px;
 }
 #commentform {
 	position: relative;
@@ -974,7 +978,7 @@ div#comments ul li {
 	padding: 10px;
 	border-radius: 5px;
 }
-.ArtMain0 #respond {
+.ArtMain0 #respond, .ArtMain0 .mdx-same-posts {
 	display: block!important;
 	box-sizing: border-box;
 	margin-top: 0;
@@ -986,6 +990,9 @@ div#comments ul li {
 	border-top-style: solid;
 	border-top-width: 1px;
 	border-top-color: rgba(0,0,0,.08);
+}
+.ArtMain0 .mdx-same-posts {
+	padding: 0;
 }
 .mdui-theme-layout-dark .ArtMain0 #respond {
 	border-top-color: hsla(0,0%,100%,.08);
@@ -1109,6 +1116,52 @@ body.mdui-theme-primary-blue-grey #submit {
 	margin: 0;
 	font-weight: 400;
 	font-size: 25px;
+}
+.mdx-same-posts > h3 {
+	margin: 22px;
+	font-weight: 400;
+	font-size: 18px;
+}
+.mdx-same-posts > div {
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+	height: 137px;
+}
+.mdx-same-posts ul {
+	margin: 0 10px;
+	padding: 0;
+	list-style: none;
+}
+.mdx-same-posts ul li {
+	display: inline-block;
+	width: 200px;
+	height: 123px;
+	margin-right: 5px;
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+.mdx-same-posts ul li i {
+	display: block;
+	position: absolute;
+	right: 7px;
+	top: 7px;
+	font-size: 20px;
+	opacity: .5;
+}
+.mdx-same-posts span {
+	position: absolute;
+	left: 8px;
+	bottom: 8px;
+	font-size: 17px;
+	width: 90%;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.mdx-same-posts-img {
+	color: white !important;
 }
 p.form-submit {
 	clear: both;
