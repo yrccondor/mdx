@@ -32,6 +32,14 @@ jQuery(".mdx_stbs").click(function(){
         jQuery('input.mdx_stbsip').attr("disabled","disabled");
     }
 });
+jQuery(".mdx_apsp").click(function(){
+    var mdx_val = jQuery('input.mdx_apsp:checked').val();
+    if(mdx_val=='true'){
+        jQuery('input.mdx_apspc').removeAttr("disabled");
+    }else if(mdx_val=='false'){
+        jQuery('input.mdx_apspc').attr("disabled","disabled");
+    }
+});
 function img1(){
     var img1=jQuery("#mdx_post_money").val();
     if(img1.substring(0,4) != 'http'){

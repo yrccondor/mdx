@@ -29,6 +29,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_share_area', $_POST['mdx_share_area']);
 	update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	update_option('mdx_you_may_like', $_POST['mdx_you_may_like']);
+	update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
 	update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	update_option('mdx_real_search', $_POST['mdx_real_search']);
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
@@ -213,15 +214,26 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_you_may_like=get_option('mdx_you_may_like');?>
 	<fieldset>
-	<label><input type="radio" name="mdx_you_may_like" value="true" <?php if($mdx_v_you_may_like=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_you_may_like" value="false" <?php if($mdx_v_you_may_like=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，文章末会展示最多7篇相似文章。相似文章基于相同分类或相同标签的文章。</strong>', 'mdx');?></p>
+	<label><input type="radio" class="mdx_apsp" name="mdx_you_may_like" value="true" <?php if($mdx_v_you_may_like=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" class="mdx_apsp" name="mdx_you_may_like" value="false" <?php if($mdx_v_you_may_like=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，文章末会展示最多7篇相似文章。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_you_may_like_text"><?php _e('推荐文章标题', 'mdx');?></label></th>
-<td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(get_option('mdx_you_may_like_text'))?>" class="regular-text" require>
+<th scope="row"><?php _e('文末推荐文章计算方式', 'mdx');?></th>
+<td>
+<?php $mdx_v_you_may_like_way=get_option('mdx_you_may_like_way');?>
+	<fieldset>
+	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="tag" <?php if($mdx_v_you_may_like_way=='tag'){?>checked="checked"<?php }?>> <?php _e('相同标签')?></label><br>
+	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="category" <?php if($mdx_v_you_may_like_way=='category'){?>checked="checked"<?php }?>> <?php _e('相同分类')?></label><br>
+	<p class="description"><?php _e('在此选择相似文章的计算方式。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_you_may_like_text"><?php _e('文末推荐文章模块标题', 'mdx');?></label></th>
+<td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(get_option('mdx_you_may_like_text'))?>" class="regular-text mdx_apspc">
 <p class="description"><?php _e('在此设置推荐文章模块的标题。', 'mdx');?></p></td>
 </tr>
 <tr>
