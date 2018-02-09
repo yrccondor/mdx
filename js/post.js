@@ -295,6 +295,7 @@ $(function() {
     $("li.LazyLoadSamePost").lazyload({
         effect : "fadeIn",
         threshold : 200,
+        container: $("#mdx-sp-out-c")
     });
 });
 
