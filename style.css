@@ -2290,7 +2290,7 @@ article a.mdx-img-in-post-with-link:before {
 	#menu,button.seai,div.mdui-toolbar>.mdui-typo-headline {
 		margin: 0 2px!important;
 	}
-	body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+	body.customize-support #titleBarinPost, body.customize-support #titleBar, body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc, body.customize-support #SearchBar {
 		top: 0;
 	}
 	body.customize-support #close-img-box {
