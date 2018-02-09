@@ -216,7 +216,7 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" class="mdx_apsp" name="mdx_you_may_like" value="true" <?php if($mdx_v_you_may_like=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" class="mdx_apsp" name="mdx_you_may_like" value="false" <?php if($mdx_v_you_may_like=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，文章末会展示最多7篇相似文章。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，文章末会展示最多5篇相似文章。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>

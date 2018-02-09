@@ -1126,7 +1126,8 @@ body.mdui-theme-primary-blue-grey #submit {
 	width: 100%;
 	overflow-x: auto;
 	white-space: nowrap;
-	height: 137px;
+	height: 117px;
+	-webkit-overflow-scrolling : touch;
 }
 .mdx-same-posts ul {
 	margin: 0 10px;
@@ -1135,8 +1136,8 @@ body.mdui-theme-primary-blue-grey #submit {
 }
 .mdx-same-posts ul li {
 	display: inline-block;
-	width: 200px;
-	height: 123px;
+	width: 180px;
+	height: 105px;
 	margin-right: 5px;
 	background-position: center center;
 	background-size: cover;
@@ -1149,16 +1150,24 @@ body.mdui-theme-primary-blue-grey #submit {
 	top: 7px;
 	font-size: 20px;
 	opacity: .5;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.mdx-same-posts ul li i:hover {
+	opacity: .8;
 }
 .mdx-same-posts span {
 	position: absolute;
 	left: 8px;
 	bottom: 8px;
 	font-size: 17px;
-	width: 90%;
+	width: 92%;
 	display: block;
-	overflow: hidden;
+	/* overflow: hidden; */
 	text-overflow: ellipsis;
+	word-wrap: normal;
+	white-space: pre-wrap;
+	word-wrap: break-word
 }
 .mdx-same-posts-img {
 	color: white !important;
