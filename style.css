@@ -997,10 +997,10 @@ div#comments ul li {
 .ArtMain0 .mdx-same-posts {
 	padding: 0;
 }
-.mdui-theme-layout-dark .ArtMain0 #respond {
+.mdui-theme-layout-dark .ArtMain0 #respond, .mdui-theme-layout-dark .ArtMain0 .mdx-same-posts {
 	border-top-color: hsla(0,0%,100%,.08);
 }
-.mdui-theme-layout-dark #respond {
+.mdui-theme-layout-dark #respond, .mdui-theme-layout-dark .mdx-same-posts {
 	background-color: #292929;
 }
 .mdui-theme-layout-dark .comment-reply-link, .mdui-theme-layout-dark .comment-reply-login {
