@@ -288,7 +288,11 @@ $(function() {
         effect : "fadeIn",
         threshold : 300,
       });
-    $("img.LazyLoadPost").lazyload({
+      $("img.LazyLoadPost").lazyload({
+        effect : "fadeIn",
+        threshold : 200,
+    });
+    $("li.LazyLoadSamePost").lazyload({
         effect : "fadeIn",
         threshold : 200,
     });
