@@ -187,6 +187,9 @@ body.mdui-theme-layout-dark .ct1-p {
 	height: 33%;
 	text-align: center;
 }
+.PostTitle > span {
+	word-break: break-all;
+}
 .PostTitle2 {
 	height: 40%;
 }
