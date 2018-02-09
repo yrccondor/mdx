@@ -23,10 +23,12 @@ function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
     if(howFar > 20 & whetherChange == 0 && !postStyle2){
         $("#titleBarinPost").toggleClass("mdui-shadow-2");
+        $("div.mdui-toolbar.mdui-appbar-fixed").toggleClass("mdui-color-theme");
         whetherChange = 1;
     }
     if(howFar <= 20 & whetherChange == 1 && !postStyle2){
         $("#titleBarinPost").toggleClass("mdui-shadow-2");
+        $("div.mdui-toolbar.mdui-appbar-fixed").toggleClass("mdui-color-theme");
         whetherChange = 0;
     }
     if(howFar > 200 & whetherChangeToTop == 0 && !postStyle2){
