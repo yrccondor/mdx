@@ -2234,6 +2234,20 @@ article a.mdx-img-in-post-with-link:before {
 	background-color: #292929!important;
 	color: rgba(255,255,255,.87);
 }
+.mdx-search-empty {
+	color: rgba(0,0,0,.5);
+	font-size: 100px !important;
+}
+.mdx-search-empty-text {
+	font-weight: 200;
+	color: rgba(0,0,0,.87);
+}
+.mdui-theme-layout-dark .mdx-search-empty {
+	color: rgba(255,255,255,.5);
+}
+.mdui-theme-layout-dark .mdx-search-empty-text {
+	color: rgba(255,255,255,.87);
+}
 @media(max-width:2100px) {
 	.ArtMain0 {
 		width: 47%;
