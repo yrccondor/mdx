@@ -9,8 +9,8 @@
         </div>
     </div>
     <div class="mdui-card-actions">
-        <p class="ct1-p mdui-text-color-black"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 170,"...");}?><p>
-        <div class="mdui-divider underline"></div>
+        <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 170,"...");}?><p>
+        <div class="mdui-divider underline"></div><?php }?>
         <?php
         $mdx_more_1 = get_option("mdx_post_list_1");
         $mdx_more_2 = get_option("mdx_post_list_2");

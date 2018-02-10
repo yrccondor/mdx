@@ -62,6 +62,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_default_style', $_POST['mdx_default_style']);
 	update_option('mdx_post_style', $_POST['mdx_post_style']);
+	update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
 	update_option('mdx_index_img', $_POST['mdx_index_img']);
 	update_option('mdx_side_img', $_POST['mdx_side_img']);
 	update_option('mdx_side_info', $_POST['mdx_side_info']);
@@ -197,6 +198,17 @@ wp_nonce_field('mdx_options_update');
 	<option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('同时影响文章页、单独页面的样式。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('文章列表显示文章摘要', 'mdx');?></th>
+<td>
+<?php $mdx_v_echo_post_sum=get_option('mdx_echo_post_sum');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_echo_post_sum" value="true" <?php if($mdx_v_echo_post_sum=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_echo_post_sum" value="false" <?php if($mdx_v_echo_post_sum=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，文章列表可显示每篇文章的摘要，影响首页和归档页。若关闭则不显示。', 'mdx');?></p>
+	</fieldset>
 </td>
 </tr>
 <tr>
