@@ -1762,6 +1762,18 @@ ul.blogroll {
 	-webkit-transition: background-color 0s;
 	transition: background-color 0s;
 }
+.mdx-first-simple .topBarAni {
+	-webkit-transition: background-color .2s;
+	transition: background-color .2s;
+}
+.mdx-sh-ani {
+	-webkit-transition: box-shadow 0s;
+	transition: box-shadow 0s;
+}
+.mdx-first-simple .mdx-sh-ani {
+	-webkit-transition: box-shadow .2s;
+	transition: box-shadow .2s;
+}
 .LazyLoadList {
 	min-height: 150px;
 }
@@ -2187,6 +2199,40 @@ article a.mdx-img-in-post-with-link:before {
 	border-top-style: solid;
 	border-top-width: 1px;
 	border-top-color: rgba(0,0,0,.08);
+}
+.mdx-first-simple {
+	background: #f7f7f7;
+}
+.mdui-theme-layout-dark.mdx-first-simple {
+	background: #303030;
+}
+
+.mdx-first-simple .theFirstPageSay {
+	height: 38.2%;
+}
+.mdx-first-simple .theFirstPageBackGround {
+	height: 43%;
+}
+.mdx-first-simple .main {
+	top: 39%;
+	background-color: rgba(0,0,0,0);
+}
+.mdx-first-simple .postList {
+	padding: 0;
+}
+.mdx-first-simple .postDiv {
+	margin: 0;
+	margin-bottom: 15px;
+}
+.mdx-first-simple .mdxNotice {
+	background-color: #fff;
+	border-radius: 2px;
+	color: rgba(0,0,0,.87);
+	width: 95%;
+}
+.mdui-theme-layout-dark.mdx-first-simple .mdxNotice {
+	background-color: #292929!important;
+	color: rgba(255,255,255,.87);
 }
 @media(max-width:2100px) {
 	.ArtMain0 {

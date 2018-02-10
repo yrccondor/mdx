@@ -2,6 +2,10 @@
 var whetherChange = 0;
 var now_color = $("meta[name='theme-color']").attr('content');
 var ticking = false;
+var mdx_style = 1;
+if($(".theFirstPage").length == 0){
+    mdx_style = 0;
+}
 window.onscroll=function(){
     if(!ticking) {
         requestAnimationFrame(scrollDiff);
@@ -10,33 +14,48 @@ window.onscroll=function(){
     //scrollDiff();
 }
 function scrollDiff(){
-    var howFar = document.documentElement.scrollTop || document.body.scrollTop;
-    var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
-    var totalHight = $(".theFirstPage").height()*.37 - 20;
-    if(howFar > barHight & whetherChange == 0){
-        $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
-        //$("#titleBar").toggleClass("mdui-text-color-white-text");
-        $("#titleBar").toggleClass("mdui-shadow-2");
-        $(".scrollToTop").toggleClass("mdui-fab-hide");
-        whetherChange = 1;
-    }
-    if(howFar <= barHight & whetherChange == 1){
-        $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
-        $("#titleBar").toggleClass("mdui-shadow-2");
-        $(".scrollToTop").toggleClass("mdui-fab-hide");
-        whetherChange = 0;
-    }
-    if(howFar <= barHight){
-        opacityHeight = (barHight - howFar)/totalHight;
-        if(opacityHeight > 1){
+    if(mdx_style){
+        var howFar = document.documentElement.scrollTop || document.body.scrollTop;
+        var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
+        var totalHight = $(".theFirstPage").height()*.37 - 20;
+        if(howFar > barHight & whetherChange == 0){
+            $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
+            $("#titleBar").toggleClass("mdui-shadow-2");
+            $(".scrollToTop").toggleClass("mdui-fab-hide");
+            whetherChange = 1;
+        }
+        if(howFar <= barHight & whetherChange == 1){
+            $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
+            $("#titleBar").toggleClass("mdui-shadow-2");
+            $(".scrollToTop").toggleClass("mdui-fab-hide");
+            whetherChange = 0;
+        }
+        if(howFar <= barHight){
+            opacityHeight = (barHight - howFar)/totalHight;
+            if(opacityHeight > 1){
+                opacityHeight = 1;
+            }
+        }else if(howFar > barHight){
+            opacityHeight = 0;
+        }else{
             opacityHeight = 1;
         }
-    }else if(howFar > barHight){
-        opacityHeight = 0;
-    }else{
-        opacityHeight = 1;
+        $(".theFirstPage").css('opacity',opacityHeight);
+    }else if(!mdx_style){
+        var howFar = document.documentElement.scrollTop || document.body.scrollTop;
+        if(howFar > 20 & whetherChange == 0){
+            $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
+            $("#titleBar").toggleClass("mdui-shadow-2");
+            $(".scrollToTop").toggleClass("mdui-fab-hide");
+            whetherChange = 1;
+        }
+        if(howFar <= 20 & whetherChange == 1){
+            $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
+            $("#titleBar").toggleClass("mdui-shadow-2");
+            $(".scrollToTop").toggleClass("mdui-fab-hide");
+            whetherChange = 0;
+        }
     }
-    $(".theFirstPage").css('opacity',opacityHeight);
     ticking = false;
 };
 

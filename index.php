@@ -1,6 +1,6 @@
 <?php flush();?>
 <?php get_header();?>
-<?php $mdx_index_img=get_option('mdx_index_img');
+<?php $mdx_index_show=get_option('mdx_index_show');$mdx_index_img=get_option('mdx_index_img');
 if(substr($mdx_index_img,0,6)=="--Bing"){
   $mdx_img_bing = substr($mdx_index_img,22,2);
   if(substr($mdx_img_bing,1,1)==")"){
@@ -12,7 +12,7 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
      }
 }
 $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
-  <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
+  <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');if($mdx_index_show=="1"){?> mdx-first-simple<?php } ?>">
     <div class="fullScreen sea-close"></div>
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
       <div class="sideImg LazyLoad" data-original="<?php echo $mdx_side_img;?>">
@@ -28,7 +28,7 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
       </div>
     <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>1,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
     </div>
-    <header role="banner"><div class="titleBarGobal mdui-appbar mdui-shadow-0 <?php if(get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBar">
+    <header role="banner"><div class="titleBarGobal mdx-sh-ani mdui-appbar mdui-shadow-0 <?php if(get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBar">
       <div class="mdui-toolbar mdui-toolbar-self mdui-appbar-fixed topBarAni">
         <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true<?php if(get_option('mdx_open_side')=='true'){;?>,swipe:true<?php }?>}"><i class="mdui-icon material-icons">menu</i></button>
         <span class="mdui-typo-headline"><?php $mdx_logo=get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></span>
@@ -38,11 +38,11 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
     </div></header>
     <?php get_template_part('searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
-    <div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div>
+    <?php if($mdx_index_show=="0"){?><div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div><?php } ?>
     <div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text"><h1 class="mdui-center"><?php echo esc_attr(get_option('mdx_index_say'))?></h1></div>
     <div class="main">
     <?php if(get_option('mdx_notice')!=""){?>
-      <div class="mdxNotice mdui-center mdui-color-theme"><i class="mdui-icon material-icons">&#xe7f7;</i>&nbsp;&nbsp;<?php echo esc_attr(get_option('mdx_notice'))?></div>
+    <div class="mdxNotice mdui-center<?php if($mdx_index_show=="0"){?> mdui-color-theme<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i>&nbsp;&nbsp;<?php echo esc_attr(get_option('mdx_notice'))?></div>
     <?php }?>
       <main class="postList mdui-center" id="postlist">
       <?php

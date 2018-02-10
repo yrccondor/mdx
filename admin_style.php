@@ -194,8 +194,8 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_index_show=get_option('mdx_index_show');?>
 <select name="mdx_index_show" id="mdx_index_show">
-	<option value="1" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
-	<option value="2" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
+	<option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
+	<option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('在此设置首页样式样式。', 'mdx');?></p>
 </td>
