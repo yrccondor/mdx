@@ -2169,6 +2169,10 @@ article a.mdx-img-in-post-with-link:before {
 	max-width: 50pc;
 	border-radius: 5px;
 }
+.mdui-theme-layout-dark .mdx-comment-login-needed {
+	background-color: #292929 !important;
+	border-top-color: rgba(255,255,255,.08) !important;
+}
 .ArtMain0 .mdx-comment-login-needed,.mdx-comment-login-needed {
 	display: block!important;
 	box-sizing: border-box;
