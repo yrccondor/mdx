@@ -2229,6 +2229,7 @@ article a.mdx-img-in-post-with-link:before {
 	border-radius: 2px;
 	color: rgba(0,0,0,.87);
 	width: 95%;
+	margin-bottom: 15px;
 }
 .mdui-theme-layout-dark.mdx-first-simple .mdxNotice {
 	background-color: #292929!important;
