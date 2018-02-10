@@ -5,7 +5,7 @@
         <div class="mdui-card-media-covered ct1">
             <div class="mdui-card-primary">
                 <a href="<?php the_permalink();?>"><div class="mdui-card-primary-title"><?php the_title();?></div></a>
-                <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><div class="mdui-card-primary-subtitle"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 120,"...");}?></div><?php }?>
+                <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><div class="mdui-card-primary-subtitle"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mdx_get_post_excerpt($post, 120);}?></div><?php }?>
             </div>
         </div>
     </div>

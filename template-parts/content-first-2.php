@@ -1,7 +1,7 @@
 <div class="mdui-card postDiv mdui-center mdui-hoverable">
     <div class="mdui-card-actions">
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme-accent ainList"><h1><?php the_title();?></h1></a>
-        <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 250,"...");}?><p><?php }?>
+        <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo echo mdx_get_post_excerpt($post, 250);}?><p><?php }?>
         <div class="mdui-divider underline"></div>
         <?php
         $mdx_more_1 = get_option("mdx_post_list_1");
