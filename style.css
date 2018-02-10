@@ -488,8 +488,8 @@ article p {
 }
 #indic {
 	position: fixed;
-	right: 22px;
-	bottom: 22px;
+	right: 14px;
+	bottom: 14px;
 	z-index: 7;
 	display: none;
 	width: 60px;
@@ -2200,10 +2200,10 @@ article a.mdx-img-in-post-with-link:before {
 		max-width: 680px;
 	}
 }
-@media(max-width:1024px) {
+@media(min-width:1024px) {
 	#indic {
-		right: 14px;
-		bottom: 14px;
+		right: 22px;
+		bottom: 22px;
 	}
 }
 @media(max-width:800px) {

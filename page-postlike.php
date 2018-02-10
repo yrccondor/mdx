@@ -145,8 +145,6 @@ $pageType = 3;
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');?></span>
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?><?php comments_template();?>
             </div>
-<?php //get_template_part('toggleposts')
-?>
 <div id="indic"></div>
 <?php }?>
 <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="background-image:url(<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{echo get_bloginfo('template_url').'/img/dpic.jpg';}?>)"><p><?php $mdx_logo=get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php echo mdx_get_post_excerpt($post, 175);?></div><div class="mdx-si-box"><span>扫描二维码继续阅读</span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
