@@ -6,6 +6,7 @@ update_option('mdx_act_hex', '#ff4081');
 update_option('mdx_chrome_color', 'true');
 update_option('mdx_title_bar', 'false');
 update_option('mdx_default_style', '1');
+update_option('mdx_index_show', '0');
 update_option('mdx_post_style', '0');
 update_option('mdx_echo_post_sum', 'ture');
 update_option('mdx_index_img', get_bloginfo("template_url").'/img/def_index.jpg');

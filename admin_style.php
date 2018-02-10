@@ -61,6 +61,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_title_bar', $_POST['mdx_title_bar']);
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_default_style', $_POST['mdx_default_style']);
+	update_option('mdx_index_show', $_POST['mdx_index_show']);
 	update_option('mdx_post_style', $_POST['mdx_post_style']);
 	update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
 	update_option('mdx_index_img', $_POST['mdx_index_img']);
@@ -176,7 +177,7 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_default_style"><?php _e('首页样式', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_default_style"><?php _e('文章列表样式', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_default_style=get_option('mdx_default_style');?>
 <select name="mdx_default_style" id="mdx_default_style">
@@ -185,7 +186,18 @@ wp_nonce_field('mdx_options_update');
 	<option value="3" <?php if($mdx_v_default_style=='3'){?>selected="selected"<?php }?>><?php _e('干净', 'mdx');?></option>
 	<option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('同时影响首页、搜索结果页、归档页的样式。', 'mdx');?></p>
+<p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_index_show"><?php _e('首页样式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_index_show=get_option('mdx_index_show');?>
+<select name="mdx_index_show" id="mdx_index_show">
+	<option value="1" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('在此设置首页样式样式。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
