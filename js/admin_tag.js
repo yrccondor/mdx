@@ -40,6 +40,14 @@ jQuery(".mdx_apsp").click(function(){
         jQuery('input.mdx_apspc').attr("disabled","disabled");
     }
 });
+jQuery(".mdx_apsp2").click(function(){
+    var mdx_val = jQuery('input.mdx_apsp2:checked').val();
+    if(mdx_val=='true'){
+        jQuery('input.mdx_apspc2').removeAttr("disabled");
+    }else if(mdx_val=='false'){
+        jQuery('input.mdx_apspc2').attr("disabled","disabled");
+    }
+});
 function img1(){
     var img1=jQuery("#mdx_post_money").val();
     if(img1.substring(0,4) != 'http'){
