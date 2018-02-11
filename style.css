@@ -1019,6 +1019,9 @@ div#comments ul li {
 	margin: 0 auto;
 	margin-top: 45px;
 }
+.mdx-first-simple .mdx-all-posts {
+	margin-bottom: 20px;
+}
 .mdui-theme-layout-dark .mdx-all-posts {
 	color: rgba(255,255,255,.7);
 }
