@@ -28,6 +28,11 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
 	update_option('mdx_share_area', $_POST['mdx_share_area']);
 	update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
+	update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
+	update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
+	update_option('mdx_hot_posts_cat', $_POST['mdx_hot_posts_cat']);
+	update_option('mdx_hot_posts_text', $_POST['mdx_hot_posts_text']);
+	update_option('mdx_all_posts_text', $_POST['mdx_all_posts_text']);
 	update_option('mdx_you_may_like', $_POST['mdx_you_may_like']);
 	update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
 	update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
@@ -208,6 +213,37 @@ wp_nonce_field('mdx_options_update');
 	<p class="description"><?php _e('开启后，点击顶部栏可以返回页面顶部，具体效果参考 知乎/QQ 空间 客户端。此设置影响所有页面。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
+</tr>
+<tr>
+<th scope="row"><?php _e('首页推荐文章', 'mdx');?></th>
+<td>
+<?php $mdx_v_hot_posts=get_option('mdx_hot_posts');?>
+	<fieldset>
+	<label><input type="radio" class="mdx_apsp2" name="mdx_hot_posts" value="true" <?php if($mdx_v_hot_posts=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" class="mdx_apsp2" name="mdx_hot_posts" value="false" <?php if($mdx_v_hot_posts=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，首页会展示推荐文章，请在下方进行设置。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_hot_posts_num"><?php _e('首页推荐文章数量', 'mdx');?></label></th>
+<td><input name="mdx_hot_posts_num" type="text" id="mdx_hot_posts_num" value="<?php echo esc_attr(get_option('mdx_hot_posts_num'))?>" class="regular-text mdx_apspc2">
+<p class="description"><?php _e('在此设定首页推荐文章篇数。请输入整数。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_hot_posts_cat"><?php _e('首页推荐文章分类名', 'mdx');?></label></th>
+<td><input name="mdx_hot_posts_cat" type="text" id="mdx_hot_posts_cat" value="<?php echo esc_attr(get_option('mdx_hot_posts_cat'))?>" class="regular-text mdx_apspc2">
+<p class="description"><?php _e('首页推荐文章从特定分类获取文章。在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_hot_posts_text"><?php _e('首页推荐文章模块标题', 'mdx');?></label></th>
+<td><input name="mdx_hot_posts_text" type="text" id="mdx_hot_posts_text" value="<?php echo esc_attr(get_option('mdx_hot_posts_text'))?>" class="regular-text mdx_apspc2">
+<p class="description"><?php _e('在此设定首页推荐文章模块标题。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_all_posts_text"><?php _e('首页最新文章模块标题', 'mdx');?></label></th>
+<td><input name="mdx_all_posts_text" type="text" id="mdx_all_posts_text" value="<?php echo esc_attr(get_option('mdx_all_posts_text'))?>" class="regular-text mdx_apspc2">
+<p class="description"><?php _e('在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('文末推荐文章', 'mdx');?></th>
