@@ -949,6 +949,78 @@ div#comments ul li {
 .mdx-same-posts {
 	padding: 0;
 	padding-top: 5px;
+	overflow: hidden;
+}
+.mdx-hot-posts {
+	margin-top: 15px;
+	margin-bottom: 0;
+	width: 95%;
+	border-radius: 0!important;
+	max-width: 700px;
+	background-color: #f7f7f7!important;
+	position: relative;
+}
+.mdx-hot-posts .mdx-hp-g-l {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 10;
+	height: 100%;
+	width: 10%;
+	background: -moz-linear-gradient(left, rgba(247,247,247,1) 10%, rgba(247,247,247,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(247,247,247,1) 10%,rgba(247,247,247,0) 100%);
+	background: linear-gradient(to right, rgba(247,247,247,1) 10%,rgba(247,247,247,0) 100%);
+}
+.mdx-hot-posts .mdx-hp-g-r {
+	display: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	height: 100%;
+	width: 10%;
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 10%, rgba(247,247,247,1) 100%);
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 10%,rgba(247,247,247,1) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 10%,rgba(247,247,247,1) 100%);
+}
+.mdui-theme-layout-dark .mdx-hot-posts .mdx-hp-g-l {
+	background: -moz-linear-gradient(left, rgba(48,48,48,1) 10%, rgba(48,48,48,0) 100%);
+	background: -webkit-linear-gradient(left, rgba(48,48,48,1) 10%,rgba(48,48,48,0) 100%);
+	background: linear-gradient(to right, rgba(48,48,48,1) 10%,rgba(48,48,48,0) 100%);
+}
+.mdui-theme-layout-dark .mdx-hot-posts .mdx-hp-g-r {
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 10%, rgba(48,48,48,1) 100%);
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 10%,rgba(48,48,48,1) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 10%,rgba(48,48,48,1) 100%);
+}
+.mdx-first-simple .mdx-hot-posts .mdx-hp-g-r, .mdx-first-simple .mdx-hot-posts .mdx-hp-g-l {
+	display: none!important;
+}
+.mdui-theme-layout-dark .mdx-hot-posts {
+	background-color: #303030!important;
+}
+.mdx-first-simple .mdx-hot-posts {
+	margin-top: 0;
+	margin-bottom: 15px;
+	border-radius: 2px!important;
+	background-color: #ededed!important;
+}
+.mdui-theme-layout-dark.mdx-first-simple .mdx-hot-posts {
+	background-color: #292929!important;
+}
+.mdx-all-posts {
+	font-size: 23px;
+	font-weight: 400;
+	padding-left: 20px;
+	color: rgba(0,0,0,.7);
+	width: 95%;
+	max-width: 700px;
+	margin: 0 auto;
+	margin-top: 45px;
+}
+.mdui-theme-layout-dark .mdx-all-posts {
+	color: rgba(255,255,255,.7);
 }
 #commentform {
 	position: relative;
@@ -1121,9 +1193,23 @@ body.mdui-theme-primary-blue-grey #submit {
 	font-size: 25px;
 }
 .mdx-same-posts>h3 {
-	margin: 22px;
+	margin: 20px;
 	font-weight: 400;
 	font-size: 18px;
+}
+.mdx-hp-h3-fill {
+	height: 77px!important;
+}
+.mdx-hot-posts>h3 {
+	font-size: 23px;
+	position: absolute;
+	top: 10px;
+	left: -7px;
+	z-index: 15;
+	color: rgba(0,0,0,.7);
+}
+.mdui-theme-layout-dark .mdx-hot-posts>h3 {
+	color: rgba(255,255,255,.7);
 }
 .mdx-same-posts>div {
 	width: 100%;
@@ -1132,6 +1218,9 @@ body.mdui-theme-primary-blue-grey #submit {
 	white-space: nowrap;
 	height: 124px;
 	-webkit-overflow-scrolling: touch;
+}
+.mdx-hot-posts>div {
+	height: 148px;
 }
 .mdx-same-posts ul {
 	margin: 0 10px;
@@ -1146,6 +1235,10 @@ body.mdui-theme-primary-blue-grey #submit {
 	background-position: center center;
 	background-size: cover;
 	position: relative;
+}
+.mdx-hot-posts ul li {
+	width: 210px;
+	height: 130px;
 }
 .mdx-sp-fill {
 	width: 100%;
@@ -2225,7 +2318,7 @@ article a.mdx-img-in-post-with-link:before {
 	margin-bottom: 15px;
 }
 .mdx-first-simple .mdxNotice {
-	background-color: #fff;
+	background-color: #ededed;
 	border-radius: 2px;
 	color: rgba(0,0,0,.87);
 	width: 95%;
