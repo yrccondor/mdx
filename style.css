@@ -961,6 +961,7 @@ div#comments ul li {
 	position: relative;
 }
 .mdx-hot-posts .mdx-hp-g-l {
+	pointer-events: none;
 	display: none;
 	position: absolute;
 	left: 0;
@@ -973,6 +974,7 @@ div#comments ul li {
 	background: linear-gradient(to right, rgba(247,247,247,1) 10%,rgba(247,247,247,0) 100%);
 }
 .mdx-hot-posts .mdx-hp-g-r {
+	pointer-events: none;
 	display: none;
 	position: absolute;
 	right: 0;
