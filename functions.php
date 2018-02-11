@@ -6,7 +6,9 @@ register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.7.3"){
+if($mdx_version_base=="1.7.4"){
+	require_once('admin_init_ver.php');
+}else if($mdx_version_base=="1.7.3"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
@@ -72,7 +74,7 @@ if($mdx_version_base=="1.7.3"){
 	update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
-}else if($mdx_version_base!="1.7.4"){
+}else if($mdx_version_base!="1.7.5"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
