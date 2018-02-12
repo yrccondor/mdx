@@ -51,12 +51,15 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
         </div></header>
         <?php get_template_part('searchform')?>
 
-    <?php if($post_style=="0"){?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
+    <?php if($post_style=="0"){if($full_image_url[0]!=""){$mdx_image_url=$full_image_url[0];}else{if(get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="PostMain">
+      <div class="PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }?>">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
-                <img class="PostMainImg0" alt="<?php the_title(); ?>" src="<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{bloginfo("template_url");echo "/img/dpic.jpg";}?>">
+            <?php if($mdx_image_url!=""){?>
+            <img class="PostMainImg0" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }else{?>
+                <div class="mdx-post-no-img-fill"></div>
+                <?php }?>
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
@@ -91,12 +94,13 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
 
-      <?php }else if($post_style=="1"){?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
+      <?php }else if($post_style=="1"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="PostMain">
+        <div class="PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
             <div class="ArtMain mdui-center mdui-typo">
-                <img class="PostMainImg mdui-img-rounded mdui-shadow-7" alt="<?php the_title(); ?>" src="<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{bloginfo("template_url");echo "/img/dpic.jpg";}?>">
+                <?php if($mdx_image_url!=""){?>
+                <img class="PostMainImg mdui-img-rounded mdui-shadow-7" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }?>
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
                 </article>
@@ -132,9 +136,9 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
         
-      <?php }else if($post_style=="2"){?>
+      <?php }else if($post_style=="2"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
         <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
-        <div class="PostTitleFill2 LazyLoad" data-original="<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{bloginfo("template_url");echo "/img/dpic.jpg";}?>"></div>
+        <?php if($mdx_image_url!=""){?><div class="PostTitleFill2 LazyLoad" data-original="<?php echo $mdx_image_url;?>"></div><?php }?>
         <div class="PostTitleFillBack2 mdui-color-theme"></div>
         <div class="PostMain PostMain2">
             <div class="ArtMain0 mdui-center mdui-shadow-12">

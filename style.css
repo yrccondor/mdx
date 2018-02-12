@@ -1287,6 +1287,19 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-same-posts-img {
 	color: #fff!important;
 }
+.mdx-post-no-img-fill {
+	height: 5px;
+	width: 100%;
+}
+.mdx-pni-am {
+	top: 48%;
+}
+.mdx-pni-am article {
+	margin-top: 0!important;
+}
+.mdx-pni-t {
+	height: 45%;
+}
 p.form-submit {
 	clear: both;
 	text-align: right;
@@ -2421,6 +2434,15 @@ article a.mdx-img-in-post-with-link:before {
 	}
 	.mdx-say-after {
 		width: 100%;
+	}
+	.mdx-pni-am0 {
+		top: 48%;
+	}
+	.mdx-pni-am0 article.mdui-typo {
+		margin-top: 0!important;
+	}
+	.mdx-pni-t0 {
+		height: 45%;;
 	}
 }
 @media(max-width:700px) {
