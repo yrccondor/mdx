@@ -17,7 +17,6 @@ window.onscroll=function(){
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
-    //scrollDiff();
 }
 function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -129,8 +128,6 @@ $(function(){
         $('.ArtMain0 .mdx-comment-login-needed').css('border-radius','0 0 7px 7px');
     }
     
-    scrollDiff();
-
         //ImgBox
         if(mdx_imgBox==1){
         $('article a > img').each(function(){
@@ -190,7 +187,11 @@ $(function(){
         })
         $('body').on('click','#close-img-box',function(){
             $('#img-box').css({'opacity':'0','pointer-events':'none'});
-            $("meta[name='theme-color']").attr('content',now_color);
+            if(sessionStorage.getItem('ns_night-styles')!="true"){
+                $("meta[name='theme-color']").attr('content',now_color);
+            }else{
+                $("meta[name='theme-color']").attr('content',"#212121");
+            }
             window.setTimeout("afterCloseImgBox()",200);
         })
     }
@@ -324,9 +325,7 @@ function mdx_show_img(){
     $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"><button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white mdui-valign mdui-text-center" id="close-img-box"><i class="mdui-icon material-icons">&#xe5cd;</i></button><div class="mdx-si-tip"><p>'+mdx_si_i18n+'</p></div></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
     mdui.updateSpinners();
     $('#img-box').css({'opacity':'1','pointer-events':'auto'});
-    if(!sessionStorage.getItem('ns_night-styles')!='true'){
-        $("meta[name='theme-color']").attr('content',"#212121");
-    }
+    $("meta[name='theme-color']").attr('content',"#212121");
     $('#mdx-share-img').show();
         if(!sessionStorage.getItem('si_'+url_hash)){
         html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
@@ -380,8 +379,10 @@ function mdx_show_img(){
 }
 $('body').on('click','#close-img-box',function(){
     $('#img-box').css({'opacity':'0','pointer-events':'none'});
-    if(sessionStorage.getItem('ns_night-styles')!='true'){
+    if(sessionStorage.getItem('ns_night-styles')!="true"){
         $("meta[name='theme-color']").attr('content',now_color);
+    }else{
+        $("meta[name='theme-color']").attr('content',"#212121");
     }
     window.setTimeout("afterCloseImgBox()",200);
 })
