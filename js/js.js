@@ -85,11 +85,10 @@ $(function(){
         $('.mdx-hp-g-r').show();
         var mdx_change = 1;
         var mdx_change2 = 1;
-        var mdx_sp_w = 0;
+        var mdx_sp_w = 215*$("a>li.mdui-card").length+10;
         var mdx_sp_ww = 0;
         var mdx_sp_s = 0;
         document.getElementById("mdx-sp-out-c").onscroll=function(){
-            mdx_sp_w = 215*$("a>li.mdui-card").length+10;
             mdx_sp_ww = $('#mdx-sp-out-c').width();
             mdx_sp_s = document.getElementById("mdx-sp-out-c").scrollLeft;
             if(mdx_sp_s>5 && mdx_change){
