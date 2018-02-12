@@ -13,6 +13,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.7.3"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_echo_post_sum', 'true');
@@ -22,6 +23,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.7.2"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
@@ -36,6 +38,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
@@ -50,6 +53,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	require_once('admin_init_ver.php');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
@@ -67,6 +71,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -88,6 +93,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base=="1.4.1"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -109,6 +115,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }else if($mdx_version_base!="1.7.5"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
@@ -131,6 +138,7 @@ if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts_cat', '');
 	update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
 	update_option('mdx_all_posts_text', __('最新文章','mdx'));
+	update_option('mdx_post_def_img', 'ture');
 }
 
 //后台菜单添加
