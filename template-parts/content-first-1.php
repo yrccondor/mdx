@@ -26,7 +26,7 @@
         <a class="mdui-btn mdui-ripple mdui-ripple-white coun-read mdui-text-color-theme-accent" href="<?php the_permalink();?>"><?php echo get_option("mdx_readmore");?></a>
     </div>
 </div>
-<?php }else{$Imagesurl = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())) ? wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())):get_template_directory_uri().'/img/dpic.jpg';?>
+<?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
 <div class="mdui-card postDiv mdui-center mdui-hoverable">
     <div class="mdui-card-media">
         <img src="<?php echo "$Imagesurl"?>" alt="<?php echo "$Imagesurl"?>" title="<?php the_title();?>">
