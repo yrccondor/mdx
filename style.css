@@ -960,6 +960,9 @@ div#comments ul li {
 	background-color: #f7f7f7!important;
 	position: relative;
 }
+.mdx-hot-posts-have-img {
+	display: none;
+}
 .mdx-hot-posts .mdx-hp-g-l {
 	pointer-events: none;
 	display: none;
