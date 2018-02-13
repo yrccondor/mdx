@@ -76,7 +76,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                         <div class="mdui-card-actions">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
-                                $mdx_info = get_option('mdx_say_after');
+                                $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
                             }
                         ?>
                         <?php echo $mdx_info;?>
@@ -117,7 +117,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                         <div class="mdui-card-actions">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
-                                $mdx_info = get_option('mdx_say_after');
+                                $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
                             }
                         ?>
                         <?php echo $mdx_info;?>
@@ -158,7 +158,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                         <div class="mdui-card-actions">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
-                                $mdx_info = get_option('mdx_say_after');
+                                $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
                             }
                         ?>
                         <?php echo $mdx_info;?>
