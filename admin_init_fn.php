@@ -28,4 +28,6 @@ update_option('mdx_real_search', 'false');
 update_option('mdx_seo_key', '');
 update_option('mdx_auto_des', 'true');
 update_option('mdx_seo_des', '');
+update_option('mdx_head_js', '');
+update_option('mdx_footer_js', '');
 ?>
