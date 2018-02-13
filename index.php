@@ -26,7 +26,7 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
       <div class="side-info-more"><?php echo get_option('mdx_side_name');?><br><span class="side-info-oth"><?php echo get_option('mdx_side_more');?></span></div>
       <?php }?>
       </div>
-    <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>1,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
+    <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>2,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
     </div>
     <header role="banner"><div class="titleBarGobal mdx-sh-ani mdui-appbar mdui-shadow-0 <?php if(get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBar">
       <div class="mdui-toolbar mdui-toolbar-self mdui-appbar-fixed topBarAni">
