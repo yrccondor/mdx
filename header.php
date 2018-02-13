@@ -55,5 +55,5 @@ if($mdx_theme_color_page!='def' && $mdx_theme_color_page!=''){
 <meta name="theme-color" content="<?php echo $mdx_theme_color;?>">
 <?php }?>
 <link rel="pingback" href="<?php bloginfo('pingback_url');?>">
-<?php wp_head(); ?>
+<?php wp_head(); ?><?php echo htmlspecialchars_decode(get_option('mdx_head_js'));?>
 </head>

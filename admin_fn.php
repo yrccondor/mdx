@@ -15,7 +15,7 @@ wp_enqueue_style('thickbox');
 if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_night_style', $_POST['mdx_night_style']);
 	update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
-	update_option('mdx_notice', $_POST['mdx_notice']);
+	update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
 	update_option('mdx_open_side', $_POST['mdx_open_side']);
 	update_option('mdx_img_box', $_POST['mdx_img_box']);
 	update_option("mdx_readmore", $_POST['mdx_readmore']);
@@ -39,7 +39,9 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_real_search', $_POST['mdx_real_search']);
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	update_option('mdx_auto_des', $_POST['mdx_auto_des']);
-	update_option('mdx_seo_des', $_POST['mdx_seo_des']);
+	update_option('mdx_seo_des', htmlentities(stripslashes($_POST['mdx_seo_des'])));
+	update_option('mdx_head_js', htmlentities(stripslashes($_POST['mdx_head_js'])));
+	update_option('mdx_footer_js', htmlentities(stripslashes($_POST['mdx_footer_js'])));
 	
 ?>
 <div class="notice notice-success is-dismissible">
@@ -84,7 +86,7 @@ wp_nonce_field('mdx_options_update');
 <tr>
 	<th scope="row"><label for="mdx_notice"><?php _e('网站公告', 'mdx');?></label></th>
 	<td><textarea name="mdx_notice" id="mdx_notice" rows="7" cols="50"><?php echo esc_attr(get_option('mdx_notice'))?></textarea>
-	<p class="description"><?php _e('在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('使用手势打开抽屉菜单', 'mdx');?></th>
@@ -303,5 +305,15 @@ wp_nonce_field('mdx_options_update');
 	<th scope="row"><label for="mdx_seo_des"><?php _e('SEO 描述', 'mdx');?></label></th>
 	<td><textarea name="mdx_seo_des" id="mdx_seo_des" rows="7" cols="50"><?php echo esc_attr(get_option('mdx_seo_des'))?></textarea>
 	<p class="description"><?php _e('在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。', 'mdx');?></p></td>
+</tr>
+<tr>
+	<th scope="row"><label for="mdx_head_js"><?php _e('页头脚本', 'mdx');?></label></th>
+	<td><textarea name="mdx_head_js" id="mdx_head_js" rows="7" cols="50"><?php echo get_option('mdx_head_js')?></textarea>
+	<p class="description"><?php _e('在这里插入脚本，会被插入至所有页面头部。', 'mdx');?></p></td>
+</tr>
+<tr>
+	<th scope="row"><label for="mdx_footer_js"><?php _e('页尾脚本', 'mdx');?></label></th>
+	<td><textarea name="mdx_footer_js" id="mdx_footer_js" rows="7" cols="50"><?php echo get_option('mdx_footer_js')?></textarea>
+	<p class="description"><?php _e('在这里插入脚本，会被插入至所有页面最后。', 'mdx');?></p></td>
 </tr>
 </table><?php submit_button(); ?></form></div>

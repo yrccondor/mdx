@@ -71,9 +71,9 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_side_head', $_POST['mdx_side_head']);
 	update_option('mdx_side_name', $_POST['mdx_side_name']);
 	update_option('mdx_side_more', $_POST['mdx_side_more']);
-	update_option('mdx_index_say', $_POST['mdx_index_say']);
+	update_option('mdx_index_say', htmlentities(stripslashes($_POST['mdx_index_say'])));
 	update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
-	update_option('mdx_say_after', $_POST['mdx_say_after']);
+	update_option('mdx_say_after', htmlentities(stripslashes($_POST['mdx_say_after'])));
 	update_option('mdx_logo', $_POST['mdx_logo']);
 	update_option('mdx_safari', $_POST['mdx_safari']);
 	update_option('mdx_svg', $_POST['mdx_svg']);
@@ -82,8 +82,8 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	}else{
 		update_option('mdx_svg_color', $_POST['mdx_svg_color']);
 	}
-	update_option('mdx_footer_say', $_POST['mdx_footer_say']);
-	update_option('mdx_footer', $_POST['mdx_footer']);
+	update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
+	update_option('mdx_footer', htmlentities(stripslashes($_POST['mdx_footer'])));
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -308,7 +308,7 @@ wp_nonce_field('mdx_options_update');
 <tr>
 	<th scope="row"><label for="mdx_say_after"><?php _e('文末信息', 'mdx');?></label></th>
 	<td><textarea name="mdx_say_after" id="mdx_say_after" rows="7" cols="50"><?php echo get_option('mdx_say_after')?></textarea>
-	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('网站 Logo', 'mdx');?></th>
@@ -350,7 +350,7 @@ wp_nonce_field('mdx_options_update');
 <tr>
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
 	<td><textarea name="mdx_footer" id="mdx_footer" rows="7" cols="50"><?php echo get_option('mdx_footer')?></textarea>
-	<p class="description"><?php _e('在这里编辑页脚内容。受 WordPress 限制，不支持HTML格式。', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里编辑页脚内容。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"></th>

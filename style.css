@@ -1968,6 +1968,7 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
 	border-radius: 0 0 5px 5px;
 	font-size: 18px;
 	line-height: 25px;
+	word-wrap: break-word;
 }
 .mdui-theme-layout-dark .mdxNotice {
 	background-color: #212121!important;
