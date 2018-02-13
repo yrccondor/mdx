@@ -61,7 +61,7 @@ $pageType = 3;
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions">
+                    <div class="mdui-card-actions mdui-typo">
                     <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ $pageType = 3;
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions">
+                    <div class="mdui-card-actions mdui-typo">
                     <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ $pageType = 3;
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
                 <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions">
+                    <div class="mdui-card-actions mdui-typo">
                     <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
                     </div>
                 </div>

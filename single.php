@@ -73,7 +73,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <?php }?>
                 <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
-                        <div class="mdui-card-actions">
+                        <div class="mdui-card-actions mdui-typo">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
@@ -114,7 +114,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <?php }?>
                 <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
-                        <div class="mdui-card-actions">
+                        <div class="mdui-card-actions mdui-typo">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
@@ -155,7 +155,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <?php }?>
                 <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && get_option('mdx_say_after'))){?>
                     <div class="mdui-card mdx-say-after">
-                        <div class="mdui-card-actions">
+                        <div class="mdui-card-actions mdui-typo">
                         <?php 
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
