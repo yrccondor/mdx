@@ -22,7 +22,6 @@
 - [Download 下载](#download-下载)
 - [Docs 文档](#docs-文档)
 - [License 许可证](#license-许可证)
-- [Render 渲染](#render-渲染)
 
 
 ## Introduction 介绍
