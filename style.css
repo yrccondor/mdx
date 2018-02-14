@@ -540,6 +540,8 @@ ul#mdx_menu>li a {
 	height: 3pc;
 	font-size: 17px;
 	line-height: 3pc;
+	text-overflow: ellipsis;
+    overflow: hidden;
 }
 .sideImg {
 	position: relative;
