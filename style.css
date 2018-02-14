@@ -573,7 +573,7 @@ ul#mdx_menu>li a {
 	-webkit-filter: brightness(.8);
 	filter: brightness(.8);
 }
-.mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-],.mdui-theme-layout-dark div.PostTitle[class*=mdui-color-] {
+.mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-],.mdui-theme-layout-dark div.PostTitle[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-] {
 	background-color: #212121!important;
 	color: #fff!important;
 }
