@@ -159,31 +159,32 @@ $(function() {
      }
  })
 
- //init menu
- $(function(){
-     var mdx_haveChild = 0;
-     var mdx_is_c = 0;
-     $('#mdx_menu > li').each(function(){
-         if($(this).hasClass('menu-item-has-children')){
+//init menu
+$(function(){
+    var mdx_haveChild = 0;
+    var mdx_is_c = 0;
+    $('#mdx_menu > li').each(function(){
+        if($(this).hasClass('menu-item-has-children')){
             $(this).addClass('mdui-collapse-item');
             $(this).removeClass('mdui-list-item');
-            $(this).html('<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content">'+$(this).children("a").html()+'</div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+$(this).children("ul").html()+'</ul>');
+            $(this).html('<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+$(this).children("a").attr('href')+'">'+$(this).children("a").html()+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+$(this).children("ul").html()+'</ul>');
              mdx_haveChild = 1;
             $(this).children("ul").children("li").each(function(){
                 if($(this).hasClass('current-menu-item')){
                     mdx_is_c = 1;
                 }
             })
-             if(mdx_is_c){
-                 $(this).removeClass('current-menu-item');
-                 $(this).removeClass('current_page_item');
-                 $(this).addClass('mdui-collapse-item-open');
-             }
-         }
-         if(mdx_haveChild){
-             $('#mdx_menu').addClass('mdui-collapse');
-             $('#mdx_menu').attr('mdui-collapse','');
-         }
-     })
-     var inst = new mdui.Collapse("#mdx_menu");
- })
+            if(mdx_is_c){
+                $(this).removeClass('current-menu-item');
+                $(this).removeClass('current_page_item');
+                $(this).addClass('mdui-collapse-item-open');
+            }
+            mdx_is_c = 0;
+        }
+        if(mdx_haveChild){
+            $('#mdx_menu').addClass('mdui-collapse');
+            $('#mdx_menu').attr('mdui-collapse','');
+        }
+    })
+    var inst = new mdui.Collapse("#mdx_menu");
+})
