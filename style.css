@@ -2057,6 +2057,7 @@ ul.mdui-list.ajax-comments {
 	display: inline-block;
 	margin: 2px 7px;
 	padding: 5px;
+	cursor: default;
 }
 .mdui-theme-layout-dark #comments-navi a {
 	color: hsla(0,0%,100%,.5);
