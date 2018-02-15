@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://img.flyhigher.top/head.jpg" alt="MDx">
+<img src="https://img.flyhigher.top/top.jpg" alt="MDx">
 </p>
 
 <h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
@@ -22,11 +22,14 @@
 - [Download 下载](#download-下载)
 - [Docs 文档](#docs-文档)
 - [License 许可证](#license-许可证)
+- [Render 渲染](#render-渲染)
 
 
 ## Introduction 介绍
 
 MDx，一款轻快、优雅且强大的 Material Design 风格 WordPress 主题。
+
+MDx: a light, elegent and powerful WordPress theme with Material Design.
 
 
 ## Demo 演示
@@ -58,3 +61,8 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 Open sourced under the GPL v3.0 license.
 
 根据 GPL V3.0 许可证开源。
+
+
+## Render 渲染
+
+![](https://img.flyhigher.top/det.jpg)
