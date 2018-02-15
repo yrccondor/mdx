@@ -62,7 +62,7 @@ echo '<div class="wrap">
 <p class="mdx-admin-img"><img src="../wp-content/themes/mdx/img/admin.jpg"></p>
 <h2 style="font-size:19px;">'.__('感谢使用MDx主题', 'mdx').'</h2>
 <p style="font-size:15px;">'.__('我是Axton Yao，这个主题由我开发。我的网站是', 'mdx').'<a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
-<p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://flyhigher.top/mdx-docs-cn" target="_blank">'.__('主题文档', 'mdx').'</a></p>
+<p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://mdxdoc.flyhigher.top/" target="_blank">'.__('主题文档(为国内网络优化)', 'mdx').'</a>&nbsp;&nbsp;或&nbsp;&nbsp;<a href="https://mdxdocs.flyhigher.top/" target="_blank">'.__('主题文档(Oversea)', 'mdx').'</a></p>
 <p style="font-size:15px;">'.__('这个项目的Github地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求Star。', 'mdx').'</p>
 <p style="font-size:15px;">'.__('这个主题的诞生离不开MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
 <br>
