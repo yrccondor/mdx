@@ -2053,6 +2053,11 @@ ul.mdui-list.ajax-comments {
 	-webkit-transition: all .2s;
 	transition: all .2s;
 }
+#comments-navi span.page-numbers {
+	display: inline-block;
+	margin: 2px 7px;
+	padding: 5px;
+}
 .mdui-theme-layout-dark #comments-navi a {
 	color: hsla(0,0%,100%,.5);
 }
