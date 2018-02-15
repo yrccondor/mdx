@@ -10,7 +10,6 @@ window.onscroll=function(){
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
-    //scrollDiff();
 }
 function scrollDiff(){
     var howFar = document.documentElement.scrollTop || document.body.scrollTop;

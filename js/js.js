@@ -150,6 +150,7 @@ $(function() {
         threshold : 200,
         container: $("#mdx-sp-out-c")
     });
+    scrollDiff();
  });
 
  //tap tp top
