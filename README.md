@@ -46,11 +46,11 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 
 ## Docs 文档
 
+[MDx 主题文档（为国内网络优化）](https://mdxdoc.flyhigher.top/)
+
 [MDx Docs](https://mdxdocs.flyhigher.top/)
 
 > English Docs are being translated.
-
-[MDx 主题文档（为国内网络优化）](https://mdxdoc.flyhigher.top/)
 
 
 ## License 许可证
