@@ -46,11 +46,11 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 
 ## Docs 文档
 
-[MDx Docs](https://flyhigher.top/mdx-docs-cn)
+[MDx Docs](https://mdxdocs.flyhigher.top/)
 
 > English Docs are being translated.
 
-[MDx 主题文档](https://flyhigher.top/mdx-docs-cn)
+[MDx 主题文档（为国内网络优化）](https://mdxdoc.flyhigher.top/)
 
 
 ## License 许可证
@@ -65,4 +65,4 @@ Open sourced under the GPL v3.0 license.
 
 ## Render 渲染
 
-![](https://img.flyhigher.top/det.jpg)
+![](https://img.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
