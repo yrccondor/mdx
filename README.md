@@ -43,6 +43,10 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 
 你可以前往 [这里](https://mdx.flyhigher.top) 下载 MDx。
 
+You can also download MDx from [Releases](https://github.com/yrccondor/mdx/releases). **DO NOT `clone` this repository just for downloading.**
+
+你也可以前往 [Releases](https://github.com/yrccondor/mdx/releases) 页下载 MDx。**请不要为了下载而 `clone` 这个仓库。**
+
 
 ## Docs 文档
 
