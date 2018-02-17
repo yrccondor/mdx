@@ -48,7 +48,6 @@ if((!empty($previous_post))&&(!empty($next_post))){?>
             <div class="page-footer-nav-chapter mdui-hidden-xs-down mdx-first-2"><?php echo esc_html(get_the_title($previous_post->ID));?></div>
           </div>
         </a>
-        <div class="mdui-col-xs-2 mdui-col-sm-6 page-footer-nav-right"></div>
   </div>
     </div>
   </div>
