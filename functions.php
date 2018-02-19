@@ -226,7 +226,7 @@ add_action('wp_enqueue_scripts', 'mdx_css');
 function mdx_js(){
 	wp_register_script('mdx_jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
 	wp_register_script('mdx_mdui_js', get_template_directory_uri().'/mdui/js/mdui.min.js', false, '', true);
-	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/smooth-lazyload.js', false, '', true);
+	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/lazyload.js', false, '', true);
 	wp_enqueue_script('mdx_jquery');
 	wp_enqueue_script('mdx_mdui_js');
 	if(get_option("mdx_auto_night_style")=="true"){

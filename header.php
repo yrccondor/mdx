@@ -9,6 +9,7 @@
 <?php }?>
 <?php if(is_home()){$mdx_js_name2='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name2='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name2='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name2='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name2='post';}else{$mdx_js_name2='js';}?>
 <link rel="preload" href="<?php echo get_bloginfo('template_url');?>/js/<?php echo $mdx_js_name2?>.js" as="script">
+<link rel="preload" href="<?php echo get_bloginfo('template_url');?>/mdui/icons/material-icons/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <title itemprop="name"><?php global $page, $paged;wp_title('-', true, 'right');
 bloginfo('name');$site_description = get_bloginfo('description', 'display');
 if($site_description && (is_home() || is_front_page())) echo " - $site_description";if($paged >= 2 || $page >= 2) echo ' - '.sprintf(__('第 %s 页'), max($paged, $page));?>
