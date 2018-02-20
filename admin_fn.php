@@ -196,6 +196,28 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><?php _e('使用 Preload 技术加速页面加载', 'mdx');?></th>
+<td>
+<?php $mdx_v_speed_pre=get_option('mdx_speed_pre');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_speed_pre" value="true" <?php if($mdx_v_speed_pre=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_speed_pre" value="false" <?php if($mdx_v_speed_pre=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('使用 Smooth Scroll', 'mdx');?></th>
+<td>
+<?php $mdx_v_smooth_scroll=get_option('mdx_smooth_scroll');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_smooth_scroll" value="true" <?php if($mdx_v_smooth_scroll=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_smooth_scroll" value="false" <?php if($mdx_v_smooth_scroll=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页面滚动异常。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_share_area"><?php _e('分享到的服务商', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_share_area=get_option('mdx_share_area');?>
