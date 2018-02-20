@@ -3,7 +3,7 @@
 <head>
 <meta charset="<?php bloginfo('charset');?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<?php if(get_option('mdx_speed_pre')=='true'){?>
+<?php if(get_option('mdx_speed_pre')=='true' && !is_404()){?>
 <?php if(is_home()){$mdx_js_name2='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name2='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name2='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name2='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name2='post';}else{$mdx_js_name2='js';}?>
 <link rel="preload" href="<?php echo get_bloginfo('template_url');?>/js/<?php echo $mdx_js_name2?>.js" as="script">
 <link rel="preload" href="<?php echo get_bloginfo('template_url');?>/mdui/icons/material-icons/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
