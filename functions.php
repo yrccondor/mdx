@@ -5,23 +5,21 @@ add_theme_support('post-formats', array('image','link','status','video','audio')
 register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
 
 //初始化
-function mdx_init_theme(){
-    if(!get_option('mdx_first_init')){
-        //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用
-        if(function_exists('file_get_contents')){
-            $opt = array(
-                'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
-            );
-            $contexts = stream_context_create($opt);
-            $mdx_token = file_get_contents('https://mdxupdate.flyhigher.top/mdx/gettoken/', false, $contexts);
-            $mdx_key = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getkey/index.php?hostname='.$_SERVER['HTTP_HOST'].'&token='.md5($mdx_token), false, $contexts);
-            update_option('mdx_first_init', 'fun-'.md5($mdx_key));
-        }else{
-            update_option('mdx_first_init', 'false');
-        }
-        include_once('admin_init_fn.php');
-        include_once('admin_init_style.php');
+if(!get_option('mdx_first_init')){
+    //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用
+    if(function_exists('file_get_contents')){
+        $opt = array(
+            'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
+        );
+        $contexts = stream_context_create($opt);
+        $mdx_token = file_get_contents('https://mdxupdate.flyhigher.top/mdx/gettoken/', false, $contexts);
+        $mdx_key = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getkey/index.php?hostname='.$_SERVER['HTTP_HOST'].'&token='.md5($mdx_token), false, $contexts);
+        update_option('mdx_first_init', 'fun-'.md5($mdx_key));
+    }else{
+        update_option('mdx_first_init', 'false');
     }
+    include_once('admin_init_fn.php');
+    include_once('admin_init_style.php');
 }
 
 //更新时初始化新功能
