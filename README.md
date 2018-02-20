@@ -10,7 +10,7 @@
 <img alt="Version" src="https://img.shields.io/badge/version-1.7.10-3f51b5.svg?style=flat-square"/>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.4%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-1.14M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-1.15M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 </p>
 
