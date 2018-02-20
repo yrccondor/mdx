@@ -29,11 +29,13 @@ $mdx_version_base = get_option('mdx_version');
 if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_speed_pre', 'false');
-	update_option('mdx_smooth-scroll', 'true');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.7.5"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.7.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_hot_posts', 'false');
@@ -44,6 +46,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.7.3"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_echo_post_sum', 'true');
@@ -73,6 +77,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
@@ -90,6 +96,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	require_once('admin_init_ver.php');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
@@ -110,6 +118,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -134,6 +144,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base=="1.4.1"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -158,6 +170,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }else if($mdx_version_base!="1.7.10"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
@@ -183,6 +197,8 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_speed_pre', 'false');
+	update_option('mdx_smooth_scroll', 'true');
 }
 
 //后台菜单添加
@@ -234,7 +250,7 @@ function mdx_js(){
 		wp_enqueue_script('mdx_ns_js');
 	}
 	if(get_option("mdx_smooth_scroll")=="true"){
-		wp_register_script('mdx_ss_js', get_template_directory_uri().'/js/smooth-scroll.js', false, '', true);
+		wp_register_script('mdx_ss_js', get_template_directory_uri().'/js/smooth.js', false, '', true);
 		wp_enqueue_script('mdx_ss_js');
 	}
 	if(get_option("mdx_real_search")=="true"){

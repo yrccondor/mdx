@@ -15,7 +15,7 @@ update_option('mdx_load_pro', 'true');
 update_option('mdx_post_list_1', 'view');
 update_option('mdx_post_list_2', 'time');
 update_option('mdx_speed_pre', 'false');
-update_option('mdx_smooth-scroll', 'true');
+update_option('mdx_smooth_scroll', 'true');
 update_option('mdx_share_area', 'all');
 update_option('mdx_tap_to_top', 'true');
 update_option('mdx_hot_posts', 'false');

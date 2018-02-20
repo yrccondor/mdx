@@ -26,6 +26,8 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
+	update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
+	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_share_area', $_POST['mdx_share_area']);
 	update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
