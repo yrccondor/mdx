@@ -12,6 +12,7 @@
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.4%2B-blue.svg?style=flat-square"/>
 <a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-1.15M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=shield"/></a>
 </p>
 
 
@@ -66,6 +67,9 @@ Open sourced under the GPL v3.0 license.
 
 根据 GPL V3.0 许可证开源。
 
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_large)
 
 ## Render 渲染
 
