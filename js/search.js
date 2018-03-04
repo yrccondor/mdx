@@ -38,7 +38,11 @@ function checkType(){
             }
             oldType = nowType;
         }else if(nowType == ''){
-            $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');
+            if(mdx_offline_mode){
+                $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
+            }else{
+                $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');
+            }
             oldType = nowType;
         }
     }

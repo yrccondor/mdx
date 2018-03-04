@@ -70,6 +70,11 @@ $(".seai").click(function(){
     $(".outOfSearch").css('width','75%');
     $(".seainput").focus();
     $('body').toggleClass('mdx-search-lock');
+    if(mdx_offline_mode){
+        $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
+        $('.OutOfsearchBox').css('pointer-events','auto');
+        $(".seainput").attr('disabled','disabled');
+    }
 });
 $(".sea-close").click(function(){
     $(".seainput").blur();

@@ -1,10 +1,13 @@
         <button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple"><i class="mdui-icon material-icons">&#xe316;</i></button>
       <footer class="foot mdui-text-center"><?php echo htmlspecialchars_decode(get_option('mdx_footer'));?><br><a href="http://www.miitbeian.gov.cn" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><script>lwlhitokoto()</script>';}?></footer>
     </div>
+    <script>var mdx_offline_mode = 0;</script>
     <?php $pageType=get_post_meta($wp_query->get_queried_object_id(),'_wp_page_template',true);?>
     <?php wp_footer();?>
     <?php if(get_option('mdx_real_search')=='true'){?>
     <script>
+    var tipMutiOff = '<?php _e('搜索功能暂时不可用。','mdx')?>';
+    var tipMutiOffRes = '<?php _e('评论功能暂时不可用。','mdx');?><br><br>';
     var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车转到搜索结果页面','mdx');?>';
     var snackMuti = '<?php _e('无法连接到实时搜索服务','mdx');?>';
     var moreMuti = '<?php echo get_option("mdx_readmore");?>';
