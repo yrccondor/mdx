@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
-        <span>404<span class="mdui-typo-headline">尴尬的是，这个页面貌似旅游去了</span></span>
+        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面貌似旅游去了','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
