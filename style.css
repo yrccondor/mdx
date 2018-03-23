@@ -1905,7 +1905,7 @@ li.menu-item i.mdui-icon {
 	color: #656565;
 	font-size: 22px;
 }
-body.mdui-theme-primary-reb #comments-navi span,body.mdui-theme-primary-red li.current-menu-item,body.mdui-theme-primary-red li.current-menu-item i.mdui-icon,body.mdui-theme-primary-red li.current_page_item,body.mdui-theme-primary-red li.current_page_item i.mdui-icon {
+body.mdui-theme-primary-red #comments-navi span,body.mdui-theme-primary-red li.current-menu-item,body.mdui-theme-primary-red li.current-menu-item i.mdui-icon,body.mdui-theme-primary-red li.current_page_item,body.mdui-theme-primary-red li.current_page_item i.mdui-icon {
 	color: #f44336;
 }
 body.mdui-theme-primary-pink #comments-navi span,body.mdui-theme-primary-pink li.current-menu-item,body.mdui-theme-primary-pink li.current-menu-item i.mdui-icon,body.mdui-theme-primary-pink li.current_page_item,body.mdui-theme-primary-pink li.current_page_item i.mdui-icon {
