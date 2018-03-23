@@ -5,8 +5,8 @@
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
-            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('去首页','mdx');?></a>
+            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页','mdx');?></a>
         <div>
     </div>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
