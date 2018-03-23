@@ -50,9 +50,8 @@ if(!function_exists('fa_ajax_comment_callback')) :
     <div class="mdui-list-item-avatar"><?php echo get_avatar($comment, $size = '80')?></div>
     <div class="mdui-list-item-content outbu" id="comment-82">
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?></div>
-    <div class="mdui-list-item-text mdui-typo">
-    <p class="mdui-typo"><?php comment_text();?></p>
-    </div></div></li><li class="mdui-divider-inset mdui-m-y-0"></li>
+    <div class="mdui-list-item-text mdui-typo"><?php comment_text();?>
+    </div><span class="mdx-reply-time"><?php _e('刚刚','mdx');?></span></div></li><li class="mdui-divider-inset mdui-m-y-0"></li>
         <?php die();
     }
 
