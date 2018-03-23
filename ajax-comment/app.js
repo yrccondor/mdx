@@ -3,26 +3,38 @@ jQuery(document).ready(function(jQuery) {
 		__cancel_text = __cancel.text(),
 		__list = 'ajax-comments';//your comment wrapprer
 	jQuery(document).on("submit", "#commentform", function() {
+		$('#submit').attr('disabled','disabled');
 		jQuery.ajax({
 			url: ajaxcomment.ajax_url,
+			timeout : 1000,
 			data: jQuery(this).serialize() + "&action=ajax_comment",
 			type: jQuery(this).attr('method'),
 			error: function(request) {
 				var t = addComment;
-				mdui.snackbar({
-                 	message: request.responseText,
-          			timeout: 5000,
-					position: 'top',
-        		});
+				$('#submit').removeAttr('disabled');
+				if(request.responseText){
+					mdui.snackbar({
+                 		message: request.responseText,
+          				timeout: 5000,
+						position: 'top',
+					});
+				}else{
+					mdui.snackbar({
+						message: '<strong>错误：</strong> 未知错误。',
+						timeout: 5000,
+					    position: 'top',
+				   });
+				}
 			},
 			success: function(data) {
+				$('#submit').removeAttr('disabled');
 				jQuery('textarea').each(function() {
 					this.value = ''
 				});
 				mdui.snackbar({
                  	message: '发射成功！',
-					  timeout: 5000,
-					  position: 'top',
+					timeout: 5000,
+					position: 'top',
 				});
 				var t = addComment,
 					cancel = t.I('cancel-comment-reply-link'),
