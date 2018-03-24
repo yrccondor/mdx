@@ -28,8 +28,8 @@ $mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$md
       </div>
     <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>2,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
     </div>
-    <header role="banner"><div class="titleBarGobal mdx-sh-ani mdui-appbar mdui-shadow-0 <?php if(get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBar">
-      <div class="mdui-toolbar mdui-toolbar-self mdui-appbar-fixed topBarAni">
+    <header role="banner"><div class="titleBarGobal mdx-sh-ani mdui-appbar-fixed mdui-appbar mdui-shadow-0 <?php if(get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBar">
+      <div class="mdui-toolbar mdui-toolbar-self topBarAni">
         <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true<?php if(get_option('mdx_open_side')=='true'){;?>,swipe:true<?php }?>}"><i class="mdui-icon material-icons">menu</i></button>
         <span class="mdui-typo-headline"><?php $mdx_logo=get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></span>
         <div class="mdui-toolbar-spacer"></div>
