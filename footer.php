@@ -43,11 +43,15 @@
       <script>
         var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
       </script>
-    <?php }else if(is_category()||is_archive()){?>
+    <?php }else if(is_author()){?>
+      <script>
+	  	 var acPageTitle = '<?php _e('作者归档：来自'.get_the_author(),'mdx');?>';
+      </script>
+      <?php } else if(is_category()||is_archive()){?>
       <script>
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
       </script>
-    <?php }?>
+    <?php } //}?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
       if(is_single()){
         $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
