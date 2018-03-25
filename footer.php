@@ -1,6 +1,21 @@
         <button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple"><i class="mdui-icon material-icons">&#xe316;</i></button>
-      <footer class="foot mdui-text-center"><?php echo htmlspecialchars_decode(get_option('mdx_footer'));?><br><a href="http://www.miitbeian.gov.cn" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><script>lwlhitokoto()</script>';}?></footer>
+      <footer class="foot mdui-text-center">Made with all my <i class="mdui-icon material-icons">&#xe87d;</i> by Minoyu & Vaidyu.<br><?php echo htmlspecialchars_decode(get_option('mdx_footer'));?><a href="http://www.miitbeian.gov.cn" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a>&nbsp·&nbsp Thanks To MDx <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><script>lwlhitokoto()</script>';}?></footer>
     </div>
+<script type="text/javascript" language="javascript">
+function thenceThen(timespan){
+ var date1=new Date(timespan);
+ var totalSecs=(new Date()-date1)/1000;
+ var days=Math.floor(totalSecs/3600/24);
+ var hours=Math.floor((totalSecs-days*24*3600)/3600);
+ var mins=Math.floor((totalSecs-days*24*3600-hours*3600)/60);
+ var secs=Math.floor((totalSecs-days*24*3600-hours*3600-mins*60));
+ document.getElementById("thenceThen").innerText="我们相互陪伴着走过了 "+days+"个日夜 "+hours+"小时 "+mins+"分钟 "+secs+"秒";
+}
+var clock;
+window.onload=function(){
+ clock=self.setInterval("thenceThen('2017/04/06')", 500);
+}
+</script>
     <script>var mdx_offline_mode = 0;</script>
     <?php $pageType=get_post_meta($wp_query->get_queried_object_id(),'_wp_page_template',true);?>
     <?php wp_footer();?>
@@ -43,11 +58,15 @@
       <script>
         var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
       </script>
-    <?php }else if(is_category()||is_archive()){?>
+    <?php }else if(is_author()){?>
+      <script>
+	  	 var acPageTitle = '<?php _e('作者归档：来自'.get_the_author(),'mdx');?>';
+      </script>
+      <?php } else if(is_category()||is_archive()){?>
       <script>
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
       </script>
-    <?php }?>
+    <?php } //}?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
       if(is_single()){
         $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
