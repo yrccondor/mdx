@@ -8,7 +8,7 @@
     <script>
     var tipMutiOff = '<?php _e('搜索功能暂时不可用。','mdx')?>';
     var tipMutiOffRes = '<?php _e('评论功能暂时不可用。','mdx');?><br><br>';
-    var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车转到搜索结果页面','mdx');?>';
+    var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面','mdx');?>';
     var snackMuti = '<?php _e('无法连接到实时搜索服务','mdx');?>';
     var moreMuti = '<?php echo get_option("mdx_readmore");?>';
     </script>
@@ -45,7 +45,7 @@
       </script>
     <?php }else if(is_author()){?>
       <script>
-	  	 var acPageTitle = '<?php _e('作者归档：来自'.get_the_author(),'mdx');?>';
+	  	 var acPageTitle = '<?php _e('作者归档：'.get_the_author(),'mdx');?>';
       </script>
       <?php } else if(is_category()||is_archive()){?>
       <script>
