@@ -24,7 +24,9 @@ if(!get_option('mdx_first_init')){
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
+if($mdx_version_base=="1.7.10"){
+	require_once('admin_init_ver.php');
+}else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
@@ -170,7 +172,7 @@ if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
-}else if($mdx_version_base!="1.7.10"){
+}else if($mdx_version_base!="1.8.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
