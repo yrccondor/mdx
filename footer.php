@@ -1,4 +1,4 @@
-        <button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple"><i class="mdui-icon material-icons">&#xe316;</i></button>
+<button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple"><i class="mdui-icon material-icons">&#xe316;</i></button>
       <footer class="foot mdui-text-center"><?php echo htmlspecialchars_decode(get_option('mdx_footer'));?><br><a href="http://www.miitbeian.gov.cn" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><script>lwlhitokoto()</script>';}?></footer>
     </div>
     <script>var mdx_offline_mode = 0;</script>
@@ -43,11 +43,15 @@
       <script>
         var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
       </script>
-    <?php }else if(is_category()||is_archive()){?>
+    <?php }else if(is_author()){?>
+      <script>
+	  	 var acPageTitle = '<?php _e('作者归档：来自'.get_the_author(),'mdx');?>';
+      </script>
+      <?php } else if(is_category()||is_archive()){?>
       <script>
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
       </script>
-    <?php }?>
+    <?php } //}?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
       if(is_single()){
         $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);
