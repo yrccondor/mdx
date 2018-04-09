@@ -72,6 +72,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_side_name', $_POST['mdx_side_name']);
 	update_option('mdx_side_more', $_POST['mdx_side_more']);
 	update_option('mdx_index_say', htmlentities(stripslashes($_POST['mdx_index_say'])));
+	update_option('mdx_index_say_size', $_POST['mdx_index_say_size']);
 	update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
 	update_option('mdx_say_after', htmlentities(stripslashes($_POST['mdx_say_after'])));
 	update_option('mdx_logo', $_POST['mdx_logo']);
@@ -290,6 +291,21 @@ wp_nonce_field('mdx_options_update');
 <td>
 <input name="mdx_index_say" type="text" id="mdx_index_say" value="<?php echo esc_attr(get_option('mdx_index_say'))?>" class="regular-text">
 <p class="description"><?php _e('这句话会展示在首页。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_index_say_size"><?php _e('首页格言字体大小', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_index_say_size=get_option('mdx_index_say_size');?>
+<select name="mdx_index_say_size" id="mdx_index_say_size">
+	<option value="1" <?php if($mdx_v_index_say_size=='1'){?>selected="selected"<?php }?>>H1</option>
+	<option value="2" <?php if($mdx_v_index_say_size=='2'){?>selected="selected"<?php }?>>H2</option>
+	<option value="3" <?php if($mdx_v_index_say_size=='3'){?>selected="selected"<?php }?>>H3</option>
+	<option value="4" <?php if($mdx_v_index_say_size=='4'){?>selected="selected"<?php }?>>H4</option>
+	<option value="5" <?php if($mdx_v_index_say_size=='5'){?>selected="selected"<?php }?>>H5</option>
+	<option value="6" <?php if($mdx_v_index_say_size=='6'){?>selected="selected"<?php }?>>H6</option>
+</select>
+<p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。', 'mdx');?></p>
 </td>
 </tr>
 <tr>

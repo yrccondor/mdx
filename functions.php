@@ -26,6 +26,7 @@ if(!get_option('mdx_first_init')){
 $mdx_version_base = get_option('mdx_version');
 if($mdx_version_base=="1.7.10"){
 	require_once('admin_init_ver.php');
+	update_option('mdx_index_say_size', '1');
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_speed_pre', 'false');

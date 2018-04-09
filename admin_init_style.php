@@ -19,6 +19,7 @@ update_option('mdx_side_more', '');
 update_option('mdx_index_say', 'Hello, MDx!');
 update_option('mdx_comment_emj', 'true');
 update_option('mdx_say_after', '');
+update_option('mdx_index_say_size', '1');
 update_option('mdx_logo', '');
 update_option('mdx_safari', 'false');
 update_option('mdx_svg', '');
