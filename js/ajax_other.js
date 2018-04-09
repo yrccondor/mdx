@@ -12,6 +12,9 @@ $(function(){
         $('div.nextpage2').hide();
         $('div.nextpage2').after('<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>');
         mdui.updateSpinners();
+        $.ajaxSetup({
+            timeout: 1000
+        })
         $.get(urlV,function(data,status){
             if(status=='success'){
                 var nowValue = $('#postlist').html();
@@ -30,6 +33,12 @@ $(function(){
                 $(".LazyLoadListImg").lazyload({
                     threshold : 100,
                 });
+            }else{
+                mdui.snackbar({
+                    message: '<strong>加载失败：</strong> 未知错误。',
+                    timeout: 5000,
+                    position: 'top',
+               });
             }
         });
     });
