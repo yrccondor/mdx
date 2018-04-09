@@ -44,6 +44,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_hot_posts', 'false');
@@ -56,6 +64,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.3"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_echo_post_sum', 'true');
@@ -68,6 +84,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_post_def_img', 'ture');
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.2"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
@@ -87,6 +111,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_share_area', 'all');
@@ -106,6 +138,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	require_once('admin_init_ver.php');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
@@ -128,6 +168,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -154,6 +202,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.4.1"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_comment_emj', 'true');
@@ -180,6 +236,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base!="1.8.0"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_img_box', 'true');
@@ -207,6 +271,14 @@ if($mdx_version_base=="1.7.10"){
 	update_option('mdx_footer_js', '');
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }
 
 //后台菜单添加
