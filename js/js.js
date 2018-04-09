@@ -146,10 +146,14 @@ $(function() {
     $("div.LazyLoad").lazyload({
         effect : "fadeIn",
         threshold : 500,
-      });
-      $(".LazyLoadListImg").lazyload({
+    });
+    $(".LazyLoadListImg").lazyload({
         threshold : 100,
-      });
+    });
+    $("img.LazyLoadPost").lazyload({
+        effect : "fadeIn",
+        threshold : 200,
+    });
     $("li.LazyLoadSamePost").lazyload({
         effect : "fadeIn",
         threshold : 200,

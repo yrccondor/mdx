@@ -300,8 +300,8 @@ $(function() {
     $("div.LazyLoad").lazyload({
         effect : "fadeIn",
         threshold : 300,
-      });
-      $("img.LazyLoadPost").lazyload({
+    });
+    $("img.LazyLoadPost").lazyload({
         effect : "fadeIn",
         threshold : 200,
     });
@@ -468,12 +468,3 @@ $(function(){
     })
     var inst = new mdui.Collapse("#mdx_menu");
 })
-
-function mdx_splitFileName(text) {
-    var pattern = /\.{1}[a-z]{1,}$/;
-    if (pattern.exec(text) !== null) {
-        return (text.slice(0, pattern.exec(text).index));
-    } else {
-        return text;
-    }
-}

@@ -36,7 +36,7 @@ div.mdui-card>div>div>div>a {
 .click:hover {
 	opacity: .5;
 }
-body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
+body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc,body.customize-support #titleBar {
 	top: 2pc;
 }
 .theFirstPage {
