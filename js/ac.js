@@ -97,7 +97,7 @@ $(function() {
         effect : "fadeIn",
         threshold : 500,
       });
-      $("img.LazyLoadListImg").lazyload({
+      $(".LazyLoadListImg").lazyload({
         threshold : 100,
       });
 

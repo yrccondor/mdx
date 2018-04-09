@@ -93,8 +93,21 @@ $(function(){
     
         //ImgBox
         if(mdx_imgBox==1){
-        $('article a > img').addClass("mdx-img-in-post");
-        $('article a > img').unwrap();
+            $('article a > img').each(function(){
+                var imgUrlEach = $(this).attr('src');
+                if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
+                    imgUrlEach = $(this).attr('data-original');
+                }
+                var imgHref = $(this).parent("a").attr('href').split('.')
+                imgHref.pop();
+                var imgHrefa = imgHref.join('.') + '-';
+                if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("a").attr('href')){
+                    $(this).addClass("mdx-img-in-post");
+                    $(this).unwrap();
+                }else{
+                    $(this).parent("a").addClass("mdx-img-in-post-with-link");
+                }
+            });
         $('img.mdx-img-in-post').click(function(){
             var imgUrl = $(this).attr('src');
             if(imgUrl=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){

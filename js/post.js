@@ -139,7 +139,10 @@ $(function(){
             if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
                 imgUrlEach = $(this).attr('data-original');
             }
-            if(imgUrlEach == $(this).parent("a").attr('href')){
+            var imgHref = $(this).parent("a").attr('href').split('.')
+            imgHref.pop();
+            var imgHrefa = imgHref.join('.') + '-';
+            if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("a").attr('href')){
                 $(this).addClass("mdx-img-in-post");
                 $(this).unwrap();
             }else{
@@ -465,3 +468,12 @@ $(function(){
     })
     var inst = new mdui.Collapse("#mdx_menu");
 })
+
+function mdx_splitFileName(text) {
+    var pattern = /\.{1}[a-z]{1,}$/;
+    if (pattern.exec(text) !== null) {
+        return (text.slice(0, pattern.exec(text).index));
+    } else {
+        return text;
+    }
+}
