@@ -303,6 +303,9 @@ article img {
 	max-width: 100%;
 	cursor: pointer;
 }
+article iframe,article embed,article video {
+	width: 100% !important;
+}
 article a {
 	color: #2196f3;
 	-webkit-transition: all .3s;
