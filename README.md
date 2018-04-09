@@ -68,9 +68,6 @@ Open sourced under the GPL v3.0 license.
 根据 GPL V3.0 许可证开源。
 
 
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_large)
-
 ## Render 渲染
 
 ![](https://img.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
