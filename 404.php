@@ -10,7 +10,9 @@
         <div>
     </div>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
+    <?php if(get_option("mdx_auto_night_style")=="true"){?>
     <script src="<?php bloginfo('template_url'); ?>/js/nsc.js"></script>
+    <?php }?>
     <script>
     $(function(){
         if(sessionStorage.getItem('ns_night-styles')=='true'){
