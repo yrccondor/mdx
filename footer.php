@@ -27,8 +27,14 @@
       }
       var ifscr = 0;
       var moreinput = "'<?php _e("更多选项","mdx");?>'";
+      var morecomment = "<?php _e("加载更多评论","mdx");?>";
+      var nomorecomment = "<?php _e("没有更多了","mdx");?>";
       <?php if(get_option('mdx_auto_scroll')=='true'){?>
         ifscr = 1;
+      <?php }?>
+      var mdx_comment_ajax = 0;
+      <?php if(get_option('mdx_comment_ajax')=='true'){?>
+        mdx_comment_ajax = 1;
       <?php }?>
       var mdx_imgBox = 0;
       <?php if(get_option('mdx_img_box')=='true'){?>
@@ -51,7 +57,7 @@
       <script>
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
       </script>
-    <?php } //}?>
+    <?php }?>
     <?php if(is_single() || (is_page()&&$pageType=='page-postlike.php')){
       if(is_single()){
         $mdx_style_act_hex = get_post_meta((int)$post->ID, "mdx_styles_act_hex", true);

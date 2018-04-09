@@ -27,6 +27,7 @@ update_option('mdx_you_may_like', 'false');
 update_option('mdx_you_may_like_way', 'tag');
 update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
 update_option('mdx_real_search', 'false');
+update_option('mdx_comment_ajax', 'true');
 update_option('mdx_seo_key', '');
 update_option('mdx_auto_des', 'true');
 update_option('mdx_seo_des', '');

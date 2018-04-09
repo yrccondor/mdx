@@ -39,6 +39,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
 	update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	update_option('mdx_real_search', $_POST['mdx_real_search']);
+	update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
 	update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	update_option('mdx_auto_des', $_POST['mdx_auto_des']);
 	update_option('mdx_seo_des', htmlentities(stripslashes($_POST['mdx_seo_des'])));
@@ -303,6 +304,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_real_search" value="true" <?php if($mdx_v_real_search=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_real_search" value="false" <?php if($mdx_v_real_search=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('评论无限加载', 'mdx');?></th>
+<td>
+<?php $mdx_v_comment_ajax=get_option('mdx_comment_ajax');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_comment_ajax" value="true" <?php if($mdx_v_comment_ajax=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_comment_ajax" value="false" <?php if($mdx_v_comment_ajax=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 AJAX 加载。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>

@@ -80,6 +80,9 @@ $("#tgns").click(function(){
 });
 
 $(function(){
+    if(mdx_comment_ajax){
+        $('#comments-navi').html('<button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'">'+morecomment+'</button>');
+    }
     if(sessionStorage.getItem('ns_night-styles')=='true'){
         $("body").addClass("mdui-theme-layout-dark");
         $("meta[name='theme-color']").attr('content',"#212121");
@@ -245,36 +248,72 @@ $(function() {
  });
  
 // 评论分页
-$('#comments').on('click', '#comments-navi > a', function(e){
-    e.preventDefault();
-    $.ajax({
-        type: "GET",
-        url: $(this).attr('href'),
-        beforeSend: function(){
-            $('#comments-navi').remove();
-            $('ul.mdui-list.ajax-comments').remove();
-            $('.mdx-comments-loading').fadeIn(200);
-            $("body,html").animate({scrollTop: $('#reply-title').offset().top - 65}, 500 );
-        },
-        dataType: "html",
-        success: function(out){
-            result = $(out).find('ul.mdui-list.ajax-comments');
-            nextlink = $(out).find('#comments-navi');
-            $('.mdx-comments-loading').hide();
-            $('#comments').prepend(result);
-            $('ul.mdui-list.ajax-comments').after(nextlink);
-            $("img.LazyLoadPost.avatar").lazyload({
-                effect : "fadeIn",
-                threshold : 200,
-            });
-            $("div#comments ul li p").addClass('mdui-typo');
-            $('.comment-reply-link').addClass("mdui-btn");
-            $('.comment-reply-link').css("opacity","0");
-            $('.comment-reply-login').addClass("mdui-btn");
-            $('.comment-reply-login').css("opacity","0");
-        }
+if(!mdx_comment_ajax){
+    $('#comments').on('click', '#comments-navi > a', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: "GET",
+            url: $(this).attr('href'),
+            beforeSend: function(){
+                $('#comments-navi').remove();
+                $('ul.mdui-list.ajax-comments').remove();
+                $('.mdx-comments-loading').fadeIn(200);
+                $("body,html").animate({scrollTop: $('#reply-title').offset().top - 65}, 500 );
+            },
+            dataType: "html",
+            success: function(out){
+                result = $(out).find('ul.mdui-list.ajax-comments');
+                nextlink = $(out).find('#comments-navi');
+                $('.mdx-comments-loading').hide();
+                $('#comments').prepend(result);
+                $('ul.mdui-list.ajax-comments').after(nextlink);
+                $("img.LazyLoadPost.avatar").lazyload({
+                    effect : "fadeIn",
+                    threshold : 200,
+                });
+                $("div#comments ul li p").addClass('mdui-typo');
+                $('.comment-reply-link').addClass("mdui-btn");
+                $('.comment-reply-link').css("opacity","0");
+                $('.comment-reply-login').addClass("mdui-btn");
+                $('.comment-reply-login').css("opacity","0");
+            }
+        });
     });
-});
+    }else{
+    $('#comments').on('click', '#comments-navi > button', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: "GET",
+            url: $(this).attr('data-comment-url'),
+            beforeSend: function(){
+                $('#comments-navi').remove();
+                $('.mdx-comments-loading').fadeIn(200);
+            },
+            dataType: "html",
+            success: function(out){
+                result = $(out).find('ul.mdui-list.ajax-comments').html();
+                nextUrl = $(out).find('#comments-navi>a.prev').attr('href');
+                if(nextUrl){
+                    nextlink = $(out).find('#comments-navi').html('<button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple" data-comment-url="'+$(out).find('#comments-navi>a.prev').attr('href')+'">'+morecomment+'</button>');
+                }else{
+                    nextlink = $(out).find('#comments-navi').html('<button class="mdui-btn" disabled>'+nomorecomment+'</button>');
+                }
+                $('.mdx-comments-loading').hide();
+                $('ul.mdui-list.ajax-comments').after(nextlink);
+                $('ul.mdui-list.ajax-comments').html($('ul.mdui-list.ajax-comments').html()+result);
+                $("img.LazyLoadPost.avatar").lazyload({
+                    effect : "fadeIn",
+                    threshold : 200,
+                });
+                $("div#comments ul li p").addClass('mdui-typo');
+                $('.comment-reply-link').addClass("mdui-btn");
+                $('.comment-reply-link').css("opacity","0");
+                $('.comment-reply-login').addClass("mdui-btn");
+                $('.comment-reply-login').css("opacity","0");
+            }
+        });
+    });
+    }
 
 //tap tp top
 $('.mdui-typo-headline').click(function(){

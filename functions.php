@@ -33,6 +33,7 @@ if($mdx_version_base=="1.7.10"){
 		update_option('mdx_logo_way', '2');
 	}
 	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	require_once('admin_init_ver.php');
 	update_option('mdx_speed_pre', 'false');
