@@ -1,4 +1,14 @@
 jQuery(document).ready(function(){
+    var selectVO = document.getElementById('mdx_logo_way').options[document.getElementById('mdx_logo_way').options.selectedIndex].value;
+    if(selectVO == '1'){
+        jQuery('.logo_logo,.logo_text').hide();
+    }else if(selectVO == '2'){
+        jQuery('.logo_text').hide();
+        jQuery('.logo_logo').show();
+    }else if(selectVO == '3'){
+        jQuery('.logo_text').show();
+        jQuery('.logo_logo').hide();
+    }
     var whichButton=0;
     //上传按钮id
     jQuery('#insert-media-button').click(function(){
@@ -138,4 +148,15 @@ function img3(){
 function img4(){
     var img4=jQuery("#mdx_mdx_logo").val();
     jQuery('#img4').attr('src',img4);
+}
+function mdx_logo_sec(selectV){
+    if(selectV == '1'){
+        jQuery('.logo_logo,.logo_text').hide();
+    }else if(selectV == '2'){
+        jQuery('.logo_text').hide();
+        jQuery('.logo_logo').show();
+    }else if(selectV == '3'){
+        jQuery('.logo_text').show();
+        jQuery('.logo_logo').hide();
+    }
 }

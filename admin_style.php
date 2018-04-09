@@ -75,7 +75,9 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_index_say_size', $_POST['mdx_index_say_size']);
 	update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
 	update_option('mdx_say_after', htmlentities(stripslashes($_POST['mdx_say_after'])));
+	update_option('mdx_logo_way', $_POST['mdx_logo_way']);
 	update_option('mdx_logo', $_POST['mdx_logo']);
+	update_option('mdx_logo_text', $_POST['mdx_logo_text']);
 	update_option('mdx_safari', $_POST['mdx_safari']);
 	update_option('mdx_svg', $_POST['mdx_svg']);
 	if($_POST['mdx_svg_color']=='--SaveToUseTheThemeColor--'){
@@ -325,12 +327,29 @@ wp_nonce_field('mdx_options_update');
 	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 <code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的文章标题，<code>--PostURL--</code> 会被替换为链接到当前文章的当前文章 URL（大小写敏感）。', 'mdx');?></p></td>
 </tr>
 <tr>
-<th scope="row"><?php _e('网站 Logo', 'mdx');?></th>
+<th scope="row"><label for="mdx_logo_way"><?php _e('顶部栏显示内容', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_logo_way=get_option('mdx_logo_way');?>
+<select name="mdx_logo_way" id="mdx_logo_way" onchange="mdx_logo_sec(this.options[this.options.selectedIndex].value)">
+	<option value="1" <?php if($mdx_v_logo_way=='1'){?>selected="selected"<?php }?>>博客名称</option>
+	<option value="2" <?php if($mdx_v_logo_way=='2'){?>selected="selected"<?php }?>>自定义 Logo</option>
+	<option value="3" <?php if($mdx_v_logo_way=='3'){?>selected="selected"<?php }?>>自定义名称</option>
+</select>
+</td>
+</tr>
+<tr class="logo_logo">
+<th scope="row"><?php _e('顶部栏 Logo', 'mdx');?></th>
 <td>
 <input name="mdx_logo" type="url" id="mdx_logo" value="<?php echo esc_attr(get_option('mdx_logo'))?>" class="regular-text">
 <button type="button" id="insert-media-button-2" class="button"><?php _e('选择图片', 'mdx');?></button>
-<p class="description"><?php _e('选择一张图片作为网站 Logo，若留空则会显示网站名称。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
+<p class="description"><?php _e('选择一张图片作为网站 Logo。', 'mdx');?></p>
 <img id="img4" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
+</td>
+</tr>
+<tr class="logo_text">
+<th scope="row"><?php _e('顶部栏自定义名称', 'mdx');?></th>
+<td>
+<input name="mdx_logo_text" type="text" id="mdx_logo_text" value="<?php echo esc_attr(get_option('mdx_logo_text'))?>" class="regular-text">
 </td>
 </tr>
 <tr>
