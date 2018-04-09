@@ -198,7 +198,6 @@ wp_nonce_field('mdx_options_update');
 	<option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('在此设置首页样式样式。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -277,7 +276,6 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('抽屉菜单信息名称', 'mdx');?></th>
 <td>
 <input name="mdx_side_name" type="text" id="mdx_side_name" value="<?php echo esc_attr(get_option('mdx_side_name'))?>" class="regular-text mdx_stbsip2" required="required">
-<p class="description"><?php _e('填写抽屉信息的名称。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -301,14 +299,14 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_comment_emj" value="true" <?php if($mdx_v_comment_emj=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_comment_emj" value="false" <?php if($mdx_v_comment_emj=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href="https://flyhigher.top/mdx-docs-cn" target="_blank">MDx文档</a> 下载更适用于 MDx 的魔改版，或前往 <a href="https://github.com/mayuko2012/WP-Alu2Button" target="_blank">Github</a> 下载原版插件。注意：原版插件经测试可能不兼容 MDx。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href="https://flyhigher.top/mdx-docs-cn" target="_blank">MDx文档</a> 下载插件安装包。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
 <tr>
 	<th scope="row"><label for="mdx_say_after"><?php _e('文末信息', 'mdx');?></label></th>
 	<td><textarea name="mdx_say_after" id="mdx_say_after" rows="7" cols="50"><?php echo get_option('mdx_say_after')?></textarea>
-	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 <code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的文章标题，<code>--PostURL--</code> 会被替换为链接到当前文章的当前文章 URL（大小写敏感）。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('网站 Logo', 'mdx');?></th>

@@ -180,7 +180,6 @@ wp_nonce_field('mdx_options_update');
 	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>>发表时间</option>
 	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>>评论数</option>
 </select>
-<p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -236,7 +235,7 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" name="mdx_tap_to_top" value="true" <?php if($mdx_v_tap_to_top=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_tap_to_top" value="false" <?php if($mdx_v_tap_to_top=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，点击顶部栏可以返回页面顶部，具体效果参考 知乎/QQ 空间 客户端。此设置影响所有页面。</strong>', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，点击顶部栏可以返回页面顶部。此设置影响所有页面。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -289,14 +288,12 @@ wp_nonce_field('mdx_options_update');
 	<fieldset>
 	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="tag" <?php if($mdx_v_you_may_like_way=='tag'){?>checked="checked"<?php }?>> <?php _e('相同标签')?></label><br>
 	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="category" <?php if($mdx_v_you_may_like_way=='category'){?>checked="checked"<?php }?>> <?php _e('相同分类')?></label><br>
-	<p class="description"><?php _e('在此选择相似文章的计算方式。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_you_may_like_text"><?php _e('文末推荐文章模块标题', 'mdx');?></label></th>
 <td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(get_option('mdx_you_may_like_text'))?>" class="regular-text mdx_apspc">
-<p class="description"><?php _e('在此设置推荐文章模块的标题。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('实时搜索', 'mdx');?></th>
