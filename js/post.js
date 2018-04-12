@@ -118,7 +118,7 @@ $("#tgns").click(function(){
 });
 
 $(function(){
-    if(mdx_comment_ajax){
+    if(mdx_comment_ajax && $('#comments-navi>a.prev').attr('href')){
         $('#comments-navi').html('<button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'">'+morecomment+'</button>');
     }
     if(sessionStorage.getItem('ns_night-styles')=='true'){
