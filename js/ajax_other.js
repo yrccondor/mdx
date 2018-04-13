@@ -13,7 +13,7 @@ $(function(){
         $('div.nextpage2').after('<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>');
         mdui.updateSpinners();
         $.ajaxSetup({
-            timeout: 1000
+            timeout: 15000
         })
         $.get(urlV,function(data,status){
             if(status=='success'){
