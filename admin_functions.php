@@ -41,6 +41,7 @@ function mdx_display_sub_function_three(){
         $contexts1 = stream_context_create($opt1);
         $mdx_data = json_decode(file_get_contents('https://update.dlij.site/mdx/info.json', false, $contexts1));
         $mdx_now_version = $mdx_data->version;
+        update_option('mdx_new_ver',$mdx_now_version);
     }else{
         $mdx_now_version = '版本号获取失败';
     }
@@ -50,7 +51,7 @@ function mdx_display_sub_function_three(){
     }
 
     $mdx_php_content = file_get_contents(get_theme_root()."/mdx/footer.php");
-    $mdx_results = strpos($mdx_php_content, '<a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a>');
+    $mdx_results = strpos($mdx_php_content, 'href="https://flyhigher.top"');
     $mdx_ifedit = '';
     if($mdx_results === false){
         $mdx_ifedit = '<div class="notice notice-error">

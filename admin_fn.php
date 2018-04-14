@@ -58,6 +58,11 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 </div>
 <?php
 }?>
+<?php if(get_option('mdx_new_ver') != get_option('mdx_version')){?>
+<div class="notice notice-info is-dismissible">
+<p><?php _e('MDx 已发布新版本 ', 'mdx');echo get_option('mdx_new_ver');_e('。<a href="/wp-admin/admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
+</div>
+<?php }?>
 <form method="post" action="">
 <?php
 wp_nonce_field('mdx_options_update');

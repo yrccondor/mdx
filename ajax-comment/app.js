@@ -6,7 +6,7 @@ jQuery(document).ready(function(jQuery) {
 		$('#submit').attr('disabled','disabled');
 		jQuery.ajax({
 			url: ajaxcomment.ajax_url,
-			timeout : 1000,
+			timeout : 15000,
 			data: jQuery(this).serialize() + "&action=ajax_comment",
 			type: jQuery(this).attr('method'),
 			error: function(request) {
