@@ -389,8 +389,7 @@ function mdx_remove_wp_version_strings($src){
   global $wp_version;
   parse_str(parse_url($src, PHP_URL_QUERY), $query);
   if ( !empty($query['ver']) && $query['ver'] === $wp_version ) {
-    // 用WP版本号 + 37.45来替代js/css附加的版本号
-    $src = str_replace($wp_version, $wp_version + 37.45, $src);
+    $src = str_replace($wp_version, get_option('mdx_commit_version'), $src);
   }
   return $src;
 }
