@@ -86,7 +86,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
-                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('share_oversea.php');}?>
+                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php if (get_the_tags()){the_tags('',' ','');}else{_e('没有标签','mdx');}?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');?></span>
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?><?php if(get_option('mdx_you_may_like')=="true"){include_once("same_posts.php");}comments_template();?>
@@ -127,7 +127,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
-                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('share_oversea.php');}?>
+                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php if (get_the_tags()){the_tags('',' ','');}else{_e('没有标签','mdx');}?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');?></span>
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?>
@@ -168,7 +168,7 @@ $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_im
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
-                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('share_oversea.php');}?>
+                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php if (get_the_tags()){the_tags('',' ','');}else{_e('没有标签','mdx');}?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');?></span>
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?>
