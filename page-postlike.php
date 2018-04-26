@@ -60,12 +60,15 @@ $pageType = 3;
                 </div>
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
-                <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions mdui-typo">
-                    <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions mdui-typo">
+                        <?php 
+                            $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
+                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
+                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                    <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -95,12 +98,15 @@ $pageType = 3;
                 </div>
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
-                <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions mdui-typo">
-                    <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions mdui-typo">
+                        <?php 
+                            $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
+                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
+                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                    <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -131,12 +137,15 @@ $pageType = 3;
                 </div>
                 <?php }?>
                 <?php if(get_option('mdx_say_after')!=''){?>
-                <div class="mdui-card mdx-say-after">
-                    <div class="mdui-card-actions mdui-typo">
-                    <?php echo htmlspecialchars_decode(get_option('mdx_say_after'));?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions mdui-typo">
+                        <?php 
+                            $mdx_info = htmlspecialchars_decode(get_option('mdx_say_after'));
+                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
+                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                        </div>
                     </div>
-                </div>
-                <?php }?>
+                    <?php }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
