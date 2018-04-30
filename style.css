@@ -1805,6 +1805,9 @@ body.mdui-theme-primary-blue-grey ::-ms-selection {
 .linkcat,ul.blogroll>li {
 	list-style: none;
 }
+.linkcat a::before {
+	display: none;
+}
 ul.blogroll>li {
 	float: left;
 	display: inline-block;
