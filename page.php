@@ -33,7 +33,8 @@ $pageType = 1;?>
         </div></header>
         <?php get_template_part('searchform')?>
         <div class="mdui-text-color-white-text mdui-typo-display-1 mdui-valign PostTitlePage" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
-        <div class="PostTitleFillPage mdui-color-theme LazyLoad" data-original="<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{bloginfo("template_url");echo "/img/dpic.jpg";}?>" id="PostTitleFillPage"></div>
+        <?php if($full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_image_url!=""){?>
+        <div class="PostTitleFillPage mdui-color-theme LazyLoad" data-original="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
         <div class="PostTitleFillPageBackGround mdui-color-theme"></div>
         <div class="PostMain PostMainPage">
             <div class="ArtMain mdui-center mdui-typo">
