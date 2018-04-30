@@ -24,7 +24,7 @@ if(!get_option('mdx_first_init')){
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1"){
+if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2"){
 	include('includes/admin_init_ver.php');
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
@@ -236,7 +236,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1"){
 	}
 	update_option('mdx_logo_text', '');
 	update_option('mdx_comment_ajax', 'false');
-}else if($mdx_version_base!="1.8.2"){
+}else if($mdx_version_base!="1.8.3"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
