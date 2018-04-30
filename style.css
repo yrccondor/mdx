@@ -813,6 +813,9 @@ body.mdui-theme-layout-dark .seainput {
 .searchCard h1 {
 	margin-top: 5px;
 }
+.searchCard a::before {
+	display: none;
+}
 body.mdui-theme-layout-dark .searchCard {
 	background-color: #383838;
 	color: hsla(0,0%,100%,.87);

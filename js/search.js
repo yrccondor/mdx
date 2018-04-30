@@ -70,7 +70,7 @@ function readRes(data, ifSession){
             var postUrlInApi = data2[i].link;
             var postDesInApi = data2[i].excerpt.rendered;
             var nowBoxValue =  $('.OutOfsearchBox').html();
-            $('.OutOfsearchBox').html(nowBoxValue+'<article class="searchCard mdui-shadow-2 mdui-typo"><a href="'+postUrlInApi+'"><h1>'+postTitleInApi+'</h1></a><p>'+postDesInApi.replace(' [&hellip;]', '&hellip;')+'</p><div class="mdui-divider underline"></div><span class="info">&nbsp;&nbsp;<i class="mdui-icon material-icons info-icon">&#xe192;</i> '+postTimeInApi.substring(0,10)+'</span><a class="mdui-btn mdui-ripple mdui-ripple-white coun-read" href="'+postUrlInApi+'">'+moreMuti+'</a></article>');
+            $('.OutOfsearchBox').html(nowBoxValue+'<article class="searchCard mdui-shadow-2 mdui-typo"><a href="'+postUrlInApi+'"><h1>'+postTitleInApi+'</h1></a><p>'+postDesInApi.replace(' [&hellip;]', '&hellip;').replace('<p>', '').replace('</p>', '')+'</p><div class="mdui-divider underline"></div><span class="info">&nbsp;&nbsp;<i class="mdui-icon material-icons info-icon">&#xe192;</i> '+postTimeInApi.substring(0,10)+'</span><a class="mdui-btn mdui-ripple mdui-ripple-white coun-read" href="'+postUrlInApi+'">'+moreMuti+'</a></article>');
         }
     }
     if(data2.length == 10){
