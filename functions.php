@@ -3,6 +3,9 @@
 add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('image','link','status','video','audio'));
 register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
+if(get_option('mdx_title_med')=="wp"){
+	add_theme_support('title-tag');
+}
 
 //初始化
 if(!get_option('mdx_first_init')){
@@ -25,7 +28,7 @@ if(!get_option('mdx_first_init')){
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
 if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2"){
-	include('includes/admin_init_ver.php');
+	update_option('mdx_title_med', 'wp');
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){

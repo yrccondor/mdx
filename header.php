@@ -12,10 +12,12 @@
 <?php if(get_option('mdx_safari')=="true"){?>
 <link rel="mask-icon" href="<?php echo get_option('mdx_svg');?>" color="<?php echo get_option('mdx_svg_color');?>">
 <?php }?>
+<?php if(get_option("mdx_title_med") == "diy"){?>
 <title itemprop="name"><?php global $page, $paged;wp_title('-', true, 'right');
 bloginfo('name');$site_description = get_bloginfo('description', 'display');
 if($site_description && (is_home() || is_front_page())) echo " - $site_description";if($paged >= 2 || $page >= 2) echo ' - '.sprintf(__('第 %s 页'), max($paged, $page));?>
 </title>
+<?php }?>
 <?php if(is_single() || is_page()){
     if(function_exists('get_query_var')){
         $cpage = intval(get_query_var('cpage'));

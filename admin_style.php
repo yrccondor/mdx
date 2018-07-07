@@ -59,6 +59,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
 	update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	update_option('mdx_title_bar', $_POST['mdx_title_bar']);
+	update_option('mdx_title_med', $_POST['mdx_title_med']);
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_default_style', $_POST['mdx_default_style']);
 	update_option('mdx_index_show', $_POST['mdx_index_show']);
@@ -183,6 +184,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_title_bar" value="false" <?php if($mdx_v_title_bar=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，页面向下滚动时应用栏会向上隐藏，向上滚动时会出现。', 'mdx');?></p>
 	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_title_med"><?php _e('网页标题计算方式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_title_med=get_option('mdx_title_med');?>
+<select name="mdx_title_med" id="mdx_title_med">
+	<option value="wp" <?php if($mdx_v_title_med=='wp'){?>selected="selected"<?php }?>><?php _e('WordPress 默认', 'mdx');?></option>
+	<option value="diy" <?php if($mdx_v_title_med=='diy'){?>selected="selected"<?php }?>><?php _e('MDx 优化', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此方式在部分情况下更合适，但不兼容 SEO 插件。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
