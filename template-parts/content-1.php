@@ -2,7 +2,7 @@
     <div class="mdui-card postDiv mdui-center mdui-hoverable">
     <div class="mdui-card-actions">
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme-accent ainList"><h1><?php the_title();?></h1></a>
-        <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mdx_get_post_excerpt($post, 250);}?><p><?php }?>
+        <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 250);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p><?php }?>
         <div class="mdui-divider underline"></div>
         <?php
         $mdx_more_1 = get_option("mdx_post_list_1");
@@ -33,7 +33,7 @@
         <div class="mdui-card-media-covered ct1">
             <div class="mdui-card-primary">
                 <a href="<?php the_permalink();?>"><div class="mdui-card-primary-title"><?php the_title();?></div></a>
-                <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><div class="mdui-card-primary-subtitle"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{echo mdx_get_post_excerpt($post, 120);}?></div><?php }?>
+                <?php if(get_option("mdx_echo_post_sum")=="true"){ ?><div class="mdui-card-primary-subtitle"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 120);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要。");}}?></div><?php }?>
             </div>
         </div>
     </div>
