@@ -43,6 +43,14 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
+	update_option('mdx_index_say_size', '1');
+	if(get_option('mdx_logo')==''){
+		update_option('mdx_logo_way', '1');
+	}else{
+		update_option('mdx_logo_way', '2');
+	}
+	update_option('mdx_logo_text', '');
+	update_option('mdx_comment_ajax', 'false');
 }else if($mdx_version_base=="1.7.5"){
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
