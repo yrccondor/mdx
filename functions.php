@@ -439,6 +439,33 @@ function comment_add_at( $comment_text, $comment=''){
     }
 add_filter('comment_text', 'comment_add_at', 10, 2);
 
+//获取链接
+function get_link_items(){
+    $linkcats = get_terms('link_category');
+    if(!empty($linkcats)){
+        foreach($linkcats as $linkcat){            
+            $result.='<h3 class="link-title">'.$linkcat->name.'</h3>';
+            if($linkcat->description)$result .= '<div class="link-description">'.$linkcat->description.'</div>';
+            $result .=  get_the_link_items($linkcat->term_id);
+        }
+    }else{
+        $result = get_the_link_items();
+    }
+    return $result;
+}
+function get_the_link_items($id = null){
+	$bookmarks = get_bookmarks('category='.$id);
+	$output = '';
+    if(!empty($bookmarks)){
+        $output.='<div class="mdui-container">';
+        foreach($bookmarks as $bookmark){
+			$output.= '<div class="mdui-row mdui-col-xs-12 mdui-col-sm-6 links-co"><a href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme" style="background-image:url('.$bookmark->link_image.')"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title"><a href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+        }
+        $output .= '</div>';
+    }
+    return $output;
+}
+
 //获取摘要
 function mdx_get_post_excerpt($post, $excerpt_length=150){
     if(!$post) $post = get_post();

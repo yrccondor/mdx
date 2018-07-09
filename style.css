@@ -2009,11 +2009,50 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
 div.mdui-toolbar>.mdui-typo-headline {
 	margin: 0 2px!important;
 }
-.post_list_t_img {
+.links-co {
+	margin-top: 5px;
+	padding-left: 3px!important;
+	padding-right: 3px!important;
+	margin-left: 0!important;
+	margin-right: 0!important;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.links-des {
+	left: 3px;
+	width: calc(100% - 6px);
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	overflow: hidden;
+}
+.links-des a {
+	color: #fff!important;
+}
+.link-description {
+	text-align: center;
+	color: #9e9e9e;
+	font-size: 18px;
+}
+.links-des a::before {
+	display: none!important;
+}
+.post_list_t_img, .links-c {
 	height: 0;
 	padding-top: 57%;
 	background-position: center center;
 	background-size: cover;
+	width: 100%;
+}
+.links-c {
+	border-radius: 3px;
+	overflow: hidden;
+}
+.links-co>a {
+	width: 100%;
+	text-decoration: none;
+}
+.links-co>a:before {
+	display: none!important;
 }
 .mdx-background-404 {
 	position: absolute;
