@@ -45,22 +45,7 @@ $pageType = 2;
             <div class="ArtMain mdui-center LinkPage mdui-typo">
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
-                <?php //$args=array(
-//     'orderby'          => 'name',
-//     'order'            => 'ASC',
-//     'hide_invisible'   => 1,
-//     'show_updated'     => 0,
-//     'echo'             => 1,
-//     'categorize'       => 1,
-//     'show_images'      => True,
-//     'show_description' => True,
-//     'title_li'         => __('链接'),
-//     'title_before'     => '<h2>',
-//     'title_after'      => '</h2>',
-//     'category_orderby' => 'name',
-//     'category_order'   => 'ASC',);
-// wp_list_bookmarks($args);
-echo get_link_items()?>
+                <?php echo get_link_items()?>
                 </article>
 <?php endwhile;?>
             </div>
