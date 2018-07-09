@@ -1,8 +1,6 @@
 <?php get_header();
 $pageType = 1;?>
-<?php $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
-    <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
-    <?php echo "<!--------".$full_image_url[0]."------->";?>
+<?php $mdx_index_img=get_option('mdx_index_img');$mdx_side_img=get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};$full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
     <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="fullScreen sea-close"></div>
     <?php if(get_option('mdx_load_pro')=='true'){?>
