@@ -27,6 +27,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
 	update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
+	update_option('mdx_author_card', $_POST['mdx_author_card']);
 	update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_share_area', $_POST['mdx_share_area']);
@@ -210,6 +211,16 @@ wp_nonce_field('mdx_options_update');
 	<option value="edit" <?php if($mdx_v_post_edit_time=='edit'){?>selected="selected"<?php }?>>最后编辑时间</option>
 </select>
 <p class="description"><?php _e('选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('文末作者信息栏', 'mdx');?></th>
+<td>
+<?php $mdx_v_author_card=get_option('mdx_author_card');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_author_card" value="true" <?php if($mdx_v_author_card=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_author_card" value="false" <?php if($mdx_v_author_card=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	</fieldset>
 </td>
 </tr>
 <tr>
