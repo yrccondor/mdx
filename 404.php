@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <body class="mdui-theme-primary-<?php echo get_option('mdx_styles');?> mdui-theme-accent-<?php echo get_option('mdx_styles_act');?>">
     <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
-        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面貌似旅游去了','mdx');?></span></span>
+        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面不见了','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('去首页','mdx');?></a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('前往首页','mdx');?></a>
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页','mdx');?></a>
         <div>
     </div>
