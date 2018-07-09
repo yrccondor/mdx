@@ -1802,64 +1802,6 @@ body.mdui-theme-primary-blue-grey ::-ms-selection {
 	background-color: #607d8b;
 	color: #fff;
 }
-.linkcat,ul.blogroll>li {
-	list-style: none;
-}
-.linkcat a::before {
-	display: none;
-}
-ul.blogroll>li {
-	float: left;
-	display: inline-block;
-	box-sizing: border-box;
-	margin: 7px;
-	padding: 5px;
-	width: 150px;
-	height: 200px;
-	border-radius: 3px;
-	background-color: #f5f5f5;
-	box-shadow: 0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
-}
-.mdui-theme-layout-dark ul.blogroll>li {
-	background-color: #1e1e1e;
-}
-ul.blogroll>li>a {
-	display: table;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -o-box;
-	display: -ms-box;
-	display: box;
-	width: 100%;
-	height: 55%;
-	font-size: 20px;
-	-webkit-box-orient: horizontal;
-	-webkit-box-pack: center;
-	-webkit-box-align: center;
-	-moz-box-orient: horizontal;
-	-moz-box-pack: center;
-	-moz-box-align: center;
-	-o-box-orient: horizontal;
-	-o-box-pack: center;
-	-o-box-align: center;
-	-ms-box-orient: horizontal;
-	-ms-box-pack: center;
-	-ms-box-align: center;
-	box-orient: horizontal;
-	box-pack: center;
-	box-align: center;
-}
-ul.blogroll {
-	width: auto;
-	text-align: center;
-}
-.LinkPage:after,.LinkPage:before {
-	display: table;
-	content: " ";
-}
-.LinkPage:after {
-	clear: both;
-}
 .divimg {
 	background-position: center center;
 	background-size: cover;
@@ -2024,14 +1966,19 @@ div.mdui-toolbar>.mdui-typo-headline {
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
 	overflow: hidden;
+	background: rgba(0,0,0,.3);
 }
 .links-des a {
 	color: #fff!important;
+	overflow: visible;
 }
 .link-description {
 	text-align: center;
 	color: #9e9e9e;
 	font-size: 18px;
+}
+.links-name {
+	height: 20px;
 }
 .links-des a::before {
 	display: none!important;
@@ -2042,6 +1989,12 @@ div.mdui-toolbar>.mdui-typo-headline {
 	background-position: center center;
 	background-size: cover;
 	width: 100%;
+}
+.links-c {
+	padding-top: 100%;
+}
+.mdui-theme-layout-dark .post_list_t_img, .mdui-theme-layout-dark .links-c {
+	filter: brightness(.8);
 }
 .links-c {
 	border-radius: 3px;

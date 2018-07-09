@@ -32,7 +32,7 @@
         <?php if(get_option('mdx_post_list_img_height') === "auto"){?>
         <img src="<?php echo "$Imagesurl"?>" alt="<?php echo "$Imagesurl"?>" title="<?php the_title();?>">
         <?php }else{?>
-        <div class="post_list_t_img" style="background-image:url(<?php echo "$Imagesurl"?>);" title="<?php the_title();?>"></div>
+        <div class="post_list_t_img  mdui-color-theme" style="background-image:url(<?php echo "$Imagesurl"?>);" title="<?php the_title();?>"></div>
         <?php }?>
         <div class="mdui-card-media-covered ct1">
             <div class="mdui-card-primary">

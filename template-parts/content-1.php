@@ -32,7 +32,7 @@
         <?php if(get_option('mdx_post_list_img_height') === "auto"){?>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-original="<?php echo "$Imagesurl"?>" alt="<?php echo "$Imagesurl"?>" title="<?php the_title();?>" class="LazyLoadList mdui-color-theme mdui-text-color-theme LazyLoadListImg">
         <?php }else{?>
-        <div class="post_list_t_img LazyLoadListImg" data-original="<?php echo "$Imagesurl"?>" title="<?php the_title();?>"></div>
+        <div class="post_list_t_img LazyLoadListImg mdui-color-theme" data-original="<?php echo "$Imagesurl"?>" title="<?php the_title();?>"></div>
         <?php }?>
         <div class="mdui-card-media-covered ct1">
             <div class="mdui-card-primary">
