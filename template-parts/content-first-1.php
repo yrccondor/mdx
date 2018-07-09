@@ -29,7 +29,11 @@
 <?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
 <div class="mdui-card postDiv mdui-center mdui-hoverable">
     <div class="mdui-card-media">
+        <?php if(get_option('mdx_post_list_img_height') === "auto"){?>
         <img src="<?php echo "$Imagesurl"?>" alt="<?php echo "$Imagesurl"?>" title="<?php the_title();?>">
+        <?php }else{?>
+        <div class="post_list_t_img" style="background-image:url(<?php echo "$Imagesurl"?>);" title="<?php the_title();?>"></div>
+        <?php }?>
         <div class="mdui-card-media-covered ct1">
             <div class="mdui-card-primary">
                 <a href="<?php the_permalink();?>"><div class="mdui-card-primary-title"><?php the_title();?></div></a>

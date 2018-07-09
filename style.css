@@ -2009,6 +2009,12 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
 div.mdui-toolbar>.mdui-typo-headline {
 	margin: 0 2px!important;
 }
+.post_list_t_img {
+	height: 0;
+	padding-top: 57%;
+	background-position: center center;
+	background-size: cover;
+}
 .mdx-background-404 {
 	position: absolute;
 	top: 0;

@@ -59,13 +59,14 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
 	update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	update_option('mdx_title_bar', $_POST['mdx_title_bar']);
-	update_option('mdx_title_med', $_POST['mdx_title_med']);
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_default_style', $_POST['mdx_default_style']);
 	update_option('mdx_index_show', $_POST['mdx_index_show']);
 	update_option('mdx_post_style', $_POST['mdx_post_style']);
 	update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
+	update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
 	update_option('mdx_post_def_img', $_POST['mdx_post_def_img']);
+	update_option('mdx_title_med', $_POST['mdx_title_med']);
 	update_option('mdx_index_img', $_POST['mdx_index_img']);
 	update_option('mdx_side_img', $_POST['mdx_side_img']);
 	update_option('mdx_side_info', $_POST['mdx_side_info']);
@@ -187,17 +188,6 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_title_med"><?php _e('网页标题计算方式', 'mdx');?></label></th>
-<td>
-<?php $mdx_v_title_med=get_option('mdx_title_med');?>
-<select name="mdx_title_med" id="mdx_title_med">
-	<option value="wp" <?php if($mdx_v_title_med=='wp'){?>selected="selected"<?php }?>><?php _e('WordPress 默认', 'mdx');?></option>
-	<option value="diy" <?php if($mdx_v_title_med=='diy'){?>selected="selected"<?php }?>><?php _e('MDx 优化', 'mdx');?></option>
-</select>
-<p class="description"><?php _e('选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此方式在部分情况下更合适，但不兼容 SEO 插件。', 'mdx');?></p>
-</td>
-</tr>
-<tr>
 <th scope="row"><label for="mdx_default_style"><?php _e('文章列表样式', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_default_style=get_option('mdx_default_style');?>
@@ -244,6 +234,17 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_post_list_img_height"><?php _e('文章列表图片高度', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_list_img_height=get_option('mdx_post_list_img_height');?>
+<select name="mdx_post_list_img_height" id="mdx_post_list_img_height">
+	<option value="auto" <?php if($mdx_v_post_list_img_height=='auto'){?>selected="selected"<?php }?>><?php _e('自适应', 'mdx');?></option>
+	<option value="fixed" <?php if($mdx_v_post_list_img_height=='fixed'){?>selected="selected"<?php }?>><?php _e('固定宽高比', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('选择 <code>自适应</code>，文章特色图像可以完全展示。<br>选择 <code>固定宽高比</code>，文章特色图像可能会只显示部分以保持宽高比，但图像不会被拉伸，适合于图像过宽/过高的情况。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
 <th scope="row"><?php _e('文章无特色图像时显示默认图像', 'mdx');?></th>
 <td>
 <?php $mdx_v_post_def_img=get_option('mdx_post_def_img');?>
@@ -252,6 +253,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_post_def_img" value="false" <?php if($mdx_v_post_def_img=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显示。', 'mdx');?></p>
 	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_title_med"><?php _e('网页标题计算方式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_title_med=get_option('mdx_title_med');?>
+<select name="mdx_title_med" id="mdx_title_med">
+	<option value="wp" <?php if($mdx_v_title_med=='wp'){?>selected="selected"<?php }?>><?php _e('WordPress 默认', 'mdx');?></option>
+	<option value="diy" <?php if($mdx_v_title_med=='diy'){?>selected="selected"<?php }?>><?php _e('MDx 优化', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此方式在部分情况下更合适，但不兼容 SEO 插件。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
