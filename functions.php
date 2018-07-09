@@ -599,12 +599,12 @@ function mdx_shortcode_table($atts, $content = ''){
     foreach($trs as $tr){
 		if($mdx_table_i == 0 && $header == 'true'){
         	$tr = trim($tr);
-        	if($tr){
+        	if($tr !== ""){
             	$tds = explode("<br />", $tr);
             	$output2 .= '<tr>';
             	foreach($tds as $td){
                 	$td = trim($td);
-                	if($td){
+                	if($td !== ""){
                     	$output2 .= '<th>'.$td.'</th>';
                 	}
             	}
@@ -612,12 +612,12 @@ function mdx_shortcode_table($atts, $content = ''){
 			}
 		}else{
         	$tr = trim($tr);
-        	if($tr){
+        	if($tr !== ""){
             	$tds = explode("<br />", $tr);
             	$output .= '<tr>';
             	foreach($tds as $td){
                 	$td = trim($td);
-                	if($td){
+                	if($td !== ""){
                     	$output .= '<td>'.$td.'</td>';
                 	}
             	}
