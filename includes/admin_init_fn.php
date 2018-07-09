@@ -14,6 +14,7 @@ update_option('mdx_auto_scroll', 'false');
 update_option('mdx_load_pro', 'true');
 update_option('mdx_post_list_1', 'view');
 update_option('mdx_post_list_2', 'time');
+update_option('mdx_post_edit_time', 'post');
 update_option('mdx_speed_pre', 'false');
 update_option('mdx_smooth_scroll', 'true');
 update_option('mdx_share_area', 'all');

@@ -30,6 +30,7 @@ $mdx_version_base = get_option('mdx_version');
 if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2"){
 	update_option('mdx_title_med', 'diy');
 	update_option('mdx_post_list_img_height', 'auto');
+	update_option('mdx_post_edit_time', 'post');
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){

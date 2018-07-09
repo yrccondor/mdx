@@ -26,6 +26,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
+	update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
 	update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	update_option('mdx_share_area', $_POST['mdx_share_area']);
@@ -198,6 +199,17 @@ wp_nonce_field('mdx_options_update');
 	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>>评论数</option>
 </select>
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_post_edit_time"><?php _e('文章时间信息', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_edit_time=get_option('mdx_post_edit_time');?>
+<select name="mdx_post_edit_time" id="mdx_post_edit_time">
+	<option value="post" <?php if($mdx_v_post_edit_time=='post'){?>selected="selected"<?php }?>>发布时间</option>
+	<option value="edit" <?php if($mdx_v_post_edit_time=='edit'){?>selected="selected"<?php }?>>最后编辑时间</option>
+</select>
+<p class="description"><?php _e('选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
