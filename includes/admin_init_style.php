@@ -28,6 +28,7 @@ update_option('mdx_logo_text', '');
 update_option('mdx_safari', 'false');
 update_option('mdx_svg', '');
 update_option('mdx_svg_color', '');
+update_option('mdx_tags_color', 'true');
 update_option('mdx_footer_say', 'Hello, MDx!');
 update_option('mdx_footer', '');
 ?>

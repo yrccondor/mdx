@@ -87,6 +87,7 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	}else{
 		update_option('mdx_svg_color', $_POST['mdx_svg_color']);
 	}
+	update_option('mdx_tags_color', $_POST['mdx_tags_color']);
 	update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
 	update_option('mdx_footer', htmlentities(stripslashes($_POST['mdx_footer'])));
 ?>
@@ -402,6 +403,17 @@ wp_nonce_field('mdx_options_update');
 <td><input class="mdx_stbsip regular-text mdx_stbsip3" name="mdx_svg_color" type="text" id="mdx_svg_color" value="<?php echo esc_attr(get_option('mdx_svg_color'))?>" required="required">
 <button type="button" id="change-color" class="button mdx_stbsip5"><?php _e('使用当前主题颜色', 'mdx');?></button>
 <p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><?php _e('多彩标签云', 'mdx');?></th>
+<td>
+<?php $mdx_v_tags_color=get_option('mdx_tags_color');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_tags_color" value="true" <?php if($mdx_v_tags_color=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_tags_color" value="false" <?php if($mdx_v_tags_color=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，标签云页面输出的标签会带有随机颜色，反之为同一颜色。', 'mdx');?></p>
+	</fieldset>
+</td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>

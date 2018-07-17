@@ -2067,6 +2067,12 @@ div.mdui-toolbar>.mdui-typo-headline {
 	width: 100%;
 	text-align: center;
 }
+.page-tags>article {
+	max-width: 2000px;
+    margin: 45px auto 45px auto;
+	text-align: center;
+	min-height: 100px;
+}
 ul.mdui-list.ajax-comments {
 	padding: 8px 0 0;
 }
@@ -2437,11 +2443,17 @@ article a.mdx-img-in-post-with-link:before {
 		width: 47%;
 		max-width: 850px;
 	}
+	.page-tags>article, .page-tags {
+		max-width: 1500px;
+	}
 }
 @media(max-width:1500px) {
 	.ArtMain0 {
 		width: 100%;
 		max-width: 680px;
+	}
+	.page-tags>article, .page-tags {
+		max-width: 1000px;
 	}
 }
 @media(min-width:1024px) {
@@ -2453,6 +2465,9 @@ article a.mdx-img-in-post-with-link:before {
 @media(max-width:800px) {
 	.PostTitle {
 		font-size: 37px;
+	}
+	.page-tags>article {
+		max-width: 500px;
 	}
 }
 @media(max-width:782px) {

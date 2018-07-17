@@ -32,6 +32,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){
@@ -45,6 +46,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
@@ -60,6 +62,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.5"){
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
@@ -77,6 +80,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts', 'false');
 	update_option('mdx_hot_posts_num', '10');
@@ -100,6 +104,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.3"){
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
@@ -123,6 +128,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -153,6 +159,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -183,6 +190,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
@@ -216,6 +224,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -253,6 +262,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base=="1.4.1"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -290,6 +300,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }else if($mdx_version_base!="1.8.3"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
@@ -328,6 +339,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
+	update_option('mdx_tags_color', 'true');
 }
 include('includes/admin_init_ver.php');
 
@@ -945,4 +957,20 @@ function mdx_save_postdata_1($post_id){
 			}
 }
 add_action('save_post', 'mdx_save_postdata_1');
+
+function mdx_colored_cloud($text) {
+	$text = preg_replace_callback('/<a (.+?)>/i','mdx_colored_cloud_call_back', $text);
+	return $text;
+}
+function mdx_colored_cloud_call_back($matches) {
+	$text = $matches[1];
+	$color = dechex(rand(0,16777215));
+	$pattern = '/style=(\'|\")(.*)(\'|\")/i';
+	$text = str_replace("style=\"","style=\"color:#{$color};",$text);
+	$text = str_replace("style='","style='color:#{$color};",$text);
+	return "<a $text>";
+}
+if(get_option('mdx_tags_color') === "true"){
+	add_filter('wp_tag_cloud', 'mdx_colored_cloud', 1);
+}
 ?>
