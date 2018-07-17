@@ -571,7 +571,7 @@ if(!is_admin() && get_option('mdx_lazy_load_mode')=='speed'){
 
 //面包屑
 function mdx_breadcrumbs() {
-	$delimiter = ' » '; // 分隔符
+	$delimiter = ' • '; // 分隔符
 	$before = '<span class="current">'; // 在当前链接前插入
 	$after = '</span>'; // 在当前链接后插入
 	if(!is_home() && !is_front_page() || is_paged()){
