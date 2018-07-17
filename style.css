@@ -1382,6 +1382,9 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-same-posts-img {
 	color: #fff!important;
 }
+.mdx-spr {
+	opacity: .35;
+}
 .mdx-post-no-img-fill {
 	height: 5px;
 	width: 100%;
