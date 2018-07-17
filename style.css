@@ -964,7 +964,7 @@ div#comments ul li {
 .mdui-theme-layout-dark .logged-in-as a {
 	color: hsla(0,0%,100%,.5)!important;
 }
-#respond,.mdx-same-posts {
+#respond,.mdx-same-posts, .mdx-author-c {
 	display: block!important;
 	box-sizing: border-box;
 	margin-top: 20px;
@@ -976,10 +976,42 @@ div#comments ul li {
 	border-radius: 5px;
 	background-color: #ededed;
 }
-.mdx-same-posts {
+.mdx-same-posts, .mdx-author-c {
 	padding: 0;
 	padding-top: 5px;
 	overflow: hidden;
+}
+.mdx-author-c {
+	padding-top: 0;
+}
+.mdx-author-c {
+	height: 150px;
+	position: relative;
+}
+.mdx-author-c img {
+	height: 100%;
+	width: auto;
+}
+.mdx-author-c .mdx-amask {
+	position: absolute;
+	z-index: 2;
+	left: 123px;
+	height: 100%;
+	width: auto;
+}
+.mdx-author-c .mdx-amask path{
+	fill: #ededed;
+}
+.mdui-theme-layout-dark .mdx-author-c .mdx-amask path{
+	fill: #292929;
+}
+.mdx-author-info {
+	width: calc(100% - 155px);
+	position: absolute;
+	z-index: 3;
+	left: 155px;
+	height: 150px;
+	top: 0;
 }
 .mdx-hot-posts {
 	margin-top: 15px;
@@ -1092,7 +1124,7 @@ div#comments ul li {
 	padding: 10px;
 	border-radius: 5px;
 }
-.ArtMain0 #respond,.ArtMain0 .mdx-same-posts {
+.ArtMain0 #respond,.ArtMain0 .mdx-same-posts,.ArtMain0 .mdx-author-c {
 	display: block!important;
 	box-sizing: border-box;
 	margin-top: 0;
@@ -1105,13 +1137,13 @@ div#comments ul li {
 	border-top-width: 1px;
 	border-top-color: rgba(0,0,0,.08);
 }
-.ArtMain0 .mdx-same-posts {
+.ArtMain0 .mdx-same-posts, .ArtMain0 .mdx-author-c {
 	padding: 0;
 }
-.mdui-theme-layout-dark .ArtMain0 #respond,.mdui-theme-layout-dark .ArtMain0 .mdx-same-posts {
+.mdui-theme-layout-dark .ArtMain0 #respond,.mdui-theme-layout-dark .ArtMain0 .mdx-same-posts,.mdui-theme-layout-dark .ArtMain0 .mdx-author-c {
 	border-top-color: hsla(0,0%,100%,.08);
 }
-.mdui-theme-layout-dark #respond,.mdui-theme-layout-dark .mdx-same-posts {
+.mdui-theme-layout-dark #respond,.mdui-theme-layout-dark .mdx-same-posts,.mdui-theme-layout-dark .mdx-author-c {
 	background-color: #292929;
 }
 .mdui-theme-layout-dark .comment-reply-link,.mdui-theme-layout-dark .comment-reply-login {
@@ -1231,10 +1263,39 @@ body.mdui-theme-primary-blue-grey #submit {
 	font-weight: 400;
 	font-size: 25px;
 }
-.mdx-same-posts>h3 {
+.mdx-same-posts>h3, .mdx-author-c h3 {
 	margin: 20px;
 	font-weight: 400;
 	font-size: 18px;
+}
+.mdx-author-c h3 {
+	margin-bottom: 0;
+	margin-top: 15px;
+	font-size: 27px;
+}
+.mdx-author-c a {
+	text-decoration: none;
+	color: rgba(0,0,0,.87);
+}
+.mdui-theme-layout-dark .mdx-author-c a {
+	color: rgba(255,255,255,.87);
+}
+.mdx-author-c p {
+	padding: 0 20px;
+	box-sizing: border-box;
+	height: 48px;
+	text-overflow: ellipsis;
+	margin: 0;
+	overflow: hidden;
+	opacity: .85;
+}
+.mdx-author-c h4 {
+	opacity: .5;
+	font-weight: 400;
+	font-size: 15px;
+	margin-left: 20px;
+	margin-top: 7px;
+	margin-bottom: 10px;
 }
 .mdx-hp-h3-fill {
 	height: 77px!important;
@@ -2588,6 +2649,32 @@ article a.mdx-img-in-post-with-link:before {
 	.title,article h2,article h3 {
 		font-size: 18px;
 	}
+	.mdx-author-c {
+		height: 120px;
+	}
+	.mdx-author-c .mdx-amask {
+		left: 102px;
+		width: 18px;
+		height: 120px;
+	}
+	.mdx-author-c .mdx-amask path {
+		width: 18px;
+		height: 120px;
+	}
+	.mdx-author-info {
+		width: calc(100% - 120px);
+		left: 120px;
+	}
+	.mdx-author-c h3 {
+		font-size: 20px;
+	}
+	.mdx-author-c h4 {
+		font-size: 13px;
+		margin-bottom: 5px;
+	}
+	.mdx-author-c p {
+		font-size: 14px;
+	}
 }
 @media(max-width:430px) {
 	.divimg {
@@ -2606,6 +2693,35 @@ article a.mdx-img-in-post-with-link:before {
 	}
 	.title,article h2,article h3 {
 		font-size: 15px;
+	}
+	.mdx-author-c {
+		height: 100px;
+	}
+	.mdx-author-c .mdx-amask {
+		left: 85px;
+		width: 15px;
+		height: 100px;
+	}
+	.mdx-author-c .mdx-amask path {
+		width: 15px;
+		height: 100px;
+	}
+	.mdx-author-info {
+		width: calc(100% - 100px);
+		left: 100px;
+	}
+	.mdx-author-c h3 {
+		font-size: 18px;
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+	.mdx-author-c h4 {
+		font-size: 12px;
+		margin-left: 15px;
+	}
+	.mdx-author-c p {
+		font-size: 13px;
+		padding: 0 15px;
 	}
 }
 .aligncenter,.aligncenter p.wp-caption-text {
