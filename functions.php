@@ -520,7 +520,7 @@ function get_the_link_items($id = null){
 			if($bookmark->link_image !== ""){
 				$lazy_load =  ' LazyLoad" data-original="'.$bookmark->link_image;
 			}
-			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
         $output .= '</div>';
     }
