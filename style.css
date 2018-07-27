@@ -2512,6 +2512,7 @@ article a.mdx-img-in-post-with-link:before {
 }
 .mdx-github-wait-out {
 	width: 100%;
+	text-align: center;
 }
 .mdx-github-wait-out-c,.mdx-github-wait-out-c2 {
 	width: 100%;
@@ -2547,7 +2548,7 @@ article a.mdx-img-in-post-with-link:before {
 }
 .mdx-github-main>a.repo-link {
 	color: #fff;
-	font-size: 25px;
+	font-size: 27px;
 }
 .mdx-github-main>a.repo-link:hover {
 	opacity: .5;
