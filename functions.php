@@ -743,6 +743,20 @@ function mdx_shortcode_progress($atts, $content = '0'){
 }
 add_shortcode("mdx_progress", "mdx_shortcode_progress");
 
+function mdx_shortcode_post($atts, $content = '0'){
+    // ...
+}
+add_shortcode("mdx_post", "mdx_shortcode_post");
+
+function mdx_shortcode_github($atts, $content = '0'){
+	extract( shortcode_atts(array(
+		'author' => '',
+		'project' => ''
+    ), $atts));
+    return '<div class="mdx-github-cot" data-mdxgithuba="'.$author.'" data-mdxgithubp="'.$project.'"><div class="mdx-github-wait-out-c2"><div class="mdx-github-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><div class="mdui-spinner"></div></div></div></div></div></div>';
+}
+add_shortcode("mdx_github", "mdx_shortcode_github");
+
 function mdx_add_button_fold(){
 	if(!current_user_can('edit_posts') && !current_user_can('edit_pages')){
 		return;
@@ -758,6 +772,8 @@ function mdx_register_button($buttons){
 	array_push($buttons, "", "mdx_warning");
 	array_push($buttons, "", "mdx_table");
 	array_push($buttons, "", "mdx_progress");
+	array_push($buttons, "", "mdx_post");
+	array_push($buttons, "", "mdx_github");
 	return $buttons;
 }
 function mdx_add_plugin($plugin_array){
@@ -765,6 +781,8 @@ function mdx_add_plugin($plugin_array){
 	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc2.js';
 	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc3.js';
 	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc4.js';
+	$plugin_array['mdx_post'] = get_bloginfo('template_url').'/js/sc5.js';
+	$plugin_array['mdx_github'] = get_bloginfo('template_url').'/js/sc6.js';
 	return $plugin_array;
 }
 
