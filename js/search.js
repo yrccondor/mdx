@@ -79,6 +79,9 @@ function readRes(data, ifSession){
         data2 = JSON.parse(data);
     }
     $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');
+    if($(".seainput").val() === "Axton" || $(".seainput").val() === "axton" || $(".seainput").val() === "无垠" || $(".seainput").val() === "flyhigher" || $(".seainput").val() === "Flyhigher"){
+        data2.unshift({"title":{"rendered":"无垠"},"date": "Forever","link":"https://flyhigher.top","excerpt":{"rendered":"飞翔的天空无限大"}});
+    }
     if(data2.length > 0){
         for(let i in data2){
             let postTitleInApi = data2[i].title.rendered;
