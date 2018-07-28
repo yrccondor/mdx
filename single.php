@@ -177,13 +177,13 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
       <?php }?>
-      <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="background-image:url(<?php if($full_image_url[0]!=""){echo $full_image_url[0];}else{echo get_bloginfo('template_url').'/img/dpic.jpg';}?>)"><p><?php $mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php echo mdx_get_post_excerpt($post, 175);?></div><div class="mdx-si-box"><span>扫描二维码继续阅读</span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
+      <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="<?php if($full_image_url[0]!=""){echo 'background-image:linear-gradient(to bottom, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7) 100%),url('.$full_image_url[0].');';}else{echo 'background-color:'.mdx_get_option('mdx_styles_hex').';';}?>"><p><?php $mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php echo mdx_get_post_excerpt($post, 175);?></div><div class="mdx-si-box"><span>扫描二维码继续阅读</span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
       <?php get_footer();
 }elseif ($mdx_post_show=='1') {
 ?>
     <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');?>">
     <div class="mdui-color-theme mdui-typo-display-4 mdui-valign mdx-background-404">
-        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面貌似旅游去了','mdx');?></span></span>
+        <span>404<span class="mdui-typo-headline"><?php _e('尴尬的是，这个页面不见了','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>

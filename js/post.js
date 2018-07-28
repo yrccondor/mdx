@@ -140,8 +140,14 @@ function mdx_shortcode(){
                     var title = data.match(reg)[1];
                     var reg2 = new RegExp('property="og:url" content="(.*?)"');
                     var url = data.match(reg2)[1];
-                    var reg3 = new RegExp('property="og:description" content="(.*?)"');
-                    var desc = data.match(reg3)[1];
+                    var reg3 = new RegExp('class="mdx-si-sum">(.*?)<');
+                    var reg5 = new RegExp('property="og:description" content="(.*?)"');
+                    var desc = "";
+                    if(data.match(reg3)){
+                        desc = data.match(reg3)[1];
+                    }else{
+                        desc = data.match(reg5)[1];
+                    }
                     if(desc === ''){
                         desc = mdx_post_i18n_1;
                     }

@@ -2575,7 +2575,7 @@ article a.mdx-img-in-post-with-link:before {
 	width: 100%;
 	margin: 10px 0;
 	border-radius: 5px;
-	height: 170px;
+	height: 200px;
 	border: 1px solid #dadada;
 	position: relative;
 	overflow: hidden;
@@ -2593,7 +2593,7 @@ article a.mdx-img-in-post-with-link:before {
 }
 .mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
 	width: 100%;
-	height: 170px;
+	height: 200px;
 }
 .mdx-github-wait {
 	margin: 0 auto;
