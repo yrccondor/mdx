@@ -328,6 +328,10 @@ article a:hover {
 }
 h3.link-title {
 	text-align: center;
+	color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-layout-dark h3.link-title {
+	color: rgba(255,255,255,.87)!important;
 }
 .mdx-say-after {
 	margin: 0 auto;
@@ -491,6 +495,120 @@ body.mdui-theme-primary-blue-grey .title:after,body.mdui-theme-primary-blue-grey
 body.mdui-theme-primary-blue-grey .title:before,body.mdui-theme-primary-blue-grey article h2:before,body.mdui-theme-primary-blue-grey article h3.link-title:before {
 	color: #607d8b;
 	content: "• ";
+}
+body.mdui-theme-primary-red .title,body.mdui-theme-primary-red article h2,body.mdui-theme-primary-red article h3 {
+	color: #f44336;
+}
+body.mdui-theme-primary-red .title,body.mdui-theme-primary-red article h2,body.mdui-theme-primary-red article h3 {
+	color: #f44336;
+}
+body.mdui-theme-primary-pink .title,body.mdui-theme-primary-pink article h2,body.mdui-theme-primary-pink article h3 {
+	color: #e91e63;
+}
+body.mdui-theme-primary-pink .title,body.mdui-theme-primary-pink article h2,body.mdui-theme-primary-pink article h3 {
+	color: #e91e63;
+}
+body.mdui-theme-primary-purple .title,body.mdui-theme-primary-purple article h2,body.mdui-theme-primary-purple article h3 {
+	color: #9c27b0;
+}
+body.mdui-theme-primary-purple .title,body.mdui-theme-primary-purple article h2,body.mdui-theme-primary-purple article h3 {
+	color: #9c27b0;
+}
+body.mdui-theme-primary-deep-purple .title,body.mdui-theme-primary-deep-purple article h2,body.mdui-theme-primary-deep-purple article h3 {
+	color: #673ab7;
+}
+body.mdui-theme-primary-deep-purple .title,body.mdui-theme-primary-deep-purple article h2,body.mdui-theme-primary-deep-purple article h3 {
+	color: #673ab7;
+}
+body.mdui-theme-primary-indigo .title,body.mdui-theme-primary-indigo article h2,body.mdui-theme-primary-indigo article h3 {
+	color: #3f51b5;
+}
+body.mdui-theme-primary-indigo .title,body.mdui-theme-primary-indigo article h2,body.mdui-theme-primary-indigo article h3 {
+	color: #3f51b5;
+}
+body.mdui-theme-primary-blue .title,body.mdui-theme-primary-blue article h2,body.mdui-theme-primary-blue article h3 {
+	color: #2196f3;
+}
+body.mdui-theme-primary-blue .title,body.mdui-theme-primary-blue article h2,body.mdui-theme-primary-blue article h3 {
+	color: #2196f3;
+}
+body.mdui-theme-primary-light-blue .title,body.mdui-theme-primary-light-blue article h2,body.mdui-theme-primary-light-blue article h3 {
+	color: #03a9f4;
+}
+body.mdui-theme-primary-light-blue .title,body.mdui-theme-primary-light-blue article h2,body.mdui-theme-primary-light-blue article h3 {
+	color: #03a9f4;
+}
+body.mdui-theme-primary-cyan .title,body.mdui-theme-primary-cyan article h2,body.mdui-theme-primary-cyan article h3 {
+	color: #00bcd4;
+}
+body.mdui-theme-primary-cyan .title,body.mdui-theme-primary-cyan article h2,body.mdui-theme-primary-cyan article h3 {
+	color: #00bcd4;
+}
+body.mdui-theme-primary-teal .title,body.mdui-theme-primary-teal article h2,body.mdui-theme-primary-teal article h3 {
+	color: #009688;
+}
+body.mdui-theme-primary-teal .title,body.mdui-theme-primary-teal article h2,body.mdui-theme-primary-teal article h3 {
+	color: #009688;
+}
+body.mdui-theme-primary-green .title,body.mdui-theme-primary-green article h2,body.mdui-theme-primary-green article h3 {
+	color: #4caf50;
+}
+body.mdui-theme-primary-green .title,body.mdui-theme-primary-green article h2,body.mdui-theme-primary-green article h3 {
+	color: #4caf50;
+}
+body.mdui-theme-primary-light-green .title,body.mdui-theme-primary-light-green article h2,body.mdui-theme-primary-light-green article h3 {
+	color: #8bc34a;
+}
+body.mdui-theme-primary-light-green .title,body.mdui-theme-primary-light-green article h2,body.mdui-theme-primary-light-green article h3 {
+	color: #8bc34a;
+}
+body.mdui-theme-primary-lime .title,body.mdui-theme-primary-lime article h2,body.mdui-theme-primary-lime article h3 {
+	color: #cddc39;
+}
+body.mdui-theme-primary-lime .title,body.mdui-theme-primary-lime article h2,body.mdui-theme-primary-lime article h3 {
+	color: #cddc39;
+}
+body.mdui-theme-primary-yellow .title,body.mdui-theme-primary-yellow article h2,body.mdui-theme-primary-yellow article h3 {
+	color: #ffeb3b;
+}
+body.mdui-theme-primary-yellow .title,body.mdui-theme-primary-yellow article h2,body.mdui-theme-primary-yellow article h3 {
+	color: #ffeb3b;
+}
+body.mdui-theme-primary-amber .title,body.mdui-theme-primary-amber article h2,body.mdui-theme-primary-amber article h3 {
+	color: #ffc107;
+}
+body.mdui-theme-primary-amber .title,body.mdui-theme-primary-amber article h2,body.mdui-theme-primary-amber article h3 {
+	color: #ffc107;
+}
+body.mdui-theme-primary-orange .title,body.mdui-theme-primary-orange article h2,body.mdui-theme-primary-orange article h3 {
+	color: #ff9800;
+}
+body.mdui-theme-primary-orange .title,body.mdui-theme-primary-orange article h2,body.mdui-theme-primary-orange article h3 {
+	color: #ff9800;
+}
+body.mdui-theme-primary-deep-orange .title,body.mdui-theme-primary-deep-orange article h2,body.mdui-theme-primary-deep-orange article h3 {
+	color: #ff5722;
+}
+body.mdui-theme-primary-deep-orange .title,body.mdui-theme-primary-deep-orange article h2,body.mdui-theme-primary-deep-orange article h3 {
+	color: #ff5722;
+}
+body.mdui-theme-primary-brown .title,body.mdui-theme-primary-brown article h2,body.mdui-theme-primary-brown article h3 {
+	color: #795548;
+}
+body.mdui-theme-primary-brown .title,body.mdui-theme-primary-brown article h2,body.mdui-theme-primary-brown article h3 {
+	color: #795548;
+}
+body.mdui-theme-primary-grey .title,body.mdui-theme-primary-grey article h2,body.mdui-theme-primary-grey article h3 {
+	color: #9e9e9e;
+}
+body.mdui-theme-primary-grey .title,body.mdui-theme-primary-grey article h2,body.mdui-theme-primary-grey article h3 {
+	color: #9e9e9e;
+}
+body.mdui-theme-primary-blue-grey .title,body.mdui-theme-primary-blue-grey article h2,body.mdui-theme-primary-blue-grey article h3 {
+	color: #607d8b;
+}
+body.mdui-theme-primary-blue-grey .title,body.mdui-theme-primary-blue-grey article h2,body.mdui-theme-primary-blue-grey article h3 {
+	color: #607d8b;
 }
 article p {
 	color: #4b4b4b;
