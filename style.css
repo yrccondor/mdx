@@ -323,9 +323,11 @@ article a:hover {
 	opacity: .9;
 }
 .title,article h2,article h3 {
-	text-align: center;
+	text-align: left;
 	font-weight: 700;
-	font-size: 22px;
+}
+h3.link-title {
+	text-align: center;
 }
 .mdx-say-after {
 	margin: 0 auto;
@@ -338,155 +340,155 @@ article a:hover {
 	border-left-width: 5px;
 	word-break: break-all;
 }
-body.mdui-theme-primary-red .title:after,body.mdui-theme-primary-red article h2:after,body.mdui-theme-primary-red article h3:after {
+body.mdui-theme-primary-red .title:after,body.mdui-theme-primary-red article h2:after,body.mdui-theme-primary-red article h3.link-title:after {
 	color: #f44336;
 	content: " •";
 }
-body.mdui-theme-primary-red .title:before,body.mdui-theme-primary-red article h2:before,body.mdui-theme-primary-red article h3:before {
+body.mdui-theme-primary-red .title:before,body.mdui-theme-primary-red article h2:before,body.mdui-theme-primary-red article h3.link-title:before {
 	color: #f44336;
 	content: "• ";
 }
-body.mdui-theme-primary-pink .title:after,body.mdui-theme-primary-pink article h2:after,body.mdui-theme-primary-pink article h3:after {
+body.mdui-theme-primary-pink .title:after,body.mdui-theme-primary-pink article h2:after,body.mdui-theme-primary-pink article h3.link-title:after {
 	color: #e91e63;
 	content: " •";
 }
-body.mdui-theme-primary-pink .title:before,body.mdui-theme-primary-pink article h2:before,body.mdui-theme-primary-pink article h3:before {
+body.mdui-theme-primary-pink .title:before,body.mdui-theme-primary-pink article h2:before,body.mdui-theme-primary-pink article h3.link-title:before {
 	color: #e91e63;
 	content: "• ";
 }
-body.mdui-theme-primary-purple .title:after,body.mdui-theme-primary-purple article h2:after,body.mdui-theme-primary-purple article h3:after {
+body.mdui-theme-primary-purple .title:after,body.mdui-theme-primary-purple article h2:after,body.mdui-theme-primary-purple article h3.link-title:after {
 	color: #9c27b0;
 	content: " •";
 }
-body.mdui-theme-primary-purple .title:before,body.mdui-theme-primary-purple article h2:before,body.mdui-theme-primary-purple article h3:before {
+body.mdui-theme-primary-purple .title:before,body.mdui-theme-primary-purple article h2:before,body.mdui-theme-primary-purple article h3.link-title:before {
 	color: #9c27b0;
 	content: "• ";
 }
-body.mdui-theme-primary-deep-purple .title:after,body.mdui-theme-primary-deep-purple article h2:after,body.mdui-theme-primary-deep-purple article h3:after {
+body.mdui-theme-primary-deep-purple .title:after,body.mdui-theme-primary-deep-purple article h2:after,body.mdui-theme-primary-deep-purple article h3.link-title:after {
 	color: #673ab7;
 	content: " •";
 }
-body.mdui-theme-primary-deep-purple .title:before,body.mdui-theme-primary-deep-purple article h2:before,body.mdui-theme-primary-deep-purple article h3:before {
+body.mdui-theme-primary-deep-purple .title:before,body.mdui-theme-primary-deep-purple article h2:before,body.mdui-theme-primary-deep-purple article h3.link-title:before {
 	color: #673ab7;
 	content: "• ";
 }
-body.mdui-theme-primary-indigo .title:after,body.mdui-theme-primary-indigo article h2:after,body.mdui-theme-primary-indigo article h3:after {
+body.mdui-theme-primary-indigo .title:after,body.mdui-theme-primary-indigo article h2:after,body.mdui-theme-primary-indigo article h3.link-title:after {
 	color: #3f51b5;
 	content: " •";
 }
-body.mdui-theme-primary-indigo .title:before,body.mdui-theme-primary-indigo article h2:before,body.mdui-theme-primary-indigo article h3:before {
+body.mdui-theme-primary-indigo .title:before,body.mdui-theme-primary-indigo article h2:before,body.mdui-theme-primary-indigo article h3.link-title:before {
 	color: #3f51b5;
 	content: "• ";
 }
-body.mdui-theme-primary-blue .title:after,body.mdui-theme-primary-blue article h2:after,body.mdui-theme-primary-blue article h3:after {
+body.mdui-theme-primary-blue .title:after,body.mdui-theme-primary-blue article h2:after,body.mdui-theme-primary-blue article h3.link-title:after {
 	color: #2196f3;
 	content: " •";
 }
-body.mdui-theme-primary-blue .title:before,body.mdui-theme-primary-blue article h2:before,body.mdui-theme-primary-blue article h3:before {
+body.mdui-theme-primary-blue .title:before,body.mdui-theme-primary-blue article h2:before,body.mdui-theme-primary-blue article h3.link-title:before {
 	color: #2196f3;
 	content: "• ";
 }
-body.mdui-theme-primary-light-blue .title:after,body.mdui-theme-primary-light-blue article h2:after,body.mdui-theme-primary-light-blue article h3:after {
+body.mdui-theme-primary-light-blue .title:after,body.mdui-theme-primary-light-blue article h2:after,body.mdui-theme-primary-light-blue article h3.link-title:after {
 	color: #03a9f4;
 	content: " •";
 }
-body.mdui-theme-primary-light-blue .title:before,body.mdui-theme-primary-light-blue article h2:before,body.mdui-theme-primary-light-blue article h3:before {
+body.mdui-theme-primary-light-blue .title:before,body.mdui-theme-primary-light-blue article h2:before,body.mdui-theme-primary-light-blue article h3.link-title:before {
 	color: #03a9f4;
 	content: "• ";
 }
-body.mdui-theme-primary-cyan .title:after,body.mdui-theme-primary-cyan article h2:after,body.mdui-theme-primary-cyan article h3:after {
+body.mdui-theme-primary-cyan .title:after,body.mdui-theme-primary-cyan article h2:after,body.mdui-theme-primary-cyan article h3.link-title:after {
 	color: #00bcd4;
 	content: " •";
 }
-body.mdui-theme-primary-cyan .title:before,body.mdui-theme-primary-cyan article h2:before,body.mdui-theme-primary-cyan article h3:before {
+body.mdui-theme-primary-cyan .title:before,body.mdui-theme-primary-cyan article h2:before,body.mdui-theme-primary-cyan article h3.link-title:before {
 	color: #00bcd4;
 	content: "• ";
 }
-body.mdui-theme-primary-teal .title:after,body.mdui-theme-primary-teal article h2:after,body.mdui-theme-primary-teal article h3:after {
+body.mdui-theme-primary-teal .title:after,body.mdui-theme-primary-teal article h2:after,body.mdui-theme-primary-teal article h3.link-title:after {
 	color: #009688;
 	content: " •";
 }
-body.mdui-theme-primary-teal .title:before,body.mdui-theme-primary-teal article h2:before,body.mdui-theme-primary-teal article h3:before {
+body.mdui-theme-primary-teal .title:before,body.mdui-theme-primary-teal article h2:before,body.mdui-theme-primary-teal article h3.link-title:before {
 	color: #009688;
 	content: "• ";
 }
-body.mdui-theme-primary-green .title:after,body.mdui-theme-primary-green article h2:after,body.mdui-theme-primary-green article h3:after {
+body.mdui-theme-primary-green .title:after,body.mdui-theme-primary-green article h2:after,body.mdui-theme-primary-green article h3.link-title:after {
 	color: #4caf50;
 	content: " •";
 }
-body.mdui-theme-primary-green .title:before,body.mdui-theme-primary-green article h2:before,body.mdui-theme-primary-green article h3:before {
+body.mdui-theme-primary-green .title:before,body.mdui-theme-primary-green article h2:before,body.mdui-theme-primary-green article h3.link-title:before {
 	color: #4caf50;
 	content: "• ";
 }
-body.mdui-theme-primary-light-green .title:after,body.mdui-theme-primary-light-green article h2:after,body.mdui-theme-primary-light-green article h3:after {
+body.mdui-theme-primary-light-green .title:after,body.mdui-theme-primary-light-green article h2:after,body.mdui-theme-primary-light-green article h3.link-title:after {
 	color: #8bc34a;
 	content: " •";
 }
-body.mdui-theme-primary-light-green .title:before,body.mdui-theme-primary-light-green article h2:before,body.mdui-theme-primary-light-green article h3:before {
+body.mdui-theme-primary-light-green .title:before,body.mdui-theme-primary-light-green article h2:before,body.mdui-theme-primary-light-green article h3.link-title:before {
 	color: #8bc34a;
 	content: "• ";
 }
-body.mdui-theme-primary-lime .title:after,body.mdui-theme-primary-lime article h2:after,body.mdui-theme-primary-lime article h3:after {
+body.mdui-theme-primary-lime .title:after,body.mdui-theme-primary-lime article h2:after,body.mdui-theme-primary-lime article h3.link-title:after {
 	color: #cddc39;
 	content: " •";
 }
-body.mdui-theme-primary-lime .title:before,body.mdui-theme-primary-lime article h2:before,body.mdui-theme-primary-lime article h3:before {
+body.mdui-theme-primary-lime .title:before,body.mdui-theme-primary-lime article h2:before,body.mdui-theme-primary-lime article h3.link-title:before {
 	color: #cddc39;
 	content: "• ";
 }
-body.mdui-theme-primary-yellow .title:after,body.mdui-theme-primary-yellow article h2:after,body.mdui-theme-primary-yellow article h3:after {
+body.mdui-theme-primary-yellow .title:after,body.mdui-theme-primary-yellow article h2:after,body.mdui-theme-primary-yellow article h3.link-title:after {
 	color: #ffeb3b;
 	content: " •";
 }
-body.mdui-theme-primary-yellow .title:before,body.mdui-theme-primary-yellow article h2:before,body.mdui-theme-primary-yellow article h3:before {
+body.mdui-theme-primary-yellow .title:before,body.mdui-theme-primary-yellow article h2:before,body.mdui-theme-primary-yellow article h3.link-title:before {
 	color: #ffeb3b;
 	content: "• ";
 }
-body.mdui-theme-primary-amber .title:after,body.mdui-theme-primary-amber article h2:after,body.mdui-theme-primary-amber article h3:after {
+body.mdui-theme-primary-amber .title:after,body.mdui-theme-primary-amber article h2:after,body.mdui-theme-primary-amber article h3.link-title:after {
 	color: #ffc107;
 	content: " •";
 }
-body.mdui-theme-primary-amber .title:before,body.mdui-theme-primary-amber article h2:before,body.mdui-theme-primary-amber article h3:before {
+body.mdui-theme-primary-amber .title:before,body.mdui-theme-primary-amber article h2:before,body.mdui-theme-primary-amber article h3.link-title:before {
 	color: #ffc107;
 	content: "• ";
 }
-body.mdui-theme-primary-orange .title:after,body.mdui-theme-primary-orange article h2:after,body.mdui-theme-primary-orange article h3:after {
+body.mdui-theme-primary-orange .title:after,body.mdui-theme-primary-orange article h2:after,body.mdui-theme-primary-orange article h3.link-title:after {
 	color: #ff9800;
 	content: " •";
 }
-body.mdui-theme-primary-orange .title:before,body.mdui-theme-primary-orange article h2:before,body.mdui-theme-primary-orange article h3:before {
+body.mdui-theme-primary-orange .title:before,body.mdui-theme-primary-orange article h2:before,body.mdui-theme-primary-orange article h3.link-title:before {
 	color: #ff9800;
 	content: "• ";
 }
-body.mdui-theme-primary-deep-orange .title:after,body.mdui-theme-primary-deep-orange article h2:after,body.mdui-theme-primary-deep-orange article h3:after {
+body.mdui-theme-primary-deep-orange .title:after,body.mdui-theme-primary-deep-orange article h2:after,body.mdui-theme-primary-deep-orange article h3.link-title:after {
 	color: #ff5722;
 	content: " •";
 }
-body.mdui-theme-primary-deep-orange .title:before,body.mdui-theme-primary-deep-orange article h2:before,body.mdui-theme-primary-deep-orange article h3:before {
+body.mdui-theme-primary-deep-orange .title:before,body.mdui-theme-primary-deep-orange article h2:before,body.mdui-theme-primary-deep-orange article h3.link-title:before {
 	color: #ff5722;
 	content: "• ";
 }
-body.mdui-theme-primary-brown .title:after,body.mdui-theme-primary-brown article h2:after,body.mdui-theme-primary-brown article h3:after {
+body.mdui-theme-primary-brown .title:after,body.mdui-theme-primary-brown article h2:after,body.mdui-theme-primary-brown article h3.link-title:after {
 	color: #795548;
 	content: " •";
 }
-body.mdui-theme-primary-brown .title:before,body.mdui-theme-primary-brown article h2:before,body.mdui-theme-primary-brown article h3:before {
+body.mdui-theme-primary-brown .title:before,body.mdui-theme-primary-brown article h2:before,body.mdui-theme-primary-brown article h3.link-title:before {
 	color: #795548;
 	content: "• ";
 }
-body.mdui-theme-primary-grey .title:after,body.mdui-theme-primary-grey article h2:after,body.mdui-theme-primary-grey article h3:after {
+body.mdui-theme-primary-grey .title:after,body.mdui-theme-primary-grey article h2:after,body.mdui-theme-primary-grey article h3.link-title:after {
 	color: #9e9e9e;
 	content: " •";
 }
-body.mdui-theme-primary-grey .title:before,body.mdui-theme-primary-grey article h2:before,body.mdui-theme-primary-grey article h3:before {
+body.mdui-theme-primary-grey .title:before,body.mdui-theme-primary-grey article h2:before,body.mdui-theme-primary-grey article h3.link-title:before {
 	color: #9e9e9e;
 	content: "• ";
 }
-body.mdui-theme-primary-blue-grey .title:after,body.mdui-theme-primary-blue-grey article h2:after,body.mdui-theme-primary-blue-grey article h3:after {
+body.mdui-theme-primary-blue-grey .title:after,body.mdui-theme-primary-blue-grey article h2:after,body.mdui-theme-primary-blue-grey article h3.link-title:after {
 	color: #607d8b;
 	content: " •";
 }
-body.mdui-theme-primary-blue-grey .title:before,body.mdui-theme-primary-blue-grey article h2:before,body.mdui-theme-primary-blue-grey article h3:before {
+body.mdui-theme-primary-blue-grey .title:before,body.mdui-theme-primary-blue-grey article h2:before,body.mdui-theme-primary-blue-grey article h3.link-title:before {
 	color: #607d8b;
 	content: "• ";
 }
