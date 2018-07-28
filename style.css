@@ -2684,7 +2684,13 @@ article a.mdx-img-in-post-with-link:before {
 	z-index: 1;
 	opacity: .2;
 	background-position: center center;
-    background-size: cover;
+	background-size: cover;
+	filter: brightness(.8);
+}
+.mdx-more-comments {
+	height: 57px;
+	width: 57px;
+	margin: 10px 0;
 }
 @media(max-width:2500px) {
 	.ArtMain0 {
