@@ -1,38 +1,73 @@
 <?php
 require_once('admin_init_ver.php');
-update_option('mdx_night_style', 'true');
-update_option('mdx_auto_night_style', 'true');
-update_option('mdx_notice', '');
-update_option('mdx_open_side', 'true');
-update_option('mdx_img_box', 'true');
-update_option("mdx_readmore", __('去围观', 'mdx'));
-update_option("mdx_post_money", '');
-update_option("mdx_lazy_load_mode", 'speed');
-update_option('mdx_read_pro', 'true');
-update_option('mdx_pro_save', 'true');
-update_option('mdx_auto_scroll', 'false');
-update_option('mdx_load_pro', 'true');
-update_option('mdx_post_list_1', 'view');
-update_option('mdx_post_list_2', 'time');
-update_option('mdx_post_edit_time', 'post');
-update_option('mdx_author_card', 'false');
-update_option('mdx_speed_pre', 'false');
-update_option('mdx_smooth_scroll', 'false');
-update_option('mdx_share_area', 'all');
-update_option('mdx_tap_to_top', 'true');
-update_option('mdx_hot_posts', 'false');
-update_option('mdx_hot_posts_num', '10');
-update_option('mdx_hot_posts_cat', '');
-update_option('mdx_hot_posts_text', __('推荐文章','mdx'));
-update_option('mdx_all_posts_text', __('最新文章','mdx'));
-update_option('mdx_you_may_like', 'false');
-update_option('mdx_you_may_like_way', 'tag');
-update_option('mdx_you_may_like_text', __('推荐文章', 'mdx'));
-update_option('mdx_real_search', 'false');
-update_option('mdx_comment_ajax', 'true');
-update_option('mdx_seo_key', '');
-update_option('mdx_auto_des', 'true');
-update_option('mdx_seo_des', '');
-update_option('mdx_head_js', '');
-update_option('mdx_footer_js', '');
+$arr = array(
+'mdx_night_style'=>'true',
+'mdx_auto_night_style'=>'true',
+'mdx_notice'=>'',
+'mdx_open_side'=>'true',
+'mdx_img_box'=>'true',
+"mdx_readmore"=>__('去围观','mdx'),
+"mdx_post_money"=>'',
+"mdx_lazy_load_mode"=>'speed',
+'mdx_read_pro'=>'true',
+'mdx_pro_save'=>'true',
+'mdx_auto_scroll'=>'false',
+'mdx_load_pro'=>'true',
+'mdx_post_list_1'=>'view',
+'mdx_post_list_2'=>'time',
+'mdx_post_edit_time'=>'post',
+'mdx_author_card'=>'false',
+'mdx_speed_pre'=>'false',
+'mdx_smooth_scroll'=>'false',
+'mdx_share_area'=>'all',
+'mdx_tap_to_top'=>'true',
+'mdx_hot_posts'=>'false',
+'mdx_hot_posts_num'=>'10',
+'mdx_hot_posts_cat'=>'',
+'mdx_hot_posts_text'=>__('推荐文章','mdx'),
+'mdx_all_posts_text'=>__('最新文章','mdx'),
+'mdx_you_may_like'=>'false',
+'mdx_you_may_like_way'=>'tag',
+'mdx_you_may_like_text'=>__('推荐文章','mdx'),
+'mdx_real_search'=>'false',
+'mdx_comment_ajax'=>'true',
+'mdx_seo_key'=>'',
+'mdx_auto_des'=>'true',
+'mdx_seo_des'=>'',
+'mdx_head_js'=>'',
+'mdx_footer_js'=>'',
+
+'mdx_styles'=>'indigo',
+'mdx_styles_hex'=>'#3f51b5',
+'mdx_styles_act'=>'pink',
+'mdx_act_hex'=>'#ff4081',
+'mdx_chrome_color'=>'true',
+'mdx_title_bar'=>'false',
+'mdx_default_style'=>'1',
+'mdx_index_show'=>'0',
+'mdx_post_style'=>'0',
+'mdx_echo_post_sum'=>'ture',
+'mdx_post_list_img_height'=>'auto',
+'mdx_post_def_img'=>'false',
+'mdx_title_med'=>'wp',
+'mdx_index_img'=>get_bloginfo("template_url").'/img/def_index.jpg',
+'mdx_side_img'=>get_bloginfo("template_url").'/img/def_side.jpg',
+'mdx_side_info'=>'false',
+'mdx_side_head'=>'',
+'mdx_side_name'=>'',
+'mdx_side_more'=>'',
+'mdx_index_say'=>'Hello=>MDx!',
+'mdx_comment_emj'=>'true',
+'mdx_say_after'=>'',
+'mdx_index_say_size'=>'1',
+'mdx_logo_way'=>'1',
+'mdx_logo'=>'',
+'mdx_logo_text'=>'',
+'mdx_safari'=>'false',
+'mdx_svg'=>'',
+'mdx_svg_color'=>'',
+'mdx_tags_color'=>'true',
+'mdx_footer_say'=>'Hello=>MDx!',
+'mdx_footer'=>'');
+update_option("mdx_all_options", $arr);
 ?>

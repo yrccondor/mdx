@@ -1,4 +1,4 @@
-<?php $mdx_way = get_option('mdx_you_may_like_way');if($mdx_way=="tag"){
+<?php $mdx_way = mdx_get_option('mdx_you_may_like_way');if($mdx_way=="tag"){
 global $post, $wpdb;
 $post_tags = wp_get_post_tags($post->ID);
 if ($post_tags) {
@@ -19,7 +19,7 @@ if ($post_tags) {
         AND ID != '" . $post->ID . "'
         ORDER BY RAND()
         LIMIT 5");
-    if($related_posts){?><div class="mdx-same-posts"><h3><?php echo get_option('mdx_you_may_like_text');?></h3><div id="mdx-sp-out-c"><ul class="mdx-posts-may-related"><?php foreach ($related_posts as $related_post){?>
+    if($related_posts){?><div class="mdx-same-posts"><h3><?php echo mdx_get_option('mdx_you_may_like_text');?></h3><div id="mdx-sp-out-c"><ul class="mdx-posts-may-related"><?php foreach ($related_posts as $related_post){?>
 <a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><li class="mdui-card mdui-color-theme LazyLoadSamePost"<?php $mdx_img = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID),'large')[0]; if($mdx_img!=""){?> data-original="<?php echo $mdx_img;}?>"><span<?php if($mdx_img!=""){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span><i class="mdui-icon material-icons" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i><div class="mdx-sp-fill<?php if($mdx_img==""){?> mdx-hot-posts-have-img<?php }?>"><div></li></a>
 <?php }?></ul></div></div><?php }}}elseif($mdx_way=="category"){
     global $post, $wpdb;
@@ -38,5 +38,5 @@ if ($post_tags) {
       ORDER BY RAND()
       LIMIT 5");
       if($related){?>
-      <div class="mdx-same-posts"><h3><?php echo get_option('mdx_you_may_like_text');?></h3><div id="mdx-sp-out-c"><ul class="mdx-posts-may-related">
+      <div class="mdx-same-posts"><h3><?php echo mdx_get_option('mdx_you_may_like_text');?></h3><div id="mdx-sp-out-c"><ul class="mdx-posts-may-related">
       <?php foreach ($related as $related_post){?><a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><li class="mdui-card mdui-color-theme LazyLoadSamePost"<?php $mdx_img = wp_get_attachment_image_src( get_post_thumbnail_id( $related_post->ID),'large')[0]; if($mdx_img!=""){?> data-original="<?php echo $mdx_img;}?>"><span<?php if($mdx_img!=""){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span><i class="mdui-icon material-icons" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i><div class="mdx-sp-fill<?php if($mdx_img==""){?> mdx-hot-posts-have-img<?php }?>"><div></li></a><?php }?></ul></div></div><?php }}}?>

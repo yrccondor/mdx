@@ -1,4 +1,4 @@
-<?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}if(get_option("mdx_post_def_img")=="false" && $Imagesurl == ""){?>
+<?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}if(mdx_get_option("mdx_post_def_img")=="false" && $Imagesurl == ""){?>
   <article class="mdui-grid-tile indexgaid mdui-shadow-3">
   <div class="divimg mdui-color-theme"></div>
   <div class="mdui-grid-tile-actions mdui-grid-tile-actions-gradient">

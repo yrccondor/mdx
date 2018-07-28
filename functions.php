@@ -7,6 +7,18 @@ if(get_option('mdx_title_med')=="wp"){
 	add_theme_support('title-tag');
 }
 
+$mdx_all_options = get_option("mdx_all_options");
+
+function mdx_get_option($option_name){
+	return $GLOBALS['mdx_all_options'][$option_name];
+}
+
+function mdx_update_option($option_name, $option_value){
+	$GLOBALS['mdx_all_options'][$option_name] = $option_value;
+	update_option('mdx_all_options',$GLOBALS['mdx_all_options']);
+	return true;
+}
+
 //初始化
 if(!get_option('mdx_first_init')){
     //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用
@@ -22,7 +34,6 @@ if(!get_option('mdx_first_init')){
         update_option('mdx_first_init', 'false');
     }
     include_once('includes/admin_init_fn.php');
-    include_once('includes/admin_init_style.php');
 }
 
 //更新时初始化新功能
@@ -33,6 +44,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){
@@ -47,6 +59,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
@@ -63,6 +76,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.5"){
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
@@ -81,6 +95,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts', 'false');
 	update_option('mdx_hot_posts_num', '10');
@@ -105,6 +120,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.3"){
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
@@ -129,6 +145,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -160,6 +177,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -191,6 +209,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
@@ -225,6 +244,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -263,6 +283,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base=="1.4.1"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -301,6 +322,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }else if($mdx_version_base!="1.8.3"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
@@ -340,6 +362,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_post_edit_time', 'post');
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
+	include_once("includes/update_database.php");
 }
 include('includes/admin_init_ver.php');
 
