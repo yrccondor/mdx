@@ -148,9 +148,6 @@ function mdx_shortcode(){
                     var reg4 = new RegExp('property="og:image" content="(.*?)"');
                     var img = data.match(reg4)[1];
                     var imgDiv = "";
-                    if(img !== ""){
-                        imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
-                    }
                     if(!document.getElementById("mdx-post-"+url)){
                         if(url.substr(url.length-1) === "/"){
                             url = url.substr(0,url.length-1);
@@ -158,9 +155,11 @@ function mdx_shortcode(){
                             url += "/";
                         }
                     }
+                    if(img !== ""){
+                        imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
+                        document.getElementById("mdx-post-"+url).style.border = "0 solid #dadada";
+                    }
                     document.getElementById("mdx-post-"+url).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" target="_blank" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" target="_blank" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="前往">&#xe5c8;</i></a></div>'+imgDiv;
-                    document.getElementById("mdx-post-"+url).style.border = "0 solid #dadada";
-                    
                 }, 
                 error: (function(x){
                     return function(){
