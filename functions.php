@@ -767,7 +767,7 @@ function mdx_shortcode_progress($atts, $content = '0'){
 add_shortcode("mdx_progress", "mdx_shortcode_progress");
 
 function mdx_shortcode_post($atts, $content = ''){
-    return '<div class="mdx-post-cot" data-mdxposturl="'.$content.'"><div class="mdx-post-wait-out-c2"><div class="mdx-post-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><div class="mdui-spinner"></div></div></div></div></div></div>';
+    return '<div class="mdx-post-cot" data-mdxposturl="'.$content.'"><div class="mdx-post-wait-out-c2"><div class="mdx-post-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="'.$content.'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
 }
 add_shortcode("mdx_post", "mdx_shortcode_post");
 
@@ -776,7 +776,7 @@ function mdx_shortcode_github($atts, $content = ''){
 		'author' => '',
 		'project' => ''
     ), $atts));
-    return '<div class="mdx-github-cot" data-mdxgithuba="'.$author.'" data-mdxgithubp="'.$project.'"><div class="mdx-github-wait-out-c2"><div class="mdx-github-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><div class="mdui-spinner"></div></div></div></div></div></div>';
+    return '<div class="mdx-github-cot" data-mdxgithuba="'.$author.'" data-mdxgithubp="'.$project.'"><div class="mdx-github-wait-out-c2"><div class="mdx-github-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="https://github.com/'.$author.'/'.$project.'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
 }
 add_shortcode("mdx_github", "mdx_shortcode_github");
 
