@@ -743,12 +743,12 @@ function mdx_shortcode_progress($atts, $content = '0'){
 }
 add_shortcode("mdx_progress", "mdx_shortcode_progress");
 
-function mdx_shortcode_post($atts, $content = '0'){
-    // ...
+function mdx_shortcode_post($atts, $content = ''){
+    return '<div class="mdx-post-cot" data-mdxposturl="'.$content.'"><div class="mdx-post-wait-out-c2"><div class="mdx-post-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><div class="mdui-spinner"></div></div></div></div></div></div>';
 }
 add_shortcode("mdx_post", "mdx_shortcode_post");
 
-function mdx_shortcode_github($atts, $content = '0'){
+function mdx_shortcode_github($atts, $content = ''){
 	extract( shortcode_atts(array(
 		'author' => '',
 		'project' => ''

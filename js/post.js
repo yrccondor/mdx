@@ -128,7 +128,46 @@ function mdx_shortcode(){
     }
     if($(".mdx-post-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-post-cot").length;i++){
-            //...
+            document.getElementsByClassName("mdx-post-cot")[i].id = "mdx-post-"+document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl;
+            $.ajaxSetup({
+                timeout: 15000
+            })
+            $.ajax({
+                url: document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl, 
+                type: 'get',
+                success: function(data){
+                    var reg = new RegExp('property="og:title" content="(.*?)"');
+                    var title = data.match(reg)[1];
+                    var reg2 = new RegExp('property="og:url" content="(.*?)"');
+                    var url = data.match(reg2)[1];
+                    var reg3 = new RegExp('property="og:description" content="(.*?)"');
+                    var desc = data.match(reg3)[1];
+                    if(desc === ''){
+                        desc = "这个页面没有摘要。";
+                    }
+                    var reg4 = new RegExp('property="og:image" content="(.*?)"');
+                    var img = data.match(reg4)[1];
+                    var imgDiv = "";
+                    if(img !== ""){
+                        imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
+                    }
+                    if(!document.getElementById("mdx-post-"+url)){
+                        if(url.substr(url.length-1) === "/"){
+                            url = url.substr(0,url.length-1);
+                        }else{
+                            url += "/";
+                        }
+                    }
+                    document.getElementById("mdx-post-"+url).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" target="_blank" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" target="_blank" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="前往">&#xe5c8;</i></a></div>'+imgDiv;
+                    document.getElementById("mdx-post-"+url).style.border = "0 solid #dadada";
+                    
+                }, 
+                error: (function(x){
+                    return function(){
+                        document.getElementsByClassName("mdx-post-cot")[x].getElementsByClassName("mdx-github-wait-out")[0].innerHTML="获取页面信息时出现问题。<br>尝试直接访问 <a rel=\"nofollow\" target=\"_blank\" href=\""+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"\">"+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"</a> 。";
+                    }
+                })(i)
+            })
         }
     }
 }
