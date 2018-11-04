@@ -309,7 +309,6 @@ div.ArtMain0>article {
 article img {
 	height: auto;
 	max-width: 100%;
-	cursor: pointer;
 }
 article iframe,article embed,article video {
 	width: 100% !important;
@@ -711,10 +710,10 @@ li.current-menu-item div.mdui-list-item-content,li.current_page_item div.mdui-li
 	width: 100%;
 	height: 100%;
 	background-color: #242424;
-	opacity: 0;
+	display: none;
 	-webkit-transition: all .2s;
 	transition: all .2s;
-	pointer-events: none;
+	opacity: 0;
 }
 #imgInBox {
 	width: 70px;
@@ -2476,6 +2475,12 @@ article .mdui-panel-item-title {
 article a.mdx-img-in-post-with-link:before {
 	content: none;
 }
+article img.mdx-img-in-post {
+	cursor: zoom-in;
+}
+.mdx-img-viewer {
+	cursor: zoom-out;
+}
 .mdx-comment-login-needed {
 	margin-top: 20px;
 	margin-right: auto!important;
@@ -2691,6 +2696,23 @@ article a.mdx-img-in-post-with-link:before {
 	height: 57px;
 	width: 57px;
 	margin: 10px 0;
+}
+.mdx-img-viewer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999999;
+	display: none;
+}
+.mdx-img-viewer img {
+	position: fixed;
+	transition: all .2s;
+}
+.mdx-img-viwer img {
+	position: fixed;
+	transition: all .3s;
 }
 @media(max-width:2500px) {
 	.ArtMain0 {
