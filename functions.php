@@ -38,7 +38,7 @@ if(!get_option('mdx_first_init')){
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2"){
+if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2" || $mdx_version_base=="1.8.3"){
 	update_option('mdx_title_med', 'diy');
 	update_option('mdx_post_list_img_height', 'auto');
 	update_option('mdx_post_edit_time', 'post');
