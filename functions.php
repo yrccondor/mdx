@@ -323,7 +323,7 @@ if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
-}else if($mdx_version_base!="1.8.5"){
+}else if($mdx_version_base!="1.8.5" || $mdx_version_base!="1.8.3"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
