@@ -165,7 +165,7 @@ $("#tgns").click(function(){
 
 $(function(){
     if(mdx_comment_ajax && $('#comments-navi>a.prev').attr('href')){
-        $('#comments-navi').html('<button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'">'+morecomment+'</button>');
+        $('#comments-navi').html('<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>');
     }
     if(sessionStorage.getItem('ns_night-styles')=='true'){
         $("body").addClass("mdui-theme-layout-dark");
@@ -378,7 +378,7 @@ if(!mdx_comment_ajax){
                 result = $(out).find('ul.mdui-list.ajax-comments').html();
                 nextUrl = $(out).find('#comments-navi>a.prev').attr('href');
                 if(nextUrl){
-                    nextlink = $(out).find('#comments-navi').html('<button class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple" data-comment-url="'+$(out).find('#comments-navi>a.prev').attr('href')+'">'+morecomment+'</button>');
+                    nextlink = $(out).find('#comments-navi').html('<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="'+$(out).find('#comments-navi>a.prev').attr('href')+'"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>');
                 }else{
                     nextlink = $(out).find('#comments-navi').html('<button class="mdui-btn" disabled>'+nomorecomment+'</button>');
                 }
