@@ -7,7 +7,7 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
     $mdx_img_bing = substr($mdx_img_bing,0,1);
   }
   $str=file_get_contents('https://cn.bing.com/HPImageArchive.aspx?n=1&idx='.$mdx_img_bing);
-     if(preg_match("/<url>(.+?)<\/url>/ies",$str,$matches)){
+     if(preg_match("/<url>(.+?)<\/url>/is",$str,$matches)){
          $mdx_index_img='https://cn.bing.com'.str_replace('1366x768','1920x1080',$matches[1]);
      }
 }
