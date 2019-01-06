@@ -12,7 +12,7 @@ wp_enqueue_style('thickbox');
 ?>
 <div class="wrap"><h1><?php _e('MDx主题 - 功能', 'mdx');?></h1>
 <?php
-if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
+if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
 	mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
 	mdx_update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
@@ -52,16 +52,16 @@ if(($_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
 </div>
 <?php
-}elseif(($_POST['mdx_ref'] == 'true') && !(check_admin_referer('mdx_options_update'))){
+}elseif((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && !(check_admin_referer('mdx_options_update'))){
 ?>
 <div class="notice notice-error is-dismissible">
 <p><?php _e('更改未能保存。', 'mdx'); ?></p>
 </div>
 <?php
 }?>
-<?php if(mdx_get_option('mdx_new_ver') != mdx_get_option('mdx_version')){?>
+<?php if(get_option('mdx_new_ver') !=get_option('mdx_version')){?>
 <div class="notice notice-info is-dismissible">
-<p><?php _e('MDx 已发布新版本 ', 'mdx');echo mdx_get_option('mdx_new_ver');_e('。<a href="/wp-admin/admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
+<p><?php _e('MDx 已发布新版本 ', 'mdx');echo get_option('mdx_new_ver');_e('。<a href="/wp-admin/admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
 </div>
 <?php }?>
 <form method="post" action="">
