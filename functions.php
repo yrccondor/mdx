@@ -583,8 +583,9 @@ function mdx_process_image( $matches ) {
     $img = wp_kses_hair($old_attributes_str, wp_allowed_protocols());
     if (empty($img['src'])){
         return $matches[0];
-    }
-    $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" data-original-srcset="'.$img['srcset']['value'].'" sizes="'.$img['sizes']['value'].'">';
+	}
+	isset($img['sizes']) ? $mdx_sizes = 'sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
+    $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" data-original-srcset="'.$img['srcset']['value'].'"'.$mdx_sizes.'>';
     return $html;
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
