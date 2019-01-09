@@ -253,7 +253,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>>只有中国国内服务商</option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>>只有国际服务商</option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Google+、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。同时，由于微信 SDK 限制，MDx 无法集成微信分享，你可以自行完善。', 'mdx');?></p>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。同时，由于微信 SDK 限制，MDx 无法集成微信分享，你可以自行完善。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
