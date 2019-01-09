@@ -2,9 +2,6 @@
 <a href="https://telegram.me/share/url?url=<?php echo $mdx_current_url;?>&text=<?php the_title();?>" class="mdui-ripple" target="_blank"><svg class="mdx-share-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="25" height="25"><path d="M417.28 795.733l11.947-180.48L756.907 320c14.506-13.227-2.987-19.627-22.187-8.107L330.24 567.467 155.307 512c-37.547-10.667-37.974-36.693 8.533-55.467l681.387-262.826c31.146-14.08 61.013 7.68 49.066 55.466L778.24 795.733c-8.107 38.827-31.573 48.214-64 30.294L537.6 695.467l-84.907 82.346c-9.813 9.814-17.92 17.92-35.413 17.92z"/></svg> <?php _e('分享到 Telegram','mdx');?></a>
 </li>
 <li class="mdui-menu-item">
-<a href="https://plus.google.com/share?url=<?php echo $mdx_current_url;?>" class="mdui-ripple" target="_blank"><svg class="mdx-share-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="25" height="25"><path d="M332.8 467.2v102.4h185.6c-25.6 76.8-96 134.4-185.6 134.4-108.8 0-192-83.2-192-192s83.2-192 192-192c51.2 0 102.4 19.2 134.4 57.6l76.8-76.8c-57.6-51.2-128-89.6-211.2-89.6C166.4 211.2 32 345.6 32 512s134.4 300.8 300.8 300.8S633.6 678.4 633.6 512c0-12.8 0-32-6.4-44.8H332.8z"/><path d="M992 473.6H883.2V371.2h-70.4v102.4H710.4v76.8h102.4v102.4h70.4V550.4H992z"/></svg> <?php _e('分享到 Google+','mdx');?></a>
-</li>
-<li class="mdui-menu-item">
 <a href="https://www.facebook.com/sharer.php?u=<?php echo $mdx_current_url;?>" class="mdui-ripple" target="_blank"><svg class="mdx-share-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="25" height="25"><path d="M567.893 988.587V537.643h151.382L741.888 361.9H567.893V249.684c0-50.858 14.123-85.546 87.083-85.546h93.056V6.87C731.947 4.78 676.736 0 612.437 0 478.293 0 386.432 81.92 386.432 232.32V361.9H234.667v175.743h151.765v450.944h181.46z"/></svg> <?php _e('分享到 Facebook','mdx');?></a>
 </li>
 <li class="mdui-menu-item">
