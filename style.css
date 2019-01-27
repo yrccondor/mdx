@@ -1385,12 +1385,12 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-hot-posts>div {
 	height: 152px;
 }
-.mdx-same-posts ul,.mdx-hot-posts ul {
+.mdx-same-posts ul,.mdx-hot-posts div.mdx-ul {
 	margin: 0 10px;
 	padding: 0;
 	list-style: none;
 }
-.mdx-same-posts ul li,.mdx-hot-posts ul li {
+.mdx-same-posts ul li,.mdx-hot-posts div.mdx-ul div.mdx-li {
 	display: inline-block;
 	width: 180px;
 	height: 105px;
@@ -1399,7 +1399,7 @@ body.mdui-theme-primary-blue-grey #submit {
 	background-size: cover;
 	position: relative;
 }
-.mdx-hot-posts ul li {
+.mdx-hot-posts div div {
 	width: 210px;
 	height: 130px;
 }
@@ -1412,7 +1412,7 @@ body.mdui-theme-primary-blue-grey #submit {
 	z-index: 2;
 	background-color: rgba(0,0,0,.15);
 }
-.mdx-same-posts ul li i,.mdx-hot-posts ul li i {
+.mdx-same-posts ul li i,.mdx-hot-posts div.mdx-ul div.mdx-li i {
 	display: block;
 	position: absolute;
 	z-index: 3;
@@ -1423,7 +1423,7 @@ body.mdui-theme-primary-blue-grey #submit {
 	-webkit-transition: all .3s;
 	transition: all .3s;
 }
-.mdx-same-posts ul li i:hover,.mdx-hot-posts ul li i:hover {
+.mdx-same-posts ul li i:hover,.mdx-hot-posts div.mdx-ul div.mdx-li i:hover {
 	opacity: .8;
 }
 .mdx-same-posts span,.mdx-hot-posts span {
