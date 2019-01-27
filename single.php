@@ -94,7 +94,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
 
-      <?php }else if($post_style=="1"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
+      <?php }else if($post_style=="1"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
         <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <div class="PostTitleFill mdui-color-theme"></div>
         <div class="PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
