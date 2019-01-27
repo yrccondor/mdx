@@ -2708,7 +2708,9 @@ article img.mdx-img-in-post {
 }
 .mdx-img-viewer img {
 	position: fixed;
-	transition: all .2s;
+	/* transition: all .2s; */
+	-webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .mdx-img-viwer img {
 	position: fixed;

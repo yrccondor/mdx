@@ -3,6 +3,8 @@ var whetherChange = 0;
 var now_color = $("meta[name='theme-color']").attr('content');
 var ticking = false;
 var mdx_style = 1;
+var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
+var totalHight = $(".theFirstPage").height()*.37 - 20;
 if($(".theFirstPage").length == 0){
     mdx_style = 0;
 }
@@ -12,11 +14,13 @@ window.onscroll=function(){
         ticking = true;
     }
 }
+window.onresize=function(){
+    barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
+    totalHight = $(".theFirstPage").height()*.37 - 20;
+}
 function scrollDiff(){
     if(mdx_style){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
-        var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
-        var totalHight = $(".theFirstPage").height()*.37 - 20;
         if(howFar > barHight & whetherChange == 0){
             $(".mdui-toolbar-self").toggleClass("mdui-color-theme");
             $("#titleBar").toggleClass("mdui-shadow-2");
@@ -88,9 +92,10 @@ $(function(){
         var mdx_sp_w = 215*$("a>li.mdui-card").length+10;
         var mdx_sp_ww = 0;
         var mdx_sp_s = 0;
-        document.getElementById("mdx-sp-out-c").onscroll=function(){
+        var ele = document.getElementById("mdx-sp-out-c");
+        ele.onscroll=function(){
             mdx_sp_ww = $('#mdx-sp-out-c').width();
-            mdx_sp_s = document.getElementById("mdx-sp-out-c").scrollLeft;
+            mdx_sp_s = ele.scrollLeft;
             if(mdx_sp_s>5 && mdx_change){
                 $('.mdx-hp-g-l').fadeIn(200);
                 mdx_change = 0;
@@ -108,6 +113,26 @@ $(function(){
             }
         }
     }
+
+    //Lazyload
+    $("div.LazyLoad").lazyload({
+        effect : "fadeIn",
+        threshold : 700,
+    });
+    $(".LazyLoadListImg").lazyload({
+        threshold : 300,
+    });
+    $("img.LazyLoadPost").lazyload({
+        effect : "fadeIn",
+        threshold : 400,
+    });
+    $("li.LazyLoadSamePost").lazyload({
+        effect : "fadeIn",
+        threshold : 400,
+        container: $("#mdx-sp-out-c")
+    });
+
+    scrollDiff();
 })
 
 //Search
@@ -140,27 +165,6 @@ $(".sea-close").click(function(){
 function hideBar(){
     $("#SearchBar").hide();
 }
-
-//LazyLoad.init
-$(function() {
-    $("div.LazyLoad").lazyload({
-        effect : "fadeIn",
-        threshold : 500,
-    });
-    $(".LazyLoadListImg").lazyload({
-        threshold : 100,
-    });
-    $("img.LazyLoadPost").lazyload({
-        effect : "fadeIn",
-        threshold : 200,
-    });
-    $("li.LazyLoadSamePost").lazyload({
-        effect : "fadeIn",
-        threshold : 200,
-        container: $("#mdx-sp-out-c")
-    });
-    scrollDiff();
- });
 
  //tap tp top
  $('.mdui-typo-headline').click(function(){
