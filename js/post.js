@@ -161,7 +161,10 @@ function mdx_shortcode(){
                         desc = mdx_post_i18n_1;
                     }
                     var reg4 = new RegExp('property="og:image" content="(.*?)"');
-                    var img = data.match(reg4)[1];
+                    var img = "";
+                    if(data.match(reg4)){
+                        img = data.match(reg4)[1];
+                    }
                     var imgDiv = "";
                     if(!document.getElementById("mdx-post-"+url)){
                         if(url.substr(url.length-1) === "/"){
