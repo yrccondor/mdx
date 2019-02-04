@@ -1,12 +1,4 @@
 <?php
-//激活功能
-add_theme_support('post-thumbnails');
-add_theme_support('post-formats', array('image','link','status','video','audio'));
-register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
-if(get_option('mdx_title_med')=="wp"){
-	add_theme_support('title-tag');
-}
-
 $mdx_all_options = get_option("mdx_all_options");
 
 function mdx_get_option($option_name){
@@ -17,6 +9,13 @@ function mdx_update_option($option_name, $option_value){
 	$GLOBALS['mdx_all_options'][$option_name] = $option_value;
 	update_option('mdx_all_options',$GLOBALS['mdx_all_options']);
 	return true;
+}
+//激活功能
+add_theme_support('post-thumbnails');
+add_theme_support('post-formats', array('image','link','status','video','audio'));
+register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
+if(mdx_get_option('mdx_title_med')=="wp"){
+	add_theme_support('title-tag');
 }
 
 //初始化
