@@ -2725,10 +2725,16 @@ article img.mdx-img-in-post {
 #mdx-right-drawer {
 	background-color: rgb(245, 245, 245);
 }
+.mdui-theme-layout-dark #mdx-right-drawer {
+	background-color: rgb(37, 37, 37);
+}
 .mdx-widget-empty {
 	height: 100%;
 	width: 100%;
 	color: rgba(0,0,0,.3);
+}
+.mdui-theme-layout-dark .mdx-widget-empty {
+	color: rgba(255,255,255,.3);
 }
 .mdx-widget-empty > div {
 	width: 100%;

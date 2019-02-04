@@ -18,6 +18,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
 	mdx_update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
 	mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
+	mdx_update_option('mdx_widget', $_POST['mdx_widget']);
 	mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
 	mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
 	mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
@@ -118,6 +119,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_open_side" value="true" <?php if($mdx_v_open_side=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_open_side" value="false" <?php if($mdx_v_open_side=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，可以通过从屏幕左侧向中心滑动的方式调出抽屉菜单。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('右侧小工具栏', 'mdx');?></th>
+<td>
+<?php $mdx_v_widget=mdx_get_option('mdx_widget');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_widget" value="true" <?php if($mdx_v_widget=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_widget" value="false" <?php if($mdx_v_widget=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
