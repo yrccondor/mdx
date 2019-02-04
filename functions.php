@@ -25,6 +25,17 @@ function mdx_get_now_url(){
 add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('image','link','status','video','audio'));
 register_nav_menus(array('mdx_menu'=>__('抽屉菜单','mdx')));
+register_sidebar(
+	array(
+		'name' => __( '右侧菜单', 'mdx' ),
+		'id' => 'widget_right',
+		'description' => __( '在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。', 'mdx' ),
+		'before_widget' => '<div class="mdui-card mdx-widget %2$s">',
+		'after_widget' => '</div></div>',
+		'before_title' => '<div class="mdui-card-primary"><div class="mdui-card-primary-title">',
+		'after_title' => '</div></div><div class="mdui-card-content mdui-typo">'
+	)
+);
 if(mdx_get_option('mdx_title_med')=="wp"){
 	add_theme_support('title-tag');
 }

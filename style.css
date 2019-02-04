@@ -570,6 +570,9 @@ article p {
 	opacity: .7;
 	pointer-events: none;
 }
+.mdx-tools-up-in #indic {
+	bottom: 86px;
+}
 div.PostMain>div.ArtMain>article {
 	margin-top: 45px;
 }
@@ -2716,6 +2719,45 @@ article img.mdx-img-in-post {
 	position: fixed;
 	transition: all .3s;
 }
+.mdx-tools-up {
+	bottom: 88px;
+}
+#mdx-right-drawer {
+	background-color: rgb(245, 245, 245);
+}
+.mdx-widget-empty {
+	height: 100%;
+	width: 100%;
+	color: rgba(0,0,0,.3);
+}
+.mdx-widget-empty > div {
+	width: 100%;
+	text-align: center;
+}
+.mdx-widget-empty > div > i {
+	font-size: 70px;
+}
+.mdx-widget {
+	width: 95%;
+    margin-left: 2.5%;
+    margin-top: 5px;
+	margin-bottom: 5px;
+	white-space: normal;
+}
+.mdx-widget .mdui-card-primary {
+	padding: 16px 16px 0 16px;
+}
+.mdx-widget table#wp-calendar {
+	width: 100%;
+}
+.mdx-widget table#wp-calendar caption{
+	text-align: center;
+    opacity: .5;
+}
+.mdx-widget ul {
+	list-style-type: none;
+    padding-left: 0;
+}
 @media(max-width:2500px) {
 	.ArtMain0 {
 		width: 100%;
@@ -2754,6 +2796,12 @@ article img.mdx-img-in-post {
 	#indic {
 		right: 22px;
 		bottom: 22px;
+	}
+	.mdx-tools-up-in #indic {
+		bottom: 102px;
+	}
+	.mdx-tools-up {
+		bottom: 104px;
 	}
 }
 @media(max-width:1000px) {

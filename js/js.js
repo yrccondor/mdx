@@ -200,5 +200,5 @@ $(function(){
             $('#mdx_menu').attr('mdui-collapse','');
         }
     })
-    var inst = new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse("#mdx_menu");
 })

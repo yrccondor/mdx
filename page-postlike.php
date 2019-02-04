@@ -6,7 +6,8 @@ global $pageType;
 $pageType = 3;
 ?>
 <?php get_header(); ?>
-<?php $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
+<?php mdx_get_option('mdx_widget') === "true" ? $mdx_widget = true : $mdx_widget = false;
+$mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
     <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
     <?php $post_style=mdx_get_option('mdx_post_style');?>
     <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}?>">
@@ -46,7 +47,7 @@ $pageType = 3;
         <?php if($post_style=="0"){if($full_image_url[0]!=""){$mdx_image_url=$full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
         <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }?>">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }?>">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
             <?php if($mdx_image_url!=""){?>
             <img class="PostMainImg0" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }else{?>
@@ -87,7 +88,7 @@ $pageType = 3;
       <?php }else if($post_style=="1"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
         <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
             <div class="ArtMain mdui-center mdui-typo">
             <?php if($mdx_image_url!=""){?>
                 <img class="PostMainImg mdui-img-rounded mdui-shadow-7" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }?>
@@ -128,7 +129,7 @@ $pageType = 3;
         <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <?php if($mdx_image_url!=""){?><div class="PostTitleFill2 LazyLoad" data-original="<?php echo $mdx_image_url;?>"></div><?php }?>
         <div class="PostTitleFillBack2 mdui-color-theme"></div>
-        <div class="PostMain PostMain2">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain PostMain2">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>

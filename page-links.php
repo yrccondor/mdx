@@ -5,7 +5,8 @@ Template Name: Links
 $pageType = 2;
 ?>
 <?php get_header(); ?>
-<?php $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
+<?php mdx_get_option('mdx_widget') === "true" ? $mdx_widget = true : $mdx_widget = false;
+$mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
     <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
     <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');?>">
     <div class="fullScreen sea-close"></div>
@@ -41,7 +42,7 @@ $pageType = 2;
         <?php if($full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_img_url!=""){?>
         <div class="PostTitleFillPage mdui-color-theme LazyLoad" data-original="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
         <div class="PostTitleFillPageBackGround mdui-color-theme"></div>
-        <div class="PostMain PostMainPage">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain PostMainPage">
             <div class="ArtMain mdui-center LinkPage mdui-typo">
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
                 <?php while(have_posts()):the_post();the_content();?>
