@@ -45,7 +45,8 @@ if(!function_exists('fa_ajax_comment_callback')) :
         }
         $user = wp_get_current_user();
         do_action('set_comment_cookies', $comment, $user);
-        $GLOBALS['comment'] = $comment; //根据你的评论结构自行修改，如使用默认主题则无需修改
+        setcookie("mdx_recently_commented", "true", time()+900);
+        $GLOBALS['comment'] = $comment;
         ?>
         <li class="mdui-list-item">
     <div class="mdui-list-item-avatar"><?php echo get_avatar($comment, $size = '80')?></div>

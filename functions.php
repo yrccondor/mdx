@@ -53,6 +53,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){
@@ -68,6 +69,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
@@ -85,6 +87,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.5"){
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
@@ -104,6 +107,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts', 'false');
 	update_option('mdx_hot_posts_num', '10');
@@ -129,6 +133,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.3"){
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
@@ -154,6 +159,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -186,6 +192,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -218,6 +225,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
@@ -253,6 +261,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -292,6 +301,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base=="1.4.1"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -331,6 +341,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }else if($mdx_version_base!="1.8.8"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
@@ -371,6 +382,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_author_card', 'false');
 	update_option('mdx_tags_color', 'true');
 	include_once("includes/update_database.php");
+	mdx_update_option("mdx_allow_scale", "false");
 }
 include('includes/admin_init_ver.php');
 
@@ -593,7 +605,7 @@ function mdx_process_image( $matches ) {
         return $matches[0];
 	}
 	isset($img['sizes']) ? $mdx_sizes = 'sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
-    $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" data-original-srcset="'.$img['srcset']['value'].'" '.$mdx_sizes.'>';
+    $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" style="'.$img['style']['value'].'" title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" data-original-srcset="'.$img['srcset']['value'].'" '.$mdx_sizes.'>';
     return $html;
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
