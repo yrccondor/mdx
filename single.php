@@ -78,8 +78,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
-                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }?>
@@ -119,8 +118,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
-                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }?>
@@ -160,8 +158,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));
-                            echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }?>
