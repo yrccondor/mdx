@@ -22,7 +22,7 @@ window.onscroll=function(){
 }
 window.onresize=function() {
     winheight = $(window).height();
-    winwidth = $(window).height();
+    winwidth = $(window).width();
 }
 function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -234,7 +234,7 @@ $(function(){
             var imgHref = $(this).parent("a").attr('href').split('.')
             imgHref.pop();
             var imgHrefa = imgHref.join('.') + '-';
-            if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("a").attr('href')){
+            if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("a").attr('href') || imgUrlEach == $(this).parent("a").attr('href')+"-towebp"){
                 $(this).addClass("mdx-img-in-post");
                 $(this).unwrap();
             }else{

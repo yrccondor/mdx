@@ -1402,7 +1402,7 @@ body.mdui-theme-primary-blue-grey #submit {
 	background-size: cover;
 	position: relative;
 }
-.mdx-hot-posts div div {
+.mdx-hot-posts div.mdx-ul div.mdx-li {
 	width: 210px;
 	height: 130px;
 }
