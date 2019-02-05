@@ -8,7 +8,7 @@ var now_color = $("meta[name='theme-color']").attr('content');
 var url_hash = window.location.href;
 var ticking = false;
 var winheight = $(window).height();
-var winwidth = $(window).height();
+var winwidth = $(window).width();
 if($('.PostMain2').length > 0){
     var postStyle2 = true;
 }else{
@@ -260,6 +260,7 @@ $(function(){
                 var imgWdh = w/h,windowWdh = winwidth/winheight;
                 if(imgWdh>windowWdh){
                     if($(img)[0].naturalWidth>=winwidth){
+                        console.log(winwidth);
                         $('.mdx-img-viewer img').animate({'width':winwidth+'px','height':winwidth/imgWdh+'px','top':(winheight-(winwidth/imgWdh))/2+'px','left':'0'},200,function(){$(this).css('transition','all .2s')});
                     }else{
                         $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){$(this).css('transition','all .2s')});
@@ -329,7 +330,7 @@ $(function(){
 })
 
 function afterCloseImgBox(){
-    $('#img-box').remove();
+    $('div#img-box').remove();
     $('.mdx-loading-img').remove();
     $(".mdx-img-viewer").remove();
 }
