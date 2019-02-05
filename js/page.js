@@ -260,13 +260,10 @@ $(function(){
     }
 
         //评论优化
-        $('.disfir').hide();
-        $('.commurl').hide();
+        $('.disfir, .commurl').hide();
         $("div#comments ul li p").addClass('mdui-typo');
-        $('.comment-reply-link').addClass("mdui-btn");
-        $('.comment-reply-link').css("opacity","0");
-        $('.comment-reply-login').addClass("mdui-btn");
-        $('.comment-reply-login').css("opacity","0");
+        $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
+        $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
         $('p.form-submit').prepend('<a mdui-tooltip="{content: '+moreinput+', position: '+"'top'"+'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>');
         var ifOpenComm = 0;
         $('a.moreInComm').click(function(){
@@ -367,10 +364,8 @@ if(!mdx_comment_ajax){
                     threshold : 200,
                 });
                 $("div#comments ul li p").addClass('mdui-typo');
-                $('.comment-reply-link').addClass("mdui-btn");
-                $('.comment-reply-link').css("opacity","0");
-                $('.comment-reply-login').addClass("mdui-btn");
-                $('.comment-reply-login').css("opacity","0");
+                $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
+                $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
             }
         });
     });
