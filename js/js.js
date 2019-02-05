@@ -121,7 +121,7 @@ $(function(){
         effect : "fadeIn",
         threshold : 400,
     });
-    $("li.LazyLoadSamePost").lazyload({
+    $(".LazyLoadSamePost").lazyload({
         effect : "fadeIn",
         threshold : 400,
         container: $("#mdx-sp-out-c")
