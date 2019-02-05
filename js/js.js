@@ -84,7 +84,7 @@ $(function(){
         $('.mdx-hp-g-r').show();
         var mdx_change = 1;
         var mdx_change2 = 1;
-        var mdx_sp_w = 215*$("a>li.mdui-card").length+10;
+        var mdx_sp_w = 215*$("a>div.mdx-li.mdui-card").length+10;
         var mdx_sp_ww = 0;
         var mdx_sp_s = 0;
         var ele = document.getElementById("mdx-sp-out-c");
