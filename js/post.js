@@ -214,10 +214,6 @@ $(function(){
     if(mdx_comment_ajax && $('#comments-navi>a.prev').attr('href')){
         $('#comments-navi').html('<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>');
     }
-    if(sessionStorage.getItem('ns_night-styles')=='true'){
-        $("body").addClass("mdui-theme-layout-dark");
-        $("meta[name='theme-color']").attr('content',"#212121");
-    }
 
     if($('#comments > ul').length == 0){
         $('.ArtMain0 #respond').css('border-radius','0 0 7px 7px');

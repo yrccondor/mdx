@@ -79,11 +79,6 @@ $("#tgns").click(function(){
     }
 });
 $(function(){
-    if(sessionStorage.getItem('ns_night-styles')=='true'){
-        $("body").addClass("mdui-theme-layout-dark");
-        $("meta[name='theme-color']").attr('content',"#212121");
-    }
-
     //hot posts
     if($(".mdx-hot-posts").length!=0){
         $('.mdx-hp-g-r').show();
