@@ -260,7 +260,6 @@ $(function(){
                 var imgWdh = w/h,windowWdh = winwidth/winheight;
                 if(imgWdh>windowWdh){
                     if($(img)[0].naturalWidth>=winwidth){
-                        console.log(winwidth);
                         $('.mdx-img-viewer img').animate({'width':winwidth+'px','height':winwidth/imgWdh+'px','top':(winheight-(winwidth/imgWdh))/2+'px','left':'0'},200,function(){$(this).css('transition','all .2s')});
                     }else{
                         $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){$(this).css('transition','all .2s')});
