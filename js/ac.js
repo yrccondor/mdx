@@ -10,7 +10,6 @@ window.onscroll=function(){
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
-    //scrollDiff();
 }
 function scrollDiff(){
 	var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -53,12 +52,6 @@ $("#tgns").click(function(){
         $("meta[name='theme-color']").attr('content',now_color);
     }
 });
-$(function(){
-    if(sessionStorage.getItem('ns_night-styles')=='true'){
-        $("body").addClass("mdui-theme-layout-dark");
-        $("meta[name='theme-color']").attr('content',"#212121");
-    }
-})
 
 //Search
 $(".seai").click(function(){
@@ -117,8 +110,7 @@ $(function(){
     var mdx_is_c = 0;
     $('#mdx_menu > li').each(function(){
         if($(this).hasClass('menu-item-has-children')){
-            $(this).addClass('mdui-collapse-item');
-            $(this).removeClass('mdui-list-item');
+            $(this).addClass('mdui-collapse-item').removeClass('mdui-list-item');
             $(this).html('<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+$(this).children("a").attr('href')+'">'+$(this).children("a").html()+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+$(this).children("ul").html()+'</ul>');
              mdx_haveChild = 1;
             $(this).children("ul").children("li").each(function(){
@@ -127,16 +119,13 @@ $(function(){
                 }
             })
             if(mdx_is_c){
-                $(this).removeClass('current-menu-item');
-                $(this).removeClass('current_page_item');
-                $(this).addClass('mdui-collapse-item-open');
+                $(this).removeClass('current-menu-item current_page_item').addClass('mdui-collapse-item-open');
             }
             mdx_is_c = 0;
         }
         if(mdx_haveChild){
-            $('#mdx_menu').addClass('mdui-collapse');
-            $('#mdx_menu').attr('mdui-collapse','');
+            $('#mdx_menu').addClass('mdui-collapse').attr('mdui-collapse','');
         }
     })
-    var inst = new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse("#mdx_menu");
 })
