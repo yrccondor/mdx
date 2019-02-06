@@ -3,7 +3,13 @@ var whetherChangeToTop = 0;
 var blogName = $('div.mdui-toolbar > a.mdui-typo-headline').html();
 var postTitle = $('div.mdui-text-color-white-text.mdui-typo-display-1.PostTitlePage').text();
 var blogUrl = $('div.mdui-toolbar > a.mdui-typo-headline').attr("href");
-var now_color = $("meta[name='theme-color']").attr('content');
+var metaColor = $("meta[name='theme-color']");
+var colorEnabled = false;
+var now_color = '';
+if(metaColor.length != 0){
+    now_color = $("meta[name='mdx-main-color']").attr('content');
+    colorEnabled = true;
+}
 var ticking = false;
 var barHight = $(".PostTitlePage").height() - $(".titleBarGobal").height() - 2;
 var totalHight = $(".PostTitlePage").height()*.5 - 20;
@@ -165,10 +171,14 @@ $("#tgns").click(function(){
     $("body").toggleClass("mdui-theme-layout-dark");
     if(!sessionStorage.getItem('ns_night-styles') || sessionStorage.getItem('ns_night-styles')=='false'){
         sessionStorage.setItem('ns_night-styles', 'true');
-        $("meta[name='theme-color']").attr('content',"#212121");
+        if(colorEnabled){
+            metaColor.attr('content',"#212121");
+        }
     }else{
         sessionStorage.setItem('ns_night-styles', 'false');
-        $("meta[name='theme-color']").attr('content',now_color);
+        if(colorEnabled){
+            metaColor.attr('content',now_color);
+        }
     }
 });
 
@@ -240,7 +250,9 @@ $(function(){
                     }
                 }
             }
-            $("meta[name='theme-color']").attr('content',"#212121");
+            if(colorEnabled){
+                metaColor.attr('content',"#212121");
+            }
             $('.mdx-img-viwer').on('load', function(){
                 $('div.mdx-loading-img').remove();
             })
@@ -248,10 +260,12 @@ $(function(){
         $('body').on('click','.mdx-img-viewer',function(){
             $('#img-box').css({'opacity':'0','pointer-events':'none'});
             $('.mdx-img-viewer img').css({'width':$('.mdx-img-viewer img').attr("data-raww")+"px",'height':$('.mdx-img-viewer img').attr("data-rawh")+"px",'top':$('.mdx-img-viewer img').attr("data-post")+"px",'left':$('.mdx-img-viewer img').attr("data-posl")+"px"});
-            if(sessionStorage.getItem('ns_night-styles')!="true"){
-                $("meta[name='theme-color']").attr('content',now_color);
-            }else{
-                $("meta[name='theme-color']").attr('content',"#212121");
+            if(colorEnabled){
+                if(sessionStorage.getItem('ns_night-styles')!="true"){
+                    metaColor.attr('content',now_color);
+                }else{
+                    metaColor.attr('content',"#212121");
+                }
             }
             window.setTimeout("afterCloseImgBox()",200);
         })

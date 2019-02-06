@@ -1,6 +1,12 @@
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
-var now_color = $("meta[name='theme-color']").attr('content');
+var metaColor = $("meta[name='theme-color']");
+var colorEnabled = false;
+var now_color = '';
+if(metaColor.length != 0){
+    now_color = $("meta[name='mdx-main-color']").attr('content');
+    colorEnabled = true;
+}
 var ticking = false;
 var mdx_style = 1;
 var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
@@ -72,10 +78,14 @@ $("#tgns").click(function(){
     $("body").toggleClass("mdui-theme-layout-dark");
     if(!sessionStorage.getItem('ns_night-styles') || sessionStorage.getItem('ns_night-styles')=='false'){
         sessionStorage.setItem('ns_night-styles', 'true');
-        $("meta[name='theme-color']").attr('content',"#212121");
+        if(colorEnabled){
+            metaColor.attr('content',"#212121");
+        }
     }else{
         sessionStorage.setItem('ns_night-styles', 'false');
-        $("meta[name='theme-color']").attr('content',now_color);
+        if(colorEnabled){
+            metaColor.attr('content',now_color);
+        }
     }
 });
 $(function(){
