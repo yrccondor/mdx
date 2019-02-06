@@ -59,13 +59,9 @@ if(!get_option('mdx_first_init')){
 
 //更新时初始化新功能
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base=="1.8.7"){
-	update_option('mdx_title_med', 'diy');
-	update_option('mdx_post_list_img_height', 'auto');
-	update_option('mdx_post_edit_time', 'post');
-	update_option('mdx_author_card', 'false');
-	update_option('mdx_tags_color', 'true');
-	include_once("includes/update_database.php");
+if($mdx_version_base=="1.8.8" || $mdx_version_base=="1.8.9"){
+	mdx_update_option("mdx_img_height", "false");
+}else if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base=="1.8.7"){
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
@@ -387,7 +383,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
-}else if($mdx_version_base!="1.8.8" && $mdx_version_base!="1.8.9"){
+}else if($mdx_version_base!="1.8.10"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
