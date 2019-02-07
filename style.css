@@ -569,7 +569,7 @@ article p {
 	opacity: .7;
 	pointer-events: none;
 	transform:scale(0) translateZ(0px);
-	transition: cubic-bezier(.4,0,1,1),transform .2s；
+	transition: cubic-bezier(.4,0,1,1),transform .2s;
 }
 .mdx-tools-up-in #indic {
 	bottom: 86px;

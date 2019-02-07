@@ -64,7 +64,7 @@ function scrollDiff(){
             $("#titleBarinPost").toggleClass("mdui-shadow-2");
             $("div.mdui-toolbar > a.mdui-typo-headline").html(postTitle);
             $("div.mdui-toolbar > a.mdui-typo-headline").removeAttr("href");
-            $("#indic").fadeIn(200);
+            $("#indic").css("transform","scale(1) translateZ(0)");
             whetherChangeToTop = 1;
         }else if(howFar <= (winheight*0.4-64) &&  whetherChangeToTop == 1){
             $(".mdui-toolbar").toggleClass("mdui-color-theme");
@@ -72,7 +72,7 @@ function scrollDiff(){
             $("#titleBarinPost").toggleClass("mdui-shadow-2");
             $("div.mdui-toolbar > a.mdui-typo-headline").html(blogName);
             $("div.mdui-toolbar > a.mdui-typo-headline").attr("href",blogUrl);
-            $("#indic").hide();
+            $("#indic").css("transform","scale(0) translateZ(0)");
             whetherChangeToTop = 0;
         }
     }
