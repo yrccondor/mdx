@@ -2773,7 +2773,7 @@ article img.mdx-img-in-post {
 		width: 100%;
 		max-width: 1300px;
 	}
-	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c {
+	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c, .ArtMain ~ div#comments {
 		width: 90%;
 		max-width: 1300px;
 	}
@@ -2783,7 +2783,7 @@ article img.mdx-img-in-post {
 		width: 100%;
 		max-width: 1000px;
 	}
-	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c {
+	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c, .ArtMain ~ div#comments {
 		max-width: 1100px;
 	}
 	.page-tags>article, .page-tags {
@@ -2795,7 +2795,7 @@ article img.mdx-img-in-post {
 		width: 100%;
 		max-width: 800px;
 	}
-	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c {
+	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c, .ArtMain ~ div#comments {
 		max-width: 900px;
 	}
 	.page-tags>article, .page-tags {
@@ -2819,7 +2819,7 @@ article img.mdx-img-in-post {
 		width: 100%;
 		max-width: 680px;
 	}
-	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c {
+	.ArtMain,#respond, .mdx-same-posts, .mdx-author-c, .ArtMain ~ div#comments {
 		max-width: 720px;
 	}
 }
