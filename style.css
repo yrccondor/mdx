@@ -564,11 +564,12 @@ article p {
 	right: 14px;
 	bottom: 14px;
 	z-index: 7;
-	display: none;
 	width: 60px;
 	height: 60px;
 	opacity: .7;
 	pointer-events: none;
+	transform:scale(0) translateZ(0px);
+	transition: cubic-bezier(.4,0,1,1),transform .2s；
 }
 .mdx-tools-up-in #indic {
 	bottom: 86px;
@@ -1570,8 +1571,8 @@ div.mdui-chip {
 	position: absolute;
 	top: 5px;
 	right: 0;
-	padding: 0 10px;
-	background-color: #ededed;
+	padding: 0 10px 5px 10px;
+    background: linear-gradient(to right, rgba(237,237,237,0) 0%,rgba(237,237,237,1) 5%,rgba(237,237,237,1) 100%);
 	font-size: 1pc;
 }
 .mdui-theme-layout-dark .spanout,.mdui-theme-layout-dark .timeInPost {
@@ -2763,6 +2764,9 @@ article img.mdx-img-in-post {
 .mdx-widget ul {
 	list-style-type: none;
     padding-left: 0;
+}
+.mdui-list-item-avatar {
+	overflow: hidden;
 }
 @media(max-width:2500px) {
 	.ArtMain0 {

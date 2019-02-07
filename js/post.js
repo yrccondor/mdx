@@ -46,14 +46,14 @@ function scrollDiff(){
         $(".scrollToTop").toggleClass("mdui-fab-hide");
         $("div.mdui-toolbar > a.mdui-typo-headline").html(postTitle);
         $("div.mdui-toolbar > a.mdui-typo-headline").removeAttr("href");
-        $("#indic").fadeIn(200);
+        $("#indic").css("transform","scale(1) translateZ(0)");
         whetherChangeToTop = 1;
     }
     if(howFar <= 200 & whetherChangeToTop == 1 && !postStyle2){
         $(".scrollToTop").toggleClass("mdui-fab-hide");
         $("div.mdui-toolbar > a.mdui-typo-headline").html(blogName);
         $("div.mdui-toolbar > a.mdui-typo-headline").attr("href",blogUrl);
-        $("#indic").hide();
+        $("#indic").css("transform","scale(0) translateZ(0)");
         whetherChangeToTop = 0;
     }
 
