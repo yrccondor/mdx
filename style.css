@@ -1572,7 +1572,7 @@ div.mdui-chip {
 	top: 5px;
 	right: 0;
 	padding: 0 10px 5px 10px;
-    background: linear-gradient(to right, rgba(237,237,237,0) 0%,rgba(237,237,237,1) 5%,rgba(237,237,237,1) 100%);
+	background: linear-gradient(to right, rgba(237,237,237,0) 0%,rgba(237,237,237,1) 5%,rgba(237,237,237,1) 100%);
 	font-size: 1pc;
 }
 .mdui-theme-layout-dark .spanout,.mdui-theme-layout-dark .timeInPost {
