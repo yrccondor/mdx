@@ -7,7 +7,7 @@
 > 轻于形，悦于心
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.8.9-3f51b5.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/version-1.8.10-3f51b5.svg?style=flat-square"/>
 <img alt="build" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="releases" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
@@ -20,12 +20,13 @@
 
 ## Contents 目录
 
-- [Introduction 介绍](#introduction-介绍)
-- [Demo 演示](#demo-演示)
-- [Download 下载](#download-下载)
-- [Docs 文档](#docs-文档)
-- [License 许可证](#license-许可证)
-- [Render 渲染](#render-渲染)
+- [Contents 目录](#contents-%E7%9B%AE%E5%BD%95)
+- [Introduction 介绍](#introduction-%E4%BB%8B%E7%BB%8D)
+- [Demo 演示](#demo-%E6%BC%94%E7%A4%BA)
+- [Download 下载](#download-%E4%B8%8B%E8%BD%BD)
+- [Docs 文档](#docs-%E6%96%87%E6%A1%A3)
+- [License 许可证](#license-%E8%AE%B8%E5%8F%AF%E8%AF%81)
+- [Render 渲染](#render-%E6%B8%B2%E6%9F%93)
 
 
 ## Introduction 介绍
