@@ -247,6 +247,7 @@ $(function(){
                     $('.mdx-img-viwer').hide();
                     img.onload = function(){
                         callback(img.width, img.height, img);
+                        $('div.mdx-loading-img').remove();
                     }
                 }
             }
