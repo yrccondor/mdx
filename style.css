@@ -321,7 +321,7 @@ article a {
 article a:hover {
 	opacity: .9;
 }
-.title,article h2,article h3 {
+.title,article h2,article h3,article h4 {
 	text-align: left;
 	font-weight: 700;
 }
@@ -495,61 +495,61 @@ body.mdui-theme-primary-blue-grey article h3.link-title:before {
 	color: #607d8b;
 	content: "• ";
 }
-body.mdui-theme-primary-red .title,body.mdui-theme-primary-red article h2,body.mdui-theme-primary-red article h3 {
+body.mdui-theme-primary-red .title,body.mdui-theme-primary-red article h2,body.mdui-theme-primary-red article h3,body.mdui-theme-primary-red article h1,body.mdui-theme-primary-red article h1 {
 	color: #f44336;
 }
-body.mdui-theme-primary-pink .title,body.mdui-theme-primary-pink article h2,body.mdui-theme-primary-pink article h3 {
+body.mdui-theme-primary-pink .title,body.mdui-theme-primary-pink article h2,body.mdui-theme-primary-pink article h3,body.mdui-theme-primary-pink article h1,body.mdui-theme-primary-pink article h4 {
 	color: #e91e63;
 }
-body.mdui-theme-primary-purple .title,body.mdui-theme-primary-purple article h2,body.mdui-theme-primary-purple article h3 {
+body.mdui-theme-primary-purple .title,body.mdui-theme-primary-purple article h2,body.mdui-theme-primary-purple article h3,body.mdui-theme-primary-purple article h1,body.mdui-theme-primary-purple article h4 {
 	color: #9c27b0;
 }
-body.mdui-theme-primary-deep-purple .title,body.mdui-theme-primary-deep-purple article h2,body.mdui-theme-primary-deep-purple article h3 {
+body.mdui-theme-primary-deep-purple .title,body.mdui-theme-primary-deep-purple article h2,body.mdui-theme-primary-deep-purple article h3,body.mdui-theme-primary-deep-purple article h1,body.mdui-theme-primary-deep-purple article h4 {
 	color: #673ab7;
 }
-body.mdui-theme-primary-indigo .title,body.mdui-theme-primary-indigo article h2,body.mdui-theme-primary-indigo article h3 {
+body.mdui-theme-primary-indigo .title,body.mdui-theme-primary-indigo article h2,body.mdui-theme-primary-indigo article h3,body.mdui-theme-primary-indigo article h1,body.mdui-theme-primary-indigo article h4 {
 	color: #3f51b5;
 }
-body.mdui-theme-primary-blue .title,body.mdui-theme-primary-blue article h2,body.mdui-theme-primary-blue article h3 {
+body.mdui-theme-primary-blue .title,body.mdui-theme-primary-blue article h2,body.mdui-theme-primary-blue article h3,body.mdui-theme-primary-blue article h1,body.mdui-theme-primary-blue article h4 {
 	color: #2196f3;
 }
-body.mdui-theme-primary-light-blue .title,body.mdui-theme-primary-light-blue article h2,body.mdui-theme-primary-light-blue article h3 {
+body.mdui-theme-primary-light-blue .title,body.mdui-theme-primary-light-blue article h2,body.mdui-theme-primary-light-blue article h3,body.mdui-theme-primary-light-blue article h1,body.mdui-theme-primary-light-blue article h4 {
 	color: #03a9f4;
 }
-body.mdui-theme-primary-cyan .title,body.mdui-theme-primary-cyan article h2,body.mdui-theme-primary-cyan article h3 {
+body.mdui-theme-primary-cyan .title,body.mdui-theme-primary-cyan article h2,body.mdui-theme-primary-cyan article h3,body.mdui-theme-primary-cyan article h1,body.mdui-theme-primary-cyan article h4 {
 	color: #00bcd4;
 }
-body.mdui-theme-primary-teal .title,body.mdui-theme-primary-teal article h2,body.mdui-theme-primary-teal article h3 {
+body.mdui-theme-primary-teal .title,body.mdui-theme-primary-teal article h2,body.mdui-theme-primary-teal article h3,body.mdui-theme-primary-teal article h1,body.mdui-theme-primary-teal article h4 {
 	color: #009688;
 }
-body.mdui-theme-primary-green .title,body.mdui-theme-primary-green article h2,body.mdui-theme-primary-green article h3 {
+body.mdui-theme-primary-green .title,body.mdui-theme-primary-green article h2,body.mdui-theme-primary-green article h3,body.mdui-theme-primary-green article h1,body.mdui-theme-primary-green article h4 {
 	color: #4caf50;
 }
-body.mdui-theme-primary-light-green .title,body.mdui-theme-primary-light-green article h2,body.mdui-theme-primary-light-green article h3 {
+body.mdui-theme-primary-light-green .title,body.mdui-theme-primary-light-green article h2,body.mdui-theme-primary-light-green article h3,body.mdui-theme-primary-light-green article h1,body.mdui-theme-primary-light-green article h4 {
 	color: #8bc34a;
 }
-body.mdui-theme-primary-lime .title,body.mdui-theme-primary-lime article h2,body.mdui-theme-primary-lime article h3 {
+body.mdui-theme-primary-lime .title,body.mdui-theme-primary-lime article h2,body.mdui-theme-primary-lime article h3,body.mdui-theme-primary-lime article h1,body.mdui-theme-primary-lime article h4 {
 	color: #cddc39;
 }
-body.mdui-theme-primary-yellow .title,body.mdui-theme-primary-yellow article h2,body.mdui-theme-primary-yellow article h3 {
+body.mdui-theme-primary-yellow .title,body.mdui-theme-primary-yellow article h2,body.mdui-theme-primary-yellow article h3,body.mdui-theme-primary-yellow article h1,body.mdui-theme-primary-yellow article h4 {
 	color: #ffeb3b;
 }
-body.mdui-theme-primary-amber .title,body.mdui-theme-primary-amber article h2,body.mdui-theme-primary-amber article h3 {
+body.mdui-theme-primary-amber .title,body.mdui-theme-primary-amber article h2,body.mdui-theme-primary-amber article h3,body.mdui-theme-primary-amber article h1,body.mdui-theme-primary-amber article h4 {
 	color: #ffc107;
 }
-body.mdui-theme-primary-orange .title,body.mdui-theme-primary-orange article h2,body.mdui-theme-primary-orange article h3 {
+body.mdui-theme-primary-orange .title,body.mdui-theme-primary-orange article h2,body.mdui-theme-primary-orange article h3,body.mdui-theme-primary-orange article h1,body.mdui-theme-primary-orange article h4 {
 	color: #ff9800;
 }
-body.mdui-theme-primary-deep-orange .title,body.mdui-theme-primary-deep-orange article h2,body.mdui-theme-primary-deep-orange article h3 {
+body.mdui-theme-primary-deep-orange .title,body.mdui-theme-primary-deep-orange article h2,body.mdui-theme-primary-deep-orange article h3,body.mdui-theme-primary-deep-orange article h1,body.mdui-theme-primary-deep-orange article h4 {
 	color: #ff5722;
 }
-body.mdui-theme-primary-brown .title,body.mdui-theme-primary-brown article h2,body.mdui-theme-primary-brown article h3 {
+body.mdui-theme-primary-brown .title,body.mdui-theme-primary-brown article h2,body.mdui-theme-primary-brown article h3,body.mdui-theme-primary-brown article h1,body.mdui-theme-primary-brown article h4 {
 	color: #795548;
 }
-body.mdui-theme-primary-grey .title,body.mdui-theme-primary-grey article h2,body.mdui-theme-primary-grey article h3 {
+body.mdui-theme-primary-grey .title,body.mdui-theme-primary-grey article h2,body.mdui-theme-primary-grey article h3,body.mdui-theme-primary-grey article h1,body.mdui-theme-primary-grey article h4 {
 	color: #9e9e9e;
 }
-body.mdui-theme-primary-blue-grey .title,body.mdui-theme-primary-blue-grey article h2,body.mdui-theme-primary-blue-grey article h3 {
+body.mdui-theme-primary-blue-grey .title,body.mdui-theme-primary-blue-grey article h2,body.mdui-theme-primary-blue-grey article h3,body.mdui-theme-primary-blue-grey article h1,body.mdui-theme-primary-blue-grey article h4 {
 	color: #607d8b;
 }
 article p {
@@ -2915,6 +2915,12 @@ article img.mdx-img-in-post {
 	.title,article h2,article h3 {
 		font-size: 20px;
 	}
+	.title,article h1 {
+		font-size: 23px;
+	}
+	.title,article h4 {
+		font-size: 18px;
+	}
 	#SearchBar,#titleBar,#titleBarinPost {
 		height: 56px;
 	}
@@ -2958,6 +2964,12 @@ article img.mdx-img-in-post {
 	}
 	.title,article h2,article h3 {
 		font-size: 18px;
+	}
+	.title,article h1 {
+		font-size: 20px;
+	}
+	.title,article h4 {
+		font-size: 15px;
 	}
 	.mdx-author-c {
 		height: 120px;
@@ -3007,8 +3019,11 @@ article img.mdx-img-in-post {
 	.PostTitle {
 		font-size: 23px;
 	}
-	.title,article h2,article h3 {
+	.title,article h2,article h3,article h4 {
 		font-size: 15px;
+	}
+	.title,article h1 {
+		font-size: 18px;
 	}
 	.mdx-author-c {
 		height: 100px;
