@@ -1575,8 +1575,11 @@ div.mdui-chip {
 	background: linear-gradient(to right, rgba(237,237,237,0) 0%,rgba(237,237,237,1) 5%,rgba(237,237,237,1) 100%);
 	font-size: 1pc;
 }
-.mdui-theme-layout-dark .spanout,.mdui-theme-layout-dark .timeInPost {
+.mdui-theme-layout-dark .spanout {
 	background-color: #292929;
+}
+.mdui-theme-layout-dark .timeInPost {
+	background: linear-gradient(to right, rgba(41,41,41,0) 0%,rgba(41,41,41,1) 5%,rgba(41,41,41,1) 100%);
 }
 ul#mdxshare {
 	padding-left: 0!important;
