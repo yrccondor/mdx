@@ -6,6 +6,7 @@ var blogUrl = $('div.mdui-toolbar > a.mdui-typo-headline').attr("href");
 var metaColor = $("meta[name='theme-color']");
 var colorEnabled = false;
 var now_color = '';
+var imgRaw;
 if(metaColor.length != 0){
     now_color = $("meta[name='mdx-main-color']").attr('content');
     colorEnabled = true;
@@ -216,6 +217,8 @@ $(function(){
             if(imgUrl=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
                 imgUrl = $(this).attr('data-original');
             }
+            imgRaw = $(this);
+            imgRaw.css({"opacity":"0"});
             $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
             mdui.updateSpinners();
             $('.mdx-img-viewer').append("<img src=\""+$(this).attr("src")+"\" style=\"top:"+toTopDes+"px;left:"+toLeftDes+"px;width:"+$(this).width()+"px;height:"+$(this).height()+"px;\" data-raww=\""+$(this).width()+"\" data-rawh=\""+$(this).height()+"\" data-post=\""+toTopDes+"\" data-posl=\""+toLeftDes+"\">");
@@ -298,6 +301,7 @@ $(function(){
 })
 
 function afterCloseImgBox(){
+    imgRaw.css({"opacity":"1"});
     $('div#img-box').remove();
     $('.mdx-loading-img').remove();
     $(".mdx-img-viewer").remove();
