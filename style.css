@@ -741,8 +741,8 @@ body.customize-support #close-img-box {
 	top: 50px;
 	left: 0;
 	z-index: 10004;
-	width: 100%;
-	height: calc(100% - 50px);
+	width: 100vw;
+	height: calc(100vh - 50px);
 }
 .mdx-loading-img>div {
 	width: 100%;

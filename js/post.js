@@ -469,7 +469,7 @@ function mdx_show_img(){
             }else{
                 $('#imgInBox').css({'height':'100%','width':'auto'});
             }
-            if((document.body.clientWidth > w) && (winheight > h)){
+            if((winwidth > w) && (winheight > h)){
                 $('#imgInBox').css('width',w);
                 $('#imgInBox').css('height',h);
             }
@@ -492,7 +492,7 @@ function mdx_show_img(){
             }else{
                 $('#imgInBox').css({'height':'100%','width':'auto'});
             }
-            if((document.body.clientWidth > w) && (winheight > h)){
+            if((winwidth > w) && (winheight > h)){
                 $('#imgInBox').css({'width':w,'height':h});
             }
             $('.mdx-si-tip').addClass('mdx-si-tip-showed');
