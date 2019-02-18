@@ -557,13 +557,13 @@ article p {
 	font-size: 17px;
 }
 .scrollToTop {
-	z-index: 5;
+	z-index: 12;
 }
 #indic {
 	position: fixed;
 	right: 14px;
 	bottom: 14px;
-	z-index: 7;
+	z-index: 15;
 	width: 60px;
 	height: 60px;
 	opacity: .7;
