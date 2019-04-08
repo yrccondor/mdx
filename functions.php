@@ -512,8 +512,8 @@ function mdx_post_metaboxes_2() {
 		}
 		//$meta_box_value = $post->ID;
         echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
-        echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>
-		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>';
+        echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>'.__('
+		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>', 'mdx');
 }
 function mdx_post_metaboxes_1() {
     global $post;
@@ -591,8 +591,8 @@ function mdx_post_metaboxes_1() {
 	<?php
 }
 function create_meta_box(){
-	add_meta_box('mdx_post_metaboxes_1', '文章设置', 'mdx_post_metaboxes_1', 'post', 'side', 'low');
-	add_meta_box('mdx_post_metaboxes_2', '文末信息', 'mdx_post_metaboxes_2', 'post', 'normal', 'low');
+	add_meta_box('mdx_post_metaboxes_1', __('文章设置', 'mdx'), 'mdx_post_metaboxes_1', 'post', 'side', 'low');
+	add_meta_box('mdx_post_metaboxes_2', __('文末信息', 'mdx'), 'mdx_post_metaboxes_2', 'post', 'normal', 'low');
 }
 add_action('admin_menu', 'create_meta_box');
 

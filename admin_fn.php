@@ -218,10 +218,15 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><label for="mdx_post_list_1"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_post_list_1=mdx_get_option('mdx_post_list_1');?>
+<?php
+$mdx_i18n_settings_1 = __('浏览量', 'mdx');
+$mdx_i18n_settings_2 = __('发表时间', 'mdx');
+$mdx_i18n_settings_3 = __('评论数', 'mdx');
+?>
 <select name="mdx_post_list_1" id="mdx_post_list_1">
-	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>>浏览量</option>
-	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>>发表时间</option>
-	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>>评论数</option>
+	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
+	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
+	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
 </select>
 </td>
 </tr>
@@ -230,9 +235,9 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_post_list_2=mdx_get_option('mdx_post_list_2');?>
 <select name="mdx_post_list_2" id="mdx_post_list_2">
-	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>>浏览量</option>
-	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>>发表时间</option>
-	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>>评论数</option>
+	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
+	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
+	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
 </select>
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
@@ -242,8 +247,8 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_post_edit_time=mdx_get_option('mdx_post_edit_time');?>
 <select name="mdx_post_edit_time" id="mdx_post_edit_time">
-	<option value="post" <?php if($mdx_v_post_edit_time=='post'){?>selected="selected"<?php }?>>发布时间</option>
-	<option value="edit" <?php if($mdx_v_post_edit_time=='edit'){?>selected="selected"<?php }?>>最后编辑时间</option>
+	<option value="post" <?php if($mdx_v_post_edit_time=='post'){?>selected="selected"<?php }?>><?php _e('发布时间', 'mdx');?></option>
+	<option value="edit" <?php if($mdx_v_post_edit_time=='edit'){?>selected="selected"<?php }?>><?php _e('最后编辑时间', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。', 'mdx');?></p>
 </td>
@@ -285,11 +290,11 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_share_area=mdx_get_option('mdx_share_area');?>
 <select name="mdx_share_area" id="mdx_share_area">
-	<option value="all" <?php if($mdx_v_share_area=='all'){?>selected="selected"<?php }?>>所有服务商</option>
-	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>>只有中国国内服务商</option>
-	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>>只有国际服务商</option>
+	<option value="all" <?php if($mdx_v_share_area=='all'){?>selected="selected"<?php }?>><?php _e('所有服务商', 'mdx');?></option>
+	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
+	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。同时，由于微信 SDK 限制，MDx 无法集成微信分享，你可以自行完善。', 'mdx');?></p>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
 </td>
 </tr>
 <tr>

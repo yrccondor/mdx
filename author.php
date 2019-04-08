@@ -32,7 +32,7 @@
       </div>
     </div></header>
     <?php get_template_part('searchform')?>
-    <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php echo "由 ".get_the_author()." 发布"; ?><br><small><?php if(the_author_meta( 'description' )!=""){echo the_author_meta( 'description' );}else{_e('作者归档','mdx');}?></small></h1></div>
+    <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php printf(__("由 %s 发布"), get_the_author()); ?><br><small><?php if(the_author_meta('description')!=""){echo the_author_meta('description');}else{_e('作者归档','mdx');}?></small></h1></div>
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">
       <?php
@@ -45,6 +45,6 @@
                 get_template_part('template-parts/content-'.$style, get_post_format());
               }
             endwhile;?>
-      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多'));?>
+      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
 <?php get_footer();?>

@@ -2,7 +2,7 @@
     tinymce.create('tinymce.plugins.mdx_table', {
         init : function(ed, url){
             ed.addButton('mdx_table', {
-                title : '添加表格',
+                title : 'Table',
                 image : url+'/bt_icon/table.png',
                 onclick : function(){
                     ed.selection.setContent('[mdx_table][/mdx_table]');

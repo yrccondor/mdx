@@ -40,14 +40,14 @@
             while(have_posts()):the_post();
 				get_template_part('template-parts/content-'.$style, 'get_post_format()');
 			endwhile;?>
-      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多'));?>
+      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
       <?php else:?>
       <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php the_search_query();?><br><small><?php _e('搜索结果','mdx');?></small></h1></div>
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">
       <br><br><br><i class="mdui-icon material-icons mdui-center mdx-search-empty">&#xe565;</i><br><br><br>
-      <h1 class="mdui-center mdx-search-empty-text"><?php _e('前方似乎禁止通行','mdx');?></h1>
+      <h1 class="mdui-center mdx-search-empty-text"><?php _e('前方似乎空空如也','mdx');?></h1>
       <h2 class="mdui-center mdx-search-empty-text"><?php _e('什么也没找到，换个词搜搜试试？','mdx');?></h2><br><br>
       </main>
     <?php endif;?>

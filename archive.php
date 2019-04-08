@@ -40,6 +40,6 @@
 			while(have_posts()):the_post(); 
 		    get_template_part('template-parts/content-'.$style, get_post_format());
 			endwhile;?>
-      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多'));?>
+      </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
 <?php get_footer();?>

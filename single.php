@@ -181,7 +181,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 <?php get_template_part('toggleposts')?>
         <div id="indic"></div>
       <?php }?>
-      <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="<?php if($full_image_url[0]!=""){echo 'background-image:linear-gradient(to bottom, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7) 100%),url('.$full_image_url[0].');';}else{echo 'background-color:'.mdx_get_option('mdx_styles_hex').';';}?>"><p><?php $mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php if(!post_password_required()){echo mdx_get_post_excerpt($post, 175);}else{echo "这篇文章受密码保护，前往原文输入密码后才能查看。";}?></div><div class="mdx-si-box"><span>扫描二维码继续阅读</span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
+      <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="<?php if($full_image_url[0]!=""){echo 'background-image:linear-gradient(to bottom, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7) 100%),url('.$full_image_url[0].');';}else{echo 'background-color:'.mdx_get_option('mdx_styles_hex').';';}?>"><p><?php $mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php if(!post_password_required()){echo mdx_get_post_excerpt($post, 175);}else{echo "这篇文章受密码保护，前往原文输入密码后才能查看。";}?></div><div class="mdx-si-box"><span><?php _e('扫描二维码继续阅读', 'mdx');?></span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
       <?php get_footer();
 }elseif ($mdx_post_show=='1') {
 ?>
@@ -191,8 +191,8 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
-            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('去首页', 'mdx');?></a>
+            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页', 'mdx');?></a>
         <div>
     </div>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
@@ -215,8 +215,8 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
-            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple">去首页</a>
-            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple">返回上一页</a>
+            <a href="<?php bloginfo('url'); ?>" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('去首页', 'mdx');?></a>
+            <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页', 'mdx');?></a>
         <div>
     </div>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>

@@ -2,10 +2,10 @@
     tinymce.create('tinymce.plugins.mdx_progress', {
         init : function(ed, url){
             ed.addButton('mdx_progress', {
-                title : '添加进度指示器',
+                title : 'Progress',
                 image : url+'/bt_icon/progress.png',
                 onclick : function(){
-                    ed.selection.setContent('[mdx_progress]用0-100的数值来表示你的进度，支持小数[/mdx_progress]');
+                    ed.selection.setContent('[mdx_progress]Number 0-100 here, float number is supported.[/mdx_progress]');
                 }
             });
         },

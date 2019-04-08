@@ -63,6 +63,6 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
         }else{
           get_template_part('template-parts/content-'.$style, get_post_format());
         }
-      endwhile;?></main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多'));?>
+      endwhile;?></main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
 <?php get_footer();?>

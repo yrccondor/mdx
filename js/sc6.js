@@ -2,10 +2,10 @@
     tinymce.create('tinymce.plugins.mdx_github', {
         init : function(ed, url){
             ed.addButton('mdx_github', {
-                title : '添加 Github 链接',
+                title : 'Github',
                 image : url+'/bt_icon/github.png',
                 onclick : function(){
-                    ed.selection.setContent('[mdx_github author="项目作者" project="项目名"][/mdx_github]');
+                    ed.selection.setContent('[mdx_github author="Author..." project="Project..."][/mdx_github]');
                 }
             });
         },

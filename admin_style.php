@@ -360,9 +360,9 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_logo_way=mdx_get_option('mdx_logo_way');?>
 <select name="mdx_logo_way" id="mdx_logo_way" onchange="mdx_logo_sec(this.options[this.options.selectedIndex].value)">
-	<option value="1" <?php if($mdx_v_logo_way=='1'){?>selected="selected"<?php }?>>博客名称</option>
-	<option value="2" <?php if($mdx_v_logo_way=='2'){?>selected="selected"<?php }?>>自定义 Logo</option>
-	<option value="3" <?php if($mdx_v_logo_way=='3'){?>selected="selected"<?php }?>>自定义名称</option>
+	<option value="1" <?php if($mdx_v_logo_way=='1'){?>selected="selected"<?php }?>><?php _e('博客名称', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_logo_way=='2'){?>selected="selected"<?php }?>><?php _e('自定义 Logo', 'mdx');?></option>
+	<option value="3" <?php if($mdx_v_logo_way=='3'){?>selected="selected"<?php }?>><?php _e('自定义名称', 'mdx');?></option>
 </select>
 </td>
 </tr>

@@ -59,17 +59,17 @@ function mdx_display_sub_function_three(){
 echo '<div class="wrap">
 <h1>'.__('MDx主题 - 关于', 'mdx').'</h1>'.$mdx_ifedit.$mdx_news.'
 <p class="mdx-admin-img"><img src="../wp-content/themes/mdx/img/admin.jpg"></p>
-<h2 style="font-size:19px;">'.__('感谢使用MDx主题', 'mdx').'</h2>
-<p style="font-size:15px;">'.__('我是Axton Yao，这个主题由我开发。我的网站是', 'mdx').'<a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
+<h2 style="font-size:19px;">'.__('感谢使用 MDx 主题', 'mdx').'</h2>
+<p style="font-size:15px;">'.__('我是 Axton Yao，这个主题由我开发。我的网站是', 'mdx').'<a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
 <p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://mdxdoc.flyhigher.top/" target="_blank">'.__('主题文档(为国内网络优化)', 'mdx').'</a>&nbsp;&nbsp;或&nbsp;&nbsp;<a href="https://mdxdocs.flyhigher.top/" target="_blank">'.__('主题文档(Oversea)', 'mdx').'</a></p>
-<p style="font-size:15px;">'.__('这个项目的Github地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求Star。', 'mdx').'</p>
-<p style="font-size:15px;">'.__('这个主题的诞生离不开MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
+<p style="font-size:15px;">'.__('这个项目的 Github 地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。', 'mdx').'</p>
+<p style="font-size:15px;">'.__('这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
 <br>
 <p style="font-size:12px;">'.__('当前版本 v', 'mdx').get_option('mdx_version').'</p>
 <p style="font-size:12px;">'.__('构建版本 v', 'mdx').get_option('mdx_version_commit').'</p>
 <p style="font-size:12px;">'.__('最新版本 v', 'mdx').$mdx_now_version.'</p>'.$mdx_update_notice.'
 <br>
-<p style="font-size:17px;"><strong>'.__('这款主题献给Demi Zhou', 'mdx').'</strong></p>
+<p style="font-size:17px;"><strong>'.__('这款主题献给 Demi Zhou', 'mdx').'</strong></p>
 </div>';
 }
 function remove_submenu() {
@@ -104,12 +104,12 @@ function mdx_init_theme(){
 add_action('after_switch_theme', 'mdx_init_theme');
 function mdx_custom_admin_notice() {?>
        <div class="notice notice-success is-dismissible">
-           <p><?php _e('MDx主题现已激活，你可以前往<a href="admin.php?page=mdx_styles">主题设置页面</a>对主题进行个性化定制。', 'mdx'); ?></p>
+           <p><?php _e('MDx 主题现已激活，你可以前往<a href="admin.php?page=mdx_styles">主题设置页面</a>对主题进行个性化定制。', 'mdx'); ?></p>
        </div>
 <?php }
 function mdx_cant_notice() {?>
     <div class="notice notice-warning is-dismissible">
-        <p><?php _e('由于你的PHP配置问题，MDx未能成功获取密钥，但这不影响你正常使用MDx主题。', 'mdx'); ?></p>
+        <p><?php _e('由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。', 'mdx'); ?></p>
     </div>
 <?php }
 ?>
