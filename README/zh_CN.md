@@ -37,6 +37,19 @@
 
 MDx，一款轻快、优雅且强大的 Material Design 风格 WordPress 主题。
 
+
+## 演示
+
+- [无垠](https://flyhigher.top)
+
+
+## 下载
+
+你可以前往 [这里](https://mdx.flyhigher.top) 下载 MDx。
+
+你也可以前往 [Releases](https://github.com/yrccondor/mdx/releases) 页下载 MDx。**请不要为了下载而 `clone` 这个仓库。**
+
+
 ## 国际化
 
 MDx 支持多语言，默认语言为简体中文。
@@ -51,18 +64,6 @@ MDx 支持多语言，默认语言为简体中文。
 - 英语
 
 > 非常欢迎你帮助我们将 MDx 翻译至其他语言！
-
-
-## 演示
-
-- [无垠](https://flyhigher.top)
-
-
-## 下载
-
-你可以前往 [这里](https://mdx.flyhigher.top) 下载 MDx。
-
-你也可以前往 [Releases](https://github.com/yrccondor/mdx/releases) 页下载 MDx。**请不要为了下载而 `clone` 这个仓库。**
 
 
 ## 文档
