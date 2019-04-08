@@ -59,7 +59,7 @@ Supported language(s):
 - Chinese (Simplified)
 - Turkish (Thanks [Hasan CAN](https://github.com/Sn0bzy))
 
-Planed language(s):
+Planned language(s):
 
 - English
 
