@@ -22,6 +22,7 @@
 
 - [Contents 目录](#contents-%E7%9B%AE%E5%BD%95)
 - [Introduction 介绍](#introduction-%E4%BB%8B%E7%BB%8D)
+- [Internationalization 国际化](#internationalization-%E5%9B%BD%E9%99%85%E5%8C%96)
 - [Demo 演示](#demo-%E6%BC%94%E7%A4%BA)
 - [Download 下载](#download-%E4%B8%8B%E8%BD%BD)
 - [Docs 文档](#docs-%E6%96%87%E6%A1%A3)
@@ -31,9 +32,22 @@
 
 ## Introduction 介绍
 
+MDx: a light, elegent and powerful WordPress theme with Material Design.
+
 MDx，一款轻快、优雅且强大的 Material Design 风格 WordPress 主题。
 
-MDx: a light, elegent and powerful WordPress theme with Material Design.
+## Internationalization 国际化
+
+MDx supports multi-language. Default language is simplified Chinese.
+
+MDx 支持多语言，默认语言为简体中文。
+
+Supported/Planed languages:
+
+支持/计划支持的语言如下：
+
+- Turkish (Thanks [Hasan CAN](https://github.com/Sn0bzy))
+- English translation is being translated
 
 
 ## Demo 演示
