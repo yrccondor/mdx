@@ -36,15 +36,21 @@ MDx: a light, elegent and powerful WordPress theme with Material Design.
 
 MDx，一款轻快、优雅且强大的 Material Design 风格 WordPress 主题。
 
+MDx, sade, şık ve güçlü Materyal Tasarımlı WordPress teması
+
 ## Internationalization 国际化
 
 MDx supports multi-language. Default language is simplified Chinese.
 
 MDx 支持多语言，默认语言为简体中文。
 
+MDx çoklu dil özelliğini desteklemektedir. Varsayılan dili basitleştirilmiş Çincedir.
+
 Supported/Planed languages:
 
 支持/计划支持的语言如下：
+
+Desteklenen/Planlanan diller:
 
 - Turkish (Thanks [Hasan CAN](https://github.com/Sn0bzy))
 - English translation is being translated
@@ -61,10 +67,13 @@ You can download MDx [HERE](https://mdx.flyhigher.top).
 
 你可以前往 [这里](https://mdx.flyhigher.top) 下载 MDx。
 
+MDx'i [buradan](https://mdx.flyhigher.top) indirebilirsin.
+
 You can also download MDx from [Releases](https://github.com/yrccondor/mdx/releases). **DO NOT `clone` this repository just for downloading.**
 
 你也可以前往 [Releases](https://github.com/yrccondor/mdx/releases) 页下载 MDx。**请不要为了下载而 `clone` 这个仓库。**
 
+MDx'i [sürümler](https://github.com/yrccondor/mdx/releases)den de indirebilirsin. **Bu kaynağı sadece indirmek için `klonlamayın`.**
 
 ## Docs 文档
 
@@ -73,6 +82,7 @@ You can also download MDx from [Releases](https://github.com/yrccondor/mdx/relea
 [MDx Docs](https://mdxdocs.flyhigher.top/)
 
 > English Docs are being translated.
+> Türkçe Dökümanlar çevirilecek.
 
 
 ## License 许可证
@@ -83,6 +93,8 @@ You can also download MDx from [Releases](https://github.com/yrccondor/mdx/relea
 Open sourced under the GPL v3.0 license.
 
 根据 GPL V3.0 许可证开源。
+
+GPL v3.0 ile açık kaynak kodlu lisanslanmıştır.
 
 
 ## Render 渲染
