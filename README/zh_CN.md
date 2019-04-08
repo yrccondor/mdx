@@ -1,4 +1,4 @@
-<div align="right">语言：<a title="英语" href="https://github.com/yrccondor/mdx/blob/master/README.md">英语</a> | 中文 | <a title="Turkish" href="https://github.com/yrccondor/mdx/blob/master/README/tr_TR.md">土耳其语</a></div>
+<div align="right">语言：<a title="英语" href="https://github.com/yrccondor/mdx/blob/master/README.md">英语</a> | 中文 | <a title="土耳其语" href="https://github.com/yrccondor/mdx/blob/master/README/tr_TR.md">土耳其语</a></div>
 
 <br>
 
