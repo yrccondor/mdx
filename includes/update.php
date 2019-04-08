@@ -322,7 +322,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
-}else if($mdx_version_base!="1.8.11" && $mdx_version_base!="1.8.10" && $mdx_version_base!="1.8.9" && $mdx_version_base!="1.8.8"){
+}else if($mdx_version_base!="1.8.12" && $mdx_version_base!="1.8.11" && $mdx_version_base!="1.8.10" && $mdx_version_base!="1.8.9" && $mdx_version_base!="1.8.8"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
