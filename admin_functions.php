@@ -46,7 +46,7 @@ function mdx_display_sub_function_three(){
         $mdx_now_version = '版本号获取失败';
     }
 
-    ($mdx_now_version != get_option('mdx_version')) ? $mdx_update_notice = '<p style="font-size:15px;"><strong>'.__('新版本已经发布。去<a href="update-core.php">更新</a>。').'</strong></p>' : $mdx_update_notice = '';
+    ($mdx_now_version != get_option('mdx_version')) ? $mdx_update_notice = '<p style="font-size:15px;"><strong>'.__('新版本已经发布。去<a href="update-core.php">更新</a>。', 'mdx').'</strong></p>' : $mdx_update_notice = '';
 
     $mdx_php_content = file_get_contents(get_theme_root()."/mdx/footer.php");
     $mdx_results = strpos($mdx_php_content, 'href="https://flyhigher.top"');

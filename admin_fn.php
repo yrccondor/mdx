@@ -355,8 +355,8 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 <td>
 <?php $mdx_v_you_may_like_way=mdx_get_option('mdx_you_may_like_way');?>
 	<fieldset>
-	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="tag" <?php if($mdx_v_you_may_like_way=='tag'){?>checked="checked"<?php }?>> <?php _e('相同标签')?></label><br>
-	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="category" <?php if($mdx_v_you_may_like_way=='category'){?>checked="checked"<?php }?>> <?php _e('相同分类')?></label><br>
+	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="tag" <?php if($mdx_v_you_may_like_way=='tag'){?>checked="checked"<?php }?>> <?php _e('相同标签', 'mdx')?></label><br>
+	<label><input type="radio" class="mdx_apspc" name="mdx_you_may_like_way" value="category" <?php if($mdx_v_you_may_like_way=='category'){?>checked="checked"<?php }?>> <?php _e('相同分类', 'mdx')?></label><br>
 	</fieldset>
 </td>
 </tr>
