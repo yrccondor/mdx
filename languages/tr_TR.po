@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
-"POT-Creation-Date: 2019-03-30 19:58+0300\n"
-"PO-Revision-Date: 2019-04-07 03:53+0300\n"
+"POT-Creation-Date: 2019-04-08 06:36+0300\n"
+"PO-Revision-Date: 2019-04-08 06:54+0300\n"
 "Last-Translator: Hasan Can <hi@hasan.im>\n"
-"Language-Team: \n"
+"Language-Team: Hasan Can <hi@hasan.im>\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "Üzgünüm, böyle bir sayfa bulunamadı."
 msgid "前往首页"
 msgstr "Anasayfa dön."
 
-#: 404.php:15
+#: 404.php:15 single.php:195 single.php:219
 msgid "返回上一页"
 msgstr "Geri dön."
 
@@ -254,36 +254,56 @@ msgstr ""
 msgid "文章列表详细信息 - 位置1"
 msgstr "Bilgi Çubuğunda İlk Sırada Görünecek Bilgi"
 
-#: admin_fn.php:229
+#: admin_fn.php:222
+msgid "浏览量"
+msgstr "Okunma Sayısı"
+
+#: admin_fn.php:223
+msgid "发表时间"
+msgstr "Yayınlanma Tarihi"
+
+#: admin_fn.php:224
+msgid "评论数"
+msgstr "Yorumlarda Ifade Kullanımı"
+
+#: admin_fn.php:234
 msgid "文章列表详细信息 - 位置2"
 msgstr "Bilgi Çubuğunda İkinci Sırada Görünecek Bilgi"
 
-#: admin_fn.php:237
+#: admin_fn.php:242
 msgid "详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
 msgstr "Makale kutucuğunun altında göstermek istediğiniz detayları belirtiniz."
 
-#: admin_fn.php:241
+#: admin_fn.php:246
 msgid "文章时间信息"
 msgstr "Makale Tarih Bilgisi"
 
-#: admin_fn.php:248
+#: admin_fn.php:250
+msgid "发布时间"
+msgstr "Yayınlanma Tarihi"
+
+#: admin_fn.php:251
+msgid "最后编辑时间"
+msgstr "Son Düzenlenme Tarihi"
+
+#: admin_fn.php:253
 msgid ""
 "选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>"
 "最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。"
 msgstr ""
-"<code>Yayınklanma Tarihi</code>, Makalenin altındaki bilgi çubuğunda ne "
-"zaman yayınlandığını gösterir.<br> <code>Son Düzenlenme Tarihi</code>, "
-"Makalenin son düzenlendiği tarihi bilgi çubuğunda gösterir."
+"<code>Yayınlanma Tarihi</code>, Makalenin altındaki bilgi çubuğunda ne zaman "
+"yayınlandığını gösterir.<br> <code>Son Düzenlenme Tarihi</code>, Makalenin "
+"son düzenlendiği tarihi bilgi çubuğunda gösterir."
 
-#: admin_fn.php:252
+#: admin_fn.php:257
 msgid "文末作者信息栏"
 msgstr "Bilgi Çubuğunda Yazar Adını Göster"
 
-#: admin_fn.php:262
+#: admin_fn.php:267
 msgid "使用 Preload 技术加速页面加载"
 msgstr "Önceden Yüklemeyi Kullan"
 
-#: admin_fn.php:268
+#: admin_fn.php:273
 msgid ""
 "开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>"
 "对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。"
@@ -292,11 +312,11 @@ msgstr ""
 "hızlandırabilirsiniz. Bu seçeneği kullanmadan önce Javascript dosyalarını ve "
 "yazı tiplerini farklı bir alan adından çekmediğinizden emin olun."
 
-#: admin_fn.php:273
+#: admin_fn.php:278
 msgid "使用 Smooth Scroll"
 msgstr "Smooth Scroll Kullan"
 
-#: admin_fn.php:279
+#: admin_fn.php:284
 msgid ""
 "开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页面"
 "滚动异常。"
@@ -304,55 +324,66 @@ msgstr ""
 "Açık olduğunda Smooth Scroll özelliği ektinleşir. Smooth Scroll özelliğini "
 "desteklemeyen bazı tarayıcılarda sorunlara yol açabilir."
 
-#: admin_fn.php:284
+#: admin_fn.php:289
 msgid "分享到的服务商"
 msgstr "Paylaşım Servisleri"
 
-#: admin_fn.php:292
+#: admin_fn.php:293
+msgid "所有服务商"
+msgstr "Tüm Sosyal Servisler"
+
+#: admin_fn.php:294
+msgid "只有中国国内服务商"
+msgstr "Çin Yerel Sosyal Servisler"
+
+#: admin_fn.php:295
+msgid "只有国际服务商"
+msgstr "Sadece Global Sosyal Servisler"
+
+#: admin_fn.php:297
 msgid ""
 "指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ "
 "空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>"
-"无论如何，“生成分享图”始终启用。同时，由于微信 SDK 限制，MDx 无法集成微信分"
-"享，你可以自行完善。"
+"无论如何，“生成分享图”始终启用"
 msgstr ""
 "Kullanıcılarınızın yazılarınızı paylaşması için paylaşım servislerini aktif "
 "edebilirsiniz. <br> Çin Sosyal Ağları: Weibo, QQ<br>Global Sosyal Ağlar: "
 "Telegram, Twitter, Facebook<br> Bazı sosyal ağların kısıtlamaları nedeniyle "
 "bu seçeneklere eklenmemiştir. Dilerseniz kendiniz ekleyebilirsiniz."
 
-#: admin_fn.php:296
+#: admin_fn.php:301
 msgid "点击顶部栏返回顶部"
 msgstr "Yukarı Dön Butonu"
 
-#: admin_fn.php:302
+#: admin_fn.php:307
 msgid "开启后，点击顶部栏可以返回页面顶部。此设置影响所有页面。</strong>"
 msgstr ""
 "Açık olduğunda sayfanın altına inildiği zaman yukarı dön butonu sayfanın sağ "
 "alt kısmında görüntülenir.</strong>"
 
-#: admin_fn.php:307
+#: admin_fn.php:312
 msgid "首页推荐文章"
 msgstr "Önerilen Makaleler"
 
-#: admin_fn.php:313
+#: admin_fn.php:318
 msgid "开启后，首页会展示推荐文章，请在下方进行设置。"
 msgstr ""
 "Aktif olduğunda ana sayfada önerilen makaleleri görüntüler. Lütfen aşağıdan "
 "seçin."
 
-#: admin_fn.php:318
+#: admin_fn.php:323
 msgid "首页推荐文章数量"
 msgstr "Önerilen Makale Sayısı"
 
-#: admin_fn.php:320
+#: admin_fn.php:325
 msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgstr "Ana sayfada gösterilecek makale sayısı, tam sayı girin."
 
-#: admin_fn.php:323
+#: admin_fn.php:328
 msgid "首页推荐文章分类名"
 msgstr "Önerilen Makaleler Kategorisi "
 
-#: admin_fn.php:325
+#: admin_fn.php:330
 msgid ""
 "首页推荐文章从特定分类获取文章。在此设定首页推荐文章的分类名。当分类不存在"
 "时，将显示最新文章。"
@@ -360,57 +391,57 @@ msgstr ""
 "Önerilen makaleler kısmında görüntülenecek kategori adını buraya giriniz. "
 "(Kategori adını tam olarak giriniz.)"
 
-#: admin_fn.php:328
+#: admin_fn.php:333
 msgid "首页推荐文章模块标题"
 msgstr "Önerilen Makaleler Modülünün Başlığı"
 
-#: admin_fn.php:330
+#: admin_fn.php:335
 msgid "在此设定首页推荐文章模块标题。"
 msgstr ""
 "Bu ayar sayesinde ana sayfada görüntülenecek makaleler modülünün başlığını "
 "ayarlayabilirsiniz."
 
-#: admin_fn.php:333
+#: admin_fn.php:338
 msgid "首页最新文章模块标题"
 msgstr "Son Yazılar Bölümü Başlığı"
 
-#: admin_fn.php:335
+#: admin_fn.php:340
 msgid ""
 "在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
 msgstr ""
 "Ana sayfada görüntülecek son yazılar bölümü başlığını ayarlayın. Bu kısım "
 "yalnızca \"Önerilen Makaleler\" modülü aktif olursa görünür."
 
-#: admin_fn.php:338
+#: admin_fn.php:343
 msgid "文末推荐文章"
 msgstr "Benzer Yazılar"
 
-#: admin_fn.php:344
+#: admin_fn.php:349
 msgid "开启后，文章末会展示最多5篇相似文章。"
 msgstr ""
 "Açık olduğunda makalenin sonunda en fazla 5 adet benzer yazı gösterilir."
 
-#: admin_fn.php:349
+#: admin_fn.php:354
 msgid "文末推荐文章计算方式"
 msgstr "Benzer Makaleleri Gösterme Seçenekleri"
 
-#: admin_fn.php:353
+#: admin_fn.php:358
 msgid "相同标签"
 msgstr "Aynı Etiket"
 
-#: admin_fn.php:354
+#: admin_fn.php:359
 msgid "相同分类"
 msgstr "Aynı Kategori"
 
-#: admin_fn.php:359
+#: admin_fn.php:364
 msgid "文末推荐文章模块标题"
 msgstr "\"Benzer Yazılar\" Başlığı"
 
-#: admin_fn.php:363
+#: admin_fn.php:368
 msgid "实时搜索"
 msgstr "Gerçek zamanlı arama"
 
-#: admin_fn.php:369
+#: admin_fn.php:374
 msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
@@ -419,11 +450,11 @@ msgstr ""
 "<strong>WordPress REST API desteği gerektirir. Bu API varsayılan olarak "
 "açıktır.</strong>"
 
-#: admin_fn.php:374
+#: admin_fn.php:379
 msgid "评论无限加载"
 msgstr "Infinite Scroll (Sonsuz Kaydırma)"
 
-#: admin_fn.php:380
+#: admin_fn.php:385
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。</strong>"
@@ -431,21 +462,21 @@ msgstr ""
 "Açık olduğunda yorumlar sonsuz kaydırmayı kullanacaktır. Bu ayar AJAX ile "
 "desteklenmektedir.</strong>"
 
-#: admin_fn.php:385
+#: admin_fn.php:390
 msgid "SEO 关键词"
 msgstr "SEO Anahtar Kelimeleri"
 
-#: admin_fn.php:387
+#: admin_fn.php:392
 msgid "用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。"
 msgstr ""
 "Anahtar kelimeleri ayırmak için virgül kullanın. 5 veya daha az kelime "
 "belirtmeniz önerilir. Kullanmak istemiyorsanız boş bırakabilirsiniz."
 
-#: admin_fn.php:390
+#: admin_fn.php:395
 msgid "自动生成网页描述"
 msgstr "Sayfa Açıklamalarını Otomatik Oluştur"
 
-#: admin_fn.php:396
+#: admin_fn.php:401
 msgid ""
 "开启后，会自动生成 SEO 网页描述。<strong>对首页无效，请在下方输入首页描述。</"
 "strong>"
@@ -453,11 +484,11 @@ msgstr ""
 "Açık olduğunda SEO için sayfa açıklamalarını otomatik oluşturur. <strong>Ana "
 "sayfa için geçersizdir.</strong> Ana sayfa açıklamasını lütfen aşağıya girin."
 
-#: admin_fn.php:401
+#: admin_fn.php:406
 msgid "SEO 描述"
 msgstr "SEO Açıklaması"
 
-#: admin_fn.php:403
+#: admin_fn.php:408
 msgid ""
 "在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面"
 "会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。"
@@ -466,19 +497,19 @@ msgstr ""
 "Oluştur\" seçeneği açık ise bu alan sadece ana sayfa için geçerli olacaktır. "
 "Bu alanı boş bırakırsanız ana sayfa açıklaması boş olacaktır."
 
-#: admin_fn.php:406
+#: admin_fn.php:411
 msgid "页头脚本"
 msgstr "Özel Kodlar (Sayfa Başı)"
 
-#: admin_fn.php:408
+#: admin_fn.php:413
 msgid "在这里插入脚本，会被插入至所有页面头部。"
 msgstr "Buraya yazacağınız kodlar otomatik olarak sayfa başına eklenecektir."
 
-#: admin_fn.php:411
+#: admin_fn.php:416
 msgid "页尾脚本"
 msgstr "Özel Kodlar (Sayfa Sonu)"
 
-#: admin_fn.php:413
+#: admin_fn.php:418
 msgid "在这里插入脚本，会被插入至所有页面最后。"
 msgstr "Buraya yazacağınız kodlar otomatik olarak sayfa sonuna eklenecektir."
 
@@ -524,11 +555,11 @@ msgstr ""
 "gereklidir."
 
 #: admin_functions.php:62
-msgid "感谢使用MDx主题"
+msgid "感谢使用 MDx 主题"
 msgstr "MDx'i kullandığınız için teşekkürler."
 
 #: admin_functions.php:63
-msgid "我是Axton Yao，这个主题由我开发。我的网站是"
+msgid "我是 Axton Yao，这个主题由我开发。我的网站是"
 msgstr ""
 "Merhaba Ben Axton Yao, bu tema benim tarafımdan geliştirilmiştir. "
 "Türkçeleştirme Hasan Can'a aittir. Web Sitem:"
@@ -546,18 +577,18 @@ msgid "主题文档(Oversea)"
 msgstr "Dökümantasyon (Alternatif)"
 
 #: admin_functions.php:65
-msgid "这个项目的Github地址是 "
+msgid "这个项目的 Github 地址是 "
 msgstr "Bu projenin GitHub adresi: "
 
 #: admin_functions.php:65
-msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求Star。"
+msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。"
 msgstr ""
 "Dilerseniz siz de projeye katkıda bulunabilirsiniz. Yıldız verirseniz bizi "
 "memnun edersiniz."
 
 #: admin_functions.php:66
 msgid ""
-"这个主题的诞生离不开MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站"
+"这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站"
 "上了解更多："
 msgstr ""
 "Bu proje MDUI'dan esinlenerek yapılmıştır. Resmi web sitesinden daha fazla "
@@ -576,19 +607,20 @@ msgid "最新版本 v"
 msgstr "Güncel sürüm v"
 
 #: admin_functions.php:72
-msgid "这款主题献给Demi Zhou"
+msgid "这款主题献给 Demi Zhou"
 msgstr "Demi Zhou için kodlanmıştır."
 
 #: admin_functions.php:107
 msgid ""
-"MDx主题现已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主题设置页面"
-"</a>对主题进行个性化定制。"
+"MDx 主题现已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主题设置页"
+"面</a>对主题进行个性化定制。"
 msgstr ""
 "MDx teması etkinleştirildi. <a href=\"admin.php?page=mdx_styles\">Tema "
 "ayarları</a> sayfasına giderek temanızı özelleştirebilirsiniz."
 
 #: admin_functions.php:112
-msgid "由于你的PHP配置问题，MDx未能成功获取密钥，但这不影响你正常使用MDx主题。"
+msgid ""
+"由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。"
 msgstr ""
 "PHP yapılandırma sorununuz nedeniyle MDx lisans anahtarını getiremedi, bu "
 "durum temayı kullanmanıza engel oluşturmaz."
@@ -839,7 +871,7 @@ msgid ""
 "target=\"_blank\">MDx文档</a> 下载插件安装包。"
 msgstr "Açık olduğunda yorumlarda ifadeler görüntülenir."
 
-#: admin_style.php:354
+#: admin_style.php:354 functions.php:595
 msgid "文末信息"
 msgstr "Makale Sonundaki Bilgiler"
 
@@ -858,6 +890,18 @@ msgstr ""
 #: admin_style.php:359
 msgid "顶部栏显示内容"
 msgstr "Üst Çubuk İçeriği"
+
+#: admin_style.php:363
+msgid "博客名称"
+msgstr "Blog Adı"
+
+#: admin_style.php:364
+msgid "自定义 Logo"
+msgstr "Özel Logo"
+
+#: admin_style.php:365
+msgid "自定义名称"
+msgstr "Özel Yazı"
 
 #: admin_style.php:370
 msgid "顶部栏 Logo"
@@ -976,6 +1020,11 @@ msgstr "Makale Arşivi"
 #: archive.php:43 author.php:48 category.php:48 index.php:66 search.php:43
 msgid "加载更多"
 msgstr "Devamını Göster"
+
+#: author.php:35
+#, php-format
+msgid "由 %s 发布"
+msgstr "Yazar: %s"
 
 #: author.php:35
 msgid "作者归档"
@@ -1145,6 +1194,17 @@ msgstr "Katlanmış İçerik"
 msgid "警告"
 msgstr "Uyarı"
 
+#: functions.php:515
+msgid ""
+"\n"
+"\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟随全"
+"局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>"
+msgstr ""
+"\n"
+"\t\t<p class=\"description\">Bu makaleye farklı bir son metin eklemek "
+"isterseniz buraya girin. Varsayılan ayarları kullanmak için lütfen "
+"\"<code>-----Nothing-----</code>\" yazın. Boş bırakmayın.</p>"
+
 #: functions.php:523
 msgid "文章主题颜色"
 msgstr "Makale Teması Rengi"
@@ -1200,6 +1260,10 @@ msgstr ""
 "girildiğinde 404 hatasını gösterir.<br>Gizli Mod: Bu sayfaya girildiğinde "
 "\"Bu makale, ilgili yasalar ve düzenlemeler nedeniyle şimdilik erişime "
 "kapalıdır.\" ifadesini gösterecektir."
+
+#: functions.php:594
+msgid "文章设置"
+msgstr "Makale Ayarları"
 
 #: header.php:18 header.php:30 header.php:43
 #, php-format
@@ -1297,13 +1361,17 @@ msgstr "Makale Görseli"
 msgid "没有标签"
 msgstr "Etiketsiz"
 
+#: page-postlike.php:171 single.php:184
+msgid "扫描二维码继续阅读"
+msgstr "Okumaya devam etmek için QR kodunu tarayın"
+
 #: search.php:36 search.php:46
 msgid "搜索结果"
 msgstr "Sonuçlar"
 
 #: search.php:50
-msgid "前方似乎禁止通行"
-msgstr "Sanırım ileride trafik tıkalı"
+msgid "前方似乎空空如也"
+msgstr "İleride çevirme var gibi görünüyor."
 
 #: search.php:51
 msgid "什么也没找到，换个词搜搜试试？"
@@ -1312,6 +1380,10 @@ msgstr "Bir sonuç bulunamadı, farklı kelimelerle aramayı deneyin."
 #: searchform.php:5
 msgid "搜索什么..."
 msgstr "Neyi aramıştınız?"
+
+#: single.php:194 single.php:218
+msgid "去首页"
+msgstr "Anasayfa'ya Git"
 
 #: single.php:214
 msgid "诶呀..."
@@ -1383,3 +1455,6 @@ msgstr "Begeniler"
 #. Template Name of the plugin/theme
 msgid "Tags"
 msgstr "Etiketler"
+
+#~ msgid "前方似乎禁止通行"
+#~ msgstr "Sanırım ileride trafik tıkalı"
