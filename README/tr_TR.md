@@ -26,7 +26,7 @@
 
 - [Tanıtım](#tan%C4%B1t%C4%B1m)
 - [Demo](#demo)
-- [İndir](#%C4%B0ndir)
+- [İndir](#indir)
 - [Globalleştirme](#globalle%C5%9Ftirme)
 - [Dökümanlar](#d%C3%B6k%C3%BCmanlar)
 - [Lisans](#lisans)
