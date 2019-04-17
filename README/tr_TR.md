@@ -24,13 +24,13 @@
 
 ## İçerikler
 
-- [Tanıtım](#introduction)
+- [Tanıtım](#tan%C4%B1t%C4%B1m)
 - [Demo](#demo)
-- [İndir](#download)
-- [Globalleştirme](#internationalization)
-- [Dökümanlar](#docs)
-- [Lisans](#license)
-- [Çıktı](#render)
+- [İndir](#%C4%B0ndir)
+- [Globalleştirme](#globalle%C5%9Ftirme)
+- [Dökümanlar](#d%C3%B6k%C3%BCmanlar)
+- [Lisans](#lisans)
+- [Çıktı](#%C3%87%C4%B1kt%C4%B1)
 
 
 ## Tanıtım
