@@ -1,4 +1,4 @@
-<div align="right">Language: <a title="English" href="https://github.com/yrccondor/mdx/blob/master/README.md" | <a title="Chinese" href="https://github.com/yrccondor/mdx/blob/master/README/zh_CN.md">Chinese</a> | Turkish</div>
+<div align="right">Language: <a title="English" href="https://github.com/yrccondor/mdx/blob/master/README.md">English</a> | <a title="Chinese" href="https://github.com/yrccondor/mdx/blob/master/README/zh_CN.md">Chinese</a> | Turkish</div>
 
 <br>
 
