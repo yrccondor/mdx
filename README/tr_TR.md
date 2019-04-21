@@ -69,7 +69,7 @@ Planlanan dil(ler):
 
 ## Dökümanlar
 
-[MDx Dökümanları (Çince)](https://mdxdocs.flyhigher.top/)
+[MDx Dökümanları (Çince)](https://doc.flyhigher.top/mdx/)
 
 > İngilizce ve Türkçe dökümanlar oluşturuluyor.
 

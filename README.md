@@ -68,7 +68,7 @@ Planned language(s):
 
 ## Docs
 
-[MDx Docs](https://mdxdocs.flyhigher.top/)
+[MDx Docs](https://doc.flyhigher.top/mdx/)
 
 > English Docs are being translated.
 
