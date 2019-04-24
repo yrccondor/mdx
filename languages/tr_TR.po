@@ -1156,7 +1156,7 @@ msgstr "Blogger"
 
 #: functions.php:201
 msgid "前"
-msgstr "Önce"
+msgstr " önce"
 
 #: functions.php:298
 msgid "首页"
