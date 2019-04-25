@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2019-04-08 06:36+0300\n"
-"PO-Revision-Date: 2019-04-08 06:54+0300\n"
+"PO-Revision-Date: 2019-04-25 11:40+0300\n"
 "Last-Translator: Hasan Can <hi@hasan.im>\n"
 "Language-Team: Hasan Can <hi@hasan.im>\n"
 "Language: tr_TR\n"
@@ -1156,7 +1156,7 @@ msgstr "Blogger"
 
 #: functions.php:201
 msgid "前"
-msgstr "Önce"
+msgstr " önce"
 
 #: functions.php:298
 msgid "首页"
