@@ -15,6 +15,7 @@ $arr = array(
 'mdx_load_pro'=>'true',
 'mdx_post_list_1'=>'view',
 'mdx_post_list_2'=>'time',
+'mdx_post_list_3'=>'',
 'mdx_post_edit_time'=>'post',
 'mdx_author_card'=>'false',
 'mdx_speed_pre'=>'false',

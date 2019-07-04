@@ -13,6 +13,7 @@ $arr = array(
 	'mdx_load_pro' => get_option('mdx_load_pro'),
 	'mdx_post_list_1' => get_option('mdx_post_list_1'),
 	'mdx_post_list_2' => get_option('mdx_post_list_2'),
+	'mdx_post_list_3' => get_option('mdx_post_list_3'),
 	'mdx_post_edit_time' => get_option('mdx_post_edit_time'),
 	'mdx_author_card' => get_option('mdx_author_card'),
 	'mdx_speed_pre' => get_option('mdx_speed_pre'),
@@ -34,7 +35,7 @@ $arr = array(
 	'mdx_seo_des' => get_option('mdx_seo_des'),
 	'mdx_head_js' => get_option('mdx_head_js'),
     'mdx_footer_js' => get_option('mdx_footer_js'),
-    
+
     'mdx_styles' => get_option('mdx_styles'),
 	'mdx_styles_hex' => get_option('mdx_styles_hex'),
 	'mdx_styles_act' => get_option('mdx_styles_act'),

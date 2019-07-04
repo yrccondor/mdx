@@ -243,6 +243,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
 	update_option('mdx_post_list_2', 'time');
+	update_option('mdx_post_list_3', '');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
@@ -285,6 +286,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
 	update_option('mdx_post_list_2', 'time');
+	update_option('mdx_post_list_3', '');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
@@ -328,6 +330,7 @@ if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base
 	update_option('mdx_say_after', '');
 	update_option('mdx_post_list_1', 'view');
 	update_option('mdx_post_list_2', 'time');
+	update_option('mdx_post_list_3', '');
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
 	update_option("mdx_lazy_load_mode", 'speed');
