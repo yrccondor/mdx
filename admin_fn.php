@@ -246,7 +246,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 </td>
 </tr>
 <tr>
-<th scope="row"><label for="mdx_post_list_2"><?php _e('文章列表详细信息 - 位置3', 'mdx');?></label></th>
+<th scope="row"><label for="mdx_post_list_3"><?php _e('文章列表详细信息 - 位置3', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_post_list_3=mdx_get_option('mdx_post_list_3');?>
 <select name="mdx_post_list_3" id="mdx_post_list_3">
