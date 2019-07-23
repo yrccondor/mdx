@@ -224,9 +224,15 @@ function get_link_items(){
     }
     return $result;
 }
-// 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱中获取链接图像
+// 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱(需设置中开启)中获取链接图像
 function get_the_link_items($id = null){
-	$bookmarks = get_bookmarks('category='.$id.'title_li=&orderby=rand');
+	$mdx_gravatar_actived = mdx_get_option('mdx_gravatar_actived');
+	$mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
+	$order_rule = 'category='.$id;
+	if ($mdx_link_rand_order == 'true') {
+		$order_rule .= 'title_li=&orderby=rand';
+	}
+	$bookmarks = get_bookmarks($order_rule);
 	$output = '';
     if(!empty($bookmarks)){
         $output.='<div class="mdui-container">';
@@ -236,7 +242,7 @@ function get_the_link_items($id = null){
 				$lazy_load = ' LazyLoad" data-original="'.$bookmark->link_image;
 			} else {
 				$imglink = $bookmark->link_notes;
-				if (substr($imglink, 0, 4) !== 'http'){
+				if (substr($imglink, 0, 4) !== 'http' && $mdx_gravatar_actived == 'true'){
 					$imglink = get_avatar_url($imglink, array('size'=>512));
 				}
 				$lazy_load = ' LazyLoad" data-original="'.$imglink;
