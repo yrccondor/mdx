@@ -193,7 +193,7 @@ add_filter('pre_get_posts','mdx_search_filter_page');
 function mdx_comment_format($comment, $args, $depth){
 $GLOBALS['comment'] = $comment;?>
     <li class="mdui-list-item" id="li-comment-<?php comment_ID(); ?>">
-    <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar($comment, 80);}?></div>
+    <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar((mdx_get_option('mdx_gravatar_actived') == 'true'? $comment->comment_author_email: $comment), 80);}?></div>
     <div class="mdui-list-item-content outbu" id="comment-<?php comment_ID();?>">
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, "update_core")){echo '<span class="mdx-admin">'.__('博主','mdx').'</span>';}?></div>
     <div class="mdui-list-item-text mdui-typo">
