@@ -224,15 +224,22 @@ function get_link_items(){
     }
     return $result;
 }
+// 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱中获取链接图像
 function get_the_link_items($id = null){
-	$bookmarks = get_bookmarks('category='.$id);
+	$bookmarks = get_bookmarks('category='.$id.'title_li=&orderby=rand');
 	$output = '';
     if(!empty($bookmarks)){
         $output.='<div class="mdui-container">';
         foreach($bookmarks as $bookmark){
 			$lazy_load =  '';
-			if($bookmark->link_image !== ""){
-				$lazy_load =  ' LazyLoad" data-original="'.$bookmark->link_image;
+			if(!empty($bookmark->link_image)){
+				$lazy_load = ' LazyLoad" data-original="'.$bookmark->link_image;
+			} else {
+				$imglink = $bookmark->link_notes;
+				if (substr($imglink, 0, 4) !== 'http'){
+					$imglink = get_avatar_url($imglink, array('size'=>512));
+				}
+				$lazy_load = ' LazyLoad" data-original="'.$imglink;
 			}
 			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
@@ -708,4 +715,48 @@ function mdx_colored_cloud_call_back($matches) {
 if(mdx_get_option('mdx_tags_color') === "true"){
 	add_filter('wp_tag_cloud', 'mdx_colored_cloud', 1);
 }
+
+// 可将 $user_email_name, $log_key, $log_value, $jump_url 添加进配置文件
+// 但我不太会所以就没折腾Orz
+
+//新评论通知评论作者
+// 需要将724行的 $user_email_name 改成可用的邮箱账户名称并配置好 SMTP 功能
+function comment_mail_notify($comment_id) {
+	$user_email_name = 'admin';
+    $comment = get_comment($comment_id);
+    $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
+    $spam_confirmed = $comment->comment_approved;
+    if (($parent_id != '') && ($spam_confirmed != 'spam')) {
+        $wp_email = $user_email_name . '@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+        $to = trim(get_comment($parent_id)->comment_author_email);
+        $subject = '您在 [' . get_option("blogname") . '] 的留言有了回应';
+        $message = '<div style="border-right:#666666 1px solid;border-radius:8px;color:#111;font-size:12px;width:702px;border-bottom:#666666 1px solid;font-family:微软雅黑,arial;margin:10px auto 0px;border-top:#666666 1px solid;border-left:#666666 1px solid"><div class="adM">
+</div><div style="width:100%;background:#666666;min-height:60px;color:white;border-radius:6px 6px 0 0"><span style="line-height:60px;min-height:60px;margin-left:30px;font-size:12px">您在<a style="color:#00bbff;font-weight:600;text-decoration:none" href="' . get_option('home') . '" target="_blank">' . get_option('blogname') . '</a> 上的留言有回复啦！</span> </div>
+<div style="margin:0px auto;width:90%">
+<p>' . trim(get_comment($parent_id)->comment_author) . ', 您好!</p>
+<p>您于' . trim(get_comment($parent_id)->comment_date) . ' 在文章《' . get_the_title($comment->comment_post_ID) . '》上发表评论: </p>
+<p style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">' . nl2br(get_comment($parent_id)->comment_content) . '</p>
+<p>' . trim($comment->comment_author) . ' 于' . trim($comment->comment_date) . ' 给您的回复如下: </p>
+<p style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">' . nl2br($comment->comment_content) . '</p>
+<p>您可以点击 <a style="color:#00bbff;text-decoration:none" href="' . htmlspecialchars(get_comment_link($parent_id)) . '" target="_blank">查看回复的完整內容</a></p>
+<p>感谢对 <a style="color:#00bbff;text-decoration:none" href="' . get_option('home') . '" target="_blank">' . get_option('blogname') . '</a> 的关注，若有任何疑问，欢迎在博客留言，我会一一解答</p><p>(此邮件由系统自动发出，请勿回复。)</p></div></div>';
+        $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
+        $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
+        wp_mail( $to, $subject, $message, $headers );
+    }
+}
+add_action('comment_post', 'comment_mail_notify');
+
+// wp-login.php 保护跳转设置
+// 将 wp-login.php 保护到 wp-login.php?$log_key=$log_value , 若请求的键值对不匹配, 则跳转到指定 url
+// 默认为 wp-login.php?login=admin
+function login_protec()
+{
+	$log_key = 'login';
+	$log_value = 'admin';
+	$jump_url = 'https://baidu.com/';
+    if ($_GET[$log_key] != $log_value) header('Location: ' . $jump_url);
+}
+add_action( 'login_enqueue_scripts' , 'login_protec' );
+
 ?>
