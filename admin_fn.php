@@ -229,7 +229,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
-	<option value="" <?php if($mdx_v_post_list_1==''){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_1=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 </td>
 </tr>
@@ -241,7 +241,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
-	<option value="" <?php if($mdx_v_post_list_2==''){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_2=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 </td>
 </tr>
@@ -253,7 +253,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="view" <?php if($mdx_v_post_list_3=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_3=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_3=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
-	<option value="" <?php if($mdx_v_post_list_3==''){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_3=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>

@@ -31,9 +31,9 @@
         }
         ?>
         <span class="info">&nbsp;&nbsp;
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_1!=''){echo $mdx_icon_1;}?></i> <?php if($mdx_more_1=='view'){get_post_views($post->ID);}else if($mdx_more_1=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_1=='time'){the_time('Y-m-d');}?><?php if($mdx_more_1!=''){echo "&nbsp;&nbsp;";}?>
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_2!=''){echo $mdx_icon_2;}?></i> <?php if($mdx_more_2=='view'){get_post_views($post->ID);}else if($mdx_more_2=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_2=='time'){the_time('Y-m-d');}?><?php if($mdx_more_2!=''){echo "&nbsp;&nbsp;";}?>
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_3!=''){echo $mdx_icon_3;}?></i> <?php if($mdx_more_3=='view'){get_post_views($post->ID);}else if($mdx_more_3=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_3=='time'){the_time('Y-m-d');}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_1!='blank'){echo $mdx_icon_1;}?></i> <?php if($mdx_more_1=='view'){get_post_views($post->ID);}else if($mdx_more_1=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_1=='time'){the_time('Y-m-d');}?><?php if($mdx_more_1!='blank'){echo "&nbsp;&nbsp;";}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_2!='blank'){echo $mdx_icon_2;}?></i> <?php if($mdx_more_2=='view'){get_post_views($post->ID);}else if($mdx_more_2=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_2=='time'){the_time('Y-m-d');}?><?php if($mdx_more_2!='blank'){echo "&nbsp;&nbsp;";}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_3!='blank'){echo $mdx_icon_3;}?></i> <?php if($mdx_more_3=='view'){get_post_views($post->ID);}else if($mdx_more_3=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_3=='time'){the_time('Y-m-d');}?>
         </span>
         <a class="mdui-btn mdui-ripple mdui-ripple-white coun-read mdui-text-color-theme-accent" href="<?php the_permalink();?>"><?php echo mdx_get_option("mdx_readmore");?></a>
     </div>
@@ -81,9 +81,9 @@
         }
         ?>
         <span class="info">&nbsp;&nbsp;
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_1!=''){echo $mdx_icon_1;}?></i> <?php if($mdx_more_1=='view'){get_post_views($post->ID);}else if($mdx_more_1=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_1=='time'){the_time('Y-m-d');}?><?php if($mdx_more_1!=''){echo "&nbsp;&nbsp;";}?>
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_2!=''){echo $mdx_icon_2;}?></i> <?php if($mdx_more_2=='view'){get_post_views($post->ID);}else if($mdx_more_2=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_2=='time'){the_time('Y-m-d');}?><?php if($mdx_more_2!=''){echo "&nbsp;&nbsp;";}?>
-            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_3!=''){echo $mdx_icon_3;}?></i> <?php if($mdx_more_3=='view'){get_post_views($post->ID);}else if($mdx_more_3=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_3=='time'){the_time('Y-m-d');}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_1!='blank'){echo $mdx_icon_1;}?></i> <?php if($mdx_more_1=='view'){get_post_views($post->ID);}else if($mdx_more_1=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_1=='time'){the_time('Y-m-d');}?><?php if($mdx_more_1!='blank'){echo "&nbsp;&nbsp;";}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_2!='blank'){echo $mdx_icon_2;}?></i> <?php if($mdx_more_2=='view'){get_post_views($post->ID);}else if($mdx_more_2=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_2=='time'){the_time('Y-m-d');}?><?php if($mdx_more_2!='blank'){echo "&nbsp;&nbsp;";}?>
+            <i class="mdui-icon material-icons info-icon"><?php if($mdx_more_3!='blank'){echo $mdx_icon_3;}?></i> <?php if($mdx_more_3=='view'){get_post_views($post->ID);}else if($mdx_more_3=='comments'){comments_popup_link('0', '1', '%');}else if($mdx_more_3=='time'){the_time('Y-m-d');}?>
         </span>
         <a class="mdui-btn mdui-ripple mdui-ripple-white coun-read mdui-text-color-theme-accent" href="<?php the_permalink();?>"><?php echo mdx_get_option("mdx_readmore");?></a>
     </div>
