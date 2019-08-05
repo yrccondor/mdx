@@ -29,6 +29,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	mdx_update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	mdx_update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
+	mdx_update_option('mdx_post_list_3', $_POST['mdx_post_list_3']);
 	mdx_update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	mdx_update_option('mdx_author_card', $_POST['mdx_author_card']);
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
@@ -222,11 +223,13 @@ wp_nonce_field('mdx_options_update');
 $mdx_i18n_settings_1 = __('浏览量', 'mdx');
 $mdx_i18n_settings_2 = __('发表时间', 'mdx');
 $mdx_i18n_settings_3 = __('评论数', 'mdx');
+$mdx_i18n_settings_4 = __('空', 'mdx');
 ?>
 <select name="mdx_post_list_1" id="mdx_post_list_1">
 	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_1=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 </td>
 </tr>
@@ -238,6 +241,19 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_2=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
+</select>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_post_list_3"><?php _e('文章列表详细信息 - 位置3', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_list_3=mdx_get_option('mdx_post_list_3');?>
+<select name="mdx_post_list_3" id="mdx_post_list_3">
+	<option value="view" <?php if($mdx_v_post_list_3=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
+	<option value="time" <?php if($mdx_v_post_list_3=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
+	<option value="comments" <?php if($mdx_v_post_list_3=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_3=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
