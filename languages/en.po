@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2019-09-27 12:28+0800\n"
-"PO-Revision-Date: 2019-09-27 21:45+0800\n"
+"PO-Revision-Date: 2019-09-27 23:51+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -791,7 +791,7 @@ msgstr ""
 
 #: admin_style.php:279
 msgid "抽屉菜单顶部图片"
-msgstr ""
+msgstr "Sidebar image"
 
 #: admin_style.php:283
 msgid ""
@@ -801,51 +801,53 @@ msgstr ""
 
 #: admin_style.php:288
 msgid "抽屉菜单顶部展示个人信息"
-msgstr ""
+msgstr "Show personal information in sidebar"
 
 #: admin_style.php:294
 msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
-msgstr ""
+msgstr "Show avatar and name at top of the sidebar"
 
 #: admin_style.php:299
 msgid "抽屉菜单信息头像"
-msgstr ""
+msgstr "Avatar"
 
 #: admin_style.php:303
 msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
 msgstr ""
+"Choose an image for your avatar shown at top of the sidebar. Leave it blank "
+"to show nothing."
 
 #: admin_style.php:308
 msgid "抽屉菜单信息名称"
-msgstr ""
+msgstr "Author's name"
 
 #: admin_style.php:314
 msgid "抽屉菜单详细信息"
-msgstr ""
+msgstr "Description"
 
 #: admin_style.php:317
 msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
-msgstr ""
+msgstr "These information will be displayed below the author's name"
 
 #: admin_style.php:321
 msgid "首页格言"
-msgstr ""
+msgstr "Homepage quotes"
 
 #: admin_style.php:324
 msgid "这句话会展示在首页。"
-msgstr ""
+msgstr "This quote will be shown on your homepage."
 
 #: admin_style.php:328
 msgid "首页格言字体大小"
-msgstr ""
+msgstr "Quote font size"
 
 #: admin_style.php:339
 msgid "字体大小由 H1 至 H6 依次变小。"
-msgstr ""
+msgstr "Font size decreases from H1 to H6."
 
 #: admin_style.php:343
 msgid "评论表情"
-msgstr ""
+msgstr "Comment Emoji"
 
 #: admin_style.php:349
 msgid ""
@@ -853,10 +855,14 @@ msgid ""
 "mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载插件安装包。"
 msgstr ""
+"Enable support for emojis in comments. Requires extra plugin (Alu emojis by "
+"mayuko). Please visit <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/"
+"emoji-in-comment/\" target=\"_blank\">MDx documentation</a> to download the "
+"plugin."
 
 #: admin_style.php:354 functions.php:595
 msgid "文末信息"
-msgstr ""
+msgstr "End-of-post message"
 
 #: admin_style.php:356
 msgid ""
@@ -865,34 +871,38 @@ msgid ""
 "文章标题，<code>--PostURL--</code> 会被替换为链接到当前文章的当前文章 URL（大"
 "小写敏感）。"
 msgstr ""
+"The message shown at the end of each post. Leave it blank to disable this "
+"feature. <code>HTML</code> codes are supported. <code>--PostLink--</code> "
+"will be replaced with post title linked to the post; <code>--PostURL--</"
+"code> will be replaced with post URL linked to this page."
 
 #: admin_style.php:359
 msgid "顶部栏显示内容"
-msgstr ""
+msgstr "Title bar content"
 
 #: admin_style.php:363
 msgid "博客名称"
-msgstr ""
+msgstr "Blog name"
 
 #: admin_style.php:364
 msgid "自定义 Logo"
-msgstr ""
+msgstr "Custom Logo"
 
 #: admin_style.php:365
 msgid "自定义名称"
-msgstr ""
+msgstr "Custom name"
 
 #: admin_style.php:370
 msgid "顶部栏 Logo"
-msgstr ""
+msgstr "Title bar Logo"
 
 #: admin_style.php:374
 msgid "选择一张图片作为网站 Logo。"
-msgstr ""
+msgstr "Choose an image as the website Logo"
 
 #: admin_style.php:379
 msgid "顶部栏自定义名称"
-msgstr ""
+msgstr "Customize title bar content"
 
 #: admin_style.php:385
 msgid "Safari Touch Bar 图标支持"
@@ -930,19 +940,21 @@ msgstr ""
 
 #: admin_style.php:407
 msgid "多彩标签云"
-msgstr ""
+msgstr "Colorful tags"
 
 #: admin_style.php:413
 msgid "开启后，标签云页面输出的标签会带有随机颜色，反之为同一颜色。"
 msgstr ""
+"Generate random colors for tags. When disabled, all tags share the same "
+"color."
 
 #: admin_style.php:418
 msgid "页脚格言"
-msgstr ""
+msgstr "Footer quotes"
 
 #: admin_style.php:420
 msgid "使用一言 API"
-msgstr ""
+msgstr "Use Hitokoto.cn API"
 
 #: admin_style.php:421
 msgid ""
@@ -969,59 +981,59 @@ msgstr ""
 
 #: ajax-comment/main.php:56
 msgid "刚刚"
-msgstr ""
+msgstr "Just now"
 
 #: archive.php:15 author.php:15 category.php:15 index.php:26 page-links.php:27
 #: page-postlike.php:29 page-tags.php:27 page.php:21 search.php:15
 #: single.php:37
 msgid "切换日间/夜间模式"
-msgstr ""
+msgstr "Toggle light/dark mode"
 
 #: archive.php:35 category.php:35
 msgid "文章归档"
-msgstr ""
+msgstr "Archives"
 
 #: archive.php:43 author.php:48 category.php:48 index.php:66 search.php:43
 msgid "加载更多"
-msgstr ""
+msgstr "Load More"
 
 #: author.php:35
 #, php-format
 msgid "由 %s 发布"
-msgstr ""
+msgstr "Published by %s"
 
 #: author.php:35
 msgid "作者归档"
-msgstr ""
+msgstr "Author archives"
 
 #: comments.php:9
 #, php-format
 msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论."
-msgstr ""
+msgstr "You need to <a href=\"%s\">log in</a> before commenting."
 
 #: comments.php:22
 msgid "发射"
-msgstr ""
+msgstr "Send"
 
 #: comments.php:25
 msgid "取消回复"
-msgstr ""
+msgstr "Cancel"
 
 #: comments.php:26
 msgid "说点什么..."
-msgstr ""
+msgstr "Say something..."
 
 #: comments.php:28
 msgid "昵称"
-msgstr ""
+msgstr "Nick name"
 
 #: comments.php:30
 msgid "邮箱"
-msgstr ""
+msgstr "Email address"
 
 #: comments.php:32
 msgid "网站（如果有）http(s)://"
-msgstr ""
+msgstr "Website (if applicable) http(s)://"
 
 #: footer.php:11
 msgid "没有激活的小工具"
@@ -1101,11 +1113,11 @@ msgstr ""
 
 #: functions.php:27
 msgid "抽屉菜单"
-msgstr ""
+msgstr "Left Sidebar"
 
 #: functions.php:30
 msgid "右侧菜单"
-msgstr ""
+msgstr "Right Sidebar"
 
 #: functions.php:32
 msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
@@ -1113,47 +1125,47 @@ msgstr ""
 
 #: functions.php:198
 msgid "博主"
-msgstr ""
+msgstr "Owner"
 
 #: functions.php:201
 msgid "前"
-msgstr ""
+msgstr "ago"
 
 #: functions.php:298
 msgid "首页"
-msgstr ""
+msgstr "Homepage"
 
 #: functions.php:354
 #, php-format
 msgid "搜索结果： %s"
-msgstr ""
+msgstr "Search results: %s"
 
 #: functions.php:358
 #, php-format
 msgid "标签存档 %s"
-msgstr ""
+msgstr "Tag archive %s"
 
 #: functions.php:364
 #, php-format
 msgid "作者存档 %s"
-msgstr ""
+msgstr "Author archive %s"
 
 #: functions.php:368
 msgid "什么也没找到"
-msgstr ""
+msgstr "Nothing found"
 
 #: functions.php:373
 #, php-format
 msgid "( 第 %s 页 )"
-msgstr ""
+msgstr "(Page %s)"
 
 #: functions.php:380
 msgid "被折叠内容"
-msgstr ""
+msgstr "Folded content"
 
 #: functions.php:400
 msgid "警告"
-msgstr ""
+msgstr "Warning"
 
 #: functions.php:515
 msgid ""
@@ -1161,50 +1173,54 @@ msgid ""
 "\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟随全"
 "局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>"
 msgstr ""
+"\n"
+"\t\t<p class=\"description\">Please set a post-specific end-of-post message "
+"here. If you want to follow the global setting, please put<code>-----"
+"Nothing-----</code>. In any case, DO NOT leave this blank.</p>"
 
 #: functions.php:523
 msgid "文章主题颜色"
-msgstr ""
+msgstr "Post-specific primary color"
 
 #: functions.php:526 functions.php:552 functions.php:575
 msgid "跟随全局设置"
-msgstr ""
+msgstr "Global setting"
 
 #: functions.php:547
 msgid "在这里为这篇文章设置单独的主题颜色。"
-msgstr ""
+msgstr "Set primary color specific for this post"
 
 #: functions.php:549
 msgid "文章强调色"
-msgstr ""
+msgstr "Post-specific accent color"
 
 #: functions.php:570
 msgid "在这里为这篇文章设置单独的强调色。"
-msgstr ""
+msgstr "Set accent color specific for this post"
 
 #: functions.php:572
 msgid "文章样式"
-msgstr ""
+msgstr "Post-specific style"
 
 #: functions.php:580
 msgid "在这里为这篇文章设置单独的样式。"
-msgstr ""
+msgstr "Override style setting for this post."
 
 #: functions.php:582
 msgid "文章展示模式"
-msgstr ""
+msgstr "Post's display mode"
 
 #: functions.php:585
 msgid "正常显示"
-msgstr ""
+msgstr "Display normally"
 
 #: functions.php:586
 msgid "404模式"
-msgstr ""
+msgstr "404"
 
 #: functions.php:587
 msgid "隐藏模式"
-msgstr ""
+msgstr "Hidden"
 
 #: functions.php:589
 msgid ""
@@ -1213,24 +1229,30 @@ msgid ""
 "示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP "
 "404头。"
 msgstr ""
+"Set how each post is displayed here. <br> 404 mode: returns 404 page when "
+"this post is visited. <br> Hidden mode: return \"This post is unavailable "
+"due to related laws and regulations\" <br> No matter the display method, the "
+"article can be found and searched on the homepage, and will not return a "
+"HTTP 404 header."
 
 #: functions.php:594
 msgid "文章设置"
-msgstr ""
+msgstr "Post's setting"
 
 #: header.php:18 header.php:30 header.php:43
 #, php-format
 msgid "第 %s 页"
-msgstr ""
+msgstr "Page %s"
 
 #: header.php:37 header.php:44 header.php:49 template-parts/content-3.php:5
 msgid "这篇文章受密码保护，输入密码后才能查看。"
 msgstr ""
+"This post is password-protected. Only those with a password can read it."
 
 #: includes/admin_init_fn.php:9 includes/update.php:204 includes/update.php:247
 #: includes/update.php:290 includes/update.php:334
 msgid "去围观"
-msgstr ""
+msgstr "Read more"
 
 #: includes/admin_init_fn.php:28 includes/admin_init_fn.php:32
 #: includes/update.php:81 includes/update.php:111 includes/update.php:138
@@ -1239,25 +1261,25 @@ msgstr ""
 #: includes/update.php:260 includes/update.php:297 includes/update.php:303
 #: includes/update.php:341 includes/update.php:347
 msgid "推荐文章"
-msgstr ""
+msgstr "Recommended posts"
 
 #: includes/admin_init_fn.php:29 includes/update.php:82 includes/update.php:112
 #: includes/update.php:145 includes/update.php:180 includes/update.php:218
 #: includes/update.php:261 includes/update.php:304 includes/update.php:348
 msgid "最新文章"
-msgstr ""
+msgstr "Latest posts"
 
 #: includes/author_card.php:1
 msgid "访问作者网站"
-msgstr ""
+msgstr "Access author's website"
 
 #: includes/author_card.php:1
 msgid "文章作者"
-msgstr ""
+msgstr "Author"
 
 #: includes/share_cn.php:2
 msgid "分享到 微博"
-msgstr ""
+msgstr "Share to Weibo"
 
 #: includes/share_cn.php:5 template-parts/content-1.php:5
 #: template-parts/content-1.php:52 template-parts/content-2.php:4
@@ -1266,83 +1288,84 @@ msgstr ""
 #: template-parts/content-first-3.php:5 template-parts/content-first-3.php:56
 msgid "这篇文章受密码保护，输入密码才能看哦"
 msgstr ""
+"This post is password-protected. Only those with a password can read it."
 
 #: includes/share_cn.php:5
 msgid "分享到 QQ"
-msgstr ""
+msgstr "Share to QQ"
 
 #: includes/share_cn.php:8
 msgid "分享到 QQ空间"
-msgstr ""
+msgstr "Share to QZone"
 
 #: includes/share_oversea.php:2
 msgid "分享到 Telegram"
-msgstr ""
+msgstr "Share to Telegram"
 
 #: includes/share_oversea.php:5
 msgid "分享到 Facebook"
-msgstr ""
+msgstr "Share to Facebook"
 
 #: includes/share_oversea.php:8
 msgid "分享到 Twitter"
-msgstr ""
+msgstr "Share to Twitter"
 
 #: index.php:54 same_posts.php:23 same_posts.php:42
 msgid "前往阅读"
-msgstr ""
+msgstr "Read more"
 
 #: page-postlike.php:45 single.php:53
 msgid "在其他设备上继续阅读"
-msgstr ""
+msgstr "Continue reading on other devices"
 
 #: page-postlike.php:67 page-postlike.php:69 page-postlike.php:106
 #: page-postlike.php:108 page-postlike.php:145 page-postlike.php:147
 #: single.php:75 single.php:77 single.php:115 single.php:117 single.php:155
 #: single.php:157
 msgid "赞赏"
-msgstr ""
+msgstr "Donate"
 
 #: page-postlike.php:85 page-postlike.php:124 page-postlike.php:163
 #: single.php:94 single.php:134 single.php:174
 msgid "生成分享图"
-msgstr ""
+msgstr "Generate image excerpt"
 
 #: page-postlike.php:88 page-postlike.php:127 page-postlike.php:166
 #: single.php:97 single.php:137 single.php:177
 msgid "没有标签"
-msgstr ""
+msgstr "No tag"
 
 #: page-postlike.php:171 single.php:184
 msgid "扫描二维码继续阅读"
-msgstr ""
+msgstr "Scan QR code to continue reading"
 
 #: search.php:36 search.php:46
 msgid "搜索结果"
-msgstr ""
+msgstr "Search Results"
 
 #: search.php:50
 msgid "前方似乎空空如也"
-msgstr ""
+msgstr "No results"
 
 #: search.php:51
 msgid "什么也没找到，换个词搜搜试试？"
-msgstr ""
+msgstr "Found no results. Try other keywords?"
 
 #: searchform.php:5
 msgid "搜索什么..."
-msgstr ""
+msgstr "Search for something..."
 
 #: single.php:194 single.php:218
 msgid "去首页"
-msgstr ""
+msgstr "Homepage"
 
 #: single.php:214
 msgid "诶呀..."
-msgstr ""
+msgstr "Uh-oh..."
 
 #: single.php:214
 msgid "因相关法律法规，此文章暂时不予显示"
-msgstr ""
+msgstr "This post is unavailable due to related laws and regulations"
 
 #: template-parts/content-1-status.php:3 template-parts/content-2-status.php:3
 #: template-parts/content-3-status.php:3 template-parts/content-4-status.php:4
@@ -1351,7 +1374,7 @@ msgstr ""
 #: template-parts/content-first-3-status.php:3
 #: template-parts/content-first-4-status.php:4
 msgid "状态"
-msgstr ""
+msgstr "Status"
 
 #: template-parts/content-1.php:5 template-parts/content-2.php:4
 #: template-parts/content-3.php:5 template-parts/content-3.php:56
@@ -1359,51 +1382,51 @@ msgstr ""
 #: template-parts/content-first-2.php:4 template-parts/content-first-3.php:5
 #: template-parts/content-first-3.php:56
 msgid "这篇文章没有摘要"
-msgstr ""
+msgstr "This post has no excerpt"
 
 #: template-parts/content-1.php:52
 msgid "这篇文章没有摘要。"
-msgstr ""
+msgstr "This post has no excerpt."
 
 #: toggleposts.php:11 toggleposts.php:47
 msgid "上一篇"
-msgstr ""
+msgstr "Previous"
 
 #: toggleposts.php:18 toggleposts.php:33
 msgid "下一篇"
-msgstr ""
+msgstr "Next"
 
 #. Theme Name of the plugin/theme
 msgid "MDx"
-msgstr ""
+msgstr "MDx"
 
 #. Theme URI of the plugin/theme
 msgid "https://flyhigher.top/develop/788.html"
-msgstr ""
+msgstr "https://flyhigher.top/develop/788.html"
 
 #. Description of the plugin/theme
 msgid "MDx - Material Design WordPress Theme"
-msgstr ""
+msgstr "MDx - Material Design WordPress Theme"
 
 #. Author of the plugin/theme
 msgid "AxtonYao"
-msgstr ""
+msgstr "AxtonYao"
 
 #. Author URI of the plugin/theme
 msgid "https://flyhigher.top"
-msgstr ""
+msgstr "https://flyhigher.top"
 
 #. Template Name of the plugin/theme
 msgid "Links"
-msgstr ""
+msgstr "Links"
 
 #. Template Name of the plugin/theme
 msgid "PostLike"
-msgstr ""
+msgstr "PostLike"
 
 #. Template Name of the plugin/theme
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #~ msgid "前方似乎禁止通行"
 #~ msgstr "Sanırım ileride trafik tıkalı"
