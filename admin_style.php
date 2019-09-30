@@ -140,7 +140,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="grey" <?php if($mdx_v_styles=='grey'){?>selected="selected"<?php }?>>Grey</option>
 	<option value="blue-grey" <?php if($mdx_v_styles=='blue-grey'){?>selected="selected"<?php }?>>Blue Grey</option>
 </select>
-<p class="description"><?php _e('主题颜色会影响所有页面的主色。', 'mdx');?></p>
+<p class="description"><span class="mdx-color-preview mdx-theme-color-preview"></span> <?php _e('主题颜色会影响所有页面的主色。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -165,11 +165,11 @@ wp_nonce_field('mdx_options_update');
 	<option value="orange" <?php if($mdx_v_styles_act=='orange'){?>selected="selected"<?php }?>>Orange</option>
 	<option value="deep-orange" <?php if($mdx_v_styles_act=='deep-orange'){?>selected="selected"<?php }?>>Deep Orange</option>
 </select>
-<p class="description"><?php _e('强调颜色会影响所有页面的强调色。', 'mdx');?></p>
+<p class="description"><span class="mdx-color-preview mdx-accent-color-preview"></span> <?php _e('强调颜色会影响所有页面的强调色。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
-<th scope="row"><?php _e('Material Design 2 主题', 'mdx');?></th>
+<th scope="row"><?php _e('Material Design 2 <span class="mdx-exp">实验性</span>', 'mdx');?></th>
 <td>
 <?php $mdx_v_md2=mdx_get_option('mdx_md2');?>
 	<fieldset>
@@ -211,6 +211,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="3" <?php if($mdx_v_default_style=='3'){?>selected="selected"<?php }?>><?php _e('干净', 'mdx');?></option>
 	<option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
 </select>
+<div class="mdx-svg-preview" id="mdx-list-preview"></div>
 <p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>
 </td>
 </tr>
@@ -222,6 +223,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
 </select>
+<div class="mdx-svg-preview" id="mdx-index-preview"></div>
 </td>
 </tr>
 <tr>
@@ -233,6 +235,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="1" <?php if($mdx_v_post_style=='1'){?>selected="selected"<?php }?>><?php _e('简洁', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
 </select>
+<div class="mdx-svg-preview" id="mdx-post-preview"></div>
 <p class="description"><?php _e('同时影响文章页、单独页面的样式。', 'mdx');?></p>
 </td>
 </tr>
@@ -269,7 +272,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
-<th scope="row"><?php _e('启用 Gravatar 支持', 'mdx');?></th>
+<th scope="row"><?php _e('启用友链 Gravatar 支持', 'mdx');?></th>
 <td>
 <?php $mdx_v_gravatar_actived = mdx_get_option('mdx_gravatar_actived'); ?>
 	<fieldset>

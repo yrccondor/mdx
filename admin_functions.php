@@ -11,13 +11,15 @@ function mdx_display_sub_function(){
     echo '<h1>'.__('MDx主题', 'mdx').'</h1>';
 }
 function mdx_display_sub_function_one(){
+    wp_register_style('mdx_admin_preview', get_template_directory_uri().'/includes/admin_preview.css');
+    wp_enqueue_style('mdx_admin_preview');
     require_once('admin_style.php');
 }
 function mdx_display_sub_function_two(){
     require_once('admin_fn.php');
 }
 function mdx_display_sub_function_three(){
-    wp_register_style('mdx_admin', get_template_directory_uri().'/admin.css');
+    wp_register_style('mdx_admin', get_template_directory_uri().'/includes/admin.css');
     wp_enqueue_style('mdx_admin');
     if(function_exists('file_get_contents')){
         $opt2 = array(
