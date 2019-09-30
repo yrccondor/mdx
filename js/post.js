@@ -540,6 +540,7 @@ $('#comments').on('click', '#comments-navi > a', function(e){
             $("div#comments ul li p").addClass('mdui-typo');
             $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
             $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+            window.addComment.init();
         }
     });
 });
@@ -572,6 +573,7 @@ $('#comments').on('click', '#comments-navi > button', function(e){
             $("div#comments ul li p").addClass('mdui-typo');
             $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
             $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+            window.addComment.init()
         }
     });
 });

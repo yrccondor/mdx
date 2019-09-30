@@ -383,6 +383,7 @@ if(!mdx_comment_ajax){
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+                window.addComment.init()
             }
         });
     });
@@ -415,6 +416,7 @@ if(!mdx_comment_ajax){
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+                window.addComment.init()
             }
         });
     });

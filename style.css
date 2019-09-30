@@ -1482,6 +1482,8 @@ a#cancel-comment-reply-link {
 	font-size: 15px;
 	-webkit-transition: all .2s;
 	transition: all .2s;
+	opacity: .5;
+	padding-left: 10px;
 }
 a#cancel-comment-reply-link:hover {
 	opacity: .8;
@@ -2202,7 +2204,7 @@ ul.mdui-list.ajax-comments {
 	margin: 2px 7px;
 	padding: 5px;
 	border-radius: 3px;
-	color: rgba(0,0,0,.5);
+	color: rgba(0,0,0,.3);
 	text-decoration: none;
 	-webkit-transition: all .2s;
 	transition: all .2s;

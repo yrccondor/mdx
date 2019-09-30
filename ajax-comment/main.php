@@ -1,5 +1,5 @@
 <?php
-define('AC_VERSION','1.0.0');
+define('AC_VERSION','2.0.0');
 
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	wp_die('请升级到4.4以上版本');
@@ -8,14 +8,15 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 if(!function_exists('fa_ajax_comment_scripts')) :
 
     function fa_ajax_comment_scripts(){
-        if(is_single() || is_page()){
-            wp_enqueue_script('ajax-comment', get_template_directory_uri().'/ajax-comment/app.js', array(), AC_VERSION , true);
-            wp_localize_script('ajax-comment', 'ajaxcomment', array(
-                'ajax_url'   => admin_url('admin-ajax.php'),
-                'order' => get_option('comment_order'),
-                'formpostion' => 'top',
-            ));
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
         }
+        wp_enqueue_script( 'ajax-comment', get_template_directory_uri() . '/ajax-comment/app.js', array( 'jquery' ), AC_VERSION , true );
+        wp_localize_script( 'ajax-comment', 'ajaxcomment', array(
+            'ajax_url'   => admin_url('admin-ajax.php'),
+            'order' => get_option('comment_order'),
+            'formpostion' => 'top',
+        ) );
     }
 
 endif;

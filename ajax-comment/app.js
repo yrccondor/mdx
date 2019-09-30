@@ -10,7 +10,8 @@ jQuery(document).ready(function(jQuery) {
 			data: jQuery(this).serialize() + "&action=ajax_comment",
 			type: jQuery(this).attr('method'),
 			error: function(request) {
-				var t = addComment;
+				var t = faAjax;
+				t.createButterbar(request.responseText);
 				$('#submit').removeAttr('disabled');
 				if(request.responseText){
 					mdui.snackbar({
@@ -27,7 +28,6 @@ jQuery(document).ready(function(jQuery) {
 				}
 			},
 			success: function(data) {
-				$('#submit').removeAttr('disabled');
 				jQuery('textarea').each(function() {
 					this.value = ''
 				});
@@ -36,7 +36,7 @@ jQuery(document).ready(function(jQuery) {
 					timeout: 5000,
 					position: 'top',
 				});
-				var t = addComment,
+				var t = faAjax,
 					cancel = t.I('cancel-comment-reply-link'),
 					temp = t.I('wp-temp-form-div'),
 					respond = t.I(t.respondId),
@@ -70,45 +70,7 @@ jQuery(document).ready(function(jQuery) {
 		});
 		return false;
 	});
-	addComment = {
-		moveForm: function(commId, parentId, respondId) {
-			var t = this,
-				div, comm = t.I(commId),
-				respond = t.I(respondId),
-				cancel = t.I('cancel-comment-reply-link'),
-				parent = t.I('comment_parent'),
-				post = t.I('comment_post_ID');
-			__cancel.text(__cancel_text);
-			t.respondId = respondId;
-			if (!t.I('wp-temp-form-div')) {
-				div = document.createElement('div');
-				div.id = 'wp-temp-form-div';
-				div.style.display = 'none';
-				respond.parentNode.insertBefore(div, respond)
-			}!comm ? (temp = t.I('wp-temp-form-div'), t.I('comment_parent').value = '0', temp.parentNode.insertBefore(respond, temp), temp.parentNode.removeChild(temp)) : comm.parentNode.insertBefore(respond, comm.nextSibling);
-			jQuery("body").animate({
-				scrollTop: jQuery('#respond').offset().top - 180
-			}, 400);
-			parent.value = parentId;
-			cancel.style.display = '';
-			cancel.onclick = function() {
-				var t = addComment,
-					temp = t.I('wp-temp-form-div'),
-					respond = t.I(t.respondId);
-				t.I('comment_parent').value = '0';
-				if (temp && respond) {
-					temp.parentNode.insertBefore(respond, temp);
-					temp.parentNode.removeChild(temp);
-				}
-				this.style.display = 'none';
-				this.onclick = null;
-				return false;
-			};
-			try {
-				t.I('comment').focus();
-			} catch (e) {}
-			return false;
-		},
+	faAjax = {
 		I: function(e) {
 			return document.getElementById(e);
 		},
