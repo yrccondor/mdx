@@ -65,6 +65,8 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
 	mdx_update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
 	mdx_update_option('mdx_post_def_img', $_POST['mdx_post_def_img']);
+	mdx_update_option('mdx_gravatar_actived', $_POST['mdx_gravatar_actived']);
+	mdx_update_option('mdx_link_rand_order', $_POST['mdx_link_rand_order']);
 	mdx_update_option('mdx_title_med', $_POST['mdx_title_med']);
 	mdx_update_option('mdx_index_img', $_POST['mdx_index_img']);
 	mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
@@ -255,6 +257,28 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<th scope="row"><?php _e('启用Gravatar支持', 'mdx');?></th>
+<td>
+<?php $mdx_v_gravatar_actived = mdx_get_option('mdx_gravatar_actived'); ?>
+	<fieldset>
+	<label><input type="radio" name="mdx_gravatar_actived" value="true" <?php if($mdx_v_gravatar_actived=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_gravatar_actived" value="false" <?php if($mdx_v_gravatar_actived=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，友情链接将尝试在备注栏中获取Gravatar邮箱。关闭则只使用图片链接。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('友情链接随机顺序', 'mdx');?></th>
+<td>
+<?php $mdx_v_link_rand_order = mdx_get_option('mdx_link_rand_order'); ?>
+	<fieldset>
+	<label><input type="radio" name="mdx_link_rand_order" value="true" <?php if($mdx_v_link_rand_order=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_link_rand_order" value="false" <?php if($mdx_v_link_rand_order=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，友情链接将以随机顺序显示。关闭则使用字典序。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
 <tr>
 <th scope="row"><label for="mdx_title_med"><?php _e('网页标题计算方式', 'mdx');?></label></th>
 <td>

@@ -193,7 +193,7 @@ add_filter('pre_get_posts','mdx_search_filter_page');
 function mdx_comment_format($comment, $args, $depth){
 $GLOBALS['comment'] = $comment;?>
     <li class="mdui-list-item" id="li-comment-<?php comment_ID(); ?>">
-    <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar($comment, 80);}?></div>
+    <div class="mdui-list-item-avatar"><?php if(function_exists('get_avatar') && get_option('show_avatars')){echo get_avatar((mdx_get_option('mdx_gravatar_actived') == 'true'? $comment->comment_author_email: $comment), 80);}?></div>
     <div class="mdui-list-item-content outbu" id="comment-<?php comment_ID();?>">
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, "update_core")){echo '<span class="mdx-admin">'.__('博主','mdx').'</span>';}?></div>
     <div class="mdui-list-item-text mdui-typo">
@@ -224,15 +224,28 @@ function get_link_items(){
     }
     return $result;
 }
+// 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱(需设置中开启)中获取链接图像
 function get_the_link_items($id = null){
-	$bookmarks = get_bookmarks('category='.$id);
+	$mdx_gravatar_actived = mdx_get_option('mdx_gravatar_actived');
+	$mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
+	$order_rule = 'category='.$id;
+	if ($mdx_link_rand_order == 'true') {
+		$order_rule .= 'title_li=&orderby=rand';
+	}
+	$bookmarks = get_bookmarks($order_rule);
 	$output = '';
     if(!empty($bookmarks)){
         $output.='<div class="mdui-container">';
         foreach($bookmarks as $bookmark){
 			$lazy_load =  '';
-			if($bookmark->link_image !== ""){
-				$lazy_load =  ' LazyLoad" data-original="'.$bookmark->link_image;
+			if(!empty($bookmark->link_image)){
+				$lazy_load = ' LazyLoad" data-original="'.$bookmark->link_image;
+			} else {
+				$imglink = $bookmark->link_notes;
+				if (substr($imglink, 0, 4) !== 'http' && $mdx_gravatar_actived == 'true'){
+					$imglink = get_avatar_url($imglink, array('size'=>512));
+				}
+				$lazy_load = ' LazyLoad" data-original="'.$imglink;
 			}
 			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
@@ -708,4 +721,5 @@ function mdx_colored_cloud_call_back($matches) {
 if(mdx_get_option('mdx_tags_color') === "true"){
 	add_filter('wp_tag_cloud', 'mdx_colored_cloud', 1);
 }
+
 ?>
