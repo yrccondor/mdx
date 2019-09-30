@@ -97,6 +97,10 @@ function mdx_css(){
 	wp_register_style('mdx_style_css', get_template_directory_uri().'/style.css', '', '', 'all'); 
 	wp_enqueue_style('mdx_mdui_css');
 	wp_enqueue_style('mdx_style_css');
+	if(mdx_get_option("mdx_md2")=="true"){
+		wp_register_style('mdx_md2', get_template_directory_uri().'/mdui/css/md2.css', '', '', 'all');
+		wp_enqueue_style('mdx_md2');
+	}
 }
 add_action('wp_enqueue_scripts', 'mdx_css');
 function mdx_js(){

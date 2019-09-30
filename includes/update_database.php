@@ -13,7 +13,6 @@ $arr = array(
 	'mdx_load_pro' => get_option('mdx_load_pro'),
 	'mdx_post_list_1' => get_option('mdx_post_list_1'),
 	'mdx_post_list_2' => get_option('mdx_post_list_2'),
-	'mdx_post_list_3' => get_option('mdx_post_list_3'),
 	'mdx_post_edit_time' => get_option('mdx_post_edit_time'),
 	'mdx_author_card' => get_option('mdx_author_card'),
 	'mdx_speed_pre' => get_option('mdx_speed_pre'),

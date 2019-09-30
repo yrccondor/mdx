@@ -57,6 +57,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_styles_hex', $mdx_color_arr[$_POST['mdx_styles']]);
 	mdx_update_option('mdx_styles_act', $_POST['mdx_styles_act']);
 	mdx_update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
+	mdx_update_option('mdx_md2', $_POST['mdx_md2']);
 	mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
 	mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
@@ -165,6 +166,17 @@ wp_nonce_field('mdx_options_update');
 	<option value="deep-orange" <?php if($mdx_v_styles_act=='deep-orange'){?>selected="selected"<?php }?>>Deep Orange</option>
 </select>
 <p class="description"><?php _e('强调颜色会影响所有页面的强调色。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('Material Design 2 主题', 'mdx');?></th>
+<td>
+<?php $mdx_v_md2=mdx_get_option('mdx_md2');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无法保证显示效果达到完美，请谨慎启用。</strong>', 'mdx');?></p>
+	</fieldset>
 </td>
 </tr>
 <tr>
