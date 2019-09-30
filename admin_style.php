@@ -257,13 +257,13 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
-<th scope="row"><?php _e('启用Gravatar支持', 'mdx');?></th>
+<th scope="row"><?php _e('启用 Gravatar 支持', 'mdx');?></th>
 <td>
 <?php $mdx_v_gravatar_actived = mdx_get_option('mdx_gravatar_actived'); ?>
 	<fieldset>
 	<label><input type="radio" name="mdx_gravatar_actived" value="true" <?php if($mdx_v_gravatar_actived=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_gravatar_actived" value="false" <?php if($mdx_v_gravatar_actived=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，友情链接将尝试在备注栏中获取Gravatar邮箱。关闭则只使用图片链接。', 'mdx');?></p>
+	<p class="description"><?php _e('开启后，将尝试从备注栏中获取邮箱并将与邮箱对应的 Gravatar 头像作为友情链接图像。关闭则只使用图片链接。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
