@@ -73,8 +73,8 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
 	mdx_update_option('mdx_side_info', $_POST['mdx_side_info']);
 	mdx_update_option('mdx_side_head', $_POST['mdx_side_head']);
-	mdx_update_option('mdx_side_name', $_POST['mdx_side_name']);
-	mdx_update_option('mdx_side_more', $_POST['mdx_side_more']);
+	mdx_update_option('mdx_side_name', htmlentities(stripslashes($_POST['mdx_side_name'])));
+	mdx_update_option('mdx_side_more', htmlentities(stripslashes($_POST['mdx_side_more'])));
 	mdx_update_option('mdx_index_say', htmlentities(stripslashes($_POST['mdx_index_say'])));
 	mdx_update_option('mdx_index_say_size', $_POST['mdx_index_say_size']);
 	mdx_update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
