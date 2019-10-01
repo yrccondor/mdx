@@ -1556,11 +1556,14 @@ div.mdui-chip {
 	color: rgba(0,0,0,.5)!important;
 	text-decoration: none;
 }
+#crumbs>a::before {
+	display: none;
+}
 .timeInPost {
 	position: absolute;
 	top: 5px;
 	right: 0;
-	padding: 0 10px 5px;
+	padding: 0 10px 0;
 	background: linear-gradient(to right,hsla(0,0%,93%,0) 0%,#ededed 5%,#ededed 100%);
 	font-size: 1pc;
 }
@@ -1577,6 +1580,9 @@ ul#mdxshare {
 }
 ul#mdxshare,ul#mdxshare a {
 	color: rgba(0,0,0,.87)!important;
+}
+#mdxshare a::before {
+	display: none;
 }
 .mdui-theme-layout-dark ul#mdxshare a {
 	color: #fff!important;

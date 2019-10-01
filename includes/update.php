@@ -365,7 +365,7 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
-}else if($mdx_version_base!="1.8.15"){
+}else if($mdx_version_base!="1.9.0"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
