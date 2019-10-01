@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Material Icons Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons Outlined'),
+         local('MaterialIconsOutlined-Regular'),
+         url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
+         url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
+}
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, #respond, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .spanout, .mdx-first-simple .mdx-hot-posts, .mdx-first-simple .mdxNotice {
+    border-radius: 8px!important;
+}
+#qrcode {
+    padding: 10px;
+    width: 170px;
+    height: 170px;
+}
+.mdui-tooltip {
+    border-radius: 100px;
+    padding: 8px 16px;
+}
+.outOfSearch {
+    padding: 5px 0 5px 12pt;
+}
+.mdx-hot-posts div.mdx-ul div.mdx-li {
+    margin-right: 8px;
+}
+.mdxNotice {
+    border-radius: 0 0 8px 8px;
+}
+.mdx-same-posts ul li {
+    margin-right: 1px;
+}
+.material-icons {
+    font-family: 'Material Icons Outlined';
+}
+.mdx-li.mdui-card.mdui-hoverable {
+    box-shadow: none!important;
+}
+#submit {
+    border-radius: 5px;
+    box-shadow: none;
+}
+.mdui-card-actions .mdui-btn {
+    border-radius: 5px;
+}

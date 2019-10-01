@@ -57,6 +57,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_styles_hex', $mdx_color_arr[$_POST['mdx_styles']]);
 	mdx_update_option('mdx_styles_act', $_POST['mdx_styles_act']);
 	mdx_update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
+	mdx_update_option('mdx_styles_dark', $_POST['mdx_styles_dark']);
 	mdx_update_option('mdx_md2', $_POST['mdx_md2']);
 	mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
@@ -166,6 +167,18 @@ wp_nonce_field('mdx_options_update');
 	<option value="deep-orange" <?php if($mdx_v_styles_act=='deep-orange'){?>selected="selected"<?php }?>>Deep Orange</option>
 </select>
 <p class="description"><span class="mdx-color-preview mdx-accent-color-preview"></span> <?php _e('强调颜色会影响所有页面的强调色。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_styles_dark"><?php _e('黑暗主题', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_styles_dark=mdx_get_option('mdx_styles_dark');?>
+<select name="mdx_styles_dark" id="mdx_styles_dark">
+	<option value="disable" <?php if($mdx_v_styles_dark=='disable'){?>selected="selected"<?php }?>>禁用</option>
+	<option value="dark" <?php if($mdx_v_styles_dark=='dark'){?>selected="selected"<?php }?>>启用</option>
+	<option value="oled" <?php if($mdx_v_styles_dark=='oled'){?>selected="selected"<?php }?>>启用 (OLED)</option>
+</select>
+<p class="description"><?php _e('如果启用，页面将忽略夜间模式相关设置并强制始终以夜间模式显示。', 'mdx');?></p>
 </td>
 </tr>
 <tr>

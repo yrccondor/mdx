@@ -42,6 +42,7 @@ $arr = array(
 'mdx_styles_hex'=>'#3f51b5',
 'mdx_styles_act'=>'pink',
 'mdx_act_hex'=>'#ff4081',
+'mdx_styles_dark'=>'disable',
 'mdx_md2'=>'false',
 'mdx_chrome_color'=>'true',
 'mdx_title_bar'=>'false',

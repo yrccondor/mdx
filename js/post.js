@@ -478,7 +478,7 @@ function mdx_show_img(){
         $('div.mdx-share-img-loading').remove();
         setTimeout(() => {
             window.share_dialog.handleUpdate();
-            $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe88f;</i> '+mdx_si_i18n+'</span>');
+            $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n+'</span>');
         }, 5);
     }
 

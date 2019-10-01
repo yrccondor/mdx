@@ -98,8 +98,12 @@ function mdx_css(){
 	wp_enqueue_style('mdx_mdui_css');
 	wp_enqueue_style('mdx_style_css');
 	if(mdx_get_option("mdx_md2")=="true"){
-		wp_register_style('mdx_md2', get_template_directory_uri().'/mdui/css/md2.css', '', '', 'all');
+		wp_register_style('mdx_md2', get_template_directory_uri().'/css/md2.css', '', '', 'all');
 		wp_enqueue_style('mdx_md2');
+	}
+	if(mdx_get_option('mdx_styles_dark')==="oled"){
+		wp_register_style('mdx_oled', get_template_directory_uri().'/css/oled.css', '', '', 'all');
+		wp_enqueue_style('mdx_oled');
 	}
 }
 add_action('wp_enqueue_scripts', 'mdx_css');
