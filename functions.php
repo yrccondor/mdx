@@ -218,6 +218,7 @@ add_filter('comment_text', 'comment_add_at', 10, 2);
 function get_link_items(){
     $linkcats = get_terms('link_category');
     if(!empty($linkcats)){
+		$result = '';
         foreach($linkcats as $linkcat){            
             $result.='<h3 class="link-title">'.$linkcat->name.'</h3>';
             if($linkcat->description)$result .= '<div class="link-description">'.$linkcat->description.'</div>';
@@ -251,12 +252,45 @@ function get_the_link_items($id = null){
 				}
 				$lazy_load = ' LazyLoad" data-original="'.$imglink;
 			}
-			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+			$rel = '';
+			if(!empty($bookmark->link_rel)){
+				$rel = 'rel="'.$bookmark->link_rel.'" ';
+			}
+			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
         $output .= '</div>';
     }
     return $output;
 }
+
+function mdx_blogroll_nofollow() {
+    add_action('add_meta_boxes', 'mdx_blogroll_add_meta_box', 1, 1);
+    add_filter('pre_link_rel', 'mdx_blogroll_save_meta_box', 10, 1);
+}
+
+function mdx_blogroll_add_meta_box() {
+    add_meta_box('mdx_blogroll_nofollow_div', __('nofollow'), 'mdx_blogroll_inner_meta_box', 'link', 'side');
+}
+
+function mdx_blogroll_inner_meta_box($post) {
+    $bookmark = get_bookmark($post->ID, 'ARRAY_A');
+    if (strpos($bookmark['link_rel'], 'nofollow') !== FALSE)
+        $checked = ' checked="checked"';
+    else
+        $checked = '';
+    ?>
+	<input value="1" id="mdx_blogroll_nofollow_checkbox" name="mdx_blogroll_nofollow_checkbox" type="checkbox"<?php echo $checked;?>> <label for="mdx_blogroll_nofollow_checkbox"><?php echo __('添加 <code>nofollow</code> 属性', 'mdx'); ?></label>
+    <?php
+}
+
+function mdx_blogroll_save_meta_box($link_rel) {
+    $rel = trim(str_replace('nofollow', '', $link_rel));
+    if ($_POST['mdx_blogroll_nofollow_checkbox'])
+        $rel .= ' nofollow';
+    return trim($rel);
+}
+add_action('load-link.php', 'mdx_blogroll_nofollow');
+add_action('load-link-add.php', 'mdx_blogroll_nofollow');
 
 //获取摘要
 function mdx_get_post_excerpt($post, $excerpt_length=150){
