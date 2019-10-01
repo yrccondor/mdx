@@ -338,8 +338,7 @@ $(function(){
 
         //密码优化
         var inputId = $('form.post-password-form p > label > input').attr('id');
-        var inputValue = $('form.post-password-form p > input').attr('value');
-        $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">密码</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
+        $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
 })
 
 function afterCloseImgBox(){
@@ -428,7 +427,7 @@ $(function() {
 
 //Share img
 $(function(){
-var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
+new QRCode(document.getElementById("mdx-si-qr"), {
     text: window.location.href,
     width: 70,
     height: 70,
@@ -444,74 +443,46 @@ function convertCanvasToImage(canvas) {
     var canvasData = canvas.toDataURL("image/png");
     sessionStorage.setItem('si_'+url_hash, canvasData);
     image.src = canvasData;
-    document.getElementById('img-box').appendChild(image);
+    document.getElementById('mdx-share-img-loaded-container').appendChild(image);
+    $('#mdx-share-img').hide();
+    $('div.mdx-share-img-loading').remove();
+    setTimeout(() => {
+        window.share_dialog.handleUpdate();
+        $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe88f;</i> '+mdx_si_i18n+'</span>');
+    }, 5);
 }
 
 function mdx_show_img(){
-    $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"><button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white mdui-valign mdui-text-center" id="close-img-box"><i class="mdui-icon material-icons">&#xe5cd;</i></button><div class="mdx-si-tip"><p>'+mdx_si_i18n+'</p></div></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+    window.share_dialog = mdui.dialog({
+        content: '<div class="mdx-share-img-loaded" id="mdx-share-img-loaded-container"></div><div class="mdui-valign mdx-share-img-loading"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>',
+        buttons: [
+          {
+            text: mdx_si_i18n_2,
+          }
+        ],
+        history: false,
+        cssClass: 'mdx-share-img-dialog'
+    });
     mdui.updateSpinners();
-    $('#img-box').css({'opacity':'1','pointer-events':'auto'});
-    if(colorEnabled){
-        metaColor.attr('content',"#212121");
-    }
     $('#mdx-share-img').show();
-        if(!sessionStorage.getItem('si_'+url_hash)){
+
+    if(!sessionStorage.getItem('si_'+url_hash)){
         html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
             convertCanvasToImage(canvas);
-            $('#img-box > img').addClass('imgInBox mdui-center').attr('id','imgInBox');
-            $('#imgInBox').css('opacity','1');
-            var w = 430;
-            var h = 700;
-            var wincli = winwidth/winheight;
-            var piccli = w/h;
-            if(wincli <= piccli){
-                $('#imgInBox').css({'width':'100%','height':'auto'});
-            }else{
-                $('#imgInBox').css({'height':'100%','width':'auto'});
-            }
-            if((winwidth > w) && (winheight > h)){
-                $('#imgInBox').css('width',w);
-                $('#imgInBox').css('height',h);
-            }
-            $('.mdx-si-tip').addClass('mdx-si-tip-showed');
-            $('#mdx-share-img').hide();
-            $('div.mdx-loading-img').remove();
         });
-        }else{
-            var image = new Image();
-            image.src = sessionStorage.getItem('si_'+url_hash);
-            document.getElementById('img-box').appendChild(image);
-            $('#img-box > img').addClass('imgInBox mdui-center').attr('id','imgInBox');
-            $('#imgInBox').css('opacity','1');
-            var w = 430;
-            var h = 700;
-            var wincli = winwidth/winheight;
-            var piccli = w/h;
-            if(wincli <= piccli){
-                $('#imgInBox').css({'width':'100%','height':'auto'});
-            }else{
-                $('#imgInBox').css({'height':'100%','width':'auto'});
-            }
-            if((winwidth > w) && (winheight > h)){
-                $('#imgInBox').css({'width':w,'height':h});
-            }
-            $('.mdx-si-tip').addClass('mdx-si-tip-showed');
-            $('#mdx-share-img').hide();
-            $('div.mdx-loading-img').remove();
-        }
-}
-$('body').on('click','#close-img-box',function(){
-    $('#img-box').css({'opacity':'0','pointer-events':'none'});
-    if(colorEnabled){
-        if(sessionStorage.getItem('ns_night-styles')!="true"){
-            metaColor.attr('content',now_color);
-        }else{
-            metaColor.attr('content',"#212121");
-        }
+    }else{
+        var image = new Image();
+        image.src = sessionStorage.getItem('si_'+url_hash);
+        document.getElementById('mdx-share-img-loaded-container').appendChild(image);
+        $('#mdx-share-img').hide();
+        $('div.mdx-share-img-loading').remove();
+        setTimeout(() => {
+            window.share_dialog.handleUpdate();
+            $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe88f;</i> '+mdx_si_i18n+'</span>');
+        }, 5);
     }
-    
-    window.setTimeout("afterCloseImgBox()",200);
-})
+
+}
 
 // 评论分页
 if(!mdx_comment_ajax){

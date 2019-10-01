@@ -93,6 +93,8 @@
       </script>
       <?php }if(is_single() || (is_page())){?><script>
       var mdx_si_i18n = '<?php _e('长按/右键保存图片','mdx'); ?>';
+      var mdx_si_i18n_2 = '<?php _e('关闭','mdx'); ?>';
+      var mdx_i18n_password = '<?php _e('密码','mdx'); ?>';
       var mdx_github_i18n_1 = '<?php _e('在 Github 上查阅','mdx'); ?>';
       var mdx_github_i18n_2 = '<?php _e('获取 Github 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
       var mdx_post_i18n_1 = '<?php _e('这个页面没有摘要。','mdx'); ?>';
