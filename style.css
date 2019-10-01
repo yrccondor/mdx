@@ -563,7 +563,7 @@ article p {
 	position: fixed;
 	right: 14px;
 	bottom: 14px;
-	z-index: 15;
+	z-index: 109;
 	width: 60px;
 	height: 60px;
 	opacity: .7;
@@ -2741,6 +2741,9 @@ article img.mdx-img-in-post {
 }
 .mdx-share-img-dialog .mdx-save-info i {
     font-size: 18px;
+}
+.mdui-fab {
+	z-index: 99;
 }
 @media(max-width:2500px) {
 	.ArtMain0 {
