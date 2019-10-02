@@ -379,7 +379,7 @@ $("#oth-div").click(function(){
 function share_wechat(){
     if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
         mdui.dialog({
-            content: '<i class="mdui-icon material-icons">&#xe5d3;</i><br><br>点击右上角按钮进行分享',
+            content: '<i class="mdui-icon material-icons">&#xe5d3;</i><br><br>'+mdx_si_i18n_4,
             buttons: [{
                 text: 'OK',
             }],
