@@ -40,7 +40,7 @@
 .material-icons {
     font-family: 'Material Icons Outlined';
 }
-.mdx-li.mdui-card.mdui-hoverable {
+.mdx-li.mdui-card.mdui-hoverable, .mdx-same-posts .mdui-card {
     box-shadow: none!important;
 }
 #submit {
