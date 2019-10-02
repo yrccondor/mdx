@@ -91,6 +91,7 @@ wp_nonce_field('mdx_options_update');
 <?php $mdx_v_night_style=mdx_get_option('mdx_night_style');?>
 	<fieldset>
 	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="true" <?php if($mdx_v_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="oled" <?php if($mdx_v_night_style=='oled'){?>checked="checked"<?php }?>> <?php echo $trueon;?> (OLED)</label><br>
 	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="false" <?php if($mdx_v_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么夜间模式将会自动禁用。</strong>', 'mdx');?></p>
 	</fieldset>

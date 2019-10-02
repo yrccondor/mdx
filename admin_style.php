@@ -178,7 +178,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="dark" <?php if($mdx_v_styles_dark=='dark'){?>selected="selected"<?php }?>>启用</option>
 	<option value="oled" <?php if($mdx_v_styles_dark=='oled'){?>selected="selected"<?php }?>>启用 (OLED)</option>
 </select>
-<p class="description"><?php _e('如果启用，页面将忽略夜间模式相关设置并强制始终以夜间模式显示。', 'mdx');?></p>
+<p class="description"><?php _e('如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
