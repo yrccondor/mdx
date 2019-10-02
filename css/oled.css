@@ -39,7 +39,7 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 .mdui-theme-layout-dark .timeInPost {
     background: linear-gradient(to right,rgba(32,32,32,0) 0%,#292929 5%,#202020 100%);
 }
-.mdui-theme-layout-dark .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent), .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitle[class*=mdui-color-], .mdui-theme-layout-dark .PostTitleFillPageBackGround, .mdui-theme-layout-dark .theFirstPageBackGround, .mdui-theme-layout-dark div.theFirstPageSmall {
+.mdui-theme-layout-dark .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent), .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitle[class*=mdui-color-], .mdui-theme-layout-dark .PostTitleFillPageBackGround, .mdui-theme-layout-dark .theFirstPageBackGround, .mdui-theme-layout-dark div.theFirstPageSmall, .mdui-theme-layout-dark #SearchBar {
     background-color: #121212!important;
 }
 .mdui-theme-layout-dark article div.mdui-panel.mdui-panel-gapless>div.mdui-panel-item, .mdui-theme-layout-dark .mdui-table {
@@ -63,4 +63,7 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 }
 .mdx-first-simple .main {
     background-color: transparent!important;
+}
+.mdui-theme-layout-dark .mdui-dialog, .mdui-theme-layout-dark .mdui-menu {
+    background-color: #1d1d1d;
 }

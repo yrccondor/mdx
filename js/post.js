@@ -368,13 +368,35 @@ $("#oth-div").click(function(){
     }
     now_url = window.location.href.replace(window.location.search, "")+'?_pro='+nowPro2;
     $('#qrcode').html("");
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
+    new QRCode(document.getElementById("qrcode"), {
         text: now_url,
         width: 150,
         height: 150,
         correctLevel : QRCode.CorrectLevel.M
     });
 });
+
+function share_wechat(){
+    mdui.dialog({
+        content: '<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n_3+'</div>',
+        buttons: [
+          {
+            text: mdx_si_i18n_2,
+          }
+        ],
+        history: false,
+        cssClass: 'mdx-share-wechat-dialog',
+        onOpen: function() {
+            now_url = window.location.href.replace(window.location.search, "");
+            new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
+                text: now_url,
+                width: 250,
+                height: 250,
+                correctLevel : QRCode.CorrectLevel.M
+            });
+        }
+    });
+}
 
 //Search
 $(".seai").click(function(){

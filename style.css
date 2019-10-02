@@ -338,10 +338,12 @@ h3.link-title {
 	width: 94%;
 	background-color: #f0f0f0;
 	box-shadow: none;
-	border-left-color: #a00000;
-	border-left-style: solid;
-	border-left-width: 5px;
 	word-break: break-all;
+}
+.mdx-say-after > div {
+	border-left-color: #a00000;
+    border-left-style: solid;
+	border-left-width: 5px;
 }
 body.mdui-theme-primary-red article h3.link-title:after {
 	color: #f44336;
@@ -2754,6 +2756,27 @@ article img.mdx-img-in-post {
 }
 .mdui-fab {
 	z-index: 99;
+}
+#mdx-share-wechat-qrcode {
+	width: 250px;
+	height: 250px;
+}
+.mdx-share-wechat-dialog {
+	width: 298px;
+}
+.mdx-share-wechat-dialog .mdui-dialog-content > div.share-wechat-tip {
+	text-align: center;
+    padding: 20px 0 0 0;
+}
+.mdx-share-wechat-dialog .mdui-dialog-content > div.share-wechat-tip i {
+	font-size: 18px;
+}
+.mdui-theme-layout-dark .mdx-share-wechat-dialog .mdui-dialog-content {
+    color: rgba(0,0,0,.7);
+    background: white;
+}
+.mdui-theme-layout-dark .mdx-share-wechat-dialog .mdui-dialog-content img {
+    filter: brightness(1);
 }
 @media(max-width:2500px) {
 	.ArtMain0 {

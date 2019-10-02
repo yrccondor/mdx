@@ -311,7 +311,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
 </td>
 </tr>
 <tr>
