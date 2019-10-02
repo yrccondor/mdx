@@ -47,7 +47,7 @@
     border-radius: 5px;
     box-shadow: none;
 }
-.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn {
+.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn {
     border-radius: 5px;
 }
 .ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {

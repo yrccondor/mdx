@@ -627,7 +627,7 @@ function mdx_post_metaboxes_1() {
 	<h4><?php _e('文章样式','mdx');?></h4>
 	<?php $mdx_v_post_style=get_post_meta($post->ID, "mdx_post_style", true);?>
 	<select name="mdx_post_style" id="mdx_post_style">
-	<option value="def" <?php if($mdx_v_post_styles=='def' || $mdx_v_post_styles==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
+	<option value="def" <?php if($mdx_v_post_style=='def' || $mdx_v_post_style==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
 	<option value="0" <?php if($mdx_v_post_style=='0'){?>selected="selected"<?php }?>><?php _e('标准', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_post_style=='1'){?>selected="selected"<?php }?>><?php _e('简洁', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
@@ -641,7 +641,7 @@ function mdx_post_metaboxes_1() {
 	<option value="1" <?php if($mdx_v_post_show=='1'){?>selected="selected"<?php }?>><?php _e('404模式', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_show=='2'){?>selected="selected"<?php }?>><?php _e('隐藏模式', 'mdx');?></option>
 	</select>
-	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404模式：当访客进入此文章时，会显示404页面<br>隐藏模式：当访客进入此文章时，会显示“因相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404头。', 'mdx');?></p>
+	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404 头。', 'mdx');?></p>
 	</fieldset>
 	<?php
 }
