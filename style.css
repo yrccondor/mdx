@@ -2319,6 +2319,9 @@ article div.mdui-table-fluid {
 	border-radius: 3px;
 	margin: 0 5px;
 }
+.mdui-theme-layout-dark .mdx-admin {
+	color: #939393;
+}
 .mdx-share-img {
 	position: relative;
 	width: 430px;
@@ -2869,7 +2872,7 @@ article img.mdx-img-in-post {
 }
 @media(max-width:700px) {
 	.mdxNotice {
-		border-radius: 0;
+		border-radius: 0!important;
 	}
 	.mdx-post-cot,.mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
 		height: 230px;
