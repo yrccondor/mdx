@@ -14,8 +14,16 @@ wp_enqueue_style('thickbox');
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	mdx_update_option('mdx_install', $_POST['mdx_install']);
-	mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
-	mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
+	if(isset($_POST['mdx_night_style'])){
+		mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
+	}else{
+		mdx_update_option('mdx_night_style', 'false');
+	}
+	if(isset($_POST['mdx_auto_night_style'])){
+		mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
+	}else{
+		mdx_update_option('mdx_auto_night_style', 'false');
+	}
 	mdx_update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
 	mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
 	mdx_update_option('mdx_widget', $_POST['mdx_widget']);

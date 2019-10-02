@@ -377,25 +377,34 @@ $("#oth-div").click(function(){
 });
 
 function share_wechat(){
-    mdui.dialog({
-        content: '<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n_3+'</div>',
-        buttons: [
-          {
-            text: mdx_si_i18n_2,
-          }
-        ],
-        history: false,
-        cssClass: 'mdx-share-wechat-dialog',
-        onOpen: function() {
-            now_url = window.location.href.replace(window.location.search, "");
-            new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
-                text: now_url,
-                width: 250,
-                height: 250,
-                correctLevel : QRCode.CorrectLevel.M
-            });
-        }
-    });
+    if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
+        mdui.dialog({
+            content: '<i class="mdui-icon material-icons">&#xe5d3;</i><br><br>点击右上角按钮进行分享',
+            buttons: [{
+                text: 'OK',
+            }],
+            history: false,
+            cssClass: 'mdx-share-in-wechat-dialog',
+        });
+    }else{
+        mdui.dialog({
+            content: '<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n_3+'</div>',
+            buttons: [{
+                text: mdx_si_i18n_2,
+            }],
+            history: false,
+            cssClass: 'mdx-share-wechat-dialog',
+            onOpen: function() {
+                now_url = window.location.href.replace(window.location.search, "");
+                new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
+                    text: now_url,
+                    width: 250,
+                    height: 250,
+                    correctLevel : QRCode.CorrectLevel.M
+                });
+            }
+        });
+    }
 }
 
 //Search

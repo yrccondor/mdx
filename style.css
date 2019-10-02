@@ -2778,6 +2778,20 @@ article img.mdx-img-in-post {
 .mdui-theme-layout-dark .mdx-share-wechat-dialog .mdui-dialog-content img {
     filter: brightness(1);
 }
+.mdx-share-in-wechat-dialog {
+	width: 300px;
+}
+.mdx-share-in-wechat-dialog .mdui-dialog-content {
+	text-align: center;
+	font-size: 17px;
+	padding: 35px 24px 15px 24px;
+}
+.mdx-share-in-wechat-dialog .mdui-dialog-content i {
+	font-size: 40px;
+	background-color: rgba(0,0,0,.15);
+	border-radius: 100px;
+	padding: 10px
+}
 @media(max-width:2500px) {
 	.ArtMain0 {
 		width: 100%;

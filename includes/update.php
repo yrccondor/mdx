@@ -10,6 +10,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -23,6 +25,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -44,6 +48,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -67,6 +73,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -92,6 +100,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -123,6 +133,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -154,6 +166,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -192,6 +206,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -230,6 +246,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -271,6 +289,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -317,6 +337,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -363,6 +385,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");
@@ -410,6 +434,8 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
 	mdx_update_option("mdx_widget", "false");
+	mdx_update_option('mdx_styles_dark', "disable");
+	mdx_update_option("mdx_md2", "false");
 	mdx_update_option("mdx_post_list_3", "blank");
 	mdx_update_option("mdx_gravatar_actived", "false");
 	mdx_update_option("mdx_link_rand_order", "false");

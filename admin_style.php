@@ -58,6 +58,10 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_styles_act', $_POST['mdx_styles_act']);
 	mdx_update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
 	mdx_update_option('mdx_styles_dark', $_POST['mdx_styles_dark']);
+	if($_POST['mdx_styles_dark'] !== "disable"){
+		mdx_update_option('mdx_night_style', 'false');
+		mdx_update_option('mdx_auto_night_style', 'false');
+	}
 	mdx_update_option('mdx_md2', $_POST['mdx_md2']);
 	mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
