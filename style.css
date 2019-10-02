@@ -658,6 +658,10 @@ ul#mdx_menu>li a {
 	-webkit-filter: brightness(.8);
 	filter: brightness(.8);
 }
+.mdui-theme-layout-dark.mdx-always-dark img {
+	-webkit-filter: brightness(1);
+	filter: brightness(1);
+}
 .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-],.mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-],.mdui-theme-layout-dark div.PostTitle[class*=mdui-color-] {
 	background-color: #212121!important;
 	color: #fff!important;
@@ -2120,6 +2124,9 @@ div.mdui-toolbar>.mdui-typo-headline {
 }
 .mdui-theme-layout-dark .links-c,.mdui-theme-layout-dark .post_list_t_img {
 	filter: brightness(.8);
+}
+.mdui-theme-layout-dark.mdx-always-dark .links-c,.mdui-theme-layout-dark.mdx-always-dark .post_list_t_img {
+	filter: brightness(1);
 }
 .links-c {
 	border-radius: 3px;

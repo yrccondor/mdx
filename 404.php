@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark<?php } ?>">
+<body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php } ?>">
 <?php if(mdx_get_option("mdx_night_style")==="true" && mdx_get_option('mdx_styles_dark')=='disable'){?>
     <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>

@@ -12,7 +12,7 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
      }
 }
 $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
-  <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if($mdx_index_show=="1"){?> mdx-first-simple<?php }if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark<?php } ?>">
+  <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if($mdx_index_show=="1"){?> mdx-first-simple<?php }if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")==="true" && mdx_get_option('mdx_styles_dark')=='disable'){?>
     <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
