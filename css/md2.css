@@ -7,13 +7,22 @@
          url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, #respond, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .spanout, .mdx-first-simple .mdx-hot-posts, .mdx-first-simple .mdxNotice {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot {
     border-radius: 8px!important;
+}
+.spanout, .mdx-first-simple .mdxNotice, #respond {
+    border-radius: 8px;
 }
 #qrcode {
     padding: 10px;
     width: 170px;
     height: 170px;
+}
+.mdui-snackbar.mdui-snackbar-top {
+    border-radius: 0 0 8px 8px;
+}
+.mdui-snackbar.mdui-snackbar-bottom {
+    border-radius: 8px 8px 0 0;
 }
 .mdui-tooltip {
     border-radius: 100px;
@@ -41,6 +50,96 @@
     border-radius: 5px;
     box-shadow: none;
 }
-.mdui-card-actions .mdui-btn {
+.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn {
     border-radius: 5px;
+}
+.ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
+    border-radius: 0!important;
+}
+.ArtMain0 #respond {
+    border-radius: 0;
+}
+#mdx_menu .menu-item.mdui-list-item, #mdx_menu .mdui-collapse-item-header.mdui-list-item {
+    border-radius: 0 100px 100px 0;
+    margin-right: 5px;
+}
+li.current-menu-item.menu-item-has-children.mdui-collapse-item, li.current_page_item.menu-item-has-children.mdui-collapse-item {
+    background-color: transparent;
+}
+body.mdui-theme-primary-red li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-red li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-red #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(244, 67, 54, .2);
+}
+body.mdui-theme-primary-pink li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-pink li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-pink #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(233, 30, 99, .2);
+}
+body.mdui-theme-primary-purple li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-purple li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-purple #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(156, 39, 176, .2);
+}
+body.mdui-theme-primary-deep-purple li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-deep-purple li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-deep-purple #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(103, 58, 183, .2);
+}
+body.mdui-theme-primary-indigo li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-indigo li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-indigo #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(63, 81, 181, .2);
+}
+body.mdui-theme-primary-blue li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-blue li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-blue #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(33, 150, 243, .2);
+}
+body.mdui-theme-primary-light-blue li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-light-blue li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-light-blue #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(3, 169, 244, .2);
+}
+body.mdui-theme-primary-cyan li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-cyan li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-cyan #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(0, 188, 212, .2);
+}
+body.mdui-theme-primary-teal li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-teal li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-teal #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(0, 150, 136, .2);
+}
+body.mdui-theme-primary-green li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-green li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-green #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(76, 175, 80, .2);
+}
+body.mdui-theme-primary-light-green li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-light-green li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-light-green #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(139, 195, 74, .2);
+}
+body.mdui-theme-primary-lime li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-lime li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-lime #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(188, 201, 54, .2);
+}
+body.mdui-theme-primary-yellow li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-yellow li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-yellow #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(230, 209, 53, .2);
+}
+body.mdui-theme-primary-amber li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-amber li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-amber #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(241, 184, 10, .2);
+}
+body.mdui-theme-primary-orange li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-orange li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-orange #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(255, 152, 0, .2);
+}
+body.mdui-theme-primary-deep-orange li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-deep-orange li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-deep-orange #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(255, 87, 34, .2);
+}
+body.mdui-theme-primary-brown li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-brown li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-brown #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(121, 85, 72, .2);
+}
+body.mdui-theme-primary-grey li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-grey li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-grey #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(158, 158, 158, .2);
+}
+body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-blue-grey li.current_page_item.menu-item-has-children.mdui-collapse-item > div, body.mdui-theme-primary-blue-grey #mdx_menu .menu-item.current-menu-item.mdui-list-item {
+    background-color: rgba(96, 125, 139, .2);
+}
+.mdui-card.mdx-widget {
+    box-shadow: none!important;
+    border: 2px solid #e2e2e2;
+}
+.mdui-theme-layout-dark .mdui-card.mdx-widget {
+    border: 2px solid #555;
+}
+.mdx-widget {
+    margin-top: 10px;
+}
+.underRes {
+    border-radius: 100px;
+}
+.mdx-post-cot {
+    border-radius: 10px;
+    border: 2px solid #e2e2e2;
+}
+.mdui-theme-layout-dark .mdx-post-cot {
+    border: 2px solid #454545;
 }
