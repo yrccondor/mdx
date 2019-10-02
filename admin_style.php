@@ -196,6 +196,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('移动 Chrome 标题栏颜色', 'mdx');?></th>
 <td>
@@ -218,6 +219,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_default_style"><?php _e('文章列表样式', 'mdx');?></label></th>
 <td>
@@ -256,6 +258,7 @@ wp_nonce_field('mdx_options_update');
 <p class="description"><?php _e('同时影响文章页、单独页面的样式。', 'mdx');?></p>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('文章列表显示文章摘要', 'mdx');?></th>
 <td>
@@ -289,6 +292,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <th scope="row"><?php _e('启用友链 Gravatar 支持', 'mdx');?></th>
 <td>
 <?php $mdx_v_gravatar_actived = mdx_get_option('mdx_gravatar_actived'); ?>
@@ -310,6 +314,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <tr>
 <th scope="row"><label for="mdx_title_med"><?php _e('网页标题计算方式', 'mdx');?></label></th>
@@ -331,6 +336,7 @@ wp_nonce_field('mdx_options_update');
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('抽屉菜单顶部图片', 'mdx');?></th>
 <td>
@@ -373,6 +379,7 @@ wp_nonce_field('mdx_options_update');
 <p class="description"><?php _e('这里的内容会显示在抽屉菜单信息名称的下方。', 'mdx');?></p>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('首页格言', 'mdx');?></th>
 <td>
@@ -395,6 +402,7 @@ wp_nonce_field('mdx_options_update');
 <p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。', 'mdx');?></p>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('评论表情', 'mdx');?></th>
 <td>
@@ -411,6 +419,7 @@ wp_nonce_field('mdx_options_update');
 	<td><textarea name="mdx_say_after" id="mdx_say_after" rows="7" cols="50"><?php echo mdx_get_option('mdx_say_after')?></textarea>
 	<p class="description"><?php _e('在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 <code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的文章标题，<code>--PostURL--</code> 会被替换为链接到当前文章的当前文章 URL（大小写敏感）。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_logo_way"><?php _e('顶部栏显示内容', 'mdx');?></label></th>
 <td>
@@ -437,6 +446,7 @@ wp_nonce_field('mdx_options_update');
 <input name="mdx_logo_text" type="text" id="mdx_logo_text" value="<?php echo esc_attr(mdx_get_option('mdx_logo_text'))?>" class="regular-text">
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('Safari Touch Bar 图标支持', 'mdx');?></th>
 <td>
@@ -459,6 +469,7 @@ wp_nonce_field('mdx_options_update');
 <button type="button" id="change-color" class="button mdx_stbsip5"><?php _e('使用当前主题颜色', 'mdx');?></button>
 <p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('多彩标签云', 'mdx');?></th>
 <td>
@@ -470,6 +481,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(mdx_get_option('mdx_footer_say'))?>">

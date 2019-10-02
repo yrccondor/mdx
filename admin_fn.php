@@ -54,6 +54,9 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	mdx_update_option('mdx_real_search', $_POST['mdx_real_search']);
 	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
+	mdx_update_option('mdx_ad', $_POST['mdx_ad']);
+	mdx_update_option('mdx_logged_in_ad', $_POST['mdx_logged_in_ad']);
+	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
 	mdx_update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	mdx_update_option('mdx_auto_des', $_POST['mdx_auto_des']);
 	mdx_update_option('mdx_seo_des', htmlentities(stripslashes($_POST['mdx_seo_des'])));
@@ -93,6 +96,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('夜间模式', 'mdx');?></th>
 <td>
@@ -116,6 +120,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 	<th scope="row"><label for="mdx_notice"><?php _e('网站公告', 'mdx');?></label></th>
 	<td><textarea name="mdx_notice" id="mdx_notice" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_notice'))?></textarea>
@@ -224,6 +229,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_post_list_1"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
 <td>
@@ -267,6 +273,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_post_edit_time"><?php _e('文章时间信息', 'mdx');?></label></th>
 <td>
@@ -333,6 +340,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('首页推荐文章', 'mdx');?></th>
 <td>
@@ -364,6 +372,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 <td><input name="mdx_all_posts_text" type="text" id="mdx_all_posts_text" value="<?php echo esc_attr(mdx_get_option('mdx_all_posts_text'))?>" class="regular-text mdx_apspc2">
 <p class="description"><?php _e('在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('文末推荐文章', 'mdx');?></th>
 <td>
@@ -389,6 +398,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 <th scope="row"><label for="mdx_you_may_like_text"><?php _e('文末推荐文章模块标题', 'mdx');?></label></th>
 <td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(mdx_get_option('mdx_you_may_like_text'))?>" class="regular-text mdx_apspc">
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('实时搜索', 'mdx');?></th>
 <td>
@@ -411,6 +421,23 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
+<tr>
+	<th scope="row"><label for="mdx_ad"><?php _e('广告代码', 'mdx');?></label></th>
+	<td><textarea name="mdx_ad" id="mdx_ad" rows="7" cols="50"><?php echo mdx_get_option('mdx_ad')?></textarea>
+	<p class="description"><?php _e('在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。<br>如果要在文章内插入广告，你可以使用 <code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动广告，请将其填写在“页头脚本”选项处。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><?php _e('对已登录的用户禁用广告', 'mdx');?></th>
+<td>
+<?php $mdx_v_logged_in_ad=mdx_get_option('mdx_logged_in_ad');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_logged_in_ad" value="true" <?php if($mdx_v_logged_in_ad=='true'){?>checked="checked"<?php }?>> <?php _e('禁用广告', 'mdx');?></label><br>
+	<label><input type="radio" name="mdx_logged_in_ad" value="false" <?php if($mdx_v_logged_in_ad=='false'){?>checked="checked"<?php }?>> <?php _e('不禁用广告', 'mdx');?></label><br>
+	</fieldset>
+</td>
+</tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_seo_key"><?php _e('SEO 关键词', 'mdx');?></label></th>
 <td><input name="mdx_seo_key" type="text" id="mdx_seo_key" value="<?php echo esc_attr(mdx_get_option('mdx_seo_key'))?>" class="regular-text">
@@ -432,6 +459,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<td><textarea name="mdx_seo_des" id="mdx_seo_des" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_seo_des'))?></textarea>
 	<p class="description"><?php _e('在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 	<th scope="row"><label for="mdx_head_js"><?php _e('页头脚本', 'mdx');?></label></th>
 	<td><textarea name="mdx_head_js" id="mdx_head_js" rows="7" cols="50"><?php echo mdx_get_option('mdx_head_js')?></textarea>
