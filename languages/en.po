@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2019-09-27 12:28+0800\n"
-"PO-Revision-Date: 2019-10-03 11:46+0800\n"
+"PO-Revision-Date: 2019-10-03 19:14+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -59,11 +59,11 @@ msgstr "A newer version of MDx theme is released "
 
 #: admin_fn.php:68 admin_style.php:106
 msgid "。<a href=\"/wp-admin/admin.php?page=mdx_about\">重新检查</a>"
-msgstr "<a href=\"/wp-admin/admin.php?page=mdx_about\">. Check again</a>"
+msgstr ". <a href=\"/wp-admin/admin.php?page=mdx_about\">. Check again</a>"
 
 #: admin_fn.php:78
 msgid "WordPress 安装方式"
-msgstr "Installation Method"
+msgstr "WordPress Installation Method"
 
 #: admin_fn.php:82
 msgid "一般"
@@ -157,7 +157,9 @@ msgstr "ImgBox"
 
 #: admin_fn.php:155
 msgid "开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。"
-msgstr "When enabled, users can click on images to zoom in on images."
+msgstr ""
+"If post author adds an image with settings \"link to media file\", users can "
+"click on these images to zoom in on them."
 
 #: admin_fn.php:160
 msgid "“阅读更多”文本自定义"
@@ -186,7 +188,7 @@ msgstr ""
 
 #: admin_fn.php:174
 msgid "阅读进度展示"
-msgstr "Show Progress Bar"
+msgstr "Show Reading Progress Bar"
 
 #: admin_fn.php:180
 msgid "开启后，会在文章/单独页面展示阅读进度。"
@@ -260,7 +262,7 @@ msgstr "Hits"
 
 #: admin_fn.php:224
 msgid "发表时间"
-msgstr "Published at"
+msgstr "Publish date"
 
 #: admin_fn.php:225
 msgid "评论数"
@@ -425,7 +427,9 @@ msgstr "Recommend similar posts"
 
 #: admin_fn.php:365
 msgid "开启后，文章末会展示最多5篇相似文章。"
-msgstr "When enabled, users can view similar posts at the end of each posts"
+msgstr ""
+"When enabled, users are recommended a list of similar posts at the end of "
+"each post."
 
 #: admin_fn.php:370
 msgid "文末推荐文章计算方式"
@@ -458,7 +462,7 @@ msgstr ""
 
 #: admin_fn.php:395
 msgid "评论无限加载"
-msgstr "Load all comments"
+msgstr "Load comments Pinterest-like"
 
 #: admin_fn.php:401
 msgid ""
@@ -524,11 +528,11 @@ msgstr "MDx theme"
 
 #: admin_functions.php:6 admin_style.php:14
 msgid "MDx主题 - 样式"
-msgstr "MDx theme - Styles"
+msgstr "MDx theme - Appearances"
 
 #: admin_functions.php:6
 msgid "样式"
-msgstr "Styles"
+msgstr "Apperance"
 
 #: admin_functions.php:7
 msgid "功能"
@@ -544,7 +548,7 @@ msgstr "About"
 
 #: admin_functions.php:31
 msgid "通知："
-msgstr "Warning:"
+msgstr "Notice: "
 
 #: admin_functions.php:49
 msgid "新版本已经发布。去<a href=\"update-core.php\">更新</a>。"
@@ -598,7 +602,7 @@ msgstr "Current Version v"
 
 #: admin_functions.php:69
 msgid "构建版本 v"
-msgstr "Nightly Version v"
+msgstr "Build Version v"
 
 #: admin_functions.php:70
 msgid "最新版本 v"
@@ -707,7 +711,7 @@ msgstr "Standard"
 
 #: admin_style.php:220 functions.php:578
 msgid "通透"
-msgstr "Transparent"
+msgstr "Clear"
 
 #: admin_style.php:222
 msgid "同时影响文章页、单独页面的样式。"
@@ -1088,7 +1092,7 @@ msgstr "Can't connect to realtime search service"
 
 #: footer.php:31
 msgid "已自动定位到你此前阅读处"
-msgstr "Located where you left, please continue"
+msgstr "Located where you left"
 
 #: footer.php:32
 msgid "从头阅读"
