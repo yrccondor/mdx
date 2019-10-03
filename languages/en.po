@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2019-09-27 12:28+0800\n"
-"PO-Revision-Date: 2019-09-27 23:51+0800\n"
+"PO-Revision-Date: 2019-10-03 11:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -402,20 +402,22 @@ msgstr ""
 
 #: admin_fn.php:349
 msgid "首页推荐文章模块标题"
-msgstr ""
+msgstr "Title for Homepage Recommendation"
 
 #: admin_fn.php:351
 msgid "在此设定首页推荐文章模块标题。"
-msgstr ""
+msgstr "Set the title for homepage post recommendation"
 
 #: admin_fn.php:354
 msgid "首页最新文章模块标题"
-msgstr ""
+msgstr "Title for latest posts on homepage"
 
 #: admin_fn.php:356
 msgid ""
 "在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
 msgstr ""
+"Set the title for latest posts section on homepage. This is only in effect "
+"if \"homepage post recommendation\" feature is enabled"
 
 #: admin_fn.php:359
 msgid "文末推荐文章"
@@ -439,30 +441,32 @@ msgstr "Same category"
 
 #: admin_fn.php:380
 msgid "文末推荐文章模块标题"
-msgstr ""
+msgstr "Title for similar posts recommendation"
 
 #: admin_fn.php:384
 msgid "实时搜索"
-msgstr "Instant Seaching"
+msgstr "Realtime Searching"
 
 #: admin_fn.php:390
 msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
 msgstr ""
-"When enabled, will instantly return results on users' typing. "
+"When enabled, will return results on users' typing on-the-fly. "
 "<strong>Require WordPress REST API support. Please make sure you did not "
 "disable it.</strong>"
 
 #: admin_fn.php:395
 msgid "评论无限加载"
-msgstr ""
+msgstr "Load all comments"
 
 #: admin_fn.php:401
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。</strong>"
 msgstr ""
+"When enabled, will load all post comments (without page separation). All "
+"comments are loaded with AJAX. </strong>"
 
 #: admin_fn.php:406
 msgid "SEO 关键词"
@@ -616,6 +620,8 @@ msgstr ""
 msgid ""
 "由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。"
 msgstr ""
+"Due to your PHP configuration, MDx cannot acquire the key. Don't worry, MDx "
+"can still function normally."
 
 #: admin_style.php:116
 msgid "主题颜色"
@@ -788,6 +794,11 @@ msgid ""
 "指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类"
 "推，最多到前16日。"
 msgstr ""
+"You can update or select an image from your media library as your homepage "
+"theme image. Click \"insert into post\" to select the image, other options "
+"are irrelevant will have no effect. If you want to use Bing Images, you can "
+"select the image date in parentheses. 0 stands for today, -1 stands for "
+"tomorrow, 1 stands for yesterday, and so on. The maximum date is 16."
 
 #: admin_style.php:279
 msgid "抽屉菜单顶部图片"
@@ -798,6 +809,8 @@ msgid ""
 "选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图"
 "片，弹出层中的其他选项不会生效。"
 msgstr ""
+"CHoose an image as the top image shown in sidebar. Click \"insert into post"
+"\" to select the image, other options are irrelevant will have no effect."
 
 #: admin_style.php:288
 msgid "抽屉菜单顶部展示个人信息"
@@ -906,7 +919,7 @@ msgstr "Customize title bar content"
 
 #: admin_style.php:385
 msgid "Safari Touch Bar 图标支持"
-msgstr ""
+msgstr "Support for Safari Touch Bar icon"
 
 #: admin_style.php:392
 msgid ""
@@ -915,28 +928,36 @@ msgid ""
 "AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
 "target=\"_blank\">详细了解</a>"
 msgstr ""
+"Enable support for Safari Touch Bar icon, please finish further settings "
+"below. <a href=\"https://developer.apple.com/library/content/documentation/"
+"AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
+"target=\"_blank\">Learn more</a>"
 
 #: admin_style.php:396
 msgid "Touch Bar 图标地址"
-msgstr ""
+msgstr "Touch Bar icon address"
 
 #: admin_style.php:398
 msgid ""
 "请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为\"0 0 "
 "16 16\"。"
 msgstr ""
+"Please set address for Touch Bar icon address. It should have SVG format "
+"with single layer and \"0 0 16 16\" viewbox attributes."
 
 #: admin_style.php:401
 msgid "Touch Bar 图标背景颜色"
-msgstr ""
+msgstr "Touch Bar icon background color"
 
 #: admin_style.php:403
 msgid "使用当前主题颜色"
-msgstr ""
+msgstr "Use primary color"
 
 #: admin_style.php:404
 msgid "请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。"
 msgstr ""
+"Please set background color for Touch Bar icon. Either HEX or RGB format is "
+"acceoted"
 
 #: admin_style.php:407
 msgid "多彩标签云"
@@ -963,14 +984,19 @@ msgid ""
 "read/hitokoto-api.html\" target=\"_blank\">LWL</a>，虽然此来源较为安全，但还"
 "请注意安全风险。"
 msgstr ""
+"This quote will be shown at the footer of each page. Leave it blank to "
+"disable it. If you want to use Hitokoto.cn, you will receive a new quote per "
+"refreshing. This API is from <a href=\"https://blog.lwl12.com/read/hitokoto-"
+"api.html\" target=\"_blank\">LWL</a>. Though the source is considered safe, "
+"please be aware of possible risks."
 
 #: admin_style.php:424
 msgid "页脚内容"
-msgstr ""
+msgstr "Footer content"
 
 #: admin_style.php:426
 msgid "在这里编辑页脚内容。支持 <code>HTML</code> 格式."
-msgstr ""
+msgstr "Edit footer content here. <code>HTML</code> codes are supported"
 
 #: admin_style.php:430
 msgid ""
@@ -978,6 +1004,11 @@ msgid ""
 "设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 <i>中华人民共和"
 "国工业和信息化部</i> 网站。留空则不会显示。"
 msgstr ""
+"MDx theme supports WordPress (Chinese version) ICP license. If you are using "
+"WordPress in Chinese, please enter your ICP license number at <i>WordPress "
+"Settings - General</i>. WordPress will show it at the footer and link it to "
+"website of <I>Ministry of Industry and Information Technology of the "
+"People's Republic of China</i>. Leave it blank to disable it."
 
 #: ajax-comment/main.php:56
 msgid "刚刚"
@@ -1037,79 +1068,79 @@ msgstr "Website (if applicable) http(s)://"
 
 #: footer.php:11
 msgid "没有激活的小工具"
-msgstr ""
+msgstr "No widgets enabled"
 
 #: footer.php:20
 msgid "搜索功能暂时不可用。"
-msgstr ""
+msgstr "Searching is disabled for now."
 
 #: footer.php:21
 msgid "评论功能暂时不可用。"
-msgstr ""
+msgstr "Comments are disabled for now."
 
 #: footer.php:22
 msgid "仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面"
-msgstr ""
+msgstr "Only showing the top 10 results. Hit Enter to show more"
 
 #: footer.php:23
 msgid "无法连接到实时搜索服务"
-msgstr ""
+msgstr "Can't connect to realtime search service"
 
 #: footer.php:31
 msgid "已自动定位到你此前阅读处"
-msgstr ""
+msgstr "Located where you left, please continue"
 
 #: footer.php:32
 msgid "从头阅读"
-msgstr ""
+msgstr "Read from the beginning"
 
 #: footer.php:40
 msgid "更多选项"
-msgstr ""
+msgstr "More options"
 
 #: footer.php:41
 msgid "加载更多评论"
-msgstr ""
+msgstr "Load more comments"
 
 #: footer.php:42
 msgid "没有更多了"
-msgstr ""
+msgstr "That's all"
 
 #: footer.php:61
 msgid "搜索结果："
-msgstr ""
+msgstr "Search results:"
 
 #: footer.php:65
 msgid "作者归档："
-msgstr ""
+msgstr "Author's archives:"
 
 #: footer.php:69
 msgid "文章归档："
-msgstr ""
+msgstr "Archives:"
 
 #: footer.php:95
 msgid "长按/右键保存图片"
-msgstr ""
+msgstr "Touch and hold/right click to save image"
 
 #: footer.php:96
 msgid "在 Github 上查阅"
-msgstr ""
+msgstr "Check this GitHub repo"
 
 #: footer.php:97
 msgid "获取 Github 仓库信息时出现问题<br>尝试直接访问"
-msgstr ""
+msgstr "Error fetching descriptions from GitHub. <br> Directly visit it"
 
 #: footer.php:98
 msgid "这个页面没有摘要。"
-msgstr ""
+msgstr "This post has no excerpt."
 
 #: footer.php:99
 msgid "前往页面"
-msgstr ""
+msgstr "Check this post"
 
 #: footer.php:100
 msgid "获取页面信息时出现问题<br>尝试直接访问"
-msgstr ""
+msgstr "A problem occurred while fetching information. <br>Visit directly"
 
 #: functions.php:27
 msgid "抽屉菜单"
@@ -1122,6 +1153,8 @@ msgstr "Right Sidebar"
 #: functions.php:32
 msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
 msgstr ""
+"At the right of each page. Default to hidden. You can access it by swiping "
+"or button."
 
 #: functions.php:198
 msgid "博主"
