@@ -67,10 +67,11 @@ if(is_admin()){
 }
 
 //主题升级
-require_once(get_template_directory().'/theme-update-checker.php');
-$mdx_update_checker = new ThemeUpdateChecker(
-    'mdx',
-    'https://update.dlij.site/mdx/info.json'
+require 'plugin-update-checker/plugin-update-checker.php';
+$mdxUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://update.dlij.site/mdx/info.json',
+	__FILE__,
+	'mdx'
 );
 
 //多语言支持
