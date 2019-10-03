@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
     var whichButton=0;
-    var mdx_val = jQuery('input.mdx_stbs:checked').val();
+    var mdx_val = jQuery('.mdx_stbs').val();
     if(mdx_val=='false'){
         jQuery('input.mdx_stbsip').attr("disabled","disabled");
     }
@@ -24,11 +24,11 @@ jQuery(document).ready(function(){
     }
     setInterval("img1()",500);
 });
-jQuery(".mdx_stbs").click(function(){
-    var mdx_val = jQuery('input.mdx_stbs:checked').val();
-    if(mdx_val=='true'){
+jQuery(".mdx_stbs").change(function(){
+    var mdx_val = jQuery('.mdx_stbs').val();
+    if(mdx_val!=='false'){
         jQuery('input.mdx_stbsip').removeAttr("disabled");
-    }else if(mdx_val=='false'){
+    }else if(mdx_val==='false'){
         jQuery('input.mdx_stbsip').attr("disabled","disabled");
     }
 });

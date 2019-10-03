@@ -12,6 +12,7 @@ $arr = array(
 'mdx_read_pro'=>'true',
 'mdx_pro_save'=>'true',
 'mdx_auto_scroll'=>'false',
+'mdx_toc'=>'true',
 'mdx_load_pro'=>'true',
 'mdx_post_list_1'=>'view',
 'mdx_post_list_2'=>'time',
@@ -74,6 +75,7 @@ $arr = array(
 'mdx_svg'=>'',
 'mdx_svg_color'=>'',
 'mdx_tags_color'=>'true',
+'mdx_styles_footer'=>'1',
 'mdx_footer_say'=>'Hello=>MDx!',
 'mdx_footer'=>'');
 update_option("mdx_all_options", $arr);

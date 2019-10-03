@@ -34,6 +34,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
 	mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	mdx_update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
+	mdx_update_option('mdx_toc', $_POST['mdx_toc']);
 	mdx_update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	mdx_update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	mdx_update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
@@ -101,12 +102,12 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('夜间模式', 'mdx');?></th>
 <td>
 <?php $mdx_v_night_style=mdx_get_option('mdx_night_style');?>
-	<fieldset>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="true" <?php if($mdx_v_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="oled" <?php if($mdx_v_night_style=='oled'){?>checked="checked"<?php }?>> <?php echo $trueon;?> (OLED)</label><br>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" type="radio" name="mdx_night_style" value="false" <?php if($mdx_v_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么夜间模式将会自动禁用。</strong>', 'mdx');?></p>
-	</fieldset>
+<select<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" name="mdx_night_style" id="mdx_night_style">
+	<option value="true" <?php if($mdx_v_night_style=='true'){?>selected="selected"<?php }?>><?php echo $trueon;?></option>
+	<option value="oled" <?php if($mdx_v_night_style=='oled'){?>selected="selected"<?php }?>><?php echo $trueon;?> (OLED)</option>
+	<option value="false" <?php if($mdx_v_night_style=='false'){?>selected="selected"<?php }?>><?php echo $falseoff;?></option>
+</select>
+<p class="description"><?php _e('开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么夜间模式将会自动禁用。</strong>', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -215,6 +216,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_auto_scroll" value="true" <?php if($mdx_v_auto_scroll=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_auto_scroll" value="false" <?php if($mdx_v_auto_scroll=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，文章中通过二维码转移到其他设备阅读时会自动记录阅读进度并滚动。建议在网页加载速度较快时启用。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('文章目录', 'mdx');?></th>
+<td>
+<?php $mdx_v_toc=mdx_get_option('mdx_toc');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_toc" value="true" <?php if($mdx_v_toc=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_toc" value="false" <?php if($mdx_v_toc=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，侧边栏会显示文章目录。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>

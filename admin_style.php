@@ -95,6 +95,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 		mdx_update_option('mdx_svg_color', $_POST['mdx_svg_color']);
 	}
 	mdx_update_option('mdx_tags_color', $_POST['mdx_tags_color']);
+	mdx_update_option('mdx_styles_footer', $_POST['mdx_styles_footer']);
 	mdx_update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
 	mdx_update_option('mdx_footer', htmlentities(stripslashes($_POST['mdx_footer'])));
 ?>
@@ -482,6 +483,18 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr><td> </td></tr>
+<tr>
+<th scope="row"><label for="mdx_styles_footer"><?php _e('页脚样式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_styles_footer=mdx_get_option('mdx_styles_footer');?>
+<select name="mdx_styles_footer" id="mdx_styles_footer">
+	<option value="1" <?php if($mdx_v_styles_footer=='1'){?>selected="selected"<?php }?>>传统</option>
+	<option value="2" <?php if($mdx_v_styles_footer=='2'){?>selected="selected"<?php }?>>简单</option>
+	<option value="3" <?php if($mdx_v_styles_footer=='3'){?>selected="selected"<?php }?>>现代</option>
+</select>
+<p class="description"><?php _e('在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</strong>', 'mdx');?></p>
+</td>
+</tr>
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(mdx_get_option('mdx_footer_say'))?>">
