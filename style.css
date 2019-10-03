@@ -2792,6 +2792,20 @@ article img.mdx-img-in-post {
 	border-radius: 100px;
 	padding: 10px
 }
+.mdx-ad-in-article {
+	width: 100%;
+	margin: 15px 0;
+}
+.mdx-ad-in-list {
+	width: 100%;
+    max-width: 700px;
+	margin: 15px 0;
+	text-align: left;
+}
+.mdx-ad-in-list.mdx-style-4-ad {
+	width: 810px;
+    max-width: 810px;
+}
 @media(max-width:2500px) {
 	.ArtMain0 {
 		width: 100%;
@@ -2845,6 +2859,12 @@ article img.mdx-img-in-post {
 	}
 	#respond,.ArtMain,.ArtMain~div#comments,.mdx-author-c,.mdx-same-posts {
 		max-width: 45pc;
+	}
+}
+@media(max-width:884px) {	
+	.mdx-ad-in-list.mdx-style-4-ad {
+		width: 95%;
+    	max-width: 400px;
 	}
 }
 @media(max-width:800px) {

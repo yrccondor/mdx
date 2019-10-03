@@ -529,6 +529,16 @@ function mdx_shortcode_github($atts, $content = ''){
 }
 add_shortcode("mdx_github", "mdx_shortcode_github");
 
+function mdx_shortcode_ad($atts, $content = ''){
+	if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		return '<div class="mdx-ad-in-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	}else{
+		return '';
+	}
+    
+}
+add_shortcode("mdx_ad", "mdx_shortcode_ad");
+
 function mdx_add_button_fold(){
 	if(!current_user_can('edit_posts') && !current_user_can('edit_pages')){
 		return;
@@ -546,15 +556,17 @@ function mdx_register_button($buttons){
 	array_push($buttons, "", "mdx_progress");
 	array_push($buttons, "", "mdx_post");
 	array_push($buttons, "", "mdx_github");
+	array_push($buttons, "", "mdx_ad");
 	return $buttons;
 }
 function mdx_add_plugin($plugin_array){
 	$plugin_array['mdx_fold'] = get_bloginfo('template_url').'/js/sc1.js';
-	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc2.js';
-	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc3.js';
-	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc4.js';
-	$plugin_array['mdx_post'] = get_bloginfo('template_url').'/js/sc5.js';
-	$plugin_array['mdx_github'] = get_bloginfo('template_url').'/js/sc6.js';
+	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_post'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_github'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_ad'] = get_bloginfo('template_url').'/js/sc1.js';
 	return $plugin_array;
 }
 

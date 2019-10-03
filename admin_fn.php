@@ -54,7 +54,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	mdx_update_option('mdx_real_search', $_POST['mdx_real_search']);
 	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
-	mdx_update_option('mdx_ad', $_POST['mdx_ad']);
+	mdx_update_option('mdx_ad', htmlentities(stripslashes($_POST['mdx_ad'])));
 	mdx_update_option('mdx_logged_in_ad', $_POST['mdx_logged_in_ad']);
 	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
 	mdx_update_option('mdx_seo_key', $_POST['mdx_seo_key']);
@@ -425,7 +425,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 <tr>
 	<th scope="row"><label for="mdx_ad"><?php _e('广告代码', 'mdx');?></label></th>
 	<td><textarea name="mdx_ad" id="mdx_ad" rows="7" cols="50"><?php echo mdx_get_option('mdx_ad')?></textarea>
-	<p class="description"><?php _e('在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。<br>如果要在文章内插入广告，你可以使用 <code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动广告，请将其填写在“页头脚本”选项处。', 'mdx');?></p></td>
+	<p class="description"><?php _e('在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 <code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动广告，请将其填写在“页头脚本”选项处。', 'mdx');?></p></td>
 </tr>
 <tr>
 <th scope="row"><?php _e('对已登录的用户禁用广告', 'mdx');?></th>
