@@ -45,7 +45,7 @@ function addToc(titleList) {
 $("#menu").click(function() {
     if(!firstClick){
         tocShown = true;
-        firstClick = false;
+        firstClick = true;
     }
 })
 
@@ -65,7 +65,7 @@ $('#left-drawer').on('click', '#mdx-toc-toc', function(e){
 })
 
 $(window).on("resize", function() {
-    if(tocShown){
+    if(tocShown || !firstClick){
         $("#mdx-toc").css("transform", "translateX(0)");
         $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
     }else{
