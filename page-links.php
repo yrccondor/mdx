@@ -54,6 +54,9 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                 <?php while(have_posts()):the_post();the_content();?>
                 <?php echo get_link_items()?>
                 </article>
+                <?php if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		            echo '<div class="mdx-ad-after-links">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	            }?>
 <?php endwhile;?>
             </div>
 <?php comments_template();?>

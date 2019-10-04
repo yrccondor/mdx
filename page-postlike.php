@@ -79,7 +79,9 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                             echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
-                    <?php }?>
+                    <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	                }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -118,7 +120,9 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                             echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
-                    <?php }?>
+                    <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	                }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
@@ -157,7 +161,9 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                             echo str_replace('--PostURL--','<a href="'.$mdx_current_url.'">'.$mdx_current_url.'</a>',str_replace('--PostLink--','<a href="'.$mdx_current_url.'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
-                    <?php }?>
+                    <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	                }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
                 <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
