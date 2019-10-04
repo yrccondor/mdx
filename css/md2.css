@@ -155,6 +155,10 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .mdui-theme-layout-dark .mdui-table thead {
     background-color: rgb(58, 58, 58);
 }
+.links-des {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
 @media (max-width: 720px) {
     .ArtMain0 #respond {
         border-radius: 0 0 8px 8px;
