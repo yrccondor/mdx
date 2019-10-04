@@ -14,15 +14,24 @@ function getTitleListHtml() {
     }
     let finalHtml = '<div class="mdui-list" id="mdx-toc">';
     let counter = 0;
+    let title1 = 0;
+    let title2 = 0;
+    let title3 = 0;
     for(title of titleList){
         $(title).attr('id',"mdx-toc-" + counter);
         titleArr.push("#mdx-toc-" + counter);
         if($(title)[0].tagName ==="H1"){
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item" id="mdx-toc-'+counter+'-item">'+$(title).text()+'</a>';
+            title1++;
+            title2 = 0;
+            title3 = 0;
+            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item" id="mdx-toc-'+counter+'-item"><span>'+title1+'</span><div>'+$(title).text()+'</div></a>';
         }else if($(title)[0].tagName ==="H2"){
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h2" id="mdx-toc-'+counter+'-item">'+$(title).text()+'</a>';
+            title2++;
+            title3 = 0;
+            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h2" id="mdx-toc-'+counter+'-item"><span>'+title1+'.'+title2+'</span><div>'+$(title).text()+'</div></a>';
         }else if($(title)[0].tagName ==="H3"){
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h3" id="mdx-toc-'+counter+'-item">'+$(title).text()+'</a>';
+            title3++;
+            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h3" id="mdx-toc-'+counter+'-item"><span>'+title1+'.'+title2+'.'+title3+'</span><div>'+$(title).text()+'</div></a>';
         }
         counter++;
     }
@@ -59,7 +68,7 @@ $('#left-drawer').on('click', '#mdx-toc-menu', function(e){
 $('#left-drawer').on('click', '#mdx-toc-toc', function(e){
     e.preventDefault();
     tocShown = true;
-    scrollToc();
+    scrollToc(false);
     $("#mdx-toc").css("transform", "translateX(0)");
     $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
 })
@@ -82,11 +91,13 @@ $('#left-drawer').on('click', '.mdx-toc-item', function(e) {
 let tickingToc = false;
 $(window).on("scroll", function(){
     if(!tickingToc) {
-        requestAnimationFrame(scrollToc);
+        requestAnimationFrame(function(){
+            scrollToc(false);
+        });
         tickingToc = true;
     }
 })
-function scrollToc(firstCall = false){
+function scrollToc(firstCall){
     if(tocShown || firstCall){
         let howFar = document.documentElement.scrollTop || document.body.scrollTop;
         $(".mdx-toc-item").removeClass("mdx-toc-read").removeClass("mdui-list-item-active");

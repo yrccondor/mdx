@@ -2829,6 +2829,12 @@ article img.mdx-img-in-post {
 }
 #mdx-toc a {
 	font-size: 17px;
+	width: 100%;
+}
+#mdx-toc a div {
+    width: calc(100% - 37px);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 #left-drawer .mdui-tab a {
 	min-width: 0;
@@ -2853,6 +2859,18 @@ article img.mdx-img-in-post {
 }
 .mdx-toc-item.mdx-toc-read {
 	opacity: .37;
+}
+.mdx-toc-item span {
+	font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.3);
+    color: white;
+    margin-right: 10px;
+    font-weight: normal;
+}
+.mdui-theme-layout-dark .mdx-toc-item span {
+    background-color: rgba(255, 255, 255, .2);
 }
 .mdx-side-title {
 	height: 56px;
