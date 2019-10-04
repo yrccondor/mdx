@@ -110,7 +110,9 @@ jQuery(document).ready(function(){
     }
     if(jQuery("#mdx_index_img").val()!=''){
         var img1=jQuery("#mdx_index_img").val();
-        jQuery('#img1').attr('src',img1);
+        if(img1.substring(0,4) === 'http'){
+            jQuery('#img1').attr('src',img1);
+        }
     }
     if(jQuery("#mdx_side_img").val()!=''){
         var img2=jQuery("#mdx_side_img").val();
@@ -144,11 +146,11 @@ jQuery(".mdx_stbs2").click(function(){
     var mdx_val2 = jQuery('input.mdx_stbs2:checked').val();
     if(mdx_val2=='true'){
         jQuery('input.mdx_stbsip2').removeAttr("disabled");
-        jQuery('input.mdx_stbsip22').removeAttr("disabled");
+        jQuery('.mdx_stbsip22').removeAttr("disabled");
         jQuery('input.mdx_stbsip2').attr("required","required");
     }else if(mdx_val2=='false'){
         jQuery('input.mdx_stbsip2').attr("disabled","disabled");
-        jQuery('input.mdx_stbsip22').attr("disabled","disabled");
+        jQuery('.mdx_stbsip22').attr("disabled","disabled");
         jQuery('input.mdx_stbsip2').removeAttr("required");
     }
 });

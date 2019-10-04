@@ -339,15 +339,6 @@ wp_nonce_field('mdx_options_update');
 </tr>
 <tr><td> </td></tr>
 <tr>
-<th scope="row"><?php _e('抽屉菜单顶部图片', 'mdx');?></th>
-<td>
-<input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text" readonly="readonly">
-<button type="button" id="insert-media-button-3" class="button"><?php _e('选择图片', 'mdx');?></button>
-<p class="description"><?php _e('选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
-<img id="img2" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
-</td>
-</tr>
-<tr>
 <th scope="row"><?php _e('抽屉菜单顶部展示个人信息', 'mdx');?></th>
 <td>
 <?php $mdx_v_side_info=mdx_get_option('mdx_side_info');?>
@@ -359,10 +350,19 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><?php _e('抽屉菜单顶部图片', 'mdx');?></th>
+<td>
+<input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2" readonly="readonly">
+<button type="button" id="insert-media-button-3" class="button mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
+<p class="description"><?php _e('选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
+<img id="img2" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
+</td>
+</tr>
+<tr>
 <th scope="row"><?php _e('抽屉菜单信息头像', 'mdx');?></th>
 <td>
 <input name="mdx_side_head" type="url" id="mdx_side_head" value="<?php echo esc_attr(mdx_get_option('mdx_side_head'))?>" class="regular-text mdx_stbsip22">
-<button type="button" id="insert-media-button-4" class="button mdx_stbsip1"><?php _e('选择图片', 'mdx');?></button>
+<button type="button" id="insert-media-button-4" class="button mdx_stbsip1 mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
 <p class="description"><?php _e('选择一张图片作为抽屉顶部显示的头像。留空则不显示。', 'mdx');?></p>
 <img id="img3" style="width:100%;max-width:300px;height:auto;margin-top:5px;;margi-top:5px;"></img>
 </td>

@@ -4,7 +4,7 @@
 <meta charset="<?php bloginfo('charset');?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=<?php if(mdx_get_option('mdx_allow_scale')=='false'){echo '1, user-scalable=no';}else{echo '5';}?>">
 <?php if(mdx_get_option('mdx_speed_pre')=='true' && !is_404()){?>
-<?php if(is_home()){$mdx_js_name2='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name2='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name2='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name2='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name2='post';}else{$mdx_js_name2='js';}?>
+<?php if(is_home()){$mdx_js_name2='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name2='ac';}elseif(is_single()){$mdx_js_name2='post';}elseif(is_page()){$mdx_js_name2='page';}else{$mdx_js_name2='js';}?>
 <link rel="preload" href="<?php echo get_bloginfo('template_url');?>/js/<?php echo $mdx_js_name2?>.js?ver=<?php echo get_option("mdx_version_commit");?>" as="script">
 <link rel="preload" href="<?php echo get_bloginfo('template_url');?>/mdui/icons/material-icons/<?php if(mdx_get_option("mdx_md2")=="false"){ ?>MaterialIcons-Regular.woff2<?php }else{ ?>material_2_icon_font.woff2<?php } ?>" as="font" type="font/woff2" crossorigin>
 <?php }?>
