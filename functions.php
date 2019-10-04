@@ -136,6 +136,10 @@ function mdx_js(){
 		wp_enqueue_script('mdx_qr_js');
 		wp_enqueue_script('mdx_ra_js');
 		wp_enqueue_script('mdx_h2c_js');
+		if(mdx_get_option("mdx_toc")=="true"){
+			wp_register_script('mdx_toc_js', get_template_directory_uri().'/js/toc.js', false, '', true);
+			wp_enqueue_script('mdx_toc_js');
+		}
 	}
 	wp_enqueue_script('mdx_sl_js');
 }
