@@ -28,9 +28,18 @@ function getTitleListHtml() {
         }else if($(title)[0].tagName ==="H2"){
             title2++;
             title3 = 0;
+            if(title1 === 0){
+                title1 = 1;
+            }
             finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h2" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'</span><div>'+$(title).text()+'</div></a>';
         }else if($(title)[0].tagName ==="H3"){
             title3++;
+            if(title1 === 0){
+                title1 = 1;
+            }
+            if(title2 === 0){
+                title2 = 1;
+            }
             finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h3" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'.'+title3+'</span><div>'+$(title).text()+'</div></a>';
         }
         counter++;
