@@ -179,9 +179,9 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_styles_dark=mdx_get_option('mdx_styles_dark');?>
 <select name="mdx_styles_dark" id="mdx_styles_dark">
-	<option value="disable" <?php if($mdx_v_styles_dark=='disable'){?>selected="selected"<?php }?>>禁用</option>
-	<option value="dark" <?php if($mdx_v_styles_dark=='dark'){?>selected="selected"<?php }?>>启用</option>
-	<option value="oled" <?php if($mdx_v_styles_dark=='oled'){?>selected="selected"<?php }?>>启用 (OLED)</option>
+	<option value="disable" <?php if($mdx_v_styles_dark=='disable'){?>selected="selected"<?php }?>><?php _e('禁用', 'mdx');?></option>
+	<option value="dark" <?php if($mdx_v_styles_dark=='dark'){?>selected="selected"<?php }?>><?php _e('启用', 'mdx');?></option>
+	<option value="oled" <?php if($mdx_v_styles_dark=='oled'){?>selected="selected"<?php }?>><?php _e('启用 (OLED)', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。', 'mdx');?></p>
 </td>
@@ -488,9 +488,9 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_styles_footer=mdx_get_option('mdx_styles_footer');?>
 <select name="mdx_styles_footer" id="mdx_styles_footer">
-	<option value="1" <?php if($mdx_v_styles_footer=='1'){?>selected="selected"<?php }?>>传统</option>
-	<option value="2" <?php if($mdx_v_styles_footer=='2'){?>selected="selected"<?php }?>>简单</option>
-	<option value="3" <?php if($mdx_v_styles_footer=='3'){?>selected="selected"<?php }?>>现代</option>
+	<option value="1" <?php if($mdx_v_styles_footer=='1'){?>selected="selected"<?php }?>><?php _e('传统', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_styles_footer=='2'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
+	<option value="3" <?php if($mdx_v_styles_footer=='3'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</strong>', 'mdx');?></p>
 </td>
