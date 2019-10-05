@@ -1,15 +1,19 @@
-$(function() {
-    addToc(getTitleListHtml());
-    scrollToc(true);
-})
-
 let tocShown = false;
 let titleArr = [];
 let firstClick = false;
+let isToc = true;
+
+$(function() {
+    addToc(getTitleListHtml());
+    if(isToc){
+        scrollToc(true);
+    }
+})
 
 function getTitleListHtml() {
     let titleList = $("article > h1, article > h2, article > h3");
     if(titleList.length <= 1){
+        isToc = false;
         return false;
     }
     let finalHtml = '<div class="mdui-list" id="mdx-toc">';
@@ -83,12 +87,14 @@ $('#left-drawer').on('click', '#mdx-toc-toc', function(e){
 })
 
 $(window).on("resize", function() {
-    if(tocShown || !firstClick){
-        $("#mdx-toc").css("transform", "translateX(0)");
-        $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
-    }else{
-        $("#mdx_menu").css("transform", "translateX(0)");
-        $("#mdx-toc").css("transform", "translateX("+$("#mdx-toc").width()+"px)");
+    if(isToc){
+        if(tocShown || !firstClick){
+            $("#mdx-toc").css("transform", "translateX(0)");
+            $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
+        }else{
+            $("#mdx_menu").css("transform", "translateX(0)");
+            $("#mdx-toc").css("transform", "translateX("+$("#mdx-toc").width()+"px)");
+        }
     }
 })
 
@@ -99,12 +105,15 @@ $('#left-drawer').on('click', '.mdx-toc-item', function(e) {
 
 let tickingToc = false;
 $(window).on("scroll", function(){
-    if(!tickingToc) {
-        requestAnimationFrame(function(){
-            scrollToc(false);
-        });
-        tickingToc = true;
+    if(isToc){
+        if(!tickingToc) {
+            requestAnimationFrame(function(){
+                scrollToc(false);
+            });
+            tickingToc = true;
+        }
     }
+    
 })
 function scrollToc(firstCall){
     if(tocShown || firstCall){
