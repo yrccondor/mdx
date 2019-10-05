@@ -289,8 +289,8 @@ body.mdui-theme-layout-dark .ct1-p {
 	border-radius: 7px 7px;
 	background-color: #fff;
 }
-.main .mdx-clean-footer {
-	width: 95%;
+.main .mdx-clean-footer, .main-in-other .mdx-clean-footer {
+	width: 90%;
 	max-width: 700px;
 	margin: 0 auto;
 	text-align: left;
