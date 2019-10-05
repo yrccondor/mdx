@@ -40,6 +40,10 @@ if(mdx_get_option('mdx_title_med')=="wp"){
 	add_theme_support('title-tag');
 }
 
+remove_filter('the_title', 'wptexturize');
+remove_filter('wp_title', 'wptexturize');
+remove_filter('single_post_title', 'wptexturize');
+
 //初始化
 if(!get_option('mdx_first_init')){
     //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用

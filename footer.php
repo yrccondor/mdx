@@ -57,6 +57,23 @@
       var moreinput = "'<?php _e("更多选项","mdx");?>'";
       var morecomment = "<?php _e("加载更多评论","mdx");?>";
       var nomorecomment = "<?php _e("没有更多了","mdx");?>";
+      <?php if(mdx_get_option('mdx_opt_wechat_share') === "true"){?>if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+          WeixinJSBridge.invoke('sendAppMessage',{
+            "appid": '',
+            "img_url": '<?php get_site_icon_url(192);?>',
+            "img_width": "200",
+            "img_height": "200",
+            "link": window.location.href.replace(window.location.search, ""),
+            "desc": "<?php $mdx_des=mdx_get_option('mdx_seo_des');$mdx_s_key=mdx_get_option('mdx_seo_key');$mdx_a_des=mdx_get_option('mdx_auto_des');if(is_single()||is_page()){if(post_password_required()){_e('这篇文章受密码保护，输入密码后才能查看。', 'mdx');}else{echo mdx_get_post_excerpt($post, 100);}}else if($mdx_des!=''){echo $mdx_des;}else{bloginfo('description', 'display');}?>",
+            "title": "<?php global $page, $paged;wp_title('-', true, 'right');bloginfo('name');$site_description = get_bloginfo('description', 'display');if($site_description && (is_home() || is_front_page())) echo " - $site_description";if($paged >= 2 || $page >= 2) echo ' - '.sprintf(__('第 %s 页'), max($paged, $page));?>"
+	        }, function(res) {
+	        });
+        });
+      }, false);
+    }
+      <?php }?>
       <?php if(mdx_get_option('mdx_auto_scroll')=='true'){?>
         ifscr = 1;
       <?php }?>

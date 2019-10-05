@@ -44,6 +44,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
 	mdx_update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
+	mdx_update_option('mdx_opt_wechat_share', $_POST['mdx_opt_wechat_share']);
 	mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
 	mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
@@ -339,6 +340,17 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('优化微信分享', 'mdx');?></th>
+<td>
+<?php $mdx_v_opt_wechat_share=mdx_get_option('mdx_opt_wechat_share');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_opt_wechat_share" value="true" <?php if($mdx_v_opt_wechat_share=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_opt_wechat_share" value="false" <?php if($mdx_v_opt_wechat_share=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('<strong>如果你的域名已备案，</strong>可以打开此选项以获得更好的微信内分享效果。', 'mdx');?></p>
+	</fieldset>
 </td>
 </tr>
 <tr>
