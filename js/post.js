@@ -94,6 +94,10 @@ function scrollDiff(){
 
 window.onload=function(){
     $('body > .mdui-progress').fadeOut(200);
+    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+        item.setAttribute('mdui-panel', '');
+    });
+    mdui.JQ(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         if($(".ArtMain").length > 0){
