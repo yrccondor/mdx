@@ -3082,6 +3082,9 @@ body.mdui-theme-accent-orange .mdx-timeline-archives li a:hover .atitle:after {
 body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:after {
 	background-color: #ff6e40;
 }
+.theFirstPageSmall h1 small p {
+	margin: 23.4px 0;
+}
 @media(max-width:2500px) {
 	.ArtMain0 {
 		width: 100%;
