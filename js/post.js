@@ -258,7 +258,7 @@ $(function(){
         $('article a > img').each(function(){
             var imgUrlEach = $(this).attr('src');
             if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
-                imgUrlEach = $(this).attr('data-original');
+                imgUrlEach = $(this).attr('data-original').split("?")[0];
             }
             var imgHref = $(this).parent("a").attr('href').split('.')
             imgHref.pop();
