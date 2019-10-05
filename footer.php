@@ -37,7 +37,7 @@
     var tipMutiOff = '<?php _e('搜索功能暂时不可用。','mdx')?>';
     var tipMutiOffRes = '<?php _e('评论功能暂时不可用。','mdx');?><br><br>';
     var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面','mdx');?>';
-    var snackMuti = '<?php _e('无法连接到实时搜索服务','mdx');?>';
+    var snackMuti = "<?php _e('无法连接到实时搜索服务','mdx');?>";
     var moreMuti = '<?php echo mdx_get_option("mdx_readmore");?>';
     </script>
     <?php }?>
