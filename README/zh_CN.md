@@ -11,7 +11,7 @@
 > 轻于形，悦于心
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.8.12-3f51b5.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/version-1.9.0-3f51b5.svg?style=flat-square"/>
 <img alt="build" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="releases" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
@@ -58,10 +58,7 @@ MDx 支持多语言，默认语言为简体中文。
 
 - 简体中文
 - 土耳其语（感谢 [Hasan CAN](https://github.com/Sn0bzy)）
-
-计划支持的语言如下：
-
-- 英语
+- 英语（感谢 [Ye Shu](https://github.com/yechs)）
 
 > 非常欢迎你帮助我们将 MDx 翻译至其他语言！
 
