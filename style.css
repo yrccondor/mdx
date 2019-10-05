@@ -74,6 +74,7 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
 .titleBarGobal {
 	position: fixed;
 	height: 4pc;
+	width: 100%;
 }
 #titleBarinPost,.mdui-toolbar,.titleBarinAc {
 	-webkit-transition: all .3s;
@@ -3186,6 +3187,17 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
 }
 .mdui-theme-layout-dark .mdui-typo blockquote cite {
     color: rgba(255,255,255,.7)
+}
+#comments .mdui-list-item-text {
+    opacity: 1;
+    color: rgba(0,0,0,.54);
+}
+.mdui-theme-layout-dark #comments .mdui-list-item-text {
+    opacity: 1;
+    color: rgba(255,255,255,.7);
+}
+#comments .mdui-list-item-title {
+	margin: 0.5em 0;
 }
 @media(max-width:2500px) {
 	.ArtMain0 {
