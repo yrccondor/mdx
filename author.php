@@ -41,15 +41,33 @@
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">
       <?php
-            $style=mdx_get_option('mdx_default_style');
-            $post_num=0;
-            while(have_posts()):the_post();$post_num++;
-              if($post_num == 1){
-              get_template_part('template-parts/content-first-'.$style, get_post_format());
-              }else{
-                get_template_part('template-parts/content-'.$style, get_post_format());
-              }
-            endwhile;?>
+      $style=mdx_get_option('mdx_default_style');
+      $post_num=0;
+      while(have_posts()):the_post();$post_num++;
+        if($post_num == 1 || mdx_get_option('mdx_lazy_load_mode')=='seo2'){
+          get_template_part('template-parts/content-first-'.$style, get_post_format());
+        }else if($post_num == 4){
+          get_template_part('template-parts/content-'.$style, get_post_format());
+          if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+            $style_class = '';
+            if($style==='4'){
+              $style_class = " mdx-style-4-ad";
+            }
+            echo '<div class="mdx-ad-in-list mdui-center'.$style_class.'">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+          }
+        }else{
+          get_template_part('template-parts/content-'.$style, get_post_format());
+        }
+      endwhile;
+      if($post_num >= 8){
+        if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+          $style_class = '';
+          if($style==='4'){
+            $style_class = " mdx-style-4-ad";
+          }
+          echo '<div class="mdx-ad-in-list mdui-center'.$style_class.'">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+        }
+      }?>
       </main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
 <?php get_footer();?>
