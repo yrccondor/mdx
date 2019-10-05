@@ -70,3 +70,9 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 .mdui-theme-layout-dark li.current-menu-item, .mdui-theme-layout-dark li.current_page_item {
     background-color: rgba(255, 255, 255, .08);
 }
+.mdui-theme-layout-dark .mdx-timeline-archives:before {
+    background: #313131;
+}
+.mdui-theme-layout-dark .m-title:before {
+    background: #000;
+}
