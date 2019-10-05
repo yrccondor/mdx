@@ -2829,7 +2829,6 @@ article img.mdx-img-in-post {
 }
 #mdx-toc a {
 	font-size: 17px;
-	width: 100%;
 }
 #mdx-toc a div {
     width: calc(100% - 37px);
