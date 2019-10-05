@@ -66,6 +66,7 @@ function addToc(titleList) {
 
 $("#menu").click(function() {
     if(!firstClick){
+        scrollToc(false);
         tocShown = true;
         firstClick = true;
     }
@@ -108,7 +109,7 @@ $(window).on("scroll", function(){
     if(isToc){
         if(!tickingToc) {
             requestAnimationFrame(function(){
-                scrollToc(false);
+                scrollToc(true);
             });
             tickingToc = true;
         }
