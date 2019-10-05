@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2019-09-27 12:28+0800\n"
-"PO-Revision-Date: 2019-10-05 19:11+0800\n"
+"PO-Revision-Date: 2019-10-05 21:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -47,7 +47,7 @@ msgstr "MDx Theme - Features"
 
 #: admin_fn.php:69 admin_style.php:103
 msgid "设置已保存。"
-msgstr "\vSettings saved."
+msgstr "Settings saved."
 
 #: admin_fn.php:75 admin_style.php:109
 msgid "更改未能保存。"
@@ -59,7 +59,7 @@ msgstr "A newer version of MDx theme is released "
 
 #: admin_fn.php:81 admin_style.php:115
 msgid "。<a href=\"/wp-admin/admin.php?page=mdx_about\">重新检查</a>"
-msgstr ". <a href=\"/wp-admin/admin.php?page=mdx_about\">. Check again</a>"
+msgstr ". <a href=\"/wp-admin/admin.php?page=mdx_about\"> Check again</a>"
 
 #: admin_fn.php:91
 msgid "WordPress 安装方式"
@@ -701,6 +701,18 @@ msgstr "The color used to call attention to key elements."
 msgid "黑暗主题"
 msgstr "Dark theme"
 
+#: admin_style.php:182
+msgid "禁用"
+msgstr "Disable"
+
+#: admin_style.php:183
+msgid "启用"
+msgstr "Enable"
+
+#: admin_style.php:184
+msgid "启用 (OLED)"
+msgstr "Enable (optimized for OLED screens)"
+
 #: admin_style.php:186
 msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
 msgstr ""
@@ -773,7 +785,7 @@ msgstr "Homepage style"
 msgid "默认"
 msgstr "Default"
 
-#: admin_style.php:244
+#: admin_style.php:244 admin_style.php:492
 msgid "简单"
 msgstr "Simple"
 
@@ -1074,6 +1086,14 @@ msgstr ""
 #: admin_style.php:487
 msgid "页脚样式"
 msgstr "Footer styles"
+
+#: admin_style.php:491
+msgid "传统"
+msgstr "Traditional"
+
+#: admin_style.php:493
+msgid "现代"
+msgstr "Modern"
 
 #: admin_style.php:495
 msgid ""
