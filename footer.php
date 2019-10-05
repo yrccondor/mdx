@@ -62,7 +62,7 @@
         WeixinJSBridge.on('menu:share:appmessage', function(argv){
           WeixinJSBridge.invoke('sendAppMessage',{
             "appid": '',
-            "img_url": '<?php get_site_icon_url(192);?>',
+            "img_url": '<?php echo get_site_icon_url(192);?>',
             "img_width": "200",
             "img_height": "200",
             "link": window.location.href.replace(window.location.search, ""),

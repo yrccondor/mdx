@@ -80,6 +80,9 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
 	transition: all .3s;
 	top: 0;
 }
+#titleBarinPost {
+	width: 100%;
+}
 .info a {
 	color: #000;
 	text-decoration: none;
