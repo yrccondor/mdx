@@ -59,7 +59,12 @@ function scrollDiff(){
 };
 
 window.onload=function() {
+    init_wp_block();
     $('body > .mdui-progress').fadeOut(200);
+    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+        item.setAttribute('mdui-panel', '');
+    });
+    mdui.JQ(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         var postHight3 = $(".ArtMain").height() + $(".ArtMain").offset().top - document.documentElement.clientHeight;
@@ -71,6 +76,12 @@ window.onload=function() {
     }
     setTimeout("mdx_shortcode()",1000);
 }
+
+function init_wp_block() {
+    $(".wp-block-button").removeClass("wp-block-button");
+    $("a.wp-block-button__link").removeClass("wp-block-button__link").addClass("mdui-btn mdui-color-theme-accent mdui-ripple");
+}
+
 function mdx_shortcode(){
     if($(".mdx-github-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-github-cot").length;i++){

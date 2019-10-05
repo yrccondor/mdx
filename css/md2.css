@@ -7,7 +7,7 @@
          url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre {
     border-radius: 8px!important;
 }
 .spanout, .mdx-first-simple .mdxNotice, #respond {
@@ -47,7 +47,7 @@
     border-radius: 5px;
     box-shadow: none;
 }
-.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn {
+.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn {
     border-radius: 5px;
 }
 .ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
@@ -158,6 +158,12 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .links-des {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+.wp-block-cover {
+	border-radius: 8px;
+}
+.wp-block-file {
+    border-radius: 8px;
 }
 @media (max-width: 720px) {
     .ArtMain0 #respond {
