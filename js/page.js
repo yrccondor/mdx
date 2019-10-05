@@ -454,3 +454,7 @@ $(function(){
     })
     new mdui.Collapse("#mdx_menu");
 })
+
+document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+  item.setAttribute('mdui-panel', '');
+});

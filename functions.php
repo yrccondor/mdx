@@ -145,6 +145,23 @@ function mdx_js(){
 }
 add_action('wp_enqueue_scripts', 'mdx_js');
 
+// 添加古腾堡资源
+function mdx_load_blocks()
+{
+  wp_enqueue_script(
+    'mdx_block_js',
+    get_template_directory_uri() . '/blocks/blocks.build.js',
+    ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
+    true
+  );
+  wp_enqueue_style(
+    'mdx_block_css',
+    get_template_directory_uri() . '/blocks/blocks.editor.build.css',
+    ['wp-edit-blocks']
+  );
+}
+add_action('enqueue_block_editor_assets', 'mdx_load_blocks');
+
 //Ajax评论
 require('ajax-comment/main.php');
 
