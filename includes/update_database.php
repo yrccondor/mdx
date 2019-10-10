@@ -34,7 +34,7 @@ $arr = array(
 	'mdx_seo_des' => get_option('mdx_seo_des'),
 	'mdx_head_js' => get_option('mdx_head_js'),
     'mdx_footer_js' => get_option('mdx_footer_js'),
-    
+
     'mdx_styles' => get_option('mdx_styles'),
 	'mdx_styles_hex' => get_option('mdx_styles_hex'),
 	'mdx_styles_act' => get_option('mdx_styles_act'),

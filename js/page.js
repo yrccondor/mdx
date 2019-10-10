@@ -59,7 +59,12 @@ function scrollDiff(){
 };
 
 window.onload=function() {
+    init_wp_block();
     $('body > .mdui-progress').fadeOut(200);
+    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+        item.setAttribute('mdui-panel', '');
+    });
+    mdui.JQ(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         var postHight3 = $(".ArtMain").height() + $(".ArtMain").offset().top - document.documentElement.clientHeight;
@@ -71,6 +76,19 @@ window.onload=function() {
     }
     setTimeout("mdx_shortcode()",1000);
 }
+
+function init_wp_block() {
+    if($("*[class*='wp-block-']").length > 0){
+        $(".wp-block-button").css("margin-bottom", "1.2em").removeClass("wp-block-button");
+        $("a.wp-block-button__link").removeClass("wp-block-button__link").addClass("mdui-btn mdui-color-theme-accent mdui-ripple");
+        $("a.wp-block-file__button").removeClass("wp-block-file__button").addClass("mdui-btn mdui-color-theme-accent mdui-ripple");
+        $(".wp-block-file").prepend('<i class="mdui-icon material-icons">&#xe24d;</i>');
+        $(".wp-block-pullquote").removeClass("wp-block-pullquote");
+        $(".wp-block-table").removeClass("wp-block-table has-subtle-pale-blue-background-color has-background is-style-stripes has-fixed-layout is-style-regular has-subtle-pale-green-background-color has-subtle-pale-pink-background-color has-subtle-light-gray-background-color").addClass("mdui-table mdx-dny-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid"></div>');
+        mdui.JQ(".mdx-dny-table").mutation();
+    }
+}
+
 function mdx_shortcode(){
     if($(".mdx-github-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-github-cot").length;i++){
@@ -199,7 +217,7 @@ $(function(){
             $('article a > img').each(function(){
                 var imgUrlEach = $(this).attr('src');
                 if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
-                    imgUrlEach = $(this).attr('data-original');
+                    imgUrlEach = $(this).attr('data-original').split("?")[0];
                 }
                 var imgHref = $(this).parent("a").attr('href').split('.')
                 imgHref.pop();
@@ -383,6 +401,7 @@ if(!mdx_comment_ajax){
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+                window.addComment.init()
             }
         });
     });
@@ -415,6 +434,7 @@ if(!mdx_comment_ajax){
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+                window.addComment.init()
             }
         });
     });
@@ -452,3 +472,7 @@ $(function(){
     })
     new mdui.Collapse("#mdx_menu");
 })
+
+document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+  item.setAttribute('mdui-panel', '');
+});

@@ -40,6 +40,10 @@ if(mdx_get_option('mdx_title_med')=="wp"){
 	add_theme_support('title-tag');
 }
 
+remove_filter('the_title', 'wptexturize');
+remove_filter('wp_title', 'wptexturize');
+remove_filter('single_post_title', 'wptexturize');
+
 //初始化
 if(!get_option('mdx_first_init')){
     //用途仅为统计安装量 mdx_key为发送请求时间戳的md5值 mdx_first_init不会在除此外的任何地方被调用
@@ -67,10 +71,11 @@ if(is_admin()){
 }
 
 //主题升级
-require_once(get_template_directory().'/theme-update-checker.php');
-$mdx_update_checker = new ThemeUpdateChecker(
-    'mdx',
-    'https://update.dlij.site/mdx/info.json'
+require 'plugin-update-checker/plugin-update-checker.php';
+$mdxUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://update.dlij.site/mdx/info.json',
+	__FILE__,
+	'mdx'
 );
 
 //多语言支持
@@ -97,6 +102,14 @@ function mdx_css(){
 	wp_register_style('mdx_style_css', get_template_directory_uri().'/style.css', '', '', 'all'); 
 	wp_enqueue_style('mdx_mdui_css');
 	wp_enqueue_style('mdx_style_css');
+	if(mdx_get_option('mdx_styles_dark')==="oled" || mdx_get_option('mdx_night_style')==="oled"){
+		wp_register_style('mdx_oled', get_template_directory_uri().'/css/oled.css', '', '', 'all');
+		wp_enqueue_style('mdx_oled');
+	}
+	if(mdx_get_option("mdx_md2")=="true"){
+		wp_register_style('mdx_md2', get_template_directory_uri().'/css/md2.css', '', '', 'all');
+		wp_enqueue_style('mdx_md2');
+	}
 }
 add_action('wp_enqueue_scripts', 'mdx_css');
 function mdx_js(){
@@ -127,10 +140,26 @@ function mdx_js(){
 		wp_enqueue_script('mdx_qr_js');
 		wp_enqueue_script('mdx_ra_js');
 		wp_enqueue_script('mdx_h2c_js');
+		if(mdx_get_option("mdx_toc")=="true"){
+			wp_register_script('mdx_toc_js', get_template_directory_uri().'/js/toc.js', false, '', true);
+			wp_enqueue_script('mdx_toc_js');
+		}
 	}
 	wp_enqueue_script('mdx_sl_js');
 }
 add_action('wp_enqueue_scripts', 'mdx_js');
+
+// 添加古腾堡资源
+function mdx_load_blocks()
+{
+  wp_enqueue_script(
+    'mdx_block_js',
+    get_template_directory_uri() . '/blocks/blocks.build.js',
+    ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
+    true
+  );
+}
+add_action('enqueue_block_editor_assets', 'mdx_load_blocks');
 
 //Ajax评论
 require('ajax-comment/main.php');
@@ -214,6 +243,7 @@ add_filter('comment_text', 'comment_add_at', 10, 2);
 function get_link_items(){
     $linkcats = get_terms('link_category');
     if(!empty($linkcats)){
+		$result = '';
         foreach($linkcats as $linkcat){            
             $result.='<h3 class="link-title">'.$linkcat->name.'</h3>';
             if($linkcat->description)$result .= '<div class="link-description">'.$linkcat->description.'</div>';
@@ -224,22 +254,68 @@ function get_link_items(){
     }
     return $result;
 }
+// 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱(需设置中开启)中获取链接图像
 function get_the_link_items($id = null){
-	$bookmarks = get_bookmarks('category='.$id);
+	$mdx_gravatar_actived = mdx_get_option('mdx_gravatar_actived');
+	$mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
+	$order_rule = 'category='.$id;
+	if ($mdx_link_rand_order == 'true') {
+		$order_rule .= 'title_li=&orderby=rand';
+	}
+	$bookmarks = get_bookmarks($order_rule);
 	$output = '';
     if(!empty($bookmarks)){
         $output.='<div class="mdui-container">';
         foreach($bookmarks as $bookmark){
 			$lazy_load =  '';
-			if($bookmark->link_image !== ""){
-				$lazy_load =  ' LazyLoad" data-original="'.$bookmark->link_image;
+			if(!empty($bookmark->link_image)){
+				$lazy_load = ' LazyLoad" data-original="'.$bookmark->link_image;
+			} else {
+				$imglink = $bookmark->link_notes;
+				if (substr($imglink, 0, 4) !== 'http' && $mdx_gravatar_actived == 'true'){
+					$imglink = get_avatar_url($imglink, array('size'=>512));
+				}
+				$lazy_load = ' LazyLoad" data-original="'.$imglink;
 			}
-			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+			$rel = '';
+			if(!empty($bookmark->link_rel)){
+				$rel = 'rel="'.$bookmark->link_rel.'" ';
+			}
+			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
         $output .= '</div>';
     }
     return $output;
 }
+
+function mdx_blogroll_nofollow() {
+    add_action('add_meta_boxes', 'mdx_blogroll_add_meta_box', 1, 1);
+    add_filter('pre_link_rel', 'mdx_blogroll_save_meta_box', 10, 1);
+}
+
+function mdx_blogroll_add_meta_box() {
+    add_meta_box('mdx_blogroll_nofollow_div', __('nofollow'), 'mdx_blogroll_inner_meta_box', 'link', 'side');
+}
+
+function mdx_blogroll_inner_meta_box($post) {
+    $bookmark = get_bookmark($post->ID, 'ARRAY_A');
+    if (strpos($bookmark['link_rel'], 'nofollow') !== FALSE)
+        $checked = ' checked="checked"';
+    else
+        $checked = '';
+    ?>
+	<input value="1" id="mdx_blogroll_nofollow_checkbox" name="mdx_blogroll_nofollow_checkbox" type="checkbox"<?php echo $checked;?>> <label for="mdx_blogroll_nofollow_checkbox"><?php echo __('添加 <code>nofollow</code> 属性', 'mdx'); ?></label>
+    <?php
+}
+
+function mdx_blogroll_save_meta_box($link_rel) {
+    $rel = trim(str_replace('nofollow', '', $link_rel));
+    if ($_POST['mdx_blogroll_nofollow_checkbox'])
+        $rel .= ' nofollow';
+    return trim($rel);
+}
+add_action('load-link.php', 'mdx_blogroll_nofollow');
+add_action('load-link-add.php', 'mdx_blogroll_nofollow');
 
 //获取摘要
 function mdx_get_post_excerpt($post, $excerpt_length=150){
@@ -275,10 +351,12 @@ function mdx_process_image( $matches ) {
     if (empty($img['src'])){
         return $matches[0];
 	}
-	isset($img['sizes']) ? $mdx_sizes = 'sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
-	isset($img['srcset']) ? $mdx_srcset = 'data-original-srcset="'.$img['srcset']['value'].'"' : $mdx_srcset = '';
-	isset($img['style']) ? $mdx_img_style = 'style="'.$img['style']['value'].'"' : $mdx_img_style = '';
-    $html = '<img width="'.$img['width']['value'].'" height="'.$img['height']['value'].'" class="'.$img['class']['value'].' LazyLoadPost" '.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'" '.$mdx_srcset.' '.$mdx_sizes.'>';
+	isset($img['sizes']) ? $mdx_sizes = ' sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
+	isset($img['srcset']) ? $mdx_srcset = ' data-original-srcset="'.$img['srcset']['value'].'"' : $mdx_srcset = '';
+	isset($img['style']) ? $mdx_img_style = ' style="'.$img['style']['value'].'"' : $mdx_img_style = '';
+	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
+	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
+    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$img['class']['value'].' LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
     return $html;
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
@@ -474,6 +552,16 @@ function mdx_shortcode_github($atts, $content = ''){
 }
 add_shortcode("mdx_github", "mdx_shortcode_github");
 
+function mdx_shortcode_ad($atts, $content = ''){
+	if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		return '<div class="mdx-ad-in-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	}else{
+		return '';
+	}
+    
+}
+add_shortcode("mdx_ad", "mdx_shortcode_ad");
+
 function mdx_add_button_fold(){
 	if(!current_user_can('edit_posts') && !current_user_can('edit_pages')){
 		return;
@@ -491,15 +579,17 @@ function mdx_register_button($buttons){
 	array_push($buttons, "", "mdx_progress");
 	array_push($buttons, "", "mdx_post");
 	array_push($buttons, "", "mdx_github");
+	array_push($buttons, "", "mdx_ad");
 	return $buttons;
 }
 function mdx_add_plugin($plugin_array){
 	$plugin_array['mdx_fold'] = get_bloginfo('template_url').'/js/sc1.js';
-	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc2.js';
-	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc3.js';
-	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc4.js';
-	$plugin_array['mdx_post'] = get_bloginfo('template_url').'/js/sc5.js';
-	$plugin_array['mdx_github'] = get_bloginfo('template_url').'/js/sc6.js';
+	$plugin_array['mdx_warning'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_table'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_progress'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_post'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_github'] = get_bloginfo('template_url').'/js/sc1.js';
+	$plugin_array['mdx_ad'] = get_bloginfo('template_url').'/js/sc1.js';
 	return $plugin_array;
 }
 
@@ -572,7 +662,7 @@ function mdx_post_metaboxes_1() {
 	<h4><?php _e('文章样式','mdx');?></h4>
 	<?php $mdx_v_post_style=get_post_meta($post->ID, "mdx_post_style", true);?>
 	<select name="mdx_post_style" id="mdx_post_style">
-	<option value="def" <?php if($mdx_v_post_styles=='def' || $mdx_v_post_styles==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
+	<option value="def" <?php if($mdx_v_post_style=='def' || $mdx_v_post_style==''){?>selected="selected"<?php }?>><?php _e('跟随全局设置','mdx');?></option>
 	<option value="0" <?php if($mdx_v_post_style=='0'){?>selected="selected"<?php }?>><?php _e('标准', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_post_style=='1'){?>selected="selected"<?php }?>><?php _e('简洁', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
@@ -586,7 +676,7 @@ function mdx_post_metaboxes_1() {
 	<option value="1" <?php if($mdx_v_post_show=='1'){?>selected="selected"<?php }?>><?php _e('404模式', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_show=='2'){?>selected="selected"<?php }?>><?php _e('隐藏模式', 'mdx');?></option>
 	</select>
-	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404模式：当访客进入此文章时，会显示404页面<br>隐藏模式：当访客进入此文章时，会显示“因相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404头。', 'mdx');?></p>
+	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404 头。', 'mdx');?></p>
 	</fieldset>
 	<?php
 }
@@ -708,4 +798,5 @@ function mdx_colored_cloud_call_back($matches) {
 if(mdx_get_option('mdx_tags_color') === "true"){
 	add_filter('wp_tag_cloud', 'mdx_colored_cloud', 1);
 }
+
 ?>

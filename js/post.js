@@ -93,7 +93,12 @@ function scrollDiff(){
 };
 
 window.onload=function(){
+    init_wp_block();
     $('body > .mdui-progress').fadeOut(200);
+    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+        item.setAttribute('mdui-panel', '');
+    });
+    mdui.JQ(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var oldpro = parseFloat(GetQueryString("_pro"));
         if($(".ArtMain").length > 0){
@@ -109,6 +114,19 @@ window.onload=function(){
   }
   setTimeout("mdx_shortcode()",1000);
 }
+
+function init_wp_block() {
+    if($("*[class*='wp-block-']").length > 0){
+        $(".wp-block-button").css("margin-bottom", "1.2em").removeClass("wp-block-button");
+        $("a.wp-block-button__link").removeClass("wp-block-button__link").addClass("mdui-btn mdui-color-theme-accent mdui-ripple");
+        $("a.wp-block-file__button").removeClass("wp-block-file__button").addClass("mdui-btn mdui-color-theme-accent mdui-ripple");
+        $(".wp-block-file").prepend('<i class="mdui-icon material-icons">&#xe24d;</i>');
+        $(".wp-block-pullquote").removeClass("wp-block-pullquote");
+        $(".wp-block-table").removeClass("wp-block-table has-subtle-pale-blue-background-color has-background is-style-stripes has-fixed-layout is-style-regular has-subtle-pale-green-background-color has-subtle-pale-pink-background-color has-subtle-light-gray-background-color").addClass("mdui-table mdx-dny-table mdui-table-hoverable").wrap('<div class="mdui-table-fluid"></div>');
+        mdui.JQ(".mdx-dny-table").mutation();
+    }
+}
+
 function mdx_shortcode(){
     if($(".mdx-github-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-github-cot").length;i++){
@@ -227,8 +245,8 @@ $(function(){
     }
 
     if($('#comments > ul').length == 0){
-        $('.ArtMain0 #respond').css('border-radius','0 0 7px 7px');
-        $('.ArtMain0 .mdx-comment-login-needed').css('border-radius','0 0 7px 7px');
+        $('.ArtMain0 #respond').css('border-radius','0 0 8px 8px');
+        $('.ArtMain0 .mdx-comment-login-needed').css('border-radius','0 0 8px 8px');
     }
 
     if(mdx_offline_mode){
@@ -240,7 +258,7 @@ $(function(){
         $('article a > img').each(function(){
             var imgUrlEach = $(this).attr('src');
             if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
-                imgUrlEach = $(this).attr('data-original');
+                imgUrlEach = $(this).attr('data-original').split("?")[0];
             }
             var imgHref = $(this).parent("a").attr('href').split('.')
             imgHref.pop();
@@ -338,8 +356,7 @@ $(function(){
 
         //密码优化
         var inputId = $('form.post-password-form p > label > input').attr('id');
-        var inputValue = $('form.post-password-form p > input').attr('value');
-        $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">密码</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
+        $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
 })
 
 function afterCloseImgBox(){
@@ -369,13 +386,44 @@ $("#oth-div").click(function(){
     }
     now_url = window.location.href.replace(window.location.search, "")+'?_pro='+nowPro2;
     $('#qrcode').html("");
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
+    new QRCode(document.getElementById("qrcode"), {
         text: now_url,
         width: 150,
         height: 150,
         correctLevel : QRCode.CorrectLevel.M
     });
 });
+
+function share_wechat(){
+    if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
+        mdui.dialog({
+            content: '<i class="mdui-icon material-icons">&#xe5d3;</i><br><br>'+mdx_si_i18n_4,
+            buttons: [{
+                text: 'OK',
+            }],
+            history: false,
+            cssClass: 'mdx-share-in-wechat-dialog',
+        });
+    }else{
+        mdui.dialog({
+            content: '<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n_3+'</div>',
+            buttons: [{
+                text: mdx_si_i18n_2,
+            }],
+            history: false,
+            cssClass: 'mdx-share-wechat-dialog',
+            onOpen: function() {
+                now_url = window.location.href.replace(window.location.search, "");
+                new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
+                    text: now_url,
+                    width: 250,
+                    height: 250,
+                    correctLevel : QRCode.CorrectLevel.M
+                });
+            }
+        });
+    }
+}
 
 //Search
 $(".seai").click(function(){
@@ -428,7 +476,7 @@ $(function() {
 
 //Share img
 $(function(){
-var qrcode = new QRCode(document.getElementById("mdx-si-qr"), {
+new QRCode(document.getElementById("mdx-si-qr"), {
     text: window.location.href,
     width: 70,
     height: 70,
@@ -444,74 +492,46 @@ function convertCanvasToImage(canvas) {
     var canvasData = canvas.toDataURL("image/png");
     sessionStorage.setItem('si_'+url_hash, canvasData);
     image.src = canvasData;
-    document.getElementById('img-box').appendChild(image);
+    document.getElementById('mdx-share-img-loaded-container').appendChild(image);
+    $('#mdx-share-img').hide();
+    $('div.mdx-share-img-loading').remove();
+    setTimeout(() => {
+        window.share_dialog.handleUpdate();
+        $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n+'</span>');
+    }, 5);
 }
 
 function mdx_show_img(){
-    $('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"><button class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white mdui-valign mdui-text-center" id="close-img-box"><i class="mdui-icon material-icons">&#xe5cd;</i></button><div class="mdx-si-tip"><p>'+mdx_si_i18n+'</p></div></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+    window.share_dialog = mdui.dialog({
+        content: '<div class="mdx-share-img-loaded" id="mdx-share-img-loaded-container"></div><div class="mdui-valign mdx-share-img-loading"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>',
+        buttons: [
+          {
+            text: mdx_si_i18n_2,
+          }
+        ],
+        history: false,
+        cssClass: 'mdx-share-img-dialog'
+    });
     mdui.updateSpinners();
-    $('#img-box').css({'opacity':'1','pointer-events':'auto'});
-    if(colorEnabled){
-        metaColor.attr('content',"#212121");
-    }
     $('#mdx-share-img').show();
-        if(!sessionStorage.getItem('si_'+url_hash)){
+
+    if(!sessionStorage.getItem('si_'+url_hash)){
         html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
             convertCanvasToImage(canvas);
-            $('#img-box > img').addClass('imgInBox mdui-center').attr('id','imgInBox');
-            $('#imgInBox').css('opacity','1');
-            var w = 430;
-            var h = 700;
-            var wincli = winwidth/winheight;
-            var piccli = w/h;
-            if(wincli <= piccli){
-                $('#imgInBox').css({'width':'100%','height':'auto'});
-            }else{
-                $('#imgInBox').css({'height':'100%','width':'auto'});
-            }
-            if((winwidth > w) && (winheight > h)){
-                $('#imgInBox').css('width',w);
-                $('#imgInBox').css('height',h);
-            }
-            $('.mdx-si-tip').addClass('mdx-si-tip-showed');
-            $('#mdx-share-img').hide();
-            $('div.mdx-loading-img').remove();
         });
-        }else{
-            var image = new Image();
-            image.src = sessionStorage.getItem('si_'+url_hash);
-            document.getElementById('img-box').appendChild(image);
-            $('#img-box > img').addClass('imgInBox mdui-center').attr('id','imgInBox');
-            $('#imgInBox').css('opacity','1');
-            var w = 430;
-            var h = 700;
-            var wincli = winwidth/winheight;
-            var piccli = w/h;
-            if(wincli <= piccli){
-                $('#imgInBox').css({'width':'100%','height':'auto'});
-            }else{
-                $('#imgInBox').css({'height':'100%','width':'auto'});
-            }
-            if((winwidth > w) && (winheight > h)){
-                $('#imgInBox').css({'width':w,'height':h});
-            }
-            $('.mdx-si-tip').addClass('mdx-si-tip-showed');
-            $('#mdx-share-img').hide();
-            $('div.mdx-loading-img').remove();
-        }
-}
-$('body').on('click','#close-img-box',function(){
-    $('#img-box').css({'opacity':'0','pointer-events':'none'});
-    if(colorEnabled){
-        if(sessionStorage.getItem('ns_night-styles')!="true"){
-            metaColor.attr('content',now_color);
-        }else{
-            metaColor.attr('content',"#212121");
-        }
+    }else{
+        var image = new Image();
+        image.src = sessionStorage.getItem('si_'+url_hash);
+        document.getElementById('mdx-share-img-loaded-container').appendChild(image);
+        $('#mdx-share-img').hide();
+        $('div.mdx-share-img-loading').remove();
+        setTimeout(() => {
+            window.share_dialog.handleUpdate();
+            $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n+'</span>');
+        }, 5);
     }
-    
-    window.setTimeout("afterCloseImgBox()",200);
-})
+
+}
 
 // 评论分页
 if(!mdx_comment_ajax){
@@ -540,6 +560,7 @@ $('#comments').on('click', '#comments-navi > a', function(e){
             $("div#comments ul li p").addClass('mdui-typo');
             $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
             $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+            window.addComment.init();
         }
     });
 });
@@ -572,6 +593,7 @@ $('#comments').on('click', '#comments-navi > button', function(e){
             $("div#comments ul li p").addClass('mdui-typo');
             $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
             $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+            window.addComment.init()
         }
     });
 });
@@ -609,3 +631,7 @@ $(function(){
     })
     new mdui.Collapse("#mdx_menu");
 })
+
+document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+  item.setAttribute('mdui-panel', '');
+});

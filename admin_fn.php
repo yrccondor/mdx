@@ -14,8 +14,16 @@ wp_enqueue_style('thickbox');
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	mdx_update_option('mdx_install', $_POST['mdx_install']);
-	mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
-	mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
+	if(isset($_POST['mdx_night_style'])){
+		mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
+	}else{
+		mdx_update_option('mdx_night_style', 'false');
+	}
+	if(isset($_POST['mdx_auto_night_style'])){
+		mdx_update_option('mdx_auto_night_style', $_POST['mdx_auto_night_style']);
+	}else{
+		mdx_update_option('mdx_auto_night_style', 'false');
+	}
 	mdx_update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
 	mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
 	mdx_update_option('mdx_widget', $_POST['mdx_widget']);
@@ -26,14 +34,17 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
 	mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	mdx_update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
+	mdx_update_option('mdx_toc', $_POST['mdx_toc']);
 	mdx_update_option('mdx_load_pro', $_POST['mdx_load_pro']);
 	mdx_update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
 	mdx_update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
+	mdx_update_option('mdx_post_list_3', $_POST['mdx_post_list_3']);
 	mdx_update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	mdx_update_option('mdx_author_card', $_POST['mdx_author_card']);
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
 	mdx_update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
+	mdx_update_option('mdx_opt_wechat_share', $_POST['mdx_opt_wechat_share']);
 	mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
 	mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
@@ -44,6 +55,9 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
 	mdx_update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
 	mdx_update_option('mdx_real_search', $_POST['mdx_real_search']);
+	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
+	mdx_update_option('mdx_ad', htmlentities(stripslashes($_POST['mdx_ad'])));
+	mdx_update_option('mdx_logged_in_ad', $_POST['mdx_logged_in_ad']);
 	mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
 	mdx_update_option('mdx_seo_key', $_POST['mdx_seo_key']);
 	mdx_update_option('mdx_auto_des', $_POST['mdx_auto_des']);
@@ -84,15 +98,17 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('夜间模式', 'mdx');?></th>
 <td>
 <?php $mdx_v_night_style=mdx_get_option('mdx_night_style');?>
-	<fieldset>
-	<label><input class="mdx_stbs" type="radio" name="mdx_night_style" value="true" <?php if($mdx_v_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input class="mdx_stbs" type="radio" name="mdx_night_style" value="false" <?php if($mdx_v_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，侧边栏中会出现夜间模式切换按钮。', 'mdx');?></p>
-	</fieldset>
+<select<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbs" name="mdx_night_style" id="mdx_night_style">
+	<option value="true" <?php if($mdx_v_night_style=='true'){?>selected="selected"<?php }?>><?php echo $trueon;?></option>
+	<option value="oled" <?php if($mdx_v_night_style=='oled'){?>selected="selected"<?php }?>><?php echo $trueon;?> (OLED)</option>
+	<option value="false" <?php if($mdx_v_night_style=='false'){?>selected="selected"<?php }?>><?php echo $falseoff;?></option>
+</select>
+<p class="description"><?php _e('开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么夜间模式将会自动禁用。</strong>', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -100,12 +116,13 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_auto_night_style=mdx_get_option('mdx_auto_night_style');?>
 	<fieldset>
-	<label><input class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="true" <?php if($mdx_v_auto_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="false" <?php if($mdx_v_auto_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="true" <?php if($mdx_v_auto_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="false" <?php if($mdx_v_auto_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天5:30之间打开页面时自动加载夜间模式。优先级低于用户自行设置。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 	<th scope="row"><label for="mdx_notice"><?php _e('网站公告', 'mdx');?></label></th>
 	<td><textarea name="mdx_notice" id="mdx_notice" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_notice'))?></textarea>
@@ -204,6 +221,17 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><?php _e('文章目录', 'mdx');?></th>
+<td>
+<?php $mdx_v_toc=mdx_get_option('mdx_toc');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_toc" value="true" <?php if($mdx_v_toc=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_toc" value="false" <?php if($mdx_v_toc=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，侧边栏会显示文章目录。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
 <th scope="row"><?php _e('页面加载进度条', 'mdx');?></th>
 <td>
 <?php $mdx_v_load_pro=mdx_get_option('mdx_load_pro');?>
@@ -214,6 +242,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_post_list_1"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
 <td>
@@ -222,11 +251,13 @@ wp_nonce_field('mdx_options_update');
 $mdx_i18n_settings_1 = __('浏览量', 'mdx');
 $mdx_i18n_settings_2 = __('发表时间', 'mdx');
 $mdx_i18n_settings_3 = __('评论数', 'mdx');
+$mdx_i18n_settings_4 = __('空', 'mdx');
 ?>
 <select name="mdx_post_list_1" id="mdx_post_list_1">
 	<option value="view" <?php if($mdx_v_post_list_1=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_1=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_1=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_1=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 </td>
 </tr>
@@ -238,10 +269,24 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	<option value="view" <?php if($mdx_v_post_list_2=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
 	<option value="time" <?php if($mdx_v_post_list_2=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
 	<option value="comments" <?php if($mdx_v_post_list_2=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_2=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
+</select>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_post_list_3"><?php _e('文章列表详细信息 - 位置3', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_list_3=mdx_get_option('mdx_post_list_3');?>
+<select name="mdx_post_list_3" id="mdx_post_list_3">
+	<option value="view" <?php if($mdx_v_post_list_3=='view'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_1;?></option>
+	<option value="time" <?php if($mdx_v_post_list_3=='time'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_2;?></option>
+	<option value="comments" <?php if($mdx_v_post_list_3=='comments'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_3;?></option>
+	<option value="blank" <?php if($mdx_v_post_list_3=='blank'){?>selected="selected"<?php }?>><?php echo $mdx_i18n_settings_4;?></option>
 </select>
 <p class="description"><?php _e('详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。', 'mdx');?></p>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_post_edit_time"><?php _e('文章时间信息', 'mdx');?></label></th>
 <td>
@@ -294,7 +339,18 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('优化微信分享', 'mdx');?></th>
+<td>
+<?php $mdx_v_opt_wechat_share=mdx_get_option('mdx_opt_wechat_share');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_opt_wechat_share" value="true" <?php if($mdx_v_opt_wechat_share=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_opt_wechat_share" value="false" <?php if($mdx_v_opt_wechat_share=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('<strong>如果你的域名已备案，</strong>可以打开此选项以获得更好的微信内分享效果。', 'mdx');?></p>
+	</fieldset>
 </td>
 </tr>
 <tr>
@@ -308,6 +364,7 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('首页推荐文章', 'mdx');?></th>
 <td>
@@ -339,6 +396,7 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 <td><input name="mdx_all_posts_text" type="text" id="mdx_all_posts_text" value="<?php echo esc_attr(mdx_get_option('mdx_all_posts_text'))?>" class="regular-text mdx_apspc2">
 <p class="description"><?php _e('在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('文末推荐文章', 'mdx');?></th>
 <td>
@@ -364,6 +422,7 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 <th scope="row"><label for="mdx_you_may_like_text"><?php _e('文末推荐文章模块标题', 'mdx');?></label></th>
 <td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text" value="<?php echo esc_attr(mdx_get_option('mdx_you_may_like_text'))?>" class="regular-text mdx_apspc">
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('实时搜索', 'mdx');?></th>
 <td>
@@ -386,6 +445,23 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
+<tr>
+	<th scope="row"><label for="mdx_ad"><?php _e('广告代码', 'mdx');?></label></th>
+	<td><textarea name="mdx_ad" id="mdx_ad" rows="7" cols="50"><?php echo mdx_get_option('mdx_ad')?></textarea>
+	<p class="description"><?php _e('在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 <code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动广告，请将其填写在“页头脚本”选项处。', 'mdx');?></p></td>
+</tr>
+<tr>
+<th scope="row"><?php _e('对已登录的用户禁用广告', 'mdx');?></th>
+<td>
+<?php $mdx_v_logged_in_ad=mdx_get_option('mdx_logged_in_ad');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_logged_in_ad" value="true" <?php if($mdx_v_logged_in_ad=='true'){?>checked="checked"<?php }?>> <?php _e('禁用广告', 'mdx');?></label><br>
+	<label><input type="radio" name="mdx_logged_in_ad" value="false" <?php if($mdx_v_logged_in_ad=='false'){?>checked="checked"<?php }?>> <?php _e('不禁用广告', 'mdx');?></label><br>
+	</fieldset>
+</td>
+</tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_seo_key"><?php _e('SEO 关键词', 'mdx');?></label></th>
 <td><input name="mdx_seo_key" type="text" id="mdx_seo_key" value="<?php echo esc_attr(mdx_get_option('mdx_seo_key'))?>" class="regular-text">
@@ -407,6 +483,7 @@ $mdx_i18n_settings_3 = __('评论数', 'mdx');
 	<td><textarea name="mdx_seo_des" id="mdx_seo_des" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_seo_des'))?></textarea>
 	<p class="description"><?php _e('在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 	<th scope="row"><label for="mdx_head_js"><?php _e('页头脚本', 'mdx');?></label></th>
 	<td><textarea name="mdx_head_js" id="mdx_head_js" rows="7" cols="50"><?php echo mdx_get_option('mdx_head_js')?></textarea>
