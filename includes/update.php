@@ -455,7 +455,7 @@ if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_ba
 	mdx_update_option("mdx_toc", "false");
 	mdx_update_option("mdx_styles_footer", "1");
 	mdx_update_option('mdx_opt_wechat_share', 'false');
-}else if($mdx_version_base!="1.9.0"){
+}else if($mdx_version_base!="1.9.0" && $mdx_version_base!="1.9.1"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
