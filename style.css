@@ -61,6 +61,9 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
 	z-index: 3;
 	height: 61.8%;
 }
+#theFirstPageSayContent {
+	padding: 0% 10%;
+}
 .theFirstPageSay,.theFirstPageSmall {
 	position: absolute;
 	top: 0;
@@ -3288,7 +3291,7 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
 		max-width: 45pc;
 	}
 }
-@media(max-width:884px) {	
+@media(max-width:884px) {
 	.mdx-ad-in-list.mdx-style-4-ad {
 		width: 95%;
     	max-width: 400px;
