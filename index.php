@@ -50,7 +50,7 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
     <?php get_template_part('searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
     <?php if($mdx_index_show=="0"){?><div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div><?php } ?>
-    <div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text"><h<?php if(mdx_get_option('mdx_index_say_size')!=""){echo mdx_get_option('mdx_index_say_size');}else{echo '1';}?> class="mdui-center"><?php echo esc_attr(mdx_get_option('mdx_index_say'))?></h1></div>
+    <div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text"><h<?php if(mdx_get_option('mdx_index_say_size')!=""){echo mdx_get_option('mdx_index_say_size');}else{echo '1';}?> class="mdui-center" id="theFirstPageSayContent"><?php echo esc_attr(mdx_get_option('mdx_index_say'))?></h1></div>
     <div class="main">
     <?php if(mdx_get_option('mdx_notice')!=""){?>
     <div class="mdxNotice mdui-typo mdui-center<?php if($mdx_index_show=="0"){?> mdui-color-theme<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i>&nbsp;&nbsp;<?php echo htmlspecialchars_decode(mdx_get_option('mdx_notice'));?></div>
