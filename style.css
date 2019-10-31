@@ -62,7 +62,7 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
 	height: 61.8%;
 }
 #theFirstPageSayContent {
-	padding: 0% 10%;
+	padding: 0px 30px;
 }
 .theFirstPageSay,.theFirstPageSmall {
 	position: absolute;
@@ -2143,7 +2143,7 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
 }
 .mdxNotice {
 	box-sizing: border-box;
-	padding: 15px 10px;
+	padding: 15px 20px;
 	width: 100%;
 	max-width: 700px;
 	border-radius: 0 0 5px 5px;
