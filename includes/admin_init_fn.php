@@ -22,7 +22,6 @@ $arr = array(
 'mdx_speed_pre'=>'false',
 'mdx_smooth_scroll'=>'false',
 'mdx_share_area'=>'all',
-'mdx_opt_wechat_share'=>'false',
 'mdx_tap_to_top'=>'true',
 'mdx_hot_posts'=>'false',
 'mdx_hot_posts_num'=>'10',
