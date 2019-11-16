@@ -356,7 +356,8 @@ function mdx_process_image( $matches ) {
 	isset($img['style']) ? $mdx_img_style = ' style="'.$img['style']['value'].'"' : $mdx_img_style = '';
 	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
 	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
-    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$img['class']['value'].' LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
+	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
+    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
     return $html;
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
