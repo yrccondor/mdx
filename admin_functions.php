@@ -1,11 +1,11 @@
 <?php
 function mdx_admin_function(){
-    add_menu_page(__('MDx主题', 'mdx'), __('MDx主题', 'mdx'), 'edit_themes', 'mdx_admin','mdx_display_sub_function','dashicons-hammer');
+    add_menu_page(__('MDx主题', 'mdx'), __('MDx主题', 'mdx'), 'manage_options', 'mdx_admin','mdx_display_sub_function','dashicons-hammer');
 }
 function mdx_add_admin(){
-    add_submenu_page('mdx_admin', __('MDx主题 - 样式', 'mdx'), __('样式', 'mdx'), 'edit_themes', 'mdx_styles', 'mdx_display_sub_function_one');
-    add_submenu_page('mdx_admin', __('MDx主题 - 功能', 'mdx'), __('功能', 'mdx'), 'edit_themes', 'mdx_functions', 'mdx_display_sub_function_two');
-    add_submenu_page('mdx_admin', __('MDx主题 - 关于', 'mdx'), __('关于', 'mdx'), 'edit_themes', 'mdx_about', 'mdx_display_sub_function_three');
+    add_submenu_page('mdx_admin', __('MDx主题 - 样式', 'mdx'), __('样式', 'mdx'), 'manage_options', 'mdx_styles', 'mdx_display_sub_function_one');
+    add_submenu_page('mdx_admin', __('MDx主题 - 功能', 'mdx'), __('功能', 'mdx'), 'manage_options', 'mdx_functions', 'mdx_display_sub_function_two');
+    add_submenu_page('mdx_admin', __('MDx主题 - 关于', 'mdx'), __('关于', 'mdx'), 'manage_options', 'mdx_about', 'mdx_display_sub_function_three');
 }
 function mdx_display_sub_function(){
     echo '<h1>'.__('MDx主题', 'mdx').'</h1>';
