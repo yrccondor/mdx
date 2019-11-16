@@ -1,3 +1,7 @@
+#use-api, #use-api2 {
+    margin-top: 5px;
+    display: block;
+}
 .mdx-exp {
     font-weight: 500;
     display: inline-block;

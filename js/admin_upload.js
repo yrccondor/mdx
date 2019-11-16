@@ -160,6 +160,9 @@ jQuery("#change-color").click(function(){
 jQuery("#use-api").click(function(){
     jQuery('#mdx_footer_say').val('--HitokotoAPIActivated--');
 });
+jQuery("#use-api2").click(function(){
+    jQuery('#mdx_footer_say').val('--HitokotoPoemAPIActivated--');
+});
 jQuery("#use-bing-api").click(function(){
     jQuery('#mdx_index_img').val('--BingImagesActivated(0)--');
 });

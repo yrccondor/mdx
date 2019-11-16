@@ -498,8 +498,9 @@ wp_nonce_field('mdx_options_update');
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(mdx_get_option('mdx_footer_say'))?>">
-<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API', 'mdx');?></button>
-<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自 <a href="https://blog.lwl12.com/read/hitokoto-api.html" target="_blank">LWL</a>，虽然此来源较为安全，但还请注意安全风险。', 'mdx');?></p></td>
+<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API（常规）', 'mdx');?></button>
+<button type="button" id="use-api2" class="button mdx_stbsip7"><?php _e('使用一言 API（古诗词）', 'mdx');?></button>
+<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。', 'mdx');?></p></td>
 </tr>
 <tr>
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
