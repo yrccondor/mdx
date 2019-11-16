@@ -44,6 +44,9 @@
       $style=mdx_get_option('mdx_default_style');
       $post_num=0;
       while(have_posts()):the_post();$post_num++;
+        if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
+          continue;
+        }
         if($post_num == 1 || mdx_get_option('mdx_lazy_load_mode')=='seo2'){
           get_template_part('template-parts/content-first-'.$style, get_post_format());
         }else if($post_num == 4){

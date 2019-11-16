@@ -63,7 +63,10 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                     $previous_month = $month = 0;
                     $ul_open = false;
                     $myposts = get_posts('numberposts=-1&orderby=post_date&order=DESC');
-                    foreach($myposts as $post) :
+                    foreach($myposts as $post):
+                        if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
+                            continue;
+                        }
                         setup_postdata($post);
                         $year = mysql2date('Y', $post->post_date);
                         $month = mysql2date('n', $post->post_date);

@@ -676,8 +676,9 @@ function mdx_post_metaboxes_1() {
 	<option value="0" <?php if($mdx_v_post_show=='0' || $mdx_v_post_show==''){?>selected="selected"<?php }?>><?php _e('正常显示', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_post_show=='1'){?>selected="selected"<?php }?>><?php _e('404模式', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_show=='2'){?>selected="selected"<?php }?>><?php _e('隐藏模式', 'mdx');?></option>
+	<option value="3" <?php if($mdx_v_post_show=='3'){?>selected="selected"<?php }?>><?php _e('对游客隐藏模式', 'mdx');?></option>
 	</select>
-	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404 头。', 'mdx');?></p>
+	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 HTTP 404 头。', 'mdx');?></p>
 	</fieldset>
 	<?php
 }
