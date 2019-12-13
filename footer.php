@@ -114,8 +114,8 @@
       var mdx_si_i18n_3 = '<?php _e('使用微信扫描后在微信内分享','mdx'); ?>';
       var mdx_si_i18n_4 = '<?php _e('点按右上角按钮即可分享','mdx'); ?>';
       var mdx_i18n_password = '<?php _e('密码','mdx'); ?>';
-      var mdx_github_i18n_1 = '<?php _e('在 Github 上查阅','mdx'); ?>';
-      var mdx_github_i18n_2 = '<?php _e('获取 Github 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
+      var mdx_github_i18n_1 = '<?php _e('在 GitHub 上查阅','mdx'); ?>';
+      var mdx_github_i18n_2 = '<?php _e('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
       var mdx_post_i18n_1 = '<?php _e('这个页面没有摘要。','mdx'); ?>';
       var mdx_post_i18n_2 = '<?php _e('前往页面','mdx'); ?>';
       var mdx_post_i18n_3 = '<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>';
