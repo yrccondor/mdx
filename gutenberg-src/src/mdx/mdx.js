@@ -1,67 +1,45 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable dot-notation */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-else-return */
-/* eslint-disable computed-property-spacing */
-/* eslint-disable prefer-const */
-/* eslint-disable space-unary-ops */
-/* eslint-disable no-console */
-/* eslint-disable react/jsx-indent-props */
-/* eslint-disable react/jsx-indent */
-/* eslint-disable indent */
-/* eslint-disable react/jsx-curly-spacing */
-/* eslint-disable comma-dangle */
-/* eslint-disable array-bracket-spacing */
-/* eslint-disable space-in-parens */
-/* eslint-disable quotes */
-/* eslint-disable no-unused-vars */
-import './style.scss';
-import './editor.scss';
-import {
-    TextControl,
-    SelectControl,
-    Button,
-    CheckboxControl
-} from '@wordpress/components';
+import "./style.scss";
+import "./editor.scss";
+import { TextControl, CheckboxControl } from "@wordpress/components";
 
 const { __ } = wp.i18n;
-const { registerBlockType, query } = wp.blocks;
+const { registerBlockType } = wp.blocks;
 
-registerBlockType('mdx/fold', {
-    title: __('MDx 折叠内容', 'mdx'),
-    icon: 'editor-contract',
-    category: 'common',
-    keywords: [__('fold'), __('mdx'), __('折叠内容')],
+registerBlockType("mdx/fold", {
+    title: __("MDx 折叠内容", "mdx"),
+    icon: "editor-contract",
+    category: "common",
+    keywords: [__("fold"), __("mdx"), __("折叠内容")],
     attributes: {
         title: {
-            type: 'string'
+            type: "string"
         },
         content: {
-            type: 'string'
+            type: "string"
         },
         isOpen: {
-            type: 'boolean'
+            type: "boolean"
         }
     },
     edit: ({ attributes, setAttributes, className }) => {
         return (
             <div className={className}>
                 <TextControl
-                    label={__('内容标题', 'mdx')}
+                    label={__("内容标题", "mdx")}
                     value={attributes.title}
                     onChange={val => {
                         setAttributes({ title: val });
                     }}
                 />
                 <TextControl
-                    label={__('折叠内容', 'mdx')}
+                    label={__("折叠内容", "mdx")}
                     value={attributes.content}
                     onChange={val => {
                         setAttributes({ content: val });
                     }}
                 />
                 <CheckboxControl
-                    label={__('默认打开', 'mdx')}
+                    label={__("默认打开", "mdx")}
                     checked={attributes.isOpen}
                     onChange={val => {
                         setAttributes({ isOpen: val });
@@ -75,8 +53,8 @@ registerBlockType('mdx/fold', {
             <div className="mdui-panel mdui-panel-gapless">
                 <div
                     className={
-                        'mdui-panel-item' +
-                        (attributes.isOpen ? ' mdui-panel-item-open' : '')
+                        "mdui-panel-item" +
+                        (attributes.isOpen ? " mdui-panel-item-open" : "")
                     }
                 >
                     <div className="mdui-panel-item-header">
@@ -96,31 +74,31 @@ registerBlockType('mdx/fold', {
     }
 });
 
-registerBlockType('mdx/warning', {
-    title: __('MDx 警告内容', 'mdx'),
-    icon: 'warning',
-    category: 'common',
-    keywords: [__('warning'), __('mdx'), __('警告内容')],
+registerBlockType("mdx/warning", {
+    title: __("MDx 警告内容", "mdx"),
+    icon: "warning",
+    category: "common",
+    keywords: [__("warning"), __("mdx"), __("警告内容")],
     attributes: {
         title: {
-            type: 'string'
+            type: "string"
         },
         content: {
-            type: 'string'
+            type: "string"
         }
     },
     edit: ({ attributes, setAttributes, className }) => {
         return (
             <div className={className}>
                 <TextControl
-                    label={__('内容标题', 'mdx')}
+                    label={__("内容标题", "mdx")}
                     value={attributes.title}
                     onChange={val => {
                         setAttributes({ title: val });
                     }}
                 />
                 <TextControl
-                    label={__('折叠内容', 'mdx')}
+                    label={__("折叠内容", "mdx")}
                     value={attributes.content}
                     onChange={val => {
                         setAttributes({ content: val });
@@ -134,7 +112,7 @@ registerBlockType('mdx/warning', {
             <blockquote className="mdx-warning">
                 <p>
                     <i className="mdui-icon material-icons"></i>
-                    {' ' + attributes.title}
+                    {" " + attributes.title}
                     <br />
                     <strong>{attributes.content}</strong>
                 </p>
@@ -143,21 +121,21 @@ registerBlockType('mdx/warning', {
     }
 });
 
-registerBlockType('mdx/progress', {
-    title: __('MDx 进度指示器', 'mdx'),
-    icon: 'minus',
-    category: 'common',
-    keywords: [__('progress'), __('mdx'), __('进度指示器')],
+registerBlockType("mdx/progress", {
+    title: __("MDx 进度指示器", "mdx"),
+    icon: "minus",
+    category: "common",
+    keywords: [__("progress"), __("mdx"), __("进度指示器")],
     attributes: {
         progress: {
-            type: 'string'
+            type: "string"
         }
     },
     edit: ({ attributes, setAttributes, className }) => {
         return (
             <div className={className}>
                 <TextControl
-                    label={__('进度(0-100)', 'mdx')}
+                    label={__("进度(0-100)", "mdx")}
                     value={attributes.progress}
                     onChange={val => {
                         setAttributes({ progress: val });
@@ -171,38 +149,38 @@ registerBlockType('mdx/progress', {
             <div className="mdui-progress">
                 <div
                     className="mdui-progress-determinate"
-                    style={{ width: attributes.progress + '%' }}
+                    style={{ width: attributes.progress + "%" }}
                 ></div>
             </div>
         );
     }
 });
 
-registerBlockType('mdx/github', {
-    title: __('MDx Github 信息卡', 'mdx'),
-    icon: 'networking',
-    category: 'common',
-    keywords: [__('github'), __('mdx'), __('github')],
+registerBlockType("mdx/github", {
+    title: __("MDx Github 信息卡", "mdx"),
+    icon: "networking",
+    category: "common",
+    keywords: [__("github"), __("mdx"), __("github")],
     attributes: {
         author: {
-            type: 'string'
+            type: "string"
         },
         project: {
-            type: 'string'
+            type: "string"
         }
     },
     edit: ({ attributes, setAttributes, className }) => {
         return (
             <div className={className}>
                 <TextControl
-                    label={__('项目作者的用户名', 'mdx')}
+                    label={__("项目作者的用户名", "mdx")}
                     value={attributes.author}
                     onChange={val => {
                         setAttributes({ author: val });
                     }}
                 />
                 <TextControl
-                    label={__('仓库名称', 'mdx')}
+                    label={__("仓库名称", "mdx")}
                     value={attributes.project}
                     onChange={val => {
                         setAttributes({ project: val });
@@ -224,9 +202,9 @@ registerBlockType('mdx/github', {
                             <div className="mdx-github-wait">
                                 <a
                                     href={
-                                        'https://github.com/' +
+                                        "https://github.com/" +
                                         attributes.author +
-                                        '/' +
+                                        "/" +
                                         attributes.project
                                     }
                                 >
@@ -241,21 +219,21 @@ registerBlockType('mdx/github', {
     }
 });
 
-registerBlockType('mdx/post', {
-    title: __('MDx 文章信息卡', 'mdx'),
-    icon: 'format-aside',
-    category: 'common',
-    keywords: [__('post'), __('mdx'), __('文章信息卡')],
+registerBlockType("mdx/post", {
+    title: __("MDx 文章信息卡", "mdx"),
+    icon: "format-aside",
+    category: "common",
+    keywords: [__("post"), __("mdx"), __("文章信息卡")],
     attributes: {
         url: {
-            type: 'string'
+            type: "string"
         }
     },
     edit: ({ attributes, setAttributes, className }) => {
         return (
             <div className={className}>
                 <TextControl
-                    label={__('URL 内容', 'mdx')}
+                    label={__("URL 内容", "mdx")}
                     value={attributes.url}
                     onChange={val => {
                         setAttributes({ url: val });
@@ -280,5 +258,18 @@ registerBlockType('mdx/post', {
                 </div>
             </div>
         );
+    }
+});
+
+registerBlockType("mdx/ad", {
+    title: __("MDx 广告", "mdx"),
+    icon: "media-document",
+    category: "common",
+    keywords: [__("ad", "mdx", "广告")],
+    edit: () => {
+        return <div>MDx 广告</div>;
+    },
+    save: () => {
+        return "[mdx_ad][/mdx_ad]";
     }
 });
