@@ -2696,6 +2696,9 @@ article img.mdx-img-in-post {
 .mdx-github-main>a.repo-link {
 	color: #fff;
 	font-size: 27px;
+	line-height: 40px;
+	padding-top: 10px;
+	word-break: break-all;
 }
 .mdx-github-main>a.repo-link:hover,.mdx-github-main>a.repo-link>span {
 	opacity: .5;
