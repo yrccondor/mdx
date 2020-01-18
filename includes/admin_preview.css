@@ -235,4 +235,10 @@
 }
 .mdx-svg-preview svg {
     width: 100%;
+    margin-top: 5px;
+}
+
+#insert-media-button, #use-bing-api, #insert-media-button-3, #insert-media-button-4, #change-color {
+    display: block;
+    margin-top: 5px;
 }

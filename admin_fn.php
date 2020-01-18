@@ -179,7 +179,7 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('赞赏二维码', 'mdx');?></th>
 <td>
 <input name="mdx_post_money" type="text" id="mdx_post_money" value="<?php echo esc_attr(mdx_get_option('mdx_post_money'))?>" class="regular-text">
-<button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button>
+<button type="button" id="insert-media-button" class="button" style="margin-top:5px;display:block"><?php _e('选择图片', 'mdx');?></button>
 <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部显示赞赏按钮。', 'mdx');?></p>
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
