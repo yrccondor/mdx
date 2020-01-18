@@ -2436,6 +2436,7 @@ article div.mdui-table-fluid {
     font-size: 35px;
     bottom: 25px;
     left: 18px;
+    padding-right: 18px;
 }
 .mdx-si-head p,.mdx-si-head span {
     color: #fff;
