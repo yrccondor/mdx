@@ -173,3 +173,8 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
         border-radius: 8px 8px 0 0!important;
     }
 }
+@media (max-width: 600px) {
+    .mdui-snackbar {
+        width: 95%;
+    }
+}

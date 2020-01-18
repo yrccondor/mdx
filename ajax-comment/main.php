@@ -17,6 +17,8 @@ if(!function_exists('fa_ajax_comment_scripts')) :
             'ajax_url'   => admin_url('admin-ajax.php'),
             'order' => get_option('comment_order'),
             'formpostion' => 'top',
+            'i18n_1' => __('发射成功！', 'mdx'),
+            'i18n_2' => __('<strong>错误：</strong> 未知错误。', 'mdx'),
         ) );
     }
 
