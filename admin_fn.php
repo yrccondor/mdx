@@ -42,7 +42,6 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	mdx_update_option('mdx_author_card', $_POST['mdx_author_card']);
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
-	mdx_update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
 	mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
@@ -315,17 +314,6 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<label><input type="radio" name="mdx_speed_pre" value="true" <?php if($mdx_v_speed_pre=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_speed_pre" value="false" <?php if($mdx_v_speed_pre=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。', 'mdx');?></p>
-	</fieldset>
-</td>
-</tr>
-<tr>
-<th scope="row"><?php _e('使用 Smooth Scroll', 'mdx');?></th>
-<td>
-<?php $mdx_v_smooth_scroll=mdx_get_option('mdx_smooth_scroll');?>
-	<fieldset>
-	<label><input type="radio" name="mdx_smooth_scroll" value="true" <?php if($mdx_v_smooth_scroll=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_smooth_scroll" value="false" <?php if($mdx_v_smooth_scroll=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页面滚动异常。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
