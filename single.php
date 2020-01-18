@@ -83,7 +83,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((mdx_get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && mdx_get_option('mdx_say_after'))){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((mdx_get_option('mdx_say_after')!='' || ($mdx_info !='' || $mdx_info !='-----Nothing-----'))){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
@@ -125,7 +125,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((mdx_get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && mdx_get_option('mdx_say_after'))){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(mdx_get_option('mdx_say_after')!='' || ($mdx_info !='' && $mdx_info !='-----Nothing-----')){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
@@ -167,7 +167,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                     </div>
                 </div>
                 <?php }?>
-                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if((mdx_get_option('mdx_say_after')!='' && $mdx_info !='') || ($mdx_info !='-----Nothing-----' && mdx_get_option('mdx_say_after'))){?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(mdx_get_option('mdx_say_after')!='' || ($mdx_info !='' && $mdx_info !='-----Nothing-----')){?>
                     <div class="mdui-card mdx-say-after">
                         <div class="mdui-card-actions mdui-typo">
                         <?php 

@@ -594,13 +594,13 @@ function mdx_add_plugin($plugin_array){
 function mdx_post_metaboxes_2() {
     global $post;
 		$meta_box_value = get_post_meta($post->ID, 'informations_value', true);
-		if($meta_box_value==''){
-			$meta_box_value = '-----Nothing-----';
-		}
+		// if($meta_box_value==''){
+		// 	$meta_box_value = '-----Nothing-----';
+		// }
 		//$meta_box_value = $post->ID;
         echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
         echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>'.__('
-		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>', 'mdx');
+		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请留空</p>', 'mdx');
 }
 function mdx_post_metaboxes_1() {
     global $post;
