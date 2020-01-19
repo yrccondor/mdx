@@ -178,3 +178,8 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
         width: 95%;
     }
 }
+@media print {
+    div.ArtMain0 > .mdx-author-c {
+        border-radius: 0 0 8px 8px!important;
+    }
+}

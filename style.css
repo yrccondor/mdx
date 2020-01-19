@@ -3548,3 +3548,66 @@ img.wp-smiley {
     height: auto!important;
     max-height: none!important;
 }
+@media print {
+    header, .scrollToTop, .scrollToTop + button, #indic, .mdx-ad-after-article, .mdx-ad-in-article, .mdx-post-money, .page-footer-nav, .ArtMain0 #respond, .ArtMain0 .mdx-same-posts, .PostMain > #respond, .PostMain > .mdx-same-posts, .spanout button, .titleBarGobal, .fullScreen.sea-close, .mdui-drawer, .mdui-overlay, .mdui-menu, .mdx-share-img-dialog, .mdx-share-wechat-dialog, .PostTitleFill {
+        display: none!important;
+    }
+    body div.PostTitle.mdui-color-theme {
+        background-color: transparent!important;
+    }
+    .ArtMain0 .PostMainImg0, .ArtMain .PostMainImg {
+        box-shadow: none!important;
+        border-radius: 3px!important;
+    }
+    .PostTitle > span {
+        color: black;
+    }
+    .PostTitle.PostTitle2 > span {
+        color: white;
+    }
+    .spanout>i {
+        padding-left: 10px;
+    }
+    article a {
+        text-decoration: underline!important;
+    }
+    article a::after {
+        content: "(" attr(href) ")";
+    }
+    div.ArtMain0 > .mdx-author-c {
+        border-radius: 0 0 5px 5px!important;
+    }
+    .PostMain2 > .ArtMain0 {
+        padding-top: 0!important;
+    }
+    .ArtMain0 {
+        width: 90%;
+        background-color: transparent!important;
+        box-shadow: 0 0 0!important;
+        border-radius: 0;
+    }
+    .PostMain2 > .ArtMain0 > article {
+        margin-top: 20px!important;
+    }
+    .ArtMain0 article.mdui-typo {
+        margin: 40px 0 0!important;
+    }
+    .PostTitleFill2, .PostTitleFillBack2 {
+        height: 40%;
+    }
+    html > body {
+        background-color: white!important;
+    }
+    article p {
+        color: rgba(0,0,0,.8)!important;
+    }
+    article {
+        font: 13pt Georgia, "Nimbus Roman No9 L", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun, SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN", "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU, serif!important;
+    }
+    * {
+        page-break-inside: avoid;
+    }
+    article p, article a, #comments, article {
+        page-break-inside: auto;
+    }
+}
