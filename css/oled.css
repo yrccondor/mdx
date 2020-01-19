@@ -51,7 +51,7 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 .mdui-theme-layout-dark .mdui-table thead {
     background-color: #212121;
 }
-.mdui-theme-layout-dark .mdui-grid-tile.indexgaid .divimg, .mdui-card.staDivgaid {
+.mdui-theme-layout-dark .mdui-grid-tile.indexgaid .divimg, .mdui-theme-layout-dark .mdui-card.staDivgaid {
     background-color: #1d1d1d!important;
 }
 .mdui-theme-layout-dark .sta-4 {

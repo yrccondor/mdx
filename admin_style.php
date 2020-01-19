@@ -242,6 +242,7 @@ wp_nonce_field('mdx_options_update');
 <select name="mdx_index_show" id="mdx_index_show">
 	<option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_index_show=='2'){?>selected="selected"<?php }?>><?php _e('两栏', 'mdx');?></option>
 </select>
 <div class="mdx-svg-preview" id="mdx-index-preview"></div>
 </td>

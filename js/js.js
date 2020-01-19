@@ -14,13 +14,18 @@ var totalHight = $(".theFirstPage").height()*.37 - 20;
 if($(".theFirstPage").length == 0){
     mdx_style = 0;
 }
-window.onscroll=function(){
+window.onload = function(){
+    setTimeout(() => {
+        document.getElementsByClassName('theFirstPage')[0].classList.add("mdx-anmi-loaded");
+    }, 500);
+}
+window.onscroll = function(){
     if(!ticking) {
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
 }
-window.onresize=function(){
+window.onresize = function(){
     barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
     totalHight = $(".theFirstPage").height()*.37 - 20;
 }
@@ -94,7 +99,7 @@ $(function(){
         $('.mdx-hp-g-r').show();
         var mdx_change = 1;
         var mdx_change2 = 1;
-        var mdx_sp_w = 215*$("a>div.mdx-li.mdui-card").length+10;
+        var mdx_sp_w = (210 + parseInt(getComputedStyle(document.querySelector("a>div.mdx-li.mdui-card"), null).marginRight))*$("a>div.mdx-li.mdui-card").length+10;
         var mdx_sp_ww = 0;
         var mdx_sp_s = 0;
         var ele = document.getElementById("mdx-sp-out-c");
@@ -109,10 +114,10 @@ $(function(){
                 $('.mdx-hp-g-l').fadeOut(200);
                 mdx_change = 1;
             }
-            if((mdx_sp_w - mdx_sp_ww - mdx_sp_s)<=5 && mdx_change2){
+            if((mdx_sp_w - mdx_sp_ww - mdx_sp_s)<=1 && mdx_change2){
                 $('.mdx-hp-g-r').fadeOut(200);
                 mdx_change2 = 0;
-            }else if((mdx_sp_w - mdx_sp_ww - mdx_sp_s)>5 && !mdx_change2){
+            }else if((mdx_sp_w - mdx_sp_ww - mdx_sp_s)>1 && !mdx_change2){
                 $('.mdx-hp-g-r').fadeIn(200);
                 mdx_change2 = 1;
             }
@@ -164,7 +169,9 @@ $(".sea-close").click(function(){
     $(".outOfSearch").css('width','30%');
     window.setTimeout("hideBar()",300);
     $("#SearchBar").removeClass("mdui-color-theme");
-    $('body').toggleClass('mdx-search-lock');
+    if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
+        $('body').toggleClass('mdx-search-lock');
+    }
 });
 
 function hideBar(){

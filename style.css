@@ -3206,6 +3206,92 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
 #comments .mdui-list-item-title {
     margin: 0.5em 0;
 }
+.mdx-tworows-title {
+    display: none;
+}
+@media screen and (orientation:landscape){
+    body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay, body.mdx-first-tworows div.fullScreen.sea-close, body.mdx-first-tworows .OutOfsearchBox {
+        width: 38.2%;
+        height: 100%;
+        position: fixed;
+    }
+    body.mdx-first-tworows .OutOfsearchBox {
+        pointer-events: auto;
+    }
+    body.mdx-first-tworows .theFirstPage.mdx-anmi-loaded {
+        opacity: 1!important;
+    }
+    body.mdx-first-tworows .main {
+        width: 61.8%;
+        left: 38.2%;
+        top: 0;
+    }
+    body.mdx-first-tworows .titleBarGobal, body.mdx-first-tworows .titleBarGobal form {
+        width: 38.2%;
+        box-shadow: none!important;
+    }
+    body.mdx-first-tworows .titleBarGobal .mdui-toolbar, body.mdx-first-tworows.mdui-theme-layout-dark .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent) {
+        background-color: transparent!important;
+        color: white!important;
+    }
+    body.mdx-first-tworows div.mdui-toolbar {
+        background-image:linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,.3) 100%);
+    }
+    body.mdx-first-tworows span.mdui-typo-headline, body.mdx-first-tworows #theFirstPageSayContent {
+        display: none!important;
+    }
+    body.mdx-first-tworows .mdx-tworows-title {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    body.mdx-first-tworows .mdx-tworows-title > div {
+        text-align: center;
+        display: inline-block;
+        width: 240px;
+        background-color: white;
+        border-radius: 5px;
+        color: rgba(0,0,0,.6);
+        font-size: 18px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworows-title > div {
+        background-color: #303030;
+        color: rgba(255,255,255,.6);
+    }
+    body.mdx-first-tworows .mdx-tworows-title > div > span {
+        font-size: 30px;
+        line-height: 80px;
+        display: block;
+    }
+    body.mdx-first-tworows .mdx-tworows-title > div > hr {
+        height: 2px;
+        margin: 0;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 2px solid rgba(0,0,0,.12);
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworows-title > div > hr {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+    }
+    body.mdx-first-tworows .mdx-tworows-title .mdx-logo {
+        max-height: 55px;
+        margin-bottom: 7px;
+    }
+    body.mdx-first-tworows .mdxNotice {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 38.2%;
+        max-width: none;
+        border-radius: 0!important;
+        z-index: 10;
+    }
+    body.mdx-first-tworows .main, body.mdx-first-tworows .main-in-other {
+        z-index: 4;
+    }
+}
 @media(max-width:2500px) {
     .ArtMain0 {
         width: 100%;
