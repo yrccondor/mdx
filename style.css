@@ -59,7 +59,7 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
     background-color: #212121!important;
 }
 .theFirstPageSay {
-    z-index: 3;
+    z-index: 4;
     height: 61.8%;
 }
 #theFirstPageSayContent {
@@ -3304,7 +3304,7 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
         z-index: 10;
     }
     body.mdx-first-tworows .main, body.mdx-first-tworows .main-in-other {
-        z-index: 4;
+        z-index: 7;
     }
     body.mdx-first-tworows div.main .mdx-hot-posts {
         width: 87%;
@@ -3315,6 +3315,9 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
     }
     body.mdx-first-tworows div.main .mdx-hot-posts h3 {
         margin-left: 14px;
+    }
+    body.mdx-first-tworows div.main {
+        padding-top: 30px;
     }
 }
 @media(max-width:2500px) {

@@ -76,6 +76,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_link_rand_order', $_POST['mdx_link_rand_order']);
 	mdx_update_option('mdx_title_med', $_POST['mdx_title_med']);
 	mdx_update_option('mdx_index_img', $_POST['mdx_index_img']);
+	mdx_update_option('mdx_index_img_bg', $_POST['mdx_index_img_bg']);
 	mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
 	mdx_update_option('mdx_side_info', $_POST['mdx_side_info']);
 	mdx_update_option('mdx_side_head', $_POST['mdx_side_head']);
@@ -348,6 +349,17 @@ wp_nonce_field('mdx_options_update');
 <button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
 <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('增加首页图片文字对比度', 'mdx');?></th>
+<td>
+<?php $mdx_v_index_img_bg=mdx_get_option('mdx_index_img_bg');?>
+<fieldset>
+	<label><input type="radio" name="mdx_index_img_bg" value="true" <?php if($mdx_v_index_img_bg=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_index_img_bg" value="false" <?php if($mdx_v_index_img_bg=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不生效。', 'mdx');?></p>
+</fieldset>
 </td>
 </tr>
 <tr><td> </td></tr>
