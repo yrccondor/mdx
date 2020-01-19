@@ -49,8 +49,8 @@ Key features:
 - Built-in image light box
 - 7 built-in shortcodes
 - Multi-language support (Simplified Chinese, Turkish & English)
-- Interactive search
-- Easily continue reading cross-platformly
+- ✨ Interactive search
+- ✨ Easily continue reading cross-platformly
 
 
 ## Demo
