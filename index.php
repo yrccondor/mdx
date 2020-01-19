@@ -51,7 +51,9 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
     </div></header>
     <?php get_template_part('searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
-    <?php if($mdx_index_show=="0" || $mdx_index_show=="2"){?><div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div><?php } ?>
+    <?php if($mdx_index_show=="0" || $mdx_index_show=="2"){?><div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
+    <div class="mdx-index-img-bg mdui-color-theme"></div>
+    <?php } ?>
     <div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text"><h<?php if(mdx_get_option('mdx_index_say_size')!=""){echo mdx_get_option('mdx_index_say_size');}else{echo '1';}?> class="mdui-center" id="theFirstPageSayContent"><?php echo esc_attr(mdx_get_option('mdx_index_say'))?></h<?php if(mdx_get_option('mdx_index_say_size')!=""){echo mdx_get_option('mdx_index_say_size');}else{echo '1';}?>><div class="mdx-tworows-title"><div><span class="mdui-text-color-theme"><?php $mdx_logo_way=mdx_get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=mdx_get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></span><hr><?php echo esc_attr(mdx_get_option('mdx_index_say'))?></div></div></div>
     <div class="main">
     <?php if(mdx_get_option('mdx_notice')!=""){?>

@@ -3227,11 +3227,23 @@ p.ct1-p {
     line-height: 25px;
     margin-top: 10px;
 }
+.mdx-index-img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 61.8%;
+    z-index: 4;
+    opacity: .4;
+}
 @media screen and (orientation:landscape){
-    body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay, body.mdx-first-tworows div.fullScreen.sea-close, body.mdx-first-tworows .OutOfsearchBox {
+    body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay, body.mdx-first-tworows div.fullScreen.sea-close, body.mdx-first-tworows .OutOfsearchBox {
         width: 38.2%;
         height: 100%;
         position: fixed;
+    }
+    body.mdx-first-tworows .mdx-index-img-bg {
+        display: none;
     }
     body.mdx-first-tworows .OutOfsearchBox {
         pointer-events: auto;
