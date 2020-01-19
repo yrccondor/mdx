@@ -15,9 +15,12 @@ if($(".theFirstPage").length == 0){
     mdx_style = 0;
 }
 window.onload = function(){
-    setTimeout(() => {
-        document.getElementsByClassName('theFirstPage')[0].classList.add("mdx-anmi-loaded");
-    }, 500);
+    let indexBgDom = document.getElementsByClassName('theFirstPage');
+    if(indexBgDom.length > 0){
+        setTimeout(() => {
+            indexBgDom[0].classList.add("mdx-anmi-loaded");
+        }, 500);
+    }
 }
 window.onscroll = function(){
     if(!ticking) {

@@ -1118,8 +1118,15 @@ div.main .mdx-hot-posts {
     transform: translateX(-8px);
     width: calc(95% + 16px);
 }
+body.mdx-first-simple div.main .mdx-hot-posts {
+    transform: none;
+    width: 95%;
+}
 div.main .mdx-hot-posts h3 {
     margin-left: 15px;
+}
+body.mdx-first-simple div.main .mdx-hot-posts h3 {
+    margin-left: 20px;
 }
 .mdx-author-c {
     padding-top: 0;
