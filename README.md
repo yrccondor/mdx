@@ -37,6 +37,21 @@
 
 MDx: a light, elegent and powerful WordPress theme with Material Design.
 
+Key features:
+
+- Completely designed in Material Design with optional Material Design 2 style
+- 3 index styles, 4 post styles, 3 footer styles & 3 page styles
+- 19 theme colors & 16 accent colors
+- Night mode and Always-Dark mode with optional OLED optimization
+- SEO friendly, easily share on Facebook / Twitter
+- Share your work with the beautiful share card
+- Built-in TOC
+- Built-in image light box
+- 7 built-in shortcodes
+- Multi-language support (Simplified Chinese, Turkish & English)
+- Interactive search
+- Easily continue reading cross-platformly
+
 
 ## Demo
 
