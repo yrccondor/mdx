@@ -2,7 +2,7 @@
 <?php mdx_get_option('mdx_widget') === "true" ? $mdx_widget = true : $mdx_widget = false;
 $mdx_share_area=mdx_get_option('mdx_share_area');
 $mdx_post_show = get_post_meta((int)$post->ID, "mdx_post_show", true);
-if($mdx_post_show=='' || $mdx_post_show=="0"){
+if($mdx_post_show=='' || $mdx_post_show=="0" || (is_user_logged_in() && $mdx_post_show=="3")){
 $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
     <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
     <?php $mdx_style = get_post_meta((int)$post->ID, "mdx_styles", true);
@@ -18,7 +18,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
         $post_style=mdx_get_option('mdx_post_style');
     }
     ?>
-    <body class="mdui-theme-primary-<?php echo $mdx_style?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php } ?>">
+    <body class="mdui-theme-primary-<?php echo $mdx_style?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
     <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
@@ -235,7 +235,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 </body>
 </html>
-<?php }elseif ($mdx_post_show=='3') {?>
+<?php }elseif ($mdx_post_show=='3' && !is_user_logged_in()) {?>
     <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
     <script><?php

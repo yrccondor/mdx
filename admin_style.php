@@ -63,6 +63,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 		mdx_update_option('mdx_auto_night_style', 'false');
 	}
 	mdx_update_option('mdx_md2', $_POST['mdx_md2']);
+	mdx_update_option('mdx_md2_font', $_POST['mdx_md2_font']);
 	mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
 	mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
@@ -191,9 +192,20 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_md2=mdx_get_option('mdx_md2');?>
 	<fieldset>
-	<label><input type="radio" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<label><input type="radio" class="md2" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" class="md2" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无法保证显示效果达到完美，请谨慎启用。</strong>', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr class="md2_font">
+<th scope="row"><?php _e('Material Design 2 字体', 'mdx');?></th>
+<td>
+<?php $mdx_v_md2_font=mdx_get_option('mdx_md2_font');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_md2_font" value="true" <?php if($mdx_v_md2_font=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_md2_font" value="false" <?php if($mdx_v_md2_font=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该字体仅包含拉丁字符。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -401,7 +413,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="5" <?php if($mdx_v_index_say_size=='5'){?>selected="selected"<?php }?>>H5</option>
 	<option value="6" <?php if($mdx_v_index_say_size=='6'){?>selected="selected"<?php }?>>H6</option>
 </select>
-<p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。', 'mdx');?></p>
+<p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。', 'mdx');?></p>
 </td>
 </tr>
 <tr><td> </td></tr>

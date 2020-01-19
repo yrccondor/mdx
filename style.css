@@ -1114,6 +1114,13 @@ div#comments ul li {
     padding-top: 5px;
     overflow: hidden;
 }
+div.main .mdx-hot-posts {
+    transform: translateX(-8px);
+    width: calc(95% + 16px);
+}
+div.main .mdx-hot-posts h3 {
+    margin-left: 15px;
+}
 .mdx-author-c {
     padding-top: 0;
     height: 150px;
@@ -1207,7 +1214,6 @@ div#comments ul li {
     margin: 0 auto;
     margin-top: 45px;
     box-sizing: border-box;
-    padding-left: 15px;
 }
 .mdx-first-simple .mdx-all-posts {
     display: none;
@@ -1388,7 +1394,7 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-author-c h3,.mdx-hot-posts>h3,.mdx-same-posts>h3 {
     margin: 20px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
 }
 .mdx-author-c h3 {
     margin-bottom: 0;
@@ -3264,6 +3270,7 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
         font-size: 30px;
         line-height: 80px;
         display: block;
+        font-weight: bold;
     }
     body.mdx-first-tworows .mdx-tworows-title > div > hr {
         height: 2px;
@@ -3290,6 +3297,16 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
     }
     body.mdx-first-tworows .main, body.mdx-first-tworows .main-in-other {
         z-index: 4;
+    }
+    body.mdx-first-tworows div.main .mdx-hot-posts {
+        width: 87%;
+        transform: translateX(-1%);
+    }
+    body.mdx-first-tworows .mdx-all-posts, body.mdx-first-tworows main.postList{
+        width: 85%;
+    }
+    body.mdx-first-tworows div.main .mdx-hot-posts h3 {
+        margin-left: 14px;
     }
 }
 @media(max-width:2500px) {
@@ -3398,6 +3415,18 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
 @media(max-width:782px) {
     body.customize-support #titleBarinPost,body.customize-support .mdui-toolbar,body.customize-support .titleBarinAc {
         top: 46px;
+    }
+}
+@media(max-width:770px) {
+    .mdx-all-posts {
+        padding-left: 10px;
+    }
+    div.main .mdx-hot-posts {
+        width: 95%;
+        transform: none;
+    }
+    div.main .mdx-hot-posts h3 {
+        margin-left: 17px;
     }
 }
 @media(max-width:720px) {

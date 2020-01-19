@@ -51,6 +51,12 @@ jQuery(document).ready(function(){
         jQuery('.logo_text').show();
         jQuery('.logo_logo').hide();
     }
+    var selectVO2 = jQuery('input.md2:checked').val();
+    if(selectVO2 == 'false'){
+        jQuery('.md2_font').hide();
+    }else{
+        jQuery('.md2_font').show();
+    }
     var whichButton=0;
     //上传按钮id
     jQuery('#insert-media-button').click(function(){
@@ -134,6 +140,14 @@ jQuery(document).ready(function(){
     setInterval("img3()",500);
     setInterval("img4()",500);
     setInterval("bing()",300);
+});
+jQuery(".md2").click(function(){
+    var mdx_val3 = jQuery('input.md2:checked').val();
+    if(mdx_val3=='false'){
+        jQuery('.md2_font').hide();
+    }else{
+        jQuery('.md2_font').show();
+    }
 });
 jQuery(".mdx_stbs").click(function(){
     var mdx_val = jQuery('input.mdx_stbs:checked').val();

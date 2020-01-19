@@ -7,6 +7,33 @@
          url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
 }
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 300;
+    font-style: normal;
+    src: url("../fonts/../fonts/Montserrat-Light.eot");
+    src: url("../fonts/Montserrat-Light.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-Light.woff2") format("woff2"),
+         url("../fonts/Montserrat-Light.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Montserrat-Regular.eot");
+    src: url("../fonts/Montserrat-Regular.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+         url("../fonts/Montserrat-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-style: normal;
+    src: url("../fonts/Montserrat-SemiBold.eot");
+    src: url("../fonts/Montserrat-SemiBold.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+         url("../fonts/Montserrat-SemiBold.woff") format("woff");
+}
 .mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre {
     border-radius: 8px!important;
 }
@@ -164,6 +191,28 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 }
 .wp-block-file {
     border-radius: 8px;
+}
+body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-md2-font .mdx-background-404 span {
+    font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    font-weight: bold;
+}
+body.mdx-md2-font .mdx-background-404 span > span{
+    font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    font-weight: normal;
+}
+body.mdx-md2-font .mdx-side-title span, body.mdx-md2-font .mdx-clean-footer .mdx-footer-title, body.mdx-md2-font .mdui-toolbar .mdui-typo-headline, body.mdx-md2-font .mdx-author-info h3, body.mdx-md2-font #reply-title, body.mdx-md2-font .PostTitle > span, body.mdx-md2-font .mdui-card-actions h1, body.mdx-md2-font .mdui-card-primary div, body.mdx-md2-font article.searchCard h1, body.mdx-md2-font #mdx-right-drawer .mdui-card-primary-title, body.mdx-md2-font .PostTitlePage span, body.mdx-md2-font .theFirstPageSmall h1, body.mdx-md2-font .ArtMain article h1, body.mdx-md2-font .ArtMain article h2, body.mdx-md2-font .ArtMain article h3, body.mdx-md2-font .ArtMain0 article h1, body.mdx-md2-font .ArtMain0 article h2, body.mdx-md2-font .ArtMain0 article h3, body.mdx-md2-font .mdx-same-posts h3 {
+    font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+body.mdx-md2-font .theFirstPageSmall h1 small {
+    font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+@media screen and (orientation:landscape){
+    body.mdx-first-tworows .mdx-tworows-title > div {
+        border-radius: 8px;
+    }
+    body.mdx-first-tworows.mdx-md2-font .mdx-tworows-title > div > span {
+        font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    }
 }
 @media (max-width: 720px) {
     .ArtMain0 #respond {
