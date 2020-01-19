@@ -3274,6 +3274,7 @@ p.ct1-p {
         display: block;
         width: 100%;
         text-align: center;
+        cursor: default;
     }
     body.mdx-first-tworows .mdx-tworows-title > div {
         text-align: center;
