@@ -23,6 +23,12 @@ jQuery(document).ready(function(){
         jQuery('#img1').attr('src',img1);
     }
     setInterval("img1()",500);
+    var mdx_val = jQuery('input.mdx_apsp2:checked').val();
+    if(mdx_val=='true'){
+        jQuery('input.mdx_apspc2').removeAttr("disabled");
+    }else if(mdx_val=='false'){
+        jQuery('input.mdx_apspc2').attr("disabled","disabled");
+    }
 });
 jQuery(".mdx_stbs").change(function(){
     var mdx_val = jQuery('.mdx_stbs').val();
