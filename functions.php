@@ -96,6 +96,12 @@ add_filter('nav_menu_css_class','mdx_menu_classes',1,3);
 //激活链接功能
 add_filter('pre_option_link_manager_enabled','__return_true');
 
+//注销搜索小组件
+function mdx_remove_search_widget() {
+    unregister_widget('WP_Widget_Search');
+}
+add_action('widgets_init', 'mdx_remove_search_widget');
+
 //载入css & js
 function mdx_css(){
 	wp_register_style('mdx_mdui_css', get_template_directory_uri().'/mdui/css/mdui.min.css', '', '', 'all');
