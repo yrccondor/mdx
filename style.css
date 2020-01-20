@@ -3467,7 +3467,8 @@ body.mdx-first-simple .mdx-index-img-bg {
         background-color: rgb(230, 230, 230);
         color: rgba(0,0,0,.4);
         cursor: pointer;
-        font-size: 17px;    
+        font-size: 17px;
+        user-select: none;
     }
     body.mdx-first-tworows #mdx-search-anim {
         padding: 5px 0 5px 9pt;
@@ -3482,6 +3483,7 @@ body.mdx-first-simple .mdx-index-img-bg {
         z-index: 999999;
         transition: top .5s cubic-bezier(0.77, 0, 0.175, 1), left .5s cubic-bezier(0.77, 0, 0.175, 1), background-color .5s, width .5s cubic-bezier(0.77, 0, 0.175, 1), height .5s cubic-bezier(0.77, 0, 0.175, 1), color .5s, opacity 0s;
         font-size: 17px;
+        user-select: none;
     }
     body.mdx-first-tworows > div#mdx-search-anim.mdx-search-anim-show {
         display: flex!important;
