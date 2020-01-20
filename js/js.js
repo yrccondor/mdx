@@ -169,7 +169,7 @@ $(".mdx-tworow-search").click(function(){
     setTimeout(() => {
         $('body').toggleClass('mdx-search-lock');
     }, 500);
-    $("#mdx-search-anim").css({'width': $(this).width() + 12 + 'px', 'top': $(this)[0].getBoundingClientRect().top + 'px', 'left': $(this)[0].getBoundingClientRect().left + 'px'}).addClass('mdx-search-anim-show');
+    $("#mdx-search-anim").css({'width': $(this).width() + 'px', 'top': $(this)[0].getBoundingClientRect().top + 'px', 'left': $(this)[0].getBoundingClientRect().left + 'px'}).addClass('mdx-search-anim-show');
     $(this).css('visibility', 'hidden');
     $("#SearchBar").show();
     var searchDom = $('.outOfSearch')
