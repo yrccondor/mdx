@@ -209,6 +209,7 @@ body.mdui-theme-layout-dark .ct1-p {
     width: 100%;
     height: 33%;
     text-align: center;
+    font-weight: bold;
 }
 .PostTitle>span {
     word-break: break-all;
@@ -1158,6 +1159,12 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     left: 155px;
     height: 150px;
     top: 0;
+}
+.mdx-author-info > h3 {
+    font-weight: bold!important;
+}
+.mdx-author-info > h3 > a {
+    color: rgba(0,0,0,.7);
 }
 .mdx-hot-posts {
     margin-top: 15px;
@@ -3250,6 +3257,9 @@ body:not(.mdx-first-simple) .mdx-hot-posts {
 }
 body.mdx-first-simple .mdx-index-img-bg {
     display: none;
+}
+.ArtMain article h1, .ArtMain article h2, .ArtMain article h3, .ArtMain0 article h1, .ArtMain0 article h2, .ArtMain0 article h3 {
+    font-weight: bold;
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
