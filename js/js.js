@@ -3,6 +3,7 @@ var whetherChange = 0;
 var metaColor = $("meta[name='theme-color']");
 var colorEnabled = false;
 var now_color = '';
+var openFromTwoRows = false;
 if(metaColor.length != 0){
     now_color = $("meta[name='mdx-main-color']").attr('content');
     colorEnabled = true;
@@ -164,16 +165,64 @@ $(".seai").click(function(){
         $(".seainput").attr('disabled','disabled');
     }
 });
+$(".mdx-tworow-search").click(function(){
+    setTimeout(() => {
+        $('body').toggleClass('mdx-search-lock');
+    }, 500);
+    $("#mdx-search-anim").css({'width': $(this).width() + 12 + 'px', 'top': $(this)[0].getBoundingClientRect().top + 'px', 'left': $(this)[0].getBoundingClientRect().left + 'px'}).addClass('mdx-search-anim-show');
+    $(this).css('visibility', 'hidden');
+    $("#SearchBar").show();
+    var searchDom = $('.outOfSearch')
+    $("#mdx-search-anim").css({'width': $('#searchform').width()*.75 - 12 + 'px', 'height': searchDom.height() + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+    setTimeout(() => {
+        $('#searchform').addClass("mdx-searchform-show");
+        $("#mdx-search-anim").removeClass('mdx-search-anim-show');
+        $('a.mdui-btn.mdui-btn-icon.sea-close').css('opacity', '1');
+    }, 500);
+    $("#mdx-search-anim i").css({'color': '#fff'});
+    $(".OutOfsearchBox").fadeIn(500);
+    $("#SearchBar").addClass("mdui-color-theme");
+    $(".fullScreen").fadeIn(500);
+    $(".seainput").focus();
+    if(mdx_offline_mode){
+        $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
+        $('.OutOfsearchBox').css('pointer-events','auto');
+        $(".seainput").attr('disabled','disabled');
+    }
+    openFromTwoRows = true;
+});
 $(".sea-close").click(function(){
     $(".seainput").blur();
-    $("#SearchBar > *").animate({opacity:'0'},200);
-    $(".fullScreen").fadeOut(300);
-    $(".OutOfsearchBox").fadeOut(300);
-    $(".outOfSearch").css('width','30%');
-    window.setTimeout("hideBar()",300);
-    $("#SearchBar").removeClass("mdui-color-theme");
-    if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
-        $('body').toggleClass('mdx-search-lock');
+    if(openFromTwoRows){
+        openFromTwoRows = false;
+        var searchAnimDom = $(".mdx-tworow-search");
+        $(".fullScreen").fadeOut(500);
+        $('a.mdui-btn.mdui-btn-icon.sea-close').css('opacity', '0');
+        $('#searchform').removeClass("mdx-searchform-show");
+        $("#mdx-search-anim").addClass('mdx-search-anim-show').removeClass('mdx-search-opened').css({'width': searchAnimDom.width() + 12 + 'px', 'height': '50px', 'top': searchAnimDom[0].getBoundingClientRect().top + 'px', 'left': searchAnimDom[0].getBoundingClientRect().left + 'px', 'backgroundColor': searchAnimDom.css('background-color'), 'color': searchAnimDom.css('color')});
+        $("#mdx-search-anim i").css({'color': $(".mdx-tworow-search").css('color')});
+        $(".OutOfsearchBox").fadeOut(500);
+        window.setTimeout("hideBar()",500);
+        $("#SearchBar").removeClass("mdui-color-theme");
+        setTimeout(() => {
+            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
+                $('body').toggleClass('mdx-search-lock');
+            }
+            $("#mdx-search-anim").removeClass('mdx-search-anim-show');
+            $(".mdx-tworow-search").css('visibility', 'visible');
+        }, 500);
+    }else{
+        $("#SearchBar > *").animate({opacity:'0'},200);
+        $(".fullScreen").fadeOut(300);
+        $(".OutOfsearchBox").fadeOut(300);
+        $(".outOfSearch").css('width','30%');
+        window.setTimeout("hideBar()",300);
+        $("#SearchBar").removeClass("mdui-color-theme");
+        setTimeout(() => {
+            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
+                $('body').toggleClass('mdx-search-lock');
+            }
+        }, 300);
     }
 });
 

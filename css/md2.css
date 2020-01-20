@@ -207,7 +207,7 @@ body.mdx-md2-font .theFirstPageSmall h1 small {
     font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 @media screen and (orientation:landscape){
-    body.mdx-first-tworows .mdx-tworows-title > div {
+    body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {
         border-radius: 8px;
     }
     body.mdx-first-tworows.mdx-md2-font .mdx-tworows-title > div > span {
