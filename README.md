@@ -44,6 +44,7 @@ Key features:
 - 19 theme colors & 16 accent colors
 - Night mode and Always-Dark mode with optional OLED optimization
 - SEO friendly, easily share on Facebook / Twitter
+- Fast and light, Pagespeed score 99% & YSlow score 98% (Based on minimized installation)
 - Share your work with the beautiful share card
 - Built-in TOC
 - Built-in image light box

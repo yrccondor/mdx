@@ -44,6 +44,7 @@ MDx，一款轻快、优雅且强大的 Material Design 风格 WordPress 主题�
 - 19 种主题颜色 & 16 种强调色随心搭配
 - 不仅有夜间模式和黑暗主题，更有专为 OLED 屏幕优化的样式可选
 - SEO 友好，支持 Facebook / Twitter 结构化卡片分享
+- 优雅轻量，Pagespeed 99% & YSlow score 98%（基于最小安装测试）
 - 一键生成分享图片，分享文章更美观
 - 内置文章目录功能
 - 内置简单的图片灯箱
