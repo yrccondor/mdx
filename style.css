@@ -3245,7 +3245,13 @@ body.mdui-theme-layout-dark .mdx-index-img-bg {
 .mdui-collapse-item-body .mdui-list-item {
     padding-left: 54px;
 }
-@media screen and (orientation:landscape){
+body:not(.mdx-first-simple) .mdx-hot-posts {
+    border-radius: 0!important;
+}
+body.mdx-first-simple .mdx-index-img-bg {
+    display: none;
+}
+@media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
         height: 100%;
@@ -3523,7 +3529,7 @@ body.mdui-theme-layout-dark .mdx-index-img-bg {
         transition: all .3s;
     }
 }
-@media screen and (orientation:landscape) and (max-width: 1024px) {
+@media screen and (orientation:landscape) and (max-width: 1024px) and (min-width: 750px) {
     #menu {
         left: 16px;
         bottom: 16px;
