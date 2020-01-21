@@ -2296,9 +2296,11 @@ ul.mdui-list.ajax-comments {
 }
 #comments-navi {
     box-sizing: border-box;
-    padding: 10px;
     text-align: center;
     font-size: 18px;
+}
+#comments-navi button:disabled {
+    margin: 15px 0;
 }
 #comments-navi a {
     display: inline-block;
@@ -2327,7 +2329,7 @@ ul.mdui-list.ajax-comments {
     width: 100%;
 }
 .mdx-comments-loading>div {
-    height: 150px;
+    height: 97px;
 }
 .mdx-comments-loading>div,.mdx-comments-loading>div>div {
     width: 100%;
@@ -2766,7 +2768,7 @@ article img.mdx-img-in-post {
 .mdx-more-comments {
     height: 57px;
     width: 57px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 .mdx-img-viewer {
     position: fixed;
