@@ -3261,6 +3261,50 @@ body.mdx-first-simple .mdx-index-img-bg {
 .ArtMain article h1, .ArtMain article h2, .ArtMain article h3, .ArtMain0 article h1, .ArtMain0 article h2, .ArtMain0 article h3 {
     font-weight: bold;
 }
+main .mdx-postlist-simple {
+    margin: 15px;
+    width: 100%;
+    max-width: 700px;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 35px;
+}
+main .mdx-postlist-simple h1 {
+    margin-top: 20px;
+    margin-left: 0;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+main .mdx-postlist-simple p.ct1-p {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+main .mdx-postlist-simple p.ct1-p + p {
+    margin-top: 7px;
+}
+main .mdx-postlist-simple img {
+    width: 100%;
+    border-radius: 3px;
+}
+main .mdx-postlist-simple.mdx-postlist-simple-sta article {
+    font-size: 18px;
+    opacity: .8;
+}
+main .mdx-postlist-simple.mdx-postlist-simple-sta > span {
+    color: grey;
+    padding: 8px 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    display: inline-block;
+    opacity: .5;
+}
+main .mdx-postlist-simple.mdx-postlist-simple-sta > span i {
+    vertical-align: bottom;
+}
+main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
+    opacity: .4;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
