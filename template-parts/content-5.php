@@ -5,7 +5,7 @@
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-original="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" alt="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" title="<?php the_title();?>" class="LazyLoadList LazyLoadListImg">
     <?php } ?>
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme ainList"><h1><?php the_title();?></h1></a>
-        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{if(mdx_get_option("mdx_post_def_img")=="true" || $Imagesurl !== ""){$summ = mdx_get_post_excerpt($post, 250);}else{$summ = mdx_get_post_excerpt($post, 450);}if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p><?php }?>
+        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{if(mdx_get_option("mdx_post_def_img")=="true" || $Imagesurl !== ""){$summ = mdx_get_post_excerpt($post, 300);}else{$summ = mdx_get_post_excerpt($post, 450);}if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p><?php }?>
         <?php
         $mdx_more_1 = mdx_get_option("mdx_post_list_1");
         $mdx_more_2 = mdx_get_option("mdx_post_list_2");
