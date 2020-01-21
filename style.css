@@ -3311,6 +3311,18 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
 body.mdx-first-tworows #mdx-search-anim {
     display: none!important;
 }
+#comments .mdui-list-item:hover {
+    background-color: transparent!important;
+}
+#comments .mdui-list-item {
+    -webkit-box-align: stretch;
+    -webkit-align-items: normal;
+    -ms-flex-align: stretch;
+    align-items: normal;
+}
+#comments .mdui-list-item .mdui-list-item-avatar {
+    margin-top: 12px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
