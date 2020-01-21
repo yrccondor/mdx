@@ -475,6 +475,6 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 <tr>
 <th scope="row"><label for="mdx_icp_num"><?php _e('ICP 备案号', 'mdx');?></label></th>
 <td><input name="mdx_icp_num" type="text" id="mdx_icp_num" value="<?php echo esc_attr(mdx_get_option('mdx_icp_num'))?>" class="regular-text">
-<p class="description"><?php _e('在这里填写的 IPC 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有用。', 'mdx');?></p></td>
+<p class="description"><?php _e('在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有用。', 'mdx');?></p></td>
 </tr>
 </table><?php submit_button(); ?></form></div>
