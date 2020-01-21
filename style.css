@@ -3274,6 +3274,7 @@ main .mdx-postlist-simple h1 {
     margin-left: 0;
     display: inline-block;
     margin-bottom: 7px;
+    font-weight: bold;
 }
 main .mdx-postlist-simple p.ct1-p {
     padding-right: 0;
