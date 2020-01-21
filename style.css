@@ -3320,6 +3320,9 @@ body.mdx-first-tworows #mdx-search-anim {
     -ms-flex-align: stretch;
     align-items: normal;
 }
+#comments .mdui-list-item p.mdui-typo {
+    word-break: break-word;
+}
 #comments .mdui-list-item .mdui-list-item-avatar {
     margin-top: 12px;
 }
