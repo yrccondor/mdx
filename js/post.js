@@ -516,7 +516,7 @@ function mdx_show_img(){
     $('#mdx-share-img').show();
 
     if(!sessionStorage.getItem('si_'+url_hash)){
-        html2canvas(document.getElementById("mdx-share-img"),{allowTaint: true}).then(function(canvas){
+        html2canvas(document.getElementById("mdx-share-img"),{useCORS: true}).then(function(canvas){
             convertCanvasToImage(canvas);
         });
     }else{
