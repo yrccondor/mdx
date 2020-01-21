@@ -1,10 +1,13 @@
 <?php
 require_once('admin_init_ver.php');
 $arr = array(
+'mdx_install'=>'normal',
 'mdx_night_style'=>'true',
 'mdx_auto_night_style'=>'true',
 'mdx_notice'=>'',
 'mdx_open_side'=>'true',
+'mdx_widget'=>'false',
+'mdx_allow_scale'=>'true',
 'mdx_img_box'=>'true',
 "mdx_readmore"=>__('去围观','mdx'),
 "mdx_post_money"=>'',
@@ -20,7 +23,6 @@ $arr = array(
 'mdx_post_edit_time'=>'post',
 'mdx_author_card'=>'false',
 'mdx_speed_pre'=>'false',
-'mdx_smooth_scroll'=>'false',
 'mdx_share_area'=>'all',
 'mdx_tap_to_top'=>'true',
 'mdx_hot_posts'=>'false',
@@ -67,9 +69,9 @@ $arr = array(
 'mdx_side_name'=>'',
 'mdx_side_more'=>'',
 'mdx_index_say'=>'Hello=>MDx!',
+'mdx_index_say_size'=>'1',
 'mdx_comment_emj'=>'true',
 'mdx_say_after'=>'',
-'mdx_index_say_size'=>'1',
 'mdx_logo_way'=>'1',
 'mdx_logo'=>'',
 'mdx_logo_text'=>'',
