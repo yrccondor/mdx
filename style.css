@@ -2509,7 +2509,7 @@ article div.mdui-table-fluid {
     font-size: 52px;
     color: #fff;
     box-sizing: border-box;
-    padding: 5px;
+    padding: 5px 0 5px 5px;
     border-radius: 5px;
     position: absolute;
     top: 22px;
