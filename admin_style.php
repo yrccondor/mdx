@@ -532,7 +532,4 @@ wp_nonce_field('mdx_options_update');
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
 	<td><textarea name="mdx_footer" id="mdx_footer" rows="7" cols="50"><?php echo mdx_get_option('mdx_footer')?></textarea>
 	<p class="description"><?php _e('在这里编辑页脚内容。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
-</tr>
-<tr>
-<th scope="row"></th>
-<td><p class="description" id="mdx_des"><?php _e('MDx 主题兼容 WordPress 中文版ICP备案号功能，如使用中文版，请在 <i>WordPress 设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站。留空则不会显示。', 'mdx');?></p></td></tr></table><?php submit_button(); ?></form></div>
+</tr></table><?php submit_button(); ?></form></div>

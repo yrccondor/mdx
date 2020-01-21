@@ -42,6 +42,7 @@ $arr = array(
 'mdx_seo_des'=>'',
 'mdx_head_js'=>'',
 'mdx_footer_js'=>'',
+'mdx_icp_num'=>!empty(get_option('zh_cn_l10n_icp_num')) ? get_option('zh_cn_l10n_icp_num') : '',
 
 'mdx_styles'=>'indigo',
 'mdx_styles_hex'=>'#3f51b5',

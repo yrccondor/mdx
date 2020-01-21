@@ -62,6 +62,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_seo_des', htmlentities(stripslashes($_POST['mdx_seo_des'])));
 	mdx_update_option('mdx_head_js', htmlentities(stripslashes($_POST['mdx_head_js'])));
 	mdx_update_option('mdx_footer_js', htmlentities(stripslashes($_POST['mdx_footer_js'])));
+	mdx_update_option('mdx_icp_num', $_POST['mdx_icp_num']);
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -469,5 +470,11 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<th scope="row"><label for="mdx_footer_js"><?php _e('页尾脚本', 'mdx');?></label></th>
 	<td><textarea name="mdx_footer_js" id="mdx_footer_js" rows="7" cols="50"><?php echo mdx_get_option('mdx_footer_js')?></textarea>
 	<p class="description"><?php _e('在这里插入脚本，会被插入至所有页面最后。', 'mdx');?></p></td>
+</tr>
+<tr><td> </td></tr>
+<tr>
+<th scope="row"><label for="mdx_icp_num"><?php _e('ICP 备案号', 'mdx');?></label></th>
+<td><input name="mdx_icp_num" type="text" id="mdx_icp_num" value="<?php echo esc_attr(mdx_get_option('mdx_icp_num'))?>" class="regular-text">
+<p class="description"><?php _e('在这里填写的 IPC 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有用。', 'mdx');?></p></td>
 </tr>
 </table><?php submit_button(); ?></form></div>
