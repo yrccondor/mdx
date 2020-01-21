@@ -3262,7 +3262,7 @@ body.mdx-first-simple .mdx-index-img-bg {
     font-weight: bold;
 }
 main .mdx-postlist-simple {
-    margin: 15px;
+    margin: 15px 0;
     width: 100%;
     max-width: 700px;
     display: inline-block;
@@ -3710,6 +3710,9 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
     }
     div.main .mdx-hot-posts h3 {
         margin-left: 17px;
+    }
+    main .mdx-postlist-simple {
+        width: 95%;
     }
 }
 @media(max-width:720px) {
