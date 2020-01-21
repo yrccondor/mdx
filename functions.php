@@ -604,14 +604,14 @@ function mdx_post_metaboxes_2() {
 		// 	$meta_box_value = '-----Nothing-----';
 		// }
 		//$meta_box_value = $post->ID;
-        echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+        echo '<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
         echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>'.__('
 		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请留空</p>', 'mdx');
 }
 function mdx_post_metaboxes_1() {
     global $post;
         $meta_box_value = get_post_meta($post->ID, 'settings_value', true);
-		echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+		// echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
 		?>
 		<h4><?php _e('文章主题颜色','mdx');?></h4>
 		<?php $mdx_v_styles=get_post_meta($post->ID, "mdx_styles", true);?>
@@ -690,8 +690,7 @@ function create_meta_box(){
 }
 add_action('admin_menu', 'create_meta_box');
 
-function mdx_save_postdata_1($post_id){
-    global $post;
+function mdx_save_postdata_1($post_id, $post){
         if(!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
             return $post->ID;
         }
@@ -704,16 +703,12 @@ function mdx_save_postdata_1($post_id){
                 return $post->ID;
         }
         $data = $_POST["informations_value"];
-        if(get_post_meta((int)$post->ID, "informations_value") == ""){
-            add_post_meta((int)$post->ID, "informations_value", (string)$data, true);
-		}else{
-            update_post_meta((int)$post->ID, "informations_value", (string)$data);
-		}
+		if(!add_post_meta((int)$post_id, "informations_value", (string)$data, true)){ 
+            update_post_meta((int)$post_id, "informations_value", (string)$data);
+        }
 			$data1 = $_POST["mdx_styles"];
-			if(get_post_meta((int)$post->ID, "mdx_styles") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles", (string)$data1, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles", true)){
-				update_post_meta((int)$post->ID, "mdx_styles", (string)$data1);
+			if(!add_post_meta((int)$post_id, "mdx_styles", (string)$data1, true)){ 
+				update_post_meta((int)$post_id, "mdx_styles", (string)$data1);
 			}
 			$mdx_color_arr=array(
 				'red'=>'#f44336',
@@ -737,16 +732,12 @@ function mdx_save_postdata_1($post_id){
 				'blue-grey'=>'#607d8b',
 				'def'=>'def',
 			);
-			if(get_post_meta((int)$post->ID, "mdx_styles_hex") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_hex", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1]);
+			if(!add_post_meta((int)$post_id, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_hex", $mdx_color_arr[(string)$data1]);
 			}
 			$data2 = $_POST["mdx_styles_act"];
-			if(get_post_meta((int)$post->ID, "mdx_styles_act") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_act", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2);
+			if(!add_post_meta((int)$post_id, "mdx_styles_act", (string)$data2, true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_act", (string)$data2);
 			}
 			$mdx_act_arr=array(
 				'red'=>'#ff5252',
@@ -767,25 +758,19 @@ function mdx_save_postdata_1($post_id){
 				'deep-orange'=>'#ff6e40',
 				'def'=>'def',
 			);
-			if(get_post_meta((int)$post->ID, "mdx_styles_act_hex") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2], true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_act_hex", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2]);
+			if(!add_post_meta((int)$post_id, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2], true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2]);
 			}
 			$data3 = $_POST["mdx_post_style"];
-			if(get_post_meta((int)$post->ID, "mdx_post_style") == ""){
-				add_post_meta((int)$post->ID, "mdx_post_style", (string)$data3, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_post_style", true)){
-				update_post_meta((int)$post->ID, "mdx_post_style", (string)$data3);
+			if(!add_post_meta((int)$post_id, "mdx_post_style", (string)$data3, true)){ 
+				update_post_meta((int)$post_id, "mdx_post_style", (string)$data3);
 			}
 			$data4 = $_POST['mdx_post_show'];
-			if(get_post_meta((int)$post->ID, "mdx_post_show") == ""){
-				add_post_meta((int)$post->ID, "mdx_post_show", (string)$data4, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_post_show", true)){
-				update_post_meta((int)$post->ID, "mdx_post_show", (string)$data4);
+			if(!add_post_meta((int)$post_id, "mdx_post_show", (string)$data4, true)){ 
+				update_post_meta((int)$post_id, "mdx_post_show", (string)$data4);
 			}
 }
-add_action('save_post', 'mdx_save_postdata_1');
+add_action('save_post', 'mdx_save_postdata_1', 10, 2);
 
 function mdx_colored_cloud($text) {
 	$text = preg_replace_callback('/<a (.+?)>/i','mdx_colored_cloud_call_back', $text);
