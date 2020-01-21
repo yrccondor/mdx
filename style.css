@@ -3306,6 +3306,9 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > span i {
 main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
     opacity: .4;
 }
+body.mdx-first-tworows #mdx-search-anim {
+    display: none!important;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
@@ -3539,6 +3542,7 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
         transition: top .5s cubic-bezier(0.77, 0, 0.175, 1), left .5s cubic-bezier(0.77, 0, 0.175, 1), background-color .5s, width .5s cubic-bezier(0.77, 0, 0.175, 1), height .5s cubic-bezier(0.77, 0, 0.175, 1), color .5s, opacity 0s;
         font-size: 17px;
         user-select: none;
+        backdrop-filter: blur(30px);
     }
     body.mdx-first-tworows > div#mdx-search-anim.mdx-search-anim-show {
         display: flex!important;

@@ -32,6 +32,7 @@ window.onscroll = function(){
 window.onresize = function(){
     barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
     totalHight = $(".theFirstPage").height()*.37 - 20;
+    closeSearch();
 }
 function scrollDiff(){
     if(mdx_style){
@@ -192,12 +193,15 @@ $(".mdx-tworow-search").click(function(){
     openFromTwoRows = true;
 });
 $(".sea-close").click(function(){
+    closeSearch();
+})
+
+function closeSearch(){
     $(".seainput").blur();
     if(openFromTwoRows){
-        openFromTwoRows = false;
         var searchAnimDom = $(".mdx-tworow-search");
         $(".fullScreen").fadeOut(500);
-        $('a.mdui-btn.mdui-btn-icon.sea-close').css('opacity', '0');
+        document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').removeAttribute('style');
         $('#searchform').removeClass("mdx-searchform-show");
         $("#mdx-search-anim").addClass('mdx-search-anim-show').removeClass('mdx-search-opened').css({'width': searchAnimDom.width() + 12 + 'px', 'height': '50px', 'top': searchAnimDom[0].getBoundingClientRect().top + 'px', 'left': searchAnimDom[0].getBoundingClientRect().left + 'px', 'backgroundColor': searchAnimDom.css('background-color'), 'color': searchAnimDom.css('color')});
         $("#mdx-search-anim i").css({'color': $(".mdx-tworow-search").css('color')});
@@ -205,7 +209,7 @@ $(".sea-close").click(function(){
         window.setTimeout("hideBar()",500);
         $("#SearchBar").removeClass("mdui-color-theme");
         setTimeout(() => {
-            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
+            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock') !== -1){
                 $('body').toggleClass('mdx-search-lock');
             }
             $("#mdx-search-anim").removeClass('mdx-search-anim-show');
@@ -219,12 +223,14 @@ $(".sea-close").click(function(){
         window.setTimeout("hideBar()",300);
         $("#SearchBar").removeClass("mdui-color-theme");
         setTimeout(() => {
-            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock')){
+            if(document.getElementsByTagName("body")[0].className.indexOf('mdx-search-lock') !== -1){
                 $('body').toggleClass('mdx-search-lock');
             }
+            document.getElementsByClassName("outOfSearch")[0].removeAttribute("style");
         }, 300);
     }
-});
+    openFromTwoRows = false;
+};
 
 function hideBar(){
     $("#SearchBar").hide();
