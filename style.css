@@ -2309,12 +2309,18 @@ ul.mdui-list.ajax-comments {
 #comments-navi a {
     display: inline-block;
     margin: 2px 7px;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 3px;
     color: rgba(0,0,0,.3);
     text-decoration: none;
     -webkit-transition: all .2s;
     transition: all .2s;
+}
+#comments-navi a.page-numbers {
+    margin: 20px 2px;
+}
+#comments-navi a.prev, #comments-navi a.next {
+    padding: 3px 5px;
 }
 #comments-navi span.page-numbers {
     display: inline-block;
