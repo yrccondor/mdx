@@ -3317,7 +3317,7 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > span {
 }
 main .mdx-postlist-simple.mdx-postlist-simple-sta article > p, main div.staDivgaid article p {
     font-size: 18px;
-    line-height: normal;
+    line-height: 27px;
     margin: 5px 0 15px 0;
 }
 main div.staDivgaid article p {
@@ -3325,8 +3325,8 @@ main div.staDivgaid article p {
 }
 main div.staDiv.postDiv article p {
     font-size: 20px;
-    line-height: normal;
     margin: 10px 0;
+    line-height: 30px;
 }
 main .mdx-postlist-simple.mdx-postlist-simple-sta > span i {
     vertical-align: bottom;
