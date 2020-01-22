@@ -2994,6 +2994,9 @@ article img.mdx-img-in-post {
     font-size: 19px;
     font-weight: bold;
 }
+.mdx-side-title a {
+    text-decoration: none;
+}
 .mdui-typo .mdx-timeline-archives {
     line-height: 1;
 }
