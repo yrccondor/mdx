@@ -3315,6 +3315,19 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > span {
     display: inline-block;
     opacity: .5;
 }
+main .mdx-postlist-simple.mdx-postlist-simple-sta article > p, main div.staDivgaid article p {
+    font-size: 18px;
+    line-height: normal;
+    margin: 5px 0 15px 0;
+}
+main div.staDivgaid article p {
+    margin: 15px 0;
+}
+main div.staDiv.postDiv article p {
+    font-size: 20px;
+    line-height: normal;
+    margin: 10px 0;
+}
 main .mdx-postlist-simple.mdx-postlist-simple-sta > span i {
     vertical-align: bottom;
 }
