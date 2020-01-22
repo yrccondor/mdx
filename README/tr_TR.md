@@ -11,7 +11,7 @@
 > Basit görünüşlü, güçlü.
 
 <p align="center">
-<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.3-3f51b5.svg?style=flat-square"/>
+<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.5-3f51b5.svg?style=flat-square"/>
 <img alt="sürüm" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="sürümler" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Yazar" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
