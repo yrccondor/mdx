@@ -229,7 +229,7 @@ $GLOBALS['comment'] = $comment;?>
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, "update_core")){echo '<span class="mdx-admin">'.__('博主','mdx').'</span>';}?></div>
     <div class="mdui-list-item-text mdui-typo">
     <?php comment_text();?>
-    </div><span class="mdx-reply-time"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')).__('前','mdx');?></span><?php comment_reply_link(array_merge($args,array('reply_text'=>'回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
+    </div><span class="mdx-reply-time"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')).__('前','mdx');?></span><?php comment_reply_link(array_merge($args,array('reply_text'=>'<i class="mdui-icon material-icons">&#xe15e;</i> 回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
 <?php }
 
 //回复的评论加@

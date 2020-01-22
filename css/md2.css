@@ -209,6 +209,9 @@ body.mdx-md2-font .theFirstPageSmall h1 small {
 main .mdx-postlist-simple img {
     border-radius: 8px;
 }
+.comment-reply-link, .comment-reply-login {
+    border-radius: 5px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {
         border-radius: 8px;
