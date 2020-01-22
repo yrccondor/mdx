@@ -3618,7 +3618,7 @@ body.mdx-first-tworows #mdx-search-anim {
     }
 }
 @media screen and (orientation:landscape) and (max-width: 1024px) and (min-width: 750px) {
-    #menu {
+    body.mdx-first-tworows #menu {
         left: 16px;
         bottom: 16px;
     }
