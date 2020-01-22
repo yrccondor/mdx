@@ -56,6 +56,7 @@ Key features:
 
 ## Demo
 
+- [MDx Blog](https://mdxblog.flyhigher.top)
 - [Flyhigher](https://flyhigher.top)
 
 

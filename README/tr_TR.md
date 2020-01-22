@@ -40,6 +40,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 
 ## Demo
 
+- [MDx Blog](https://mdxblog.flyhigher.top)
 - [Flyhigher - Çince Demo](https://flyhigher.top)
 - [Hasan Can - Türkçe Demo](https://hasan.im)
 
