@@ -3367,10 +3367,11 @@ div.mdx-widget.widget_search form div.mdui-textfield {
 }
 p.comment-form-cookies-consent {
     clear: both;
-    padding-left: 10px;
+    padding-left: 9px;
 }
 p.comment-form-cookies-consent > label > label {
     opacity: .8;
+    cursor: pointer;
 }
 .mdx-comment-main-input {
     padding-bottom: 24px;
