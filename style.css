@@ -1551,6 +1551,7 @@ p.form-submit {
 }
 .disfir {
     width: 45%;
+    padding-top: 0;
 }
 .disfirright {
     float: right;
@@ -1561,6 +1562,7 @@ p.form-submit {
 }
 .commurl {
     width: 100%;
+    padding-top: 0;
 }
 .moreInComm {
     opacity: 0;
@@ -3362,6 +3364,20 @@ div.mdx-widget.widget_search form div.mdui-textfield {
 }
 #comments .mdui-list-item .mdui-list-item-avatar {
     margin-top: 12px;
+}
+p.comment-form-cookies-consent {
+    clear: both;
+    padding-left: 10px;
+}
+p.comment-form-cookies-consent > label > label {
+    opacity: .8;
+}
+.mdx-comment-main-input {
+    padding-bottom: 24px;
+}
+.mdx-comment-main-input > i {
+    bottom: 24px!important;
+    margin-top: 2px;
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {

@@ -648,4 +648,7 @@ $(function(){
         }
     }
     new mdui.Collapse("#mdx_menu");
+
+    $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
+    document.getElementsByClassName('comment-form-cookies-consent')[0].innerHTML = '<label class="mdui-checkbox">' + document.getElementsByClassName('comment-form-cookies-consent')[0].innerHTML + '</label>';
 })
