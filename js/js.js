@@ -12,6 +12,12 @@ var ticking = false;
 var mdx_style = 1;
 var barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
 var totalHight = $(".theFirstPage").height()*.37 - 20;
+window.ifTwoStyle = false;
+var windowWidth = document.body.clientWidth;
+window.tworowStyleClass = (document.getElementsByTagName("body")[0].className.indexOf('mdx-first-tworows') === -1) ? false : true;
+if(window.tworowStyleClass && (windowWidth > window.innerHeight && windowWidth > 750)){
+    window.ifTwoStyle = true;
+}
 if($(".theFirstPage").length == 0){
     mdx_style = 0;
 }
@@ -32,7 +38,26 @@ window.onscroll = function(){
 window.onresize = function(){
     barHight = $(".theFirstPage").height() - $(".titleBarGobal").height() - 1;
     totalHight = $(".theFirstPage").height()*.37 - 20;
-    closeSearch();
+    if(styleChanged()){
+        closeSearch();
+    }
+}
+function styleChanged(){
+    if(!window.tworowStyleClass){
+        return false;
+    }
+    var currentWidth = document.body.clientWidth;
+    var tworowStyle = false;
+    if(currentWidth > window.innerHeight && currentWidth > 750){
+        tworowStyle = true;
+    }
+    if(tworowStyle !== window.ifTwoStyle){
+        window.ifTwoStyle = tworowStyle;
+        return true;
+    }else{
+        window.ifTwoStyle = tworowStyle;
+        return false;
+    }
 }
 function scrollDiff(){
     if(mdx_style){
