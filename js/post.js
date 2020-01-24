@@ -226,8 +226,7 @@ document.getElementsByClassName("scrollToTop")[0].addEventListener("click", func
 
 //Night Styles
 document.getElementById("tgns").addEventListener("click", function(){
-    document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
-    if(!sessionStorage.getItem('ns_night-styles') || sessionStorage.getItem('ns_night-styles')=='false'){
+    if(!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")){
         sessionStorage.setItem('ns_night-styles', 'true');
         if(colorEnabled){
             metaColor.setAttribute('content',"#212121");
@@ -238,6 +237,7 @@ document.getElementById("tgns").addEventListener("click", function(){
             metaColor.setAttribute('content',nowColor);
         }
     }
+    document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
 }, false);
 
 $(function(){
