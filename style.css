@@ -4074,7 +4074,7 @@ img.wp-smiley {
     html > body {
         background-color: white!important;
     }
-    article p {
+    article p, .mdui-theme-layout-dark article p {
         color: rgba(0,0,0,.8)!important;
     }
     article {
