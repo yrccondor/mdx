@@ -2632,16 +2632,24 @@ article img.mdx-img-in-post {
 .mdx-search-empty {
     color: rgba(0,0,0,.5);
     font-size: 75pt!important;
+    padding-top: 120px;
+    padding-bottom: 40px;
 }
 .mdx-search-empty-text {
-    font-weight: 200;
-    color: rgba(0,0,0,.87);
+    font-weight: normal;
+    color: rgba(0,0,0,.5);
+}
+.mdx-search-empty-title {
+    font-weight: bold;
+}
+.mdx-search-empty-end {
+    padding-bottom: 150px;
 }
 .mdui-theme-layout-dark .mdx-search-empty {
     color: hsla(0,0%,100%,.5);
 }
 .mdui-theme-layout-dark .mdx-search-empty-text {
-    color: hsla(0,0%,100%,.87);
+    color: hsla(0,0%,100%,.5);
 }
 .mdx-sub-menu-a {
     height: 20px!important;
