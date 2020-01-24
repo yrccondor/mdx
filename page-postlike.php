@@ -55,7 +55,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
             </div>
         </div></header>
-        <?php get_template_part('searchform')?>
+        <?php get_template_part('includes/searchform')?>
 
         <?php if($post_style=="0"){if($full_image_url[0]!=""){$mdx_image_url=$full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
         <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
@@ -97,7 +97,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span>
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?><?php if(mdx_get_option('mdx_author_card')=="true"){include_once("includes/author_card.php");}comments_template();?>
             </div>
-<?php get_template_part('toggleposts')?>
+<?php get_template_part('includes/toggleposts')?>
         <div id="indic"></div>
 
       <?php }else if($post_style=="1"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
@@ -139,7 +139,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?>
             </div>
             <?php if(mdx_get_option('mdx_author_card')=="true"){include_once("includes/author_card.php");}comments_template();?>
-<?php get_template_part('toggleposts')?>
+<?php get_template_part('includes/toggleposts')?>
         <div id="indic"></div>
         
       <?php }else if($post_style=="2"){if($full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>

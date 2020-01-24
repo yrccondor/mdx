@@ -38,7 +38,7 @@
         <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
       </div>
     </div></header>
-    <?php get_template_part('searchform')?>
+    <?php get_template_part('includes/searchform')?>
     <div class="theFirstPageSmall mdui-valign mdui-typo mdui-text-color-white-text mdui-color-theme"><h1 class="mdui-center mdui-text-center"><?php printf(__("由 %s 发布"), get_the_author()); ?><br><small><?php if(get_the_author_meta('description')!=""){echo the_author_meta('description');}else{_e('作者归档','mdx');}?></small></h1></div>
     <div class="main-in-other">
       <main class="postList mdui-center" id="postlist">

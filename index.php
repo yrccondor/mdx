@@ -49,7 +49,7 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
         <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
       </div>
     </div></header>
-    <?php get_template_part('searchform')?>
+    <?php get_template_part('includes/searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
     <?php if($mdx_index_show=="0" || $mdx_index_show=="2"){?><div class="theFirstPage LazyLoad" data-original="<?php echo $mdx_index_img;?>"></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
     <div class="mdx-index-img-bg mdui-color-theme"></div>

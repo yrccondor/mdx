@@ -50,7 +50,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                 <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
             </div>
         </div></header>
-        <?php get_template_part('searchform')?>
+        <?php get_template_part('includes/searchform')?>
         <div class="mdui-text-color-white-text mdui-typo-display-1 mdui-valign PostTitlePage" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
         <?php if($full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_img_url!=""){?>
         <div class="PostTitleFillPage mdui-color-theme LazyLoad" data-original="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
