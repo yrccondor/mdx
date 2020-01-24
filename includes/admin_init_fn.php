@@ -8,6 +8,7 @@ $arr = array(
 'mdx_open_side'=>'true',
 'mdx_widget'=>'false',
 'mdx_allow_scale'=>'true',
+'mdx_reduce_motion'=>'true',
 'mdx_img_box'=>'true',
 "mdx_readmore"=>__('去围观','mdx'),
 "mdx_post_money"=>'',
