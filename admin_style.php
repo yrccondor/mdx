@@ -11,7 +11,7 @@ wp_enqueue_script('thickbox');
 //加载css(wp自带)
 wp_enqueue_style('thickbox');
 ?>
-<div class="wrap"><h1><?php _e('MDx主题 - 样式', 'mdx');?></h1>
+<div class="wrap"><h1><?php _e('MDx 主题 - 样式', 'mdx');?></h1>
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	$mdx_color_arr=array(

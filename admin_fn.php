@@ -10,7 +10,7 @@ wp_enqueue_script('thickbox');
 //加载css(wp自带)
 wp_enqueue_style('thickbox');
 ?>
-<div class="wrap"><h1><?php _e('MDx主题 - 功能', 'mdx');?></h1>
+<div class="wrap"><h1><?php _e('MDx 主题 - 功能', 'mdx');?></h1>
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	mdx_update_option('mdx_install', $_POST['mdx_install']);
@@ -114,11 +114,12 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('自动夜间模式', 'mdx');?></th>
 <td>
 <?php $mdx_v_auto_night_style=mdx_get_option('mdx_auto_night_style');?>
-	<fieldset>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="true" <?php if($mdx_v_auto_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="false" <?php if($mdx_v_auto_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天5:30之间打开页面时自动加载夜间模式。优先级低于用户自行设置。', 'mdx');?></p>
-	</fieldset>
+<select class="mdx_stbsip" name="mdx_auto_night_style" id="mdx_auto_night_style">
+	<option value="system" <?php if($mdx_v_auto_night_style=='system'){?>selected="selected"<?php }?>><?php _e("跟随系统", "mdx");?></option>
+	<option value="true" <?php if($mdx_v_auto_night_style=='true'){?>selected="selected"<?php }?>><?php echo _e("跟随时间", "mdx");?></option>
+	<option value="false" <?php if($mdx_v_auto_night_style=='false'){?>selected="selected"<?php }?>><?php echo $falseoff;?></option>
+</select>
+<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>', 'mdx');?></p>
 </td>
 </tr>
 <tr><td> </td></tr>
@@ -327,7 +328,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。', 'mdx');?></p>
 </td>
 </tr>
 <tr>

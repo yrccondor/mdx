@@ -2,7 +2,7 @@ jQuery(document).ready(function(){
     var whichButton=0;
     var mdx_val = jQuery('.mdx_stbs').val();
     if(mdx_val=='false'){
-        jQuery('input.mdx_stbsip').attr("disabled","disabled");
+        jQuery('select.mdx_stbsip').attr("disabled","disabled");
     }
     jQuery('#insert-media-button').click(function(){
         //文本域id
@@ -33,9 +33,9 @@ jQuery(document).ready(function(){
 jQuery(".mdx_stbs").change(function(){
     var mdx_val = jQuery('.mdx_stbs').val();
     if(mdx_val!=='false'){
-        jQuery('input.mdx_stbsip').removeAttr("disabled");
+        jQuery('select.mdx_stbsip').removeAttr("disabled");
     }else if(mdx_val==='false'){
-        jQuery('input.mdx_stbsip').attr("disabled","disabled");
+        jQuery('select.mdx_stbsip').attr("disabled","disabled");
     }
 });
 jQuery(".mdx_apsp").click(function(){

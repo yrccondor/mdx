@@ -649,6 +649,9 @@ $(function(){
     }
     new mdui.Collapse("#mdx_menu");
 
-    $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
-    document.getElementsByClassName('comment-form-cookies-consent')[0].innerHTML = '<label class="mdui-checkbox">' + document.getElementsByClassName('comment-form-cookies-consent')[0].innerHTML + '</label>';
+    var cfcc = document.getElementsByClassName('comment-form-cookies-consent');
+    if(cfcc.length > 0){
+        $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
+        cfcc[0].innerHTML = '<label class="mdui-checkbox">' + cfcc[0].innerHTML + '</label>';
+    }
 })
