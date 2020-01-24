@@ -57,6 +57,7 @@
       var moreinput = "'<?php _e("更多选项","mdx");?>'";
       var morecomment = "<?php _e("加载更多评论","mdx");?>";
       var nomorecomment = "<?php _e("没有更多了","mdx");?>";
+      var ajax_error = "<?php _e("<strong>加载失败：</strong> 未知错误。","mdx");?>";
       <?php if(mdx_get_option('mdx_auto_scroll')=='true'){?>
         ifscr = 1;
       <?php }?>
