@@ -128,6 +128,7 @@ document.getElementById("tgns").addEventListener("click", function(){
         }
     }
 }, false);
+
 $(function(){
     //hot posts
     if(document.getElementsByClassName("mdx-hot-posts").length!==0){
@@ -300,8 +301,7 @@ $(function(){
                 }
             }
             if(mdxIsC){
-                ele.classList.remove('current-menu-item');
-                ele.classList.remove('current_page_item');
+                ele.classList.remove('current-menu-item', 'current_page_item');
                 ele.classList.add('mdui-collapse-item-open');
             }
             mdxIsC = 0;
