@@ -3380,6 +3380,9 @@ p.comment-form-cookies-consent > label > label {
     bottom: 24px!important;
     margin-top: 2px;
 }
+.mdui-snackbar-action {
+    min-width: unset;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
@@ -4086,4 +4089,15 @@ img.wp-smiley {
     article p, article a, #comments, article {
         page-break-inside: auto;
     }
+    .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitle[class*=mdui-color-] {
+        background-color: white!important;
+    }
 }
+@media (prefers-reduced-motion: reduce) {
+    body.mdx-reduce-motion *:not(.mdui-menu):not(.mdui-snackbar):not(.mdui-dialog) {
+        transition: all 0s!important;
+    }
+    body.mdx-reduce-motion .mdui-menu, body.mdx-reduce-motion .mdui-dialog {
+        transform: none;
+    }
+  }

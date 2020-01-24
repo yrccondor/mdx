@@ -358,7 +358,45 @@ $(function(){
         //密码优化
         var inputId = $('form.post-password-form p > label > input').attr('id');
         $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
-})
+
+        if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+            var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+            mrm.addListener(handleMotionChange);
+            handleMotionChange(mrm);
+        }
+    })
+    
+function handleMotionChange(mrm){
+    if(sessionStorage.getItem("mrm_enable") === "user"){
+        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+        return;
+    }
+    if(mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+        if(!sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_1,
+                buttonText: reduce_motion_i18n_2,
+                timeout: 7000,
+                onButtonClick: function(){
+                    sessionStorage.setItem("mrm_enable", "user");
+                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                },
+                position: 'top',
+            });
+            sessionStorage.setItem("mrm_enable", "sys");
+            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+        }
+    }else{
+        if(sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_3,
+                timeout: 5000,
+                position: 'top',
+            });
+        }
+        sessionStorage.removeItem("mrm_enable");
+    }
+}
 
 function afterCloseImgBox(){
     imgRaw.css({"opacity":"1"});

@@ -179,7 +179,45 @@ $(function(){
     });
 
     scrollDiff();
+
+    if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+        mrm.addListener(handleMotionChange);
+        handleMotionChange(mrm);
+    }
 })
+
+function handleMotionChange(mrm){
+    if(sessionStorage.getItem("mrm_enable") === "user"){
+        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+        return;
+    }
+    if(mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+        if(!sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_1,
+                buttonText: reduce_motion_i18n_2,
+                timeout: 7000,
+                onButtonClick: function(){
+                    sessionStorage.setItem("mrm_enable", "user");
+                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                },
+                position: 'top',
+            });
+            sessionStorage.setItem("mrm_enable", "sys");
+            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+        }
+    }else{
+        if(sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_3,
+                timeout: 5000,
+                position: 'top',
+            });
+        }
+        sessionStorage.removeItem("mrm_enable");
+    }
+}
 
 //Search
 document.getElementsByClassName("seai")[0].addEventListener("click", function(){

@@ -28,6 +28,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
 	mdx_update_option('mdx_widget', $_POST['mdx_widget']);
 	mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
+	mdx_update_option('mdx_reduce_motion', $_POST['mdx_reduce_motion']);
 	mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
 	mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
 	mdx_update_option("mdx_post_money", $_POST['mdx_post_money']);
@@ -158,6 +159,17 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_allow_scale" value="true" <?php if($mdx_v_allow_scale=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_allow_scale" value="false" <?php if($mdx_v_allow_scale=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('如果允许用户缩放页面，用户将可以放大页面。这可能会破坏页面结构，但有助于视力障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器对此可能会有不同的表现。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('允许使用减弱动画模式', 'mdx');?></th>
+<td>
+<?php $mdx_v_reduce_motion=mdx_get_option('mdx_reduce_motion');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_reduce_motion" value="true" <?php if($mdx_v_reduce_motion=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_reduce_motion" value="false" <?php if($mdx_v_reduce_motion=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动画。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
