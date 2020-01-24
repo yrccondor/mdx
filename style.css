@@ -3337,6 +3337,9 @@ main .mdx-postlist-simple.mdx-postlist-simple-sta > p {
 body.mdx-first-tworows #mdx-search-anim {
     display: none!important;
 }
+div.mdx-widget.widget_search form div.mdui-textfield {
+    padding-top: 0;
+}
 #comments .mdui-list-item:hover {
     background-color: transparent!important;
 }
