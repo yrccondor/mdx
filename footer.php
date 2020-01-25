@@ -3,9 +3,9 @@
 <?php if($mdx_widget){?><button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple" mdui-drawer="{target:'#mdx-right-drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">&#xe5c3;</i></button><?php }?>
 <footer class="foot mdui-text-center<?php if(mdx_get_option("mdx_styles_footer") === "2"){?> mdx-footer-clean<?php }else if(mdx_get_option("mdx_styles_footer") === "3"){?>  mdx-footer-morden<?php }?>">
   <?php if(mdx_get_option("mdx_styles_footer") === "1"){
-    if(!empty(mdx_get_option('mdx_footer'))){echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));}if(!empty(mdx_get_option('mdx_footer')) && !empty(get_option('zh_cn_l10n_icp_num'))){echo "<br>";}if(!empty(get_option('zh_cn_l10n_icp_num'))){?><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><?php }?><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=mdx_get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://api.lwl12.com/hitokoto/v1?encode=realjson", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){var dataDecode = JSON.parse(xmlHttpReq.responseText)["text"];document.getElementById("k-text").innerText = dataDecode;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';}
+    if(!empty(mdx_get_option('mdx_footer'))){echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));}if(!empty(mdx_get_option('mdx_footer')) && !empty(mdx_get_option('mdx_icp_num'))){echo "<br>";}if(!empty(mdx_get_option('mdx_icp_num'))){?><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo mdx_get_option('mdx_icp_num');?></a><?php }?><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php $mdx_footer_say=mdx_get_option('mdx_footer_say');if($mdx_footer_say!='' && $mdx_footer_say!='--HitokotoAPIActivated--' && $mdx_footer_say!='--HitokotoPoemAPIActivated--'){?><br>&nbsp;<br><?php echo $mdx_footer_say;}else if($mdx_footer_say=='--HitokotoAPIActivated--'){?><br>&nbsp;<br><?php echo '<span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.hitokoto.cn/?encode=text", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){document.getElementById("k-text").innerText = xmlHttpReq.responseText;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';}else if($mdx_footer_say=='--HitokotoPoemAPIActivated--'){?><br>&nbsp;<br><?php echo '<span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.jinrishici.com/all.txt", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){document.getElementById("k-text").innerText = xmlHttpReq.responseText;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';}
   }else if(mdx_get_option("mdx_styles_footer") === "2"){?>
-    <div class="mdx-clean-footer"><?php if(!empty(mdx_get_option('mdx_footer'))){echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));}if(!empty(mdx_get_option('mdx_footer')) && !empty(get_option('zh_cn_l10n_icp_num'))){echo "<br>";}if(!empty(get_option('zh_cn_l10n_icp_num'))){?><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a><?php }?><div class="mdx-copyright">Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></div></div>
+    <div class="mdx-clean-footer"><?php if(!empty(mdx_get_option('mdx_footer'))){echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));}if(!empty(mdx_get_option('mdx_footer')) && !empty(mdx_get_option('mdx_icp_num'))){echo "<br>";}if(!empty(mdx_get_option('mdx_icp_num'))){?><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo mdx_get_option('mdx_icp_num');?></a><?php }?><div class="mdx-copyright">Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></div></div>
   <?php }else if(mdx_get_option("mdx_styles_footer") === "3"){?>
     <div class="mdx-clean-footer">
       <a href="<?php bloginfo('url');?>" class="mdx-footer-title"><?php $mdx_logo_way=mdx_get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=mdx_get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></a>
@@ -15,12 +15,12 @@
       <?php }else if($mdx_footer_say=='--HitokotoAPIActivated--'){?>
         <?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://api.lwl12.com/hitokoto/v1?encode=realjson", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){var dataDecode = JSON.parse(xmlHttpReq.responseText)["text"];document.getElementById("k-text").innerText = dataDecode;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';}?></span>
       <hr>
-      Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php if(!empty(get_option('zh_cn_l10n_icp_num'))){?><div class="mdx-copyright"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo get_option('zh_cn_l10n_icp_num');?></a></div><?php }?>
+      Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php if(!empty(mdx_get_option('mdx_icp_num'))){?><div class="mdx-copyright"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo mdx_get_option('mdx_icp_num');?></a></div><?php }?>
       </div>
   <?php }?>
 </footer>
     </div>
-    <?php if($mdx_widget){?><div id="mdx-right-drawer" class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
+    <?php if($mdx_widget){?><div id="mdx-right-drawer" role="complementary" class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
     <?php
       if(is_active_sidebar('widget_right')){
         dynamic_sidebar('widget_right');
@@ -57,23 +57,10 @@
       var moreinput = "'<?php _e("更多选项","mdx");?>'";
       var morecomment = "<?php _e("加载更多评论","mdx");?>";
       var nomorecomment = "<?php _e("没有更多了","mdx");?>";
-      <?php if(mdx_get_option('mdx_opt_wechat_share') === "true"){?>if (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        WeixinJSBridge.on('menu:share:appmessage', function(argv){
-          WeixinJSBridge.invoke('sendAppMessage',{
-            "appid": '',
-            "img_url": '<?php echo get_site_icon_url(192);?>',
-            "img_width": "200",
-            "img_height": "200",
-            "link": window.location.href.replace(window.location.search, ""),
-            "desc": "<?php $mdx_des=mdx_get_option('mdx_seo_des');$mdx_s_key=mdx_get_option('mdx_seo_key');$mdx_a_des=mdx_get_option('mdx_auto_des');if(is_single()||is_page()){if(post_password_required()){_e('这篇文章受密码保护，输入密码后才能查看。', 'mdx');}else{echo mdx_get_post_excerpt($post, 100);}}else if($mdx_des!=''){echo $mdx_des;}else{bloginfo('description', 'display');}?>",
-            "title": "<?php global $page, $paged;wp_title('-', true, 'right');bloginfo('name');$site_description = get_bloginfo('description', 'display');if($site_description && (is_home() || is_front_page())) echo " - $site_description";if($paged >= 2 || $page >= 2) echo ' - '.sprintf(__('第 %s 页'), max($paged, $page));?>"
-	        }, function(res) {
-	        });
-        });
-      }, false);
-    }
-      <?php }?>
+      var ajax_error = "<?php _e("<strong>加载失败：</strong> 未知错误。","mdx");?>";
+      var reduce_motion_i18n_1 = "<?php _e("检测到减弱动画模式，已为你减弱动画效果","mdx");?>";
+      var reduce_motion_i18n_2 = "<?php _e("撤销","mdx");?>";
+      var reduce_motion_i18n_3 = "<?php _e("减弱动画模式关闭，已启用完整动画效果","mdx");?>";
       <?php if(mdx_get_option('mdx_auto_scroll')=='true'){?>
         ifscr = 1;
       <?php }?>
@@ -131,8 +118,8 @@
       var mdx_si_i18n_3 = '<?php _e('使用微信扫描后在微信内分享','mdx'); ?>';
       var mdx_si_i18n_4 = '<?php _e('点按右上角按钮即可分享','mdx'); ?>';
       var mdx_i18n_password = '<?php _e('密码','mdx'); ?>';
-      var mdx_github_i18n_1 = '<?php _e('在 Github 上查阅','mdx'); ?>';
-      var mdx_github_i18n_2 = '<?php _e('获取 Github 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
+      var mdx_github_i18n_1 = '<?php _e('在 GitHub 上查阅','mdx'); ?>';
+      var mdx_github_i18n_2 = '<?php _e('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
       var mdx_post_i18n_1 = '<?php _e('这个页面没有摘要。','mdx'); ?>';
       var mdx_post_i18n_2 = '<?php _e('前往页面','mdx'); ?>';
       var mdx_post_i18n_3 = '<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>';

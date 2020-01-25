@@ -51,7 +51,7 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 .mdui-theme-layout-dark .mdui-table thead {
     background-color: #212121;
 }
-.mdui-theme-layout-dark .mdui-grid-tile.indexgaid .divimg, .mdui-card.staDivgaid {
+.mdui-theme-layout-dark .mdui-grid-tile.indexgaid .divimg, .mdui-theme-layout-dark .mdui-card.staDivgaid {
     background-color: #1d1d1d!important;
 }
 .mdui-theme-layout-dark .sta-4 {
@@ -75,4 +75,15 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 }
 .mdui-theme-layout-dark .m-title:before {
     background: #000;
+}
+@media screen and (orientation:landscape){
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworow-search {
+        background-color: rgb(37, 37, 37);
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark #mdx-search-anim {
+        background-color: rgb(49, 49, 49);
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworow-search:hover {
+        background-color: rgb(49, 49, 49);
+    }
 }

@@ -3,12 +3,12 @@ var whetherChangeToTop = 0;
 var blogName = $('div.mdui-toolbar > a.mdui-typo-headline').html();
 var postTitle = $('div.mdui-text-color-white-text.mdui-typo-display-1.PostTitlePage').text();
 var blogUrl = $('div.mdui-toolbar > a.mdui-typo-headline').attr("href");
-var metaColor = $("meta[name='theme-color']");
+var metaColor = document.querySelector("meta[name='theme-color']");
 var colorEnabled = false;
-var now_color = '';
+var nowColor = '';
 var imgRaw;
-if(metaColor.length != 0){
-    now_color = $("meta[name='mdx-main-color']").attr('content');
+if(metaColor){
+    nowColor = document.querySelector("meta[name='mdx-main-color']").getAttribute('content');
     colorEnabled = true;
 }
 var ticking = false;
@@ -112,7 +112,7 @@ function mdx_shortcode(){
                     if(dataStars >= 1000){
                         dataStars = Math.round((dataStars/1000)*Math.pow(10, 1))/Math.pow(10, 1)+'k';
                     }
-                    document.getElementById("mdx-github-"+data.full_name).innerHTML='<div class="mdx-github-main"><a href="https://github.com/" ref="nofollow" target="_blank" class="gh-link" title="Github"><svg class="icon mdx-github-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><defs><style/></defs><path d="M950.93 512q0 143.43-83.75 257.97T650.9 928.55q-15.43 2.85-22.6-4.02t-7.17-17.12V786.87q0-55.44-29.7-81.11 32.55-3.44 58.6-10.32t53.68-22.3T750 635.1t30.28-59.98 11.7-86.01q0-69.12-45.13-117.7 21.14-52-4.53-116.58-16.02-5.12-46.3 6.29t-52.6 25.16l-21.72 13.68Q568.54 285.1 512 285.1t-109.71 14.85q-9.15-6.3-24.29-15.43t-47.69-22.02-49.15-7.68q-25.16 64.58-4.02 116.59Q232 419.99 232 489.1q0 48.56 11.7 85.72t30 59.98 46 38.25 53.68 22.3 58.6 10.32q-22.83 20.56-28.02 58.88-12 5.7-25.75 8.56t-32.55 2.85-37.45-12.29T276.48 728q-10.83-18.28-27.72-29.7t-28.3-13.67l-11.42-1.69q-12 0-16.6 2.56t-2.85 6.59 5.12 7.97 7.46 6.88l4.02 2.85q12.58 5.7 24.87 21.72t18 29.11l5.7 13.17q7.46 21.72 25.16 35.1T318.17 826t39.72 4.03 31.74-1.98l13.17-2.27q0 21.73.29 50.84t.3 30.86q0 10.32-7.47 17.12t-22.82 4.02Q240.57 884.6 156.82 770.05T73.07 512.07q0-119.44 58.88-220.3t159.74-159.75T512 73.14t220.3 58.88 159.75 159.75 58.88 220.3z" fill="#fff"/></svg> <span>Github</span></a><br><a href="https://github.com/'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'" ref="nofollow" target="_blank" class="repo-link"><span>'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/</span>"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'</a>'+githubHomepage+'<br><br>★ '+dataStars+'<a href="https://github.com/'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'" ref="nofollow" target="_blank" class="repo-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_github_i18n_1+'">&#xe5c8;</i></a></div>';
+                    document.getElementById("mdx-github-"+data.full_name).innerHTML='<div class="mdx-github-main"><a href="https://github.com/" ref="nofollow" target="_blank" class="gh-link" title="GitHub"><svg class="icon mdx-github-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><defs><style/></defs><path d="M950.93 512q0 143.43-83.75 257.97T650.9 928.55q-15.43 2.85-22.6-4.02t-7.17-17.12V786.87q0-55.44-29.7-81.11 32.55-3.44 58.6-10.32t53.68-22.3T750 635.1t30.28-59.98 11.7-86.01q0-69.12-45.13-117.7 21.14-52-4.53-116.58-16.02-5.12-46.3 6.29t-52.6 25.16l-21.72 13.68Q568.54 285.1 512 285.1t-109.71 14.85q-9.15-6.3-24.29-15.43t-47.69-22.02-49.15-7.68q-25.16 64.58-4.02 116.59Q232 419.99 232 489.1q0 48.56 11.7 85.72t30 59.98 46 38.25 53.68 22.3 58.6 10.32q-22.83 20.56-28.02 58.88-12 5.7-25.75 8.56t-32.55 2.85-37.45-12.29T276.48 728q-10.83-18.28-27.72-29.7t-28.3-13.67l-11.42-1.69q-12 0-16.6 2.56t-2.85 6.59 5.12 7.97 7.46 6.88l4.02 2.85q12.58 5.7 24.87 21.72t18 29.11l5.7 13.17q7.46 21.72 25.16 35.1T318.17 826t39.72 4.03 31.74-1.98l13.17-2.27q0 21.73.29 50.84t.3 30.86q0 10.32-7.47 17.12t-22.82 4.02Q240.57 884.6 156.82 770.05T73.07 512.07q0-119.44 58.88-220.3t159.74-159.75T512 73.14t220.3 58.88 159.75 159.75 58.88 220.3z" fill="#fff"/></svg> <span>GitHub</span></a><br><a href="https://github.com/'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'" ref="nofollow" target="_blank" class="repo-link"><span>'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/</span>"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'</a>'+githubHomepage+'<br><br>★ '+dataStars+'<a href="https://github.com/'+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithuba+"/"+document.getElementById("mdx-github-"+data.full_name).dataset.mdxgithubp+'" ref="nofollow" target="_blank" class="repo-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_github_i18n_1+'">&#xe5c8;</i></a></div>';
                 }, 
                 error: (function(x){
                     return function(){
@@ -180,26 +180,27 @@ function GetQueryString(name){
     var r = window.location.search.substr(1).match(reg);
     if(r!=null)return unescape(r[2]); return null;
 }
+
 //Scroll To the Top
-$(".scrollToTop,.backToTop").click(function(){
+document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function(){
     $("body,html").animate({scrollTop:0},500);
-});
+}, false);
 
 //Night Styles
-$("#tgns").click(function(){
-    $("body").toggleClass("mdui-theme-layout-dark");
-    if(!sessionStorage.getItem('ns_night-styles') || sessionStorage.getItem('ns_night-styles')=='false'){
+document.getElementById("tgns").addEventListener("click", function(){
+    if(!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")){
         sessionStorage.setItem('ns_night-styles', 'true');
         if(colorEnabled){
-            metaColor.attr('content',"#212121");
+            metaColor.setAttribute('content',"#212121");
         }
     }else{
         sessionStorage.setItem('ns_night-styles', 'false');
         if(colorEnabled){
-            metaColor.attr('content',now_color);
+            metaColor.setAttribute('content',nowColor);
         }
     }
-});
+    document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
+}, false);
 
 $(function(){
     if(mdx_comment_ajax && $('#comments-navi>a.prev').attr('href')){
@@ -273,7 +274,7 @@ $(function(){
                 }
             }
             if(colorEnabled){
-                metaColor.attr('content',"#212121");
+                metaColor.setAttribute('content',"#212121");
             }
             $('.mdx-img-viwer').on('load', function(){
                 $('div.mdx-loading-img').remove();
@@ -284,9 +285,9 @@ $(function(){
             $('.mdx-img-viewer img').css({'width':$('.mdx-img-viewer img').attr("data-raww")+"px",'height':$('.mdx-img-viewer img').attr("data-rawh")+"px",'top':$('.mdx-img-viewer img').attr("data-post")+"px",'left':$('.mdx-img-viewer img').attr("data-posl")+"px"});
             if(colorEnabled){
                 if(sessionStorage.getItem('ns_night-styles')!="true"){
-                    metaColor.attr('content',now_color);
+                    metaColor.setAttribute('content',nowColor);
                 }else{
-                    metaColor.attr('content',"#212121");
+                    metaColor.setAttribute('content',"#212121");
                 }
             }
             window.setTimeout("afterCloseImgBox()",200);
@@ -316,7 +317,45 @@ $(function(){
         var inputId = $('form.post-password-form p > label > input').attr('id');
         var inputValue = $('form.post-password-form p > input').attr('value');
         $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">密码</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
-})
+
+        if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+            var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+            mrm.addListener(handleMotionChange);
+            handleMotionChange(mrm);
+        }
+    })
+    
+function handleMotionChange(mrm){
+    if(sessionStorage.getItem("mrm_enable") === "user"){
+        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+        return;
+    }
+    if(mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+        if(!sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_1,
+                buttonText: reduce_motion_i18n_2,
+                timeout: 7000,
+                onButtonClick: function(){
+                    sessionStorage.setItem("mrm_enable", "user");
+                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                },
+                position: 'top',
+            });
+            sessionStorage.setItem("mrm_enable", "sys");
+            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+        }
+    }else{
+        if(sessionStorage.getItem("mrm_enable")){
+            mdui.snackbar({
+                message: reduce_motion_i18n_3,
+                timeout: 5000,
+                position: 'top',
+            });
+        }
+        sessionStorage.removeItem("mrm_enable");
+    }
+}
 
 function afterCloseImgBox(){
     imgRaw.css({"opacity":"1"});
@@ -332,34 +371,49 @@ $('#comment').focus(function(){
 
 
 //Search
-$(".seai").click(function(){
-    $("#SearchBar").show();
+document.getElementsByClassName("seai")[0].addEventListener("click", function(){
+    let searchBarDOM = document.getElementById("SearchBar");
+    searchBarDOM.style.display = "block";
     $(".OutOfsearchBox").fadeIn(300);
-    $("#SearchBar").addClass("mdui-color-theme");
+    searchBarDOM.classList.add("mdui-color-theme");
     $(".fullScreen").fadeIn(300);
     $("#SearchBar > *").animate({opacity:'1'},200);
-    $(".outOfSearch").css('width','75%');
-    $(".seainput").focus();
-    $('body').toggleClass('mdx-search-lock');
+    document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
+    document.getElementsByClassName("seainput")[0].focus();
+    document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
     if(mdx_offline_mode){
-        $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
-        $('.OutOfsearchBox').css('pointer-events','auto');
-        $(".seainput").attr('disabled','disabled');
+        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
+        searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
+        searchBoxDOM.style.pointerEvents = 'auto';
+        document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
     }
-});
-$(".sea-close").click(function(){
-    $(".seainput").blur();
+}, false);
+for(let ele of document.getElementsByClassName("sea-close")){
+    ele.addEventListener("click", closeSearch, false);
+}
+function closeSearch(){
+    document.getElementsByClassName("seainput")[0].blur();
     $("#SearchBar > *").animate({opacity:'0'},200);
     $(".fullScreen").fadeOut(300);
     $(".OutOfsearchBox").fadeOut(300);
-    $(".outOfSearch").css('width','30%');
+    document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
     window.setTimeout("hideBar()",300);
-    $("#SearchBar").removeClass("mdui-color-theme");
-    $('body').toggleClass('mdx-search-lock');
-});
+    document.getElementById("SearchBar").classList.remove("mdui-color-theme");
+    setTimeout(() => {
+        let bodyDOM = document.getElementsByTagName("body")[0];
+        if(bodyDOM.classList.contains('mdx-search-lock')){
+            bodyDOM.classList.toggle('mdx-search-lock');
+        }
+        document.getElementsByClassName("outOfSearch")[0].removeAttribute("style");
+    }, 300);
+};
 
 function hideBar(){
-    $("#SearchBar").hide();
+    document.getElementById("SearchBar").style.display = "none";
+}
+
+function hideBar(){
+    document.getElementById("SearchBar").style.display = "none";
 }
 
 //LazyLoad.init
@@ -441,7 +495,7 @@ if(!mdx_comment_ajax){
     }
 
 //tap tp top
-$('.mdui-typo-headline').click(function(){
+document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function(){
     if(mdx_tapToTop==1){
         $("body,html").animate({scrollTop:0},500);
     }
@@ -449,30 +503,38 @@ $('.mdui-typo-headline').click(function(){
 
 //init menu
 $(function(){
-    var mdx_haveChild = 0;
-    var mdx_is_c = 0;
-    $('#mdx_menu > li').each(function(){
-        if($(this).hasClass('menu-item-has-children')){
-            $(this).addClass('mdui-collapse-item').removeClass('mdui-list-item');
-            $(this).html('<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+$(this).children("a").attr('href')+'">'+$(this).children("a").html()+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+$(this).children("ul").html()+'</ul>');
-             mdx_haveChild = 1;
-            $(this).children("ul").children("li").each(function(){
-                if($(this).hasClass('current-menu-item')){
-                    mdx_is_c = 1;
+    var mdxHaveChild = 0;
+    var mdxIsC = 0;
+    for(let ele of document.querySelectorAll('#mdx_menu > li')){
+        if(ele.classList.contains('menu-item-has-children')){
+            ele.classList.add('mdui-collapse-item');
+            ele.classList.remove('mdui-list-item');
+            ele.innerHTML = '<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+ele.getElementsByTagName("a")[0].getAttribute('href')+'">'+ele.getElementsByTagName("a")[0].innerHTML+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+ele.getElementsByTagName("ul")[0].innerHTML+'</ul>';
+            mdxHaveChild = 1;
+            for(let ul of ele.getElementsByTagName("ul")){
+                for(let li of ul.getElementsByTagName("li")){
+                    if(li.classList.contains('current-menu-item')){
+                        mdxIsC = 1;
+                    }
                 }
-            })
-            if(mdx_is_c){
-                $(this).removeClass('current-menu-item current_page_item').addClass('mdui-collapse-item-open');
             }
-            mdx_is_c = 0;
+            if(mdxIsC){
+                ele.classList.remove('current-menu-item', 'current_page_item');
+                ele.classList.add('mdui-collapse-item-open');
+            }
+            mdxIsC = 0;
         }
-        if(mdx_haveChild){
-            $('#mdx_menu').addClass('mdui-collapse').attr('mdui-collapse','');
+        if(mdxHaveChild){
+            let menuDOM = document.getElementById('mdx_menu');
+            menuDOM.classList.add('mdui-collapse');
+            menuDOM.setAttribute('mdui-collapse','');
         }
-    })
+    }
     new mdui.Collapse("#mdx_menu");
-})
 
-document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
-  item.setAttribute('mdui-panel', '');
-});
+    var cfcc = document.getElementsByClassName('comment-form-cookies-consent');
+    if(cfcc.length > 0){
+        $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
+        cfcc[0].innerHTML = '<label class="mdui-checkbox">' + cfcc[0].innerHTML + '</label>';
+    }
+})

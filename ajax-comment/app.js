@@ -11,7 +11,6 @@ jQuery(document).ready(function(jQuery) {
 			type: jQuery(this).attr('method'),
 			error: function(request) {
 				var t = faAjax;
-				t.createButterbar(request.responseText);
 				$('#submit').removeAttr('disabled');
 				if(request.responseText){
 					mdui.snackbar({
@@ -21,7 +20,7 @@ jQuery(document).ready(function(jQuery) {
 					});
 				}else{
 					mdui.snackbar({
-						message: '<strong>错误：</strong> 未知错误。',
+						message: ajaxcomment.i18n_2,
 						timeout: 5000,
 					    position: 'top',
 				   });
@@ -31,8 +30,9 @@ jQuery(document).ready(function(jQuery) {
 				jQuery('textarea').each(function() {
 					this.value = ''
 				});
+				$('#submit').removeAttr('disabled');
 				mdui.snackbar({
-                 	message: '发射成功！',
+                 	message: ajaxcomment.i18n_1,
 					timeout: 5000,
 					position: 'top',
 				});
@@ -54,9 +54,9 @@ jQuery(document).ready(function(jQuery) {
 
 				} else {
 					if (ajaxcomment.order == 'asc') {
-						jQuery('.' + __list ).append(data); // your comments wrapper
+						jQuery('.' + __list ).append(data);
 					} else {
-						jQuery('.' + __list ).prepend(data); // your comments wrapper
+						jQuery('.' + __list ).prepend(data);
 					}
 				}
 				cancel.style.display = 'none';
@@ -73,17 +73,6 @@ jQuery(document).ready(function(jQuery) {
 	faAjax = {
 		I: function(e) {
 			return document.getElementById(e);
-		},
-		clearButterbar: function(e) {
-			if (jQuery(".butterBar").length > 0) {
-				jQuery(".butterBar").remove();
-			}
-		},
-		createButterbar: function(message) {
-			var t = this;
-			t.clearButterbar();
-			jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
-			setTimeout("jQuery('.butterBar').remove()", 3000);
 		}
 	};
 });

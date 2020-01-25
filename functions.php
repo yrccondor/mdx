@@ -118,10 +118,6 @@ function mdx_js(){
 	wp_register_script('mdx_sl_js', get_template_directory_uri().'/js/lazyload.js', false, '', true);
 	wp_enqueue_script('mdx_jquery');
 	wp_enqueue_script('mdx_mdui_js');
-	if(mdx_get_option("mdx_smooth_scroll")=="true"){
-		wp_register_script('mdx_ss_js', get_template_directory_uri().'/js/smooth.js', false, '', true);
-		wp_enqueue_script('mdx_ss_js');
-	}
 	if(mdx_get_option("mdx_real_search")=="true"){
 		wp_register_script('mdx_rs_js', get_template_directory_uri().'/js/search.js', false, '', true);
 		wp_enqueue_script('mdx_rs_js');
@@ -227,7 +223,7 @@ $GLOBALS['comment'] = $comment;?>
     <div class="mdui-list-item-title"><?php echo get_comment_author_link();?><?php if(user_can($comment->user_id, "update_core")){echo '<span class="mdx-admin">'.__('博主','mdx').'</span>';}?></div>
     <div class="mdui-list-item-text mdui-typo">
     <?php comment_text();?>
-    </div><span class="mdx-reply-time"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')).__('前','mdx');?></span><?php comment_reply_link(array_merge($args,array('reply_text'=>'回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
+    </div><span class="mdx-reply-time"><?php echo human_time_diff(get_comment_time('U'), current_time('timestamp')).__('前','mdx');?></span><?php comment_reply_link(array_merge($args,array('reply_text'=>'<i class="mdui-icon material-icons">&#xe15e;</i> 回复','depth'=>$depth,'max_depth'=>$args['max_depth'])))?></div></li><li class="mdui-divider-inset mdui-m-y-0"></li><li>
 <?php }
 
 //回复的评论加@
@@ -281,7 +277,7 @@ function get_the_link_items($id = null){
 			if(!empty($bookmark->link_rel)){
 				$rel = 'rel="'.$bookmark->link_rel.'" ';
 			}
-			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a rel="nofollow" href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
         $output .= '</div>';
     }
@@ -356,7 +352,8 @@ function mdx_process_image( $matches ) {
 	isset($img['style']) ? $mdx_img_style = ' style="'.$img['style']['value'].'"' : $mdx_img_style = '';
 	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
 	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
-    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$img['class']['value'].' LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
+	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
+    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
     return $html;
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
@@ -597,18 +594,18 @@ function mdx_add_plugin($plugin_array){
 function mdx_post_metaboxes_2() {
     global $post;
 		$meta_box_value = get_post_meta($post->ID, 'informations_value', true);
-		if($meta_box_value==''){
-			$meta_box_value = '-----Nothing-----';
-		}
+		// if($meta_box_value==''){
+		// 	$meta_box_value = '-----Nothing-----';
+		// }
 		//$meta_box_value = $post->ID;
-        echo'<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+        echo '<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
         echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>'.__('
-		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>', 'mdx');
+		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请留空</p>', 'mdx');
 }
 function mdx_post_metaboxes_1() {
     global $post;
         $meta_box_value = get_post_meta($post->ID, 'settings_value', true);
-		echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
+		// echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
 		?>
 		<h4><?php _e('文章主题颜色','mdx');?></h4>
 		<?php $mdx_v_styles=get_post_meta($post->ID, "mdx_styles", true);?>
@@ -675,8 +672,9 @@ function mdx_post_metaboxes_1() {
 	<option value="0" <?php if($mdx_v_post_show=='0' || $mdx_v_post_show==''){?>selected="selected"<?php }?>><?php _e('正常显示', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_post_show=='1'){?>selected="selected"<?php }?>><?php _e('404模式', 'mdx');?></option>
 	<option value="2" <?php if($mdx_v_post_show=='2'){?>selected="selected"<?php }?>><?php _e('隐藏模式', 'mdx');?></option>
+	<option value="3" <?php if($mdx_v_post_show=='3'){?>selected="selected"<?php }?>><?php _e('对游客隐藏模式', 'mdx');?></option>
 	</select>
-	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP 404 头。', 'mdx');?></p>
+	<p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 HTTP 404 头。', 'mdx');?></p>
 	</fieldset>
 	<?php
 }
@@ -686,8 +684,7 @@ function create_meta_box(){
 }
 add_action('admin_menu', 'create_meta_box');
 
-function mdx_save_postdata_1($post_id){
-    global $post;
+function mdx_save_postdata_1($post_id, $post){
         if(!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
             return $post->ID;
         }
@@ -700,16 +697,12 @@ function mdx_save_postdata_1($post_id){
                 return $post->ID;
         }
         $data = $_POST["informations_value"];
-        if(get_post_meta((int)$post->ID, "informations_value") == ""){
-            add_post_meta((int)$post->ID, "informations_value", (string)$data, true);
-		}else{
-            update_post_meta((int)$post->ID, "informations_value", (string)$data);
-		}
+		if(!add_post_meta((int)$post_id, "informations_value", (string)$data, true)){ 
+            update_post_meta((int)$post_id, "informations_value", (string)$data);
+        }
 			$data1 = $_POST["mdx_styles"];
-			if(get_post_meta((int)$post->ID, "mdx_styles") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles", (string)$data1, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles", true)){
-				update_post_meta((int)$post->ID, "mdx_styles", (string)$data1);
+			if(!add_post_meta((int)$post_id, "mdx_styles", (string)$data1, true)){ 
+				update_post_meta((int)$post_id, "mdx_styles", (string)$data1);
 			}
 			$mdx_color_arr=array(
 				'red'=>'#f44336',
@@ -733,16 +726,12 @@ function mdx_save_postdata_1($post_id){
 				'blue-grey'=>'#607d8b',
 				'def'=>'def',
 			);
-			if(get_post_meta((int)$post->ID, "mdx_styles_hex") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_hex", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_hex", $mdx_color_arr[(string)$data1]);
+			if(!add_post_meta((int)$post_id, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_hex", $mdx_color_arr[(string)$data1]);
 			}
 			$data2 = $_POST["mdx_styles_act"];
-			if(get_post_meta((int)$post->ID, "mdx_styles_act") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_act", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_act", (string)$data2);
+			if(!add_post_meta((int)$post_id, "mdx_styles_act", (string)$data2, true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_act", (string)$data2);
 			}
 			$mdx_act_arr=array(
 				'red'=>'#ff5252',
@@ -763,25 +752,19 @@ function mdx_save_postdata_1($post_id){
 				'deep-orange'=>'#ff6e40',
 				'def'=>'def',
 			);
-			if(get_post_meta((int)$post->ID, "mdx_styles_act_hex") == ""){
-				add_post_meta((int)$post->ID, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2], true);
-			}elseif($data != get_post_meta($post->ID, "mdx_styles_act_hex", true)){
-				update_post_meta((int)$post->ID, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2]);
+			if(!add_post_meta((int)$post_id, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2], true)){ 
+				update_post_meta((int)$post_id, "mdx_styles_act_hex", $mdx_act_arr[(string)$data2]);
 			}
 			$data3 = $_POST["mdx_post_style"];
-			if(get_post_meta((int)$post->ID, "mdx_post_style") == ""){
-				add_post_meta((int)$post->ID, "mdx_post_style", (string)$data3, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_post_style", true)){
-				update_post_meta((int)$post->ID, "mdx_post_style", (string)$data3);
+			if(!add_post_meta((int)$post_id, "mdx_post_style", (string)$data3, true)){ 
+				update_post_meta((int)$post_id, "mdx_post_style", (string)$data3);
 			}
 			$data4 = $_POST['mdx_post_show'];
-			if(get_post_meta((int)$post->ID, "mdx_post_show") == ""){
-				add_post_meta((int)$post->ID, "mdx_post_show", (string)$data4, true);
-			}elseif($data != get_post_meta($post->ID, "mdx_post_show", true)){
-				update_post_meta((int)$post->ID, "mdx_post_show", (string)$data4);
+			if(!add_post_meta((int)$post_id, "mdx_post_show", (string)$data4, true)){ 
+				update_post_meta((int)$post_id, "mdx_post_show", (string)$data4);
 			}
 }
-add_action('save_post', 'mdx_save_postdata_1');
+add_action('save_post', 'mdx_save_postdata_1', 10, 2);
 
 function mdx_colored_cloud($text) {
 	$text = preg_replace_callback('/<a (.+?)>/i','mdx_colored_cloud_call_back', $text);

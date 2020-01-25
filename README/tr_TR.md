@@ -11,12 +11,12 @@
 > Basit görünüşlü, güçlü.
 
 <p align="center">
-<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.0-3f51b5.svg?style=flat-square"/>
+<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.5-3f51b5.svg?style=flat-square"/>
 <img alt="sürüm" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="sürümler" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Yazar" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.4%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="İndir" src="https://img.shields.io/badge/download-1.47M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://mdx.flyhigher.top"><img alt="İndir" src="https://img.shields.io/badge/download-2.36M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="Lisans" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=shield"/></a>
 </p>
@@ -40,6 +40,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 
 ## Demo
 
+- [MDx Blog](https://mdxblog.flyhigher.top)
 - [Flyhigher - Çince Demo](https://flyhigher.top)
 - [Hasan Can - Türkçe Demo](https://hasan.im)
 

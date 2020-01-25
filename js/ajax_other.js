@@ -35,7 +35,7 @@ $(function(){
                 });
             }else{
                 mdui.snackbar({
-                    message: '<strong>加载失败：</strong> 未知错误。',
+                    message: ajax_error,
                     timeout: 5000,
                     position: 'top',
                });

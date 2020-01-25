@@ -11,7 +11,7 @@ wp_enqueue_script('thickbox');
 //加载css(wp自带)
 wp_enqueue_style('thickbox');
 ?>
-<div class="wrap"><h1><?php _e('MDx主题 - 样式', 'mdx');?></h1>
+<div class="wrap"><h1><?php _e('MDx 主题 - 样式', 'mdx');?></h1>
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	$mdx_color_arr=array(
@@ -63,6 +63,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 		mdx_update_option('mdx_auto_night_style', 'false');
 	}
 	mdx_update_option('mdx_md2', $_POST['mdx_md2']);
+	mdx_update_option('mdx_md2_font', $_POST['mdx_md2_font']);
 	mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
 	mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
 	mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
@@ -75,6 +76,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_link_rand_order', $_POST['mdx_link_rand_order']);
 	mdx_update_option('mdx_title_med', $_POST['mdx_title_med']);
 	mdx_update_option('mdx_index_img', $_POST['mdx_index_img']);
+	mdx_update_option('mdx_index_img_bg', $_POST['mdx_index_img_bg']);
 	mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
 	mdx_update_option('mdx_side_info', $_POST['mdx_side_info']);
 	mdx_update_option('mdx_side_head', $_POST['mdx_side_head']);
@@ -191,9 +193,20 @@ wp_nonce_field('mdx_options_update');
 <td>
 <?php $mdx_v_md2=mdx_get_option('mdx_md2');?>
 	<fieldset>
-	<label><input type="radio" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<label><input type="radio" class="md2" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" class="md2" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无法保证显示效果达到完美，请谨慎启用。</strong>', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr class="md2_font">
+<th scope="row"><?php _e('Material Design 2 字体', 'mdx');?></th>
+<td>
+<?php $mdx_v_md2_font=mdx_get_option('mdx_md2_font');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_md2_font" value="true" <?php if($mdx_v_md2_font=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_md2_font" value="false" <?php if($mdx_v_md2_font=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该字体仅包含拉丁字符。</strong>', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -230,6 +243,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="2" <?php if($mdx_v_default_style=='2'){?>selected="selected"<?php }?>><?php _e('列表', 'mdx');?></option>
 	<option value="3" <?php if($mdx_v_default_style=='3'){?>selected="selected"<?php }?>><?php _e('干净', 'mdx');?></option>
 	<option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
+	<option value="5" <?php if($mdx_v_default_style=='5'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
 </select>
 <div class="mdx-svg-preview" id="mdx-list-preview"></div>
 <p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>
@@ -242,6 +256,7 @@ wp_nonce_field('mdx_options_update');
 <select name="mdx_index_show" id="mdx_index_show">
 	<option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
 	<option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
+	<option value="2" <?php if($mdx_v_index_show=='2'){?>selected="selected"<?php }?>><?php _e('两栏', 'mdx');?></option>
 </select>
 <div class="mdx-svg-preview" id="mdx-index-preview"></div>
 </td>
@@ -337,6 +352,17 @@ wp_nonce_field('mdx_options_update');
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>
+<tr>
+<th scope="row"><?php _e('增加首页图片文字对比度', 'mdx');?></th>
+<td>
+<?php $mdx_v_index_img_bg=mdx_get_option('mdx_index_img_bg');?>
+<fieldset>
+	<label><input type="radio" name="mdx_index_img_bg" value="true" <?php if($mdx_v_index_img_bg=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_index_img_bg" value="false" <?php if($mdx_v_index_img_bg=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不生效。', 'mdx');?></p>
+</fieldset>
+</td>
+</tr>
 <tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('抽屉菜单顶部展示个人信息', 'mdx');?></th>
@@ -400,7 +426,7 @@ wp_nonce_field('mdx_options_update');
 	<option value="5" <?php if($mdx_v_index_say_size=='5'){?>selected="selected"<?php }?>>H5</option>
 	<option value="6" <?php if($mdx_v_index_say_size=='6'){?>selected="selected"<?php }?>>H6</option>
 </select>
-<p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。', 'mdx');?></p>
+<p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。', 'mdx');?></p>
 </td>
 </tr>
 <tr><td> </td></tr>
@@ -498,14 +524,12 @@ wp_nonce_field('mdx_options_update');
 <tr>
 <th scope="row"><label for="mdx_footer_say"><?php _e('页脚格言', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(mdx_get_option('mdx_footer_say'))?>">
-<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API', 'mdx');?></button>
-<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自 <a href="https://blog.lwl12.com/read/hitokoto-api.html" target="_blank">LWL</a>，虽然此来源较为安全，但还请注意安全风险。', 'mdx');?></p></td>
+<button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API（常规）', 'mdx');?></button>
+<button type="button" id="use-api2" class="button mdx_stbsip7"><?php _e('使用一言 API（古诗词）', 'mdx');?></button>
+<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。', 'mdx');?></p></td>
 </tr>
 <tr>
 	<th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
 	<td><textarea name="mdx_footer" id="mdx_footer" rows="7" cols="50"><?php echo mdx_get_option('mdx_footer')?></textarea>
 	<p class="description"><?php _e('在这里编辑页脚内容。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
-</tr>
-<tr>
-<th scope="row"></th>
-<td><p class="description" id="mdx_des"><?php _e('MDx 主题兼容 WordPress 中文版ICP备案号功能，如使用中文版，请在 <i>WordPress 设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站。留空则不会显示。', 'mdx');?></p></td></tr></table><?php submit_button(); ?></form></div>
+</tr></table><?php submit_button(); ?></form></div>

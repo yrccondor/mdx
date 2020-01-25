@@ -10,7 +10,7 @@ wp_enqueue_script('thickbox');
 //加载css(wp自带)
 wp_enqueue_style('thickbox');
 ?>
-<div class="wrap"><h1><?php _e('MDx主题 - 功能', 'mdx');?></h1>
+<div class="wrap"><h1><?php _e('MDx 主题 - 功能', 'mdx');?></h1>
 <?php
 if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
 	mdx_update_option('mdx_install', $_POST['mdx_install']);
@@ -28,6 +28,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
 	mdx_update_option('mdx_widget', $_POST['mdx_widget']);
 	mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
+	mdx_update_option('mdx_reduce_motion', $_POST['mdx_reduce_motion']);
 	mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
 	mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
 	mdx_update_option("mdx_post_money", $_POST['mdx_post_money']);
@@ -42,9 +43,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	mdx_update_option('mdx_author_card', $_POST['mdx_author_card']);
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
-	mdx_update_option('mdx_smooth_scroll', $_POST['mdx_smooth_scroll']);
 	mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
-	mdx_update_option('mdx_opt_wechat_share', $_POST['mdx_opt_wechat_share']);
 	mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
 	mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
 	mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
@@ -64,6 +63,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_seo_des', htmlentities(stripslashes($_POST['mdx_seo_des'])));
 	mdx_update_option('mdx_head_js', htmlentities(stripslashes($_POST['mdx_head_js'])));
 	mdx_update_option('mdx_footer_js', htmlentities(stripslashes($_POST['mdx_footer_js'])));
+	mdx_update_option('mdx_icp_num', $_POST['mdx_icp_num']);
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -115,11 +115,12 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('自动夜间模式', 'mdx');?></th>
 <td>
 <?php $mdx_v_auto_night_style=mdx_get_option('mdx_auto_night_style');?>
-	<fieldset>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="true" <?php if($mdx_v_auto_night_style=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input<?php if(mdx_get_option('mdx_styles_dark')!=="disable"){echo " disabled";}?> class="mdx_stbsip" type="radio" name="mdx_auto_night_style" value="false" <?php if($mdx_v_auto_night_style=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天5:30之间打开页面时自动加载夜间模式。优先级低于用户自行设置。', 'mdx');?></p>
-	</fieldset>
+<select class="mdx_stbsip" name="mdx_auto_night_style" id="mdx_auto_night_style">
+	<option value="system" <?php if($mdx_v_auto_night_style=='system'){?>selected="selected"<?php }?>><?php _e("跟随系统", "mdx");?></option>
+	<option value="true" <?php if($mdx_v_auto_night_style=='true'){?>selected="selected"<?php }?>><?php echo _e("跟随时间", "mdx");?></option>
+	<option value="false" <?php if($mdx_v_auto_night_style=='false'){?>selected="selected"<?php }?>><?php echo $falseoff;?></option>
+</select>
+<p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>', 'mdx');?></p>
 </td>
 </tr>
 <tr><td> </td></tr>
@@ -162,6 +163,17 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
+<th scope="row"><?php _e('允许使用减弱动画模式', 'mdx');?></th>
+<td>
+<?php $mdx_v_reduce_motion=mdx_get_option('mdx_reduce_motion');?>
+	<fieldset>
+	<label><input type="radio" name="mdx_reduce_motion" value="true" <?php if($mdx_v_reduce_motion=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_reduce_motion" value="false" <?php if($mdx_v_reduce_motion=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动画。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
+<tr>
 <th scope="row"><?php _e('ImgBox', 'mdx');?></th>
 <td>
 <?php $mdx_v_img_box=mdx_get_option('mdx_img_box');?>
@@ -181,7 +193,7 @@ wp_nonce_field('mdx_options_update');
 <th scope="row"><?php _e('赞赏二维码', 'mdx');?></th>
 <td>
 <input name="mdx_post_money" type="text" id="mdx_post_money" value="<?php echo esc_attr(mdx_get_option('mdx_post_money'))?>" class="regular-text">
-<button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button>
+<button type="button" id="insert-media-button" class="button" style="margin-top:5px;display:block"><?php _e('选择图片', 'mdx');?></button>
 <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部显示赞赏按钮。', 'mdx');?></p>
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
@@ -320,17 +332,6 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 </td>
 </tr>
 <tr>
-<th scope="row"><?php _e('使用 Smooth Scroll', 'mdx');?></th>
-<td>
-<?php $mdx_v_smooth_scroll=mdx_get_option('mdx_smooth_scroll');?>
-	<fieldset>
-	<label><input type="radio" name="mdx_smooth_scroll" value="true" <?php if($mdx_v_smooth_scroll=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_smooth_scroll" value="false" <?php if($mdx_v_smooth_scroll=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页面滚动异常。', 'mdx');?></p>
-	</fieldset>
-</td>
-</tr>
-<tr>
 <th scope="row"><label for="mdx_share_area"><?php _e('分享到的服务商', 'mdx');?></label></th>
 <td>
 <?php $mdx_v_share_area=mdx_get_option('mdx_share_area');?>
@@ -339,18 +340,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
 	<option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
 </select>
-<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用', 'mdx');?></p>
-</td>
-</tr>
-<tr>
-<th scope="row"><?php _e('优化微信分享', 'mdx');?></th>
-<td>
-<?php $mdx_v_opt_wechat_share=mdx_get_option('mdx_opt_wechat_share');?>
-	<fieldset>
-	<label><input type="radio" name="mdx_opt_wechat_share" value="true" <?php if($mdx_v_opt_wechat_share=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_opt_wechat_share" value="false" <?php if($mdx_v_opt_wechat_share=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('<strong>如果你的域名已备案，</strong>可以打开此选项以获得更好的微信内分享效果。', 'mdx');?></p>
-	</fieldset>
+<p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。', 'mdx');?></p>
 </td>
 </tr>
 <tr>
@@ -493,5 +483,11 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	<th scope="row"><label for="mdx_footer_js"><?php _e('页尾脚本', 'mdx');?></label></th>
 	<td><textarea name="mdx_footer_js" id="mdx_footer_js" rows="7" cols="50"><?php echo mdx_get_option('mdx_footer_js')?></textarea>
 	<p class="description"><?php _e('在这里插入脚本，会被插入至所有页面最后。', 'mdx');?></p></td>
+</tr>
+<tr><td> </td></tr>
+<tr>
+<th scope="row"><label for="mdx_icp_num"><?php _e('ICP 备案号', 'mdx');?></label></th>
+<td><input name="mdx_icp_num" type="text" id="mdx_icp_num" value="<?php echo esc_attr(mdx_get_option('mdx_icp_num'))?>" class="regular-text">
+<p class="description"><?php _e('在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有用。', 'mdx');?></p></td>
 </tr>
 </table><?php submit_button(); ?></form></div>

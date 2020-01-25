@@ -83,7 +83,7 @@ function readRes(data, ifSession){
         data2.unshift({"title":{"rendered":"无垠"},"date": "Forever","link":"https://flyhigher.top","excerpt":{"rendered":"飞翔的天空无限大"}});
     }
     if(data2.length > 0){
-        for(let i in data2){
+        for(let i = 0; i < data2.length; i++){
             let postTitleInApi = data2[i].title.rendered;
             let postTimeInApi = data2[i].date;
             let postUrlInApi = data2[i].link;
