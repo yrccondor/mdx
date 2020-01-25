@@ -20,7 +20,7 @@
   <?php }?>
 </footer>
     </div>
-    <?php if($mdx_widget){?><div id="mdx-right-drawer" class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
+    <?php if($mdx_widget){?><div id="mdx-right-drawer" role="complementary" class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
     <?php
       if(is_active_sidebar('widget_right')){
         dynamic_sidebar('widget_right');

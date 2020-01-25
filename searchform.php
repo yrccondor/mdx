@@ -1,4 +1,4 @@
-<form action="/" method="GET">
+<form action="/" method="GET" role="search">
     <div class="mdui-textfield">
         <input class="mdui-textfield-input" type="text" name="s" id="mdx-search-widget" value="<?php the_search_query();?>" placeholder="<?php _e('搜索什么...','mdx');?>">
     </div>

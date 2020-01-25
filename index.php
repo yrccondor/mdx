@@ -62,7 +62,7 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
     </div>
     <div class="main">
     <?php if($mdx_index_show=="2"){?>
-      <div class="mdx-tworow-search mdui-valign">
+      <div class="mdx-tworow-search mdui-valign" role="button">
       <i class="mdui-icon material-icons seaicon">&#xe8b6;</i> 搜索什么...
     </div>
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
