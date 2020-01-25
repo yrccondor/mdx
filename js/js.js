@@ -10,14 +10,9 @@ if(metaColor){
 }
 var ticking = false;
 var mdxStyle = 1;
+var currentStyle = 'unset';
 var barHight;
 var totalHight;
-window.ifTwoStyle = false;
-var windowWidth = document.body.clientWidth;
-window.tworowStyleClass = (!document.getElementsByTagName("body")[0].classList.contains('mdx-first-tworows')) ? false : true;
-if(window.tworowStyleClass && (windowWidth > window.innerHeight && windowWidth > 750)){
-    window.ifTwoStyle = true;
-}
 if(document.getElementsByClassName("theFirstPage").length === 0){
     mdxStyle = 0;
 }else{
@@ -42,26 +37,6 @@ window.onresize = function(){
     if(mdxStyle){
         barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
         totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
-    }
-    if(styleChanged()){
-        closeSearch();
-    }
-}
-function styleChanged(){
-    if(!window.tworowStyleClass){
-        return false;
-    }
-    var currentWidth = document.body.clientWidth;
-    var tworowStyle = false;
-    if(currentWidth > window.innerHeight && currentWidth > 750){
-        tworowStyle = true;
-    }
-    if(tworowStyle !== window.ifTwoStyle){
-        window.ifTwoStyle = tworowStyle;
-        return true;
-    }else{
-        window.ifTwoStyle = tworowStyle;
-        return false;
     }
 }
 function scrollDiff(){
@@ -180,12 +155,34 @@ $(function(){
 
     scrollDiff();
 
+    if(document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")){
+        var hsc = window.matchMedia("screen and (orientation:landscape) and (min-width: 750px)");
+        hsc.addListener(handleSearchChange);
+        handleSearchChange(hsc);
+    }
+
     if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
         var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
         mrm.addListener(handleMotionChange);
         handleMotionChange(mrm);
     }
 })
+
+function handleSearchChange(hsc){
+    if(hsc.matches){
+        if(currentStyle === 'tworow'){
+            console.log(currentStyle);
+            closeSearch();
+        }
+        currentStyle = 'single';
+    }else{
+        if(currentStyle === 'single'){
+            console.log(currentStyle);
+            closeSearch();
+        }
+        currentStyle = 'tworow';
+    }
+}
 
 function handleMotionChange(mrm){
     if(sessionStorage.getItem("mrm_enable") === "user"){
