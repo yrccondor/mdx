@@ -3383,6 +3383,9 @@ p.comment-form-cookies-consent > label > label {
 .mdui-snackbar-action {
     min-width: unset;
 }
+.mdx-share-img-dialog .mdui-dialog-content {
+    overflow-y: hidden;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
