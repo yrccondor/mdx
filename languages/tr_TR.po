@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
-"POT-Creation-Date: 2019-10-10 05:33+0300\n"
-"PO-Revision-Date: 2019-10-10 06:03+0300\n"
+"POT-Creation-Date: 2020-01-25 12:18+0300\n"
+"PO-Revision-Date: 2020-01-25 13:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:10 single.php:201
+#: 404.php:12 single.php:210
 msgid "尴尬的是，这个页面不见了"
 msgstr "Üzgünüm, böyle bir sayfa bulunamadı."
 
-#: 404.php:14
+#: 404.php:16
 msgid "前往首页"
 msgstr "Anasayfa dön."
 
-#: 404.php:15 single.php:206 single.php:230
+#: 404.php:17 single.php:215 single.php:236 single.php:256
 msgid "返回上一页"
 msgstr "Geri dön."
 
@@ -37,27 +37,27 @@ msgstr "Geri dön."
 msgid "开启"
 msgstr "Açık"
 
-#: admin_fn.php:4 admin_style.php:4 footer.php:130
+#: admin_fn.php:4 admin_style.php:4 footer.php:117
 msgid "关闭"
 msgstr "Kapalı"
 
 #: admin_fn.php:13 admin_functions.php:7
-msgid "MDx主题 - 功能"
-msgstr "MDx Tema Ayarları"
+msgid "MDx 主题 - 功能"
+msgstr "MDx - Özellikler"
 
-#: admin_fn.php:69 admin_style.php:103
+#: admin_fn.php:69 admin_style.php:105
 msgid "设置已保存。"
 msgstr "Ayarlar kaydedildi."
 
-#: admin_fn.php:75 admin_style.php:109
+#: admin_fn.php:75 admin_style.php:111
 msgid "更改未能保存。"
 msgstr "Değişiklikler kaydedilemedi."
 
-#: admin_fn.php:81 admin_style.php:115
+#: admin_fn.php:81 admin_style.php:117
 msgid "MDx 已发布新版本 "
 msgstr "MDx için güncelleme mevcut."
 
-#: admin_fn.php:81 admin_style.php:115
+#: admin_fn.php:81 admin_style.php:117
 msgid "。<a href=\"/wp-admin/admin.php?page=mdx_about\">重新检查</a>"
 msgstr "<a href=\"/wp-admin/admin.php?page=mdx_about\">Kontrol Et</a>."
 
@@ -99,19 +99,31 @@ msgstr ""
 msgid "自动夜间模式"
 msgstr "Otomatik gece modu geçişi."
 
-#: admin_fn.php:121
+#: admin_fn.php:119
+msgid "跟随系统"
+msgstr "Sistemi Takip Et"
+
+#: admin_fn.php:120
+msgid "跟随时间"
+msgstr "Zamanı Takip Et"
+
+#: admin_fn.php:123
 msgid ""
-"<strong>仅当开启夜间模式功能后此选项方可生效。</strong>开启后，22:30至第二天"
-"5:30之间打开页面时自动加载夜间模式。优先级低于用户自行设置。"
+"<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随"
+"系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</"
+"li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间"
+"模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
-"<strong>Bu seçenek yalnızca gece modu açıksa etkinleşir.</strong> Aktif "
+"<strong>Bu seçenek yalnızca gece modu açıksa etkinleşir.</"
+"strong><br><ul><li><code>Sistemi Takip Et</code>：Kullanıcı bilgisayar "
+"ayarlarına göre gece modunu ayarlar.</li><code>Zamanı Takip Et</code>: Aktif "
 "edildiğinde 22:30 ve 05:30 arasında gece modu otomatik olarak aktifleşir."
 
-#: admin_fn.php:127
+#: admin_fn.php:128
 msgid "网站公告"
 msgstr "Duyurular"
 
-#: admin_fn.php:129
+#: admin_fn.php:130
 msgid ""
 "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "
 "<code>HTML</code> 格式."
@@ -120,21 +132,21 @@ msgstr ""
 "üzerinde görüntülenecektir ve boş bırakırsanız görünmez. <code>HTML</HTML> "
 "biçimi desteklenmektedir."
 
-#: admin_fn.php:132
+#: admin_fn.php:133
 msgid "使用手势打开抽屉菜单"
 msgstr "Sol menüyü kaydırarak aç"
 
-#: admin_fn.php:138
+#: admin_fn.php:139
 msgid "开启后，可以通过从屏幕左侧向中心滑动的方式调出抽屉菜单。"
 msgstr ""
 "Bu seçenek aktif olduğunda mobilde ekranın sol tarafından kaydırarak sol "
 "menüyü açabilirsiniz."
 
-#: admin_fn.php:143
+#: admin_fn.php:144
 msgid "右侧小工具栏"
 msgstr "Sağ menü butonu"
 
-#: admin_fn.php:149
+#: admin_fn.php:150
 msgid ""
 "开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从"
 "屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。"
@@ -142,11 +154,11 @@ msgstr ""
 "Açık olduğunda sayfanın sağ altına sağ menüyü açabilmeniz için kayan buton "
 "ekler. Bu ayar varsayılan olarak kapalıdır."
 
-#: admin_fn.php:154
+#: admin_fn.php:155
 msgid "允许用户缩放页面"
 msgstr "Kullanıcılar sayfaları ölçeklendirebilir"
 
-#: admin_fn.php:160
+#: admin_fn.php:161
 msgid ""
 "如果允许用户缩放页面，用户将可以放大页面。这可能会破坏页面结构，但有助于视力"
 "障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器"
@@ -157,34 +169,47 @@ msgstr ""
 "yardımcı olur. Sayfayı varsayılan yakınlıkta sabit tutmak için bu ayarı "
 "kapatın. (Farklı tarayıcılar bu ayarı gözardı edebilir.)"
 
-#: admin_fn.php:165
+#: admin_fn.php:166
+msgid "允许使用减弱动画模式"
+msgstr "Zayıf animasyon modunu kullanmaya izin ver"
+
+#: admin_fn.php:172
+msgid ""
+"开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动"
+"画。"
+msgstr ""
+"Bunu açtığınızda ziyaretçileriniz bilgisayarında düşük animasyon modunu "
+"aktifleştirdiyse MDx otomatik olarak sayfalarda kullanılan animasyonları "
+"mümkün olduğunca azaltacaktır. (Ziyaretçi taraflı performans sağlar.)"
+
+#: admin_fn.php:177
 msgid "ImgBox"
 msgstr "Lightbox"
 
-#: admin_fn.php:171
+#: admin_fn.php:183
 msgid "开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。"
 msgstr ""
 "Bu ayar açık olduğunda makalelerdeki resimler üzerine tıklandığında daha "
 "büyük bir şekilde görüntülenebilir."
 
-#: admin_fn.php:176
+#: admin_fn.php:188
 msgid "“阅读更多”文本自定义"
 msgstr "\"Devamını Oku\" metnini özelleştir."
 
-#: admin_fn.php:178
+#: admin_fn.php:190
 msgid "在此自定义“阅读更多”按钮上的文本。"
 msgstr "Buradan \"Devamını Oku\" metnini özelleştirebilirsiniz."
 
-#: admin_fn.php:181
+#: admin_fn.php:193
 msgid "赞赏二维码"
 msgstr "Destekle Butonu"
 
-#: admin_fn.php:184 admin_style.php:335 admin_style.php:356 admin_style.php:365
-#: admin_style.php:439
+#: admin_fn.php:196 admin_style.php:350 admin_style.php:382 admin_style.php:391
+#: admin_style.php:465
 msgid "选择图片"
 msgstr "Görsel Seç"
 
-#: admin_fn.php:185
+#: admin_fn.php:197
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部"
 "显示赞赏按钮。"
@@ -192,31 +217,31 @@ msgstr ""
 "Ortam kütüphanenizden veya bilgisayarınızdan bir QR görseli seçip makalenin "
 "altında görüntülenecek beğeni butonu ile okurlarınızdan destek alabilirsiniz."
 
-#: admin_fn.php:190
+#: admin_fn.php:202
 msgid "阅读进度展示"
 msgstr "Okuma ilerleme durumu"
 
-#: admin_fn.php:196
+#: admin_fn.php:208
 msgid "开启后，会在文章/单独页面展示阅读进度。"
 msgstr "Bu ayar açık olduğunda sayfanın okunma durumu takip edilir."
 
-#: admin_fn.php:201
+#: admin_fn.php:213
 msgid "LazyLoad 模式"
 msgstr "LazyLoad Modu"
 
-#: admin_fn.php:205
+#: admin_fn.php:217
 msgid "速度优先"
 msgstr "LazyLoad"
 
-#: admin_fn.php:206
+#: admin_fn.php:218
 msgid "SEO优先（轻度）"
 msgstr "Basit SEO"
 
-#: admin_fn.php:207
+#: admin_fn.php:219
 msgid "SEO优先（重度）"
 msgstr "Güçlü SEO"
 
-#: admin_fn.php:209
+#: admin_fn.php:221
 msgid ""
 "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设"
 "置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先"
@@ -231,11 +256,11 @@ msgstr ""
 "görselleri yine de LazyLoad kullanmaya devam eder. Bu seçenek websitenizin "
 "görüntülenme hızınızı düşürebilir."
 
-#: admin_fn.php:213
+#: admin_fn.php:225
 msgid "转移设备时记录阅读进度"
 msgstr "Okuma İlerlemesini QR Koda Kaydet"
 
-#: admin_fn.php:219
+#: admin_fn.php:231
 msgid ""
 "开启后，文章中通过二维码转移到其他设备阅读时会自动记录阅读进度并滚动。建议在"
 "网页加载速度较快时启用。"
@@ -243,19 +268,19 @@ msgstr ""
 "Bu seçenek aktif olduğunda makale QR kodu aracılığıyla farklı bir cihazda "
 "açılırsa okumaya kalındığı yerden devam edilir. (önerilir)"
 
-#: admin_fn.php:224
+#: admin_fn.php:236
 msgid "文章目录"
 msgstr "Makale Dizini"
 
-#: admin_fn.php:230
+#: admin_fn.php:242
 msgid "开启后，侧边栏会显示文章目录。"
 msgstr "Kenar çubuğunda gece/gündüz modu düğmesini göster."
 
-#: admin_fn.php:235
+#: admin_fn.php:247
 msgid "页面加载进度条"
 msgstr "Sayfa Yüklenmesi İlerleme Çubuğu"
 
-#: admin_fn.php:241
+#: admin_fn.php:253
 msgid ""
 "开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），"
 "页面加载完成后消失。"
@@ -263,51 +288,51 @@ msgstr ""
 "Sayfanın üst kısmında sayfa yüklenirken görüntülenen basit ilerleme "
 "çubuğudur. Sayfa yüklendikten sonra kaybolur."
 
-#: admin_fn.php:247
+#: admin_fn.php:259
 msgid "文章列表详细信息 - 位置1"
 msgstr "Bilgi Çubuğunda İlk Sırada Görünecek Bilgi"
 
-#: admin_fn.php:251
+#: admin_fn.php:263
 msgid "浏览量"
 msgstr "Okunma Sayısı"
 
-#: admin_fn.php:252
+#: admin_fn.php:264
 msgid "发表时间"
 msgstr "Yayınlanma Tarihi"
 
-#: admin_fn.php:253
+#: admin_fn.php:265
 msgid "评论数"
 msgstr "Yorumlarda Ifade Kullanımı"
 
-#: admin_fn.php:254
+#: admin_fn.php:266
 msgid "空"
 msgstr "Boş"
 
-#: admin_fn.php:265
+#: admin_fn.php:277
 msgid "文章列表详细信息 - 位置2"
 msgstr "Bilgi Çubuğunda İkinci Sırada Görünecek Bilgi"
 
-#: admin_fn.php:277
+#: admin_fn.php:289
 msgid "文章列表详细信息 - 位置3"
 msgstr "Bilgi Çubuğunda İlk Sırada Görünecek Bilgi"
 
-#: admin_fn.php:286
+#: admin_fn.php:298
 msgid "详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
 msgstr "Makale kutucuğunun altında göstermek istediğiniz detayları belirtiniz."
 
-#: admin_fn.php:291
+#: admin_fn.php:303
 msgid "文章时间信息"
 msgstr "Makale Tarih Bilgisi"
 
-#: admin_fn.php:295
+#: admin_fn.php:307
 msgid "发布时间"
 msgstr "Yayınlanma Tarihi"
 
-#: admin_fn.php:296
+#: admin_fn.php:308
 msgid "最后编辑时间"
 msgstr "Son Düzenlenme Tarihi"
 
-#: admin_fn.php:298
+#: admin_fn.php:310
 msgid ""
 "选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>"
 "最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。"
@@ -316,15 +341,15 @@ msgstr ""
 "yayınlandığını gösterir.<br> <code>Son Düzenlenme Tarihi</code>, Makalenin "
 "son düzenlendiği tarihi bilgi çubuğunda gösterir."
 
-#: admin_fn.php:302
+#: admin_fn.php:314
 msgid "文末作者信息栏"
 msgstr "Bilgi Çubuğunda Yazar Adını Göster"
 
-#: admin_fn.php:312
+#: admin_fn.php:324
 msgid "使用 Preload 技术加速页面加载"
 msgstr "Önceden Yüklemeyi Kullan"
 
-#: admin_fn.php:318
+#: admin_fn.php:330
 msgid ""
 "开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>"
 "对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。"
@@ -333,90 +358,66 @@ msgstr ""
 "hızlandırabilirsiniz. Bu seçeneği kullanmadan önce Javascript dosyalarını ve "
 "yazı tiplerini farklı bir alan adından çekmediğinizden emin olun."
 
-#: admin_fn.php:323
-msgid "使用 Smooth Scroll"
-msgstr "Smooth Scroll Kullan"
-
-#: admin_fn.php:329
-msgid ""
-"开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页面"
-"滚动异常。"
-msgstr ""
-"Açık olduğunda Smooth Scroll özelliği ektinleşir. Smooth Scroll özelliğini "
-"desteklemeyen bazı tarayıcılarda sorunlara yol açabilir."
-
-#: admin_fn.php:334
+#: admin_fn.php:335
 msgid "分享到的服务商"
 msgstr "Paylaşım Servisleri"
 
-#: admin_fn.php:338
+#: admin_fn.php:339
 msgid "所有服务商"
 msgstr "Tüm Sosyal Servisler"
 
-#: admin_fn.php:339
+#: admin_fn.php:340
 msgid "只有中国国内服务商"
 msgstr "Çin Yerel Sosyal Servisler"
 
-#: admin_fn.php:340
+#: admin_fn.php:341
 msgid "只有国际服务商"
 msgstr "Sadece Global Sosyal Servisler"
 
-#: admin_fn.php:342
+#: admin_fn.php:343
 msgid ""
 "指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、"
 "QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分"
-"享<br>无论如何，“生成分享图”始终启用"
+"享<br>无论如何，“生成分享图”始终启用。"
 msgstr ""
 "Kullanıcılarınızın yazılarınızı paylaşması için paylaşım servislerini aktif "
-"edebilirsiniz. <br> Çin Sosyal Ağları: Weibo, QQ<br>Global Sosyal Ağlar: "
-"Telegram, Twitter, Facebook<br> Bazı sosyal ağların kısıtlamaları nedeniyle "
-"bu seçeneklere eklenmemiştir. Dilerseniz kendiniz ekleyebilirsiniz."
+"edebilirsiniz. <br> Çin Sosyal Ağları: Weibo, QQ, QQ Zone<br>Global Sosyal "
+"Ağlar: Telegram, Twitter, Facebook<br> Paylaşım görseli oluşturma daima "
+"aktif kalacaktır."
 
-#: admin_fn.php:346
-msgid "优化微信分享"
-msgstr "WeChat Paylaşım Optimizasyonu"
-
-#: admin_fn.php:352
-msgid ""
-"<strong>如果你的域名已备案，</strong>可以打开此选项以获得更好的微信内分享效"
-"果。"
-msgstr ""
-"<strong>Alan adınız WeChat'te onaylı ise,</strong> Wechat’ta daha iyi "
-"paylaşım etkisi elde etmek için bu seçeneği açabilirsiniz."
-
-#: admin_fn.php:357
+#: admin_fn.php:347
 msgid "点击顶部栏返回顶部"
 msgstr "Yukarı Dön Butonu"
 
-#: admin_fn.php:363
+#: admin_fn.php:353
 msgid "开启后，点击顶部栏可以返回页面顶部。此设置影响所有页面。</strong>"
 msgstr ""
 "Açık olduğunda sayfanın altına inildiği zaman yukarı dön butonu sayfanın sağ "
 "alt kısmında görüntülenir.</strong>"
 
-#: admin_fn.php:369
+#: admin_fn.php:359
 msgid "首页推荐文章"
 msgstr "Önerilen Makaleler"
 
-#: admin_fn.php:375
+#: admin_fn.php:365
 msgid "开启后，首页会展示推荐文章，请在下方进行设置。"
 msgstr ""
 "Aktif olduğunda ana sayfada önerilen makaleleri görüntüler. Lütfen aşağıdan "
 "seçin."
 
-#: admin_fn.php:380
+#: admin_fn.php:370
 msgid "首页推荐文章数量"
 msgstr "Önerilen Makale Sayısı"
 
-#: admin_fn.php:382
+#: admin_fn.php:372
 msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgstr "Ana sayfada gösterilecek makale sayısı, tam sayı girin."
 
-#: admin_fn.php:385
+#: admin_fn.php:375
 msgid "首页推荐文章分类名"
 msgstr "Önerilen Makaleler Kategorisi "
 
-#: admin_fn.php:387
+#: admin_fn.php:377
 msgid ""
 "首页推荐文章从特定分类获取文章。在此设定首页推荐文章的分类名。当分类不存在"
 "时，将显示最新文章。"
@@ -424,57 +425,57 @@ msgstr ""
 "Önerilen makaleler kısmında görüntülenecek kategori adını buraya giriniz. "
 "(Kategori adını tam olarak giriniz.)"
 
-#: admin_fn.php:390
+#: admin_fn.php:380
 msgid "首页推荐文章模块标题"
 msgstr "Önerilen Makaleler Modülünün Başlığı"
 
-#: admin_fn.php:392
+#: admin_fn.php:382
 msgid "在此设定首页推荐文章模块标题。"
 msgstr ""
 "Bu ayar sayesinde ana sayfada görüntülenecek makaleler modülünün başlığını "
 "ayarlayabilirsiniz."
 
-#: admin_fn.php:395
+#: admin_fn.php:385
 msgid "首页最新文章模块标题"
 msgstr "Son Yazılar Bölümü Başlığı"
 
-#: admin_fn.php:397
+#: admin_fn.php:387
 msgid ""
 "在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
 msgstr ""
 "Ana sayfada görüntülecek son yazılar bölümü başlığını ayarlayın. Bu kısım "
 "yalnızca \"Önerilen Makaleler\" modülü aktif olursa görünür."
 
-#: admin_fn.php:401
+#: admin_fn.php:391
 msgid "文末推荐文章"
 msgstr "Benzer Yazılar"
 
-#: admin_fn.php:407
+#: admin_fn.php:397
 msgid "开启后，文章末会展示最多5篇相似文章。"
 msgstr ""
 "Açık olduğunda makalenin sonunda en fazla 5 adet benzer yazı gösterilir."
 
-#: admin_fn.php:412
+#: admin_fn.php:402
 msgid "文末推荐文章计算方式"
 msgstr "Benzer Makaleleri Gösterme Seçenekleri"
 
-#: admin_fn.php:416
+#: admin_fn.php:406
 msgid "相同标签"
 msgstr "Aynı Etiket"
 
-#: admin_fn.php:417
+#: admin_fn.php:407
 msgid "相同分类"
 msgstr "Aynı Kategori"
 
-#: admin_fn.php:422
+#: admin_fn.php:412
 msgid "文末推荐文章模块标题"
 msgstr "\"Benzer Yazılar\" Başlığı"
 
-#: admin_fn.php:427
+#: admin_fn.php:417
 msgid "实时搜索"
 msgstr "Gerçek zamanlı arama"
 
-#: admin_fn.php:433
+#: admin_fn.php:423
 msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
@@ -483,11 +484,11 @@ msgstr ""
 "<strong>WordPress REST API desteği gerektirir. Bu API varsayılan olarak "
 "açıktır.</strong>"
 
-#: admin_fn.php:438
+#: admin_fn.php:428
 msgid "评论无限加载"
 msgstr "Infinite Scroll (Sonsuz Kaydırma)"
 
-#: admin_fn.php:444
+#: admin_fn.php:434
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。</strong>"
@@ -495,11 +496,11 @@ msgstr ""
 "Açık olduğunda yorumlar sonsuz kaydırmayı kullanacaktır. Bu ayar AJAX ile "
 "desteklenmektedir.</strong>"
 
-#: admin_fn.php:450
+#: admin_fn.php:440
 msgid "广告代码"
 msgstr "Reklam Kodu"
 
-#: admin_fn.php:452
+#: admin_fn.php:442
 msgid ""
 "在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。"
 "<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 "
@@ -513,33 +514,33 @@ msgstr ""
 "<br> Google AdSense otomatik reklamcılığını kullanmayı planlıyorsanız, "
 "lütfen \"İşlev > Özel Kodlar (Sayfa Başı)\" alanını da ayarlayın."
 
-#: admin_fn.php:455
+#: admin_fn.php:445
 msgid "对已登录的用户禁用广告"
 msgstr "Giriş yapan kullanıcılar için reklamları devre dışı bırak"
 
-#: admin_fn.php:459
+#: admin_fn.php:449
 msgid "禁用广告"
 msgstr "Reklamları Devredışı Bırak"
 
-#: admin_fn.php:460
+#: admin_fn.php:450
 msgid "不禁用广告"
 msgstr "Reklamları Aktifleştir"
 
-#: admin_fn.php:466
+#: admin_fn.php:456
 msgid "SEO 关键词"
 msgstr "SEO Anahtar Kelimeleri"
 
-#: admin_fn.php:468
+#: admin_fn.php:458
 msgid "用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。"
 msgstr ""
 "Anahtar kelimeleri ayırmak için virgül kullanın. 5 veya daha az kelime "
 "belirtmeniz önerilir. Kullanmak istemiyorsanız boş bırakabilirsiniz."
 
-#: admin_fn.php:471
+#: admin_fn.php:461
 msgid "自动生成网页描述"
 msgstr "Sayfa Açıklamalarını Otomatik Oluştur"
 
-#: admin_fn.php:477
+#: admin_fn.php:467
 msgid ""
 "开启后，会自动生成 SEO 网页描述。<strong>对首页无效，请在下方输入首页描述。</"
 "strong>"
@@ -547,11 +548,11 @@ msgstr ""
 "Açık olduğunda SEO için sayfa açıklamalarını otomatik oluşturur. <strong>Ana "
 "sayfa için geçersizdir.</strong> Ana sayfa açıklamasını lütfen aşağıya girin."
 
-#: admin_fn.php:482
+#: admin_fn.php:472
 msgid "SEO 描述"
 msgstr "SEO Açıklaması"
 
-#: admin_fn.php:484
+#: admin_fn.php:474
 msgid ""
 "在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面"
 "会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。"
@@ -560,41 +561,60 @@ msgstr ""
 "Oluştur\" seçeneği açık ise bu alan sadece ana sayfa için geçerli olacaktır. "
 "Bu alanı boş bırakırsanız ana sayfa açıklaması boş olacaktır."
 
-#: admin_fn.php:488
+#: admin_fn.php:478
 msgid "页头脚本"
 msgstr "Özel Kodlar (Sayfa Başı)"
 
-#: admin_fn.php:490
+#: admin_fn.php:480
 msgid "在这里插入脚本，会被插入至所有页面头部。"
 msgstr "Buraya yazacağınız kodlar otomatik olarak sayfa başına eklenecektir."
 
-#: admin_fn.php:493
+#: admin_fn.php:483
 msgid "页尾脚本"
 msgstr "Özel Kodlar (Sayfa Sonu)"
 
-#: admin_fn.php:495
+#: admin_fn.php:485
 msgid "在这里插入脚本，会被插入至所有页面最后。"
 msgstr "Buraya yazacağınız kodlar otomatik olarak sayfa sonuna eklenecektir."
 
-#: admin_functions.php:3 admin_functions.php:11
+#: admin_fn.php:489
+msgid "ICP 备案号"
+msgstr "ICP Kayıt Numarası"
+
+#: admin_fn.php:491
+msgid ""
+"在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化"
+"部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有"
+"用。"
+msgstr ""
+"ICP kayıt numarası giriliyse alt bilgi alanında otomatik olarak gösterilecek "
+"ve <i>Çin Halk Cumhuriyeti Sanayi ve Bilgi Teknolojisi Bakanlığı</i> "
+"otomatik olarak linklenecek Göstermek istemiyorsanız boş bırakın. Bu "
+"seçeneği sunucunuz Çin'de yer alıyorsa kullanın."
+
+#: admin_functions.php:3
 msgid "MDx主题"
 msgstr "MDx Ayarları"
 
+#: admin_functions.php:3 admin_functions.php:11
+msgid "MDx 主题"
+msgstr "MDx Teması"
+
 #: admin_functions.php:6 admin_style.php:14
-msgid "MDx主题 - 样式"
-msgstr "MDx - Görünüm Ayarları"
+msgid "MDx 主题 - 样式"
+msgstr "MDx - Stil"
 
 #: admin_functions.php:6
 msgid "样式"
-msgstr "Görünüm"
+msgstr "Stil"
 
 #: admin_functions.php:7
 msgid "功能"
 msgstr "İşlev"
 
 #: admin_functions.php:8 admin_functions.php:62
-msgid "MDx主题 - 关于"
-msgstr "MDx - İşlev Ayarları"
+msgid "MDx 主题 - 关于"
+msgstr "MDx - Hakkında"
 
 #: admin_functions.php:8
 msgid "关于"
@@ -684,49 +704,49 @@ msgstr ""
 "PHP yapılandırma sorununuz nedeniyle MDx lisans anahtarını getiremedi, bu "
 "durum temayı kullanmanıza engel oluşturmaz."
 
-#: admin_style.php:125
+#: admin_style.php:127
 msgid "主题颜色"
 msgstr "Tema Rengi"
 
-#: admin_style.php:149
+#: admin_style.php:151
 msgid "主题颜色会影响所有页面的主色。"
 msgstr "Tema rengi tüm sayfalarda etkili olacaktır."
 
-#: admin_style.php:153
+#: admin_style.php:155
 msgid "强调颜色"
 msgstr "Alt Renkler"
 
-#: admin_style.php:174
+#: admin_style.php:176
 msgid "强调颜色会影响所有页面的强调色。"
 msgstr "Alt renkler temanın birçok alanında etkili olacaktır."
 
-#: admin_style.php:178
+#: admin_style.php:180
 msgid "黑暗主题"
 msgstr "Koyu Tema"
 
-#: admin_style.php:182
+#: admin_style.php:184
 msgid "禁用"
 msgstr "Devredışı"
 
-#: admin_style.php:183
+#: admin_style.php:185
 msgid "启用"
 msgstr "Aktif"
 
-#: admin_style.php:184
+#: admin_style.php:186
 msgid "启用 (OLED)"
 msgstr "Aktif (OLED)"
 
-#: admin_style.php:186
+#: admin_style.php:188
 msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
 msgstr ""
 "Etkinleştirildiğinde, sayfa gece modu ile ilgili ayarları dikkate almaz ve "
 "her zaman Karanlık Tema'yı kullanmaya zorlar."
 
-#: admin_style.php:190
+#: admin_style.php:192
 msgid "Material Design 2 <span class=\"mdx-exp\">实验性</span>"
 msgstr "Materyal Tasarım 2 <span class=\"mdx-exp\">TEST</span>"
 
-#: admin_style.php:196
+#: admin_style.php:198
 msgid ""
 "开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无"
 "法保证显示效果达到完美，请谨慎启用。</strong>"
@@ -735,100 +755,120 @@ msgstr ""
 "deneysel bir özellik olduğunu ve ekranın mükemmel olacağının garantisi "
 "olmadığını lütfen unutmayın, dikkatli olun. </strong>"
 
-#: admin_style.php:202
+#: admin_style.php:203
+msgid "Material Design 2 字体"
+msgstr "Materyal Tasarım 2 Yazı Tipi"
+
+#: admin_style.php:209
+msgid ""
+"开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该"
+"字体仅包含拉丁字符。</strong>"
+msgstr ""
+"Açıldığında, tema Materyal Tasarım 2 yazı stilini kullanacak. <strong>Bu "
+"yazı stili yalnızca Latin karakterler içerir.</strong>"
+
+#: admin_style.php:215
 msgid "移动 Chrome 标题栏颜色"
 msgstr "Chrome Araç Çubuğu Rengi"
 
-#: admin_style.php:208
+#: admin_style.php:221
 msgid "开启后，移动 Chrome 访问时，其标题栏的背景颜色会随主题颜色变化。"
 msgstr ""
 "Mobil platformlarda ve Chrome sekme rengi kodunun geçerli olduğu "
 "platformlarda arka plan rengi otomatik olarak sekme rengine yansır."
 
-#: admin_style.php:213
+#: admin_style.php:226
 msgid "自动隐藏应用栏"
 msgstr "Başlık Çubuğunu Otomatik Gizle"
 
-#: admin_style.php:219
+#: admin_style.php:232
 msgid "开启后，页面向下滚动时应用栏会向上隐藏，向上滚动时会出现。"
 msgstr ""
 "Açık olduğunda sayfa aşağıya kaydırıldığında üst çubuk gizlenir ve sayfa "
 "yukarıya kaldırıldığında tekrar görüntülenir."
 
-#: admin_style.php:225
+#: admin_style.php:238
 msgid "文章列表样式"
-msgstr "Makale Listesi Stili"
+msgstr "Makale Listeleme Stili"
 
-#: admin_style.php:229 admin_style.php:255 functions.php:667
+#: admin_style.php:242 admin_style.php:270 functions.php:664
 msgid "简洁"
 msgstr "Görsel"
 
-#: admin_style.php:230
+#: admin_style.php:243
 msgid "列表"
-msgstr "Sadece Başlık"
+msgstr "Liste"
 
-#: admin_style.php:231
+#: admin_style.php:244
 msgid "干净"
-msgstr "Görsel (Boyutlandırmasız)"
+msgstr "Temiz"
 
-#: admin_style.php:232
+#: admin_style.php:245
 msgid "网格"
-msgstr "Blok"
+msgstr "Grid"
 
-#: admin_style.php:235
+#: admin_style.php:246
+msgid "朴素"
+msgstr "Basit"
+
+#: admin_style.php:249
 msgid "同时影响首页、搜索结果页、归档页的文章列表样式。"
 msgstr "Bu ayar ana sayfa, arama sonuçları ve arşiv sayfasında da etkilidir."
 
-#: admin_style.php:239
+#: admin_style.php:253
 msgid "首页样式"
 msgstr "Ana Sayfa Stili"
 
-#: admin_style.php:243
+#: admin_style.php:257
 msgid "默认"
 msgstr "Varsayılan"
 
-#: admin_style.php:244 admin_style.php:492
+#: admin_style.php:258 admin_style.php:518
 msgid "简单"
 msgstr "Basitleştirilmiş"
 
-#: admin_style.php:250
+#: admin_style.php:259
+msgid "两栏"
+msgstr "İki Sütun"
+
+#: admin_style.php:265
 msgid "文章页样式"
 msgstr "Makale Sayfası Biçimi"
 
-#: admin_style.php:254 functions.php:666
+#: admin_style.php:269 functions.php:663
 msgid "标准"
 msgstr "Standart"
 
-#: admin_style.php:256 functions.php:668
+#: admin_style.php:271 functions.php:665
 msgid "通透"
 msgstr "Şeffaf"
 
-#: admin_style.php:259
+#: admin_style.php:274
 msgid "同时影响文章页、单独页面的样式。"
 msgstr "Makale sayfasının stilini ve alt sayfaları da etkiler."
 
-#: admin_style.php:264
+#: admin_style.php:279
 msgid "文章列表显示文章摘要"
 msgstr "Makale Listesinde Özeti Göster"
 
-#: admin_style.php:270
+#: admin_style.php:285
 msgid ""
 "开启后，文章列表可显示每篇文章的摘要，影响首页和归档页。若关闭则不显示。"
 msgstr "Açık olduğunda makalenin özetini makale listesinde görüntüler."
 
-#: admin_style.php:275
+#: admin_style.php:290
 msgid "文章列表图片高度"
 msgstr "Makale Listesi Yüksekliği"
 
-#: admin_style.php:279
+#: admin_style.php:294
 msgid "自适应"
 msgstr "Responsive (Otomatik)"
 
-#: admin_style.php:280
+#: admin_style.php:295
 msgid "固定宽高比"
 msgstr "Sabit Oran"
 
-#: admin_style.php:282
+#: admin_style.php:297
 msgid ""
 "选择 <code>自适应</code>，文章特色图像可以完全展示。<br>选择 <code>固定宽高比"
 "</code>，文章特色图像可能会只显示部分以保持宽高比，但图像不会被拉伸，适合于图"
@@ -838,11 +878,11 @@ msgstr ""
 "otomatik olarak en iyi orana ölçeklendirilir. Eğer en boy oranını korumak "
 "istiyorsanız <code>Sabit Oran</code> modunu seçin."
 
-#: admin_style.php:286
+#: admin_style.php:301
 msgid "文章无特色图像时显示默认图像"
 msgstr "Görsel Seçilmediyse Varsayılanı Kullan"
 
-#: admin_style.php:292
+#: admin_style.php:307
 msgid ""
 "开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显"
 "示。"
@@ -850,11 +890,11 @@ msgstr ""
 "Makalenin öne çıkan görseli seçilmediyse temanın varsayılan görselini "
 "gösterir. Kapalıyken hiçbir görsel çıkmaz."
 
-#: admin_style.php:297
+#: admin_style.php:312
 msgid "启用友链 Gravatar 支持"
 msgstr "Kardeşlik Sisteminde Gravatı Kullan"
 
-#: admin_style.php:303
+#: admin_style.php:318
 msgid ""
 "开启后，将尝试从备注栏中获取邮箱并将与邮箱对应的 Gravatar 头像作为友情链接图"
 "像。关闭则只使用图片链接。"
@@ -862,29 +902,29 @@ msgstr ""
 "Açıldığında mail adresine kayıtlı Gravatar görselini kullanacaktır. "
 "Varsayılan görüntüleri kullanmak için kapatın."
 
-#: admin_style.php:308
+#: admin_style.php:323
 msgid "友情链接随机顺序"
 msgstr "Rastgele Kardeşlik Bağlantı Sıraları"
 
-#: admin_style.php:314
+#: admin_style.php:329
 msgid "开启后，友情链接将以随机顺序显示。关闭则使用字典序。"
 msgstr ""
 "Açıldığında, kardeşlik bağlantıları rastgele sırayla görüntülenecektir. "
 "Alfabetik sırayı kullanmak için kapatın."
 
-#: admin_style.php:321
+#: admin_style.php:336
 msgid "网页标题计算方式"
 msgstr "Başlık Yapısı"
 
-#: admin_style.php:325
+#: admin_style.php:340
 msgid "WordPress 默认"
 msgstr "WordPress Varsayılanı"
 
-#: admin_style.php:326
+#: admin_style.php:341
 msgid "MDx 优化"
 msgstr "MDx Optimizasyonu"
 
-#: admin_style.php:328
+#: admin_style.php:343
 msgid ""
 "选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容"
 "大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此"
@@ -894,15 +934,15 @@ msgstr ""
 "sayfa başlığı yapısını kullanacaktır.<br><code>MDx Optimizasyonu</code> "
 "seçildiğinde, MDx kendi sayfa başlığı yapısını kullanacaktır."
 
-#: admin_style.php:332
+#: admin_style.php:347
 msgid "首页图片"
 msgstr "Anasayfa Görseli"
 
-#: admin_style.php:335
+#: admin_style.php:350
 msgid "使用必应美图"
 msgstr "Bing Meitu Kullan"
 
-#: admin_style.php:336
+#: admin_style.php:351
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入"
 "到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，可在括号内"
@@ -917,21 +957,33 @@ msgstr ""
 "görselleri için 0, yarının görselleri için -1 ya da dünün görselleri için 1 "
 "ila 16 arasında bir değer girebilirsiniz."
 
-#: admin_style.php:342
+#: admin_style.php:356
+msgid "增加首页图片文字对比度"
+msgstr "Anasayfa görselinin kontrast ayarını yükselt"
+
+#: admin_style.php:362
+msgid ""
+"在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不"
+"生效。"
+msgstr ""
+"Bu ayarı aktifleştirdiğinizde anasayfa görseli çok fazla beyaz alan "
+"içeriyorsa sloganınız düzgün okunamayacaktır. Anasayfa stillerine etki etmez."
+
+#: admin_style.php:368
 msgid "抽屉菜单顶部展示个人信息"
 msgstr "Sol Menüde Bilgileri Görüntüle"
 
-#: admin_style.php:348
+#: admin_style.php:374
 msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
 msgstr ""
 "Açık olduğunda avatar, isim ve kısa açıklama görünecektir. Bunları aşağıdan "
 "ayarlayabilirsiniz."
 
-#: admin_style.php:353
+#: admin_style.php:379
 msgid "抽屉菜单顶部图片"
 msgstr "Sol Menü Görseli"
 
-#: admin_style.php:357
+#: admin_style.php:383
 msgid ""
 "选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图"
 "片，弹出层中的其他选项不会生效。"
@@ -940,47 +992,49 @@ msgstr ""
 "seçebilirsiniz. \"Yazıya dahil et\" butonunu kullanarak görsel "
 "ekleyebilirsiniz."
 
-#: admin_style.php:362
+#: admin_style.php:388
 msgid "抽屉菜单信息头像"
 msgstr "Sol Menü Avatar"
 
-#: admin_style.php:366
+#: admin_style.php:392
 msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
 msgstr "Sağ menü üstünde görüntülenecek küçük avatarı ayarlayın."
 
-#: admin_style.php:371
+#: admin_style.php:397
 msgid "抽屉菜单信息名称"
 msgstr "Sol Menü Üst Bilgi"
 
-#: admin_style.php:377
+#: admin_style.php:403
 msgid "抽屉菜单详细信息"
 msgstr "Sol Menü Alt Bilgi"
 
-#: admin_style.php:380
+#: admin_style.php:406
 msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
 msgstr "Bu kısmı yazacağını üst bilginin hemen altında görüntülenecektir."
 
-#: admin_style.php:385
+#: admin_style.php:411
 msgid "首页格言"
 msgstr "Site Sloganı"
 
-#: admin_style.php:388
+#: admin_style.php:414
 msgid "这句话会展示在首页。"
 msgstr "Bu kısım anasayfa görselinin hemen üzerinde görüntülenecektir."
 
-#: admin_style.php:392
+#: admin_style.php:418
 msgid "首页格言字体大小"
 msgstr "Slogan Boyutu"
 
-#: admin_style.php:403
-msgid "字体大小由 H1 至 H6 依次变小。"
-msgstr "Yazı boyutu H1'den H6'ya kadar küçülen sıralamadadır."
+#: admin_style.php:429
+msgid "字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。"
+msgstr ""
+"Yazı boyutu H1'den H6'ya kadar küçülen sıralamadadır.. Bazı anasayfa "
+"biçimlerinde geçerli değildir."
 
-#: admin_style.php:408
+#: admin_style.php:434
 msgid "评论表情"
 msgstr "Yorumlarda Ifade Kullanımı"
 
-#: admin_style.php:414
+#: admin_style.php:440
 msgid ""
 "开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 "
 "mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
@@ -991,11 +1045,11 @@ msgstr ""
 "emoji-in-comment/\" target=\"_blank\">MDx Emoji</a> makalesini "
 "okuyabilirsiniz."
 
-#: admin_style.php:419 functions.php:685
+#: admin_style.php:445 functions.php:683
 msgid "文末信息"
 msgstr "Makale Sonundaki Bilgiler"
 
-#: admin_style.php:421
+#: admin_style.php:447
 msgid ""
 "在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 "
 "<code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的"
@@ -1007,39 +1061,39 @@ msgstr ""
 "destekler. <code>--PostLink--</code> makalenin başlığını görüntüler, <code>--"
 "PostURL</code> makalenin URL'sini görüntüler. (Büyük/küçük harf duyarlı)"
 
-#: admin_style.php:425
+#: admin_style.php:451
 msgid "顶部栏显示内容"
 msgstr "Üst Çubuk İçeriği"
 
-#: admin_style.php:429
+#: admin_style.php:455
 msgid "博客名称"
 msgstr "Blog Adı"
 
-#: admin_style.php:430
+#: admin_style.php:456
 msgid "自定义 Logo"
 msgstr "Özel Logo"
 
-#: admin_style.php:431
+#: admin_style.php:457
 msgid "自定义名称"
 msgstr "Özel Yazı"
 
-#: admin_style.php:436
+#: admin_style.php:462
 msgid "顶部栏 Logo"
 msgstr "Logo"
 
-#: admin_style.php:440
+#: admin_style.php:466
 msgid "选择一张图片作为网站 Logo。"
 msgstr "Logo olarak eklemek için bir görsel seçin."
 
-#: admin_style.php:445
+#: admin_style.php:471
 msgid "顶部栏自定义名称"
 msgstr "Navbar Yazısı"
 
-#: admin_style.php:452
+#: admin_style.php:478
 msgid "Safari Touch Bar 图标支持"
 msgstr "Safari Touch Bar Simgesi"
 
-#: admin_style.php:459
+#: admin_style.php:485
 msgid ""
 "开启后会启用对 Safari Touch Bar 图标的支持，请在下方完成相关设置。<a href="
 "\"https://developer.apple.com/library/content/documentation/"
@@ -1051,51 +1105,51 @@ msgstr ""
 "library/content/documentation/AppleApplications/Reference/SafariWebContent/"
 "pinnedTabs/pinnedTabs.html\" target=\"_blank\"Bilgi Edin</a>"
 
-#: admin_style.php:463
+#: admin_style.php:489
 msgid "Touch Bar 图标地址"
 msgstr "Touch Bar Simgesi URL"
 
-#: admin_style.php:465
+#: admin_style.php:491
 msgid ""
 "请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为\"0 0 "
 "16 16\"。"
 msgstr "Touch Bar simgesini ayarlayın. Görsel SVG biçiminde olmalıdır."
 
-#: admin_style.php:468
+#: admin_style.php:494
 msgid "Touch Bar 图标背景颜色"
 msgstr "Touch Bar Arkaplan Rengi"
 
-#: admin_style.php:470
+#: admin_style.php:496
 msgid "使用当前主题颜色"
 msgstr "Tema Rengini Ayarla"
 
-#: admin_style.php:471
+#: admin_style.php:497
 msgid "请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。"
 msgstr "Touch Bar simgesinin arka plan rengini seçin."
 
-#: admin_style.php:475
+#: admin_style.php:501
 msgid "多彩标签云"
 msgstr "Renkli Etiket Bulutu"
 
-#: admin_style.php:481
+#: admin_style.php:507
 msgid "开启后，标签云页面输出的标签会带有随机颜色，反之为同一颜色。"
 msgstr ""
 "Açık olduğunda etiket bulutu sayfasındaki etiketler rastgele renklerde "
 "görüntülenir."
 
-#: admin_style.php:487
+#: admin_style.php:513
 msgid "页脚样式"
 msgstr "Alt Kısım Stili"
 
-#: admin_style.php:491
+#: admin_style.php:517
 msgid "传统"
 msgstr "Geleneksel"
 
-#: admin_style.php:493
+#: admin_style.php:519
 msgid "现代"
 msgstr "Modern"
 
-#: admin_style.php:495
+#: admin_style.php:521
 msgid ""
 "在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</"
 "strong>"
@@ -1103,78 +1157,76 @@ msgstr ""
 "Alt kısım stilini belirleyin. <strong>Eğer \"Basitleştirilmiş\" stili "
 "seçerseniz alt kısım mottosu görüntülenmez</strong>"
 
-#: admin_style.php:499
+#: admin_style.php:525
 msgid "页脚格言"
 msgstr "Footer Bilgisi"
 
-#: admin_style.php:501
-msgid "使用一言 API"
-msgstr "Hitokoto API"
+#: admin_style.php:527
+msgid "使用一言 API（常规）"
+msgstr "Talk API'sini Kullan (Genel)"
 
-#: admin_style.php:502
+#: admin_style.php:528
+msgid "使用一言 API（古诗词）"
+msgstr "One Word API'sini Kullan (Antik Şiir)"
+
+#: admin_style.php:529
 msgid ""
 "这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次"
-"页面刷新后都会显示不同的格言。此 API 来自 <a href=\"https://blog.lwl12.com/"
-"read/hitokoto-api.html\" target=\"_blank\">LWL</a>，虽然此来源较为安全，但还"
-"请注意安全风险。"
+"页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。"
 msgstr ""
-"Aktif olduğunda Hitokoto API'si üzerinden sayfa her yüklendiğinde rastgele "
-"özlü sözler gösterir. (tavsiye edilmez)"
+"Aktif olduğunda API'ler üzerinden sayfa her yüklendiğinde rastgele özlü "
+"sözler gösterir. (tavsiye edilmez)"
 
-#: admin_style.php:505
+#: admin_style.php:532
 msgid "页脚内容"
 msgstr "Footer Bilgi Alanı"
 
-#: admin_style.php:507
+#: admin_style.php:534
 msgid "在这里编辑页脚内容。支持 <code>HTML</code> 格式."
 msgstr ""
 "Footer içeriğini buradan ayarlayabilirsiniz. <code>HTML</code> formatını "
 "destekler."
 
-#: admin_style.php:511
-msgid ""
-"MDx 主题兼容 WordPress 中文版ICP备案号功能，如使用中文版，请在 <i>WordPress "
-"设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 <i>中华人民共和"
-"国工业和信息化部</i> 网站。留空则不会显示。"
-msgstr ""
-"MDx, WordPress Çin ICP servisi ile uyumludur. Eğer çince sürümü "
-"kullanıyorsanız <i>WordPress Ayarları - Genel</i> kısmından kayıt numaranızı "
-"ekleyiniz. Eğer bu alan doldurulursa MDx otomatik olarak Çin Bilgi "
-"Teknolojileri Bakanlığı web sitesinden bilgileri alacaktır. Kullanmak "
-"istemiyorsanız boş bırakın."
+#: ajax-comment/main.php:20
+msgid "发射成功！"
+msgstr "Başlatma Başarılı!"
 
-#: ajax-comment/main.php:57
+#: ajax-comment/main.php:21
+msgid "<strong>错误：</strong> 未知错误。"
+msgstr "<strong>Hata:</strong> Bilinmiyor."
+
+#: ajax-comment/main.php:60
 msgid "刚刚"
-msgstr "sadece"
+msgstr "Hemen şimdi"
 
-#: archive.php:16 archive.php:26 author.php:16 author.php:26 category.php:16
-#: category.php:26 index.php:27 index.php:37 page-links.php:28
-#: page-links.php:38 page-postlike.php:30 page-postlike.php:40 page-tags.php:28
-#: page-tags.php:38 page-timeline.php:28 page-timeline.php:38 page.php:22
-#: page.php:32 search.php:16 search.php:26 single.php:38 single.php:48
+#: archive.php:18 archive.php:29 author.php:18 author.php:29 category.php:18
+#: category.php:29 index.php:29 index.php:40 page-links.php:30
+#: page-links.php:41 page-postlike.php:32 page-postlike.php:43 page-tags.php:30
+#: page-tags.php:41 page-timeline.php:30 page-timeline.php:41 page.php:24
+#: page.php:35 search.php:18 search.php:29 single.php:40 single.php:51
 msgid "切换日间/夜间模式"
 msgstr "Gece/Gündüz Modu"
 
-#: archive.php:40 category.php:40
+#: archive.php:44 category.php:44
 msgid "文章归档"
 msgstr "Makale Arşivi"
 
-#: archive.php:71 author.php:71 category.php:70 index.php:89 search.php:72
+#: archive.php:78 author.php:78 category.php:77 index.php:105 search.php:79
 msgid "加载更多"
 msgstr "Devamını Göster"
 
-#: author.php:40
+#: author.php:44
 #, php-format
 msgid "由 %s 发布"
 msgstr "Yazar: %s"
 
-#: author.php:40
+#: author.php:44
 msgid "作者归档"
 msgstr "Yazar Arşivi"
 
 #: comments.php:9
 #, php-format
-msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论."
+msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论。"
 msgstr "Yorum yapabilmek için <a href=\"%s\">giriş yap</a>malısın."
 
 #: comments.php:22
@@ -1193,9 +1245,17 @@ msgstr "Bir şeyler yaz..."
 msgid "昵称"
 msgstr "İsim"
 
+#: comments.php:28
+msgid "昵称不能为空"
+msgstr "Ad boş bırakılamaz"
+
 #: comments.php:30
 msgid "邮箱"
 msgstr "E-Mail"
+
+#: comments.php:30
+msgid "请按格式填写邮箱"
+msgstr "Email adresini formata uygun girin."
 
 #: comments.php:32
 msgid "网站（如果有）http(s)://"
@@ -1243,71 +1303,75 @@ msgstr "Daha fazla yorum yükle"
 msgid "没有更多了"
 msgstr "Daha fazlası yok"
 
-#: footer.php:69 header.php:37 header.php:44 header.php:49
-#: template-parts/content-3.php:5
-msgid "这篇文章受密码保护，输入密码后才能查看。"
-msgstr ""
-"Bu makale parola korumalı ve yalnızca bir parola girdikten sonra "
-"görüntülenebilir."
+#: footer.php:60
+msgid "<strong>加载失败：</strong> 未知错误。"
+msgstr "<strong>Yükleme başarısız:</strong> Bilinmeyen hata."
 
-#: footer.php:70 header.php:18 header.php:30 header.php:43
-#, php-format
-msgid "第 %s 页"
-msgstr "%s. sayfa"
+#: footer.php:61
+msgid "检测到减弱动画模式，已为你减弱动画效果"
+msgstr "Animasyon algılama modu zayıflatıldı."
 
-#: footer.php:95
+#: footer.php:62
+msgid "撤销"
+msgstr "Geri Al"
+
+#: footer.php:63
+msgid "减弱动画模式关闭，已启用完整动画效果"
+msgstr "Zayıflatılmış animasyon modu kapalı, tam animasyon modu etkin."
+
+#: footer.php:82
 msgid "搜索结果："
 msgstr "Arama sonuçları: "
 
-#: footer.php:99
+#: footer.php:86
 msgid "作者归档："
 msgstr "Yazar arşivi: "
 
-#: footer.php:103
+#: footer.php:90
 msgid "文章归档："
 msgstr "Makale arşivi: "
 
-#: footer.php:129
+#: footer.php:116
 msgid "长按/右键保存图片"
 msgstr "Görseli kaydetmek için uzun dokunun / sağ klik yapın"
 
-#: footer.php:131
+#: footer.php:118
 msgid "使用微信扫描后在微信内分享"
 msgstr "WeChat'te taradıktan sonra paylaş"
 
-#: footer.php:132
+#: footer.php:119
 msgid "点按右上角按钮即可分享"
 msgstr "Paylaşmak için sağ üstteki butona tıkla"
 
-#: footer.php:133
+#: footer.php:120
 msgid "密码"
 msgstr "Parola"
 
-#: footer.php:134
-msgid "在 Github 上查阅"
+#: footer.php:121
+msgid "在 GitHub 上查阅"
 msgstr "GitHub'da Görüntüle"
 
-#: footer.php:135
-msgid "获取 Github 仓库信息时出现问题<br>尝试直接访问"
+#: footer.php:122
+msgid "获取 GitHub 仓库信息时出现问题<br>尝试直接访问"
 msgstr "GitHub verilerinde bir sorun oluştu.<br> Doğrudan bağlanmayı deneyin."
 
-#: footer.php:136
+#: footer.php:123
 msgid "这个页面没有摘要。"
 msgstr "Bu sayfanın özeti yok."
 
-#: footer.php:137
+#: footer.php:124
 msgid "前往页面"
 msgstr "Sayfaya git"
 
-#: footer.php:138
+#: footer.php:125
 msgid "获取页面信息时出现问题<br>尝试直接访问"
 msgstr "Sayfa bilgisi alınırken bir hata oluştu.<br>Tekrar deneyin."
 
-#: footer.php:139
+#: footer.php:126
 msgid "菜单"
 msgstr "Menu"
 
-#: footer.php:140
+#: footer.php:127
 msgid "目录"
 msgstr "Navigasyon"
 
@@ -1324,147 +1388,164 @@ msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调�
 msgstr ""
 "Sayfanın sağ tarafında bulunmakta, kaydırarak veya buton ile açılabilir."
 
-#: functions.php:227
+#: functions.php:223
 msgid "博主"
 msgstr "Blogger"
 
-#: functions.php:230
+#: functions.php:226
 msgid "前"
 msgstr " önce"
 
-#: functions.php:297
+#: functions.php:293
 msgid "nofollow"
 msgstr "nofollow"
 
-#: functions.php:307
+#: functions.php:303
 msgid "添加 <code>nofollow</code> 属性"
 msgstr "<code>nofollow</code> Özelliği Ekle"
 
-#: functions.php:376
+#: functions.php:373
 msgid "首页"
 msgstr "Anasayfa"
 
-#: functions.php:432
+#: functions.php:429
 #, php-format
 msgid "搜索结果： %s"
 msgstr "Arama sonuçları: %s"
 
-#: functions.php:436
+#: functions.php:433
 #, php-format
 msgid "标签存档 %s"
 msgstr "Etiket arşivi: %s"
 
-#: functions.php:442
+#: functions.php:439
 #, php-format
 msgid "作者存档 %s"
 msgstr "Yazar arşivi: %s"
 
-#: functions.php:446
+#: functions.php:443
 msgid "什么也没找到"
 msgstr "Hiç bir şey bulunamadı"
 
-#: functions.php:451
+#: functions.php:448
 #, php-format
 msgid "( 第 %s 页 )"
 msgstr "(sayfa %s)"
 
-#: functions.php:458
+#: functions.php:455
 msgid "被折叠内容"
 msgstr "Katlanmış İçerik"
 
-#: functions.php:478
+#: functions.php:475
 msgid "警告"
 msgstr "Uyarı"
 
-#: functions.php:605
+#: functions.php:602
 msgid ""
 "\n"
 "\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟随全"
-"局设置请输入<code>-----Nothing-----</code>。无论如何，请不要留空</p>"
+"局设置请留空</p>"
 msgstr ""
 "\n"
-"\t\t<p class=\"description\">Bu makaleye farklı bir son metin eklemek "
-"isterseniz buraya girin. Varsayılan ayarları kullanmak için lütfen "
-"\"<code>-----Nothing-----</code>\" yazın. Boş bırakmayın.</p>"
+"\t\t<p class=\"description\">Bu makale için ayrı mesajlar ayarlayın ya da "
+"global ayarlar için boş bırakın.</p>"
 
-#: functions.php:613
+#: functions.php:610
 msgid "文章主题颜色"
 msgstr "Makale Teması Rengi"
 
-#: functions.php:616 functions.php:642 functions.php:665
+#: functions.php:613 functions.php:639 functions.php:662
 msgid "跟随全局设置"
 msgstr "Varsayılan ayarları kullan"
 
-#: functions.php:637
+#: functions.php:634
 msgid "在这里为这篇文章设置单独的主题颜色。"
 msgstr "Bu makale için farklı bir tema rengi seçebilirsiniz."
 
-#: functions.php:639
+#: functions.php:636
 msgid "文章强调色"
 msgstr "Vurgu Renkleri"
 
-#: functions.php:660
+#: functions.php:657
 msgid "在这里为这篇文章设置单独的强调色。"
 msgstr "Bu makale için farklı bir vurgu rengi seçebilirsiniz."
 
-#: functions.php:662
+#: functions.php:659
 msgid "文章样式"
 msgstr "Makale Stili"
 
-#: functions.php:670
+#: functions.php:667
 msgid "在这里为这篇文章设置单独的样式。"
 msgstr "Bu makale için farklı bir stil seçebilirsiniz."
 
-#: functions.php:672
+#: functions.php:669
 msgid "文章展示模式"
 msgstr "Makale Görüntüleme Modu"
 
-#: functions.php:675
+#: functions.php:672
 msgid "正常显示"
 msgstr "Normal görüntüleme"
 
-#: functions.php:676
+#: functions.php:673
 msgid "404模式"
 msgstr "404 görüntüleme"
 
-#: functions.php:677
+#: functions.php:674
 msgid "隐藏模式"
 msgstr "Gizli görüntüleme"
 
-#: functions.php:679
+#: functions.php:675
+msgid "对游客隐藏模式"
+msgstr "Ziyaretçilerden Gizleme Modu"
+
+#: functions.php:677
 msgid ""
 "在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页"
 "面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显"
-"示”<br>但无论哪种模式，这篇文章都可以在首页找到或是被搜索到，且不会发送 HTTP "
-"404 头。"
+"示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用"
+"前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 "
+"HTTP 404 头。"
 msgstr ""
 "Bu makalenin görüntülenme modunu seçebilirsiniz.<br>404 Modu: Bu sayfaya "
 "girildiğinde 404 hatasını gösterir.<br>Gizli Mod: Bu sayfaya girildiğinde "
 "\"Bu makale, ilgili yasalar ve düzenlemeler nedeniyle şimdilik erişime "
-"kapalıdır.\" ifadesini gösterecektir."
+"kapalıdır.\" ifadesini gösterecektir. <br>İlk iki modu kullanıyorsanız "
+"makaleler anasayfada bulunur ya da aranabilir. Fakat HTTP 404 başlığı "
+"gönderilmez."
 
-#: functions.php:684
+#: functions.php:682
 msgid "文章设置"
 msgstr "Makale Ayarları"
 
-#: includes/admin_init_fn.php:9 includes/update.php:305 includes/update.php:358
-#: includes/update.php:411 includes/update.php:465
+#: header.php:21 header.php:33 header.php:46
+#, php-format
+msgid "第 %s 页"
+msgstr "%s. sayfa"
+
+#: header.php:40 header.php:47 header.php:52 template-parts/content-3.php:5
+msgid "这篇文章受密码保护，输入密码后才能查看。"
+msgstr ""
+"Bu makale parola korumalı ve yalnızca bir parola girdikten sonra "
+"görüntülenebilir."
+
+#: includes/admin_init_fn.php:13 includes/update.php:345
+#: includes/update.php:401 includes/update.php:457 includes/update.php:514
 msgid "去围观"
 msgstr "Okuyucuları Görüntüle"
 
-#: includes/admin_init_fn.php:30 includes/admin_init_fn.php:34
-#: includes/update.php:142 includes/update.php:182 includes/update.php:219
-#: includes/update.php:225 includes/update.php:264 includes/update.php:270
-#: includes/update.php:312 includes/update.php:318 includes/update.php:365
-#: includes/update.php:371 includes/update.php:418 includes/update.php:424
-#: includes/update.php:472 includes/update.php:478
+#: includes/admin_init_fn.php:32 includes/admin_init_fn.php:36
+#: includes/update.php:170 includes/update.php:213 includes/update.php:253
+#: includes/update.php:259 includes/update.php:301 includes/update.php:307
+#: includes/update.php:352 includes/update.php:358 includes/update.php:408
+#: includes/update.php:414 includes/update.php:464 includes/update.php:470
+#: includes/update.php:521 includes/update.php:527
 msgid "推荐文章"
 msgstr "Öne Çıkan Makaleler"
 
-#: includes/admin_init_fn.php:31 includes/update.php:143
-#: includes/update.php:183 includes/update.php:226 includes/update.php:271
-#: includes/update.php:319 includes/update.php:372 includes/update.php:425
-#: includes/update.php:479
+#: includes/admin_init_fn.php:33 includes/update.php:171
+#: includes/update.php:214 includes/update.php:260 includes/update.php:308
+#: includes/update.php:359 includes/update.php:415 includes/update.php:471
+#: includes/update.php:528
 msgid "最新文章"
 msgstr "Son Makaleler"
 
@@ -1476,6 +1557,14 @@ msgstr "Yazarın web sitesini ziyaret edin"
 msgid "文章作者"
 msgstr "Yazar"
 
+#: includes/same_posts.php:23 includes/same_posts.php:42 index.php:72
+msgid "前往阅读"
+msgstr "Devamını Oku"
+
+#: includes/searchform.php:5 searchform.php:3
+msgid "搜索什么..."
+msgstr "Neyi aramıştınız?"
+
 #: includes/share_cn.php:2
 msgid "分享到 微博"
 msgstr "Weibo'da Paylaş"
@@ -1486,9 +1575,10 @@ msgstr "WeChat'te Paylaş"
 
 #: includes/share_cn.php:8 template-parts/content-1.php:5
 #: template-parts/content-1.php:52 template-parts/content-2.php:4
-#: template-parts/content-3.php:56 template-parts/content-first-1.php:5
-#: template-parts/content-first-1.php:52 template-parts/content-first-2.php:4
-#: template-parts/content-first-3.php:5 template-parts/content-first-3.php:56
+#: template-parts/content-3.php:56 template-parts/content-5.php:8
+#: template-parts/content-first-1.php:5 template-parts/content-first-1.php:52
+#: template-parts/content-first-2.php:4 template-parts/content-first-3.php:5
+#: template-parts/content-first-3.php:56 template-parts/content-first-5.php:8
 msgid "这篇文章受密码保护，输入密码才能看哦"
 msgstr "Bu makale parola korumalı, makaleyi görmek için parolayı girin"
 
@@ -1512,32 +1602,36 @@ msgstr "Facebook'da Paylaş"
 msgid "分享到 Twitter"
 msgstr "Twitter'da Paylaş"
 
-#: index.php:59 same_posts.php:23 same_posts.php:42
-msgid "前往阅读"
-msgstr "Devamını Oku"
+#: includes/toggleposts.php:11 includes/toggleposts.php:47
+msgid "上一篇"
+msgstr "Önceki"
 
-#: page-postlike.php:50 single.php:58
+#: includes/toggleposts.php:18 includes/toggleposts.php:33
+msgid "下一篇"
+msgstr "Sonraki"
+
+#: page-postlike.php:54 single.php:62
 msgid "在其他设备上继续阅读"
 msgstr "Diğer cihazlarda okumaya devam edin"
 
-#: page-postlike.php:72 page-postlike.php:74 page-postlike.php:113
-#: page-postlike.php:115 page-postlike.php:154 page-postlike.php:156
-#: single.php:80 single.php:82 single.php:122 single.php:124 single.php:164
-#: single.php:166
+#: page-postlike.php:76 page-postlike.php:78 page-postlike.php:117
+#: page-postlike.php:119 page-postlike.php:158 page-postlike.php:160
+#: single.php:84 single.php:86 single.php:126 single.php:128 single.php:168
+#: single.php:170
 msgid "赞赏"
 msgstr "Yazarı Destekle"
 
-#: page-postlike.php:92 page-postlike.php:133 page-postlike.php:174
-#: single.php:101 single.php:143 single.php:185
+#: page-postlike.php:96 page-postlike.php:137 page-postlike.php:178
+#: single.php:105 single.php:147 single.php:189
 msgid "生成分享图"
 msgstr "Makale Görseli"
 
-#: page-postlike.php:95 page-postlike.php:136 page-postlike.php:177
-#: single.php:104 single.php:146 single.php:188
+#: page-postlike.php:99 page-postlike.php:140 page-postlike.php:181
+#: single.php:108 single.php:150 single.php:192
 msgid "没有标签"
 msgstr "Etiketsiz"
 
-#: page-postlike.php:182 single.php:195
+#: page-postlike.php:186 single.php:199
 msgid "扫描二维码继续阅读"
 msgstr "Okumaya devam etmek için QR kodunu tarayın"
 
@@ -1545,64 +1639,63 @@ msgstr "Okumaya devam etmek için QR kodunu tarayın"
 msgid "There is no changelog available."
 msgstr "Hiçbir değişim günlüğü mevcut değil."
 
-#: search.php:41 search.php:75
+#: search.php:45 search.php:82
 msgid "搜索结果"
 msgstr "Sonuçlar"
 
-#: search.php:79
-msgid "前方似乎空空如也"
-msgstr "İleride çevirme var gibi görünüyor."
+#: search.php:86
+msgid "这里似乎空空如也"
+msgstr "Burası boş görünüyor."
 
-#: search.php:80
-msgid "什么也没找到，换个词搜搜试试？"
+#: search.php:87
+msgid "什么也没找到，换个词搜索试试？"
 msgstr "Bir sonuç bulunamadı, farklı kelimelerle aramayı deneyin."
 
 #: searchform.php:5
-msgid "搜索什么..."
-msgstr "Neyi aramıştınız?"
+msgid "搜索"
+msgstr "Ara:"
 
-#: single.php:205 single.php:229
+#: single.php:214 single.php:235 single.php:255
 msgid "去首页"
 msgstr "Anasayfa'ya Git"
 
-#: single.php:225
+#: single.php:231 single.php:251
 msgid "诶呀..."
 msgstr "Üzgünüm..."
 
-#: single.php:225
+#: single.php:231
 msgid "根据相关法律法规，此文章暂时不予显示"
 msgstr ""
 "Bu makale, ilgili yasalar ve düzenlemeler nedeniyle şimdilik erişime "
 "kapalıdır."
 
+#: single.php:251
+msgid "登录后才能查看此文章"
+msgstr "Bu makaleyi görüntülemek için giriş yapın."
+
 #: template-parts/content-1-status.php:3 template-parts/content-2-status.php:3
 #: template-parts/content-3-status.php:3 template-parts/content-4-status.php:4
+#: template-parts/content-5-status.php:2
 #: template-parts/content-first-1-status.php:3
 #: template-parts/content-first-2-status.php:3
 #: template-parts/content-first-3-status.php:3
 #: template-parts/content-first-4-status.php:4
+#: template-parts/content-first-5-status.php:2
 msgid "状态"
 msgstr "Durum"
 
 #: template-parts/content-1.php:5 template-parts/content-2.php:4
 #: template-parts/content-3.php:5 template-parts/content-3.php:56
-#: template-parts/content-first-1.php:5 template-parts/content-first-1.php:52
-#: template-parts/content-first-2.php:4 template-parts/content-first-3.php:5
-#: template-parts/content-first-3.php:56
+#: template-parts/content-5.php:8 template-parts/content-first-1.php:5
+#: template-parts/content-first-1.php:52 template-parts/content-first-2.php:4
+#: template-parts/content-first-3.php:5 template-parts/content-first-3.php:56
+#: template-parts/content-first-5.php:8
 msgid "这篇文章没有摘要"
 msgstr "Bu makalenin özeti yok"
 
 #: template-parts/content-1.php:52
 msgid "这篇文章没有摘要。"
 msgstr "Bu makalenin özeti yok."
-
-#: toggleposts.php:11 toggleposts.php:47
-msgid "上一篇"
-msgstr "Önceki"
-
-#: toggleposts.php:18 toggleposts.php:33
-msgid "下一篇"
-msgstr "Sonraki"
 
 #. Theme Name of the plugin/theme
 msgid "MDx"
@@ -1639,6 +1732,37 @@ msgstr "Etiketler"
 #. Template Name of the plugin/theme
 msgid "Timeline"
 msgstr "Zaman Tüneli"
+
+#~ msgid "使用 Smooth Scroll"
+#~ msgstr "Smooth Scroll Kullan"
+
+#~ msgid ""
+#~ "开启后，可使不支持平滑滚动的浏览器启用平滑滚动。可能会在某些浏览器下导致页"
+#~ "面滚动异常。"
+#~ msgstr ""
+#~ "Açık olduğunda Smooth Scroll özelliği ektinleşir. Smooth Scroll "
+#~ "özelliğini desteklemeyen bazı tarayıcılarda sorunlara yol açabilir."
+
+#~ msgid "优化微信分享"
+#~ msgstr "WeChat Paylaşım Optimizasyonu"
+
+#~ msgid ""
+#~ "<strong>如果你的域名已备案，</strong>可以打开此选项以获得更好的微信内分享"
+#~ "效果。"
+#~ msgstr ""
+#~ "<strong>Alan adınız WeChat'te onaylı ise,</strong> Wechat’ta daha iyi "
+#~ "paylaşım etkisi elde etmek için bu seçeneği açabilirsiniz."
+
+#~ msgid ""
+#~ "MDx 主题兼容 WordPress 中文版ICP备案号功能，如使用中文版，请在 "
+#~ "<i>WordPress 设置-常规</i> 中填写备案号，MDx 会将其显示在页脚并自动链接到 "
+#~ "<i>中华人民共和国工业和信息化部</i> 网站。留空则不会显示。"
+#~ msgstr ""
+#~ "MDx, WordPress Çin ICP servisi ile uyumludur. Eğer çince sürümü "
+#~ "kullanıyorsanız <i>WordPress Ayarları - Genel</i> kısmından kayıt "
+#~ "numaranızı ekleyiniz. Eğer bu alan doldurulursa MDx otomatik olarak Çin "
+#~ "Bilgi Teknolojileri Bakanlığı web sitesinden bilgileri alacaktır. "
+#~ "Kullanmak istemiyorsanız boş bırakın."
 
 #~ msgid "主题文档(为国内网络优化)"
 #~ msgstr "Dökümantasyon"
