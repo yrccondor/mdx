@@ -40,7 +40,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 Öne Çıkan ÖZellikler:
 
 - Tamamen Materyal Tasarım ile tasarlandı, isteğe bağlı Materyal Tasarım 2 kullanılabilir.
-- 3 anasayfa stili, 4 gönderi stili, 3 footer stili & 3 sayfa stili
+- 3 anasayfa stili, 5 gönderi stili, 3 footer stili & 3 sayfa stili
 - 19 tema rengi & 16 vurgu rengi
 - Gece modu ve daima koyu mod özellikleri isteğe bağlı ayarlanabilir
 - SEO dostu, Facebook ve Twitter'da kolay paylaşım
