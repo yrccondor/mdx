@@ -2428,12 +2428,12 @@ article div.mdui-table-fluid {
 #mdx-qrcode-money {
     overflow: hidden;
     padding: 7px;
-    height: 164px;
-    min-width: 164px;
+    height: 200px;
+    min-width: 200px;
     background-color: #fff!important;
 }
 #mdx-qrcode-money>img {
-    height: 150px;
+    height: 186px;
 }
 .mdx-admin {
     font-size: 13px;
@@ -3382,6 +3382,7 @@ p.comment-form-cookies-consent > label > label {
 }
 .mdui-snackbar-action {
     min-width: unset;
+    margin-left: 15px;
 }
 .mdx-share-img-dialog .mdui-dialog-content {
     overflow-y: hidden;

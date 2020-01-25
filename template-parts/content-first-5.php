@@ -1,8 +1,8 @@
 <div class="mdx-postlist-simple">
 <?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}if($Imagesurl !== ""){?>
-    <img src="<?php echo $Imagesurl;?>" alt="<?php echo $Imagesurl;?>" title="<?php the_title();?>">
+    <a href="<?php the_permalink();?>"><img src="<?php echo $Imagesurl;?>" alt="<?php echo $Imagesurl;?>" title="<?php the_title();?>"></a>
 <?php }else if(mdx_get_option("mdx_post_def_img")=="true" && $Imagesurl == ""){ ?>
-    <img src="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" alt="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" title="<?php the_title();?>">
+    <a href="<?php the_permalink();?>"><img src="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" alt="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" title="<?php the_title();?>"></a>
 <?php } ?>
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme ainList"><h1><?php the_title();?></h1></a>
         <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{if(mdx_get_option("mdx_post_def_img")=="true" || $Imagesurl !== ""){$summ = mdx_get_post_excerpt($post, 300);}else{$summ = mdx_get_post_excerpt($post, 450);}if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p><?php }?>
