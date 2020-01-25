@@ -232,35 +232,37 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function(){
         document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
     }
 }, false);
-document.getElementsByClassName("mdx-tworow-search")[0].addEventListener("click", function(){
-    setTimeout(() => {
-        document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
-    }, 500);
-    mdui.JQ("#mdx-search-anim").css({'width': this.offsetWidth - 12 + 'px', 'top': this.getBoundingClientRect().top + 'px', 'left': this.getBoundingClientRect().left + 'px'});
-    document.getElementById("mdx-search-anim").classList.add('mdx-search-anim-show');
-    this.style.visibility = 'hidden';
-    let searchBarDOM = document.getElementById("SearchBar");
-    searchBarDOM.style.display = "block";
-    var searchDom = document.getElementsByClassName('outOfSearch');
-    mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
-    setTimeout(() => {
-        document.getElementById('searchform').classList.add("mdx-searchform-show");
-        document.getElementById("mdx-search-anim").classList.remove('mdx-search-anim-show');
-        document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').style.opacity = 1;
-    }, 500);
-    document.getElementById("mdx-search-anim").getElementsByTagName("i")[0].style.color = '#fff';
-    $(".OutOfsearchBox").fadeIn(500);
-    searchBarDOM.classList.add("mdui-color-theme");
-    $(".fullScreen").fadeIn(500);
-    document.getElementsByClassName("seainput")[0].focus();
-    if(mdx_offline_mode){
-        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
-        searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
-        searchBoxDOM.style.pointerEvents = 'auto';
-        document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
-    }
-    openFromTwoRows = true;
-}, false);
+if(document.getElementsByClassName("mdx-tworow-search").length){
+    document.getElementsByClassName("mdx-tworow-search")[0].addEventListener("click", function(){
+        setTimeout(() => {
+            document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
+        }, 500);
+        mdui.JQ("#mdx-search-anim").css({'width': this.offsetWidth - 12 + 'px', 'top': this.getBoundingClientRect().top + 'px', 'left': this.getBoundingClientRect().left + 'px'});
+        document.getElementById("mdx-search-anim").classList.add('mdx-search-anim-show');
+        this.style.visibility = 'hidden';
+        let searchBarDOM = document.getElementById("SearchBar");
+        searchBarDOM.style.display = "block";
+        var searchDom = document.getElementsByClassName('outOfSearch');
+        mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+        setTimeout(() => {
+            document.getElementById('searchform').classList.add("mdx-searchform-show");
+            document.getElementById("mdx-search-anim").classList.remove('mdx-search-anim-show');
+            document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').style.opacity = 1;
+        }, 500);
+        document.getElementById("mdx-search-anim").getElementsByTagName("i")[0].style.color = '#fff';
+        $(".OutOfsearchBox").fadeIn(500);
+        searchBarDOM.classList.add("mdui-color-theme");
+        $(".fullScreen").fadeIn(500);
+        document.getElementsByClassName("seainput")[0].focus();
+        if(mdx_offline_mode){
+            let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
+            searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
+            searchBoxDOM.style.pointerEvents = 'auto';
+            document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
+        }
+        openFromTwoRows = true;
+    }, false);
+}
 for(let ele of document.getElementsByClassName("sea-close")){
     ele.addEventListener("click", closeSearch, false);
 }
