@@ -1,0 +1,89 @@
+.mdui-theme-layout-dark .PostMainPage, .mdui-theme-layout-dark .main, .mdui-theme-layout-dark .mdx-hot-posts, .mdui-theme-layout-dark #left-drawer, .mdui-theme-layout-dark #mdx-right-drawer, .mdui-theme-layout-dark #img-box, body.mdui-theme-layout-dark.body-grey, body.mdui-theme-layout-dark.body-grey1, .mdui-theme-layout-dark, .mdui-theme-layout-dark #mdx_menu li ul.mdui-collapse-item-body {
+    background-color: black!important;
+}
+.mdui-theme-layout-dark .mdx-hot-posts .mdx-hp-g-l {
+    background: -webkit-linear-gradient(left,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%);
+}
+.mdui-theme-layout-dark .mdx-hot-posts .mdx-hp-g-r {
+    background: -webkit-linear-gradient(left,rgba(0,0,0,0) 10%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to right,rgba(0,0,0,0) 10%,rgba(0,0,0,1) 100%);
+}
+.mdui-theme-layout-dark .mdui-card {
+    background-color: #222;
+}
+body.mdui-theme-layout-dark .mdxNotice.mdui-center, .mdui-theme-layout-dark.mdx-first-simple .mdx-hot-posts {
+    background-color: #222!important;
+}
+.mdui-theme-layout-dark .mdui-card.mdx-widget {
+    background-color: #111;
+}
+.mdui-theme-layout-dark .mdui-card.mdx-widget, .mdui-theme-layout-dark .mdui-table-fluid {
+    border: 2px solid #242424;
+}
+.mdui-theme-layout-dark .nextpage2 {
+    background-color: rgba(75, 75, 75, .3);
+}
+body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-nav, .mdui-theme-layout-dark .page-footer-nav-left, .mdui-theme-layout-dark .page-footer-nav-right {
+    background-color: #131313!important;
+}
+.mdui-theme-layout-dark .ArtMain0 {
+    background-color: #151515;
+}
+.mdui-theme-layout-dark #respond, .mdui-theme-layout-dark .mdx-author-c, .mdui-theme-layout-dark .mdx-hot-posts, .mdui-theme-layout-dark .mdx-same-posts, .mdui-theme-layout-dark .spanout {
+    background-color: #202020;
+}
+.mdui-theme-layout-dark .mdx-author-c .mdx-amask path {
+    fill: #202020;
+}
+.mdui-theme-layout-dark .timeInPost {
+    background: linear-gradient(to right,rgba(32,32,32,0) 0%,#292929 5%,#202020 100%);
+}
+.mdui-theme-layout-dark .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent), .mdui-theme-layout-dark div.PostTitleFillBack2[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitleFill[class*=mdui-color-], .mdui-theme-layout-dark div.PostTitle[class*=mdui-color-], .mdui-theme-layout-dark .PostTitleFillPageBackGround, .mdui-theme-layout-dark .theFirstPageBackGround, .mdui-theme-layout-dark div.theFirstPageSmall, .mdui-theme-layout-dark #SearchBar {
+    background-color: #121212!important;
+}
+.mdui-theme-layout-dark article div.mdui-panel.mdui-panel-gapless>div.mdui-panel-item, .mdui-theme-layout-dark .mdui-table {
+    background-color: #1a1a1a;
+}
+.mdui-theme-layout-dark .mdui-table td, .mdui-theme-layout-dark .mdui-table th {
+    border-bottom: 2px solid #242424;
+}
+.mdui-theme-layout-dark .mdui-table thead {
+    background-color: #212121;
+}
+.mdui-theme-layout-dark .mdui-grid-tile.indexgaid .divimg, .mdui-theme-layout-dark .mdui-card.staDivgaid {
+    background-color: #1d1d1d!important;
+}
+.mdui-theme-layout-dark .sta-4 {
+    background: -webkit-linear-gradient(top,#1d1d1d 90%,transparent 100%);
+    background: linear-gradient(to bottom,#1d1d1d 90%,transparent 100%);
+}
+.mdui-theme-layout-dark .backGround {
+    background-color: #2e2e2e;
+}
+.mdx-first-simple .main {
+    background-color: transparent!important;
+}
+.mdui-theme-layout-dark .mdui-dialog, .mdui-theme-layout-dark .mdui-menu {
+    background-color: #1d1d1d;
+}
+.mdui-theme-layout-dark li.current-menu-item, .mdui-theme-layout-dark li.current_page_item {
+    background-color: rgba(255, 255, 255, .08);
+}
+.mdui-theme-layout-dark .mdx-timeline-archives:before {
+    background: #313131;
+}
+.mdui-theme-layout-dark .m-title:before {
+    background: #000;
+}
+@media screen and (orientation:landscape){
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworow-search {
+        background-color: rgb(37, 37, 37);
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark #mdx-search-anim {
+        background-color: rgb(49, 49, 49);
+    }
+    body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworow-search:hover {
+        background-color: rgb(49, 49, 49);
+    }
+}
