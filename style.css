@@ -4094,7 +4094,7 @@ img.wp-smiley {
     }
 }
 @media (prefers-reduced-motion: reduce) {
-    body.mdx-reduce-motion *:not(.mdui-menu):not(.mdui-snackbar):not(.mdui-dialog) {
+    body.mdx-reduce-motion *:not(.mdui-menu):not(.mdui-snackbar):not(.mdui-dialog):not(.mdui-overlay) {
         transition: all 0s!important;
     }
     body.mdx-reduce-motion .mdui-menu, body.mdx-reduce-motion .mdui-dialog {
