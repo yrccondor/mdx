@@ -171,13 +171,11 @@ $(function(){
 function handleSearchChange(hsc){
     if(hsc.matches){
         if(currentStyle === 'tworow'){
-            console.log(currentStyle);
             closeSearch();
         }
         currentStyle = 'single';
     }else{
         if(currentStyle === 'single'){
-            console.log(currentStyle);
             closeSearch();
         }
         currentStyle = 'tworow';
