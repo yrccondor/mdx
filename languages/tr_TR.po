@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
-"POT-Creation-Date: 2020-01-25 12:18+0300\n"
-"PO-Revision-Date: 2020-01-25 13:19+0300\n"
+"POT-Creation-Date: 2020-01-25 18:22+0300\n"
+"PO-Revision-Date: 2020-01-25 18:25+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -1395,6 +1395,10 @@ msgstr "Blogger"
 #: functions.php:226
 msgid "前"
 msgstr " önce"
+
+#: functions.php:226
+msgid "回复"
+msgstr "Yanıtla"
 
 #: functions.php:293
 msgid "nofollow"
