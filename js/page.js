@@ -415,18 +415,6 @@ function hideBar(){
 function hideBar(){
     document.getElementById("SearchBar").style.display = "none";
 }
-
-//LazyLoad.init
-$(function() {
-    $("div.LazyLoad").lazyload({
-        effect : "fadeIn",
-        threshold : 300,
-      });
-    $("img.LazyLoadPost").lazyload({
-        effect : "fadeIn",
-        threshold : 200,
-    });
- });
  
 // 评论分页
 if(!mdx_comment_ajax){
@@ -448,14 +436,9 @@ if(!mdx_comment_ajax){
                 $('.mdx-comments-loading').hide();
                 $('#comments').prepend(result);
                 $('ul.mdui-list.ajax-comments').after(nextlink);
-                $("img.LazyLoadPost.avatar").lazyload({
-                    effect : "fadeIn",
-                    threshold : 200,
-                });
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
-                window.addComment.init()
             }
         });
     });
@@ -481,14 +464,9 @@ if(!mdx_comment_ajax){
                 $('.mdx-comments-loading').hide();
                 $('ul.mdui-list.ajax-comments').after(nextlink);
                 $('ul.mdui-list.ajax-comments').html($('ul.mdui-list.ajax-comments').html()+result);
-                $("img.LazyLoadPost.avatar").lazyload({
-                    effect : "fadeIn",
-                    threshold : 200,
-                });
                 $("div#comments ul li p").addClass('mdui-typo');
                 $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
                 $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
-                window.addComment.init()
             }
         });
     });

@@ -34,7 +34,7 @@
          url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre {
     border-radius: 8px!important;
 }
 .spanout, .mdx-first-simple .mdxNotice, #respond {

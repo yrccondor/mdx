@@ -264,6 +264,11 @@ body.mdui-theme-layout-dark .ct1-p {
     z-index: 2;
     background-position: center center;
     background-size: cover;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.PostTitleFillPage.mdx-bg-loaded {
+    opacity: 1;
 }
 .PostTitleFillPage,.PostTitleFillPageBackGround {
     position: absolute;
@@ -2283,10 +2288,26 @@ div.mdui-toolbar>.mdui-typo-headline {
     border-bottom-right-radius: 3px;
     overflow: hidden;
     background: rgba(0,0,0,.3);
+    z-index: 3;
 }
 .links-des a {
     color: #fff!important;
     overflow: visible;
+}
+.mdx-links-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 2;
+}
+.mdx-links-bg.mdx-bg-loaded {
+    opacity: 1;
 }
 .link-description {
     text-align: center;
@@ -2327,8 +2348,14 @@ div.mdui-toolbar>.mdui-typo-headline {
     overflow: hidden;
 }
 .links-co>a {
-    width: 100%;
+    width: calc(100% - 6px);
+    margin-left: 3px;
     text-decoration: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 .links-co>a:before {
     display: none!important;

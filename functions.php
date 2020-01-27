@@ -265,19 +265,19 @@ function get_the_link_items($id = null){
         foreach($bookmarks as $bookmark){
 			$lazy_load =  '';
 			if(!empty($bookmark->link_image)){
-				$lazy_load = ' LazyLoad" data-original="'.$bookmark->link_image;
+				$lazy_load = ' lazyload" data-bg="'.$bookmark->link_image;
 			} else {
 				$imglink = $bookmark->link_notes;
 				if (substr($imglink, 0, 4) !== 'http' && $mdx_gravatar_actived == 'true'){
 					$imglink = get_avatar_url($imglink, array('size'=>512));
 				}
-				$lazy_load = ' LazyLoad" data-original="'.$imglink;
+				$lazy_load = ' lazyload" data-bg="'.$imglink;
 			}
 			$rel = '';
 			if(!empty($bookmark->link_rel)){
 				$rel = 'rel="'.$bookmark->link_rel.'" ';
 			}
-			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="links-c mdui-color-theme'.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+			$output.= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><div class="links-c mdui-color-theme"></div><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="mdx-links-bg '.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
         }
         $output .= '</div>';
     }
