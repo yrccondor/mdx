@@ -13,6 +13,7 @@ var mdxStyle = 1;
 var currentStyle = 'unset';
 var barHight;
 var totalHight;
+var ifTworows = document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows");
 if(document.getElementsByClassName("theFirstPage").length === 0){
     mdxStyle = 0;
 }else{
@@ -55,17 +56,19 @@ function scrollDiff(){
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 0;
         }
-        if(howFar <= barHight){
-            opacityHeight = (barHight - howFar)/totalHight;
-            if(opacityHeight > 1){
+        if(!ifTworows){
+            if(howFar <= barHight){
+                opacityHeight = (barHight - howFar)/totalHight;
+                if(opacityHeight > 1){
+                    opacityHeight = 1;
+                }
+            }else if(howFar > barHight){
+                opacityHeight = 0;
+            }else{
                 opacityHeight = 1;
             }
-        }else if(howFar > barHight){
-            opacityHeight = 0;
-        }else{
-            opacityHeight = 1;
+            document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
         }
-        document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
     }else if(!mdxStyle){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
         if(howFar > 20 & whetherChange == 0){
