@@ -105,19 +105,6 @@ function hideBar(){
     document.getElementById("SearchBar").style.display = "none";
 }
 
-//LazyLoad.init
-$(function() {
-    $("div.LazyLoad").lazyload({
-        effect : "fadeIn",
-        threshold : 500,
-      });
-      $(".LazyLoadListImg").lazyload({
-        threshold : 100,
-      });
-
-      scrollDiff();
- });
-
  //tap tp top
  document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function(){
     if(mdx_tapToTop==1){
@@ -127,6 +114,7 @@ $(function() {
 
 //init menu
 $(function(){
+    scrollDiff();
     var mdxHaveChild = 0;
     var mdxIsC = 0;
     for(let ele of document.querySelectorAll('#mdx_menu > li')){

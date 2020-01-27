@@ -135,24 +135,6 @@ $(function(){
         }
     }
 
-    //Lazyload
-    $("div.LazyLoad").lazyload({
-        effect : "fadeIn",
-        threshold : 700,
-    });
-    $(".LazyLoadListImg").lazyload({
-        threshold : 300,
-    });
-    $("img.LazyLoadPost").lazyload({
-        effect : "fadeIn",
-        threshold : 400,
-    });
-    $(".LazyLoadSamePost").lazyload({
-        effect : "fadeIn",
-        threshold : 400,
-        container: $("#mdx-sp-out-c")
-    });
-
     scrollDiff();
 
     if(document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")){

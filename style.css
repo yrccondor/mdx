@@ -44,6 +44,11 @@ body.customize-support #titleBar,body.customize-support #titleBarinPost,body.cus
     z-index: 2;
     background-position: center center;
     background-size: cover;
+    opacity: 0!important;
+    transition: opacity .3s;
+}
+.theFirstPage.mdx-bg-loaded {
+    opacity: 1!important;
 }
 .theFirstPage,.theFirstPageBackGround {
     position: absolute;
@@ -1132,6 +1137,21 @@ div#comments ul li {
     border-radius: 5px;
     background-color: #ededed;
 }
+.mdx-hot-posts .mdx-hot-posts-lazyload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    transition: opacity .3s;
+    opacity: 0;
+}
+.mdx-hot-posts .mdx-hot-posts-lazyload.mdx-bg-loaded {
+    opacity: 1;
+}
 .PostMain .mdx-clean-footer {
     width: 55%;
     margin: 0 auto;
@@ -1164,6 +1184,19 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
 .mdx-author-c img {
     height: 100%;
     width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.mdx-author-c div.lazyload-bg {
+    height: 100%;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,.2);
 }
 .mdx-author-c .mdx-amask {
     position: absolute;
@@ -1171,6 +1204,7 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     left: 123px;
     height: 100%;
     width: auto;
+    z-index: 4;
 }
 .mdx-author-c .mdx-amask path {
     fill: #ededed;
@@ -2085,6 +2119,11 @@ body.mdui-theme-primary-blue-grey ::-ms-selection {
 .divimg {
     background-position: center center;
     background-size: cover;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.divimg.mdx-bg-loaded {
+    opacity: 1;
 }
 .divimg,.indexgaid {
     width: 25pc;
@@ -2104,7 +2143,7 @@ body.mdui-theme-primary-blue-grey ::-ms-selection {
     text-align: left;
 }
 .mdx-ajax-loading {
-    margin-bottom: 9pt;
+    margin-bottom: 19px;
     width: 30px;
     height: 30px;
 }
@@ -2269,6 +2308,13 @@ div.mdui-toolbar>.mdui-typo-headline {
 }
 .links-c {
     padding-top: 100%;
+}
+.mdui-card-media .post_list_t_img {
+    opacity: 0;
+    transition: opacity .3s;
+}
+.mdui-card-media .post_list_t_img.mdx-bg-loaded {
+    opacity: 1;
 }
 .mdui-theme-layout-dark .links-c,.mdui-theme-layout-dark .post_list_t_img {
     filter: brightness(.8);
@@ -3444,7 +3490,7 @@ body.mdui-theme-layout-dark input#s::placeholder {
     position: relative;
     overflow: hidden;
     margin: 10px 0!important;
-    display: inline-block;
+    display: block;
     width: 100%;
 }
 .mdx-lazyload-container a.mdx-img-in-post-with-link {

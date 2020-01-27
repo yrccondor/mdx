@@ -30,9 +30,6 @@ $(function(){
                 $('div.mdx-ajax-loading').remove();
                 var getValue = $('#postlist',data2).html();
                 $('#postlist').html(nowValue+getValue);
-                $(".LazyLoadListImg").lazyload({
-                    threshold : 100,
-                });
             }else{
                 mdui.snackbar({
                     message: ajax_error,

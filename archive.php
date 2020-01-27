@@ -13,7 +13,8 @@
     <div class="fullScreen sea-close"></div>
     <div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height" id="left-drawer">
       <?php if(mdx_get_option('mdx_side_info')=='true'){;?>
-      <div class="sideImg LazyLoad" data-original="<?php echo $mdx_side_img;?>">
+      <div class="sideImg mdui-color-theme">
+      <div class="mdx-side-lazyload lazyload" data-bg="<?php echo $mdx_side_img;?>"></div>
       <?php if(mdx_get_option('mdx_night_style')!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){;?>
       <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
@@ -51,7 +52,7 @@
         if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
           continue;
         }
-        if($post_num == 1 || mdx_get_option('mdx_lazy_load_mode')=='seo2'){
+        if( mdx_get_option('mdx_lazy_load_mode')=='seo2'){
           get_template_part('template-parts/content-first-'.$style, get_post_format());
         }else if($post_num == 4){
           get_template_part('template-parts/content-'.$style, get_post_format());
