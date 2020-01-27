@@ -20,6 +20,7 @@ if(document.getElementsByClassName("theFirstPage").length === 0){
     totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
 }
 window.onload = function(){
+    scrollDiff();
     let indexBgDom = document.getElementsByClassName('theFirstPage');
     if(indexBgDom.length > 0){
         setTimeout(() => {
@@ -64,7 +65,7 @@ function scrollDiff(){
         }else{
             opacityHeight = 1;
         }
-        document.getElementsByClassName("theFirstPage")[0].style.opacity = opacityHeight;
+        document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
     }else if(!mdxStyle){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
         if(howFar > 20 & whetherChange == 0){
@@ -134,8 +135,6 @@ $(function(){
             }
         }
     }
-
-    scrollDiff();
 
     if(document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")){
         var hsc = window.matchMedia("screen and (orientation:landscape) and (min-width: 750px)");

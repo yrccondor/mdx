@@ -54,12 +54,13 @@ function scrollDiff(){
     }else{
         opacityHeight = 1;
     }
-    $(".PostTitleFillPage").css('opacity',opacityHeight);
+    document.getElementsByClassName("PostTitleFillPage")[0].style.setProperty('opacity', opacityHeight, 'important');
     ticking = false;
 };
 
 window.onload=function() {
     init_wp_block();
+    scrollDiff();
     $('body > .mdui-progress').fadeOut(200);
     document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
         item.setAttribute('mdui-panel', '');
@@ -202,23 +203,71 @@ document.getElementById("tgns").addEventListener("click", function(){
     document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
 }, false);
 
+var lazyloadImg = document.querySelectorAll("article > *:not(figure) figure:not(.wp-block-image) img");
+if(lazyloadImg.length){
+    for(e of lazyloadImg){
+        e.addEventListener('lazyloaded', function(e){
+            setTimeout(() => {
+                var prevDom;
+                if(e.target.previousSibling){
+                    prevDom = e.target.previousSibling;
+                }else{
+                    prevDom = e.target.parentNode.previousSibling;
+                    e.target.parentNode.classList.add("mdx-img-loaded-no-anim");
+                }
+                prevDom.previousSibling.remove();
+                prevDom.remove();
+                e.target.classList.add("mdx-img-loaded-no-anim");
+            }, 300);
+        })
+    }
+};
+var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image img");
+if(lazyloadImg2.length){
+    for(e of lazyloadImg2){
+        e.addEventListener('lazyloaded', function(e){
+            var prevDom;
+            if(e.target.previousSibling){
+                prevDom = e.target.previousSibling;
+            }else{
+                prevDom = e.target.parentNode.previousSibling;
+                e.target.parentNode.classList.add("mdx-img-loaded-no-anim");
+            }
+            prevDom.previousSibling.remove();
+            prevDom.remove();
+            e.target.classList.add("mdx-img-loaded-no-anim");
+        })
+    }
+};
+
 $(function(){
     if(mdx_comment_ajax && $('#comments-navi>a.prev').attr('href')){
         $('#comments-navi').html('<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="'+$('#comments-navi>a.prev').attr('href')+'"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>');
     }
 
-    scrollDiff();
-
     if(mdx_offline_mode){
         $('#respond').html(tipMutiOffRes);
     }
+
+    $('article a > figure > img.lazyload').each(function(){
+        if(this.classList.contains("aligncenter")){
+            this.parentNode.classList.add("aligncenter");
+        }else if(this.classList.contains("alignright")){
+            this.parentNode.classList.add("alignright");
+            let insertDOM = document.createElement("div");
+            insertDOM.classList.add("mdx-clear-float");
+            this.parentNode.parentNode.insertBefore(insertDOM, this.parentNode.nextSibling);
+        }else if(this.classList.contains("alignleft")){
+            this.parentNode.classList.add("alignleft");
+        }
+    });
     
         //ImgBox
         if(mdx_imgBox==1){
             $('article a > img').each(function(){
                 var imgUrlEach = $(this).attr('src');
-                if(imgUrlEach=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
-                    imgUrlEach = $(this).attr('data-original').split("?")[0];
+                if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='){
+                    imgUrlEach = $(this).attr('data-src').split("?")[0];
                 }
                 var imgHref = $(this).parent("a").attr('href').split('.')
                 imgHref.pop();
@@ -230,10 +279,26 @@ $(function(){
                     $(this).parent("a").addClass("mdx-img-in-post-with-link");
                 }
             });
+            $('article a > figure > img.lazyload').each(function(){
+                var imgUrlEach = $(this).attr('src');
+                if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='){
+                    imgUrlEach = $(this).attr('data-src').split("?")[0];
+                }
+                var imgHref = $(this).parent("figure").parent("a").attr('href').split('.')
+                imgHref.pop();
+                var imgHrefa = imgHref.join('.') + '-';
+                if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("figure").parent("a").attr('href') || imgUrlEach == $(this).parent("figure").parent("a").attr('href')+"-towebp"){
+                    $(this).addClass("mdx-img-in-post");
+                    $(this).parent("figure").unwrap();
+                }else{
+                    $(this).wrap('<a class="mdx-img-in-post-with-link" href="'+$(this).parent("figure").parent("a").attr('href')+'"></a>');
+                    $(this).parent("a").parent("figure").unwrap();
+                }
+            });
         $('img.mdx-img-in-post').click(function(){
             var toTopDes = $(this)[0].getBoundingClientRect().top, toLeftDes = $(this)[0].getBoundingClientRect().left;
             var imgUrl = $(this).attr('src');
-            if(imgUrl=='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg=='){
+            if(imgUrl=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='){
                 imgUrl = $(this).attr('data-original');
             }
             imgRaw = $(this);
@@ -293,6 +358,14 @@ $(function(){
             window.setTimeout("afterCloseImgBox()",200);
         })
     }
+    $('article a > img:not(.lazyload)').each(function(){
+        $(this).parent("a").addClass("mdx-nonlazy-link");
+    });
+    $('article img.alignright:not(.lazyload)').each(function(){
+            let insertDOM = document.createElement("div");
+            insertDOM.classList.add("mdx-clear-float");
+            this.parentNode.insertBefore(insertDOM, this.nextSibling);
+    });
 
         //评论优化
         $('.disfir, .commurl').hide();
