@@ -340,29 +340,63 @@ function mdx_lazyload_image($content){
     $content = preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', 'mdx_process_image', $content);
     return $content;
 }
-function mdx_process_image( $matches ) {
-    $placeholder_image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFsbGxAAAA/JhxRAAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==';
+function mdx_process_image($matches){
+    $placeholder_image = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
     $old_attributes_str = $matches[2];
     $img = wp_kses_hair($old_attributes_str, wp_allowed_protocols());
     if (empty($img['src'])){
         return $matches[0];
 	}
 	isset($img['sizes']) ? $mdx_sizes = ' sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
-	isset($img['srcset']) ? $mdx_srcset = ' data-original-srcset="'.$img['srcset']['value'].'"' : $mdx_srcset = '';
+	isset($img['srcset']) ? $mdx_srcset = ' data-srcset="'.$img['srcset']['value'].'"' : $mdx_srcset = '';
 	isset($img['style']) ? $mdx_img_style = ' style="'.$img['style']['value'].'"' : $mdx_img_style = '';
+	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
+	isset($img['width']) ? $mdx_figure_width = 'max-width:'.$img['width']['value'].'px' : $mdx_figure_width = '';
+	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
+	(isset($img['height']) && isset($img['width'])) ? $mdx_con_paading = $img['height']['value']/$img['width']['value']*100 : $mdx_con_paading = 100;
+	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
+	isset($img['alt']) ? $mdx_img_alt = ' alt="'.$img['alt']['value'].'"' : $mdx_img_alt = '';
+	$mdx_img_title = ' title="'.get_the_title().'"';
+	$mdx_img_alt==' alt=""' ? $mdx_img_title = ' title="'.get_the_title().'"' : $mdx_img_title = ' title="'.$img['alt']['value'].'"';
+	$mdx_img_alt==' alt=""' ? $mdx_img_alt = ' alt="'.$img['src']['value'].'"' : $mdx_img_alt = ' alt="'.$img['alt']['value'].'"';
+	$html = '<figure class="mdx-lazyload-container" style="'.$mdx_figure_width.'"><div style="padding-top:'.strval($mdx_con_paading).'%"></div><div class="mdx-img-loading-sp mdui-valign"><div><div class="mdui-spinner"></div></div></div><img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="'.$placeholder_image.'" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'></figure>';
+    return $html;
+}
+function mdx_lazyload_avatar($content){
+    if(is_feed()){
+        return $content;
+    }
+    $content = preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', 'mdx_process_avatar', $content);
+    return $content;
+}
+function mdx_process_avatar($matches){
+    $placeholder_image = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+    $old_attributes_str = $matches[2];
+    $img = wp_kses_hair($old_attributes_str, wp_allowed_protocols());
+    if (empty($img['src'])){
+        return $matches[0];
+	}
+	isset($img['sizes']) ? $mdx_sizes = ' sizes="'.$img['sizes']['value'].'"' : $mdx_sizes = '';
+	isset($img['srcset']) ? $mdx_srcset = ' data-srcset="'.$img['srcset']['value'].'"' : $mdx_srcset = '';
 	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
 	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
 	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
-    $html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'LazyLoadPost"'.$mdx_img_style.' title="'.get_the_title().'" src="'.$placeholder_image.'" data-original="'.$img['src']['value'].'" alt="'.$img['src']['value'].'"'.$mdx_srcset.''.$mdx_sizes.'>';
+	isset($img['alt']) ? $mdx_img_alt = ' alt="'.$img['alt']['value'].'"' : $mdx_img_alt = '';
+	$html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload mdx-avatar-lazyload" src="'.$placeholder_image.'" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'>';
     return $html;
+}
+function filter_ptags_on_images($content){
+	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 if(!is_admin() && mdx_get_option('mdx_lazy_load_mode')=='speed'){
     add_filter('the_content','mdx_lazyload_image', 99);
-    add_filter('get_avatar','mdx_lazyload_image', 11);
+    add_filter('the_content', 'filter_ptags_on_images', 98);
+    add_filter('get_avatar','mdx_lazyload_avatar', 11);
 }
 
+
 //面包屑
-function mdx_breadcrumbs() {
+function mdx_breadcrumbs(){
 	$delimiter = '&nbsp;&nbsp;<span class="mdx-spr">•</span>&nbsp;&nbsp;'; // 分隔符
 	$before = '<span class="current">'; // 在当前链接前插入
 	$after = '</span>'; // 在当前链接后插入

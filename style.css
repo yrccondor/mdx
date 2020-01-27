@@ -246,6 +246,11 @@ body.mdui-theme-layout-dark .ct1-p {
     background-size: cover;
     -webkit-filter: brightness(.8);
     filter: brightness(.8);
+    transition: opacity .3s;
+    opacity: 0;
+}
+.PostTitleFill2.mdx-bg-loaded {
+    opacity: 1;
 }
 .mdui-theme-layout-dark .PostTitleFill2 {
     background-color: #212121!important;
@@ -716,11 +721,26 @@ ul#mdx_menu>li a {
     background-position: center center;
     background-size: cover;
 }
+.sideImg > div.mdx-side-lazyload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    transition: opacity .3s;
+    opacity: 0;
+}
+.sideImg > div.mdx-side-lazyload.mdx-bg-loaded {
+    opacity: 1;
+}
 .nightVision {
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: rgba(0,0,0,.5);
+    z-index: 4;
 }
 .mdui-theme-layout-dark #left-drawer {
     background-color: #303030!important;
@@ -761,6 +781,7 @@ ul#mdx_menu>li a {
     border-radius: 65px;
     background-position: center center;
     background-size: cover;
+    z-index: 2;
 }
 .side-info-more {
     position: absolute;
@@ -770,6 +791,7 @@ ul#mdx_menu>li a {
     padding: 20px;
     color: #fff;
     font-size: 17px;
+    z-index: 3;
 }
 .side-info-oth {
     color: hsla(0,0%,100%,.7);
@@ -1498,6 +1520,21 @@ body.mdui-theme-primary-blue-grey #submit {
     left: 0;
     z-index: 2;
     background-color: rgba(0,0,0,.15);
+}
+.mdx-same-posts .mdx-lazyload {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity .3s;
+}
+.mdx-same-posts .mdx-bg-loaded {
+    opacity: 1;
 }
 .mdx-hot-posts div.mdx-ul div.mdx-li i,.mdx-same-posts ul li i {
     display: block;
@@ -2856,6 +2893,13 @@ article img.mdx-img-in-post {
 .mdui-list-item-avatar {
     overflow: hidden;
 }
+img.avatar.mdx-avatar-lazyload {
+    opacity: 0;
+    transition: opacity .3s;
+}
+img.avatar.mdx-avatar-lazyload.lazyloaded {
+    opacity: 1;
+}
 .mdx-share-img-loading {
     width: 100%;
     padding: 200px 0;
@@ -3395,6 +3439,82 @@ body.mdui-theme-layout-dark.mdui-theme-primary-red h3.link-title, body.mdui-them
 }
 body.mdui-theme-layout-dark input#s::placeholder {
     color: #b2b2b2!important;
+}
+.mdx-lazyload-container {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0!important;
+    display: inline-block;
+    width: 100%;
+}
+.mdx-lazyload-container a.mdx-img-in-post-with-link {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.mdx-lazyload-container a.mdx-img-in-post-with-link > img {
+    height: 0;
+    opacity: 0;
+    position: static;
+    transition: opacity .3s;
+    display: block;
+}
+.mdx-lazyload-container > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 0;
+    opacity: 0;
+    transition: opacity .3s;
+    display: block;
+}
+.mdx-lazyload-container > img.lazyloaded, .mdx-lazyload-container a.mdx-img-in-post-with-link > img.lazyloaded {
+    height: auto;
+    opacity: 1;
+}
+.mdx-img-loading-sp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #d8d8d8;
+}
+.mdx-img-loading-sp > div {
+    width: 100%;
+    text-align: center;
+}
+.mdx-img-loading-sp > div {
+    display: inline-block;
+    filter: grayscale(1);
+    opacity: .5;
+}
+body.mdui-theme-layout-dark .mdx-img-loading-sp {
+    background-color: #282828;
+}
+.mdx-img-loaded-no-anim {
+    transition: opacity 0s!important;
+    position: static!important;
+}
+a.mdx-img-loaded-no-anim {
+    transition: opacity .3s!important;
+}
+article a.mdx-nonlazy-link {
+    width: 100%;
+}
+article a.mdx-nonlazy-link::before {
+    display: none;
+}
+.wp-block-image img {
+    transition: opacity 0s!important;
+}
+.mdui-card.lazyload {
+    transition: background .3s;
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
@@ -4026,11 +4146,17 @@ body.mdui-theme-layout-dark input#s::placeholder {
 }
 .aligncenter,.aligncenter p.wp-caption-text {
     display: block;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: auto!important;
+    margin-left: auto!important;
 }
 .aligncenter p.wp-caption-text {
     text-align: center;
+}
+.alignright {
+    float: right;
+}
+.mdx-clear-float {
+    clear: both;
 }
 .add-smily {
     cursor: pointer;
