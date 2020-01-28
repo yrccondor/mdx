@@ -1301,6 +1301,7 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     margin: 0 auto;
     margin-top: 45px;
     box-sizing: border-box;
+    font-weight: bold;
 }
 .mdx-first-simple .mdx-all-posts {
     display: none;
@@ -1522,6 +1523,7 @@ body.mdui-theme-primary-blue-grey #submit {
     left: -7px;
     z-index: 15;
     color: rgba(0,0,0,.7);
+    font-weight: bold;
 }
 .mdui-theme-layout-dark .mdx-hot-posts>h3 {
     color: hsla(0,0%,100%,.7);
@@ -2600,6 +2602,7 @@ article div.mdui-table-fluid {
     color: #fff;
     display: block;
     position: absolute;
+    font-weight: bold;
 }
 .mdx-si-head p {
     font-size: 24px;
@@ -2607,6 +2610,7 @@ article div.mdui-table-fluid {
     left: 20px;
     margin: 0;
     max-height: 40px;
+    font-weight: bold;
 }
 .mdx-si-qr {
     height: 70px;
