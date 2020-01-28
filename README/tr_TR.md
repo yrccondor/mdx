@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="https://img.flyhigher.top/mdx-2020.jpg" alt="MDx">
+<img src="https://img.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
 </p>
 
 <h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
