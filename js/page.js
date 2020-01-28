@@ -76,6 +76,13 @@ window.onload=function() {
         }
     }
     setTimeout("mdx_shortcode()",1000);
+    let indexBgDom = document.getElementsByClassName('PostTitleFillPage');
+    if(indexBgDom.length > 0){
+        setTimeout(() => {
+            indexBgDom[0].classList.add("mdx-anmi-loaded");
+            indexBgDom[0].style.setProperty('transition', 'opacity 0s', 'important');
+        }, 500);
+    }
 }
 
 function init_wp_block() {

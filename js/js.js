@@ -13,7 +13,6 @@ var mdxStyle = 1;
 var currentStyle = 'unset';
 var barHight;
 var totalHight;
-var ifTworows = document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows");
 if(document.getElementsByClassName("theFirstPage").length === 0){
     mdxStyle = 0;
 }else{
@@ -26,6 +25,7 @@ window.onload = function(){
     if(indexBgDom.length > 0){
         setTimeout(() => {
             indexBgDom[0].classList.add("mdx-anmi-loaded");
+            indexBgDom[0].style.setProperty('transition', 'opacity 0s', 'important');
         }, 500);
     }
 }
@@ -56,7 +56,7 @@ function scrollDiff(){
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 0;
         }
-        if(!ifTworows){
+        if(currentStyle==='tworow'){
             if(howFar <= barHight){
                 opacityHeight = (barHight - howFar)/totalHight;
                 if(opacityHeight > 1){
@@ -68,6 +68,8 @@ function scrollDiff(){
                 opacityHeight = 1;
             }
             document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
+        }else{
+            document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
         }
     }else if(!mdxStyle){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -158,6 +160,7 @@ function handleSearchChange(hsc){
             closeSearch();
         }
         currentStyle = 'single';
+        document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
     }else{
         if(currentStyle === 'single'){
             closeSearch();

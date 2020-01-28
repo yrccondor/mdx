@@ -3652,6 +3652,10 @@ article a.mdx-nonlazy-link::before {
         width: 38.2%;
         box-shadow: none!important;
     }
+    body.mdx-first-tworows #titleBar {
+        -webkit-transform: none!important;
+        transform: none!important;
+    }
     body.mdx-first-tworows .titleBarGobal .mdui-toolbar, body.mdx-first-tworows.mdui-theme-layout-dark .mdui-appbar>[class*=mdui-color-]:not(.mdui-color-transparent) {
         background-color: transparent!important;
         color: white!important;
