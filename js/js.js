@@ -68,8 +68,6 @@ function scrollDiff(){
                 opacityHeight = 1;
             }
             document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
-        }else{
-            document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
         }
     }else if(!mdxStyle){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -161,9 +159,9 @@ function handleSearchChange(hsc){
     if(hsc.matches){
         if(currentStyle === 'tworow'){
             closeSearch();
+            document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
         }
         currentStyle = 'single';
-        document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
     }else{
         if(currentStyle === 'single'){
             closeSearch();

@@ -798,6 +798,10 @@ ul#mdx_menu>li a {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
+    opacity: 0;
+    transition: opacity .3s;
+}.side-info-head.mdx-bg-loaded {
+    opacity: 1;
 }
 .side-info-more {
     position: absolute;
