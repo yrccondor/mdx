@@ -48,20 +48,23 @@ document.getElementsByClassName("scrollToTop")[0].addEventListener("click", func
 }, false);
 
 //Night Styles
-document.getElementById("tgns").addEventListener("click", function(){
-    if(!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")){
-        sessionStorage.setItem('ns_night-styles', 'true');
-        if(colorEnabled){
-            metaColor.setAttribute('content',"#212121");
+var nsButton = document.getElementById("tgns");
+if(nsButton){
+    document.getElementById("tgns").addEventListener("click", function(){
+        if(!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")){
+            sessionStorage.setItem('ns_night-styles', 'true');
+            if(colorEnabled){
+                metaColor.setAttribute('content',"#212121");
+            }
+        }else{
+            sessionStorage.setItem('ns_night-styles', 'false');
+            if(colorEnabled){
+                metaColor.setAttribute('content',nowColor);
+            }
         }
-    }else{
-        sessionStorage.setItem('ns_night-styles', 'false');
-        if(colorEnabled){
-            metaColor.setAttribute('content',nowColor);
-        }
-    }
-    document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
-}, false);
+        document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
+    }, false);
+}
 
 //Search
 document.getElementsByClassName("seai")[0].addEventListener("click", function(){
