@@ -3346,7 +3346,7 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
 }
 .wp-block-file {
     background-color: #eee;
-    text-align: center;
+    text-align: left;
     padding: 10px;
     border-radius: 3px;
 }
@@ -3362,6 +3362,9 @@ body.mdui-theme-accent-deep-orange .mdx-timeline-archives li a:hover .atitle:aft
     line-height: 36px;
     padding-right: 10px;
     color: rgba(0,0,0,.87);
+}
+.wp-block-file a.mdui-btn {
+    float: right;
 }
 .mdui-theme-layout-dark .wp-block-file a:nth-of-type(1) {
     color: rgba(255,255,255,.87);
