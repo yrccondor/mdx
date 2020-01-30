@@ -504,7 +504,7 @@ if($mdx_version_base=="1.9.5"){
 	mdx_update_option("mdx_index_img_bg", "false");
 	mdx_update_option('mdx_icp_num', !empty(get_option('zh_cn_l10n_icp_num')) ? get_option('zh_cn_l10n_icp_num') : '');
 	mdx_update_option("mdx_reduce_motion", "true");
-}else if($mdx_version_base!="1.9.6"){
+}else if($mdx_version_base!="1.9.7" && $mdx_version_base != "1.9.6"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
