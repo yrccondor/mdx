@@ -353,7 +353,7 @@ function mdx_process_image($matches){
 	isset($img['width']) ? $mdx_img_width = ' width="'.$img['width']['value'].'"' : $mdx_img_width = '';
 	isset($img['width']) ? $mdx_figure_width = 'max-width:'.$img['width']['value'].'px' : $mdx_figure_width = '';
 	isset($img['height']) ? $mdx_img_height = ' height="'.$img['height']['value'].'"' : $mdx_img_height = '';
-	(isset($img['height']) && isset($img['width'])) ? $mdx_con_paading = $img['height']['value']/$img['width']['value']*100 : $mdx_con_paading = 100;
+	(isset($img['height']) && isset($img['width'])) ? $mdx_con_paading = $img['height']['value']/$img['width']['value']*100 : $mdx_con_paading = 50;
 	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
 	isset($img['alt']) ? $mdx_img_alt = ' alt="'.$img['alt']['value'].'"' : $mdx_img_alt = '';
 	$mdx_img_title = ' title="'.get_the_title().'"';

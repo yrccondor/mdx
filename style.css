@@ -1207,7 +1207,7 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
 }
 .mdx-author-c div.lazyload-bg {
     height: 100%;
-    width: 150px;
+    width: 149px;
     position: absolute;
     top: 0;
     left: 0;
@@ -4211,6 +4211,9 @@ article a.mdx-nonlazy-link::before {
     .mdx-post-cot,.mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
         height: 270px;
     }
+    .mdx-author-c div.lazyload-bg {
+        width: 119px;
+    }
 }
 @media(max-width:430px) {
     .divimg {
@@ -4264,6 +4267,9 @@ article a.mdx-nonlazy-link::before {
     }
     .mdx-post-cot,.mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
         height: 300px;
+    }
+    .mdx-author-c div.lazyload-bg {
+        width: 99px;
     }
 }
 .aligncenter,.aligncenter p.wp-caption-text {
