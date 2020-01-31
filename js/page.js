@@ -213,7 +213,7 @@ if(nsButton){
     }, false);
 }
 
-var lazyloadImg = document.querySelectorAll("article > *:not(figure) figure:not(.wp-block-image) img");
+var lazyloadImg = document.querySelectorAll("article > *:not(figure) figure:not(.wp-block-image) img, article > figure:not(.wp-block-image) > img");
 if(lazyloadImg.length){
     for(e of lazyloadImg){
         e.addEventListener('lazyloaded', function(e){
@@ -259,7 +259,7 @@ $(function(){
         $('#respond').html(tipMutiOffRes);
     }
 
-    $('article a > figure > img.lazyload').each(function(){
+    $('article a > figure > img.lazyload, article > figure > img.lazyload').each(function(){
         if(this.classList.contains("aligncenter")){
             this.parentNode.classList.add("aligncenter");
         }else if(this.classList.contains("alignright")){
