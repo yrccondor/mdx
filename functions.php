@@ -357,8 +357,11 @@ function mdx_process_image($matches){
 	isset($img['class']) ? $mdx_img_class = $img['class']['value'].' ' : $mdx_img_class = '';
 	isset($img['alt']) ? $mdx_img_alt = ' alt="'.$img['alt']['value'].'"' : $mdx_img_alt = '';
 	$mdx_img_title = ' title="'.get_the_title().'"';
-	$mdx_img_alt==' alt=""' ? $mdx_img_title = ' title="'.get_the_title().'"' : $mdx_img_title = ' title="'.$img['alt']['value'].'"';
-	$mdx_img_alt==' alt=""' ? $mdx_img_alt = ' alt="'.$img['src']['value'].'"' : $mdx_img_alt = ' alt="'.$img['alt']['value'].'"';
+	($mdx_img_alt=='' || $mdx_img_alt==' alt=""') ? $mdx_img_title = ' title="'.get_the_title().'"' : $mdx_img_title = ' title="'.$img['alt']['value'].'"';
+	($mdx_img_alt=='' || $mdx_img_alt==' alt=""') ? $mdx_img_alt = ' alt="'.$img['src']['value'].'"' : $mdx_img_alt = ' alt="'.$img['alt']['value'].'"';
+	if($mdx_img_class === "wp-smiley "){
+		return$matches[0];
+	}
 	$html = '<figure class="mdx-lazyload-container" style="'.$mdx_figure_width.'"><div style="padding-top:'.strval($mdx_con_paading).'%"></div><div class="mdx-img-loading-sp mdui-valign"><div><div class="mdui-spinner"></div></div></div><img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="'.$placeholder_image.'" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'></figure>';
     return $html;
 }
