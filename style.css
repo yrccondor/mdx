@@ -4293,6 +4293,7 @@ img.wp-smiley {
     width: 24px!important;
     height: auto!important;
     max-height: none!important;
+    vertical-align: top;
 }
 @media print {
     header, .scrollToTop, .scrollToTop + button, #indic, .mdx-ad-after-article, .mdx-ad-in-article, .mdx-post-money, .page-footer-nav, .ArtMain0 #respond, .ArtMain0 .mdx-same-posts, .PostMain > #respond, .PostMain > .mdx-same-posts, .spanout button, .titleBarGobal, .fullScreen.sea-close, .mdui-drawer, .mdui-overlay, .mdui-menu, .mdx-share-img-dialog, .mdx-share-wechat-dialog, .PostTitleFill {
