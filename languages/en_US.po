@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2020-01-25 23:02+0800\n"
-"PO-Revision-Date: 2020-01-25 23:17+0800\n"
+"PO-Revision-Date: 2020-02-05 15:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -1306,8 +1306,8 @@ msgstr "<strong>Error loading:</strong> Unknown Error."
 #: footer.php:61
 msgid "检测到减弱动画模式，已为你减弱动画效果"
 msgstr ""
-"Your \"Reduce Motion\" preference is respected. Some screen effects are now "
-"disabled."
+"Your &quot;Reduce Motion&quot; preference is respected. Some screen effects "
+"are now disabled."
 
 #: footer.php:62
 msgid "撤销"
@@ -1315,7 +1315,8 @@ msgstr "Undo"
 
 #: footer.php:63
 msgid "减弱动画模式关闭，已启用完整动画效果"
-msgstr "\"Reduce Motion\" mod off. All screen motion effects are enabled now."
+msgstr ""
+"&quot;Reduce Motion&quot; mod off. All screen motion effects are enabled now."
 
 #: footer.php:82
 msgid "搜索结果："
