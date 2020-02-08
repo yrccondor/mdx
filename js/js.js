@@ -56,7 +56,7 @@ function scrollDiff(){
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 0;
         }
-        if(currentStyle==='tworow'){
+        if(currentStyle!=='single'){
             if(howFar <= barHight){
                 opacityHeight = (barHight - howFar)/totalHight;
                 if(opacityHeight > 1){
