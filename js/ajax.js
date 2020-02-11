@@ -53,7 +53,7 @@ function ajax_load_index(url) {
         if(status=='success'){
             page++;
             urlV = $(data).find("div.nextpage a").attr("href");
-            if(enhanced_ajax && parseInt(sessionStorage.getItem("mdx_index_loaded_page")) <= 50){
+            if(enhanced_ajax && parseInt(sessionStorage.getItem("mdx_index_loaded_page")) <= 30){
                 sessionStorage.setItem("mdx_index_page_"+page, window.btoa(encodeURIComponent(data)));
                 sessionStorage.setItem("mdx_index_loaded_page", page);
             }
