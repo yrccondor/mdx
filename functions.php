@@ -360,7 +360,7 @@ function mdx_process_image($matches){
 	($mdx_img_alt=='' || $mdx_img_alt==' alt=""') ? $mdx_img_title = ' title="'.get_the_title().'"' : $mdx_img_title = ' title="'.$img['alt']['value'].'"';
 	($mdx_img_alt=='' || $mdx_img_alt==' alt=""') ? $mdx_img_alt = ' alt="'.$img['src']['value'].'"' : $mdx_img_alt = ' alt="'.$img['alt']['value'].'"';
 	if($mdx_img_class === "wp-smiley "){
-		return$matches[0];
+		return $matches[0];
 	}
 	if(mdx_get_option("mdx_lazyload_fallback") == "true"){
 		$html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'>';
@@ -635,10 +635,6 @@ function mdx_add_plugin($plugin_array){
 function mdx_post_metaboxes_2() {
     global $post;
 		$meta_box_value = get_post_meta($post->ID, 'informations_value', true);
-		// if($meta_box_value==''){
-		// 	$meta_box_value = '-----Nothing-----';
-		// }
-		//$meta_box_value = $post->ID;
         echo '<input type="hidden" name="informations_noncename" id="informations_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
         echo '<textarea rows="7" style="width:100%" name="informations_value">'.$meta_box_value.'</textarea>'.__('
 		<p class="description">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请留空</p>', 'mdx');
@@ -646,7 +642,6 @@ function mdx_post_metaboxes_2() {
 function mdx_post_metaboxes_1() {
     global $post;
         $meta_box_value = get_post_meta($post->ID, 'settings_value', true);
-		// echo'<input type="hidden" name="settings_noncename" id="settings_noncename" value="'.wp_create_nonce(plugin_basename(__FILE__) ).'">';
 		?>
 		<h4><?php _e('文章主题颜色','mdx');?></h4>
 		<?php $mdx_v_styles=get_post_meta($post->ID, "mdx_styles", true);?>
