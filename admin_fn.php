@@ -32,8 +32,6 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
 	mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
 	mdx_update_option("mdx_post_money", $_POST['mdx_post_money']);
-	mdx_update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
-	mdx_update_option("mdx_enhanced_ajax", $_POST['mdx_enhanced_ajax']);
 	mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	mdx_update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	mdx_update_option('mdx_toc', $_POST['mdx_toc']);
@@ -43,6 +41,8 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option('mdx_post_list_3', $_POST['mdx_post_list_3']);
 	mdx_update_option('mdx_post_edit_time', $_POST['mdx_post_edit_time']);
 	mdx_update_option('mdx_author_card', $_POST['mdx_author_card']);
+	mdx_update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
+	mdx_update_option("mdx_enhanced_ajax", $_POST['mdx_enhanced_ajax']);
 	mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
 	mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
 	mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
@@ -130,6 +130,7 @@ wp_nonce_field('mdx_options_update');
 	<td><textarea name="mdx_notice" id="mdx_notice" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_notice'))?></textarea>
 	<p class="description"><?php _e('在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('使用手势打开抽屉菜单', 'mdx');?></th>
 <td>
@@ -152,6 +153,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('允许用户缩放页面', 'mdx');?></th>
 <td>
@@ -174,6 +176,7 @@ wp_nonce_field('mdx_options_update');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><?php _e('ImgBox', 'mdx');?></th>
 <td>
@@ -207,29 +210,6 @@ wp_nonce_field('mdx_options_update');
 	<label><input type="radio" name="mdx_read_pro" value="true" <?php if($mdx_v_read_pro=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
 	<label><input type="radio" name="mdx_read_pro" value="false" <?php if($mdx_v_read_pro=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
 	<p class="description"><?php _e('开启后，会在文章/单独页面展示阅读进度。', 'mdx');?></p>
-	</fieldset>
-</td>
-</tr>
-<tr>
-<th scope="row"><label for="mdx_lazy_load_mode"><?php _e('LazyLoad 模式', 'mdx');?></label></th>
-<td>
-<?php $mdx_v_lazy_load_mode=mdx_get_option('mdx_lazy_load_mode');?>
-<select name="mdx_lazy_load_mode" id="mdx_lazy_load_mode">
-	<option value="speed" <?php if($mdx_v_lazy_load_mode=='speed'){?>selected="selected"<?php }?>><?php _e('速度优先', 'mdx');?></option>
-	<option value="seo1" <?php if($mdx_v_lazy_load_mode=='seo1'){?>selected="selected"<?php }?>><?php _e('SEO优先（轻度）', 'mdx');?></option>
-	<option value="seo2" <?php if($mdx_v_lazy_load_mode=='seo2'){?>selected="selected"<?php }?>><?php _e('SEO优先（重度）', 'mdx');?></option>
-</select>
-<p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用', 'mdx');?></p>
-</td>
-</tr>
-<tr>
-<th scope="row"><label for="mdx_enhanced_ajax"><?php _e('增强的文章列表加载方式', 'mdx');?></label></th>
-<td>
-<?php $mdx_v_enhanced_ajax=mdx_get_option('mdx_enhanced_ajax');?>
-<fieldset>
-	<label><input type="radio" name="mdx_enhanced_ajax" value="true" <?php if($mdx_v_enhanced_ajax=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-	<label><input type="radio" name="mdx_enhanced_ajax" value="false" <?php if($mdx_v_enhanced_ajax=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-	<p class="description"><?php _e('启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。', 'mdx');?></p>
 	</fieldset>
 </td>
 </tr>
@@ -332,6 +312,30 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
+<tr>
+<th scope="row"><label for="mdx_lazy_load_mode"><?php _e('LazyLoad 模式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_lazy_load_mode=mdx_get_option('mdx_lazy_load_mode');?>
+<select name="mdx_lazy_load_mode" id="mdx_lazy_load_mode">
+	<option value="speed" <?php if($mdx_v_lazy_load_mode=='speed'){?>selected="selected"<?php }?>><?php _e('速度优先', 'mdx');?></option>
+	<option value="seo1" <?php if($mdx_v_lazy_load_mode=='seo1'){?>selected="selected"<?php }?>><?php _e('SEO优先（轻度）', 'mdx');?></option>
+	<option value="seo2" <?php if($mdx_v_lazy_load_mode=='seo2'){?>selected="selected"<?php }?>><?php _e('SEO优先（重度）', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_enhanced_ajax"><?php _e('增强的文章列表加载方式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_enhanced_ajax=mdx_get_option('mdx_enhanced_ajax');?>
+<fieldset>
+	<label><input type="radio" name="mdx_enhanced_ajax" value="true" <?php if($mdx_v_enhanced_ajax=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_enhanced_ajax" value="false" <?php if($mdx_v_enhanced_ajax=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。', 'mdx');?></p>
+	</fieldset>
+</td>
+</tr>
 <tr>
 <th scope="row"><?php _e('使用 Preload 技术加速页面加载', 'mdx');?></th>
 <td>
@@ -343,6 +347,7 @@ $mdx_i18n_settings_4 = __('空', 'mdx');
 	</fieldset>
 </td>
 </tr>
+<tr><td> </td></tr>
 <tr>
 <th scope="row"><label for="mdx_share_area"><?php _e('分享到的服务商', 'mdx');?></label></th>
 <td>
