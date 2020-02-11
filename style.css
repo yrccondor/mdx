@@ -3634,6 +3634,9 @@ article a.mdx-nonlazy-link::before {
 .mdui-card.lazyload {
     transition: background .3s;
 }
+a.mdx-img-in-post-with-link {
+    width: 100%;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;

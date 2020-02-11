@@ -362,7 +362,11 @@ function mdx_process_image($matches){
 	if($mdx_img_class === "wp-smiley "){
 		return$matches[0];
 	}
-	$html = '<figure class="mdx-lazyload-container" style="'.$mdx_figure_width.'"><div style="padding-top:'.strval($mdx_con_paading).'%"></div><div class="mdx-img-loading-sp mdui-valign"><div><div class="mdui-spinner"></div></div></div><img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="'.$placeholder_image.'" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'></figure>';
+	if(mdx_get_option("mdx_lazyload_fallback") == "true"){
+		$html = '<img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'>';
+	}else{
+		$html = '<figure class="mdx-lazyload-container" style="'.$mdx_figure_width.'"><div style="padding-top:'.strval($mdx_con_paading).'%"></div><div class="mdx-img-loading-sp mdui-valign"><div><div class="mdui-spinner"></div></div></div><img'.$mdx_img_width.''.$mdx_img_height.' class="'.$mdx_img_class.'lazyload"'.$mdx_img_style.$mdx_img_title.' src="'.$placeholder_image.'" data-src="'.$img['src']['value'].'"'.$mdx_img_alt.$mdx_srcset.''.$mdx_sizes.'></figure>';
+	}
     return $html;
 }
 function mdx_lazyload_avatar($content){
