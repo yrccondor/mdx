@@ -33,6 +33,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 	mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
 	mdx_update_option("mdx_post_money", $_POST['mdx_post_money']);
 	mdx_update_option("mdx_lazy_load_mode", $_POST['mdx_lazy_load_mode']);
+	mdx_update_option("mdx_enhanced_ajax", $_POST['mdx_enhanced_ajax']);
 	mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
 	mdx_update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
 	mdx_update_option('mdx_toc', $_POST['mdx_toc']);
@@ -219,6 +220,17 @@ wp_nonce_field('mdx_options_update');
 	<option value="seo2" <?php if($mdx_v_lazy_load_mode=='seo2'){?>selected="selected"<?php }?>><?php _e('SEO优先（重度）', 'mdx');?></option>
 </select>
 <p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_enhanced_ajax"><?php _e('增强的文章列表加载方式', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_enhanced_ajax=mdx_get_option('mdx_enhanced_ajax');?>
+<fieldset>
+	<label><input type="radio" name="mdx_enhanced_ajax" value="true" <?php if($mdx_v_enhanced_ajax=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+	<label><input type="radio" name="mdx_enhanced_ajax" value="false" <?php if($mdx_v_enhanced_ajax=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+	<p class="description"><?php _e('启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。', 'mdx');?></p>
+	</fieldset>
 </td>
 </tr>
 <tr>

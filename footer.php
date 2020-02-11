@@ -43,20 +43,6 @@
     <?php }?>
     <?php wp_enqueue_script('comment-reply');?>
     <script>
-      function snbar(){
-        mdui.snackbar({
-          message: '<?php _e("已自动定位到你此前阅读处","mdx");?>&nbsp;&nbsp;&nbsp;',
-          buttonText: '<?php _e("从头阅读","mdx");?>',
-          timeout: 10000,
-          onButtonClick: function(){
-              $("body,html").animate({scrollTop:0},700);
-          },
-        });
-      }
-      var ifscr = 0;
-      var moreinput = "'<?php _e("更多选项","mdx");?>'";
-      var morecomment = "<?php _e("加载更多评论","mdx");?>";
-      var nomorecomment = "<?php _e("没有更多了","mdx");?>";
       var ajax_error = "<?php _e("<strong>加载失败：</strong> 未知错误。","mdx");?>";
       var reduce_motion_i18n_1 = "<?php _e("检测到减弱动画模式，已为你减弱动画效果","mdx");?>";
       var reduce_motion_i18n_2 = "<?php _e("撤销","mdx");?>";
@@ -77,7 +63,14 @@
         mdx_tapToTop = 1;
       <?php }?>
       </script>
-    <?php if(is_search()){?>
+    <?php if(is_home()){?>
+      <script>
+        enhanced_ajax = false;
+        <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
+        enhanced_ajax = true;
+        <?php }?>
+      </script>
+    <?php }else if(is_search()){?>
       <script>
         var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
       </script>
@@ -113,6 +106,20 @@
       var ind = $('#indic').data('radialIndicator');
       </script>
       <?php }if(is_single() || (is_page())){?><script>
+      function snbar(){
+        mdui.snackbar({
+          message: '<?php _e("已自动定位到你此前阅读处","mdx");?>&nbsp;&nbsp;&nbsp;',
+          buttonText: '<?php _e("从头阅读","mdx");?>',
+          timeout: 10000,
+          onButtonClick: function(){
+              $("body,html").animate({scrollTop:0},700);
+          },
+        });
+      }
+      var ifscr = 0;
+      var moreinput = "'<?php _e("更多选项","mdx");?>'";
+      var morecomment = "<?php _e("加载更多评论","mdx");?>";
+      var nomorecomment = "<?php _e("没有更多了","mdx");?>";
       var mdx_si_i18n = '<?php _e('长按/右键保存图片','mdx'); ?>';
       var mdx_si_i18n_2 = '<?php _e('关闭','mdx'); ?>';
       var mdx_si_i18n_3 = '<?php _e('使用微信扫描后在微信内分享','mdx'); ?>';
