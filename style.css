@@ -2277,7 +2277,7 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
 }
 .mdui-theme-layout-dark .mdxNotice {
     background-color: #212121!important;
-    color: #fff;
+    color: #fff!important;
 }
 .mdxNotice i.mdui-icon {
     opacity: .5;
