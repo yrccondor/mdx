@@ -13,12 +13,16 @@ function mdx_update_option($option_name, $option_value){
 
 $mdx_now_url = '';
 if(mdx_get_option('mdx_install') === "normal"){
-	$mdx_now_url = home_url(add_query_arg(array()));
+	global $wp;
+	$mdx_now_url = home_url(add_query_arg(array(), $wp->request));
 }else{
 	global $wp;
-	$mdx_now_url = home_url(add_query_arg(array(),$wp->request));
+	$mdx_now_url = add_query_arg($wp->query_string, '', home_url($wp->request));
 }
-function mdx_get_now_url(){
+function mdx_get_now_url($is_post = false, $post_id = 0){
+	if($is_post){
+		return get_permalink($post_id);
+	}
 	return $GLOBALS['mdx_now_url'];
 }
 //激活功能

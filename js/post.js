@@ -500,7 +500,8 @@ $("#oth-div").click(function(){
     if(nowPro2 > 1){
         nowPro2 = 1;
     }
-    now_url = window.location.href.replace(window.location.search, "")+'?_pro='+nowPro2;
+    now_url_p = window.location.href.split("?_pro=")[0].split("&_pro=")[0];
+    now_url = now_url_p.indexOf("?")===-1 ? now_url_p+'?_pro='+nowPro2 : now_url_p+'&_pro='+nowPro2;
     $('#qrcode').html("");
     new QRCode(document.getElementById("qrcode"), {
         text: now_url,
@@ -587,7 +588,7 @@ function hideBar(){
 $(function(){
 scrollDiff();
 new QRCode(document.getElementById("mdx-si-qr"), {
-    text: window.location.href,
+    text: window.location.href.split("?_pro=")[0].split("&_pro=")[0],
     width: 70,
     height: 70,
     correctLevel : QRCode.CorrectLevel.L,

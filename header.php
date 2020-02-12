@@ -32,7 +32,7 @@ if($site_description && (is_home() || is_front_page())) echo " - $site_descripti
 <meta property="og:title" content="<?php global $page, $paged;wp_title('-', true, 'right');
 bloginfo('name');$site_description = get_bloginfo('description', 'display');if($site_description && (is_home() || is_front_page())) echo " - $site_description";if($paged >= 2 || $page >= 2) echo ' - '.sprintf(__('第 %s 页'), max($paged, $page));?>">
 <meta property="og:type" content="article">
-<meta property="og:url" content="<?php global $wp;$mdx_current_url=home_url(add_query_arg(array(),$wp->request));echo $mdx_current_url;?>">
+<meta property="og:url" content="<?php global $wp;$mdx_current_url=home_url(add_query_arg(array()));echo $mdx_current_url;?>">
 <?php
 $mdx_des=mdx_get_option('mdx_seo_des');
 $mdx_s_key=mdx_get_option('mdx_seo_key');

@@ -95,7 +95,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.mdx_get_now_url(true, (int)$post->ID).'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
@@ -137,7 +137,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.mdx_get_now_url(true, (int)$post->IDFmdx-si-qr).'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
@@ -179,7 +179,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                             if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
                                 $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
                             }
-                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url().'">'.mdx_get_now_url().'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url().'">'.get_the_title().'</a>',$mdx_info));?>
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.mdx_get_now_url(true, (int)$post->ID).'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.get_the_title().'</a>',$mdx_info));?>
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
