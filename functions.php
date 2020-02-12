@@ -12,12 +12,22 @@ function mdx_update_option($option_name, $option_value){
 }
 
 $mdx_now_url = '';
-if(mdx_get_option('mdx_install') === "normal"){
+$mdx_flag_subdir = false;
+if(stripos(explode('//', home_url())[1], "/") || mdx_get_option('mdx_install') === "sub"){
+	$mdx_flag_subdir = true;
+}
+if(!$mdx_flag_subdir){
 	global $wp;
-	$mdx_now_url = home_url(add_query_arg(array(), $wp->request));
-}else{
+	$mdx_now_url = home_url(add_query_arg(array()));
+}else if($mdx_flag_subdir && get_option("permalink_structure") === ""){
 	global $wp;
 	$mdx_now_url = add_query_arg($wp->query_string, '', home_url($wp->request));
+}else if($mdx_flag_subdir && get_option("permalink_structure") !== ""){
+	global $wp;
+	$current_url = home_url(add_query_arg(array(), $wp->request));
+}else{
+	global $wp;
+	$mdx_now_url = home_url(add_query_arg(array()));
 }
 function mdx_get_now_url($is_post = false, $post_id = 0){
 	if($is_post){

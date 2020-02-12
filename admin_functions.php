@@ -26,7 +26,8 @@ function mdx_display_sub_function_three(){
             'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
         );
         $contexts2 = stream_context_create($opt2);
-        $mdx_data2 = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getnews', false, $contexts2);
+        $lang = empty(get_option("WPLANG")) ? "en_US" : get_option("WPLANG");
+        $mdx_data2 = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getnews?lang='.$lang, false, $contexts2);
         $mdx_news = '';
         if($mdx_data2 != ''){
             $mdx_news = '<div class="notice notice-info">
