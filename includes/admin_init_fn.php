@@ -1,7 +1,11 @@
 <?php
 require_once('admin_init_ver.php');
+$mdx_subdir_flag_init = "normal";
+if(stripos(explode('//', home_url())[1], "/")){
+	$mdx_subdir_flag_init = "sub";
+}
 $arr = array(
-'mdx_install'=>'normal',
+'mdx_install'=>$mdx_subdir_flag_init,
 'mdx_night_style'=>'true',
 'mdx_auto_night_style'=>'true',
 'mdx_notice'=>'',
