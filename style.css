@@ -1164,7 +1164,6 @@ div#comments ul li {
     background-position: center center;
     transition: opacity .3s;
     opacity: 0;
-    border-radius: 2px;
 }
 .mdx-hot-posts .mdx-hot-posts-lazyload.mdx-bg-loaded {
     opacity: 1;
@@ -1574,7 +1573,6 @@ body.mdui-theme-primary-blue-grey #submit {
     left: 0;
     z-index: 2;
     background-color: rgba(0,0,0,.15);
-    border-radius: 2px;
 }
 .mdx-same-posts .mdx-lazyload {
     width: 100%;
@@ -1595,7 +1593,7 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-hot-posts div.mdx-ul div.mdx-li i,.mdx-same-posts ul li i {
     display: block;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     right: 7px;
     top: 7px;
     font-size: 20px;

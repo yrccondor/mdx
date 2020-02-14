@@ -212,12 +212,6 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 .comment-reply-link, .comment-reply-login {
     border-radius: 5px;
 }
-.mdx-sp-fill {
-    border-radius: 8px;
-}
-.mdx-hot-posts .mdx-hot-posts-lazyload {
-    border-radius: 8px;
-}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {
         border-radius: 8px;
