@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2020-02-17 08:52+0800\n"
-"PO-Revision-Date: 2020-02-17 08:52+0800\n"
+"PO-Revision-Date: 2020-02-17 09:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -67,31 +67,27 @@ msgstr "WordPress Installation Method"
 
 #: admin_fn.php:96
 msgid "常规安装"
-msgstr ""
+msgstr "Installed normally"
 
 #: admin_fn.php:98
 msgid "子目录安装"
-msgstr ""
+msgstr "Installed in a subdirectory"
 
 #: admin_fn.php:101
 msgid "常规"
-msgstr ""
+msgstr "Normal"
 
 #: admin_fn.php:102
 msgid "子目录"
 msgstr "Subdirectory"
 
 #: admin_fn.php:103
-#, fuzzy
-#| msgid ""
-#| "为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不明"
-#| "白此选项的含义，选“一般”即可。"
 msgid ""
 "为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不确定，"
 "请参考下方的检测结果。"
 msgstr ""
 "To better implement some features, MDx needs to know how your WordPress is "
-"installed. If you are not sure, choose \"default\"."
+"installed. If you are not sure, please refer to the detected result below."
 
 #: admin_fn.php:109
 msgid "夜间模式"
@@ -362,7 +358,7 @@ msgstr ""
 
 #: admin_fn.php:334
 msgid "兼容性 Lazyload"
-msgstr ""
+msgstr "Fallback Lazyload"
 
 #: admin_fn.php:340
 msgid ""
@@ -370,18 +366,22 @@ msgid ""
 "strong><br>如果你发现文章内图片的 Lazyload 加载出现问题且希望保留文章内图片"
 "的 Lazyload，可以尝试打开此选项。"
 msgstr ""
+"Attmpts to load pictures with better compatibility, <strong>but might break "
+"some enhanced features.</strong><br>If you have a problem Lazyloading your "
+"pictures in posts, you may want to consider this option."
 
 #: admin_fn.php:345
-#, fuzzy
-#| msgid "文章列表样式"
 msgid "增强的文章列表加载方式"
-msgstr "Posts list style"
+msgstr "Enhanced loading for Posts list"
 
 #: admin_fn.php:351
 msgid ""
 "启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持"
 "滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。"
 msgstr ""
+"Enable this option to load posts list faster, and to remember the scroll "
+"position while going back in browsers. <br>Due to browser limitations, this "
+"feature may not perform well for a large quantity of posts."
 
 #: admin_fn.php:356
 msgid "使用 Preload 技术加速页面加载"
