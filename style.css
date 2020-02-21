@@ -1508,6 +1508,7 @@ body.mdui-theme-primary-blue-grey #submit {
     margin: 0;
     overflow: hidden;
     opacity: .85;
+    overflow-y: scroll;
 }
 .mdx-author-c h4 {
     opacity: .5;
