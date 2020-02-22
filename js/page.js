@@ -54,7 +54,9 @@ function scrollDiff(){
     }else{
         opacityHeight = 1;
     }
-    document.getElementsByClassName("PostTitleFillPage")[0].style.setProperty('opacity', opacityHeight, 'important');
+    if(document.getElementsByClassName("PostTitleFillPage").length){
+        document.getElementsByClassName("PostTitleFillPage")[0].style.setProperty('opacity', opacityHeight, 'important');
+    }
     ticking = false;
 };
 
