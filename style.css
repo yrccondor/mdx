@@ -228,6 +228,7 @@ body.mdui-theme-layout-dark .ct1-p {
     box-sizing: border-box;
     padding: 0 10px;
     text-align: center;
+    font-weight: bold;
 }
 .PostTitleFill,.PostTitlePage {
     position: absolute;
