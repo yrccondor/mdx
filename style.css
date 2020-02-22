@@ -1229,12 +1229,16 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     fill: #292929;
 }
 .mdx-author-info {
-    width: calc(100% - 155px);
+    width: calc(100% - 152px);
     position: absolute;
     z-index: 3;
-    left: 155px;
+    left: 152px;
     height: 150px;
     top: 0;
+    background-color: #ededed;
+}
+.mdui-theme-layout-dark .mdx-author-info {
+    background-color: #292929;
 }
 .mdx-author-info > h3 {
     font-weight: bold!important;
@@ -1492,6 +1496,8 @@ body.mdui-theme-primary-blue-grey #submit {
     margin-bottom: 0;
     margin-top: 15px;
     font-size: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .mdx-author-c a {
     text-decoration: none;
@@ -1503,11 +1509,12 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-author-c p {
     padding: 0 20px;
     box-sizing: border-box;
-    height: 3pc;
+    height: 4pc;
     text-overflow: ellipsis;
     margin: 0;
     overflow: hidden;
     opacity: .85;
+    overflow-y: auto;
 }
 .mdx-author-c h4 {
     opacity: .5;
@@ -4210,6 +4217,7 @@ a.mdx-img-in-post-with-link {
     }
     .mdx-author-c p {
         font-size: 14px;
+        height: 3pc;
     }
     .mdx-post-cot,.mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
         height: 270px;
@@ -4267,6 +4275,7 @@ a.mdx-img-in-post-with-link {
     .mdx-author-c p {
         font-size: 13px;
         padding: 0 15px;
+        height: 2.5pc;
     }
     .mdx-post-cot,.mdx-post-wait-out-c,.mdx-post-wait-out-c2 {
         height: 300px;
