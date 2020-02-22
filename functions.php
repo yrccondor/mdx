@@ -519,7 +519,7 @@ function mdx_shortcode_hide($atts, $content = null){
         <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-panel-item-body">
-        <p>'.$content.'</p>
+        <p>'.do_shortcode($content).'</p>
       </div>
     </div>
   </div>';
@@ -528,7 +528,7 @@ add_shortcode("mdx_fold", "mdx_shortcode_hide");
 
 function mdx_shortcode_warning($atts, $content = null){
     extract(shortcode_atts(array("title" => __('警告','mdx')), $atts));
-    return '<blockquote class="mdx-warning"><p><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'<br><strong>'.$content.'</strong></p></blockquote>';
+    return '<blockquote class="mdx-warning"><p><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'<br><strong>'.do_shortcode($content).'</strong></p></blockquote>';
 }
 add_shortcode("mdx_warning", "mdx_shortcode_warning");
 
