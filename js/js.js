@@ -41,6 +41,8 @@ window.onresize = function(){
         barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
         totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
     }
+    toggleHotPostsOverlay();
+    displayHotPostsOverlay();
 }
 function scrollDiff(){
     if(mdxStyle){
@@ -114,34 +116,7 @@ if(nsButton){
 
 $(function(){
     //hot posts
-    if(document.getElementsByClassName("mdx-hot-posts").length!==0){
-        document.getElementsByClassName("mdx-hp-g-r")[0].style.display = "block";
-        var mdxChange = 1;
-        var mdxChange2 = 1;
-        var mdxSpW = (210 + parseInt(getComputedStyle(document.querySelector("a>div.mdx-li.mdui-card"), null).marginRight))*document.querySelectorAll("a>div.mdx-li.mdui-card").length+10;
-        var mdxSpWw = 0;
-        var mdxSpS = 0;
-        var ele = document.getElementById("mdx-sp-out-c");
-        ele.onscroll=function(){
-            mdxSpWw = ele.offsetWidth;
-            mdxSpS = ele.scrollLeft;
-            if(mdxSpS>5 && mdxChange){
-                $('.mdx-hp-g-l').fadeIn(200);
-                mdxChange = 0;
-            }
-            else if(mdxSpS<=5 && !mdxChange){
-                $('.mdx-hp-g-l').fadeOut(200);
-                mdxChange = 1;
-            }
-            if((mdxSpW - mdxSpWw - mdxSpS)<=1 && mdxChange2){
-                $('.mdx-hp-g-r').fadeOut(200);
-                mdxChange2 = 0;
-            }else if((mdxSpW - mdxSpWw - mdxSpS)>1 && !mdxChange2){
-                $('.mdx-hp-g-r').fadeIn(200);
-                mdxChange2 = 1;
-            }
-        }
-    }
+    toggleHotPostsOverlay();
 
     if(document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")){
         var hsc = window.matchMedia("screen and (orientation:landscape) and (min-width: 750px)");
@@ -154,6 +129,8 @@ $(function(){
         mrm.addListener(handleMotionChange);
         handleMotionChange(mrm);
     }
+
+    displayHotPostsOverlay();
 })
 
 function handleSearchChange(hsc){
@@ -200,6 +177,52 @@ function handleMotionChange(mrm){
             });
         }
         sessionStorage.removeItem("mrm_enable");
+    }
+}
+
+function toggleHotPostsOverlay() {
+    if(document.getElementsByClassName("mdx-hp-g-r").length){
+        document.getElementsByClassName("mdx-hp-g-r")[0].style.display = "block";
+        var mdxChange = 1;
+        var mdxChange2 = 1;
+        var mdxSpW = (210 + parseInt(getComputedStyle(document.querySelector("a>div.mdx-li.mdui-card"), null).marginRight))*document.querySelectorAll("a>div.mdx-li.mdui-card").length+10;
+        var mdxSpWw = 0;
+        var mdxSpS = 0;
+        var ele = document.getElementById("mdx-sp-out-c");
+        ele.onscroll=function(){
+            mdxSpWw = ele.offsetWidth;
+            mdxSpS = ele.scrollLeft;
+            if(mdxSpS>5 && mdxChange){
+                $('.mdx-hp-g-l').fadeIn(200);
+                mdxChange = 0;
+            }
+            else if(mdxSpS<=5 && !mdxChange){
+                $('.mdx-hp-g-l').fadeOut(200);
+                mdxChange = 1;
+            }
+            if((mdxSpW - mdxSpWw - mdxSpS)<=1 && mdxChange2){
+                $('.mdx-hp-g-r').fadeOut(200);
+                mdxChange2 = 0;
+            }else if((mdxSpW - mdxSpWw - mdxSpS)>1 && !mdxChange2){
+                $('.mdx-hp-g-r').fadeIn(200);
+                mdxChange2 = 1;
+            }
+        }
+    }
+}
+
+function displayHotPostsOverlay(){
+    var parentDOM = document.getElementsByClassName("mdx-posts-may-related");
+    if(parentDOM.length){
+        DOMList = document.getElementsByClassName("mdx-posts-may-related")[0].getElementsByClassName("mdx-li");
+        var listWidth = (DOMList[0].offsetWidth + 8) * DOMList.length - 15;
+        if(listWidth < parentDOM[0].offsetWidth){
+            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility="hidden";
+            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility="hidden";
+        }else{
+            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility="visible";
+            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility="visible";
+        }
     }
 }
 
