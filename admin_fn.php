@@ -27,6 +27,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_notice', htmlentities(stripslashes($_POST['mdx_notice'])));
     mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
     mdx_update_option('mdx_widget', $_POST['mdx_widget']);
+    mdx_update_option('mdx_cookie', $_POST['mdx_allow_scale']);
     mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
     mdx_update_option('mdx_reduce_motion', $_POST['mdx_reduce_motion']);
     mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
@@ -157,6 +158,12 @@ if(stripos(explode('//', home_url())[1], "/")){
     <p class="description"><?php _e('开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。', 'mdx');?></p>
     </fieldset>
 </td>
+</tr>
+<tr><td> </td></tr>
+<tr>
+<th scope="row"><label for="mdx_cookie"><?php _e('Cookie 使用提示 (GDPR)', 'mdx');?></label></th>
+    <td><textarea name="mdx_cookie" id="mdx_cookie" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_cookie'))?></textarea>
+    <p class="description"><?php _e('Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 Cookie 使用提示，留空则不会显示。', 'mdx');?></p></td>
 </tr>
 <tr><td> </td></tr>
 <tr>

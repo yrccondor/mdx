@@ -1,6 +1,8 @@
 <?php
 $mdx_version_base = get_option('mdx_version');
-if($mdx_version_base=="1.9.7" || $mdx_version_base == "1.9.6"){
+if($mdx_version_base=="1.9.8"){
+	mdx_update_option("mdx_cookie", "");
+}else if($mdx_version_base=="1.9.7" || $mdx_version_base == "1.9.6"){
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
 }else if($mdx_version_base=="1.9.5"){
@@ -539,7 +541,7 @@ if($mdx_version_base=="1.9.7" || $mdx_version_base == "1.9.6"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
-}else if($mdx_version_base!="1.9.8"){
+}else if($mdx_version_base!="1.9.9"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');

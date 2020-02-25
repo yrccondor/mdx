@@ -11,6 +11,7 @@ $arr = array(
 'mdx_notice'=>'',
 'mdx_open_side'=>'true',
 'mdx_widget'=>'false',
+'mdx_cookie'=>'',
 'mdx_allow_scale'=>'true',
 'mdx_reduce_motion'=>'true',
 'mdx_img_box'=>'true',
