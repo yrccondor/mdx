@@ -189,13 +189,13 @@ wp_nonce_field('mdx_options_update');
 </td>
 </tr>
 <tr>
-<th scope="row"><?php _e('Material Design 2 <span class="mdx-exp">实验性</span>', 'mdx');?></th>
+<th scope="row"><?php _e('Material Design 2', 'mdx');?></th>
 <td>
 <?php $mdx_v_md2=mdx_get_option('mdx_md2');?>
     <fieldset>
     <label><input type="radio" class="md2" name="mdx_md2" value="true" <?php if($mdx_v_md2=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
     <label><input type="radio" class="md2" name="mdx_md2" value="false" <?php if($mdx_v_md2=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-    <p class="description"><?php _e('开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无法保证显示效果达到完美，请谨慎启用。</strong>', 'mdx');?></p>
+    <p class="description"><?php _e('开启后，主题将会使用 Material Design 2 风格。', 'mdx');?></p>
     </fieldset>
 </td>
 </tr>
