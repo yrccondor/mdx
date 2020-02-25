@@ -595,6 +595,22 @@ $(function(){
     }
     new mdui.Collapse("#mdx_menu");
 
+    //cookie
+    ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
+    cookieEle = document.getElementById("mdx-cookie-notice");
+    if(ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")){
+        cookieEle.classList.add("mdx-cookie-notice-show");
+        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+    }
+
+    function agreeCookie(){
+        localStorage.setItem("mdx_cookie" ,"true");
+        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        setTimeout(() => {
+            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+        }, 400);
+    }
+
     var cfcc = document.getElementsByClassName('comment-form-cookies-consent');
     if(cfcc.length > 0){
         $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
