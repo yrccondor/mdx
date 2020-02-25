@@ -7,7 +7,7 @@ if(stripos(explode('//', home_url())[1], "/")){
 $arr = array(
 'mdx_install'=>$mdx_subdir_flag_init,
 'mdx_night_style'=>'true',
-'mdx_auto_night_style'=>'true',
+'mdx_auto_night_style'=>'system',
 'mdx_notice'=>'',
 'mdx_open_side'=>'true',
 'mdx_widget'=>'false',
