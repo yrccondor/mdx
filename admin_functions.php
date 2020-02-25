@@ -27,7 +27,7 @@ function mdx_display_sub_function_three(){
         );
         $contexts2 = stream_context_create($opt2);
         $lang = empty(get_option("WPLANG")) ? "en_US" : get_option("WPLANG");
-        $mdx_data2 = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getnews?lang='.$lang, false, $contexts2);
+        $mdx_data2 = file_get_contents('https://mdxupdate.flyhigher.top/mdx/getnews?lang='.$lang.'&ver='.get_option('mdx_version'), false, $contexts2);
         $mdx_news = '';
         if($mdx_data2 != ''){
             $mdx_news = '<div class="notice notice-info">
