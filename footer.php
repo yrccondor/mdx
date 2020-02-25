@@ -30,7 +30,6 @@
       }
     ?>
     </div><?php }?>
-    <script>var mdx_offline_mode = 0;</script>
     <?php $pageType=get_post_meta($wp_query->get_queried_object_id(),'_wp_page_template',true);?>
     <?php wp_footer();?>
     <?php if(mdx_get_option('mdx_real_search')=='true'){?>

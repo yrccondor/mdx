@@ -49,7 +49,7 @@ function checkType(){
             }
             oldType = nowType;
         }else if(nowType == ''){
-            if(mdx_offline_mode){
+            if(ifOffline){
                 $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
             }else{
                 $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');

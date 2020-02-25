@@ -13,6 +13,7 @@ var mdxStyle = 1;
 var currentStyle = 'unset';
 var barHight;
 var totalHight;
+var ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
 if(document.getElementsByClassName("theFirstPage").length === 0){
     mdxStyle = 0;
 }else{
@@ -213,8 +214,8 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function(){
     document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
     document.getElementsByClassName("seainput")[0].focus();
     document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
-    if(mdx_offline_mode){
-        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
+    if(ifOffline){
+        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
         searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
         searchBoxDOM.style.pointerEvents = 'auto';
         document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
@@ -242,8 +243,8 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
         searchBarDOM.classList.add("mdui-color-theme");
         $(".fullScreen").fadeIn(500);
         document.getElementsByClassName("seainput")[0].focus();
-        if(mdx_offline_mode){
-            let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
+        if(ifOffline){
+            let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
             searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
             searchBoxDOM.style.pointerEvents = 'auto';
             document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
@@ -338,8 +339,8 @@ $(function(){
     new mdui.Collapse("#mdx_menu");
 
     //cookie
-    ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    cookieEle = document.getElementById("mdx-cookie-notice");
+    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
+    var cookieEle = document.getElementById("mdx-cookie-notice");
     if(ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")){
         cookieEle.classList.add("mdx-cookie-notice-show");
         cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);

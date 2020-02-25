@@ -10,6 +10,7 @@ if(metaColor){
     nowColor = document.querySelector("meta[name='mdx-main-color']").getAttribute('content');
     colorEnabled = true;
 }
+var ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
 var ticking = false;
 window.onscroll=function(){
     if(!ticking) {
@@ -77,8 +78,8 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function(){
     document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
     document.getElementsByClassName("seainput")[0].focus();
     document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
-    if(mdx_offline_mode){
-        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox');
+    if(ifOffline){
+        let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
         searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
         searchBoxDOM.style.pointerEvents = 'auto';
         document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
@@ -148,8 +149,8 @@ $(function(){
     new mdui.Collapse("#mdx_menu");
 
     //cookie
-    ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    cookieEle = document.getElementById("mdx-cookie-notice");
+    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
+    var cookieEle = document.getElementById("mdx-cookie-notice");
     if(ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")){
         cookieEle.classList.add("mdx-cookie-notice-show");
         cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
