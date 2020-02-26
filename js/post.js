@@ -102,20 +102,22 @@ window.onload=function(){
     mdui.JQ(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var query = GetQueryString("_pro");
-        if(query.indexOf("v2") !== -1){
-            var newpro = query.split(":");
-            var DOMlist = document.querySelectorAll(".PostMain article.mdui-typo > *");
-            if(DOMlist[parseInt(newpro[1])]){
-                var scro = DOMlist[parseInt(newpro[1])].offsetHeight*parseFloat(newpro[2])+DOMlist[parseInt(newpro[1])].offsetTop;
-                if(scro>200){
-                    $("body,html").animate({scrollTop:scro},700);
-                    snbar();
+        if(query){
+            if(query.indexOf("v2") !== -1){
+                var newpro = query.split(":");
+                var DOMlist = document.querySelectorAll(".PostMain article.mdui-typo > *");
+                if(DOMlist[parseInt(newpro[1])]){
+                    var scro = DOMlist[parseInt(newpro[1])].offsetHeight*parseFloat(newpro[2])+DOMlist[parseInt(newpro[1])].offsetTop;
+                    if(scro>200){
+                        $("body,html").animate({scrollTop:scro},700);
+                        snbar();
+                    }
+                }else{
+                    backupPro(newpro[3]);
                 }
             }else{
-                backupPro(newpro[3]);
+                backupPro(query);
             }
-        }else{
-            backupPro(query);
         }
   }
   setTimeout("mdx_shortcode()",1000);
