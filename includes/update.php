@@ -5,15 +5,18 @@ if($mdx_version_base=="1.9.8"){
 }else if($mdx_version_base=="1.9.7" || $mdx_version_base == "1.9.6"){
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.9.5"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.9.3"){
 	mdx_update_option('mdx_icp_num', !empty(get_option('zh_cn_l10n_icp_num')) ? get_option('zh_cn_l10n_icp_num') : '');
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.9.0" || $mdx_version_base=="1.9.1" || $mdx_version_base=="1.9.2"){
 	mdx_update_option('mdx_md2_font', "false");
 	mdx_update_option("mdx_index_img_bg", "false");
@@ -21,6 +24,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.8.12" || $mdx_version_base=="1.8.11" || $mdx_version_base=="1.8.10" || $mdx_version_base=="1.8.9" || $mdx_version_base=="1.8.8"){
 	mdx_update_option('mdx_styles_dark', "disable");
 	mdx_update_option("mdx_md2", "false");
@@ -37,6 +41,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.8.5" || $mdx_version_base=="1.8.3" || $mdx_version_base=="1.8.7"){
 	mdx_update_option("mdx_allow_scale", "false");
 	mdx_update_option("mdx_install", "normal");
@@ -56,6 +61,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.8.0" || $mdx_version_base=="1.8.1" || $mdx_version_base=="1.8.2"){
 	update_option('mdx_title_med', 'diy');
 	update_option('mdx_post_list_img_height', 'auto');
@@ -81,6 +87,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.10"){
 	update_option('mdx_index_say_size', '1');
 	if(get_option('mdx_logo')==''){
@@ -114,6 +121,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.7" || $mdx_version_base=="1.7.8" || $mdx_version_base=="1.7.9"){
 	update_option('mdx_speed_pre', 'false');
 	update_option('mdx_smooth_scroll', 'true');
@@ -149,6 +157,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.5"){
 	update_option('mdx_head_js', '');
 	update_option('mdx_footer_js', '');
@@ -186,6 +195,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.4"){
 	update_option('mdx_hot_posts', 'false');
 	update_option('mdx_hot_posts_num', '10');
@@ -229,6 +239,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.3"){
 	update_option('mdx_echo_post_sum', 'true');
 	update_option('mdx_index_show', '0');
@@ -272,6 +283,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.2"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -322,6 +334,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.7.1" || $mdx_version_base=="1.7.0"){
 	update_option('mdx_share_area', 'all');
 	update_option('mdx_tap_to_top', 'true');
@@ -372,6 +385,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.5" || $mdx_version_base=="1.5.1"){
 	update_option("mdx_readmore", __('去围观', 'mdx'));
 	update_option("mdx_post_money", '');
@@ -425,6 +439,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.3" || $mdx_version_base=="1.4"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -483,6 +498,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base=="1.4.1"){
 	update_option('mdx_comment_emj', 'true');
 	update_option('mdx_say_after', '');
@@ -541,6 +557,7 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }else if($mdx_version_base!="1.9.9"){
 	update_option('mdx_img_box', 'true');
 	update_option('mdx_comment_emj', 'true');
@@ -600,5 +617,6 @@ if($mdx_version_base=="1.9.8"){
 	mdx_update_option("mdx_reduce_motion", "true");
 	mdx_update_option("mdx_enhanced_ajax", "true");
 	mdx_update_option("mdx_lazyload_fallback", "false");
+	mdx_update_option("mdx_cookie", "");
 }
 ?>
