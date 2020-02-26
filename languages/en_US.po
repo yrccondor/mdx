@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: 2020-02-26 12:28+0800\n"
-"PO-Revision-Date: 2020-02-26 12:29+0800\n"
+"PO-Revision-Date: 2020-02-26 12:47+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: admin_fn.php:164
 msgid "Cookie 使用提示 (GDPR)"
-msgstr ""
+msgstr "Cookies consent (GDPR compliance)"
 
 #: admin_fn.php:166
 msgid ""
@@ -171,6 +171,10 @@ msgid ""
 "策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 "
 "Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。"
 msgstr ""
+"Cookies consent will be displayed on users' first visit to your site to "
+"inform users your cookies policies. This feature applies especially if your "
+"site welcomes European users. <br>Edit cookies consent here, <code>HTML</"
+"code> supported. Leave it blank to disable."
 
 #: admin_fn.php:170
 msgid "允许用户缩放页面"
@@ -781,18 +785,16 @@ msgstr "Enable (optimized for OLED screens)"
 #: admin_style.php:188
 msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
 msgstr ""
-"If enabled, pages will always show a dark theme regardless of \"dark mode\" "
-"settings."
+"When enabled, pages will always show a dark theme regardless of \"dark mode"
+"\" settings."
 
 #: admin_style.php:192
-#, fuzzy
-#| msgid "Material Design 2 字体"
 msgid "Material Design 2"
-msgstr "Material Design 2 Font"
+msgstr "Material Design 2"
 
 #: admin_style.php:198
 msgid "开启后，主题将会使用 Material Design 2 风格。"
-msgstr ""
+msgstr "When enabled, the theme will be in Material Design 2 style."
 
 #: admin_style.php:203
 msgid "Material Design 2 字体"
@@ -984,12 +986,6 @@ msgid "使用必应美图"
 msgstr "Use Bing images"
 
 #: admin_style.php:351
-#, fuzzy
-#| msgid ""
-#| "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中"
-#| "的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，"
-#| "可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图"
-#| "片，以此类推，最多到前16日。"
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入"
 "到文章”按钮以选定图片，弹出层中的其他选项不会生效。<strong>注意，“简单”首页样"
@@ -998,9 +994,11 @@ msgid ""
 msgstr ""
 "You can update or select an image from your media library as your homepage "
 "theme image. Click \"insert into post\" to select the image, other options "
-"are irrelevant will have no effect. If you want to use Bing Images, you can "
-"select the image date in parentheses. 0 stands for today, -1 stands for "
-"tomorrow, 1 stands for yesterday, and so on. The maximum date is 16."
+"are irrelevant will have no effect. <strong>Be aware that \"simple\" "
+"homepage style does not show a homepage theme image.</strong> If you want to "
+"use Bing Images, you can select the image date in parentheses. 0 stands for "
+"today, -1 stands for tomorrow, 1 stands for yesterday, and so on. The "
+"maximum date is 16."
 
 #: admin_style.php:356
 msgid "增加首页图片文字对比度"
@@ -1310,7 +1308,7 @@ msgstr "Website (if applicable) http(s)://"
 
 #: footer.php:4
 msgid "同意"
-msgstr ""
+msgstr "Agree"
 
 #: footer.php:29
 msgid "没有激活的小工具"
@@ -1498,19 +1496,14 @@ msgid "警告"
 msgstr "Warning"
 
 #: functions.php:653
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
-#| "随全局设置请留空</p>"
 msgid ""
 "\n"
 "        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
 "随全局设置请留空</p>"
 msgstr ""
 "\n"
-"\t\t<p class=\"description\">Please set a post-specific end-of-post message "
-"here. Leave it blank to follow the global settings."
+"        <p class=\"description\">Please set a post-specific end-of-post "
+"message here. Leave it blank to follow the global settings."
 
 #: functions.php:660
 msgid "文章主题颜色"
