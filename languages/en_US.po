@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
-"POT-Creation-Date: 2020-02-17 08:52+0800\n"
-"PO-Revision-Date: 2020-02-17 09:33+0800\n"
+"POT-Creation-Date: 2020-02-26 12:28+0800\n"
+"PO-Revision-Date: 2020-02-26 12:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -45,43 +45,43 @@ msgstr "Disabled"
 msgid "MDx 主题 - 功能"
 msgstr "MDx Theme - Features"
 
-#: admin_fn.php:71 admin_style.php:105
+#: admin_fn.php:72 admin_style.php:105
 msgid "设置已保存。"
 msgstr "Settings saved."
 
-#: admin_fn.php:77 admin_style.php:111
+#: admin_fn.php:78 admin_style.php:111
 msgid "更改未能保存。"
 msgstr "Settings NOT saved."
 
-#: admin_fn.php:83 admin_style.php:117
+#: admin_fn.php:84 admin_style.php:117
 msgid "MDx 已发布新版本 "
 msgstr "A newer version of MDx theme is released "
 
-#: admin_fn.php:83 admin_style.php:117
+#: admin_fn.php:84 admin_style.php:117
 msgid "。<a href=\"/wp-admin/admin.php?page=mdx_about\">重新检查</a>"
 msgstr ". <a href=\"/wp-admin/admin.php?page=mdx_about\"> Check again</a>"
 
-#: admin_fn.php:93
+#: admin_fn.php:94
 msgid "WordPress 安装方式"
 msgstr "WordPress Installation Method"
 
-#: admin_fn.php:96
+#: admin_fn.php:97
 msgid "常规安装"
 msgstr "Installed normally"
 
-#: admin_fn.php:98
+#: admin_fn.php:99
 msgid "子目录安装"
 msgstr "Installed in a subdirectory"
 
-#: admin_fn.php:101
+#: admin_fn.php:102
 msgid "常规"
 msgstr "Normal"
 
-#: admin_fn.php:102
+#: admin_fn.php:103
 msgid "子目录"
 msgstr "Subdirectory"
 
-#: admin_fn.php:103
+#: admin_fn.php:104
 msgid ""
 "为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不确定，"
 "请参考下方的检测结果。"
@@ -89,11 +89,11 @@ msgstr ""
 "To better implement some features, MDx needs to know how your WordPress is "
 "installed. If you are not sure, please refer to the detected result below."
 
-#: admin_fn.php:109
+#: admin_fn.php:110
 msgid "夜间模式"
 msgstr "Dark mode"
 
-#: admin_fn.php:117
+#: admin_fn.php:118
 msgid ""
 "开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么"
 "夜间模式将会自动禁用。</strong>"
@@ -102,19 +102,19 @@ msgstr ""
 "you have enabled \"dark theme\", then dark mode will be automatically "
 "disabled.</strong>"
 
-#: admin_fn.php:121
+#: admin_fn.php:122
 msgid "自动夜间模式"
 msgstr "Auto toggle dark mode"
 
-#: admin_fn.php:125
+#: admin_fn.php:126
 msgid "跟随系统"
 msgstr "Following browser"
 
-#: admin_fn.php:126
+#: admin_fn.php:127
 msgid "跟随时间"
 msgstr "Following time"
 
-#: admin_fn.php:129
+#: admin_fn.php:130
 msgid ""
 "<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随"
 "系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</"
@@ -127,11 +127,11 @@ msgstr ""
 "setting. </li> <li> <code> Following time</code>: \n"
 "Automatically toggle on from 22:30 to 5:30. Users may override this setting."
 
-#: admin_fn.php:134
+#: admin_fn.php:135
 msgid "网站公告"
 msgstr "Pinned Announcements"
 
-#: admin_fn.php:136
+#: admin_fn.php:137
 msgid ""
 "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "
 "<code>HTML</code> 格式."
@@ -139,20 +139,20 @@ msgstr ""
 "The announcement message will be pinned on your homepage. Leave it blank to "
 "disable it. <code>HTML</code> code is supported."
 
-#: admin_fn.php:140
+#: admin_fn.php:141
 msgid "使用手势打开抽屉菜单"
 msgstr "Swipe to open sidebar"
 
 # To avoid confusion, swipe (to the) right is used
-#: admin_fn.php:146
+#: admin_fn.php:147
 msgid "开启后，可以通过从屏幕左侧向中心滑动的方式调出抽屉菜单。"
 msgstr "When enabled, users can swipe (to the) right to open sidebar."
 
-#: admin_fn.php:151
+#: admin_fn.php:152
 msgid "右侧小工具栏"
 msgstr "WordPress Widgets"
 
-#: admin_fn.php:157
+#: admin_fn.php:158
 msgid ""
 "开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从"
 "屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。"
@@ -161,11 +161,22 @@ msgstr ""
 "sidebar is hidden by default, and can be accessed by the button, or swiping "
 "(to the) left."
 
-#: admin_fn.php:163
+#: admin_fn.php:164
+msgid "Cookie 使用提示 (GDPR)"
+msgstr ""
+
+#: admin_fn.php:166
+msgid ""
+"Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政"
+"策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 "
+"Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。"
+msgstr ""
+
+#: admin_fn.php:170
 msgid "允许用户缩放页面"
 msgstr "Allow page zoom"
 
-#: admin_fn.php:169
+#: admin_fn.php:176
 msgid ""
 "如果允许用户缩放页面，用户将可以放大页面。这可能会破坏页面结构，但有助于视力"
 "障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器"
@@ -176,11 +187,11 @@ msgstr ""
 "structures. When disabled, zoom rate is fixed at default. Note that "
 "different browsers may behave differently."
 
-#: admin_fn.php:174
+#: admin_fn.php:181
 msgid "允许使用减弱动画模式"
 msgstr "Support reduce motion"
 
-#: admin_fn.php:180
+#: admin_fn.php:187
 msgid ""
 "开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动"
 "画。"
@@ -188,34 +199,34 @@ msgstr ""
 "When enabled, MDx will try to minimize motion effects according to the "
 "\"Reduce Motion\" settings of users' devices"
 
-#: admin_fn.php:186
+#: admin_fn.php:193
 msgid "ImgBox"
 msgstr "ImgBox"
 
-#: admin_fn.php:192
+#: admin_fn.php:199
 msgid "开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。"
 msgstr ""
 "If post author adds an image with settings \"link to media file\", users can "
 "click on these images to zoom in on them."
 
-#: admin_fn.php:197
+#: admin_fn.php:204
 msgid "“阅读更多”文本自定义"
 msgstr "Customizing \"Read More\""
 
-#: admin_fn.php:199
+#: admin_fn.php:206
 msgid "在此自定义“阅读更多”按钮上的文本。"
 msgstr "Customize the text shown on \"Read More\" tag."
 
-#: admin_fn.php:202
+#: admin_fn.php:209
 msgid "赞赏二维码"
 msgstr "Donation QR Code"
 
-#: admin_fn.php:205 admin_style.php:350 admin_style.php:382 admin_style.php:391
+#: admin_fn.php:212 admin_style.php:350 admin_style.php:382 admin_style.php:391
 #: admin_style.php:465
 msgid "选择图片"
 msgstr "Choose an image"
 
-#: admin_fn.php:206
+#: admin_fn.php:213
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部"
 "显示赞赏按钮。"
@@ -223,21 +234,21 @@ msgstr ""
 "You can upload an image or choose one in your media library. Leave this to "
 "blank to disable Donation QR Codes at the end of each article."
 
-#: admin_fn.php:211
+#: admin_fn.php:218
 msgid "阅读进度展示"
 msgstr "Show Reading Progress Bar"
 
-#: admin_fn.php:217
+#: admin_fn.php:224
 msgid "开启后，会在文章/单独页面展示阅读进度。"
 msgstr ""
 "When enabled, a circular reading progress bar will show at the bottom-right "
 "corner on each post/page."
 
-#: admin_fn.php:222
+#: admin_fn.php:229
 msgid "转移设备时记录阅读进度"
 msgstr "Continue reading elsewhere"
 
-#: admin_fn.php:228
+#: admin_fn.php:235
 msgid ""
 "开启后，文章中通过二维码转移到其他设备阅读时会自动记录阅读进度并滚动。建议在"
 "网页加载速度较快时启用。"
@@ -246,19 +257,19 @@ msgstr ""
 "seamlessly at the point they stopped. Recommended when you have a fast "
 "loading speed."
 
-#: admin_fn.php:233
+#: admin_fn.php:240
 msgid "文章目录"
 msgstr "Posts list"
 
-#: admin_fn.php:239
+#: admin_fn.php:246
 msgid "开启后，侧边栏会显示文章目录。"
 msgstr "When enabled, users can toggle light/dark mode from the sidebar."
 
-#: admin_fn.php:244
+#: admin_fn.php:251
 msgid "页面加载进度条"
 msgstr "Loading Progress Bar"
 
-#: admin_fn.php:250
+#: admin_fn.php:257
 msgid ""
 "开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），"
 "页面加载完成后消失。"
@@ -267,53 +278,53 @@ msgstr ""
 "true progress) will be shown at the top of each page/post. The progress bar "
 "will disappear after the webpage is loaded."
 
-#: admin_fn.php:256
+#: admin_fn.php:263
 msgid "文章列表详细信息 - 位置1"
 msgstr "Information bar for posts - Area 1"
 
-#: admin_fn.php:260
+#: admin_fn.php:267
 msgid "浏览量"
 msgstr "Hits"
 
-#: admin_fn.php:261
+#: admin_fn.php:268
 msgid "发表时间"
 msgstr "Publish date"
 
-#: admin_fn.php:262
+#: admin_fn.php:269
 msgid "评论数"
 msgstr "Comments"
 
-#: admin_fn.php:263
+#: admin_fn.php:270
 msgid "空"
 msgstr "Empty"
 
-#: admin_fn.php:274
+#: admin_fn.php:281
 msgid "文章列表详细信息 - 位置2"
 msgstr "Information bar for posts - Area 2"
 
-#: admin_fn.php:286
+#: admin_fn.php:293
 msgid "文章列表详细信息 - 位置3"
 msgstr "Information bar for posts - Area 3"
 
-#: admin_fn.php:295
+#: admin_fn.php:302
 msgid "详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
 msgstr ""
 "The information bar is displayed under each posts on the post page. Choose "
 "the information you want to display here."
 
-#: admin_fn.php:300
+#: admin_fn.php:307
 msgid "文章时间信息"
 msgstr "Time of posts"
 
-#: admin_fn.php:304
+#: admin_fn.php:311
 msgid "发布时间"
 msgstr "Time published"
 
-#: admin_fn.php:305
+#: admin_fn.php:312
 msgid "最后编辑时间"
 msgstr "Time edited"
 
-#: admin_fn.php:307
+#: admin_fn.php:314
 msgid ""
 "选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 <code>"
 "最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。"
@@ -322,27 +333,27 @@ msgstr ""
 "information bar; <code>Time edited</code> shows the last edited time for "
 "each post."
 
-#: admin_fn.php:311
+#: admin_fn.php:318
 msgid "文末作者信息栏"
 msgstr "Author Information"
 
-#: admin_fn.php:322
+#: admin_fn.php:329
 msgid "LazyLoad 模式"
 msgstr "Lazy Load Images"
 
-#: admin_fn.php:326
+#: admin_fn.php:333
 msgid "速度优先"
 msgstr "Prioritize Speed"
 
-#: admin_fn.php:327
+#: admin_fn.php:334
 msgid "SEO优先（轻度）"
 msgstr "Prioritize SEO (Medium)"
 
-#: admin_fn.php:328
+#: admin_fn.php:335
 msgid "SEO优先（重度）"
 msgstr "Prioritize SEO (Full)"
 
-#: admin_fn.php:330
+#: admin_fn.php:337
 msgid ""
 "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设"
 "置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先"
@@ -356,11 +367,11 @@ msgstr ""
 "All images excepting in-article ones are lazy loaded. <br>Prioritize SEO "
 "(Full): No, excepting a few decorative, images are lazy loaded."
 
-#: admin_fn.php:334
+#: admin_fn.php:341
 msgid "兼容性 Lazyload"
 msgstr "Fallback Lazyload"
 
-#: admin_fn.php:340
+#: admin_fn.php:347
 msgid ""
 "尝试以兼容性更好的方式加载图片，<strong>但会导致一些增强特性不可用。</"
 "strong><br>如果你发现文章内图片的 Lazyload 加载出现问题且希望保留文章内图片"
@@ -370,11 +381,11 @@ msgstr ""
 "some enhanced features.</strong><br>If you have a problem Lazyloading your "
 "pictures in posts, you may want to consider this option."
 
-#: admin_fn.php:345
+#: admin_fn.php:352
 msgid "增强的文章列表加载方式"
 msgstr "Enhanced loading for Posts list"
 
-#: admin_fn.php:351
+#: admin_fn.php:358
 msgid ""
 "启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持"
 "滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。"
@@ -383,11 +394,11 @@ msgstr ""
 "position while going back in browsers. <br>Due to browser limitations, this "
 "feature may not perform well for a large quantity of posts."
 
-#: admin_fn.php:356
+#: admin_fn.php:363
 msgid "使用 Preload 技术加速页面加载"
 msgstr "Enable Preload"
 
-#: admin_fn.php:362
+#: admin_fn.php:369
 msgid ""
 "开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>"
 "对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。"
@@ -396,23 +407,23 @@ msgstr ""
 "you did <strong>NOT</strong> load theme JavaScript and font files under a "
 "different domain name."
 
-#: admin_fn.php:368
+#: admin_fn.php:375
 msgid "分享到的服务商"
 msgstr "Sharing providers"
 
-#: admin_fn.php:372
+#: admin_fn.php:379
 msgid "所有服务商"
 msgstr "All providers"
 
-#: admin_fn.php:373
+#: admin_fn.php:380
 msgid "只有中国国内服务商"
 msgstr "Only Chinese providers"
 
-#: admin_fn.php:374
+#: admin_fn.php:381
 msgid "只有国际服务商"
 msgstr "Only providers outside China"
 
-#: admin_fn.php:376
+#: admin_fn.php:383
 msgid ""
 "指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、"
 "QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分"
@@ -423,38 +434,38 @@ msgstr ""
 "China\" include Telegram, Twitter, Facebook. <br>Regardless of this setting, "
 "\"image excerpt sharing\" is always enabled."
 
-#: admin_fn.php:380
+#: admin_fn.php:387
 msgid "点击顶部栏返回顶部"
 msgstr "Back to top"
 
-#: admin_fn.php:386
+#: admin_fn.php:393
 msgid "开启后，点击顶部栏可以返回页面顶部。此设置影响所有页面。</strong>"
 msgstr ""
 "When enabled, you can click the top bar to go back to the top of current "
 "page. This setting affects all pages. </strong>"
 
-#: admin_fn.php:392
+#: admin_fn.php:399
 msgid "首页推荐文章"
 msgstr "Posts recommendation"
 
-#: admin_fn.php:398
+#: admin_fn.php:405
 msgid "开启后，首页会展示推荐文章，请在下方进行设置。"
 msgstr ""
 "When enabled, users can see a list of recommended posts on the homepage."
 
-#: admin_fn.php:403
+#: admin_fn.php:410
 msgid "首页推荐文章数量"
 msgstr "Number"
 
-#: admin_fn.php:405
+#: admin_fn.php:412
 msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgstr "Number of recommended posts. Please enter an integer."
 
-#: admin_fn.php:408
+#: admin_fn.php:415
 msgid "首页推荐文章分类名"
 msgstr "Category"
 
-#: admin_fn.php:410
+#: admin_fn.php:417
 msgid ""
 "首页推荐文章从特定分类获取文章。在此设定首页推荐文章的分类名。当分类不存在"
 "时，将显示最新文章。"
@@ -462,56 +473,56 @@ msgstr ""
 "Recommend posts from a specified category. When the category does not exist, "
 "newest posts are recommended instead."
 
-#: admin_fn.php:413
+#: admin_fn.php:420
 msgid "首页推荐文章模块标题"
 msgstr "Title for Homepage Recommendation"
 
-#: admin_fn.php:415
+#: admin_fn.php:422
 msgid "在此设定首页推荐文章模块标题。"
 msgstr "Set the title for homepage post recommendation"
 
-#: admin_fn.php:418
+#: admin_fn.php:425
 msgid "首页最新文章模块标题"
 msgstr "Title for latest posts on homepage"
 
-#: admin_fn.php:420
+#: admin_fn.php:427
 msgid ""
 "在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
 msgstr ""
 "Set the title for latest posts section on homepage. This is only in effect "
 "if \"homepage post recommendation\" feature is enabled"
 
-#: admin_fn.php:424
+#: admin_fn.php:431
 msgid "文末推荐文章"
 msgstr "Recommend similar posts"
 
-#: admin_fn.php:430
+#: admin_fn.php:437
 msgid "开启后，文章末会展示最多5篇相似文章。"
 msgstr ""
 "When enabled, users are recommended a list of similar posts at the end of "
 "each post."
 
-#: admin_fn.php:435
+#: admin_fn.php:442
 msgid "文末推荐文章计算方式"
 msgstr "Algorithm for similar posts"
 
-#: admin_fn.php:439
+#: admin_fn.php:446
 msgid "相同标签"
 msgstr "Same tag"
 
-#: admin_fn.php:440
+#: admin_fn.php:447
 msgid "相同分类"
 msgstr "Same category"
 
-#: admin_fn.php:445
+#: admin_fn.php:452
 msgid "文末推荐文章模块标题"
 msgstr "Title for similar posts recommendation"
 
-#: admin_fn.php:450
+#: admin_fn.php:457
 msgid "实时搜索"
 msgstr "Realtime Searching"
 
-#: admin_fn.php:456
+#: admin_fn.php:463
 msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
@@ -520,11 +531,11 @@ msgstr ""
 "<strong>Require WordPress REST API support. Please make sure you did not "
 "disable it.</strong>"
 
-#: admin_fn.php:461
+#: admin_fn.php:468
 msgid "评论无限加载"
 msgstr "Load comments Pinterest-like"
 
-#: admin_fn.php:467
+#: admin_fn.php:474
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。</strong>"
@@ -532,11 +543,11 @@ msgstr ""
 "When enabled, will load all post comments (without page separation). All "
 "comments are loaded with AJAX. </strong>"
 
-#: admin_fn.php:473
+#: admin_fn.php:480
 msgid "广告代码"
 msgstr "Advertising"
 
-#: admin_fn.php:475
+#: admin_fn.php:482
 msgid ""
 "在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。"
 "<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 "
@@ -549,31 +560,31 @@ msgstr ""
 "are using Google AdSense Auto ads, please include them in the \"header script"
 "\" section."
 
-#: admin_fn.php:478
+#: admin_fn.php:485
 msgid "对已登录的用户禁用广告"
 msgstr "Hide ads for logged-in users"
 
-#: admin_fn.php:482
+#: admin_fn.php:489
 msgid "禁用广告"
 msgstr "Hide Ads"
 
-#: admin_fn.php:483
+#: admin_fn.php:490
 msgid "不禁用广告"
 msgstr "Show Ads"
 
-#: admin_fn.php:489
+#: admin_fn.php:496
 msgid "SEO 关键词"
 msgstr "SEO keywords"
 
-#: admin_fn.php:491
+#: admin_fn.php:498
 msgid "用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。"
 msgstr "Separate keywords (less than 5) with \",\" Leave it blank to disable."
 
-#: admin_fn.php:494
+#: admin_fn.php:501
 msgid "自动生成网页描述"
 msgstr "Generate description automatically"
 
-#: admin_fn.php:500
+#: admin_fn.php:507
 msgid ""
 "开启后，会自动生成 SEO 网页描述。<strong>对首页无效，请在下方输入首页描述。</"
 "strong>"
@@ -582,11 +593,11 @@ msgstr ""
 "<strong>This setting does NOT affect homepage. Please enter meta description "
 "for homepage below</strong>"
 
-#: admin_fn.php:505
+#: admin_fn.php:512
 msgid "SEO 描述"
 msgstr "SEO meta description"
 
-#: admin_fn.php:507
+#: admin_fn.php:514
 msgid ""
 "在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面"
 "会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。"
@@ -595,27 +606,27 @@ msgstr ""
 "generate meta descriptions. Leave this blank to disable SEO meta description "
 "globally."
 
-#: admin_fn.php:511
+#: admin_fn.php:518
 msgid "页头脚本"
 msgstr "Header script"
 
-#: admin_fn.php:513
+#: admin_fn.php:520
 msgid "在这里插入脚本，会被插入至所有页面头部。"
 msgstr "JavaScript embedded at start of all pages"
 
-#: admin_fn.php:516
+#: admin_fn.php:523
 msgid "页尾脚本"
 msgstr "Footer script"
 
-#: admin_fn.php:518
+#: admin_fn.php:525
 msgid "在这里插入脚本，会被插入至所有页面最后。"
 msgstr "JavaScript embedded at end of all pages"
 
-#: admin_fn.php:522
+#: admin_fn.php:529
 msgid "ICP 备案号"
 msgstr "ICP license number"
 
-#: admin_fn.php:524
+#: admin_fn.php:531
 msgid ""
 "在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化"
 "部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有"
@@ -774,17 +785,14 @@ msgstr ""
 "settings."
 
 #: admin_style.php:192
-msgid "Material Design 2 <span class=\"mdx-exp\">实验性</span>"
-msgstr "Material Design 2 <span class=\"mdx-exp\">Experimental</span>"
+#, fuzzy
+#| msgid "Material Design 2 字体"
+msgid "Material Design 2"
+msgstr "Material Design 2 Font"
 
 #: admin_style.php:198
-msgid ""
-"开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功能，无"
-"法保证显示效果达到完美，请谨慎启用。</strong>"
+msgid "开启后，主题将会使用 Material Design 2 风格。"
 msgstr ""
-"When enabled, the theme will follow Material Design 2 styles. <strong>Please "
-"notice that this is an experimental feature, and no guarantee is provided. "
-"Use it with your own discretion.</strong>"
 
 #: admin_style.php:203
 msgid "Material Design 2 字体"
@@ -976,11 +984,17 @@ msgid "使用必应美图"
 msgstr "Use Bing images"
 
 #: admin_style.php:351
+#, fuzzy
+#| msgid ""
+#| "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中"
+#| "的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，"
+#| "可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图"
+#| "片，以此类推，最多到前16日。"
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入"
-"到文章”按钮以选定图片，弹出层中的其他选项不会生效。如使用必应美图，可在括号内"
-"指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类"
-"推，最多到前16日。"
+"到文章”按钮以选定图片，弹出层中的其他选项不会生效。<strong>注意，“简单”首页样"
+"式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0"
+"为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。"
 msgstr ""
 "You can update or select an image from your media library as your homepage "
 "theme image. Click \"insert into post\" to select the image, other options "
@@ -1294,7 +1308,11 @@ msgstr "Please enter a valid email address"
 msgid "网站（如果有）http(s)://"
 msgstr "Website (if applicable) http(s)://"
 
-#: footer.php:28
+#: footer.php:4
+msgid "同意"
+msgstr ""
+
+#: footer.php:29
 msgid "没有激活的小工具"
 msgstr "No widgets enabled"
 
@@ -1480,10 +1498,15 @@ msgid "警告"
 msgstr "Warning"
 
 #: functions.php:653
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
+#| "随全局设置请留空</p>"
 msgid ""
 "\n"
-"\t\t<p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟随全"
-"局设置请留空</p>"
+"        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
+"随全局设置请留空</p>"
 msgstr ""
 "\n"
 "\t\t<p class=\"description\">Please set a post-specific end-of-post message "
@@ -1566,24 +1589,24 @@ msgid "这篇文章受密码保护，输入密码后才能查看。"
 msgstr ""
 "This post is password-protected. Only those with a password can read it."
 
-#: includes/admin_init_fn.php:17 includes/update.php:374
-#: includes/update.php:432 includes/update.php:490 includes/update.php:549
+#: includes/admin_init_fn.php:18 includes/update.php:376
+#: includes/update.php:434 includes/update.php:492 includes/update.php:551
 msgid "去围观"
 msgstr "Read more"
 
-#: includes/admin_init_fn.php:38 includes/admin_init_fn.php:42
-#: includes/update.php:191 includes/update.php:236 includes/update.php:278
-#: includes/update.php:284 includes/update.php:328 includes/update.php:334
-#: includes/update.php:381 includes/update.php:387 includes/update.php:439
-#: includes/update.php:445 includes/update.php:497 includes/update.php:503
-#: includes/update.php:556 includes/update.php:562
+#: includes/admin_init_fn.php:39 includes/admin_init_fn.php:43
+#: includes/update.php:193 includes/update.php:238 includes/update.php:280
+#: includes/update.php:286 includes/update.php:330 includes/update.php:336
+#: includes/update.php:383 includes/update.php:389 includes/update.php:441
+#: includes/update.php:447 includes/update.php:499 includes/update.php:505
+#: includes/update.php:558 includes/update.php:564
 msgid "推荐文章"
 msgstr "Recommended posts"
 
-#: includes/admin_init_fn.php:39 includes/update.php:192
-#: includes/update.php:237 includes/update.php:285 includes/update.php:335
-#: includes/update.php:388 includes/update.php:446 includes/update.php:504
-#: includes/update.php:563
+#: includes/admin_init_fn.php:40 includes/update.php:194
+#: includes/update.php:239 includes/update.php:287 includes/update.php:337
+#: includes/update.php:390 includes/update.php:448 includes/update.php:506
+#: includes/update.php:565
 msgid "最新文章"
 msgstr "Latest posts"
 
@@ -1769,6 +1792,17 @@ msgstr "Tags"
 #. Template Name of the plugin/theme
 msgid "Timeline"
 msgstr "Timeline"
+
+#~ msgid "Material Design 2 <span class=\"mdx-exp\">实验性</span>"
+#~ msgstr "Material Design 2 <span class=\"mdx-exp\">Experimental</span>"
+
+#~ msgid ""
+#~ "开启后，主题将会使用 Material Design 2 风格。<strong>请注意此为实验性功"
+#~ "能，无法保证显示效果达到完美，请谨慎启用。</strong>"
+#~ msgstr ""
+#~ "When enabled, the theme will follow Material Design 2 styles. "
+#~ "<strong>Please notice that this is an experimental feature, and no "
+#~ "guarantee is provided. Use it with your own discretion.</strong>"
 
 #~ msgid "一般"
 #~ msgstr "Default"
