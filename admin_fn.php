@@ -101,7 +101,7 @@ if(stripos(explode('//', home_url())[1], "/")){
     <fieldset>
     <label><input type="radio" name="mdx_install" value="normal" <?php if($mdx_v_install=='normal'){?>checked="checked"<?php }?>> <?php _e('常规', 'mdx');?></label><br>
     <label><input type="radio" name="mdx_install" value="sub" <?php if($mdx_v_install=='sub'){?>checked="checked"<?php }?>> <?php _e('子目录', 'mdx');?></label><br>
-    <p class="description"><?php _e('为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不确定，请参考下方的检测结果。', 'mdx');?><br>MDx 检测到你的 WordPress 似乎是<strong><?php echo $mdx_subdir;?>。</strong></p>
+    <p class="description"><?php _e('为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不确定，请参考下方的检测结果。<br>MDx 检测到你的 WordPress 似乎是', 'mdx');?><strong><?php echo $mdx_subdir;?>。</strong></p>
     </fieldset>
 </td>
 </tr>

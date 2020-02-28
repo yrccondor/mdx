@@ -68,6 +68,12 @@ echo '<div class="wrap">
 <p style="font-size:15px;">'.__('这个项目的 Github 地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。', 'mdx').'</p>
 <p style="font-size:15px;">'.__('这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
 <br>
+<p style="font-size:17px;"><strong>'.__('感谢以下译者帮助翻译 MDx：', 'mdx').'</strong></p>
+<ul style="font-size:15px;margin-left:17px;list-style:disc">
+<li><a href="https://github.com/yechs" target="_blank">yechs</a> (English)</li>
+<li><a href="https://github.com/Sn0bzy" target="_blank">Sn0bzy</a> (Türkçe)</li>
+</ul>
+<br>
 <p style="font-size:12px;">'.__('当前版本 v', 'mdx').get_option('mdx_version').'</p>
 <p style="font-size:12px;">'.__('构建版本 v', 'mdx').get_option('mdx_version_commit').'</p>
 <p style="font-size:12px;">'.__('最新版本 v', 'mdx').$mdx_now_version.'</p>'.$mdx_update_notice.'
