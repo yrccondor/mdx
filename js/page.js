@@ -262,7 +262,7 @@ $(function(){
         $('#respond').html(tipMutiOffRes);
     }
 
-    $('article a > figure > img.lazyload, article > figure > img.lazyload').each(function(){
+    $('article a > figure > img.lazyload, article > figure > img.lazyload, article a > figure > img.lazyloaded, article > figure > img.lazyloaded').each(function(){
         if(this.classList.contains("aligncenter")){
             this.parentNode.classList.add("aligncenter");
         }else if(this.classList.contains("alignright")){
@@ -292,7 +292,7 @@ $(function(){
                     $(this).parent("a").addClass("mdx-img-in-post-with-link");
                 }
             });
-            $('article a > figure > img.lazyload').each(function(){
+            $('article a > figure > img.lazyload, article a > figure > img.lazyloaded').each(function(){
                 var imgUrlEach = $(this).attr('src');
                 if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='){
                     imgUrlEach = $(this).attr('data-src').split("?")[0];
@@ -371,10 +371,10 @@ $(function(){
             window.setTimeout("afterCloseImgBox()",200);
         })
     }
-    $('article a > img:not(.lazyload)').each(function(){
+    $('article a > img:not(.lazyload):not(.lazyloaded)').each(function(){
         $(this).parent("a").addClass("mdx-nonlazy-link");
     });
-    $('article img.alignright:not(.lazyload)').each(function(){
+    $('article img.alignright:not(.lazyload):not(.lazyloaded)').each(function(){
             let insertDOM = document.createElement("div");
             insertDOM.classList.add("mdx-clear-float");
             this.parentNode.insertBefore(insertDOM, this.nextSibling);
