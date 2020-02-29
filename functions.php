@@ -832,4 +832,18 @@ if(mdx_get_option('mdx_tags_color') === "true"){
     add_filter('wp_tag_cloud', 'mdx_colored_cloud', 1);
 }
 
+//Enable basic functions for classic editor
+function mdx_add_editor_buttons($buttons) {
+    $buttons[] = 'fontselect';
+    $buttons[] = 'fontsizeselect';
+    $buttons[] = 'backcolor';
+    $buttons[] = 'underline';
+    $buttons[] = 'hr';
+    $buttons[] = 'cut';
+    $buttons[] = 'copy';
+    $buttons[] = 'paste';
+    return $buttons;
+}
+add_filter("mce_buttons_2", "mdx_add_editor_buttons");
+
 ?>
