@@ -1832,7 +1832,7 @@ ul#mdxshare,ul#mdxshare a {
     text-decoration: none;
 }
 body.mdui-theme-layout-dark>.mdui-progress {
-    background-color: #212121!important;
+    background-color: #DEDEDE!important;
 }
 article>.mdui-progress {
     margin: 10px 0;
