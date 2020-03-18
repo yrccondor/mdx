@@ -24,13 +24,14 @@
 
 ## İçerikler
 
-- [Tanıtım](#tan%C4%B1t%C4%B1m)
+- [İçerikler](#%c4%b0%c3%a7erikler)
+- [Tanıtım](#tan%c4%b1t%c4%b1m)
 - [Demo](#demo)
-- [İndir](#indir)
-- [Globalleştirme](#globalle%C5%9Ftirme)
-- [Dökümanlar](#d%C3%B6k%C3%BCmanlar)
+- [İndir](#%c4%b0ndir)
+- [Globalleştirme](#globalle%c5%9ftirme)
+- [Dökümanlar](#d%c3%b6k%c3%bcmanlar)
 - [Lisans](#lisans)
-- [Çıktı](#%C3%87%C4%B1kt%C4%B1)
+- [Çıktı](#%c3%87%c4%b1kt%c4%b1)
 
 
 ## Tanıtım
@@ -77,6 +78,7 @@ Desteklenen dil(ler):
 - Çince (Basitleştirilmiş)
 - Türkçe ([Hasan CAN](https://github.com/Sn0bzy) tarafından)
 - İngilizce ([Ye Shu](https://github.com/yechs) tarafından)
+- Geleneksel Çince ([AngelKitty](https://github.com/AngelKitty) tarafından)
 
 > MDx'i diğer dillere çevirmemize yardımcı olabilirsiniz!
 

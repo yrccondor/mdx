@@ -70,8 +70,9 @@ echo '<div class="wrap">
 <br>
 <p style="font-size:17px;"><strong>'.__('感谢以下译者帮助翻译 MDx：', 'mdx').'</strong></p>
 <ul style="font-size:15px;margin-left:17px;list-style:disc">
-<li><a href="https://github.com/yechs" target="_blank">yechs</a> (English)</li>
 <li><a href="https://github.com/Sn0bzy" target="_blank">Sn0bzy</a> (Türkçe)</li>
+<li><a href="https://github.com/yechs" target="_blank">yechs</a> (English)</li>
+<li><a href="https://github.com/AngelKitty" target="_blank">AngelKitty</a> (繁體中文)</li>
 </ul>
 <br>
 <p style="font-size:12px;">'.__('当前版本 v', 'mdx').get_option('mdx_version').'</p>

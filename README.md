@@ -24,6 +24,7 @@
 
 ## Contents
 
+- [Contents](#contents)
 - [Introduction](#introduction)
 - [Demo](#demo)
 - [Download](#download)
@@ -76,6 +77,7 @@ Supported language(s):
 - Chinese (Simplified)
 - Turkish (Thanks [Hasan CAN](https://github.com/Sn0bzy))
 - English (Thanks [Ye Shu](https://github.com/yechs))
+- Traditional Chinese (Thanks [AngelKitty](https://github.com/AngelKitty))
 
 > You can help us to translate MDx into other languages!
 
