@@ -2706,6 +2706,9 @@ article a.mdx-img-in-post-with-link:before {
 article img.mdx-img-in-post {
     cursor: zoom-in;
 }
+article > img.mdx-img-in-post {
+    margin: 10px 0;
+}
 .mdx-img-viewer {
     cursor: zoom-out;
 }

@@ -24,13 +24,14 @@
 
 ## 目录
 
-- [介绍](#%E4%BB%8B%E7%BB%8D)
-- [演示](#%E6%BC%94%E7%A4%BA)
-- [下载](#%E4%B8%8B%E8%BD%BD)
-- [国际化](#%E5%9B%BD%E9%99%85%E5%8C%96)
-- [文档](#%E6%96%87%E6%A1%A3)
-- [许可证](#%E8%AE%B8%E5%8F%AF%E8%AF%81)
-- [渲染](#%E6%B8%B2%E6%9F%93)
+- [目录](#%e7%9b%ae%e5%bd%95)
+- [介绍](#%e4%bb%8b%e7%bb%8d)
+- [演示](#%e6%bc%94%e7%a4%ba)
+- [下载](#%e4%b8%8b%e8%bd%bd)
+- [国际化](#%e5%9b%bd%e9%99%85%e5%8c%96)
+- [文档](#%e6%96%87%e6%a1%a3)
+- [许可证](#%e8%ae%b8%e5%8f%af%e8%af%81)
+- [渲染](#%e6%b8%b2%e6%9f%93)
 
 
 ## 介绍
@@ -75,6 +76,7 @@ MDx 支持多语言，默认语言为简体中文。
 - 简体中文
 - 土耳其语（感谢 [Hasan CAN](https://github.com/Sn0bzy)）
 - 英语（感谢 [Ye Shu](https://github.com/yechs)）
+- 繁体中文 (Thanks [AngelKitty](https://github.com/AngelKitty))
 
 > 非常欢迎你帮助我们将 MDx 翻译至其他语言！
 
