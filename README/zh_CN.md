@@ -76,7 +76,7 @@ MDx 支持多语言，默认语言为简体中文。
 - 简体中文
 - 土耳其语（感谢 [Hasan CAN](https://github.com/Sn0bzy)）
 - 英语（感谢 [Ye Shu](https://github.com/yechs)）
-- 繁体中文 (Thanks [AngelKitty](https://github.com/AngelKitty))
+- 繁体中文 (感谢 [AngelKitty](https://github.com/AngelKitty))
 
 > 非常欢迎你帮助我们将 MDx 翻译至其他语言！
 
