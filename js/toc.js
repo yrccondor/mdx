@@ -133,7 +133,11 @@ function scrollToc(firstCall){
                 }
             }
             if(howFar > $("article").offset().top - 140){
-                $("#"+titleArr[counter]+"-item").addClass("mdui-list-item-active");
+                let item = $("#"+titleArr[counter]+"-item")
+                item.addClass("mdui-list-item-active");
+                if(item[0].getBoundingClientRect().top + 48 > window.innerHeight){
+                    $("#left-drawer").animate({scrollTop:document.getElementById("left-drawer").scrollTop + (item[0].getBoundingClientRect().top + 48 - window.innerHeight) + 8}, 150);
+                }
             }
         }
         
