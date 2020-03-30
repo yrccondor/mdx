@@ -22,20 +22,20 @@ function getTitleListHtml() {
     let title2 = 0;
     let title3 = 0;
     for(title of titleList){
-        $(title).attr('id',"mdx-toc-" + counter);
-        titleArr.push("#mdx-toc-" + counter);
+        title.dataset.mdxtoc = "mdx-toc-" + counter;
+        titleArr.push("mdx-toc-" + counter);
         if($(title)[0].tagName ==="H1"){
             title1++;
             title2 = 0;
             title3 = 0;
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'</span><div>'+$(title).text()+'</div></a>';
+            finalHtml += '<a class="mdui-list-item mdui-ripple mdx-toc-item" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'</span><div>'+$(title).text()+'</div></a>';
         }else if($(title)[0].tagName ==="H2"){
             title2++;
             title3 = 0;
             if(title1 === 0){
                 title1 = 1;
             }
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h2" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'</span><div>'+$(title).text()+'</div></a>';
+            finalHtml += '<a class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h2" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'</span><div>'+$(title).text()+'</div></a>';
         }else if($(title)[0].tagName ==="H3"){
             title3++;
             if(title1 === 0){
@@ -44,7 +44,7 @@ function getTitleListHtml() {
             if(title2 === 0){
                 title2 = 1;
             }
-            finalHtml += '<a href="#mdx-toc-'+counter+'" class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h3" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'.'+title3+'</span><div>'+$(title).text()+'</div></a>';
+            finalHtml += '<a class="mdui-list-item mdui-ripple mdx-toc-item mdx-toc-item-h3" id="mdx-toc-'+counter+'-item" title="'+$(title).text()+'"><span>'+title1+'.'+title2+'.'+title3+'</span><div>'+$(title).text()+'</div></a>';
         }
         counter++;
     }
@@ -101,7 +101,7 @@ $(window).on("resize", function() {
 
 $('#left-drawer').on('click', '.mdx-toc-item', function(e) {
     e.preventDefault();
-    $("body,html").animate({scrollTop:($("#mdx-toc-"+$(this).attr("id").split("-")[2]).offset().top - 75)},500);
+    $("body,html").animate({scrollTop:($("article *[data-mdxtoc='mdx-toc-"+$(this).attr("id").split("-")[2]+"']").offset().top - 75)},500);
 })
 
 let tickingToc = false;
@@ -125,15 +125,15 @@ function scrollToc(firstCall){
             $(".mdx-toc-item").addClass("mdx-toc-read")
         }else{
             for(let i = 1; i < titleArr.length; i++){
-                if(howFar >= $(titleArr[i]).offset().top - 80){
-                    $(titleArr[i-1]+"-item").addClass("mdx-toc-read");
+                if(howFar >= $("article *[data-mdxtoc='"+titleArr[i]+"']").offset().top - 80){
+                    $("#"+titleArr[i-1]+"-item").addClass("mdx-toc-read");
                     counter++;
                 }else{
                     break;
                 }
             }
             if(howFar > $("article").offset().top - 140){
-                $(titleArr[counter]+"-item").addClass("mdui-list-item-active");
+                $("#"+titleArr[counter]+"-item").addClass("mdui-list-item-active");
             }
         }
         

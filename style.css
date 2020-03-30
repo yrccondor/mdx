@@ -3693,6 +3693,12 @@ body.mdui-theme-layout-dark #mdx-cookie-notice p {
 body.mdui-theme-layout-dark > .mdui-progress {
     background-color: transparent!important;
 }
+article.mdui-typo h1 {
+    font-size: 2.5em;
+}
+.PostMain article.mdui-typo h1:first-child, .PostMain article.mdui-typo h2:first-child, .PostMain article.mdui-typo h3:first-child {
+    margin-top: 5px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
