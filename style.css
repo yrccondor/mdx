@@ -3699,6 +3699,36 @@ article.mdui-typo h1 {
 .PostMain article.mdui-typo h1:first-child, .PostMain article.mdui-typo h2:first-child, .PostMain article.mdui-typo h3:first-child {
     margin-top: 5px;
 }
+#mdx-toc-preview {
+    position: fixed;
+    top: 50vh;
+    left: 0;
+    width: 100px;
+    overflow: hidden;
+    z-index: 30;
+    transform: translateY(-14px);
+    transition: all .1s;
+    opacity: 0;
+}
+#mdx-toc-preview .mdx-toc-preview-item {
+    width: 50px;
+    height: 8px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    opacity: .15;
+    filter: grayscale(1);
+    transition: opacity .1s;
+}
+#mdx-toc-preview .mdx-toc-preview-item.mdx-toc-preview-item-active {
+    opacity: .85;
+    filter: grayscale(0);
+}
+#mdx-toc-preview .mdx-toc-preview-item.mdx-toc-preview-h2 {
+    width: 30px;
+}
+#mdx-toc-preview .mdx-toc-preview-item.mdx-toc-preview-h3 {
+    width: 15px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
