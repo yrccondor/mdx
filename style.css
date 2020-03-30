@@ -4057,6 +4057,14 @@ article.mdui-typo h1 {
     .mdx-tools-up {
         bottom: 78pt;
     }
+    .mdui-drawer {
+        width: 280px!important;
+        max-width: none!important;
+    }
+    .mdui-drawer-close {
+        -webkit-transform: translateX(-290px);
+        transform: translateX(-290px);
+    }
 }
 @media(max-width:1024px) {
     .mdx-ad-after-links {
