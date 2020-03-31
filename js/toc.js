@@ -1,14 +1,19 @@
+let showPreview = mdx_show_preview.preview === "true" ? true : false;
 let tocShown = false;
 let titleArr = [];
 let firstClick = false;
 let isToc = true;
 let previewShown = false;
+let mdx_toc = undefined;
 
 $(function() {
     let tocHTML = getTitleListHtml();
     addToc(tocHTML[0]);
-    $(".PostMain").append('<div id="mdx-toc-preview">'+tocHTML[1]+'</div>');
     if(isToc){
+        if(showPreview){
+            $(".PostMain").append('<div id="mdx-toc-preview" mdui-drawer="'+document.getElementById("menu").getAttribute("mdui-drawer")+'">'+tocHTML[1]+'</div>');
+            mdui.mutation();
+        }
         scrollToc(true);
     }
 })
@@ -65,7 +70,7 @@ function addToc(titleList) {
     $("#mdx_menu").after(titleList);
     $("#mdx-toc").css("transform", "translateX("+$("#mdx-toc").width()+"px)");
     $("#left-drawer nav").before('<div class="mdui-tab mdui-tab-full-width" id="mdx-toc-select"><a href="#" id="mdx-toc-menu" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe241;</i><label>'+mdx_toc_i18n_1+'</label></a><a href="#" id="mdx-toc-toc" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe86d;</i><label>'+mdx_toc_i18n_2+'</label></a></div>');
-    let mdx_toc = new mdui.Tab("#mdx-toc-select", {});
+    mdx_toc = new mdui.Tab("#mdx-toc-select", {});
     mdx_toc.next();
     $("#mdx-toc").css("transform", "translateX(0)");
     $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
@@ -76,6 +81,23 @@ $("#menu").click(function() {
         scrollToc(false);
         tocShown = true;
         firstClick = true;
+    }
+})
+
+$('.PostMain').on('click', '#mdx-toc-preview', function(){
+    if($("#mdx-toc").css("transform") !== "translateX(0)" && showPreview){
+        mdx_toc.next();
+        $("#mdx-toc").css("transform", "translateX(0)");
+        $("#mdx_menu").css("transform", "translateX(-"+$("#mdx_menu").width()+"px)");
+        if(!firstClick){
+            scrollToc(false);
+            tocShown = true;
+            firstClick = true;
+        }else{
+            scrollToc(true);
+            tocShown = true;
+            firstClick = false;
+        }
     }
 })
 
@@ -131,8 +153,8 @@ function scrollToc(firstCall){
         let counter = 0;
         if(howFar >= $("article").offset().top + $("article").height() - 80){
             $(".mdx-toc-item").addClass("mdx-toc-read");
-            if(previewShown){
-                $("#mdx-toc-preview").css("opacity", "0");
+            if(previewShown && showPreview){
+                $("#mdx-toc-preview").removeClass("mdx-toc-preview-show");
                 previewShown = false;
             }
         }else{
@@ -145,14 +167,16 @@ function scrollToc(firstCall){
                 }
             }
             if(howFar > $("article").offset().top - 140){
-                if(!previewShown){
-                    $("#mdx-toc-preview").css("opacity", "1");
+                if(!previewShown && showPreview){
+                    $("#mdx-toc-preview").addClass("mdx-toc-preview-show");
                     previewShown = true;
                 }
                 let item = $("#"+titleArr[counter]+"-item");
                 item.addClass("mdui-list-item-active");
                 $("#"+titleArr[counter]+"-preview").addClass("mdx-toc-preview-item-active");
-                $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*20-4)+"px)");
+                if(showPreview){
+                    $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*20-4)+"px)");
+                }
                 let topDist = item[0].getBoundingClientRect().top;
                 if(topDist + 48 > window.innerHeight){
                     $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
@@ -160,8 +184,8 @@ function scrollToc(firstCall){
                     $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + topDist - 8}, 200);
                 }
             }else{
-                if(previewShown){
-                    $("#mdx-toc-preview").css("opacity", "0");
+                if(previewShown && showPreview){
+                    $("#mdx-toc-preview").removeClass("mdx-toc-preview-show");
                     previewShown = false;
                 }
             }

@@ -3709,6 +3709,17 @@ article.mdui-typo h1 {
     transition: all .2s;
     opacity: 0;
 }
+#mdx-toc-preview.mdx-toc-preview-show {
+    opacity: 1;
+}
+#mdx-toc-preview.mdx-toc-preview-show:hover {
+    filter: brightness(.7);
+    cursor: pointer;
+}
+.mdui-theme-layout-dark #mdx-toc-preview.mdx-toc-preview-show:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
+}
 #mdx-toc-preview .mdx-toc-preview-item {
     width: 45px;
     height: 8px;
