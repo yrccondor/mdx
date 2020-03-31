@@ -29,6 +29,12 @@ jQuery(document).ready(function(){
     }else if(mdx_val=='false'){
         jQuery('input.mdx_apspc2').attr("disabled","disabled");
     }
+    var mdx_val_toc = jQuery('input.mdx_toc:checked').val();
+    if(mdx_val_toc=='true'){
+        jQuery('input.mdx_toc_preview').removeAttr("disabled");
+    }else if(mdx_val_toc=='false'){
+        jQuery('input.mdx_toc_preview').attr("disabled","disabled");
+    }
 });
 jQuery(".mdx_stbs").change(function(){
     var mdx_val = jQuery('.mdx_stbs').val();
@@ -52,6 +58,14 @@ jQuery(".mdx_apsp2").click(function(){
         jQuery('input.mdx_apspc2').removeAttr("disabled");
     }else if(mdx_val=='false'){
         jQuery('input.mdx_apspc2').attr("disabled","disabled");
+    }
+});
+jQuery(".mdx_toc").click(function(){
+    var mdx_val = jQuery('input.mdx_toc:checked').val();
+    if(mdx_val=='true'){
+        jQuery('input.mdx_toc_preview').removeAttr("disabled");
+    }else if(mdx_val=='false'){
+        jQuery('input.mdx_toc_preview').attr("disabled","disabled");
     }
 });
 function img1(){

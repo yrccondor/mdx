@@ -36,6 +36,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
     mdx_update_option('mdx_auto_scroll', $_POST['mdx_auto_scroll']);
     mdx_update_option('mdx_toc', $_POST['mdx_toc']);
+    mdx_update_option('mdx_toc_preview', $_POST['mdx_toc_preview']);
     mdx_update_option('mdx_load_pro', $_POST['mdx_load_pro']);
     mdx_update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
     mdx_update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
@@ -241,9 +242,20 @@ if(stripos(explode('//', home_url())[1], "/")){
 <td>
 <?php $mdx_v_toc=mdx_get_option('mdx_toc');?>
     <fieldset>
-    <label><input type="radio" name="mdx_toc" value="true" <?php if($mdx_v_toc=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-    <label><input type="radio" name="mdx_toc" value="false" <?php if($mdx_v_toc=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+    <label><input type="radio" name="mdx_toc" class="mdx_toc" value="true" <?php if($mdx_v_toc=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+    <label><input type="radio" name="mdx_toc" class="mdx_toc" value="false" <?php if($mdx_v_toc=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
     <p class="description"><?php _e('开启后，侧边栏会显示文章目录。', 'mdx');?></p>
+    </fieldset>
+</td>
+</tr>
+<tr>
+<th scope="row"><?php _e('文章目录缩略显示', 'mdx');?></th>
+<td>
+<?php $mdx_v_toc_preview=mdx_get_option('mdx_toc_preview');?>
+    <fieldset>
+    <label><input type="radio" name="mdx_toc_preview" class="mdx_toc_preview" value="true" <?php if($mdx_v_toc_preview=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+    <label><input type="radio" name="mdx_toc_preview" class="mdx_toc_preview" value="false" <?php if($mdx_v_toc_preview=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+    <p class="description"><?php _e('开启后，桌面端文章左侧会显示简略目录，点击即可打开完整目录。', 'mdx');?></p>
     </fieldset>
 </td>
 </tr>

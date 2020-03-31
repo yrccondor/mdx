@@ -153,7 +153,7 @@ function mdx_js(){
         if(mdx_get_option("mdx_toc")=="true"){
             wp_register_script('mdx_toc_js', get_template_directory_uri().'/js/toc.js', false, '', true);
             wp_enqueue_script('mdx_toc_js');
-            wp_localize_script('mdx_toc_js', 'mdx_show_preview', array("preview" => "true"));
+            wp_localize_script('mdx_toc_js', 'mdx_show_preview', array("preview" => mdx_get_option("mdx_toc_preview")));
         }
     }
     wp_enqueue_script('mdx_sl_js');
