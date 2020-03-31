@@ -152,9 +152,12 @@ function scrollToc(firstCall){
                 let item = $("#"+titleArr[counter]+"-item");
                 item.addClass("mdui-list-item-active");
                 $("#"+titleArr[counter]+"-preview").addClass("mdx-toc-preview-item-active");
-                $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*24-8)+"px)")
-                if(item[0].getBoundingClientRect().top + 48 > window.innerHeight){
-                    $("#left-drawer").animate({scrollTop:document.getElementById("left-drawer").scrollTop + (item[0].getBoundingClientRect().top + 48 - window.innerHeight) + 8}, 150);
+                $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*20-4)+"px)");
+                let topDist = item[0].getBoundingClientRect().top;
+                if(topDist + 48 > window.innerHeight){
+                    $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
+                }else if(topDist < 8){
+                    $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + topDist - 8}, 200);
                 }
             }else{
                 if(previewShown){
