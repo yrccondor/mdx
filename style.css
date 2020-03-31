@@ -3723,7 +3723,7 @@ article.mdui-typo h1 {
 #mdx-toc-preview .mdx-toc-preview-item {
     width: 40px;
     height: 8px;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 2px 2px 0;
     margin: 12px 0;
     opacity: .15;
     transition: opacity .2s;
