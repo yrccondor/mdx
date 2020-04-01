@@ -242,3 +242,11 @@
     display: block;
     margin-top: 5px;
 }
+
+#TB_ajaxContent {
+    width: 100%!important;
+    height: calc(100% - 30px)!important;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
