@@ -28,6 +28,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_open_side', $_POST['mdx_open_side']);
     mdx_update_option('mdx_widget', $_POST['mdx_widget']);
     mdx_update_option('mdx_cookie', htmlentities(stripslashes($_POST['mdx_cookie'])));
+    mdx_update_option('mdx_cookie_flag', $_POST['mdx_cookie_flag']);
     mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
     mdx_update_option('mdx_reduce_motion', $_POST['mdx_reduce_motion']);
     mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
@@ -164,7 +165,9 @@ if(stripos(explode('//', home_url())[1], "/")){
 <tr>
 <th scope="row"><label for="mdx_cookie"><?php _e('Cookie 使用提示 (GDPR)', 'mdx');?></label></th>
     <td><textarea name="mdx_cookie" id="mdx_cookie" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_cookie'))?></textarea>
-    <p class="description"><?php _e('Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。', 'mdx');?></p></td>
+    <p class="description"><?php _e('Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。<br>在 Safari 中，受到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。', 'mdx');?></p><br>
+    <a id="reset-cookie" class="button" href="javascript:jQuery('#mdx_cookie_flag').val('mdx_cookie_<?php echo sha1(time())?>');"><?php _e('重置显示状态', 'mdx');?></a></td>
+    <input type="hidden" value="<?php echo mdx_get_option('mdx_cookie_flag');?>" name="mdx_cookie_flag" id="mdx_cookie_flag">
 </tr>
 <tr><td> </td></tr>
 <tr>

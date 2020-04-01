@@ -363,14 +363,15 @@ $(function(){
 
     //cookie
     var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
+    var flagName = typeof cookieFlagName === "undefined" ? "mdx_cookie" : cookieFlagName;
     var cookieEle = document.getElementById("mdx-cookie-notice");
-    if(ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")){
+    if(ifDisplay && cookieEle && !localStorage.getItem(flagName)){
         cookieEle.classList.add("mdx-cookie-notice-show");
         cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie(){
-        localStorage.setItem("mdx_cookie" ,"true");
+        localStorage.setItem(flagName ,"true");
         document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
         setTimeout(() => {
             document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");

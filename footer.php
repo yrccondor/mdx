@@ -47,6 +47,7 @@
       var reduce_motion_i18n_1 = "<?php _e("检测到减弱动画模式，已为你减弱动画效果","mdx");?>";
       var reduce_motion_i18n_2 = "<?php _e("撤销","mdx");?>";
       var reduce_motion_i18n_3 = "<?php _e("减弱动画模式关闭，已启用完整动画效果","mdx");?>";
+      var cookieFlagName = "<?php echo mdx_get_option('mdx_cookie_flag');?>";
       var ifscr = 0;
       <?php if(mdx_get_option('mdx_auto_scroll')=='true'){?>
         ifscr = 1;
