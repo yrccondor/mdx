@@ -227,7 +227,7 @@ function mdx_shortcode(){
                 }, 
                 error: (function(x){
                     return function(){
-                        document.getElementsByClassName("mdx-post-cot")[x].getElementsByClassName("mdx-github-wait-out")[0].innerHTML=mdx_post_i18n_3+" <a rel=\"nofollow\" target=\"_blank\" href=\""+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"\">"+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"</a>";
+                        document.getElementsByClassName("mdx-post-cot")[x].getElementsByClassName("mdx-github-wait-out")[0].innerHTML=mdx_post_i18n_3+" <a rel=\"nofollow\" href=\""+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"\">"+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"</a>";
                     }
                 })(i)
             })

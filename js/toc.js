@@ -178,9 +178,9 @@ function scrollToc(firstCall){
                     $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*20-4)+"px)");
                 }
                 let topDist = item[0].getBoundingClientRect().top;
-                if(topDist + 48 > window.innerHeight){
+                if(topDist + 48 > window.innerHeight && tocShown){
                     $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
-                }else if(topDist < 8){
+                }else if(topDist < 8 && tocShown){
                     $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + topDist - 8}, 200);
                 }
             }else{
