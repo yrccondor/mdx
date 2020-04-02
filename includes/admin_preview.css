@@ -237,16 +237,23 @@
     width: 100%;
     margin-top: 5px;
 }
-
 #insert-media-button, #use-bing-api, #insert-media-button-3, #insert-media-button-4, #change-color {
     display: block;
     margin-top: 5px;
 }
-
 #TB_ajaxContent {
     width: 100%!important;
     height: calc(100% - 30px)!important;
     box-sizing: border-box;
     padding: 20px;
     background-color: #f1f1f1;
+}
+.wp-picker-clear {
+    margin-left: 5px!important;
+    min-height: 30px!important;
+    height: 30px!important;
+    line-height: 30px!important;
+}
+#change-color {
+    display: inline-block;
 }

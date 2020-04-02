@@ -143,6 +143,15 @@ jQuery(document).ready(function(){
     setInterval("img3()",500);
     setInterval("img4()",500);
     setInterval("bing()",300);
+    var disable_color = false;
+    if(jQuery("#mdx_svg_color").attr("disabled") === "disabled"){
+        disable_color = true;
+    }
+    jQuery("#mdx_svg_color").wpColorPicker();
+    if(disable_color){
+        jQuery(".wp-color-result").attr("disabled","disabled");
+        jQuery("#change-color").attr("disabled","disabled");
+    }
 });
 jQuery(".md2").click(function(){
     var mdx_val3 = jQuery('input.md2:checked').val();
@@ -157,9 +166,13 @@ jQuery(".mdx_stbs").click(function(){
     if(mdx_val=='true'){
         jQuery('input.mdx_stbsip').removeAttr("disabled");
         jQuery('input.mdx_stbsip3').attr("required","required");
+        jQuery(".wp-color-result").removeAttr("disabled");
+        jQuery("#change-color").removeAttr("disabled");
     }else if(mdx_val=='false'){
         jQuery('input.mdx_stbsip').attr("disabled","disabled");
         jQuery('input.mdx_stbsip3').removeAttr("required");
+        jQuery(".wp-color-result").attr("disabled","disabled");
+        jQuery("#change-color").attr("disabled","disabled");
     }
 });
 jQuery(".mdx_stbs2").click(function(){
@@ -173,9 +186,6 @@ jQuery(".mdx_stbs2").click(function(){
         jQuery('.mdx_stbsip22').attr("disabled","disabled");
         jQuery('input.mdx_stbsip2').removeAttr("required");
     }
-});
-jQuery("#change-color").click(function(){
-    jQuery('#mdx_svg_color').val('--SaveToUseTheThemeColor--');
 });
 jQuery("#use-api").click(function(){
     jQuery('#mdx_footer_say').val('--HitokotoAPIActivated--');
