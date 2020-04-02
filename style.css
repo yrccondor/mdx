@@ -2821,6 +2821,7 @@ article > img.mdx-img-in-post {
     border: 1px solid #dadada;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .mdui-theme-layout-dark .mdx-post-cot {
     border: 1px solid #535353;

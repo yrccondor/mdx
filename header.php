@@ -39,7 +39,7 @@ $mdx_s_key=mdx_get_option('mdx_seo_key');
 $mdx_a_des=mdx_get_option('mdx_auto_des');?>
 <meta property="og:description" content="<?php if(is_single()||is_page()){if(post_password_required()){_e('这篇文章受密码保护，输入密码后才能查看。', 'mdx');}else{echo mdx_get_post_excerpt($post, 100);}}else if($mdx_des!=''){echo $mdx_des;}else{bloginfo('description', 'display');}?>">
 <?php $mdx_index_img=mdx_get_option('mdx_index_img');if(!((!(is_single()||is_page()))&&substr($mdx_index_img,0,6)=="--Bing")){?>
-<meta property="og:image" content="<?php if(is_single()||is_page()){$mdx_post_img=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');if($mdx_post_img[0]!=""){echo $mdx_post_img[0];}else{echo "";}}else{echo $mdx_index_img;}?>">
+<meta property="og:image" content="<?php if(is_single()||is_page()){$mdx_post_img=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');if(isset($mdx_post_img[0])){echo $mdx_post_img[0];}else{echo "";}}else{echo $mdx_index_img;}?>">
 <?php }?>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<?php wp_title('-', true, 'right');

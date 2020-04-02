@@ -192,25 +192,24 @@ function mdx_shortcode(){
                 url: document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl, 
                 type: 'get',
                 success: function(data){
-                    var reg = new RegExp('property="og:title" content="(.*?)"');
-                    var title = data.match(reg)[1];
-                    var reg2 = new RegExp('property="og:url" content="(.*?)"');
-                    var url = data.match(reg2)[1];
-                    var reg3 = new RegExp('class="mdx-si-sum">(.*?)<');
-                    var reg5 = new RegExp('property="og:description" content="(.*?)"');
+                    var htmlParser = new DOMParser();
+                    var htmlParsed = htmlParser.parseFromString(data, "text/html");
+                    var title = htmlParsed.querySelector("meta[property=\"og:title\"]").getAttribute("content");
+                    var url = htmlParsed.querySelector("meta[property=\"og:url\"]").getAttribute("content");
+                    var shareCard = htmlParsed.getElementsByClassName("mdx-si-sum");
                     var desc = "";
-                    if(data.match(reg3)){
-                        desc = data.match(reg3)[1];
+                    if(shareCard[0]){
+                        desc = shareCard[0].innerText;
                     }else{
-                        desc = data.match(reg5)[1];
+                        desc = htmlParsed.querySelector("meta[property=\"og:description\"]").getAttribute("content");
                     }
                     if(desc === ''){
                         desc = mdx_post_i18n_1;
                     }
-                    var reg4 = new RegExp('property="og:image" content="(.*?)"');
+                    var imgDOM = htmlParsed.querySelector("meta[property=\"og:image\"]");
                     var img = "";
-                    if(data.match(reg4)){
-                        img = data.match(reg4)[1];
+                    if(imgDOM && imgDOM.getAttribute("content")){
+                        img = imgDOM.getAttribute("content");
                     }
                     var imgDiv = "";
                     if(!document.getElementById("mdx-post-"+url)){
