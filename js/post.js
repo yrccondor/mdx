@@ -802,4 +802,9 @@ $(function(){
         $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
         cfcc[0].innerHTML = '<label class="mdui-checkbox">' + cfcc[0].innerHTML + '</label>';
     }
+
+    for (ele of document.getElementsByClassName("mdx-sn-wechat-qr")){
+        var style = ele.style;
+        style.setProperty('--background', 'url('+ele.dataset.wechaticon+')');
+    }
 })

@@ -5,6 +5,7 @@ let firstClick = false;
 let isToc = true;
 let previewShown = false;
 let mdx_toc = undefined;
+let isInited = false;
 
 $(function() {
     let tocHTML = getTitleListHtml();
@@ -14,6 +15,7 @@ $(function() {
             $(".PostMain").append('<div id="mdx-toc-preview" mdui-drawer="'+document.getElementById("menu").getAttribute("mdui-drawer")+'">'+tocHTML[1]+'</div>');
             mdui.mutation();
         }
+        isInited = true;
         scrollToc(true);
     }
 })
@@ -135,7 +137,7 @@ $('#left-drawer').on('click', '.mdx-toc-item', function(e) {
 
 let tickingToc = false;
 $(window).on("scroll", function(){
-    if(isToc){
+    if(isToc && isInited){
         if(!tickingToc) {
             requestAnimationFrame(function(){
                 scrollToc(true);
@@ -146,6 +148,9 @@ $(window).on("scroll", function(){
     
 })
 function scrollToc(firstCall){
+    if(!isInited){
+        return;
+    }
     if(tocShown || firstCall){
         let howFar = document.documentElement.scrollTop || document.body.scrollTop;
         $(".mdx-toc-item").removeClass("mdx-toc-read").removeClass("mdui-list-item-active");
@@ -167,6 +172,7 @@ function scrollToc(firstCall){
                 }
             }
             if(howFar > $("article").offset().top - 140){
+                console.log(previewShown);
                 if(!previewShown && showPreview){
                     $("#mdx-toc-preview").addClass("mdx-toc-preview-show");
                     previewShown = true;
@@ -177,11 +183,13 @@ function scrollToc(firstCall){
                 if(showPreview){
                     $("#mdx-toc-preview").css("transform", "translateY(-"+((counter+1)*20-4)+"px)");
                 }
-                let topDist = item[0].getBoundingClientRect().top;
-                if(topDist + 48 > window.innerHeight && tocShown){
-                    $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
-                }else if(topDist < 8 && tocShown){
-                    $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + topDist - 8}, 200);
+                if(item.length > 0){
+                    let topDist = item[0].getBoundingClientRect().top;
+                    if(topDist + 48 > window.innerHeight && tocShown){
+                        $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
+                    }else if(topDist < 8 && tocShown){
+                        $("#left-drawer").clearQueue().animate({scrollTop:document.getElementById("left-drawer").scrollTop + topDist - 8}, 200);
+                    }
                 }
             }else{
                 if(previewShown && showPreview){

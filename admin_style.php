@@ -552,16 +552,20 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_zhihu" type="text" id="mdx_sn_zhihu" value="" placeholder="<?php _e('知乎链接', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_svg"><?php _e('GitHub', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_github" type="text" id="mdx_sn_github" value="" placeholder="<?php _e('GitHub 用户名', 'mdx');?>" oninput="input_onchange()"></td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Facebook', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_sn_facebook" type="text" id="mdx_sn_facebook" value="" placeholder="<?php _e('Fackbook 链接', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Twitter', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_twitter" type="text" id="mdx_sn_twitter" value="" placeholder="<?php _e('Twitter 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_twitter" type="text" id="mdx_sn_twitter" value="" placeholder="<?php _e('Twitter 用户名', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Telegram', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_telegram" type="text" id="mdx_sn_telegram" value="" placeholder="<?php _e('Telegram 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_telegram" type="text" id="mdx_sn_telegram" value="" placeholder="<?php _e('Telegram 用户名', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('WhatsApp', 'mdx');?></label></th>
@@ -603,11 +607,21 @@ function input_onchange(ele){
     for(ele of jQuery("#TB_ajaxContent .regular-text")){
         if(jQuery(ele).val() !== ""){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}">'+jQuery(ele).attr("id")+'</i>\n';
+                html_str += '<!-- qq -->\n<a href="http://wpa.qq.com/msgrd?v=3&uin='+jQuery(ele).val()+'&site=qq&menu=yes"><i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" mdui-tooltip="{content: \'<img src=\\\''+jQuery(ele).val()+'\\\'>\', position: \'top\'}">'+jQuery(ele).attr("id")+'</i>\n';
+                html_str += '<!-- wechat -->\n<span  data-wechaticon="'+jQuery(ele).val()+'" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat"> </i></span>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){
+                html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_github"){
+                html_str += '<!-- github -->\n<a href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_twitter"){
+                html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_telegram"){
+                html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_email"){
+                html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
             }else{
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'">'+jQuery(ele).attr("id")+'</i></a>\n';
+                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'"> </i></a>\n';
             }
         }
     }

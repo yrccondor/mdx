@@ -3741,6 +3741,116 @@ article.mdui-typo h1 {
 #mdx-toc-preview .mdx-toc-preview-item.mdx-toc-preview-h3 {
     width: 15px;
 }
+.mdx-sn-icon {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    color: transparent;
+    opacity: .53;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -o-user-select:none; 
+    -webkit-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;
+    margin: 3px;
+}
+.mdui-theme-layout-dark .mdx-sn-icon {
+    filter: invert(1);
+}
+.mdx-sn-icon.mdx_sn_qq {
+    background-image: url(img/social-icons/qq.svg);
+}
+.mdx-sn-icon.mdx_sn_wechat {
+    background-image: url(img/social-icons/wechat.svg);
+    cursor: default;
+}
+.mdx-sn-icon.mdx_sn_weibo {
+    background-image: url(img/social-icons/weibo.svg);
+}
+.mdx-sn-icon.mdx_sn_zhihu {
+    background-image: url(img/social-icons/zhihu.svg);
+    margin: 3px 0;
+}
+.mdx-sn-icon.mdx_sn_github {
+    background-image: url(img/social-icons/github.svg);
+    transform: scale(.9);
+}
+.mdx-sn-icon.mdx_sn_facebook {
+    background-image: url(img/social-icons/facebook.svg);
+    transform: scale(.9);
+}
+.mdx-sn-icon.mdx_sn_twitter {
+    background-image: url(img/social-icons/twitter.svg);
+    margin: 3px 2px;
+}
+.mdx-sn-icon.mdx_sn_telegram {
+    background-image: url(img/social-icons/telegram.svg);
+    transform: scale(.95);
+}
+.mdx-sn-icon.mdx_sn_whatsapp {
+    background-image: url(img/social-icons/whatsapp.svg);
+    margin: 3px 2px;
+    transform: scale(1.05);
+}
+.mdx-sn-icon.mdx_sn_instagram {
+    background-image: url(img/social-icons/instagram.svg);
+    margin: 3px 2px;
+}
+.mdx-sn-icon.mdx_sn_dribbble {
+    background-image: url(img/social-icons/dribbble.svg);
+    transform: scale(1.05);
+    margin: 3px 1px;
+}
+.mdx-sn-icon.mdx_sn_behance {
+    background-image: url(img/social-icons/behance.svg);
+    transform: scale(1.05);
+    margin: 3px 4px;
+}
+.mdx-sn-icon.mdx_sn_tel {
+    background-image: url(img/social-icons/tel.svg);
+    transform: scale(.9);
+    margin: 3px 1px;
+}
+.mdx-sn-icon.mdx_sn_email {
+    background-image: url(img/social-icons/email.svg);
+    transform: scale(1.15);
+    margin: 3px 0;
+}
+.mdx-sn-icon.mdx_sn_personalpage {
+    background-image: url(img/social-icons/personalpage.svg);
+    transform: scale(.97);
+}
+.mdx-sn-wechat-qr {
+    position: relative;
+}
+.mdx-sn-wechat-qr::after {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: white;
+    bottom: 45px;
+    left: 12.5px;
+    content: " ";
+    background-image: var(--background);
+    background-position: center;
+    background-size: contain;
+    transition: all .2s;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+.mdx-sn-wechat-qr:hover::after {
+    opacity: 1;
+    width: 200px;
+    height: 200px;
+    left: -87.5px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;

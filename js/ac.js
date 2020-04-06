@@ -169,6 +169,11 @@ $(function(){
         mrm.addListener(handleMotionChange);
         handleMotionChange(mrm);
     }
+
+    for (ele of document.getElementsByClassName("mdx-sn-wechat-qr")){
+        var style = ele.style;
+        style.setProperty('--background', 'url('+ele.dataset.wechaticon+')');
+    }
 })
 
 function handleMotionChange(mrm){
