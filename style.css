@@ -3803,6 +3803,11 @@ article.mdui-typo h1 {
     background-image: url(img/social-icons/coolapk.svg);
     transform: scale(1.1) translateY(.7px);
 }
+.mdx-sn-icon.mdx_sn_douban {
+    background-image: url(img/social-icons/douban.svg);
+    transform: scale(.85) translateY(.5px);
+    margin: 3px 0;
+}
 .mdx-sn-icon.mdx_sn_github {
     background-image: url(img/social-icons/github.svg);
     transform: scale(.9);

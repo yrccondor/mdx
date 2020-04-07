@@ -566,6 +566,10 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_coolapk" type="text" id="mdx_sn_coolapk" value="" placeholder="<?php _e('酷安链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('酷安', 'mdx');?>"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_svg"><?php _e('豆瓣', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_douban" type="text" id="mdx_sn_douban" value="" placeholder="<?php _e('豆瓣链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('豆瓣', 'mdx');?>"></td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_svg"><?php _e('GitHub', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_sn_github" type="text" id="mdx_sn_github" value="" placeholder="<?php _e('GitHub 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('GitHub', 'mdx');?>"></td>
 </tr>
