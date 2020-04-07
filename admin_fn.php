@@ -167,7 +167,7 @@ if(stripos(explode('//', home_url())[1], "/")){
 <th scope="row"><label for="mdx_cookie"><?php _e('Cookie 使用提示 (GDPR)', 'mdx');?></label></th>
     <td><textarea name="mdx_cookie" id="mdx_cookie" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_cookie'))?></textarea>
     <p class="description"><?php _e('Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。<br>在 Safari 中，受到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。', 'mdx');?></p><br>
-    <a id="reset-cookie" class="button" href="javascript:jQuery('#mdx_cookie_flag').val('mdx_cookie_<?php echo sha1(time())?>');"><?php _e('重置显示状态', 'mdx');?></a></td>
+    <a id="reset-cookie" class="button" href="javascript:jQuery('#mdx_cookie_flag').val('mdx_cookie_<?php echo sha1(time())?>');jQuery('#reset-cookie').attr('disabled', 'disabled');jQuery('#reseted').show();"><?php _e('重置显示状态', 'mdx');?></a><span id="reseted" style="color:green;display:none;padding-left:10px;vertical-align:sub"><?php _e('重置成功，保存设置后生效。', 'mdx');?></span></td>
     <input type="hidden" value="<?php echo mdx_get_option('mdx_cookie_flag');?>" name="mdx_cookie_flag" id="mdx_cookie_flag">
 </tr>
 <tr><td> </td></tr>
@@ -275,13 +275,13 @@ if(stripos(explode('//', home_url())[1], "/")){
 </td>
 <tr><td> </td></tr>
 <tr>
-<th scope="row"><?php _e('文章列表链接可点击区域', 'mdx');?></th>
+<th scope="row"><label for="mdx_post_list_click_area"><?php _e('文章列表链接可点击区域', 'mdx');?></lable></th>
 <td>
 <?php $mdx_v_post_list_click_area=mdx_get_option('mdx_post_list_click_area');?>
-    <fieldset>
-    <label><input type="radio" name="mdx_post_list_click_area" value="title" <?php if($mdx_v_post_list_click_area=='title'){?>checked="checked"<?php }?>> <?php echo _e('仅标题', 'mdx');?></label><br>
-    <label><input type="radio" name="mdx_post_list_click_area" value="pic" <?php if($mdx_v_post_list_click_area=='pic'){?>checked="checked"<?php }?>> <?php echo _e('标题和文章特色图像', 'mdx');?></label>
-    </fieldset>
+<select name="mdx_post_list_click_area" id="mdx_post_list_click_area">
+    <option value="title" <?php if($mdx_v_post_list_click_area=='title'){?>selected="selected"<?php }?>><?php _e("仅标题", "mdx");?></option>
+    <option value="pic" <?php if($mdx_v_post_list_click_area=='pic'){?>selected="selected"<?php }?>><?php echo _e("标题和文章特色图像", "mdx");?></option>
+</select>
 </td>
 </tr>
 <tr>
