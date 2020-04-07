@@ -187,7 +187,10 @@ function get_post_views($post_id){
     echo number_format_i18n($count);
 }
 function set_post_views(){
-    global $post;   
+    global $post;
+    if(!$post){
+        return;
+    }
     $post_id = $post -> ID;
     $count_key = 'views';
     $count = get_post_meta($post_id, $count_key, true);
