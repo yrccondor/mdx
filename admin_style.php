@@ -67,6 +67,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     }
     mdx_update_option('mdx_md2', $_POST['mdx_md2']);
     mdx_update_option('mdx_md2_font', $_POST['mdx_md2_font']);
+    mdx_update_option('mdx_login_md', $_POST['mdx_login_md']);
     mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
     mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
     mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
@@ -212,6 +213,17 @@ wp_nonce_field('mdx_options_update');
 </tr>
 <tr><td> </td></tr>
 <tr>
+<th scope="row"><?php _e('登录页 Material Design', 'mdx');?></th>
+<td>
+<?php $mdx_v_login_md=mdx_get_option('mdx_login_md');?>
+    <fieldset>
+    <label><input type="radio" name="mdx_login_md" value="true" <?php if($mdx_v_login_md=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+    <label><input type="radio" name="mdx_login_md" value="false" <?php if($mdx_v_login_md=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+    <p class="description"><?php _e('将 Material Design 样式应用到登录页。可能与部分插件样式不兼容。', 'mdx');?></p>
+    </fieldset>
+</td>
+</tr>
+<tr><td> </td></tr>
 <th scope="row"><?php _e('移动 Chrome 标题栏颜色', 'mdx');?></th>
 <td>
 <?php $mdx_v_chrome_color=mdx_get_option('mdx_chrome_color');?>

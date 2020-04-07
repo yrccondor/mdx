@@ -80,6 +80,20 @@
 .mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button {
     border-radius: 5px;
 }
+#wp-submit {
+    border-radius: 5px!important;
+    box-shadow: none;
+}
+#login_error {
+    border: #dc3232 solid 2px!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.message {
+    border: #00a0d2 solid 2px!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
 .ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
     border-radius: 0!important;
 }

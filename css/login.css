@@ -1,0 +1,137 @@
+body {
+    background-color: #F1F1F1;
+}
+#loginform, #lostpasswordform {
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+    border: none!important;
+}
+.mdui-textfield-input {
+    display: block!important;
+    width: 100%!important;
+    height: 36px!important;
+    -webkit-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    -webkit-appearance: none!important;
+    padding: 8px !important;
+    margin: 0!important;
+    overflow: hidden!important;
+    font-family: inherit!important;
+    font-size: 16px!important;
+    line-height: 20px!important;
+    color: rgba(0,0,0,.87)!important;
+    resize: none!important;
+    background: 0 0!important;
+    border: none!important;
+    border-bottom: 1px solid rgba(0,0,0,.42)!important;
+    border-radius: 0!important;
+    outline: 0!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1)!important;
+    transition-timing-function: cubic-bezier(.4,0,.2,1)!important;
+    -webkit-transition-duration: .2s!important;
+    transition-duration: .2s!important;
+    -webkit-transition-property: border-bottom-color,padding-right,-webkit-box-shadow!important;
+    transition-property: border-bottom-color,padding-right,-webkit-box-shadow!important;
+    transition-property: border-bottom-color,padding-right,box-shadow!important;
+    transition-property: border-bottom-color,padding-right,box-shadow,-webkit-box-shadow!important;
+    -moz-appearance: none!important;
+    appearance: none!important;
+    min-height: 37px!important;
+}
+.mdui-btn, .mdui-fab {
+    position: relative!important;
+    display: inline-block!important;
+    min-width: 88px!important;
+    height: 36px!important;
+    -webkit-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    padding: 0 16px!important;
+    margin: 0!important;
+    overflow: hidden!important;
+    font-size: 14px!important;
+    font-weight: 500!important;
+    line-height: 36px!important;
+    color: inherit!important;
+    text-align: center!important;
+    text-decoration: none!important;
+    text-transform: uppercase!important;
+    letter-spacing: .04em!important;
+    white-space: nowrap!important;
+    vertical-align: middle!important;
+    -ms-touch-action: manipulation!important;
+    touch-action: manipulation!important;
+    cursor: pointer!important;
+    zoom: 1!important;
+    -webkit-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    user-select: none!important;
+    background: 0 0!important;
+    border: none!important;
+    border-radius: 2px!important;
+    outline: 0!important;
+    -webkit-transition: all .2s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1)!important;
+    transition: all .2s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1)!important;
+    transition: all .2s cubic-bezier(.4,0,.2,1),box-shadow .2s cubic-bezier(.4,0,1,1)!important;
+    transition: all .2s cubic-bezier(.4,0,.2,1),box-shadow .2s cubic-bezier(.4,0,1,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1)!important;
+    will-change: box-shadow!important;
+    -webkit-user-drag: none!important;
+}
+.mdui-textfield-focus .mdui-textfield-input, .mdui-textfield-focus .mdui-textfield-input:hover {
+    border-bottom-color: #0073AA!important;
+    -webkit-box-shadow: 0 1px 0 0 #0073AA!important;
+    box-shadow: 0 1px 0 0 #0073AA!important;
+}
+.mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label, .mdui-textfield-focus .mdui-icon, .mdui-textfield-focus .mdui-textfield-label {
+    color: #0073AA!important;
+}
+.mdui-checkbox input[type=checkbox]:checked+.mdui-checkbox-icon:after {
+    background-color: #0073aa!important;
+    border-color: #0073AA!important;
+}
+p.mdui-textfield.mdui-textfield-floating-label {
+    padding-top: 0!important;
+}
+.user-pass-wrap {
+    padding-bottom: 30px;
+}
+#user_pass {
+    width: calc(100% - 40px)!important;
+}.mdui-checkbox input[type=checkbox]:focus:not(:disabled):checked+.mdui-checkbox-icon, .mdui-checkbox input[type=checkbox]:focus:not(:disabled):indeterminate+.mdui-checkbox-icon, .mdui-checkbox:active input[type=checkbox]:not(:disabled):checked+.mdui-checkbox-icon, .mdui-checkbox:active input[type=checkbox]:not(:disabled):indeterminate+.mdui-checkbox-icon {
+    -webkit-box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
+    box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
+}
+#wp-submit {
+    background-color: rgb(0, 124, 186)!important;
+    color: #fff!important;
+}
+#lostpasswordform #wp-submit {
+    margin-top: 30px!important;
+}
+.forgetmenot span {
+    line-height: 36px!important;
+}
+.mdui-btn-raised:hover, .mdui-btn-raised:focus {
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)!important;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)!important;
+}
+.mdui-btn-raised:active {
+    -webkit-box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)!important;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)!important;
+}
+#login_error {
+    border-left: none;
+    border: #dc3232 solid 1px!important;
+    color: #dc3232!important;
+}
+.message {
+    border-left: none;
+    border: #00a0d2 solid 1px!important;
+    color: #00a0d2!important;
+}
+#login_error, .message {
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+}
