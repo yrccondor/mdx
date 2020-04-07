@@ -2283,12 +2283,24 @@ body.mdui-theme-primary-blue-grey #comments-navi span,body.mdui-theme-primary-bl
     line-height: 25px;
     word-wrap: break-word;
 }
+.mdxNotice.mdx-notice-default {
+    background-color: #EAEAEA;
+}
+.mdxNotice > p.mdui-typo {
+    display: inline-block;
+    width: calc(100% - 35px);
+    vertical-align: top;
+    margin: 0;
+    line-height: 1.6;
+}
 .mdui-theme-layout-dark .mdxNotice {
     background-color: #212121!important;
     color: #fff!important;
 }
 .mdxNotice i.mdui-icon {
     opacity: .5;
+    margin-right: 10px;
+    font-size: 22px;
 }
 .mdui-text-color-white-text.mdui-color-theme.mdui-valign.PostTitle {
     color: #fff!important;
