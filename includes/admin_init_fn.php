@@ -23,6 +23,7 @@ $arr = array(
 'mdx_toc'=>'true',
 'mdx_toc_preview'=>'true',
 'mdx_load_pro'=>'true',
+'mdx_post_list_click_area'=>'title',
 'mdx_post_list_1'=>'view',
 'mdx_post_list_2'=>'time',
 'mdx_post_list_3'=>'blank',

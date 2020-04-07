@@ -39,6 +39,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_toc', $_POST['mdx_toc']);
     mdx_update_option('mdx_toc_preview', $_POST['mdx_toc_preview']);
     mdx_update_option('mdx_load_pro', $_POST['mdx_load_pro']);
+    mdx_update_option('mdx_post_list_click_area', $_POST['mdx_post_list_click_area']);
     mdx_update_option('mdx_post_list_1', $_POST['mdx_post_list_1']);
     mdx_update_option('mdx_post_list_2', $_POST['mdx_post_list_2']);
     mdx_update_option('mdx_post_list_3', $_POST['mdx_post_list_3']);
@@ -272,8 +273,17 @@ if(stripos(explode('//', home_url())[1], "/")){
     <p class="description"><?php _e('开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），页面加载完成后消失。', 'mdx');?></p>
     </fieldset>
 </td>
-</tr>
 <tr><td> </td></tr>
+<tr>
+<th scope="row"><?php _e('文章列表链接可点击区域', 'mdx');?></th>
+<td>
+<?php $mdx_v_post_list_click_area=mdx_get_option('mdx_post_list_click_area');?>
+    <fieldset>
+    <label><input type="radio" name="mdx_post_list_click_area" value="title" <?php if($mdx_v_post_list_click_area=='title'){?>checked="checked"<?php }?>> <?php echo _e('仅标题', 'mdx');?></label><br>
+    <label><input type="radio" name="mdx_post_list_click_area" value="pic" <?php if($mdx_v_post_list_click_area=='pic'){?>checked="checked"<?php }?>> <?php echo _e('标题和文章特色图像', 'mdx');?></label>
+    </fieldset>
+</td>
+</tr>
 <tr>
 <th scope="row"><label for="mdx_post_list_1"><?php _e('文章列表详细信息 - 位置1', 'mdx');?></label></th>
 <td>

@@ -41,6 +41,9 @@
 <?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
 <div class="mdui-card postDiv mdui-center mdui-hoverable">
     <div class="mdui-card-media mdui-color-theme">
+    <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
+    <a href="<?php the_permalink();?>">
+    <?php }?>
     <?php if(mdx_get_option('mdx_post_list_img_height') === "auto"){?>
     <img src="data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==" data-src="<?php echo "$Imagesurl"?>" alt="<?php echo "$Imagesurl"?>" title="<?php the_title();?>" class="LazyLoadList mdui-color-theme mdui-text-color-theme lazyload">
     <?php }else{?>
@@ -48,9 +51,12 @@
     <?php }?>
         <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
             <div class="mdui-card-primary">
-                <a href="<?php the_permalink();?>"><div class="mdui-card-primary-title"><?php the_title();?></div></a>
+            <?php if(mdx_get_option('mdx_post_list_click_area') === "title"){?><a href="<?php the_permalink();?>"><?php }?><div class="mdui-card-primary-title"><?php the_title();?></div><?php if(mdx_get_option('mdx_post_list_click_area') === "title"){?></a><?php }?>
             </div>
         </div>
+        <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
+        </a>
+        <?php }?>
     </div>
     <div class="mdui-card-actions">
         <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 170);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p>

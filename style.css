@@ -2154,6 +2154,9 @@ body.mdui-theme-primary-blue-grey ::-ms-selection {
 .divimg.mdx-bg-loaded {
     opacity: 1;
 }
+.divimg:not(.lazyload):not(.lazyloading):not(.lazyloaded) {
+    opacity: 1;
+}
 .divimg,.indexgaid {
     width: 25pc;
     height: 230px;
