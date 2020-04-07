@@ -381,9 +381,4 @@ $(function(){
             document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
         }, 400);
     }
-
-    for (ele of document.getElementsByClassName("mdx-sn-wechat-qr")){
-        var style = ele.style;
-        style.setProperty('--background', 'url('+ele.dataset.wechaticon+')');
-    }
 })

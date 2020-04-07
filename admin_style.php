@@ -627,7 +627,7 @@ function input_onchange(ele){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
                 html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
-                html_str += '<!-- wechat -->\n<span  data-wechaticon="'+jQuery(ele).val()+'" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
+                html_str += '<!-- wechat -->\n<span style="--background:url('+jQuery(ele).val()+')" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){
                 html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_github"){
