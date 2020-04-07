@@ -539,75 +539,75 @@ wp_nonce_field('mdx_options_update');
 <table class="form-table">
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('QQ', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_qq" type="text" id="mdx_sn_qq" value="" placeholder="<?php _e('QQ 号', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_qq" type="text" id="mdx_sn_qq" value="" placeholder="<?php _e('QQ 号', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('QQ', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('微信', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_wechat" type="text" id="mdx_sn_wechat" value="" placeholder="<?php _e('微信二维码图片链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_wechat" type="text" id="mdx_sn_wechat" value="" placeholder="<?php _e('微信二维码图片链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('微信', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('微博', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_weibo" type="text" id="mdx_sn_weibo" value="" placeholder="<?php _e('微博链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_weibo" type="text" id="mdx_sn_weibo" value="" placeholder="<?php _e('微博链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('微博', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('知乎', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_zhihu" type="text" id="mdx_sn_zhihu" value="" placeholder="<?php _e('知乎链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_zhihu" type="text" id="mdx_sn_zhihu" value="" placeholder="<?php _e('知乎链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('知乎', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('哔哩哔哩', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_bilibili" type="text" id="mdx_sn_bilibili" value="" placeholder="<?php _e('哔哩哔哩链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_bilibili" type="text" id="mdx_sn_bilibili" value="" placeholder="<?php _e('哔哩哔哩链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('哔哩哔哩', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('网易云音乐', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_neteasemusic" type="text" id="mdx_sn_neteasemusic" value="" placeholder="<?php _e('网易云音乐链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_neteasemusic" type="text" id="mdx_sn_neteasemusic" value="" placeholder="<?php _e('网易云音乐链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('网易云音乐', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('酷安', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_coolapk" type="text" id="mdx_sn_coolapk" value="" placeholder="<?php _e('酷安链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_coolapk" type="text" id="mdx_sn_coolapk" value="" placeholder="<?php _e('酷安链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('酷安', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('GitHub', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_github" type="text" id="mdx_sn_github" value="" placeholder="<?php _e('GitHub 用户名', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_github" type="text" id="mdx_sn_github" value="" placeholder="<?php _e('GitHub 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('GitHub', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Facebook', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_facebook" type="text" id="mdx_sn_facebook" value="" placeholder="<?php _e('Fackbook 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_facebook" type="text" id="mdx_sn_facebook" value="" placeholder="<?php _e('Fackbook 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Facebook', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Twitter', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_twitter" type="text" id="mdx_sn_twitter" value="" placeholder="<?php _e('Twitter 用户名', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_twitter" type="text" id="mdx_sn_twitter" value="" placeholder="<?php _e('Twitter 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Twitter', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Telegram', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_telegram" type="text" id="mdx_sn_telegram" value="" placeholder="<?php _e('Telegram 用户名', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_telegram" type="text" id="mdx_sn_telegram" value="" placeholder="<?php _e('Telegram 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Telegram', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('WhatsApp', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_whatsapp" type="text" id="mdx_sn_whatsapp" value="" placeholder="<?php _e('WhatsApp 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_whatsapp" type="text" id="mdx_sn_whatsapp" value="" placeholder="<?php _e('WhatsApp 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('WhatsApp', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Instagram', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_instagram" type="text" id="mdx_sn_instagram" value="" placeholder="<?php _e('Instagram 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_instagram" type="text" id="mdx_sn_instagram" value="" placeholder="<?php _e('Instagram 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Instagram', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Dribbble', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_dribbble" type="text" id="mdx_sn_dribbble" value="" placeholder="<?php _e('Dribbble 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_dribbble" type="text" id="mdx_sn_dribbble" value="" placeholder="<?php _e('Dribbble 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Dribbble', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('Behance', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_behance" type="text" id="mdx_sn_behance" value="" placeholder="<?php _e('Behance 链接', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_behance" type="text" id="mdx_sn_behance" value="" placeholder="<?php _e('Behance 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Behance', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('电话', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_tel" type="text" id="mdx_sn_tel" value="" placeholder="<?php _e('电话号码', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_tel" type="text" id="mdx_sn_tel" value="" placeholder="<?php _e('电话号码', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('电话', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('邮箱', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_email" type="text" id="mdx_sn_email" value="" placeholder="<?php _e('邮箱地址', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_email" type="text" id="mdx_sn_email" value="" placeholder="<?php _e('邮箱地址', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('邮箱', 'mdx');?>"></td>
 </tr>
 <tr>
 <th scope="row"><label for="mdx_svg"><?php _e('个人主页', 'mdx');?></label></th>
-<td><input class="regular-text" name="mdx_sn_personalpage" type="text" id="mdx_sn_personalpage" value="" placeholder="<?php _e('个人主页地址', 'mdx');?>" oninput="input_onchange()"></td>
+<td><input class="regular-text" name="mdx_sn_personalpage" type="text" id="mdx_sn_personalpage" value="" placeholder="<?php _e('个人主页地址', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('个人主页', 'mdx');?>"></td>
 </tr>
 <tr><th> </th></tr>
 <tr>
@@ -621,21 +621,21 @@ function input_onchange(ele){
     for(ele of jQuery("#TB_ajaxContent .regular-text")){
         if(jQuery(ele).val() !== ""){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
-                html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i>\n';
+                html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
-                html_str += '<!-- wechat -->\n<span  data-wechaticon="'+jQuery(ele).val()+'" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat"> </i></span>\n';
+                html_str += '<!-- wechat -->\n<span  data-wechaticon="'+jQuery(ele).val()+'" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){
-                html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_github"){
-                html_str += '<!-- github -->\n<a href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- github -->\n<a href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_twitter"){
-                html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_telegram"){
-                html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_email"){
-                html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else{
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'"> </i></a>\n';
+                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }
         }
     }
