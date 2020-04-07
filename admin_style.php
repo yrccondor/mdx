@@ -552,6 +552,10 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_zhihu" type="text" id="mdx_sn_zhihu" value="" placeholder="<?php _e('知乎链接', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_svg"><?php _e('酷安', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_coolapk" type="text" id="mdx_sn_coolapk" value="" placeholder="<?php _e('酷安链接', 'mdx');?>" oninput="input_onchange()"></td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_svg"><?php _e('GitHub', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_sn_github" type="text" id="mdx_sn_github" value="" placeholder="<?php _e('GitHub 用户名', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
@@ -607,7 +611,7 @@ function input_onchange(ele){
     for(ele of jQuery("#TB_ajaxContent .regular-text")){
         if(jQuery(ele).val() !== ""){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
-                html_str += '<!-- qq -->\n<a href="http://wpa.qq.com/msgrd?v=3&uin='+jQuery(ele).val()+'&site=qq&menu=yes"><i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i></a>\n';
+                html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}"> </i>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
                 html_str += '<!-- wechat -->\n<span  data-wechaticon="'+jQuery(ele).val()+'" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){

@@ -172,7 +172,6 @@ function scrollToc(firstCall){
                 }
             }
             if(howFar > $("article").offset().top - 140){
-                console.log(previewShown);
                 if(!previewShown && showPreview){
                     $("#mdx-toc-preview").addClass("mdx-toc-preview-show");
                     previewShown = true;

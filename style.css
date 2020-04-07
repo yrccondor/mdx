@@ -3763,6 +3763,7 @@ article.mdui-typo h1 {
 }
 .mdx-sn-icon.mdx_sn_qq {
     background-image: url(img/social-icons/qq.svg);
+    cursor: default;
 }
 .mdx-sn-icon.mdx_sn_wechat {
     background-image: url(img/social-icons/wechat.svg);
@@ -3774,6 +3775,11 @@ article.mdui-typo h1 {
 .mdx-sn-icon.mdx_sn_zhihu {
     background-image: url(img/social-icons/zhihu.svg);
     margin: 3px 0;
+    margin: 3px 1px;
+}
+.mdx-sn-icon.mdx_sn_coolapk {
+    background-image: url(img/social-icons/coolapk.svg);
+    transform: scale(1.1) translateY(.7px);
 }
 .mdx-sn-icon.mdx_sn_github {
     background-image: url(img/social-icons/github.svg);
@@ -3793,12 +3799,13 @@ article.mdui-typo h1 {
 }
 .mdx-sn-icon.mdx_sn_whatsapp {
     background-image: url(img/social-icons/whatsapp.svg);
+    transform: scale(.96);
     margin: 3px 2px;
-    transform: scale(1.05);
 }
 .mdx-sn-icon.mdx_sn_instagram {
     background-image: url(img/social-icons/instagram.svg);
     margin: 3px 2px;
+    transform: scale(1.05);
 }
 .mdx-sn-icon.mdx_sn_dribbble {
     background-image: url(img/social-icons/dribbble.svg);
