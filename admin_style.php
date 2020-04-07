@@ -36,6 +36,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
         'brown'=>'#795548',
         'grey'=>'#9e9e9e',
         'blue-grey'=>'#607d8b',
+        'white'=>'#9e9e9e',
     );
     $mdx_act_arr=array(
         'red'=>'#ff5252',
@@ -145,6 +146,7 @@ wp_nonce_field('mdx_options_update');
     <option value="brown" <?php if($mdx_v_styles=='brown'){?>selected="selected"<?php }?>>Brown</option>
     <option value="grey" <?php if($mdx_v_styles=='grey'){?>selected="selected"<?php }?>>Grey</option>
     <option value="blue-grey" <?php if($mdx_v_styles=='blue-grey'){?>selected="selected"<?php }?>>Blue Grey</option>
+    <option value="white" <?php if($mdx_v_styles=='white'){?>selected="selected"<?php }?>>White</option>
 </select>
 <p class="description"><span class="mdx-color-preview mdx-theme-color-preview"></span> <?php _e('主题颜色会影响所有页面的主色。', 'mdx');?></p>
 </td>

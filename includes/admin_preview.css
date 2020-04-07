@@ -77,6 +77,9 @@
 .mdx-blue-grey {
     background-color: #607d8b;
 }
+.mdx-white {
+    background-color: white;
+}
 .mdx-red-fill {
     fill: #f44336;
 }
@@ -133,6 +136,9 @@
 }
 .mdx-blue-grey-fill {
     fill: #607d8b;
+}
+.mdx-white-fill {
+    fill: #d8d8d8;
 }
 .mdx-a-red {
     background-color: #ff5252;

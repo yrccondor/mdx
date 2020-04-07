@@ -8,7 +8,7 @@ $pageType = 2;
 <?php mdx_get_option('mdx_widget') === "true" ? $mdx_widget = true : $mdx_widget = false;
 $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};?>
     <?php $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
-    <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
+    <body class="mdui-theme-primary-<?php $main_color = mdx_get_option('mdx_styles');if($main_color === "white"){echo "grey mdx-theme-white";}else{echo $main_color;}?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
         <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
@@ -45,7 +45,11 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <?php }?>
     <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>2,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
     </div>
-    <header role="banner"><div class="titleBarGobal mdui-appbar mdui-shadow-0 <?php if(mdx_get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBarinPost">
+        <?php get_template_part('includes/searchform')?>
+        <?php if($full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_img_url!=""){?>
+        <div class="PostTitleFillPage mdui-color-theme lazyload" data-bg="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
+        <div class="PostTitleFillPageBackGround mdui-color-theme"></div>
+        <header role="banner"><div class="titleBarGobal mdui-appbar mdui-shadow-0 <?php if(mdx_get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBarinPost">
             <div class="mdui-toolbar toolbar-page mdui-appbar-fixed topBarAni">
             <button class="mdui-btn mdui-btn-icon" id="menu" mdui-drawer="{target:'#left-drawer',overlay:true<?php if(mdx_get_option('mdx_open_side')=='true'){;?>,swipe:true<?php }?>}"><i class="mdui-icon material-icons">menu</i></button>
             <a href="<?php bloginfo('url');?>" class="mdui-typo-headline"><?php $mdx_logo_way=mdx_get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=mdx_get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></a>
@@ -53,11 +57,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                 <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
             </div>
         </div></header>
-        <?php get_template_part('includes/searchform')?>
         <div class="mdui-text-color-white-text mdui-typo-display-1 mdui-valign PostTitlePage" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center"><?php the_title();?></span></div>
-        <?php if($full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url=="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_img_url!=""){?>
-        <div class="PostTitleFillPage mdui-color-theme lazyload" data-bg="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
-        <div class="PostTitleFillPageBackGround mdui-color-theme"></div>
         <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain PostMainPage">
             <div class="ArtMain mdui-center mdui-typo">
                 <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
@@ -95,9 +95,9 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                 </div>
                 </article>
                 <?php if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-		            echo '<div class="mdx-ad-after-page">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-	            }?>
-<?php endwhile;?>
+                    echo '<div class="mdx-ad-after-page">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+                }?>
+<?php endwhile;wp_reset_postdata();?>
             </div>
 <?php comments_template();?>
 <?php get_footer();?>

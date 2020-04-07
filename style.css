@@ -3172,6 +3172,7 @@ img.avatar.mdx-avatar-lazyload.lazyloaded {
 }
 .mdui-typo .mdx-timeline-archives {
     line-height: 1;
+    margin-bottom: 30px;
 }
 .mdui-typo .mdx-timeline-archives ul.archives-monthlisting {
     padding-left: 0;
@@ -3869,6 +3870,173 @@ article.mdui-typo h1 {
     width: 200px;
     height: 200px;
     left: -87.5px;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme {
+    background-color: #e0e0e0!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme.mdui-toolbar {
+    background-color: #fff!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme, .mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme * {
+    background-color: #f7f7f7!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdui-ripple .mdui-ripple-wave {
+    background-color: rgba(0,0,0,.1)!important
+}
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .titleBarGobal * {
+    color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal:not(.mdui-shadow-2) *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal:not(.mdui-shadow-2) * {
+    color: rgba(255,255,255,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal.mdui-shadow-2 *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal.mdui-shadow-2 * {
+    color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple .theFirstPageSay {
+    color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdx-list-white #titleBar:not(.mdui-shadow-2) .mdui-toolbar {
+    background-color: transparent!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .PostTitleFillBack2.mdui-color-theme {
+    background-color: #d8d8d8!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white div.mdui-text-color-white-text.mdui-color-theme.mdui-valign.PostTitle, .mdui-theme-primary-grey.mdx-theme-white div.mdui-text-color-white-text.mdui-valign.PostTitle2, .mdui-theme-primary-grey.mdx-theme-white .PostTitlePage {
+    color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdui-toolbar[class*=mdui-color-]:not(.mdui-color-transparent) .mdui-btn:hover {
+    background-color: rgba(0,0,0,.1)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .outOfSearch {
+    background-color: rgba(152, 152, 152, 0.3)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white #SearchBar {
+    background-color: #fff!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white #SearchBar i.mdui-icon {
+    color: rgba(0,0,0,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ .PostTitle, .mdui-theme-primary-grey.mdx-theme-white .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ .PostTitlePage {
+    color: #fff!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal * {
+    color: rgba(255,255,255,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdx-toc-preview-item.mdui-color-theme {
+    background-color: #9e9e9e!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdx-search-anim-show {
+    color: rgba(0, 0, 0, .3)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white .mdx-search-anim-show i {
+    color: rgba(0, 0, 0, .87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-color-theme {
+    background-color: #404040!important;
+    color: #fff!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .PostTitleFillBack2.mdui-color-theme {
+    background-color: #4a4a4a!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark div.mdui-text-color-white-text.mdui-color-theme.mdui-valign.PostTitle, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark div.mdui-text-color-white-text.mdui-valign.PostTitle2, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .PostTitlePage {
+    color: rgba(255,255,255,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-color-theme.mdui-toolbar {
+    background-color: #212121!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple.mdui-theme-layout-dark .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple.mdui-theme-layout-dark .theFirstPageSay {
+    color: rgba(255,255,255,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark #SearchBar {
+    background-color: #212121!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark #SearchBar i.mdui-icon {
+    color: rgba(255,255,255,.87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme *, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .theFirstPageBackGround, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme *, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .PostTitleFillPageBackGround {
+    background-color: #212121!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdx-search-anim-show {
+    color: rgba(255, 255, 255, .3)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdx-search-anim-show i {
+    color: rgba(255, 255, 255, .87)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-ripple .mdui-ripple-wave {
+    background-color: rgba(255,255,255,.1)!important
+}
+.mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-toolbar[class*=mdui-color-]:not(.mdui-color-transparent) .mdui-btn:hover {
+    background-color: rgba(255,255,255,.1)!important;
+}
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal * {
+    color: rgba(255,255,255,.87)!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-red #menu:hover {
+    background-color: #ff5252!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-pink #menu:hover {
+    background-color: #ff4081!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-purple #menu:hover {
+    background-color: #e040fb!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-deep-purple #menu:hover {
+    background-color: #7c4dff!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-indigo #menu:hover {
+    background-color: #536dfe!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-blue #menu:hover {
+    background-color: #448aff!important;
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-light-blue #menu:hover {
+    background-color: #40c4ff!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-cyan #menu:hover {
+    background-color: #18ffff!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-teal #menu:hover {
+    background-color: #64ffda!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-green #menu:hover {
+    background-color: #69f0ae!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-light-green #menu:hover {
+    background-color: #b2ff59!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-lime #menu:hover {
+    background-color: #eeff41!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-yellow #menu:hover {
+    background-color: #ffff00!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-amber #menu:hover {
+    background-color: #ffd740!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-orange #menu:hover {
+    background-color: #ffab40!important;
+    color: rgba(0,0,0,.87);
+}
+body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-deep-orange #menu:hover {
+    background-color: #ff6e40!important;
+    color: rgba(0,0,0,.87);
+}
+.LinkPage > article {
+    margin-bottom: 10px;
+}
+body.mdx-list-page {
+    background-color: #f7f7f7;
+}
+body.mdx-list-page.mdui-theme-layout-dark {
+    background-color: #303030;
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {

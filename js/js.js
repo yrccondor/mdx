@@ -255,7 +255,11 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
         let searchBarDOM = document.getElementById("SearchBar");
         searchBarDOM.style.display = "block";
         var searchDom = document.getElementsByClassName('outOfSearch');
-        mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+        if(document.getElementsByClassName("mdx-theme-white").length){
+            mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(152, 152, 152, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+        }else{
+            mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+        }
         setTimeout(() => {
             document.getElementById('searchform').classList.add("mdx-searchform-show");
             document.getElementById("mdx-search-anim").classList.remove('mdx-search-anim-show');
