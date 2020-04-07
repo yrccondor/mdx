@@ -586,6 +586,10 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_telegram" type="text" id="mdx_sn_telegram" value="" placeholder="<?php _e('Telegram 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Telegram', 'mdx');?>"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_svg"><?php _e('Steam', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_steam" type="text" id="mdx_sn_steam" value="" placeholder="<?php _e('Steam 用户名', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('Steam', 'mdx');?>"></td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_svg"><?php _e('WhatsApp', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_sn_whatsapp" type="text" id="mdx_sn_whatsapp" value="" placeholder="<?php _e('WhatsApp 链接', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('WhatsApp', 'mdx');?>"></td>
 </tr>
@@ -636,6 +640,8 @@ function input_onchange(ele){
                 html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_telegram"){
                 html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+            }else if(jQuery(ele).attr("id") === "mdx_sn_steam"){
+                html_str += '<!-- steam -->\n<a href="https://steamcommunity.com/id/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_steam" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_email"){
                 html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else{

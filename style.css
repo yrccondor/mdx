@@ -3824,6 +3824,10 @@ article.mdui-typo h1 {
     background-image: url(img/social-icons/telegram.svg);
     transform: scale(.95);
 }
+.mdx-sn-icon.mdx_sn_steam {
+    background-image: url(img/social-icons/steam.svg);
+    transform: scale(.95);
+}
 .mdx-sn-icon.mdx_sn_whatsapp {
     background-image: url(img/social-icons/whatsapp.svg);
     transform: scale(.96);
