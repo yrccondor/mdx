@@ -3706,6 +3706,7 @@ body.mdui-theme-layout-dark #mdx-cookie-notice p {
 }
 #mdx_menu li.menu-item i.mdui-icon {
     width: 22px;
+    vertical-align: sub;
 }
 body.mdui-theme-layout-dark > .mdui-progress {
     background-color: transparent!important;
@@ -3891,6 +3892,95 @@ article.mdui-typo h1 {
     width: 200px;
     height: 200px;
     left: -87.5px;
+}
+li.menu-item .mdx-sn-icon {
+    height: 22px;
+    width: 22px;
+    cursor: inherit;
+    margin: 0;
+    margin-right: 9pt;
+    vertical-align: sub;
+    opacity: 1;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    background-image: none;
+}
+.mdui-theme-layout-dark li.menu-item .mdx-sn-icon {
+    filter: invert(0)!important;
+}
+li.menu-item:not(.current-menu-item) .mdx-sn-icon {
+    background-color: #656565!important;
+}
+li.menu-item .mdx-sn-icon.mdx_sn_qq {
+    -webkit-mask-image: url(img/social-icons/qq.svg);
+    mask-image: url(img/social-icons/qq.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_wechat {
+    -webkit-mask-image: url(img/social-icons/wechat.svg);
+    mask-image: url(img/social-icons/wechat.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_weibo {
+    -webkit-mask-image: url(img/social-icons/weibo.svg);
+    mask-image: url(img/social-icons/weibo.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_zhihu {
+    -webkit-mask-image: url(img/social-icons/zhihu.svg);
+    mask-image: url(img/social-icons/zhihu.svg);
+    transform: scale(1.15);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_bilibili {
+    -webkit-mask-image: url(img/social-icons/bilibili.svg);
+    mask-image: url(img/social-icons/bilibili.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_neteasemusic {
+    -webkit-mask-image: url(img/social-icons/neteasemusic.svg);
+    mask-image: url(img/social-icons/neteasemusic.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_coolapk {
+    -webkit-mask-image: url(img/social-icons/coolapk.svg);
+    mask-image: url(img/social-icons/coolapk.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_douban {
+    -webkit-mask-image: url(img/social-icons/douban.svg);
+    mask-image: url(img/social-icons/douban.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_github {
+    -webkit-mask-image: url(img/social-icons/github.svg);
+    mask-image: url(img/social-icons/github.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_facebook {
+    -webkit-mask-image: url(img/social-icons/facebook.svg);
+    mask-image: url(img/social-icons/facebook.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_twitter {
+    -webkit-mask-image: url(img/social-icons/twitter.svg);
+    mask-image: url(img/social-icons/twitter.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_telegram {
+    -webkit-mask-image: url(img/social-icons/telegram.svg);
+    mask-image: url(img/social-icons/telegram.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_steam {
+    -webkit-mask-image: url(img/social-icons/steam.svg);
+    mask-image: url(img/social-icons/steam.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_whatsapp {
+    -webkit-mask-image: url(img/social-icons/whatsapp.svg);
+    mask-image: url(img/social-icons/whatsapp.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_instagram {
+    -webkit-mask-image: url(img/social-icons/instagram.svg);
+    mask-image: url(img/social-icons/instagram.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_dribbble {
+    -webkit-mask-image: url(img/social-icons/dribbble.svg);
+    mask-image: url(img/social-icons/dribbble.svg);
+}
+li.menu-item .mdx-sn-icon.mdx_sn_behance {
+    -webkit-mask-image: url(img/social-icons/behance.svg);
+    mask-image: url(img/social-icons/behance.svg);
 }
 .page-footer-nav.mdui-color-theme, .page-footer-nav.mdui-color-theme * {
     background-color: #f7f7f7!important;
