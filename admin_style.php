@@ -554,6 +554,14 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_zhihu" type="text" id="mdx_sn_zhihu" value="" placeholder="<?php _e('知乎链接', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_svg"><?php _e('哔哩哔哩', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_bilibili" type="text" id="mdx_sn_bilibili" value="" placeholder="<?php _e('哔哩哔哩链接', 'mdx');?>" oninput="input_onchange()"></td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_svg"><?php _e('网易云音乐', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_neteasemusic" type="text" id="mdx_sn_neteasemusic" value="" placeholder="<?php _e('网易云音乐链接', 'mdx');?>" oninput="input_onchange()"></td>
+</tr>
+<tr>
 <th scope="row"><label for="mdx_svg"><?php _e('酷安', 'mdx');?></label></th>
 <td><input class="regular-text" name="mdx_sn_coolapk" type="text" id="mdx_sn_coolapk" value="" placeholder="<?php _e('酷安链接', 'mdx');?>" oninput="input_onchange()"></td>
 </tr>

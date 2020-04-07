@@ -3790,6 +3790,15 @@ article.mdui-typo h1 {
     margin: 3px 0;
     margin: 3px 1px;
 }
+.mdx-sn-icon.mdx_sn_bilibili {
+    background-image: url(img/social-icons/bilibili.svg);
+    transform: scale(.95);
+    margin: 3px 2px;
+}
+.mdx-sn-icon.mdx_sn_neteasemusic {
+    background-image: url(img/social-icons/neteasemusic.svg);
+    transform: translateY(.5px);
+}
 .mdx-sn-icon.mdx_sn_coolapk {
     background-image: url(img/social-icons/coolapk.svg);
     transform: scale(1.1) translateY(.7px);
