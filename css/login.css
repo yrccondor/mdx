@@ -40,9 +40,9 @@ body {
     appearance: none!important;
     min-height: 37px!important;
 }
-.mdui-btn, .mdui-fab {
+.mdui-btn, .mdui-fab, #wp-webauthn, #wp-webauthn-check {
     position: relative!important;
-    display: inline-block!important;
+    display: inline-block;
     min-width: 88px!important;
     height: 36px!important;
     -webkit-box-sizing: border-box!important;
@@ -79,6 +79,18 @@ body {
     will-change: box-shadow!important;
     -webkit-user-drag: none!important;
 }
+.mdui-btn[disabled], .mdui-btn[disabled]:active, .mdui-btn[disabled]:focus, .mdui-btn[disabled]:hover, .mdui-fab[disabled], .mdui-fab[disabled]:active, .mdui-fab[disabled]:focus, .mdui-fab[disabled]:hover, #wp-submit[disabled], #wp-webauthn[disabled], #wp-webauthn-check[disabled] {
+    color: rgba(0,0,0,.26)!important;
+    cursor: default!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    opacity: 1!important;
+}
+.mdui-btn-raised[disabled], .mdui-btn-raised[disabled]:active, .mdui-btn-raised[disabled]:focus, .mdui-btn-raised[disabled]:hover, .mdui-fab[disabled], .mdui-fab[disabled]:active, .mdui-fab[disabled]:focus, .mdui-fab[disabled]:hover, #wp-submit[disabled], #wp-webauthn[disabled], #wp-webauthn-check[disabled] {
+    background-color: rgba(0,0,0,.12)!important;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)!important;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)!important;
+}
 .mdui-textfield-focus .mdui-textfield-input, .mdui-textfield-focus .mdui-textfield-input:hover {
     border-bottom-color: #0073AA!important;
     -webkit-box-shadow: 0 1px 0 0 #0073AA!important;
@@ -103,9 +115,27 @@ p.mdui-textfield.mdui-textfield-floating-label {
     -webkit-box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
     box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
 }
-#wp-submit {
+#wp-submit, #wp-webauthn-check {
     background-color: rgb(0, 124, 186)!important;
     color: #fff!important;
+}
+#wp-webauthn, #wp-webauthn-check {
+    padding: 0!important;
+}
+#wp-webauthn-check, #wp-webauthn {
+    display: block!important;
+    float: none!important;
+    margin: 0 0 0 auto!important;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+#wp-webauthn {
+    transform: translateY(5px)!important;
+    color: #007cba!important;
+    clear: both;
+}
+#wp-webauthn span {
+    line-height: 32px!important;
 }
 #lostpasswordform #wp-submit {
     margin-top: 30px!important;
@@ -113,11 +143,11 @@ p.mdui-textfield.mdui-textfield-floating-label {
 .forgetmenot span {
     line-height: 36px!important;
 }
-.mdui-btn-raised:hover, .mdui-btn-raised:focus {
+.mdui-btn-raised:hover, .mdui-btn-raised:focus, #wp-webauthn-check:hover, #wp-webauthn-check:focus, #wp-webauthn:hover, #wp-webauthn:focus {
     -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)!important;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12)!important;
 }
-.mdui-btn-raised:active {
+.mdui-btn-raised:active, #wp-webauthn-check:active, #wp-webauthn:active {
     -webkit-box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)!important;
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)!important;
 }
@@ -125,6 +155,8 @@ p.mdui-textfield.mdui-textfield-floating-label {
     border-left: none;
     border: #dc3232 solid 1px!important;
     color: #dc3232!important;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
 }
 .message {
     border-left: none;
@@ -134,4 +166,9 @@ p.mdui-textfield.mdui-textfield-floating-label {
 #login_error, .message {
     -webkit-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+}
+@media(max-width: 782px){
+    #wp-webauthn span {
+        line-height: 36px!important;
+    }
 }

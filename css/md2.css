@@ -34,7 +34,7 @@
          url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error {
     border-radius: 8px!important;
 }
 .spanout, .mdx-first-simple .mdxNotice, #respond {
@@ -80,9 +80,22 @@
 .mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button {
     border-radius: 5px;
 }
-#wp-submit {
+#wp-submit, #wp-webauthn, #wp-webauthn-check {
     border-radius: 5px!important;
     box-shadow: none;
+}
+#wp-webauthn {
+    border: 2px solid #007cba!important;
+}
+#wp-webauthn:hover {
+    background-color: rgba(0, 124, 186, .1)!important;
+}
+#wp-submit[disabled], #wp-webauthn[disabled], #wp-webauthn-check[disabled], #wp-webauthn:hover, #wp-webauthn:focus, #wp-webauthn:active {
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+#wp-webauthn[disabled] {
+    border-color: #E0E0E0!important;
 }
 #login_error {
     border: #dc3232 solid 2px!important;
