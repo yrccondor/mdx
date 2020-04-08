@@ -3982,21 +3982,6 @@ li.menu-item .mdx-sn-icon.mdx_sn_behance {
     -webkit-mask-image: url(img/social-icons/behance.svg);
     mask-image: url(img/social-icons/behance.svg);
 }
-.page-footer-nav.mdui-color-theme, .page-footer-nav.mdui-color-theme * {
-    background-color: #f7f7f7!important;
-    color: rgba(85,85,85,.87);
-}
-.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme, .mdui-theme-layout-dark .page-footer-nav.mdui-color-theme * {
-    background-color: #212121!important;
-    color: rgba(211, 211, 211, 0.87);
-}
-.page-footer-nav.mdui-color-theme, .page-footer-nav.mdui-color-theme .mdui-ripple .mdui-ripple-wave {
-    background-color: rgba(0,0,0,.1)!important
-}
-.page-footer-nav.mdui-color-theme, .page-footer-nav.mdui-color-theme * {
-    background-color: #f7f7f7!important;
-    color: rgba(85,85,85,.87);
-}
 .mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme {
     background-color: #e0e0e0!important;
 }
@@ -4163,6 +4148,20 @@ body.mdx-list-page {
 }
 body.mdx-list-page.mdui-theme-layout-dark {
     background-color: #303030;
+}
+.page-footer-nav.mdui-color-theme.mdx-post-nav-clean, .page-footer-nav.mdui-color-theme.mdx-post-nav-clean * {
+    background-color: #f7f7f7!important;
+    color: rgba(85,85,85,.87);
+}
+.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme.mdx-post-nav-clean, .mdui-theme-layout-dark .page-footer-nav.mdui-color-theme.mdx-post-nav-clean * {
+    background-color: #212121!important;
+    color: rgba(255, 255, 255, 0.87);
+}
+.page-footer-nav.mdui-color-theme.mdx-post-nav-clean .mdui-ripple .mdui-ripple-wave {
+    background-color: rgba(0,0,0,.1)!important
+}
+.mdui-theme-layout-dark .page-footer-nav.mdui-color-theme.mdx-post-nav-clean .mdui-ripple .mdui-ripple-wave {
+    background-color: rgba(255,255,255,.1)!important
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {

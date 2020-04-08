@@ -73,6 +73,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
     mdx_update_option('mdx_index_show', $_POST['mdx_index_show']);
     mdx_update_option('mdx_post_style', $_POST['mdx_post_style']);
+    mdx_update_option('mdx_post_nav_style', $_POST['mdx_post_nav_style']);
     mdx_update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
     mdx_update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
     mdx_update_option('mdx_post_def_img', $_POST['mdx_post_def_img']);
@@ -284,6 +285,17 @@ wp_nonce_field('mdx_options_update');
 </select>
 <div class="mdx-svg-preview" id="mdx-post-preview"></div>
 <p class="description"><?php _e('同时影响文章页、单独页面的样式。', 'mdx');?></p>
+</td>
+</tr>
+<tr>
+<th scope="row"><label for="mdx_post_nav_style"><?php _e('文章导航栏配色方案', 'mdx');?></label></th>
+<td>
+<?php $mdx_v_post_nav_style=mdx_get_option('mdx_post_nav_style');?>
+<select name="mdx_post_nav_style" id="mdx_post_style">
+    <option value="0" <?php if($mdx_v_post_nav_style=='0'){?>selected="selected"<?php }?>><?php _e('主题色', 'mdx');?></option>
+    <option value="1" <?php if($mdx_v_post_nav_style=='1'){?>selected="selected"<?php }?>><?php _e('低饱和度', 'mdx');?></option>
+</select>
+<p class="description"><?php _e('影响文章末尾文章导航栏区域的配色。', 'mdx');?></p>
 </td>
 </tr>
 <tr><td> </td></tr>

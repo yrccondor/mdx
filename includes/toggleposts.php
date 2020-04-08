@@ -2,7 +2,7 @@
 $previous_post = get_previous_post();
 $next_post = get_next_post();
 if((!empty($previous_post))&&(!empty($next_post))){?>
-<div class="page-footer-nav mdui-color-theme">
+<div class="page-footer-nav mdui-color-theme<?php if(mdx_get_option("mdx_post_nav_style") === "1"){?> mdx-post-nav-clean<?php }?>">
   <div class="mdui-container">
     <div class="mdui-row">
       <a href="<?php echo esc_url(get_permalink($previous_post->ID));?>" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 page-footer-nav-left">
@@ -23,7 +23,7 @@ if((!empty($previous_post))&&(!empty($next_post))){?>
   </div>
 </div>
 <?php }else if((empty($previous_post))&&(!empty($next_post))){?>
-<div class="page-footer-nav mdui-color-theme">
+<div class="page-footer-nav mdui-color-theme<?php if(mdx_get_option("mdx_post_nav_style") === "1"){?> mdx-post-nav-clean<?php }?>">
   <div class="mdui-container">
     <div class="mdui-row">
     <div class="mdui-col-xs-2 mdui-col-sm-6 page-footer-nav-left"></div>
@@ -38,7 +38,7 @@ if((!empty($previous_post))&&(!empty($next_post))){?>
   </div>
 </div>
 <?php }else if((!empty($previous_post))&&(empty($next_post))){?>
-    <div class="page-footer-nav mdui-color-theme">
+<div class="page-footer-nav mdui-color-theme<?php if(mdx_get_option("mdx_post_nav_style") === "1"){?> mdx-post-nav-clean<?php }?>">
     <div class="mdui-container">
       <div class="mdui-row">
         <a href="<?php echo esc_url(get_permalink($previous_post->ID));?>" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 page-footer-nav-left mdx-first-box">

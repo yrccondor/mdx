@@ -67,6 +67,7 @@ $arr = array(
 'mdx_default_style'=>'1',
 'mdx_index_show'=>'0',
 'mdx_post_style'=>'0',
+'mdx_post_nav_style'=>'1',
 'mdx_echo_post_sum'=>'true',
 'mdx_post_list_img_height'=>'auto',
 'mdx_post_def_img'=>'false',
