@@ -47,7 +47,7 @@ bloginfo('name');if($site_description && (is_home() || is_front_page())) echo " 
 <meta name="twitter:description" content="<?php if(is_single()||is_page()){if(post_password_required()){_e('这篇文章受密码保护，输入密码后才能查看。', 'mdx');}else{echo mdx_get_post_excerpt($post, 100);}}else if($mdx_des!=''){echo $mdx_des;}else{bloginfo('description', 'display');}?>">
 <meta name="twitter:url" content="<?php echo $mdx_current_url;?>">
 <?php if(!((!(is_single()||is_page()))&&substr($mdx_index_img,0,6)=="--Bing")){?>
-<meta name="twitter:image" content="<?php if(is_single()||is_page()){if($mdx_post_img[0]!=""){echo $mdx_post_img[0];}else{echo "";}}else{echo  $mdx_index_img;}?>">
+<meta name="twitter:image" content="<?php if(is_single()||is_page()){if($mdx_post_img!==false&&$mdx_post_img[0]!=""){echo $mdx_post_img[0];}else{echo "";}}else{echo  $mdx_index_img;}?>">
 <?php }if($mdx_des!=''){if($mdx_a_des=='true'){if(is_single()||is_page()){?>
 <meta name="description" content="<?php if(post_password_required()){_e('这篇文章受密码保护，输入密码后才能查看。', 'mdx');}else{mdx_get_post_excerpt($post, 100);}?>">
 <?php }else{?>
@@ -59,10 +59,16 @@ bloginfo('name');if($site_description && (is_home() || is_front_page())) echo " 
 <?php }}
 if(mdx_get_option('mdx_chrome_color')=='true'){
     $mdx_theme_color = mdx_get_option('mdx_styles_hex');
+    if(mdx_get_option('mdx_styles') === "white"){
+        $mdx_theme_color = "#ffffff";
+    }
 if(is_single()){
     $mdx_theme_color_page = get_post_meta($post->ID, "mdx_styles_hex", true);
 if($mdx_theme_color_page!='def' && $mdx_theme_color_page!=''){
     $mdx_theme_color = $mdx_theme_color_page;
+}
+if(get_post_meta($post->ID, "mdx_styles", true) === "white"){
+    $mdx_theme_color = "#ffffff";
 }}?>
 <meta name="theme-color" content="<?php echo $mdx_theme_color;?>">
 <meta name="mdx-main-color" content="<?php echo $mdx_theme_color;?>">

@@ -810,6 +810,7 @@ function mdx_save_postdata_1($post_id, $post){
                 'brown'=>'#795548',
                 'grey'=>'#9e9e9e',
                 'blue-grey'=>'#607d8b',
+                'white'=>'#9e9e9e',
                 'def'=>'def',
             );
             if(!add_post_meta((int)$post_id, "mdx_styles_hex", $mdx_color_arr[(string)$data1], true)){ 
