@@ -605,6 +605,10 @@ msgstr ""
 msgid "由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。"
 msgstr ""
 
+#: admin_functions.php:127
+msgid "你似乎没有启用 <code>mbstring</code> PHP 拓展，这会导致 MDx 无法正常运行。请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/#mb_strimwidth\">文档</a>来修复此错误。"
+msgstr ""
+
 #: admin_style.php:128
 msgid "主题颜色"
 msgstr ""

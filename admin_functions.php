@@ -122,4 +122,12 @@ function mdx_cant_notice() {?>
         <p><?php _e('由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。', 'mdx'); ?></p>
     </div>
 <?php }
+function mdx_php_error() {?>
+    <div class="notice notice-error">
+        <p><?php _e('你似乎没有启用 <code>mbstring</code> PHP 拓展，这会导致 MDx 无法正常运行。请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/#mb_strimwidth">文档</a>来修复此错误。', 'mdx'); ?></p>
+    </div>
+<?php }
+if(!function_exists("mb_strimwidth")){
+    add_action('admin_notices', 'mdx_php_error');
+}
 ?>
