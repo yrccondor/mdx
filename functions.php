@@ -715,6 +715,7 @@ function mdx_post_metaboxes_1() {
         <option value="brown" <?php if($mdx_v_styles=='brown'){?>selected="selected"<?php }?>>Brown</option>
         <option value="grey" <?php if($mdx_v_styles=='grey'){?>selected="selected"<?php }?>>Grey</option>
         <option value="blue-grey" <?php if($mdx_v_styles=='blue-grey'){?>selected="selected"<?php }?>>Blue Grey</option>
+        <option value="white" <?php if($mdx_v_styles=='white'){?>selected="selected"<?php }?>>White</option>
     </select>
     <p class="description"><?php _e('在这里为这篇文章设置单独的主题颜色。', 'mdx');?></p>
     <br>

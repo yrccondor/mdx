@@ -18,7 +18,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
         $post_style=mdx_get_option('mdx_post_style');
     }
     ?>
-    <body class="mdui-theme-primary-<?php $main_color = mdx_get_option('mdx_styles');if($main_color === "white"){echo "grey mdx-theme-white";}else{echo $main_color;}?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
+    <body class="mdui-theme-primary-<?php if($mdx_style === "white"){echo "grey mdx-theme-white";}else{echo $mdx_style;}?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
         <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
@@ -242,7 +242,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <?php }else{?>if(sessionStorage.getItem('ns_night-styles')==="true"){document.getElementsByTagName('body')[0].className+=" mdui-theme-layout-dark";document.getElementsByName('theme-color')[0].setAttribute("content","#212121")}<?php }?></script>
     <?php }?>
     <div class="mdui-color-theme mdui-typo-display-3 mdui-valign mdx-background-404">
-        <span><?php _e('诶呀...','mdx');?><span class="mdui-typo-headline"><?php _e('根据相关法律法规，此文章暂时不予显示','mdx');?></span></span>
+        <span><?php _e('哎呀...','mdx');?><span class="mdui-typo-headline"><?php _e('根据相关法律法规，此文章暂时不予显示','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
@@ -254,7 +254,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 </body>
 </html>
 <?php }elseif ($mdx_post_show=='3' && !is_user_logged_in()) {?>
-    <body class="mdui-theme-primary-<?php echo mdx_get_option('mdx_styles');?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php } ?>">
+    <body class="mdui-theme-primary-<?php $main_color = mdx_get_option('mdx_styles');if($main_color === "white"){echo "grey mdx-theme-white";}else{echo $main_color;}?> mdui-theme-accent-<?php echo mdx_get_option('mdx_styles_act');if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
     <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
@@ -262,7 +262,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <?php }else{?>if(sessionStorage.getItem('ns_night-styles')==="true"){document.getElementsByTagName('body')[0].className+=" mdui-theme-layout-dark";document.getElementsByName('theme-color')[0].setAttribute("content","#212121")}<?php }?></script>
     <?php }?>
     <div class="mdui-color-theme mdui-typo-display-3 mdui-valign mdx-background-404">
-        <span><?php _e('诶呀...','mdx');?><span class="mdui-typo-headline"><?php _e('登录后才能查看此文章','mdx');?></span></span>
+        <span><?php _e('哎呀...','mdx');?><span class="mdui-typo-headline"><?php _e('登录后才能查看此文章','mdx');?></span></span>
     </div>
     <div class="mdui-valign mdx-main-404">
         <div>
