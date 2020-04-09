@@ -1471,11 +1471,11 @@ msgstr ""
 msgid "文章设置"
 msgstr ""
 
-#: header.php:40, header.php:47, header.php:52
+#: header.php:40, header.php:47, header.php:52, template-parts/content-3.php:5
 msgid "这篇文章受密码保护，输入密码后才能查看。"
 msgstr ""
 
-#: index.php:73
+#: index.php:73, includes/same_posts.php:23, includes/same_posts.php:42
 msgid "前往阅读"
 msgstr ""
 
@@ -1527,7 +1527,7 @@ msgstr ""
 msgid "什么也没找到，换个词搜索试试？"
 msgstr ""
 
-#: searchform.php:3
+#: searchform.php:3, includes/searchform.php:5
 msgid "搜索什么..."
 msgstr ""
 
@@ -1549,4 +1549,80 @@ msgstr ""
 
 #: single.php:265
 msgid "登录后才能查看此文章"
+msgstr ""
+
+#: ajax-comment/main.php:19
+msgid "发射成功！"
+msgstr ""
+
+#: ajax-comment/main.php:20
+msgid "<strong>错误：</strong> 未知错误。"
+msgstr ""
+
+#: ajax-comment/main.php:59
+msgid "刚刚"
+msgstr ""
+
+#: includes/admin_init_fn.php:18, includes/update.php:455, includes/update.php:518, includes/update.php:581, includes/update.php:645
+msgid "去围观"
+msgstr ""
+
+#: includes/admin_init_fn.php:41, includes/admin_init_fn.php:45, includes/update.php:252, includes/update.php:302, includes/update.php:349, includes/update.php:355, includes/update.php:404, includes/update.php:410, includes/update.php:462, includes/update.php:468, includes/update.php:525, includes/update.php:531, includes/update.php:588, includes/update.php:594, includes/update.php:652, includes/update.php:658
+msgid "推荐文章"
+msgstr ""
+
+#: includes/admin_init_fn.php:42, includes/update.php:253, includes/update.php:303, includes/update.php:356, includes/update.php:411, includes/update.php:469, includes/update.php:532, includes/update.php:595, includes/update.php:659
+msgid "最新文章"
+msgstr ""
+
+#: includes/author_card.php:1
+msgid "访问作者网站"
+msgstr ""
+
+#: includes/author_card.php:1
+msgid "文章作者"
+msgstr ""
+
+#: includes/share_cn.php:2
+msgid "分享到 微博"
+msgstr ""
+
+#: includes/share_cn.php:5
+msgid "分享到 微信"
+msgstr ""
+
+#: includes/share_cn.php:8, template-parts/content-1.php:5, template-parts/content-1.php:55, template-parts/content-2.php:4, template-parts/content-3.php:62, template-parts/content-5.php:13, template-parts/content-first-1.php:5, template-parts/content-first-1.php:55, template-parts/content-first-2.php:4, template-parts/content-first-3.php:5, template-parts/content-first-3.php:62, template-parts/content-first-5.php:13
+msgid "这篇文章受密码保护，输入密码才能看哦"
+msgstr ""
+
+#: includes/share_cn.php:8
+msgid "分享到 QQ"
+msgstr ""
+
+#: includes/share_cn.php:11
+msgid "分享到 QQ 空间"
+msgstr ""
+
+#: includes/share_oversea.php:2
+msgid "分享到 Telegram"
+msgstr ""
+
+#: includes/share_oversea.php:5
+msgid "分享到 Facebook"
+msgstr ""
+
+#: includes/share_oversea.php:8
+msgid "分享到 Twitter"
+msgstr ""
+
+#: includes/toggleposts.php:11, includes/toggleposts.php:47
+msgid "上一篇"
+msgstr ""
+
+#: includes/toggleposts.php:18, includes/toggleposts.php:33
+msgid "下一篇"
+msgstr ""
+
+#: template-parts/content-1-status.php:3, template-parts/content-2-status.php:3, template-parts/content-3-status.php:3, template-parts/content-4-status.php:4, template-parts/content-5-status.php:2, template-parts/content-first-1-status.php:3, template-parts/content-first-2-status.php:3, template-parts/content-first-3-status.php:3, template-parts/content-first-4-status.php:4, template-parts/content-first-5-status.php:2
+msgid "状态"
 msgstr ""
