@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-04-09 13:55+0000\n"
+"PO-Revision-Date: 2020-04-09 14:10+0000\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -285,13 +285,13 @@ msgstr "When enabled, users can toggle light/dark mode from the sidebar."
 
 #: admin_fn.php:256
 msgid "文章目录缩略显示"
-msgstr "Table of Content"
+msgstr "Unobtrusive Table of Content"
 
 #: admin_fn.php:262
 msgid "开启后，桌面端文章左侧会显示简略目录，点击即可打开完整目录。"
 msgstr ""
-"When enabled, a collapsible TOC will be shown to the left of the article. "
-"You can click on it to open the full TOC."
+"When enabled, a simple and unobtrusive TOC will be shown to the left of the "
+"article. Visitors can click on it to open the full TOC."
 
 #: admin_fn.php:267
 msgid "页面加载进度条"
@@ -797,7 +797,7 @@ msgid ""
 "#mb_strimwidth\">文档</a>来修复此错误。"
 msgstr ""
 "PHP <code>mbstring</code> extension not enabled. MDx may not function "
-"normally. Please refer to <a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/"
+"normally. Please refer to <a href=\"https://doc.flyhigher.top/mdx/en-US/tech/"
 "php-errors/#mb_strimwidth\">documents</a> to fix this error."
 
 #: admin_style.php:128
