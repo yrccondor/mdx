@@ -11,7 +11,7 @@
 > Basit görünüşlü, güçlü.
 
 <p align="center">
-<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.9-3f51b5.svg?style=flat-square"/>
+<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.10-3f51b5.svg?style=flat-square"/>
 <img alt="sürüm" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="sürümler" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Yazar" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
@@ -42,7 +42,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 
 - Tamamen Materyal Tasarım ile tasarlandı, isteğe bağlı Materyal Tasarım 2 kullanılabilir.
 - 3 anasayfa stili, 5 gönderi stili, 3 footer stili & 3 sayfa stili
-- 19 tema rengi & 16 vurgu rengi
+- 20 tema rengi & 16 vurgu rengi
 - Gece modu ve daima koyu mod özellikleri isteğe bağlı ayarlanabilir
 - SEO dostu, Facebook ve Twitter'da kolay paylaşım
 - Hızlı ve hafif, Pagespeed puanı 99% & YSlow puanı 98% (Küçültülmüş kurulumla test edildi)
@@ -50,7 +50,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 - Yerleşik TOC
 - Yerleşik lightbox 
 - 7 adet yerleşik kısakod
-- Çoklu dil desteği (Basitleştirilmiş Çince, Türkçe & İngilizce)
+- Çoklu dil desteği (Basitleştirilmiş Çince, Geleneksel Çince, Türkçe & İngilizce)
 - ✨ İnteraktif arama
 - ✨ Çarpraz platformlarda kolayca okumaya devam etme
 

@@ -11,7 +11,7 @@
 > Looks light, power inside.
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.9.9-3f51b5.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/version-1.9.10-3f51b5.svg?style=flat-square"/>
 <img alt="build" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
 <a href="https://github.com/yrccondor/mdx/releases"><img alt="releases" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
@@ -42,7 +42,7 @@ Key features:
 
 - Completely designed in Material Design with optional Material Design 2 style
 - 3 index styles, 5 post list styles, 3 footer styles & 3 page styles
-- 19 theme colors & 16 accent colors
+- 20 theme colors & 16 accent colors
 - Night mode and Always-Dark mode with optional OLED optimization
 - SEO friendly, easily share on Facebook / Twitter
 - Fast and light, Pagespeed score 99% & YSlow score 98% (Based on minimized installation)
@@ -50,7 +50,7 @@ Key features:
 - Built-in TOC
 - Built-in image light box
 - 7 built-in shortcodes
-- Multi-language support (Simplified Chinese, Turkish & English)
+- Multi-language support (Simplified Chinese, Traditional Chinese, Turkish & English)
 - ✨ Interactive search
 - ✨ Easily continue reading cross-platformly
 
