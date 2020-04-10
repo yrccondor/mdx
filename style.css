@@ -4532,6 +4532,10 @@ body.mdx-list-page.mdui-theme-layout-dark {
         -webkit-transform: translateX(-290px);
         transform: translateX(-290px);
     }
+    .mdui-drawer-close.mdui-drawer-right {
+        -webkit-transform: translateX(290px);
+        transform: translateX(290px);
+    }
 }
 @media(max-width:1024px) {
     .mdx-ad-after-links {
