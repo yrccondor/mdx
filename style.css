@@ -3910,9 +3910,6 @@ li.menu-item .mdx-sn-icon {
 .mdui-theme-layout-dark li.menu-item .mdx-sn-icon {
     filter: invert(0)!important;
 }
-li.menu-item:not(.current-menu-item) .mdx-sn-icon {
-    background-color: #656565!important;
-}
 li.menu-item .mdx-sn-icon.mdx_sn_qq {
     -webkit-mask-image: url(img/social-icons/qq.svg);
     mask-image: url(img/social-icons/qq.svg);
@@ -3985,6 +3982,9 @@ li.menu-item .mdx-sn-icon.mdx_sn_behance {
 .mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme {
     background-color: #e0e0e0!important;
 }
+.mdui-theme-primary-grey.mdx-theme-white li.menu-item.current-menu-item .mdx-sn-icon.mdui-color-theme {
+    background-color: #9e9e9e!important;
+}
 .mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme.mdui-toolbar {
     background-color: #fff!important;
 }
@@ -4045,6 +4045,9 @@ li.menu-item .mdx-sn-icon.mdx_sn_behance {
 .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-color-theme {
     background-color: #404040!important;
     color: #fff!important;
+}
+li.menu-item:not(.current-menu-item) .mdx-sn-icon, .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark li.menu-item:not(.current-menu-item) .mdx-sn-icon {
+    background-color: #656565!important;
 }
 .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .PostTitleFillBack2.mdui-color-theme {
     background-color: #4a4a4a!important;
