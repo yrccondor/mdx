@@ -218,7 +218,8 @@ body.mdui-theme-layout-dark .ct1-p {
     font-weight: bold;
 }
 .PostTitle>span {
-    word-break: break-all;
+    overflow-wrap: break-word;
+    width: 100%;
 }
 .PostTitle2 {
     height: 40%;
