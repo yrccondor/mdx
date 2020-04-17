@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-04-09 14:10+0000\n"
+"PO-Revision-Date: 2020-04-17 09:46+0000\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -1529,7 +1529,7 @@ msgstr "Nick name"
 
 #: comments.php:28
 msgid "昵称不能为空"
-msgstr "Nick name cannot be leftblank"
+msgstr "Nick name cannot be left blank"
 
 #: comments.php:30
 msgid "请按格式填写邮箱"
@@ -1672,13 +1672,15 @@ msgstr ""
 msgid "博主"
 msgstr "Owner"
 
+# Space before it required for English
 #: functions.php:275
 msgid "前"
-msgstr "ago"
+msgstr " ago"
 
+# This is the "Reply" button next to comments posted
 #: functions.php:275
 msgid "回复"
-msgstr "replied"
+msgstr "Reply"
 
 #: functions.php:352
 msgid "添加 <code>nofollow</code> 属性"
