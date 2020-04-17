@@ -128,10 +128,8 @@ function mdx_css(){
 add_action('wp_enqueue_scripts', 'mdx_css');
 function mdx_css_login(){
     if(mdx_get_option("mdx_login_md")=="true"){
-        wp_register_style('mdx_reset_css_login', get_template_directory_uri().'/css/login_reset.css', '', '', 'all');
         wp_register_style('mdx_mdui_css_login', get_template_directory_uri().'/mdui/css/mdui.min.css', '', '', 'all');
         wp_register_style('mdx_style_css_login', get_template_directory_uri().'/css/login.css', '', '', 'all');
-        wp_enqueue_style('mdx_reset_css_login');
         wp_enqueue_style('mdx_mdui_css_login');
         wp_enqueue_style('mdx_style_css_login');
         if(mdx_get_option("mdx_md2")=="true"){
