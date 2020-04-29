@@ -2332,7 +2332,9 @@ div.mdui-toolbar>.mdui-typo-headline {
 }
 .links-des a {
     color: #fff!important;
-    overflow: visible;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 .mdx-links-bg {
     position: absolute;
