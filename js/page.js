@@ -175,7 +175,7 @@ function mdx_shortcode(){
                         imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
                         document.getElementById("mdx-post-"+url).style.border = "0 solid #dadada";
                     }
-                    document.getElementById("mdx-post-"+url).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" target="_blank" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" target="_blank" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_post_i18n_2+'">&#xe5c8;</i></a></div>'+imgDiv;
+                    document.getElementById("mdx-post-"+url).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_post_i18n_2+'">&#xe5c8;</i></a></div>'+imgDiv;
                 }, 
                 error: (function(x){
                     return function(){
