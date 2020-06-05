@@ -3140,7 +3140,7 @@ img.avatar.mdx-avatar-lazyload.lazyloaded {
 .mdx-toc-item-h2 {
     padding-left: 36px;
 }
-.mdx-toc-item-h3 {
+.mdx-toc-item-h3, .mdx-toc-item-h4, .mdx-toc-item-h5, .mdx-toc-item-h6 {
     padding-left: 56px;
 }
 .mdx-toc-item.mdx-toc-read {
