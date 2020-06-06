@@ -193,6 +193,9 @@ jQuery("#use-api").click(function(){
 jQuery("#use-api2").click(function(){
     jQuery('#mdx_footer_say').val('--HitokotoPoemAPIActivated--');
 });
+jQuery("#use-api3").click(function(){
+    jQuery('#mdx_footer_say').val('--CustomAPIActivated(Fill API URL here)--');
+});
 jQuery("#use-bing-api").click(function(){
     jQuery('#mdx_index_img').val('--BingImagesActivated(0)--');
 });

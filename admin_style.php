@@ -550,7 +550,9 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_footer_say" type="text" id="mdx_footer_say" value="<?php echo esc_attr(mdx_get_option('mdx_footer_say'))?>">
 <button type="button" id="use-api" class="button mdx_stbsip7"><?php _e('使用一言 API（常规）', 'mdx');?></button>
 <button type="button" id="use-api2" class="button mdx_stbsip7"><?php _e('使用一言 API（古诗词）', 'mdx');?></button>
-<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。', 'mdx');?></p></td>
+<button type="button" id="use-api3" class="button mdx_stbsip7"><?php _e('使用一言 API（自定义）', 'mdx');?></button>
+<p class="description" id="mdx_footer"><?php _e('这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。', 'mdx');?></p>
+<p class="description" id="mdx_custom_api"><?php _e('如使用自定义 API，你需要在括号内填写 API URL 并确保 API 返回 <code>{"text":"句子"}</code> 的 JSON 格式。<a href="https://doc.flyhigher.top/mdx/zh-CN/config/custom_api/" target="_blank">详细信息</a></code>', 'mdx');?></p></td>
 </tr>
 <tr>
     <th scope="row"><label for="mdx_footer"><?php _e('页脚内容', 'mdx');?></label></th>
