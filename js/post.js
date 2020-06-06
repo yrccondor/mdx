@@ -185,52 +185,7 @@ function mdx_shortcode(){
     if($(".mdx-post-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-post-cot").length;i++){
             document.getElementsByClassName("mdx-post-cot")[i].id = "mdx-post-"+document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl;
-            $.ajaxSetup({
-                timeout: 15000
-            })
-            $.ajax({
-                url: document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl, 
-                type: 'get',
-                success: function(data){
-                    var htmlParser = new DOMParser();
-                    var htmlParsed = htmlParser.parseFromString(data, "text/html");
-                    var title = htmlParsed.querySelector("meta[property=\"og:title\"]").getAttribute("content");
-                    var url = htmlParsed.querySelector("meta[property=\"og:url\"]").getAttribute("content");
-                    var shareCard = htmlParsed.getElementsByClassName("mdx-si-sum");
-                    var desc = "";
-                    if(shareCard[0]){
-                        desc = shareCard[0].innerText;
-                    }else{
-                        desc = htmlParsed.querySelector("meta[property=\"og:description\"]").getAttribute("content");
-                    }
-                    if(desc === ''){
-                        desc = mdx_post_i18n_1;
-                    }
-                    var imgDOM = htmlParsed.querySelector("meta[property=\"og:image\"]");
-                    var img = "";
-                    if(imgDOM && imgDOM.getAttribute("content")){
-                        img = imgDOM.getAttribute("content");
-                    }
-                    var imgDiv = "";
-                    if(!document.getElementById("mdx-post-"+url)){
-                        if(url.substr(url.length-1) === "/"){
-                            url = url.substr(0,url.length-1);
-                        }else{
-                            url += "/";
-                        }
-                    }
-                    if(img !== ""){
-                        imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
-                        document.getElementById("mdx-post-"+url).style.border = "0 solid #dadada";
-                    }
-                    document.getElementById("mdx-post-"+url).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_post_i18n_2+'">&#xe5c8;</i></a></div>'+imgDiv;
-                }, 
-                error: (function(x){
-                    return function(){
-                        document.getElementsByClassName("mdx-post-cot")[x].getElementsByClassName("mdx-github-wait-out")[0].innerHTML=mdx_post_i18n_3+" <a rel=\"nofollow\" href=\""+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"\">"+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"</a>";
-                    }
-                })(i)
-            })
+            mdxAjaxPost(i);
         }
     }
 }
@@ -238,6 +193,56 @@ function GetQueryString(name){
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
     if(r!=null)return unescape(r[2]); return null;
+}
+
+function mdxAjaxPost(i){
+    $.ajaxSetup({
+        timeout: 15000
+    })
+    $.ajax({
+        url: document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl, 
+        type: 'get',
+        success: function(data){
+            var htmlParser = new DOMParser();
+            var htmlParsed = htmlParser.parseFromString(data, "text/html");
+            var title = htmlParsed.querySelector("meta[property=\"og:title\"]").getAttribute("content");
+            var url = htmlParsed.querySelector("meta[property=\"og:url\"]").getAttribute("content");
+            var shareCard = htmlParsed.getElementsByClassName("mdx-si-sum");
+            var desc = "";
+            if(shareCard[0]){
+                desc = shareCard[0].innerText;
+            }else{
+                desc = htmlParsed.querySelector("meta[property=\"og:description\"]").getAttribute("content");
+            }
+            if(desc === ''){
+                desc = mdx_post_i18n_1;
+            }
+            var imgDOM = htmlParsed.querySelector("meta[property=\"og:image\"]");
+            var img = "";
+            if(imgDOM && imgDOM.getAttribute("content")){
+                img = imgDOM.getAttribute("content");
+            }
+            var imgDiv = "";
+            if(!document.getElementById("mdx-post-"+url)){
+                if(url.substr(url.length-1) === "/"){
+                    url = url.substr(0,url.length-1);
+                }else{
+                    url += "/";
+                }
+            }
+            var userUrl = document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl;
+            if(img !== ""){
+                imgDiv = '<div class="mdx-post-card-img" style="background-image:url('+img+');"></div>'
+                document.getElementById("mdx-post-"+userUrl).style.border = "0 solid #dadada";
+            }
+            document.getElementById("mdx-post-"+userUrl).innerHTML='<div class="mdx-post-main"><a href="'+url+'" ref="nofollow" class="post-link">'+title+'</a><br>'+desc+'<br><br><a href="'+url+'" ref="nofollow" class="arrow-link mdx-github-arrow"><i class="mdui-icon material-icons" title="'+mdx_post_i18n_2+'">&#xe5c8;</i></a></div>'+imgDiv;
+        }, 
+        error: (function(x){
+            return function(){
+                document.getElementsByClassName("mdx-post-cot")[x].getElementsByClassName("mdx-github-wait-out")[0].innerHTML=mdx_post_i18n_3+" <a rel=\"nofollow\" href=\""+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"\">"+document.getElementsByClassName("mdx-post-cot")[x].dataset.mdxposturl+"</a>";
+            }
+        })(i)
+    })
 }
 
 //Scroll To the Top
@@ -335,9 +340,7 @@ $(function(){
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = $(this).attr('data-src').split("?")[0];
             }
-            var imgHref = $(this).parent("a").attr('href').split('.')
-            imgHref.pop();
-            var imgHrefa = imgHref.join('.') + '-';
+            var imgHrefa = $(this).parent("a").attr('href').replace(/\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("a").attr('href') || imgUrlEach == $(this).parent("a").attr('href')+"-towebp"){
                 $(this).addClass("mdx-img-in-post");
                 $(this).unwrap();
@@ -350,9 +353,7 @@ $(function(){
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = $(this).attr('data-src').split("?")[0];
             }
-            var imgHref = $(this).parent("figure").parent("a").attr('href').split('.')
-            imgHref.pop();
-            var imgHrefa = imgHref.join('.') + '-';
+            var imgHrefa = $(this).parent("figure").parent("a").attr('href').replace(/\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == $(this).parent("figure").parent("a").attr('href') || imgUrlEach == $(this).parent("figure").parent("a").attr('href')+"-towebp"){
                 $(this).addClass("mdx-img-in-post");
                 $(this).parent("figure").unwrap();
