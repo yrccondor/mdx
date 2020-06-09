@@ -128,7 +128,7 @@ p.mdui-textfield.mdui-textfield-floating-label {
     -webkit-box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
     box-shadow: 0 0 0 15px rgba(0, 115, 170,.16);
 }
-#wp-submit, #wp-webauthn-check {
+#wp-submit, #wp-webauthn-check, #submit {
     background-color: rgb(0, 124, 186)!important;
     color: #fff!important;
 }

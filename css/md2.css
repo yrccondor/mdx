@@ -80,7 +80,7 @@
 .mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button {
     border-radius: 5px;
 }
-#wp-submit, #wp-webauthn, #wp-webauthn-check {
+#wp-submit, #wp-webauthn, #wp-webauthn-check, #submit {
     border-radius: 5px!important;
     box-shadow: none;
 }
