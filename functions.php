@@ -747,6 +747,7 @@ function mdx_post_metaboxes_1() {
     <option value="0" <?php if($mdx_v_post_style=='0'){?>selected="selected"<?php }?>><?php _e('标准', 'mdx');?></option>
     <option value="1" <?php if($mdx_v_post_style=='1'){?>selected="selected"<?php }?>><?php _e('简洁', 'mdx');?></option>
     <option value="2" <?php if($mdx_v_post_style=='2'){?>selected="selected"<?php }?>><?php _e('通透', 'mdx');?></option>
+    <option value="3" <?php if($mdx_v_post_style=='3'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
     </select>
     <p class="description"><?php _e('在这里为这篇文章设置单独的样式。', 'mdx');?></p>
     <br>
