@@ -26,7 +26,7 @@ endif;
 if(!function_exists('fa_ajax_comment_err')) :
 
     function fa_ajax_comment_err($a) {
-        header('HTTP/1.0 500 Internal Server Error');
+        header('HTTP/1.1 500 Internal Server Error');
         header('Content-Type: text/plain;charset=UTF-8');
         echo $a;
         exit;

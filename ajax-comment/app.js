@@ -47,9 +47,9 @@ jQuery(document).ready(function(jQuery) {
                     jQuery('ul.children').next('li').remove();
                 } else if (!jQuery('.' + __list ).length) {
                     if (ajaxcomment.formpostion == 'bottom') {
-                        jQuery('#respond').before('<ul class="' + __list + '">' + data + '</ul>');
+                        jQuery('#respond').before('<div class="comms mdui-center" id="comments"><ul class="mdui-list ' + __list + '">' + data + '</ul></div>');
                     } else {
-                        jQuery('#respond').after('<ul class="' + __list + '">' + data + '</ul>');
+                        jQuery('#respond').after('<div class="comms mdui-center" id="comments"><ul class="mdui-list ' + __list + '">' + data + '</ul></div>');
                     }
 
                 } else {
