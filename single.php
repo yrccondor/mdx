@@ -18,7 +18,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
         $post_style=mdx_get_option('mdx_post_style');
     }
     ?>
-    <body class="mdui-theme-primary-<?php if($mdx_style === "white"){echo "grey mdx-theme-white";}else{echo $mdx_style;}?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
+    <body class="mdui-theme-primary-<?php if($mdx_style === "white"){echo "grey mdx-theme-white";}else{echo $mdx_style;}?> mdui-theme-accent-<?php echo $mdx_style_act;if($post_style=="0"){echo " body-grey";}else if($post_style=="2"){echo " body-grey1";}else if($post_style=="3"){echo " mdx-post-style-3";}if(mdx_get_option('mdx_styles_dark')!=='disable'){?> mdui-theme-layout-dark mdx-always-dark<?php }if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?> mdx-md2-font<?php }if(mdx_get_option('mdx_reduce_motion')=="true"){?> mdx-reduce-motion<?php } ?>">
     <?php if(mdx_get_option("mdx_night_style")!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
         <script><?php
     if(mdx_get_option("mdx_auto_night_style")=="true"){?>
@@ -209,6 +209,49 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 </div>
 <?php get_template_part('includes/toggleposts')?>
         <div id="indic"></div>
+      <?php }else if($post_style=="3"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle mdx-clean-style-article-head-background mdx-pni-t" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><span class="mdui-center mdx-clean-style-article-title"><?php the_title();?></span></div>
+        <div class="PostTitleFill mdui-color-theme mdx-clean-style-article-title-background"></div>
+        <div class="mdx-clean-style-article-main <?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
+            <div class="ArtMain mdui-center mdui-typo mdx-clean-style-article-content">
+                <?php if($mdx_image_url!=""){?>
+                <img class="PostMainImg mdx-clean-style-article-hero-image" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }?>
+                <article <?php post_class();?> id="post-<?php the_ID();?>" itemprop="articleBody">
+                <?php while(have_posts()):the_post();the_content();?>
+                </article>
+                <?php if(mdx_get_option('mdx_post_money')!=''){?>
+                <div class="mdx-post-money">
+                    <button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '<?php _e("赞赏","mdx");?>'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe8dc;</i></button>
+                    <div class="mdui-menu" id="mdx-qrcode-money">
+                        <img alt="<?php _e('赞赏','mdx');?>" src="<?php echo mdx_get_option('mdx_post_money');?>">
+                    </div>
+                </div>
+                <?php }?>
+                <?php $mdx_info = get_post_meta((int)$post->ID, "informations_value", true);if(mdx_get_option('mdx_say_after')!='' || ($mdx_info !='' && $mdx_info !='-----Nothing-----')){?>
+                    <div class="mdui-card mdx-say-after">
+                        <div class="mdui-card-actions mdui-typo">
+                        <?php 
+                            if($mdx_info == '' || $mdx_info =='-----Nothing-----'){
+                                $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
+                            }
+                            echo str_replace('--PostURL--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.mdx_get_now_url(true, (int)$post->ID).'</a>',str_replace('--PostLink--','<a href="'.mdx_get_now_url(true, (int)$post->ID).'">'.get_the_title().'</a>',$mdx_info));?>
+                        </div>
+                    </div>
+                    <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+	                }?>
+                <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+                <ul class="mdui-menu" id="mdxshare">
+                <li class="mdui-menu-item mdx-s-img-li"><a href="#"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
+                <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
+            </ul>
+                <i class="mdui-icon material-icons">&#xe54e;</i> <?php if (get_the_tags()){the_tags('',' ','');}else{_e('没有标签','mdx');}?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span>
+                <div class="mdui-divider"></div><?php mdx_breadcrumbs();?></div></div><?php endwhile;?>
+            </div>
+            <?php if(mdx_get_option('mdx_author_card')=="true"){include_once("includes/author_card.php");}if(mdx_get_option('mdx_you_may_like')=="true"){include_once("includes/same_posts.php");}comments_template();?>
+<?php get_template_part('includes/toggleposts')?>
+        <div id="indic"></div>
+        
       <?php }?>
       <div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head mdui-color-theme" <?php if($full_image_url!=false&&$full_image_url[0]!=""){echo 'style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7) 100%),url('.$full_image_url[0].');"';}else{if(mdx_get_option("mdx_post_def_img")=="true"){echo 'style="background-image:linear-gradient(to bottom, rgba(0,0,0,0) 45%,rgba(0,0,0,0.7) 100%),url('.get_bloginfo("template_url")."/img/dpic.jpg".'");';}}?>><p><?php $mdx_logo_way=mdx_get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=mdx_get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></p><span><?php the_title();?></span></div><div class="mdx-si-sum"><?php if(!post_password_required()){echo mdx_get_post_excerpt($post, 175);}else{echo "这篇文章受密码保护，前往原文输入密码后才能查看。";}?></div><div class="mdx-si-box"><span><?php _e('扫描二维码继续阅读', 'mdx');?></span><div class="mdx-si-qr" id="mdx-si-qr"></div></div><div class="mdx-si-time"><?php the_time('Y-m-d');?></div></div>
       <?php get_footer();
