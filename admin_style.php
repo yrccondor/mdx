@@ -6,9 +6,8 @@ $falseoff=__('关闭', 'mdx');
 //Some errors happend. I can't use WordPress Setting API. It said "Error: options page not found.", so I used another way to save the values.
 wp_enqueue_script('media-upload');
 wp_enqueue_script('my-upload', get_bloginfo('template_url' ).'/js/admin_upload.js');
-//加载上传图片的js
+wp_enqueue_media();
 wp_enqueue_script('thickbox');
-//加载css(wp自带)
 wp_enqueue_style('thickbox');
 wp_enqueue_style('wp-color-picker');
 wp_enqueue_script('wp-color-picker');
@@ -375,7 +374,7 @@ wp_nonce_field('mdx_options_update');
 <td>
 <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
 <button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
-<p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。<strong>注意，“简单”首页样式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
+<p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简单”首页样式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
 <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>
@@ -407,7 +406,6 @@ wp_nonce_field('mdx_options_update');
 <td>
 <input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2" readonly="readonly">
 <button type="button" id="insert-media-button-3" class="button mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
-<p class="description"><?php _e('选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图片，弹出层中的其他选项不会生效。', 'mdx');?></p>
 <img id="img2" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
 </td>
 </tr>

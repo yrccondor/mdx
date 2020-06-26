@@ -3,12 +3,8 @@ settings_errors();
 $trueon=__('开启', 'mdx');
 $falseoff=__('关闭', 'mdx');
 
-wp_enqueue_script('media-upload');
 wp_enqueue_script('my-tag', get_bloginfo('template_url' ).'/js/admin_tag.js');
-//加载上传图片的js
-wp_enqueue_script('thickbox');
-//加载css(wp自带)
-wp_enqueue_style('thickbox');
+wp_enqueue_media();
 ?>
 <div class="wrap"><h1><?php _e('MDx 主题 - 功能', 'mdx');?></h1>
 <?php

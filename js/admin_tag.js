@@ -1,23 +1,17 @@
 jQuery(document).ready(function(){
-    var whichButton=0;
     var mdx_val = jQuery('.mdx_stbs').val();
     if(mdx_val=='false'){
         jQuery('select.mdx_stbsip').attr("disabled","disabled");
     }
     jQuery('#insert-media-button').click(function(){
-        //文本域id
-        whichButton=0;
-        targetfield = jQuery(this).prev('#mdx_index_img');
-        tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-        return false;
+        var custom_uploader = wp.media({
+            multiple: false
+        }).on('select', function() {
+            var attachment = custom_uploader.state().get('selection').first().toJSON();
+            jQuery('#mdx_post_money').val(attachment.url);
+        }).open();
+        return;
     });
-    window.send_to_editor = function(html){
-        if(whichButton==0){
-            imgurl = jQuery('img','<div>'+html+'</div>').attr('src');
-            jQuery('#mdx_post_money').val(imgurl);
-            tb_remove();
-        }
-    }
     if(jQuery("#mdx_index_img").val()!=''){
         var img1=jQuery("#mdx_index_img").val();
         jQuery('#img1').attr('src',img1);

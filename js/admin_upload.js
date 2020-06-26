@@ -69,55 +69,42 @@ jQuery(document).ready(function(){
     }else{
         jQuery('.md2_font').show();
     }
-    var whichButton=0;
-    //上传按钮id
     jQuery('#insert-media-button').click(function(){
-        //文本域id
-        whichButton=0;
-        targetfield = jQuery(this).prev('#mdx_index_img');
-        tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-        return false;
+        var custom_uploader = wp.media({
+            multiple: false
+        }).on('select', function() {
+            var attachment = custom_uploader.state().get('selection').first().toJSON();
+            jQuery('#mdx_index_img').val(attachment.url);
+        }).open();
+        return;
     });
     jQuery('#insert-media-button-2').click(function(){
-        //文本域id
-        whichButton=1;
-        targetfield = jQuery(this).prev('#mdx_logo');
-        tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-        return false;
+        var custom_uploader = wp.media({
+            multiple: false
+        }).on('select', function() {
+            var attachment = custom_uploader.state().get('selection').first().toJSON();
+            jQuery('#mdx_logo').val(attachment.url);
+        }).open();
+        return;
     });
     jQuery('#insert-media-button-3').click(function(){
-        //文本域id
-        whichButton=2;
-        targetfield = jQuery(this).prev('#mdx_side_img');
-        tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-        return false;
+        var custom_uploader = wp.media({
+            multiple: false
+        }).on('select', function() {
+            var attachment = custom_uploader.state().get('selection').first().toJSON();
+            jQuery('#mdx_side_img').val(attachment.url);
+        }).open();
+        return;
     });
     jQuery('#insert-media-button-4').click(function(){
-        //文本域id
-        whichButton=3;
-        targetfield = jQuery(this).prev('#mdx_side_head');
-        tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-        return false;
+        var custom_uploader = wp.media({
+            multiple: false
+        }).on('select', function() {
+            var attachment = custom_uploader.state().get('selection').first().toJSON();
+            jQuery('#mdx_side_head').val(attachment.url);
+        }).open();
+        return;
     });
-    window.send_to_editor = function(html){
-        if(whichButton==0){
-            imgurl = jQuery('img','<div>'+html+'</div>').attr('src');
-            jQuery('#mdx_index_img').val(imgurl);
-            tb_remove();
-        }else if(whichButton==1){
-            imgurl = jQuery('img','<div>'+html+'</div>').attr('src');
-            jQuery('#mdx_logo').val(imgurl);
-            tb_remove();
-        }else if(whichButton==2){
-            imgurl = jQuery('img','<div>'+html+'</div>').attr('src');
-            jQuery('#mdx_side_img').val(imgurl);
-            tb_remove();
-        }else if(whichButton==3){
-            imgurl = jQuery('img','<div>'+html+'</div>').attr('src');
-            jQuery('#mdx_side_head').val(imgurl);
-            tb_remove();
-        }
-    }
     var mdx_val = jQuery('input.mdx_stbs:checked').val();
     if(mdx_val=='false'){
         jQuery('input.mdx_stbsip').attr("disabled","disabled");
