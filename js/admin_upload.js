@@ -130,8 +130,8 @@ jQuery(document).ready(function(){
         var img3=jQuery("#mdx_side_head").val();
         jQuery('#img3').attr('src',img3);
     }
-    if(jQuery("#mdx_mdx_logo").val()!=''){
-        var img4=jQuery("#mdx_mdx_logo").val();
+    if(jQuery("#mdx_logo").val()!=''){
+        var img4=jQuery("#mdx_logo").val();
         jQuery('#img4').attr('src',img4);
     }
     setInterval("img1()",500);
@@ -219,7 +219,7 @@ function img3(){
     jQuery('#img3').attr('src',img3);
 }
 function img4(){
-    var img4=jQuery("#mdx_mdx_logo").val();
+    var img4=jQuery("#mdx_logo").val();
     jQuery('#img4').attr('src',img4);
 }
 function mdx_logo_sec(selectV){
