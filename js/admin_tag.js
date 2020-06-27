@@ -5,7 +5,10 @@ jQuery(document).ready(function(){
     }
     jQuery('#insert-media-button').click(function(){
         var custom_uploader = wp.media({
-            multiple: false
+            multiple: false,
+            library: {
+                    type: ['image']
+            }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
             jQuery('#mdx_post_money').val(attachment.url);

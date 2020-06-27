@@ -3472,7 +3472,7 @@ main .mdx-postlist-simple p.ct1-p {
     padding-left: 0;
     margin-bottom: 0;
 }
-main .mdx-postlist-simple p.ct1-p+p {
+main .mdx-postlist-simple p.ct1-p + p {
     margin-top: 7px;
 }
 main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
@@ -3993,10 +3993,10 @@ li.menu-item .mdx-sn-icon.mdx_sn_behance {
 .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .titleBarGobal * {
     color: rgba(0, 0, 0, .87)!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded~header .titleBarGobal:not(.mdui-shadow-2) *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded~header .titleBarGobal:not(.mdui-shadow-2) * {
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal:not(.mdui-shadow-2) *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal:not(.mdui-shadow-2) * {
     color: rgba(255, 255, 255, .87)!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded~header .titleBarGobal.mdui-shadow-2 *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded~header .titleBarGobal.mdui-shadow-2 * {
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal.mdui-shadow-2 *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal.mdui-shadow-2 * {
     color: rgba(0, 0, 0, .87)!important;
 }
 .mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white.mdx-first-simple .theFirstPageSay {
@@ -4023,10 +4023,10 @@ li.menu-item .mdx-sn-icon.mdx_sn_behance {
 .mdui-theme-primary-grey.mdx-theme-white #SearchBar i.mdui-icon {
     color: rgba(0, 0, 0, .87)!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white .PostTitleFill2.lazyloaded.mdx-bg-loaded~.PostTitle, .mdui-theme-primary-grey.mdx-theme-white .PostTitleFillPage.lazyloaded.mdx-bg-loaded~.PostTitlePage {
+.mdui-theme-primary-grey.mdx-theme-white .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ .PostTitle, .mdui-theme-primary-grey.mdx-theme-white .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ .PostTitlePage {
     color: #fff!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded~header .titleBarGobal * {
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white) .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal * {
     color: rgba(255, 255, 255, .87)!important;
 }
 .mdui-theme-primary-grey.mdx-theme-white .mdx-toc-preview-item.mdui-color-theme {
@@ -4078,7 +4078,7 @@ li.menu-item:not(.current-menu-item) .mdx-sn-icon, .mdui-theme-primary-grey.mdx-
 .mdui-theme-primary-grey.mdx-theme-white.mdui-theme-layout-dark .mdui-toolbar[class*=mdui-color-]:not(.mdui-color-transparent) .mdui-btn:hover {
     background-color: rgba(255, 255, 255, .1)!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFill2.lazyloaded.mdx-bg-loaded~header .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFillPage.lazyloaded.mdx-bg-loaded~header .titleBarGobal * {
+.mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFill2.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal *, .mdui-theme-primary-grey.mdx-theme-white:not(.mdx-index-white).mdui-theme-layout-dark .PostTitleFillPage.lazyloaded.mdx-bg-loaded ~ header .titleBarGobal * {
     color: rgba(255, 255, 255, .87)!important;
 }
 body.mdx-first-tworows.mdx-theme-white.mdui-theme-accent-red #menu:hover {
@@ -4172,7 +4172,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
 .mdx-clean-style-article-hero-image {
     width: 100%;
 }
-.PostTitle~.PostTitleFill.mdx-clean-style-article-title-background, #SearchBar~.PostTitle.mdx-clean-style-article-head-background, .mdui-theme-layout-dark .PostTitle~.PostTitleFill.mdx-clean-style-article-title-background {
+.PostTitle ~ .PostTitleFill.mdx-clean-style-article-title-background, #SearchBar ~ .PostTitle.mdx-clean-style-article-head-background, .mdui-theme-layout-dark .PostTitle ~ .PostTitleFill.mdx-clean-style-article-title-background {
     background-color: transparent!important;
 }
 .PostTitle.mdx-clean-style-article-head-background {
@@ -4194,7 +4194,6 @@ body.mdx-list-page.mdui-theme-layout-dark {
     margin-top: 0!important;
 }
 @media screen and (orientation:landscape) and (min-width: 750px) {
-
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
         height: 100%;
@@ -4498,7 +4497,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
         width: 100%;
         max-width: 975pt;
     }
-    #respond, .ArtMain, .ArtMain~div#comments, .mdx-author-c, .mdx-same-posts {
+    #respond, .ArtMain, .ArtMain ~ div#comments, .mdx-author-c, .mdx-same-posts {
         width: 90%;
         max-width: 975pt;
     }
@@ -4519,7 +4518,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
         width: 100%;
         max-width: 750pt;
     }
-    #respond, .ArtMain, .ArtMain~div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
+    #respond, .ArtMain, .ArtMain ~ div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
         max-width: 825pt;
     }
     .page-tags, .page-tags > article {
@@ -4538,7 +4537,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
         width: 100%;
         max-width: 50pc;
     }
-    #respond, .ArtMain, .ArtMain~div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
+    #respond, .ArtMain, .ArtMain ~ div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
         max-width: 900px;
     }
     .page-tags, .page-tags > article {
@@ -4586,7 +4585,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
         width: 100%;
         max-width: 680px;
     }
-    #respond, .ArtMain, .ArtMain~div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
+    #respond, .ArtMain, .ArtMain ~ div#comments, .mdx-author-c, .mdx-same-posts, .mdx-clean-style-article-title {
         max-width: 45pc;
     }
 }
@@ -4608,7 +4607,6 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:782px) {
-
     body.customize-support #titleBarinPost, body.customize-support .mdui-toolbar, body.customize-support .titleBarinAc {
         top: 46px;
     }
@@ -4629,7 +4627,6 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:720px) {
-
     .ArtMain0, .mdxNotice {
         border-radius: 0;
     }
@@ -4887,8 +4884,7 @@ img.wp-smiley {
     vertical-align: top;
 }
 @media print {
-
-    header, .scrollToTop, .scrollToTop+button, #indic, .mdx-ad-after-article, .mdx-ad-in-article, .mdx-post-money, .page-footer-nav, .ArtMain0 #respond, .ArtMain0 .mdx-same-posts, .PostMain > #respond, .PostMain > .mdx-same-posts, .spanout button, .titleBarGobal, .fullScreen.sea-close, .mdui-drawer, .mdui-overlay, .mdui-menu, .mdx-share-img-dialog, .mdx-share-wechat-dialog, .PostTitleFill {
+    header, .scrollToTop, .scrollToTop + button, #indic, .mdx-ad-after-article, .mdx-ad-in-article, .mdx-post-money, .page-footer-nav, .ArtMain0 #respond, .ArtMain0 .mdx-same-posts, .PostMain > #respond, .PostMain > .mdx-same-posts, .spanout button, .titleBarGobal, .fullScreen.sea-close, .mdui-drawer, .mdui-overlay, .mdui-menu, .mdx-share-img-dialog, .mdx-share-wechat-dialog, .PostTitleFill {
         display: none!important;
     }
     body div.PostTitle.mdui-color-theme {

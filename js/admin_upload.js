@@ -71,7 +71,10 @@ jQuery(document).ready(function(){
     }
     jQuery('#insert-media-button').click(function(){
         var custom_uploader = wp.media({
-            multiple: false
+            multiple: false,
+            library: {
+                    type: ['image']
+            }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
             jQuery('#mdx_index_img').val(attachment.url);
@@ -80,7 +83,10 @@ jQuery(document).ready(function(){
     });
     jQuery('#insert-media-button-2').click(function(){
         var custom_uploader = wp.media({
-            multiple: false
+            multiple: false,
+            library: {
+                    type: ['image']
+            }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
             jQuery('#mdx_logo').val(attachment.url);
@@ -89,7 +95,10 @@ jQuery(document).ready(function(){
     });
     jQuery('#insert-media-button-3').click(function(){
         var custom_uploader = wp.media({
-            multiple: false
+            multiple: false,
+            library: {
+                    type: ['image']
+            }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
             jQuery('#mdx_side_img').val(attachment.url);
@@ -98,7 +107,10 @@ jQuery(document).ready(function(){
     });
     jQuery('#insert-media-button-4').click(function(){
         var custom_uploader = wp.media({
-            multiple: false
+            multiple: false,
+            library: {
+                    type: ['image']
+            }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
             jQuery('#mdx_side_head').val(attachment.url);
