@@ -72,3 +72,12 @@ function img1(){
     }
     jQuery('#img1').attr('src',img1);
 }
+jQuery(".mdx-admin-nav").click(function(e){
+    e.preventDefault();
+    var ele = jQuery(e.target);
+    var eleId = ele.attr("id");
+    jQuery(".mdx-admin-nav.nav-tab-active").removeClass("nav-tab-active");
+    ele.addClass("nav-tab-active");
+    jQuery("tbody.mdx-admin-section.mdx-admin-section-active").removeClass("mdx-admin-section-active");
+    jQuery("#"+eleId+"-section").addClass("mdx-admin-section-active");
+})

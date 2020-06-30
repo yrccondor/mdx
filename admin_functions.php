@@ -16,6 +16,8 @@ function mdx_display_sub_function_one(){
     require_once('admin_style.php');
 }
 function mdx_display_sub_function_two(){
+    wp_register_style('mdx_admin_functions', get_template_directory_uri().'/includes/admin_functions.css');
+    wp_enqueue_style('mdx_admin_functions');
     require_once('admin_fn.php');
 }
 function mdx_display_sub_function_three(){

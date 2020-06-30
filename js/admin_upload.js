@@ -305,3 +305,12 @@ jQuery("#mdx_post_style").change(function() {
     jQuery(".mdx-preview-color-main").removeClass("mdx-"+jQuery(".mdx-theme-color-preview").data("color")+"-fill");
     jQuery(".mdx-preview-color-main").addClass("mdx-"+jQuery("#mdx_styles").children("option:selected").val()+"-fill");
 })
+jQuery(".mdx-admin-nav").click(function(e){
+    e.preventDefault();
+    var ele = jQuery(e.target);
+    var eleId = ele.attr("id");
+    jQuery(".mdx-admin-nav.nav-tab-active").removeClass("nav-tab-active");
+    ele.addClass("nav-tab-active");
+    jQuery("tbody.mdx-admin-section.mdx-admin-section-active").removeClass("mdx-admin-section-active");
+    jQuery("#"+eleId+"-section").addClass("mdx-admin-section-active");
+})
