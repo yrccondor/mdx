@@ -65,7 +65,12 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
         mdx_update_option('mdx_auto_night_style', 'false');
     }
     mdx_update_option('mdx_md2', $_POST['mdx_md2']);
-    mdx_update_option('mdx_md2_font', $_POST['mdx_md2_font']);
+    $md2_font = $_POST['mdx_md2_font'];
+    if(isset($md2_font)){
+        mdx_update_option('mdx_md2_font', $md2_font);
+    }else{
+        mdx_update_option('mdx_md2_font', 'false');
+    }
     mdx_update_option('mdx_login_md', $_POST['mdx_login_md']);
     mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
     mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
@@ -118,7 +123,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 </div>
 <?php }?>
 <nav class="nav-tab-wrapper wp-clearfix" aria-label="Secondary menu"> 
-    <a href="#" class="nav-tab nav-tab-active mdx-admin-nav" id="mdx-admin-nav-global"><?php _e('全局外观', 'mdx');?></a>
+    <a href="#" class="nav-tab nav-tab-active mdx-admin-nav" id="mdx-admin-nav-global"><?php _e('全局', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-index"><?php _e('首页', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-post"><?php _e('文章页', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-post-list"><?php _e('文章列表', 'mdx');?></a>

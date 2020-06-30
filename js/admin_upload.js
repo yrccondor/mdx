@@ -65,9 +65,9 @@ jQuery(document).ready(function(){
     }
     var selectVO2 = jQuery('input.md2:checked').val();
     if(selectVO2 == 'false'){
-        jQuery('.md2_font').hide();
+        jQuery('.md2_font input').attr("disabled", "disabled");
     }else{
-        jQuery('.md2_font').show();
+        jQuery('.md2_font input').removeAttr("disabled");
     }
     jQuery('#insert-media-button').click(function(){
         var custom_uploader = wp.media({
@@ -164,9 +164,9 @@ jQuery(document).ready(function(){
 jQuery(".md2").click(function(){
     var mdx_val3 = jQuery('input.md2:checked').val();
     if(mdx_val3=='false'){
-        jQuery('.md2_font').hide();
+        jQuery('.md2_font input').attr("disabled", "disabled");
     }else{
-        jQuery('.md2_font').show();
+        jQuery('.md2_font input').removeAttr("disabled");
     }
 });
 jQuery(".mdx_stbs").click(function(){
