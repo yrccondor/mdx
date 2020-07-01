@@ -55,6 +55,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
     mdx_update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
     mdx_update_option('mdx_real_search', $_POST['mdx_real_search']);
+    mdx_update_option('mdx_submit_comment', $_POST['mdx_submit_comment']);
     mdx_update_option('mdx_comment_ajax', $_POST['mdx_comment_ajax']);
     mdx_update_option('mdx_comment_emj', $_POST['mdx_comment_emj']);
     mdx_update_option('mdx_ad', htmlentities(stripslashes($_POST['mdx_ad'])));
@@ -350,6 +351,11 @@ wp_nonce_field('mdx_options_update');
 </tbody>
 
 <tbody class="mdx-admin-section" id="mdx-admin-nav-comment-section">
+    <tr>
+    <th scope="row"><label for="mdx_submit_comment"><?php _e('“发送评论”文本自定义', 'mdx');?></label></th>
+    <td><input name="mdx_submit_comment" type="text" id="mdx_submit_comment" value="<?php echo esc_attr(mdx_get_option('mdx_submit_comment'))?>" class="regular-text">
+    <p class="description"><?php _e('在此自定义“发送评论”按钮上的文本。', 'mdx');?></p></td>
+    </tr>
     <tr>
     <th scope="row"><?php _e('评论无限加载', 'mdx');?></th>
     <td>

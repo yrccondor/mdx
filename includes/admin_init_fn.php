@@ -43,6 +43,7 @@ $arr = array(
 'mdx_you_may_like_way'=>'tag',
 'mdx_you_may_like_text'=>__('推荐文章','mdx'),
 'mdx_real_search'=>'false',
+'mdx_submit_comment'=>__('发送','mdx'),
 'mdx_comment_ajax'=>'true',
 'mdx_comment_emj'=>'true',
 'mdx_ad'=>'',
