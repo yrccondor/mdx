@@ -1,21 +1,21 @@
 <?php
-if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
+if ( !class_exists('Puc_v4p9_Vcs_PluginUpdateChecker') ):
 
-	class Puc_v4p7_Vcs_PluginUpdateChecker extends Puc_v4p7_Plugin_UpdateChecker implements Puc_v4p7_Vcs_BaseChecker {
+	class Puc_v4p9_Vcs_PluginUpdateChecker extends Puc_v4p9_Plugin_UpdateChecker implements Puc_v4p9_Vcs_BaseChecker {
 		/**
 		 * @var string The branch where to look for updates. Defaults to "master".
 		 */
 		protected $branch = 'master';
 
 		/**
-		 * @var Puc_v4p7_Vcs_Api Repository API client.
+		 * @var Puc_v4p9_Vcs_Api Repository API client.
 		 */
 		protected $api = null;
 
 		/**
-		 * Puc_v4p7_Vcs_PluginUpdateChecker constructor.
+		 * Puc_v4p9_Vcs_PluginUpdateChecker constructor.
 		 *
-		 * @param Puc_v4p7_Vcs_Api $api
+		 * @param Puc_v4p9_Vcs_Api $api
 		 * @param string $pluginFile
 		 * @param string $slug
 		 * @param int $checkPeriod
@@ -41,7 +41,7 @@ if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
 			$api = $this->api;
 			$api->setLocalDirectory($this->package->getAbsoluteDirectoryPath());
 
-			$info = new Puc_v4p7_Plugin_Info();
+			$info = new Puc_v4p9_Plugin_Info();
 			$info->filename = $this->pluginFile;
 			$info->slug = $this->slug;
 
@@ -124,7 +124,7 @@ if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
 		 * Copy plugin metadata from a file header to a Plugin Info object.
 		 *
 		 * @param array $fileHeader
-		 * @param Puc_v4p7_Plugin_Info $pluginInfo
+		 * @param Puc_v4p9_Plugin_Info $pluginInfo
 		 */
 		protected function setInfoFromHeader($fileHeader, $pluginInfo) {
 			$headerToPropertyMap = array(
@@ -139,6 +139,8 @@ if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
 				'Tested WP' => 'tested',
 				'Requires at least' => 'requires',
 				'Tested up to' => 'tested',
+
+				'Requires PHP' => 'requires_php',
 			);
 			foreach ($headerToPropertyMap as $headerName => $property) {
 				if ( isset($fileHeader[$headerName]) && !empty($fileHeader[$headerName]) ) {
@@ -155,7 +157,7 @@ if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
 		 * Copy plugin metadata from the remote readme.txt file.
 		 *
 		 * @param string $ref GitHub tag or branch where to look for the readme.
-		 * @param Puc_v4p7_Plugin_Info $pluginInfo
+		 * @param Puc_v4p9_Plugin_Info $pluginInfo
 		 */
 		protected function setInfoFromRemoteReadme($ref, $pluginInfo) {
 			$readme = $this->api->getRemoteReadme($ref);
@@ -171,6 +173,9 @@ if ( !class_exists('Puc_v4p7_Vcs_PluginUpdateChecker') ):
 			}
 			if ( !empty($readme['requires_at_least']) ) {
 				$pluginInfo->requires = $readme['requires_at_least'];
+			}
+			if ( !empty($readme['requires_php']) ) {
+				$pluginInfo->requires_php = $readme['requires_php'];
 			}
 
 			if ( isset($readme['upgrade_notice'], $readme['upgrade_notice'][$pluginInfo->version]) ) {

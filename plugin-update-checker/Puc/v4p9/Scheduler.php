@@ -1,11 +1,11 @@
 <?php
-if ( !class_exists('Puc_v4p7_Scheduler', false) ):
+if ( !class_exists('Puc_v4p9_Scheduler', false) ):
 
 	/**
 	 * The scheduler decides when and how often to check for updates.
-	 * It calls @see Puc_v4p7_UpdateChecker::checkForUpdates() to perform the actual checks.
+	 * It calls @see Puc_v4p9_UpdateChecker::checkForUpdates() to perform the actual checks.
 	 */
-	class Puc_v4p7_Scheduler {
+	class Puc_v4p9_Scheduler {
 		public $checkPeriod = 12; //How often to check for updates (in hours).
 		public $throttleRedundantChecks = false; //Check less often if we already know that an update is available.
 		public $throttledCheckPeriod = 72;
@@ -13,7 +13,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 		protected $hourlyCheckHooks = array('load-update.php');
 
 		/**
-		 * @var Puc_v4p7_UpdateChecker
+		 * @var Puc_v4p9_UpdateChecker
 		 */
 		protected $updateChecker;
 
@@ -22,7 +22,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 		/**
 		 * Scheduler constructor.
 		 *
-		 * @param Puc_v4p7_UpdateChecker $updateChecker
+		 * @param Puc_v4p9_UpdateChecker $updateChecker
 		 * @param int $checkPeriod How often to check for updates (in hours).
 		 * @param array $hourlyHooks
 		 */
@@ -51,7 +51,14 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 				}
 
 				if ( !wp_next_scheduled($this->cronHook) && !defined('WP_INSTALLING') ) {
-					wp_schedule_event(time(), $scheduleName, $this->cronHook);
+					//Randomly offset the schedule to help prevent update server traffic spikes. Without this
+					//most checks may happen during times of day when people are most likely to install new plugins.
+					$firstCheckTime = time() - rand(0, max($this->checkPeriod * 3600 - 15 * 60, 1));
+					$firstCheckTime = apply_filters(
+						$this->updateChecker->getUniqueName('first_check_time'),
+						$firstCheckTime
+					);
+					wp_schedule_event($firstCheckTime, $scheduleName, $this->cronHook);
 				}
 				add_action($this->cronHook, array($this, 'maybeCheckForUpdates'));
 
@@ -80,6 +87,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 		 * Runs upon the WP action upgrader_process_complete.
 		 *
 		 * We look at the parameters to decide whether to call maybeCheckForUpdates() or not.
+		 * We also check if the update checker has been removed by the update.
 		 *
 		 * @param WP_Upgrader $upgrader  WP_Upgrader instance
 		 * @param array $upgradeInfo extra information about the upgrade
@@ -88,6 +96,15 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 			/** @noinspection PhpUnusedParameterInspection */
 			$upgrader, $upgradeInfo
 		) {
+			//Cancel all further actions if the current version of PUC has been deleted or overwritten
+			//by a different version during the upgrade. If we try to do anything more in that situation,
+			//we could trigger a fatal error by trying to autoload a deleted class.
+			clearstatcache();
+			if ( !file_exists(__FILE__) ) {
+				$this->removeHooks();
+				$this->updateChecker->removeHooks();
+				return;
+			}
 
 			//Sanity check and limitation to relevant types.
 			if (
@@ -99,7 +116,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 
 			//Filter out notifications of upgrades that should have no bearing upon whether or not our
 			//current info is up-to-date.
-			if ( is_a($this->updateChecker, 'Puc_v4p7_Theme_UpdateChecker') ) {
+			if ( is_a($this->updateChecker, 'Puc_v4p9_Theme_UpdateChecker') ) {
 				if ( 'theme' !== $upgradeInfo['type'] || !isset($upgradeInfo['themes']) ) {
 					return;
 				}
@@ -113,7 +130,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 				}
 			}
 
-			if ( is_a($this->updateChecker, 'Puc_v4p7_Plugin_UpdateChecker') ) {
+			if ( is_a($this->updateChecker, 'Puc_v4p9_Plugin_UpdateChecker') ) {
 				if ( 'plugin' !== $upgradeInfo['type'] || !isset($upgradeInfo['plugins']) ) {
 					return;
 				}
@@ -129,7 +146,7 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 
 			$this->maybeCheckForUpdates();
 		}
-		
+
 		/**
 		 * Check for updates if the configured check interval has already elapsed.
 		 * Will use a shorter check interval on certain admin pages like "Dashboard -> Updates" or when doing cron.
@@ -225,6 +242,24 @@ if ( !class_exists('Puc_v4p7_Scheduler', false) ):
 		 */
 		public function getCronHookName() {
 			return $this->cronHook;
+		}
+
+		/**
+		 * Remove most hooks added by the scheduler.
+		 */
+		public function removeHooks() {
+			remove_filter('cron_schedules', array($this, '_addCustomSchedule'));
+			remove_action('admin_init', array($this, 'maybeCheckForUpdates'));
+			remove_action('load-update-core.php', array($this, 'maybeCheckForUpdates'));
+
+			if ( $this->cronHook !== null ) {
+				remove_action($this->cronHook, array($this, 'maybeCheckForUpdates'));
+			}
+			if ( !empty($this->hourlyCheckHooks) ) {
+				foreach ($this->hourlyCheckHooks as $hook) {
+					remove_action($hook, array($this, 'maybeCheckForUpdates'));
+				}
+			}
 		}
 	}
 

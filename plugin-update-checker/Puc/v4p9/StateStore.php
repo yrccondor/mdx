@@ -1,8 +1,8 @@
 <?php
 
-if ( !class_exists('Puc_v4p7_StateStore', false) ):
+if ( !class_exists('Puc_v4p9_StateStore', false) ):
 
-	class Puc_v4p7_StateStore {
+	class Puc_v4p9_StateStore {
 		/**
 		 * @var int Last update check timestamp.
 		 */
@@ -14,7 +14,7 @@ if ( !class_exists('Puc_v4p7_StateStore', false) ):
 		protected $checkedVersion = '';
 
 		/**
-		 * @var Puc_v4p7_Update|null Cached update.
+		 * @var Puc_v4p9_Update|null Cached update.
 		 */
 		protected $update = null;
 
@@ -65,7 +65,7 @@ if ( !class_exists('Puc_v4p7_StateStore', false) ):
 		}
 
 		/**
-		 * @return null|Puc_v4p7_Update
+		 * @return null|Puc_v4p9_Update
 		 */
 		public function getUpdate() {
 			$this->lazyLoad();
@@ -73,10 +73,10 @@ if ( !class_exists('Puc_v4p7_StateStore', false) ):
 		}
 
 		/**
-		 * @param Puc_v4p7_Update|null $update
+		 * @param Puc_v4p9_Update|null $update
 		 * @return $this
 		 */
-		public function setUpdate(Puc_v4p7_Update $update = null) {
+		public function setUpdate(Puc_v4p9_Update $update = null) {
 			$this->lazyLoad();
 			$this->update = $update;
 			return $this;
@@ -138,7 +138,7 @@ if ( !class_exists('Puc_v4p7_StateStore', false) ):
 				$updateClass = get_class($this->update);
 				$state->updateClass = $updateClass;
 				$prefix = $this->getLibPrefix();
-				if ( Puc_v4p7_Utils::startsWith($updateClass, $prefix) ) {
+				if ( Puc_v4p9_Utils::startsWith($updateClass, $prefix) ) {
 					$state->updateBaseClass = substr($updateClass, strlen($prefix));
 				}
 			}
@@ -169,8 +169,8 @@ if ( !class_exists('Puc_v4p7_StateStore', false) ):
 				return;
 			}
 
-			$this->lastCheck = intval(Puc_v4p7_Utils::get($state, 'lastCheck', 0));
-			$this->checkedVersion = Puc_v4p7_Utils::get($state, 'checkedVersion', '');
+			$this->lastCheck = intval(Puc_v4p9_Utils::get($state, 'lastCheck', 0));
+			$this->checkedVersion = Puc_v4p9_Utils::get($state, 'checkedVersion', '');
 			$this->update = null;
 
 			if ( isset($state->update) ) {

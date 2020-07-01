@@ -1,5 +1,5 @@
 <?php
-if ( !class_exists('Puc_v4p7_InstalledPackage', false) ):
+if ( !class_exists('Puc_v4p9_InstalledPackage', false) ):
 
 	/**
 	 * This class represents a currently installed plugin or theme.
@@ -7,9 +7,9 @@ if ( !class_exists('Puc_v4p7_InstalledPackage', false) ):
 	 * Not to be confused with the "package" field in WP update API responses that contains
 	 * the download URL of a the new version.
 	 */
-	abstract class Puc_v4p7_InstalledPackage {
+	abstract class Puc_v4p9_InstalledPackage {
 		/**
-		 * @var Puc_v4p7_UpdateChecker
+		 * @var Puc_v4p9_UpdateChecker
 		 */
 		protected $updateChecker;
 

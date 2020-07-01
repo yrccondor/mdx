@@ -1,5 +1,5 @@
 <?php
-if ( !class_exists('Puc_v4p7_Update', false) ):
+if ( !class_exists('Puc_v4p9_Update', false) ):
 
 	/**
 	 * A simple container class for holding information about an available update.
@@ -7,7 +7,7 @@ if ( !class_exists('Puc_v4p7_Update', false) ):
 	 * @author Janis Elsts
 	 * @access public
 	 */
-	abstract class Puc_v4p7_Update extends Puc_v4p7_Metadata {
+	abstract class Puc_v4p9_Update extends Puc_v4p9_Metadata {
 		public $slug;
 		public $version;
 		public $download_url;

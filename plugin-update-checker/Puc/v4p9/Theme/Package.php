@@ -1,7 +1,7 @@
 <?php
-if ( !class_exists('Puc_v4p7_Theme_Package', false) ):
+if ( !class_exists('Puc_v4p9_Theme_Package', false) ):
 
-	class Puc_v4p7_Theme_Package extends Puc_v4p7_InstalledPackage {
+	class Puc_v4p9_Theme_Package extends Puc_v4p9_InstalledPackage {
 		/**
 		 * @var string Theme directory name.
 		 */
