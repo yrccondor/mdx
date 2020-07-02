@@ -1,18 +1,22 @@
+import tools from './tools.js';
+
 var urlV;
 var page = 1;
-$(function(){
-    var textV = $('div.nextpage a').text();
-    if(textV==""){
-        $('div.nextpage').remove();
+window.addEventListener('DOMContentLoaded', () => {
+    var textV = tools.ele('div.nextpage a').innerText;
+    if(textV === ""){
+        tools.ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
     }else{
-        urlV = $('div.nextpage a').attr("href");
-        $('#postlist').after('<div class="mdui-hoverable nextpage2">'+textV+'</div>')
-        $('div.nextpage').remove();
-        $('div.main').on("click", 'div.nextpage2', function(){
-            $('div.nextpage2').hide();
-            $('div.nextpage2').after('<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>');
-            mdui.updateSpinners();
-            ajax_load_index(urlV);
+        urlV = tools.ele('div.nextpage a').getAttribute('href');
+        tools.ele('#postlist').insertAdjacentHTML('afterend', `<div class="mdui-hoverable nextpage2">${textV}</div>`);
+        tools.ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
+        tools.ele('div.main').addEventListener("click", (e) => {
+            if(e.target.getAttribute('class').split(' ').indexOf('nextpage2') !== -1 && e.target.tagName.toLowerCase() === 'div'){
+                tools.ele('div.nextpage2').style.display = 'none';
+                tools.ele('div.nextpage2').insertAdjacentHTML('afterend', `<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>`);
+                mdui.updateSpinners();
+                ajax_load_index(urlV);
+            }
         });
     }
     if(enhanced_ajax && document.getElementById("postlist").getElementsByTagName("a").length > 0){
@@ -28,18 +32,21 @@ $(function(){
         }else if(parseInt(sessionStorage.getItem("mdx_index_loaded_page"))>1){
             for(let i=2;i<=parseInt(sessionStorage.getItem("mdx_index_loaded_page"));i++){
                 var data = decodeURIComponent(window.atob(sessionStorage.getItem("mdx_index_page_"+i)));
-                urlV = $(data).find("div.nextpage a").attr("href");
+                let dom = new DOMParser().parseFromString(data, "text/html");
+                urlV = dom.querySelector('div.nextpage a');
                 let data2 = '';
-                if(urlV == undefined ){
+                if(urlV === null){
                     data2 = data.replace('<div class="nextpage mdui-center"></div>',"");
-                    $('div.nextpage2').remove();
+                    tools.ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
                 }else{
                     data2 = data;
-                    $('div.nextpage',data2).remove();
-                    $('div.nextpage2').show();
+                    let data2Parsed = new DOMParser().parseFromString(data2, "text/html");
+                    let el = data2Parsed.querySelector('div.nextpage');
+                    el.parentNode.removeChild(el);
+                    tools.ele('div.nextpage2').style.display = '';
                 }
-                var getValue = $('#postlist',data2).html();
-                $('#postlist').append(getValue);
+                let getValue = (typeof data2Parsed !== 'undefined' ? data2Parsed : new DOMParser().parseFromString(data2, "text/html")).getElementById('postlist').innerHTML;
+                tools.ele('#postlist').insertAdjacentHTML('beforeend', getValue);
                 page = i;
             }
         }
@@ -47,35 +54,33 @@ $(function(){
 })
 
 function ajax_load_index(url) {
-    $.ajaxSetup({
-        timeout: 15000
-    })
-    $.get(url,function(data,status){
-        if(status=='success'){
-            page++;
-            urlV = $(data).find("div.nextpage a").attr("href");
-            if(enhanced_ajax && parseInt(sessionStorage.getItem("mdx_index_loaded_page")) <= 30){
-                sessionStorage.setItem("mdx_index_page_"+page, window.btoa(encodeURIComponent(data)));
-                sessionStorage.setItem("mdx_index_loaded_page", page);
-            }
-            let data2 = '';
-            if(urlV == undefined ){
-                data2 = data.replace('<div class="nextpage mdui-center"></div>',"");
-                $('div.nextpage2').remove();
-            }else{
-                data2 = data;
-                $('div.nextpage',data2).remove();
-                $('div.nextpage2').show();
-            }
-            $('div.mdx-ajax-loading').remove();
-            var getValue = $('#postlist',data2).html();
-            $('#postlist').append(getValue);
-        }else{
-            mdui.snackbar({
-                message: ajax_error,
-                timeout: 5000,
-                position: 'top',
-           });
+    tools.betterFetch(url, {credentials: 'same-origin'}).then((data) => {
+        page++;
+        let dom = new DOMParser().parseFromString(data, "text/html");
+        urlV = dom.querySelector('div.nextpage a');
+        if(enhanced_ajax && parseInt(sessionStorage.getItem("mdx_index_loaded_page")) <= 30){
+            sessionStorage.setItem("mdx_index_page_"+page, window.btoa(encodeURIComponent(data)));
+            sessionStorage.setItem("mdx_index_loaded_page", page);
         }
-    });
+        let data2 = '';
+        if(urlV === null){
+            data2 = data.replace('<div class="nextpage mdui-center"></div>',"");
+            tools.ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
+        }else{
+            data2 = data;
+            let data2Parsed = new DOMParser().parseFromString(data2, "text/html");
+            let el = data2Parsed.querySelector('div.nextpage');
+            el.parentNode.removeChild(el);
+            tools.ele('div.nextpage2').style.display = '';
+        }
+        tools.ele('div.mdx-ajax-loading', (e) => {e.parentNode.removeChild(e)});
+        let getValue = (typeof data2Parsed !== 'undefined' ? data2Parsed : new DOMParser().parseFromString(data2, "text/html")).getElementById('postlist').innerHTML;
+        tools.ele('#postlist').insertAdjacentHTML('beforeend', getValue);
+    }).catch(() => {
+        mdui.snackbar({
+            message: ajax_error,
+            timeout: 5000,
+            position: 'top',
+       });
+    })
 }

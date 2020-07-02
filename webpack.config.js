@@ -19,7 +19,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'js'),
-        publicPath: path.resolve(__dirname, 'js')
+        publicPath: '/wp-content/themes/mdx/js'
     },
     // devtool: 'source-map',
     mode: 'production',
