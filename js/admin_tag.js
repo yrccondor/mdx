@@ -32,6 +32,12 @@ jQuery(document).ready(function(){
     }else if(mdx_val_toc=='false'){
         jQuery('input.mdx_toc_preview').attr("disabled","disabled");
     }
+    var selectVO = document.getElementById('mdx_use_cdn').options[document.getElementById('mdx_use_cdn').options.selectedIndex].value;
+    if(selectVO ==='none' || selectVO ==='jsdeliver'){
+        jQuery('.cdn_custom').hide();
+    }else if(selectVO == 'custom'){
+        jQuery('.cdn_custom').show();
+    }
 });
 jQuery(".mdx_stbs").change(function(){
     var mdx_val = jQuery('.mdx_stbs').val();
@@ -71,6 +77,13 @@ function img1(){
         img1 = '';
     }
     jQuery('#img1').attr('src',img1);
+}
+function mdx_cdn_sec(selectV){
+    if(selectV ==='none' || selectV ==='jsdeliver'){
+        jQuery('.cdn_custom').hide();
+    }else if(selectV == 'custom'){
+        jQuery('.cdn_custom').show();
+    }
 }
 jQuery(".mdx-admin-nav").click(function(e){
     e.preventDefault();

@@ -154,8 +154,9 @@
      })
 </script>
 <?php }?>
-<?php if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}?>
-<script type='text/javascript' src='<?php echo get_bloginfo('template_url');?>/js/<?php echo $mdx_js_name?>.js?ver=<?php echo get_option("mdx_version_commit");?>'></script><?php echo htmlspecialchars_decode(mdx_get_option('mdx_footer_js'));?>
-<!--Theme Version <?php echo get_option('mdx_version_commit');?>-->
-  </body>
+<?php
+global $files_root;
+if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}?>
+<script type='text/javascript' src='<?php echo $files_root;?>/js/<?php echo $mdx_js_name?>.js?ver=<?php echo get_option("mdx_version_commit");?>'></script><?php echo htmlspecialchars_decode(mdx_get_option('mdx_footer_js'));?></body>
+<!--Theme MDx Version <?php echo get_option('mdx_version_commit');?>-->
 </html>

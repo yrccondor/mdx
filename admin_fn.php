@@ -67,6 +67,8 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_head_js', htmlentities(stripslashes($_POST['mdx_head_js'])));
     mdx_update_option('mdx_footer_js', htmlentities(stripslashes($_POST['mdx_footer_js'])));
     mdx_update_option('mdx_icp_num', $_POST['mdx_icp_num']);
+    mdx_update_option("mdx_use_cdn", $_POST['mdx_use_cdn']);
+    mdx_update_option("mdx_custom_cdn_root", $_POST['mdx_custom_cdn_root']);
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -95,6 +97,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-ad"><?php _e('广告', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-night-mode"><?php _e('夜间模式', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-seo"><?php _e('SEO', 'mdx');?></a>
+    <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-cdn"><?php _e('CDN', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-script"><?php _e('脚本', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-others"><?php _e('杂项', 'mdx');?></a>
 </nav>
@@ -500,6 +503,27 @@ wp_nonce_field('mdx_options_update');
     </tr>
 </tbody>
 
+<tbody class="mdx-admin-section" id="mdx-admin-nav-cdn-section">
+<tr>
+    <th scope="row"><label for="mdx_use_cdn"><?php _e('使用 CDN 加载前端主题文件', 'mdx');?></label></th>
+    <td>
+    <?php $mdx_v_use_cdn=mdx_get_option('mdx_use_cdn');?>
+    <select name="mdx_use_cdn" id="mdx_use_cdn" onchange="mdx_cdn_sec(this.options[this.options.selectedIndex].value)">
+        <option value="none" <?php if($mdx_v_use_cdn=='none'){?>selected="selected"<?php }?>><?php _e('不使用', 'mdx');?></option>
+        <option value="jsdeliver" <?php if($mdx_v_use_cdn=='jsdeliver'){?>selected="selected"<?php }?>><?php _e('jsDeliver', 'mdx');?></option>
+        <option value="custom" <?php if($mdx_v_use_cdn=='custom'){?>selected="selected"<?php }?>><?php _e('自定义', 'mdx');?></option>
+    </select>
+    <p class="description"><?php _e('在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDeliver</code>：使用由 jsDeliver 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>', 'mdx');?></p>
+    </td>
+    </tr>
+    <tr class="cdn_custom">
+    <th scope="row"><?php _e('自定义 CDN 根路径', 'mdx');?></th>
+    <td>
+    <input name="mdx_custom_cdn_root" type="url" id="mdx_custom_cdn_root" value="<?php echo esc_attr(mdx_get_option('mdx_custom_cdn_root'));?>" class="regular-text">
+    <p class="description"><?php _e('在这里输入自定义的 CDN URL，不要在最后添加 <code>/</code>。CDN 服务需添加正确的 <code>access-control-allow-origin</code> 头。', 'mdx');?></p></td>
+    </tr>
+</tbody>
+
 <tbody class="mdx-admin-section" id="mdx-admin-nav-script-section">
     <tr>
     <th scope="row"><label for="mdx_head_js"><?php _e('页头脚本', 'mdx');?></label></th>
@@ -532,7 +556,7 @@ wp_nonce_field('mdx_options_update');
     <tr>
         <th scope="row"><label for="mdx_notice"><?php _e('网站公告', 'mdx');?></label></th>
         <td><textarea name="mdx_notice" id="mdx_notice" rows="7" cols="50"><?php echo esc_attr(mdx_get_option('mdx_notice'))?></textarea>
-        <p class="description"><?php _e('在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 <code>HTML</code> 格式.', 'mdx');?></p></td>
+        <p class="description"><?php _e('在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 <code>HTML</code> 格式。', 'mdx');?></p></td>
     </tr>
     <tr>
     <th scope="row"><?php _e('使用手势打开抽屉菜单', 'mdx');?></th>
@@ -570,7 +594,7 @@ wp_nonce_field('mdx_options_update');
         <fieldset>
         <label><input type="radio" name="mdx_speed_pre" value="true" <?php if($mdx_v_speed_pre=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" name="mdx_speed_pre" value="false" <?php if($mdx_v_speed_pre=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-        <p class="description"><?php _e('开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</strong>对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。', 'mdx');?></p>
+        <p class="description"><?php _e('开启后，可使用 Preload 预加载技术加速页面加载。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>
