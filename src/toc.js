@@ -1,3 +1,5 @@
+import { ele } from './tools.js';
+
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;
 let titleArr = [];
@@ -7,12 +9,12 @@ let previewShown = false;
 let mdx_toc = undefined;
 let isInited = false;
 
-$(function() {
+window.addEventListener('DOMContentLoaded', () => {
     let tocHTML = getTitleListHtml();
     addToc(tocHTML[0]);
     if(isToc){
         if(showPreview){
-            $('.PostMain').append(`<div id="mdx-toc-preview" mdui-drawer="${document.getElementById('menu').getAttribute('mdui-drawer')}">${tocHTML[1]}</div>`);
+            ele('.PostMain').insertAdjacentHTML('beforeend', `<div id="mdx-toc-preview" mdui-drawer="${document.getElementById('menu').getAttribute('mdui-drawer')}">${tocHTML[1]}</div>`);
             mdui.mutation();
         }
         isInited = true;
@@ -42,7 +44,7 @@ function getTitleListHtml(minLevel = 1, maxLevel = 6) {
         title.dataset.mdxtoc = 'mdx-toc-' + counter;
         titleArr.push('mdx-toc-' + counter);
   
-        const level = Number($(title)[0].tagName[1]);
+        const level = Number(ele(title).tagName[1]);
         titles[level - 1]++;
         titles.forEach((_, i) =>
             i >= level ? (titles[i] = 0) : titles[i] === 0 && (titles[i] = 1)
@@ -83,9 +85,7 @@ function addToc(titleList) {
     const menu = document.querySelector('#mdx_menu');
     menu.parentNode.append(titleList);
   
-    $('#left-drawer nav').before(
-        `<div class="mdui-tab mdui-tab-full-width" id="mdx-toc-select"><a href="#" id="mdx-toc-menu" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe241;</i><label>${mdx_toc_i18n_1}</label></a><a href="#" id="mdx-toc-toc" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe86d;</i><label>${mdx_toc_i18n_2}</label></a></div>`
-    );
+    ele('#left-drawer nav').insertAdjacentHTML('beforebegin', `<div class="mdui-tab mdui-tab-full-width" id="mdx-toc-select"><a href="#" id="mdx-toc-menu" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe241;</i><label>${mdx_toc_i18n_1}</label></a><a href="#" id="mdx-toc-toc" class="mdui-ripple"><i class="mdui-icon material-icons">&#xe86d;</i><label>${mdx_toc_i18n_2}</label></a></div>`);
     mdx_toc = new mdui.Tab('#mdx-toc-select', {});
     mdx_toc.next();
   
@@ -100,57 +100,64 @@ document.getElementById('menu').addEventListener('click', function() {
     }
 }, false)
 
-$('.PostMain').on('click', '#mdx-toc-preview', function(){
-    if($('#mdx-toc').css('transform') !== 'translateX(0)' && showPreview){
-        mdx_toc.next();
-        $('#mdx-toc').css('transform', 'translateX(0)');
-        $('#mdx_menu').css('transform', `translateX(-${$('#mdx_menu').width()}px)`);
-        if(!firstClick){
-            scrollToc(false);
-            tocShown = true;
-            firstClick = true;
-        }else{
-            scrollToc(true);
-            tocShown = true;
-            firstClick = false;
+ele('.PostMain').addEventListener('click', function(e) {
+    if(e.target.id === 'mdx-toc-preview'){
+        if(getComputedStyle(ele('#mdx-toc'))['transform'] !== 'translateX(0)' && showPreview){
+            mdx_toc.next();
+            ele('#mdx-toc').style.transform = 'translateX(0)';
+            ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
+            if(!firstClick){
+                scrollToc(false);
+                tocShown = true;
+                firstClick = true;
+            }else{
+                scrollToc(true);
+                tocShown = true;
+                firstClick = false;
+            }
         }
     }
 })
 
-$('#left-drawer').on('click', '#mdx-toc-menu', function(e){
-    e.preventDefault();
-    tocShown = false;
-    $('#mdx_menu').css('transform', 'translateX(0)');
-    $('#mdx-toc').css('transform', `translateX(${$('#mdx-toc').width()}px)`);
+ele('#left-drawer').addEventListener('click', function(e) {
+    if(e.target.id === 'mdx-toc-menu' || e.target.closest('#mdx-toc-menu') !== null){
+        e.preventDefault();
+        tocShown = false;
+        ele('#mdx_menu').style.transform = 'translateX(0)';
+        ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
+        return;
+    }else if(e.target.id === 'mdx-toc-toc' || e.target.closest('#mdx-toc-toc') !== null){
+        e.preventDefault();
+        tocShown = true;
+        scrollToc(false);
+        ele('#mdx-toc').style.transform = 'translateX(0)';
+        ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
+        return;
+    }else if(e.target.classList.contains('mdx-toc-item')){
+        e.preventDefault();
+        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, 500);
+        return;
+    }else if(e.target.closest('.mdx-toc-item') !== null){
+        e.preventDefault();
+        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, 500);
+        return;
+    }
 })
 
-$('#left-drawer').on('click', '#mdx-toc-toc', function(e){
-    e.preventDefault();
-    tocShown = true;
-    scrollToc(false);
-    $('#mdx-toc').css('transform', 'translateX(0)');
-    $('#mdx_menu').css('transform', `translateX(-${$('#mdx_menu').width()}px)`);
-})
-
-$(window).on('resize', function() {
+window.addEventListener('resize', function() {
     if(isToc){
         if(tocShown || !firstClick){
-            $('#mdx-toc').css('transform', 'translateX(0)');
-            $('#mdx_menu').css('transform', `translateX(-${$('#mdx_menu').width()}px)`);
+            ele('#mdx-toc').style.transform = 'translateX(0)';
+            ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
         }else{
-            $('#mdx_menu').css('transform', 'translateX(0)');
-            $('#mdx-toc').css('transform', `translateX(${$('#mdx-toc').width()}px)`);
+            ele('#mdx_menu').style.transform = 'translateX(0)';
+            ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
         }
     }
-})
-
-$('#left-drawer').on('click', '.mdx-toc-item', function(e) {
-    e.preventDefault();
-    $('body,html').animate({scrollTop:($(`article *[data-mdxtoc="mdx-toc-${$(this).attr('id').split('-')[2]}"]`).offset().top - 75)},500);
 })
 
 let tickingToc = false;
-$(window).on('scroll', function(){
+window.addEventListener('scroll', function(){
     if(isToc && isInited){
         if(!tickingToc) {
             requestAnimationFrame(function(){
@@ -167,41 +174,41 @@ function scrollToc(firstCall){
     }
     if(tocShown || firstCall){
         let howFar = document.documentElement.scrollTop || document.body.scrollTop;
-        $('.mdx-toc-item').removeClass('mdx-toc-read').removeClass('mdui-list-item-active');
-        $('#mdx-toc-preview > *').removeClass('mdx-toc-preview-item-active');
+        ele('.mdx-toc-item', (e) => {e.classList.remove('mdx-toc-read', 'mdui-list-item-active')});
+        ele('#mdx-toc-preview > *', (e) => {e.classList.remove('mdx-toc-preview-item-active')});
         let counter = 0;
-        if(howFar >= $('article').offset().top + $('article').height() - 80){
-            $('.mdx-toc-item').addClass('mdx-toc-read');
+        if(howFar >= ele('article').getBoundingClientRect().top + window.pageYOffset + ele('article').clientHeight - 80){
+            ele('.mdx-toc-item', (e) => {e.classList.add('mdx-toc-read')});
             if(previewShown && showPreview){
                 document.getElementById('mdx-toc-preview').classList.remove('mdx-toc-preview-show');
                 previewShown = false;
             }
         }else{
             for(let i = 1; i < titleArr.length; i++){
-                if(howFar >= $(`article *[data-mdxtoc="${titleArr[i]}"]`).offset().top - 80){
+                if(howFar >= ele(`article *[data-mdxtoc="${titleArr[i]}"]`).getBoundingClientRect().top + window.pageYOffset - 80){
                     document.getElementById(`${titleArr[i-1]}-item`).classList.add('mdx-toc-read');
                     counter++;
                 }else{
                     break;
                 }
             }
-            if(howFar > $('article').offset().top - 140){
+            if(howFar > ele('article').getBoundingClientRect().top + window.pageYOffset - 140){
                 if(!previewShown && showPreview){
                     document.getElementById('mdx-toc-preview').classList.add('mdx-toc-preview-show');
                     previewShown = true;
                 }
-                let item = $(`#${titleArr[counter]}-item`);
-                item.addClass('mdui-list-item-active');
-                $(`#${titleArr[counter]}-preview`).addClass('mdx-toc-preview-item-active');
+                let item = ele(`#${titleArr[counter]}-item`);
+                item.classList.add('mdui-list-item-active');
+                ele(`#${titleArr[counter]}-preview`).classList.add('mdx-toc-preview-item-active');
                 if(showPreview){
-                    $('#mdx-toc-preview').css('transform', `translateY(-${((counter+1)*20-4)}px)`);
+                    ele('#mdx-toc-preview').style.transform = `translateY(-${((counter+1)*20-4)}px)`;
                 }
-                if(item.length > 0){
-                    let topDist = item[0].getBoundingClientRect().top;
+                if(item !== null){
+                    let topDist = item.getBoundingClientRect().top;
                     if(topDist + 48 > window.innerHeight && tocShown){
-                        $('#left-drawer').clearQueue().animate({scrollTop:document.getElementById('left-drawer').scrollTop + (topDist + 48 - window.innerHeight) + 8}, 200);
+                        Velocity(ele('#left-drawer'), {scrollTop: (document.getElementById('left-drawer').scrollTop + (topDist + 48 - window.innerHeight) + 8) + "px"}, {duration: 200, queue: false});
                     }else if(topDist < 8 && tocShown){
-                        $('#left-drawer').clearQueue().animate({scrollTop:document.getElementById('left-drawer').scrollTop + topDist - 8}, 200);
+                        Velocity(ele('#left-drawer'), {scrollTop: (document.getElementById('left-drawer').scrollTop + topDist - 8) + "px"}, {duration: 200, queue: false});
                     }
                 }
             }else{

@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         tools.ele('#postlist').insertAdjacentHTML('afterend', `<div class="mdui-hoverable nextpage2">${textV}</div>`);
         tools.ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
         tools.ele('div.main-in-other').addEventListener("click", (e) => {
-            if(e.target.getAttribute('class').split(' ').indexOf('nextpage2') !== -1 && e.target.tagName.toLowerCase() === 'div'){
+            if(e.target.classList.contains('nextpage2') && e.target.tagName.toLowerCase() === 'div'){
                 tools.ele('div.nextpage2').style.display = 'none';
                 tools.ele('div.nextpage2').insertAdjacentHTML('afterend', `<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>`);
                 mdui.updateSpinners();

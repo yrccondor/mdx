@@ -14,6 +14,12 @@ const tools = {
         }
     },
     ele: (selector, callback = null) => {
+        if (typeof selector === "object") {
+            return selector;
+        } else if (typeof selector !== "string") {
+            return document.createElement("div");
+        }
+
         let elems = null;
         let idSelector = false;
         if (!selector.match(/[ <>:~+^=]/)) {
@@ -25,7 +31,7 @@ const tools = {
             } else {
                 if (!selector.match(/[ .<>:~+^=#]/)) {
                     elems = document.getElementsByTagName(selector);
-                }else{
+                } else {
                     elems = document.querySelectorAll(selector);
                 }
             }
@@ -33,7 +39,7 @@ const tools = {
             elems = document.querySelectorAll(selector);
         }
 
-        if(elems === null || elems.length === 0){
+        if (elems === null || elems.length === 0) {
             return document.createElement("div");
         }
 
@@ -47,10 +53,13 @@ const tools = {
 
         if (!idSelector) {
             return elems[0];
-        }else{
+        } else {
             return elems;
         }
     }
 }
 
 export default tools;
+
+export const betterFetch = tools.betterFetch;
+export const ele = tools.ele;
