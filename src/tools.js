@@ -1,5 +1,3 @@
-import 'whatwg-fetch';
-
 const tools = {
     betterFetch: async (url, option = {}) => {
         let response = await fetch(url, option);

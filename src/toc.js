@@ -3,7 +3,6 @@ import { ele } from './tools.js';
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;
 let titleArr = [];
-let firstClick = false;
 let isToc = true;
 let previewShown = false;
 let mdx_toc = undefined;
@@ -14,11 +13,15 @@ window.addEventListener('DOMContentLoaded', () => {
     addToc(tocHTML[0]);
     if(isToc){
         if(showPreview){
-            ele('.PostMain').insertAdjacentHTML('beforeend', `<div id="mdx-toc-preview" mdui-drawer="${document.getElementById('menu').getAttribute('mdui-drawer')}">${tocHTML[1]}</div>`);
+            const previewEle = document.createElement('div');
+            previewEle.id = 'mdx-toc-preview';
+            previewEle.setAttribute('mdui-drawer', document.getElementById('menu').getAttribute('mdui-drawer'));
+            previewEle.innerHTML = tocHTML[1];
+            ele('.PostMain').appendChild(previewEle);
             mdui.mutation();
         }
         isInited = true;
-        scrollToc(true);
+        scrollToc();
     }
 })
 
@@ -92,29 +95,14 @@ function addToc(titleList) {
     menu.style.transform = `translateX(-${menu.clientWidth}px)`;
 }
 
-document.getElementById('menu').addEventListener('click', function() {
-    if(!firstClick){
-        scrollToc(false);
-        tocShown = true;
-        firstClick = true;
-    }
-}, false)
-
 ele('.PostMain').addEventListener('click', function(e) {
     if(e.target.id === 'mdx-toc-preview'){
-        if(getComputedStyle(ele('#mdx-toc'))['transform'] !== 'translateX(0)' && showPreview){
+        if(ele('#mdx-toc').style.transform !== 'translateX(0px)' && showPreview){
             mdx_toc.next();
             ele('#mdx-toc').style.transform = 'translateX(0)';
             ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
-            if(!firstClick){
-                scrollToc(false);
-                tocShown = true;
-                firstClick = true;
-            }else{
-                scrollToc(true);
-                tocShown = true;
-                firstClick = false;
-            }
+            tocShown = true;
+            scrollToc();
         }
     }
 })
@@ -122,14 +110,14 @@ ele('.PostMain').addEventListener('click', function(e) {
 ele('#left-drawer').addEventListener('click', function(e) {
     if(e.target.id === 'mdx-toc-menu' || e.target.closest('#mdx-toc-menu') !== null){
         e.preventDefault();
-        tocShown = false;
         ele('#mdx_menu').style.transform = 'translateX(0)';
         ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
+        tocShown = false;
         return;
     }else if(e.target.id === 'mdx-toc-toc' || e.target.closest('#mdx-toc-toc') !== null){
         e.preventDefault();
         tocShown = true;
-        scrollToc(false);
+        scrollToc();
         ele('#mdx-toc').style.transform = 'translateX(0)';
         ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
         return;
@@ -146,33 +134,48 @@ ele('#left-drawer').addEventListener('click', function(e) {
 
 window.addEventListener('resize', function() {
     if(isToc){
-        if(tocShown || !firstClick){
+        if(ele('#mdx-toc').style.transform === 'translateX(0px)'){
             ele('#mdx-toc').style.transform = 'translateX(0)';
             ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
         }else{
             ele('#mdx_menu').style.transform = 'translateX(0)';
             ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
         }
+        scrollToc();
     }
 })
+
+document.getElementById('left-drawer').addEventListener('open.mdui.drawer', function () {
+    if(ele('#mdx-toc').style.transform !== 'translateX(0px)'){
+        tocShown = false;
+    }else{
+        tocShown = true;
+    }
+    scrollToc();
+});
+
+document.getElementById('left-drawer').addEventListener('close.mdui.drawer', function () {
+    tocShown = false;
+});
 
 let tickingToc = false;
 window.addEventListener('scroll', function(){
     if(isToc && isInited){
         if(!tickingToc) {
             requestAnimationFrame(function(){
-                scrollToc(true);
+                scrollToc();
             });
             tickingToc = true;
         }
     }
     
 })
-function scrollToc(firstCall){
+function scrollToc(){
     if(!isInited){
         return;
     }
-    if(tocShown || firstCall){
+
+    if(tocShown || showPreview){
         let howFar = document.documentElement.scrollTop || document.body.scrollTop;
         ele('.mdx-toc-item', (e) => {e.classList.remove('mdx-toc-read', 'mdui-list-item-active')});
         ele('#mdx-toc-preview > *', (e) => {e.classList.remove('mdx-toc-preview-item-active')});
@@ -203,11 +206,11 @@ function scrollToc(firstCall){
                 if(showPreview){
                     ele('#mdx-toc-preview').style.transform = `translateY(-${((counter+1)*20-4)}px)`;
                 }
-                if(item !== null){
+                if(item !== null && tocShown){
                     let topDist = item.getBoundingClientRect().top;
-                    if(topDist + 48 > window.innerHeight && tocShown){
+                    if(topDist + 48 > window.innerHeight){
                         Velocity(ele('#left-drawer'), {scrollTop: (document.getElementById('left-drawer').scrollTop + (topDist + 48 - window.innerHeight) + 8) + "px"}, {duration: 200, queue: false});
-                    }else if(topDist < 8 && tocShown){
+                    }else if(topDist < 8){
                         Velocity(ele('#left-drawer'), {scrollTop: (document.getElementById('left-drawer').scrollTop + topDist - 8) + "px"}, {duration: 200, queue: false});
                     }
                 }

@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import tools from './tools.js';
 
 var urlV;
