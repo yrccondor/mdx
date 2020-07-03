@@ -123,11 +123,11 @@ ele('#left-drawer').addEventListener('click', function(e) {
         return;
     }else if(e.target.classList.contains('mdx-toc-item')){
         e.preventDefault();
-        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, 500);
+        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, {duration: 500, queue: false});
         return;
     }else if(e.target.closest('.mdx-toc-item') !== null){
         e.preventDefault();
-        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, 500);
+        Velocity(ele('html'), {scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px"}, {duration: 500, queue: false});
         return;
     }
 })
