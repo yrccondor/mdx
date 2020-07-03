@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "swiper": "^5.4.2",
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [

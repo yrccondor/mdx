@@ -120,8 +120,5 @@ Tags: Material Design, Personal Blog, Simple Theme
             test: /\.css$/,
             raw: true
         })
-    ],
-    externals: {
-        swiper: 'Swiper'
-    }
+    ]
 };
