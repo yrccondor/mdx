@@ -44,12 +44,7 @@ module.exports = {
                 test: /\.js$/,
                 use: [
                     'cache-loader',
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env']
-                        }
-                    }
+                    'babel-loader'
                 ],
                 exclude: /(node_modules|bower_components)/
             },
@@ -71,7 +66,6 @@ module.exports = {
                                 progressive: true,
                                 quality: 85
                             },
-                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: false,
                             },

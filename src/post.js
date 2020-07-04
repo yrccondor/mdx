@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;

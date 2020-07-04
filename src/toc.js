@@ -1,4 +1,4 @@
-import { ele } from './tools.js';
+import ele from './ele.js';
 
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;

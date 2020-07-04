@@ -1,4 +1,6 @@
-import { ele, fade } from './tools.js';
+import 'whatwg-fetch';
+import ele from './ele.js';
+import fade from './fade.js';
 import '../style.less';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
@@ -23,7 +25,7 @@ if(document.getElementsByClassName("theFirstPage").length === 0){
     barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
     totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
 }
-window.onload = function(){
+window.addEventListener('load', () => {
     scrollDiff();
     let indexBgDom = document.getElementsByClassName('theFirstPage');
     if(indexBgDom.length > 0){
@@ -32,21 +34,21 @@ window.onload = function(){
             indexBgDom[0].style.setProperty('transition', 'opacity 0s', 'important');
         }, 500);
     }
-}
-window.onscroll = function(){
+})
+window.addEventListener('scroll', () => {
     if(!ticking) {
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
-}
-window.onresize = function(){
+})
+window.addEventListener('resize', () => {
     if(mdxStyle){
         barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
         totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
     }
     toggleHotPostsOverlay();
     displayHotPostsOverlay();
-}
+})
 function scrollDiff(){
     if(mdxStyle){
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;

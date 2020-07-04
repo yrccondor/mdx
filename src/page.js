@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChangeToTop = 0;
 var blogName = $('div.mdui-toolbar > a.mdui-typo-headline').html();

@@ -520,7 +520,7 @@ wp_nonce_field('mdx_options_update');
     <th scope="row"><?php _e('自定义 CDN 根路径', 'mdx');?></th>
     <td>
     <input name="mdx_custom_cdn_root" type="url" id="mdx_custom_cdn_root" value="<?php echo esc_attr(mdx_get_option('mdx_custom_cdn_root'));?>" class="regular-text">
-    <p class="description"><?php _e('在这里输入自定义的 CDN 根路径 URL，不要在最后添加 <code>/</code>，如 <code>https://cdn.example.com/mdx_files</code>。<br>CDN 服务需添加正确的 <code>access-control-allow-origin</code> 头。', 'mdx');?></p></td>
+    <p class="description"><?php _e('在这里输入自定义的 CDN 根路径 URL，不要在最后添加 <code>/</code>，如 <code>https://cdn.example.com/mdx_files</code>。<br>CDN 服务需添加适当的 <code>access-control-allow-origin</code> 头。', 'mdx');?></p></td>
     </tr>
 </tbody>
 

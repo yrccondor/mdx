@@ -1,13 +1,20 @@
+import betterFetch from './betterFetch.js';
+import ele from './ele.js';
+
 "use strict";
 let nowType = '';
 let oldType = '';
-let timeChecker;
 let waitForNetwork = false;
-$('body').prepend('<div class="OutOfsearchBox"><div class="searchBoxFill"></div></div>');
+const outSearch = document.createElement('div');
+outSearch.classList.add('OutOfsearchBox');
+const searchBox = document.createElement('div');
+searchBox.classList.add('searchBoxFill');
+outSearch.appendChild(searchBox);
+ele('body').insertBefore(outSearch, ele('body').firstChild);
 let stopId;
 let isStoped = false;
 let ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
-$('.seainput').focus(function(){
+ele('.seainput').addEventListener('focus', function() {
     if(sessionStorage.getItem('rts_wra') == 'false'){
         mdui.snackbar({
             message: snackMuti,
@@ -18,32 +25,30 @@ $('.seainput').focus(function(){
     isStoped = false;
     window.requestAnimationFrame(checkType);
 });
-$('.seainput').blur(function(){
+ele('.seainput').addEventListener('blur', function() {
     isStoped = true;
     window.cancelAnimationFrame(stopId);
 });
 function checkType(){
     if(sessionStorage.getItem('rts_wra') != 'false'){
-        nowType = $(".seainput").val();
+        nowType = ele(".seainput").value;
         if((nowType != '' && oldType == '') || (oldType != '' && nowType != oldType && nowType != '')){
             if(!sessionStorage.getItem("rtsk_"+nowType)){
                 if(!waitForNetwork){
                     waitForNetwork = true;
-                   $.get('/wp-json/wp/v2/posts?search='+nowType+'&pre_page=10&context=embed',function(data,status){
-                        if(status=='success'){
-                            setSessionSto(nowType, JSON.stringify(data));
-                            readRes(data, false);
-                            waitForNetwork = false;
-                        }else{
-                            mdui.snackbar({
-                                message: snackMuti,
-                                timeout: 3000,
-                                position: 'top',
-                            });
-                            sessionStorage.setItem('rts_wra', 'false');
-                            waitForNetwork = false;
-                        }
-                    }); 
+                    betterFetch(`/wp-json/wp/v2/posts?search=${nowType}&pre_page=10&context=embed`).then((data) => {
+                        setSessionSto(nowType, JSON.stringify(data));
+                        readRes(data, false);
+                        waitForNetwork = false;
+                    }).catch(() => {
+                        mdui.snackbar({
+                            message: snackMuti,
+                            timeout: 3000,
+                            position: 'top',
+                        });
+                        sessionStorage.setItem('rts_wra', 'false');
+                        waitForNetwork = false;
+                    })
                 }
             }else{
                 readRes(sessionStorage.getItem("rtsk_"+nowType), true)
@@ -51,9 +56,9 @@ function checkType(){
             oldType = nowType;
         }else if(nowType == ''){
             if(ifOffline){
-                $('.OutOfsearchBox').html('<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>');
+                ele('.OutOfsearchBox').innerHTML = `<div class="searchBoxFill"></div><div class="underRes">${tipMutiOff}</div>`;
             }else{
-                $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');
+                ele('.OutOfsearchBox').innerHTML = '<div class="searchBoxFill"></div>';
             }
             oldType = nowType;
         }
@@ -79,22 +84,23 @@ function readRes(data, ifSession){
     if(ifSession){
         data2 = JSON.parse(data);
     }
-    $('.OutOfsearchBox').html('<div class="searchBoxFill"></div>');
-    if($(".seainput").val() === "Axton" || $(".seainput").val() === "axton" || $(".seainput").val() === "无垠" || $(".seainput").val() === "flyhigher" || $(".seainput").val() === "Flyhigher"){
+    ele('.OutOfsearchBox').innerHTML = '<div class="searchBoxFill"></div>';
+    let inputValue = ele(".seainput").value;
+    if(inputValue === "Axton" || inputValue === "axton" || inputValue === "无垠" || inputValue === "flyhigher" || inputValue === "Flyhigher"){
         data2.unshift({"title":{"rendered":"无垠"},"date": "Forever","link":"https://flyhigher.top","excerpt":{"rendered":"飞翔的天空无限大"}});
     }
     if(data2.length > 0){
+        let finalHTML = '';
         for(let i = 0; i < data2.length; i++){
             let postTitleInApi = data2[i].title.rendered;
             let postTimeInApi = data2[i].date;
             let postUrlInApi = data2[i].link;
             let postDesInApi = data2[i].excerpt.rendered;
-            let nowBoxValue =  $('.OutOfsearchBox').html();
-            $('.OutOfsearchBox').html(nowBoxValue+'<article class="searchCard mdui-shadow-2 mdui-typo"><a href="'+postUrlInApi+'"><h1>'+postTitleInApi+'</h1></a><p>'+postDesInApi.replace(' [&hellip;]', '&hellip;').replace('<p>', '').replace('</p>', '')+'</p><div class="mdui-divider underline"></div><span class="info">&nbsp;&nbsp;<i class="mdui-icon material-icons info-icon">&#xe192;</i> '+postTimeInApi.substring(0,10)+'</span><a class="mdui-btn mdui-ripple mdui-ripple-white coun-read" href="'+postUrlInApi+'">'+moreMuti+'</a></article>');
+            finalHTML += `<article class="searchCard mdui-shadow-2 mdui-typo"><a href="${postUrlInApi}"><h1>${postTitleInApi}</h1></a><p>${postDesInApi.replace(' [&hellip;]', '&hellip;').replace('<p>', '').replace('</p>', '')}</p><div class="mdui-divider underline"></div><span class="info">&nbsp;&nbsp;<i class="mdui-icon material-icons info-icon">&#xe192;</i> ${postTimeInApi.substring(0,10)}</span><a class="mdui-btn mdui-ripple mdui-ripple-white coun-read" href="${postUrlInApi}">${moreMuti}</a></article>`;
         }
+        ele('.OutOfsearchBox').innerHTML += finalHTML;
     }
     if(data2.length == 10){
-        let nowBoxValue10 =  $('.OutOfsearchBox').html();
-        $('.OutOfsearchBox').html(nowBoxValue10+'<div class="underRes">'+tipMuti+'</div>');
+        ele('.OutOfsearchBox').innerHTML += `<div class="underRes">${tipMuti}</div>`;
     }
 }

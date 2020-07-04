@@ -1,20 +1,21 @@
 import 'whatwg-fetch';
-import tools from './tools.js';
+import betterFetch from './betterFetch.js';
+import ele from './ele.js';
 
 var urlV;
 var page = 1;
 window.addEventListener('DOMContentLoaded', () => {
-    var textV = tools.ele('div.nextpage a').innerText;
+    var textV = ele('div.nextpage a').innerText;
     if(textV === ""){
-        tools.ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
+        ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
     }else{
-        urlV = tools.ele('div.nextpage a').getAttribute('href');
-        tools.ele('#postlist').insertAdjacentHTML('afterend', `<div class="mdui-hoverable nextpage2">${textV}</div>`);
-        tools.ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
-        tools.ele('div.main-in-other').addEventListener("click", (e) => {
+        urlV = ele('div.nextpage a').getAttribute('href');
+        ele('#postlist').insertAdjacentHTML('afterend', `<div class="mdui-hoverable nextpage2">${textV}</div>`);
+        ele('div.nextpage', (e) => {e.parentNode.removeChild(e)});
+        ele('div.main-in-other').addEventListener("click", (e) => {
             if(e.target.classList.contains('nextpage2') && e.target.tagName.toLowerCase() === 'div'){
-                tools.ele('div.nextpage2').style.display = 'none';
-                tools.ele('div.nextpage2').insertAdjacentHTML('afterend', `<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>`);
+                ele('div.nextpage2').style.display = 'none';
+                ele('div.nextpage2').insertAdjacentHTML('afterend', `<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>`);
                 mdui.updateSpinners();
                 ajax_load_ac(urlV);
             }
@@ -38,16 +39,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let data2 = '';
                 if(urlV === null){
                     data2 = data.replace('<div class="nextpage mdui-center"></div>',"");
-                    tools.ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
+                    ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
                 }else{
                     data2 = data;
                     let data2Parsed = new DOMParser().parseFromString(data2, "text/html");
                     let el = data2Parsed.querySelector('div.nextpage');
                     el.parentNode.removeChild(el);
-                    tools.ele('div.nextpage2').style.display = '';
+                    ele('div.nextpage2').style.display = '';
                 }
                 let getValue = (typeof data2Parsed !== 'undefined' ? data2Parsed : new DOMParser().parseFromString(data2, "text/html")).getElementById('postlist').innerHTML;
-                tools.ele('#postlist').insertAdjacentHTML('beforeend', getValue);
+                ele('#postlist').insertAdjacentHTML('beforeend', getValue);
                 page = i;
             }
         }
@@ -55,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function ajax_load_ac(url) {
-    tools.betterFetch(url, {credentials: 'same-origin'}).then((data) => {
+    betterFetch(url, {credentials: 'same-origin'}).then((data) => {
         page++;
         let dom = new DOMParser().parseFromString(data, "text/html");
         urlV = dom.querySelector('div.nextpage a');
@@ -66,17 +67,17 @@ function ajax_load_ac(url) {
         let data2 = '';
         if(urlV === null){
             data2 = data.replace('<div class="nextpage mdui-center"></div>',"");
-            tools.ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
+            ele('div.nextpage2', (e) => {e.parentNode.removeChild(e)});
         }else{
             data2 = data;
             let data2Parsed = new DOMParser().parseFromString(data2, "text/html");
             let el = data2Parsed.querySelector('div.nextpage');
             el.parentNode.removeChild(el);
-            tools.ele('div.nextpage2').style.display = '';
+            ele('div.nextpage2').style.display = '';
         }
-        tools.ele('div.mdx-ajax-loading', (e) => {e.parentNode.removeChild(e)});
+        ele('div.mdx-ajax-loading', (e) => {e.parentNode.removeChild(e)});
         let getValue = (typeof data2Parsed !== 'undefined' ? data2Parsed : new DOMParser().parseFromString(data2, "text/html")).getElementById('postlist').innerHTML;
-        tools.ele('#postlist').insertAdjacentHTML('beforeend', getValue);
+        ele('#postlist').insertAdjacentHTML('beforeend', getValue);
     }).catch(() => {
         mdui.snackbar({
             message: ajax_error,
