@@ -510,10 +510,10 @@ wp_nonce_field('mdx_options_update');
     <?php $mdx_v_use_cdn=mdx_get_option('mdx_use_cdn');?>
     <select name="mdx_use_cdn" id="mdx_use_cdn" onchange="mdx_cdn_sec(this.options[this.options.selectedIndex].value)">
         <option value="none" <?php if($mdx_v_use_cdn=='none'){?>selected="selected"<?php }?>><?php _e('不使用', 'mdx');?></option>
-        <option value="jsdeliver" <?php if($mdx_v_use_cdn=='jsdeliver'){?>selected="selected"<?php }?>><?php _e('jsDeliver', 'mdx');?></option>
+        <option value="jsdelivr" <?php if($mdx_v_use_cdn=='jsdelivr'){?>selected="selected"<?php }?>><?php _e('jsDelivr', 'mdx');?></option>
         <option value="custom" <?php if($mdx_v_use_cdn=='custom'){?>selected="selected"<?php }?>><?php _e('自定义', 'mdx');?></option>
     </select>
-    <p class="description"><?php _e('在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDeliver</code>：使用由 jsDeliver 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>', 'mdx');?></p>
+    <p class="description"><?php _e('在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>', 'mdx');?></p>
     </td>
     </tr>
     <tr class="cdn_custom">

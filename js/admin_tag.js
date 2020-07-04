@@ -33,7 +33,7 @@ jQuery(document).ready(function(){
         jQuery('input.mdx_toc_preview').attr("disabled","disabled");
     }
     var selectVO = document.getElementById('mdx_use_cdn').options[document.getElementById('mdx_use_cdn').options.selectedIndex].value;
-    if(selectVO ==='none' || selectVO ==='jsdeliver'){
+    if(selectVO ==='none' || selectVO ==='jsdelivr'){
         jQuery('.cdn_custom').hide();
     }else if(selectVO == 'custom'){
         jQuery('.cdn_custom').show();
@@ -79,7 +79,7 @@ function img1(){
     jQuery('#img1').attr('src',img1);
 }
 function mdx_cdn_sec(selectV){
-    if(selectV ==='none' || selectV ==='jsdeliver'){
+    if(selectV ==='none' || selectV ==='jsdelivr'){
         jQuery('.cdn_custom').hide();
     }else if(selectV == 'custom'){
         jQuery('.cdn_custom').show();

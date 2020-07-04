@@ -114,7 +114,7 @@ include('includes/cdn_version.php');
 $files_root = '';
 if(mdx_get_option("mdx_use_cdn") === "custom"){
     $files_root = mdx_get_option("mdx_custom_cdn_root");
-}else if(mdx_get_option("mdx_use_cdn") === "jsdeliver"){
+}else if(mdx_get_option("mdx_use_cdn") === "jsdelivr"){
     $files_root = 'https://cdn.jsdelivr.net/gh/yrccondor/mdx@'.$cdn_commit_version;
 }else{
     $files_root = get_template_directory_uri();
