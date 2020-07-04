@@ -675,6 +675,10 @@ wp_nonce_field('mdx_options_update');
 <td><input class="regular-text" name="mdx_sn_personalpage" type="text" id="mdx_sn_personalpage" value="" placeholder="<?php _e('个人主页地址', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('个人主页', 'mdx');?>"></td>
 </tr>
 <tr>
+<th scope="row"><label for="mdx_sn_rss"><?php _e('RSS', 'mdx');?></label></th>
+<td><input class="regular-text" name="mdx_sn_rss" type="text" id="mdx_sn_rss" value="" placeholder="<?php _e('RSS 地址', 'mdx');?>" oninput="input_onchange()" data-alt="<?php _e('RSS', 'mdx');?>"></td>
+</tr>
+<tr>
     <th scope="row"><label for="mdx_sn_result"><?php _e('生成结果', 'mdx');?></label></th>
     <td><textarea name="mdx_sn_result" id="mdx_sn_result" rows="10" cols="53" readonly></textarea></td>
 </tr>
