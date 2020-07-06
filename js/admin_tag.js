@@ -26,6 +26,12 @@ jQuery(document).ready(function(){
     }else if(mdx_val=='false'){
         jQuery('input.mdx_apspc2').attr("disabled","disabled");
     }
+    var mdx_val_get = jQuery('input.mdx_get:checked').val();
+    if(mdx_val_get=='cat'){
+        jQuery('#mdx_hot_posts_cat').removeAttr("disabled");
+    }else if(mdx_val_get=='sticky'){
+        jQuery('#mdx_hot_posts_cat').attr("disabled","disabled");
+    }
     var mdx_val_toc = jQuery('input.mdx_toc:checked').val();
     if(mdx_val_toc=='true'){
         jQuery('input.mdx_toc_preview').removeAttr("disabled");
@@ -61,6 +67,14 @@ jQuery(".mdx_apsp2").click(function(){
         jQuery('input.mdx_apspc2').removeAttr("disabled");
     }else if(mdx_val=='false'){
         jQuery('input.mdx_apspc2').attr("disabled","disabled");
+    }
+});
+jQuery(".mdx_get").click(function(){
+    var mdx_val = jQuery('input.mdx_get:checked').val();
+    if(mdx_val=='cat'){
+        jQuery('#mdx_hot_posts_cat').removeAttr("disabled");
+    }else if(mdx_val=='sticky'){
+        jQuery('#mdx_hot_posts_cat').attr("disabled","disabled");
     }
 });
 jQuery(".mdx_toc").click(function(){

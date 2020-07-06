@@ -47,6 +47,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
     mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
     mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
+    mdx_update_option('mdx_hot_posts_get', $_POST['mdx_hot_posts_get']);
     mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
     mdx_update_option('mdx_hot_posts_cat', $_POST['mdx_hot_posts_cat']);
     mdx_update_option('mdx_hot_posts_text', $_POST['mdx_hot_posts_text']);
@@ -311,9 +312,20 @@ wp_nonce_field('mdx_options_update');
     <p class="description"><?php _e('在此设定首页推荐文章篇数。请输入整数。', 'mdx');?></p></td>
     </tr>
     <tr>
+    <th scope="row"><?php _e('首页推荐文章获取方式', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_hot_posts_get=mdx_get_option('mdx_hot_posts_get');?>
+        <fieldset>
+        <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="cat" <?php if($mdx_v_hot_posts_get=='cat'){?>checked="checked"<?php }?>> <?php  _e('某一分类', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="sticky" <?php if($mdx_v_hot_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
+        <p class="description"><?php _e('在此设定首页推荐文章的获取方式。若选择置顶文章，当没有置顶文章时，将显示最新文章。', 'mdx');?></p>
+        </fieldset>
+    </td>
+    </tr>
+    <tr>
     <th scope="row"><label for="mdx_hot_posts_cat"><?php _e('首页推荐文章分类名', 'mdx');?></label></th>
     <td><input name="mdx_hot_posts_cat" type="text" id="mdx_hot_posts_cat" value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_cat'))?>" class="regular-text mdx_apspc2">
-    <p class="description"><?php _e('首页推荐文章从特定分类获取文章。在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。', 'mdx');?></p></td>
+    <p class="description"><?php _e('在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。', 'mdx');?></p></td>
     </tr>
     <tr>
     <th scope="row"><label for="mdx_hot_posts_text"><?php _e('首页推荐文章模块标题', 'mdx');?></label></th>

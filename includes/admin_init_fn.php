@@ -35,6 +35,7 @@ $arr = array(
 'mdx_speed_pre'=>'false',
 'mdx_share_area'=>'all',
 'mdx_hot_posts'=>'false',
+'mdx_hot_posts_get'=>'cat',
 'mdx_hot_posts_num'=>'10',
 'mdx_hot_posts_cat'=>'',
 'mdx_hot_posts_text'=>__('推荐文章','mdx'),
