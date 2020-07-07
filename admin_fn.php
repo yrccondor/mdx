@@ -318,7 +318,7 @@ wp_nonce_field('mdx_options_update');
         <fieldset>
         <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="cat" <?php if($mdx_v_hot_posts_get=='cat'){?>checked="checked"<?php }?>> <?php  _e('某一分类', 'mdx');?></label><br>
         <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="sticky" <?php if($mdx_v_hot_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
-        <p class="description"><?php _e('在此设定首页推荐文章的获取方式。若选择置顶文章，当没有置顶文章时，将显示最新文章。', 'mdx');?></p>
+        <p class="description"><?php _e('在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页推荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>

@@ -68,41 +68,51 @@ $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img
     </div>
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
     <div class="mdxNotice mdui-center<?php if($mdx_index_show=="0" || $mdx_index_show=="2"){?> mdx-notice-default<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i><p class="mdui-typo"><?php echo htmlspecialchars_decode(mdx_get_option('mdx_notice'));?></p></div>
+    <?php }
+    $ignore_sticky = false;
+    $sticky_id = get_option('sticky_posts');
+    if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id) > 0){
+        $ignore_sticky = true;
+    }
+    if((mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')!=="sticky") || $ignore_sticky){
+        global $post;if(mdx_get_option('mdx_hot_posts_get')==="sticky"){$mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num'),'post__in' =>$sticky_id));}else{$mdx_posts = get_posts('numberposts='.mdx_get_option('mdx_hot_posts_num').'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));}?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><?php if(count($mdx_posts) > 0){?><h3><?php echo mdx_get_option('mdx_hot_posts_text');?></h3><div class="mdx-hp-h3-fill"></div><div id="mdx-sp-out-c"><div class="mdx-hp-g-l"></div><div class="mdx-hp-g-r"></div><div class="mdx-posts-may-related mdx-ul"><?php foreach($mdx_posts as $related_post):?><a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><div class="mdx-li mdui-card mdui-color-theme mdui-hoverable"><div class="lazyload mdx-hot-posts-lazyload"<?php $mdx_img = wp_get_attachment_image_src(get_post_thumbnail_id($related_post->ID),'large');if($mdx_img !== false){$mdx_img = $mdx_img[0];}else{$mdx_img = "";}if($mdx_img!=""){?> data-bg="<?php echo $mdx_img.'"';}else{if(mdx_get_option("mdx_post_def_img")==="true"){ ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';}}?>></div><span<?php if($mdx_img!="" || mdx_get_option("mdx_post_def_img")==="true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span><i class="mdui-icon material-icons" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i><div class="mdx-sp-fill<?php if($mdx_img=="" && mdx_get_option("mdx_post_def_img")==="false"){?> mdx-hot-posts-have-img<?php }?>"></div></div></a><?php endforeach;?></div></div><?php }?></div><h3 class="mdx-all-posts"><?php echo mdx_get_option('mdx_all_posts_text');?></h3>
     <?php }?>
-    <?php if(mdx_get_option('mdx_hot_posts')=="true"){?>
-    <?php global $post;if(mdx_get_option('mdx_hot_posts_get')==="sticky"){$sticky_id = get_option('sticky_posts');$mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num'),'post__in' =>$sticky_id));}else{$mdx_posts = get_posts('numberposts='.mdx_get_option('mdx_hot_posts_num').'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));}?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><?php if(count($mdx_posts) > 0){?><h3><?php echo mdx_get_option('mdx_hot_posts_text');?></h3><div class="mdx-hp-h3-fill"></div><div id="mdx-sp-out-c"><div class="mdx-hp-g-l"></div><div class="mdx-hp-g-r"></div><div class="mdx-posts-may-related mdx-ul"><?php foreach($mdx_posts as $related_post):?><a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><div class="mdx-li mdui-card mdui-color-theme mdui-hoverable"><div class="lazyload mdx-hot-posts-lazyload"<?php $mdx_img = wp_get_attachment_image_src(get_post_thumbnail_id($related_post->ID),'large');if($mdx_img !== false){$mdx_img = $mdx_img[0];}else{$mdx_img = "";}if($mdx_img!=""){?> data-bg="<?php echo $mdx_img.'"';}else{if(mdx_get_option("mdx_post_def_img")==="true"){ ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';}}?>></div><span<?php if($mdx_img!="" || mdx_get_option("mdx_post_def_img")==="true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span><i class="mdui-icon material-icons" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i><div class="mdx-sp-fill<?php if($mdx_img=="" && mdx_get_option("mdx_post_def_img")==="false"){?> mdx-hot-posts-have-img<?php }?>"></div></div></a><?php endforeach;?></div></div><?php }?></div><h3 class="mdx-all-posts"><?php echo mdx_get_option('mdx_all_posts_text');?></h3>
-    <?php }?>
-      <main class="postList mdui-center" id="postlist">
-      <?php
-      $style=mdx_get_option('mdx_default_style');
-      $post_num=0;
-      while(have_posts()):the_post();$post_num++;
-        if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
-          continue;
-        }
-        if(mdx_get_option('mdx_lazy_load_mode')=='seo2'){
-          get_template_part('template-parts/content-first-'.$style, get_post_format());
-        }else if($post_num == 4){
-          get_template_part('template-parts/content-'.$style, get_post_format());
-          if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-            $style_class = '';
-            if($style==='4'){
-              $style_class = " mdx-style-4-ad";
-            }
-            echo '<div class="mdx-ad-in-list mdui-center'.$style_class.'">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-          }
+    <main class="postList mdui-center" id="postlist">
+        <?php
+        $style=mdx_get_option('mdx_default_style');
+        $post_num=0;
+        if($ignore_sticky){
+            $args = array(
+                'ignore_sticky_posts' => 1,
+                'showposts' => get_option('posts_per_page'),
+                'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1
+            );
+            $the_query = new WP_Query($args);
+            if($the_query->have_posts()) : while($the_query->have_posts()) : $the_query->the_post();
+                $post_num++;
+                if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
+                    continue;
+                }
+                require('includes/main_loop.php');
+            endwhile;
+            endif;
         }else{
-          get_template_part('template-parts/content-'.$style, get_post_format());
+            while(have_posts()):the_post();
+                $post_num++;
+                if(get_post_meta((int)$post->ID, "mdx_post_show", true) === '3' && !$user_ID){
+                    continue;
+                }
+                require('includes/main_loop.php');
+            endwhile;
         }
-      endwhile;
-      if($post_num >= 8){
-        if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-          $style_class = '';
-          if($style==='4'){
-            $style_class = " mdx-style-4-ad";
-          }
-          echo '<div class="mdx-ad-in-list mdui-center'.$style_class.'">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-        }
-      }?></main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
+        if($post_num >= 8){
+            if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
+                $style_class = '';
+                if($style==='4'){
+                    $style_class = " mdx-style-4-ad";
+                }
+                echo '<div class="mdx-ad-in-list mdui-center'.$style_class.'">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+            }
+        }?></main><div class="nextpage mdui-center"><?php next_posts_link(__('加载更多', 'mdx'));?>
       </div>
 <?php get_footer();?>
