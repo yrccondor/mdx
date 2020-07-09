@@ -402,15 +402,15 @@ window.addEventListener('DOMContentLoaded', () => {
                     var imgWdh = w/h,windowWdh = winwidth/winheight;
                     if(imgWdh>windowWdh){
                         if($(img)[0].naturalWidth>=winwidth){
-                            $('.mdx-img-viewer img').animate({'width':winwidth+'px','height':winwidth/imgWdh+'px','top':(winheight-(winwidth/imgWdh))/2+'px','left':'0'},200,function(){$(e.target).css('transition','all .2s')});
+                            $('.mdx-img-viewer img').animate({'width':winwidth+'px','height':winwidth/imgWdh+'px','top':(winheight-(winwidth/imgWdh))/2+'px','left':'0'},200,function(){this.style.transition = 'all .2s'});
                         }else{
-                            $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){$(e.target).css('transition','all .2s')});
+                            $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){this.style.transition = 'all .2s'});
                         }
                     }else{
                         if($(img)[0].naturalHeight>=winheight){
-                            $('.mdx-img-viewer img').animate({'width':winheight*imgWdh+'px','height':winheight+'px','top':'0','left':(winwidth-(winheight*imgWdh))/2+'px'},200,function(){$(e.target).css('transition','all .2s')});
+                            $('.mdx-img-viewer img').animate({'width':winheight*imgWdh+'px','height':winheight+'px','top':'0','left':(winwidth-(winheight*imgWdh))/2+'px'},200,function(){this.style.transition = 'all .2s'});
                         }else{
-                            $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){$(e.target).css('transition','all .2s')});
+                            $('.mdx-img-viewer img').animate({'width':$(img)[0].naturalWidth+'px','height':$(img)[0].naturalHeight+'px','top':(winheight-($(img)[0].naturalHeight))/2+'px','left':(winwidth-($(img)[0].naturalWidth))/2+'px'},200,function(){this.style.transition = 'all .2s'});
                         }
                     }
                 })
@@ -436,10 +436,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             })
         })
-        // TODO: Fix animation
         $('body').on('click','.mdx-img-viewer',function(){
-            $('#img-box').css({'opacity':'0','pointer-events':'none'});
-            $('.mdx-img-viewer img').css({'width':$('.mdx-img-viewer img').attr("data-raww")+"px",'height':$('.mdx-img-viewer img').attr("data-rawh")+"px",'top':$('.mdx-img-viewer img').attr("data-post")+"px",'left':$('.mdx-img-viewer img').attr("data-posl")+"px"});
+            ele('#img-box').style.opacity = '0';
+            ele('#img-box').style.pointerEvents = 'none';
+            ele('.mdx-img-viewer img', (e) => {
+                e.style.width = ele('.mdx-img-viewer img').getAttribute("data-raww")+"px";
+                e.style.height = ele('.mdx-img-viewer img').getAttribute("data-rawh")+"px";
+                e.style.top = ele('.mdx-img-viewer img').getAttribute("data-post")+"px";
+                e.style.left = ele('.mdx-img-viewer img').getAttribute("data-posl")+"px";
+
+            })
             if(colorEnabled){
                 if(sessionStorage.getItem('ns_night-styles')!="true"){
                     metaColor.setAttribute('content',nowColor);
@@ -453,42 +459,42 @@ window.addEventListener('DOMContentLoaded', () => {
     $('article a > img:not(.lazyload):not(.lazyloaded):not(.lazyloading)').each(function(){
         $(this).parent("a").addClass("mdx-nonlazy-link");
     });
-    $('article img.alignright:not(.lazyload):not(.lazyloaded):not(.lazyloading)').each(function(){
-            let insertDOM = document.createElement("div");
-            insertDOM.classList.add("mdx-clear-float");
-            this.parentNode.insertBefore(insertDOM, this.nextSibling);
-    });
+    ele('article img.alignright:not(.lazyload):not(.lazyloaded):not(.lazyloading)', (e) => {
+        let insertDOM = document.createElement("div");
+        insertDOM.classList.add("mdx-clear-float");
+        e.parentNode.insertBefore(insertDOM, e.nextSibling);
+    })
 
-        //评论优化
-        $('.disfir').hide();
-        $('.commurl').hide();
-        $("div#comments ul li p").addClass('mdui-typo');
-        $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
-        $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
-        $('p.form-submit').prepend('<a mdui-tooltip="{content: '+moreinput+', position: '+"'top'"+'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>');
-        var ifOpenComm = 0;
-        $('a.moreInComm').click(function(){
-            if(ifOpenComm == 0){
-                $('.commurl').fadeIn(200);
-                $('a.moreInComm').css({"transform":"rotate(180deg)","-ms-transform":"rotate(180deg)","-moz-transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)","-o-transform":"rotate(180deg)"});
-                ifOpenComm = 1;
-            }else{
-                $('.commurl').hide();
-                $('a.moreInComm').css({"transform":"rotate(0deg)","-ms-transform":"rotate(0deg)","-moz-transform":"rotate(0deg)","-webkit-transform":"rotate(0deg)","-o-transform":"rotate(0deg)"});
-                ifOpenComm = 0;
-            }
-        })
-
-        //密码优化
-        var inputId = $('form.post-password-form p > label > input').attr('id');
-        $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
-
-        if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
-            var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
-            mrm.addListener(handleMotionChange);
-            handleMotionChange(mrm);
+    //评论优化
+    $('.disfir').hide();
+    $('.commurl').hide();
+    ele("div#comments ul li p", (e) => {e.classList.add('mdui-typo')});
+    $('.comment-reply-link').addClass("mdui-btn").css("opacity","0");
+    $('.comment-reply-login').addClass("mdui-btn").css("opacity","0");
+    $('p.form-submit').prepend('<a mdui-tooltip="{content: '+moreinput+', position: '+"'top'"+'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>');
+    var ifOpenComm = 0;
+    $('a.moreInComm').click(function(){
+        if(ifOpenComm == 0){
+            $('.commurl').fadeIn(200);
+            $('a.moreInComm').css({"transform":"rotate(180deg)","-ms-transform":"rotate(180deg)","-moz-transform":"rotate(180deg)","-webkit-transform":"rotate(180deg)","-o-transform":"rotate(180deg)"});
+            ifOpenComm = 1;
+        }else{
+            $('.commurl').hide();
+            $('a.moreInComm').css({"transform":"rotate(0deg)","-ms-transform":"rotate(0deg)","-moz-transform":"rotate(0deg)","-webkit-transform":"rotate(0deg)","-o-transform":"rotate(0deg)"});
+            ifOpenComm = 0;
         }
     })
+
+    //密码优化
+    var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
+    $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
+
+    if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+        mrm.addListener(handleMotionChange);
+        handleMotionChange(mrm);
+    }
+})
     
 function handleMotionChange(mrm){
     if(sessionStorage.getItem("mrm_enable") === "user"){
