@@ -21,7 +21,7 @@ module.exports = {
         path: path.resolve(__dirname, 'js'),
         publicPath: '/wp-content/themes/mdx/js'
     },
-    // devtool: 'source-map',
+    devtool: 'source-map',
     mode: 'production',
     module: {
         rules: [

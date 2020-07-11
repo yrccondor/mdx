@@ -39,8 +39,7 @@ jQuery(document).ready(function(jQuery) {
                 var t = faAjax,
                     cancel = t.I('cancel-comment-reply-link'),
                     temp = t.I('wp-temp-form-div'),
-                    respond = t.I(t.respondId),
-                    post = t.I('comment_post_ID').value,
+                    respond = t.I('respond'),
                     parent = t.I('comment_parent').value;
                 if (parent != '0') {
                     jQuery('#respond').parent('li.mdui-list-item').after('<li><li class="mdui-divider-inset mdui-m-y-0"></li><ul class="children">' + data + '</ul></li>');

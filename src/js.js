@@ -350,7 +350,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if(elem.classList.contains('menu-item-has-children')){
             elem.classList.add('mdui-collapse-item');
             elem.classList.remove('mdui-list-item');
-            elem.innerHTML = '<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+elem.getElementsByTagName("a")[0].getAttribute('href')+'">'+elem.getElementsByTagName("a")[0].innerHTML+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+elem.getElementsByTagName("ul")[0].innerHTML+'</ul>';
+            elem.innerHTML = `<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="${elem.getElementsByTagName("a")[0].getAttribute('href')}">${elem.getElementsByTagName("a")[0].innerHTML}</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">${elem.getElementsByTagName("ul")[0].innerHTML}</ul>`;
             mdxHaveChild = 1;
             for(let ul of elem.getElementsByTagName("ul")){
                 for(let li of ul.getElementsByTagName("li")){
