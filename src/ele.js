@@ -1,4 +1,4 @@
-export default (selector, callback = null) => {
+export default (selector, callback = null, returnType = 'single') => {
     if (typeof selector === "object") {
         return selector;
     } else if (typeof selector !== "string") {
@@ -36,9 +36,18 @@ export default (selector, callback = null) => {
         }
     }
 
-    if (!idSelector) {
-        return elems[0];
+    if (returnType == 'single') {
+        if (!idSelector) {
+            return elems[0];
+        } else {
+            return elems;
+        }
     } else {
-        return elems;
+        if (!idSelector) {
+            return elems;
+        } else {
+            return [elems];
+        }
     }
+    
 }

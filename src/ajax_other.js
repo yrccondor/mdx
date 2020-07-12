@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import betterFetch from './betterFetch.js';
 import ele from './ele.js';
 

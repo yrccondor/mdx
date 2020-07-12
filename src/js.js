@@ -199,18 +199,18 @@ function toggleHotPostsOverlay() {
             mdxSpWw = elem.offsetWidth;
             mdxSpS = elem.scrollLeft;
             if(mdxSpS>5 && mdxChange){
-                fade(ele('.mdx-hp-g-l'), 'in', 200);
+                fade(ele('.mdx-hp-g-l', null, 'array'), 'in', 200);
                 mdxChange = 0;
             }
             else if(mdxSpS<=5 && !mdxChange){
-                fade(ele('.mdx-hp-g-l'), 'out', 200);
+                fade(ele('.mdx-hp-g-l', null, 'array'), 'out', 200);
                 mdxChange = 1;
             }
             if((mdxSpW - mdxSpWw - mdxSpS)<=1 && mdxChange2){
-                fade(ele('.mdx-hp-g-r'), 'out', 200);
+                fade(ele('.mdx-hp-g-r', null, 'array'), 'out', 200);
                 mdxChange2 = 0;
             }else if((mdxSpW - mdxSpWw - mdxSpS)>1 && !mdxChange2){
-                fade(ele('.mdx-hp-g-r'), 'in', 200);
+                fade(ele('.mdx-hp-g-r', null, 'array'), 'in', 200);
                 mdxChange2 = 1;
             }
         }
@@ -236,8 +236,8 @@ function displayHotPostsOverlay(){
 document.getElementsByClassName("seai")[0].addEventListener("click", function(){
     let searchBarDOM = document.getElementById("SearchBar");
     searchBarDOM.style.display = "block";
-    fade(ele('.OutOfsearchBox'), 'in', 300);
-    fade(ele('.fullScreen'), 'in', 300);
+    fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
+    fade(ele('.fullScreen', null, 'array'), 'in', 300);
     ele("#SearchBar > *", (e) => Velocity(e, {opacity: '1'}, 200));
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
@@ -274,9 +274,9 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
             document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').style.opacity = 1;
         }, 500);
         document.getElementById("mdx-search-anim").getElementsByTagName("i")[0].style.color = '#fff';
-        fade(ele('.OutOfsearchBox'), 'in', 500);
+        fade(ele('.OutOfsearchBox', null, 'array'), 'in', 500);
         searchBarDOM.classList.add("mdui-color-theme");
-        fade(ele('.fullScreen'), 'in', 500);
+        fade(ele('.fullScreen', null, 'array'), 'in', 500);
         document.getElementsByClassName("seainput")[0].focus();
         if(ifOffline){
             let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
@@ -296,13 +296,13 @@ function closeSearch(){
     if(openFromTwoRows){
         var searchAnimDom = document.getElementsByClassName("mdx-tworow-search")[0];
         var searchAnim = document.getElementById("mdx-search-anim");
-        fade(ele('.fullScreen'), 'out', 500);
+        fade(ele('.fullScreen', null, 'array'), 'out', 500);
         document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').removeAttribute('style');
         document.getElementById("searchform").classList.remove("mdx-searchform-show");
         searchAnim.classList.add('mdx-search-anim-show');
         mdui.JQ("#mdx-search-anim").css({'width': searchAnimDom.offsetWidth - 22 + 'px', 'height': '50px', 'top': searchAnimDom.getBoundingClientRect().top + 'px', 'left': searchAnimDom.getBoundingClientRect().left + 'px', 'backgroundColor': window.getComputedStyle(searchAnimDom).backgroundColor, 'color': window.getComputedStyle(searchAnimDom).color});
         searchAnim.getElementsByTagName("i")[0].style.color = window.getComputedStyle(searchAnimDom.getElementsByTagName("i")[0]).color;
-        fade(ele('.OutOfsearchBox'), 'out', 500);
+        fade(ele('.OutOfsearchBox', null, 'array'), 'out', 500);
         window.setTimeout(hideBar, 500);
         document.getElementById("SearchBar").classList.remove("mdui-color-theme");
         setTimeout(() => {
@@ -315,8 +315,8 @@ function closeSearch(){
         }, 500);
     }else{
         ele("#SearchBar > *", (e) => Velocity(e, {opacity: '0'}, 200));
-        fade(ele('.fullScreen'), 'out', 300);
-        fade(ele('.OutOfsearchBox'), 'out', 300);
+        fade(ele('.fullScreen', null, 'array'), 'out', 300);
+        fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
         document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
         window.setTimeout(hideBar, 300);
         document.getElementById("SearchBar").classList.remove("mdui-color-theme");

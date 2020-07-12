@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import fade from './fade.js';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
@@ -47,7 +48,7 @@ function scrollDiff(){
 };
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function(){
-    $("body,html").animate({scrollTop:0},500);
+    Velocity(document.getElementsByTagName("html")[0], {scrollTop: "0px"}, 500);
 }, false);
 
 //Night Styles
@@ -73,11 +74,15 @@ if(nsButton){
 document.getElementsByClassName("seai")[0].addEventListener("click", function(){
     let searchBarDOM = document.getElementById("SearchBar");
     searchBarDOM.style.display = "block";
-    $(".OutOfsearchBox").fadeIn(300);
-    searchBarDOM.classList.add("mdui-color-theme");
-    $(".fullScreen").fadeIn(300);
-    $("#SearchBar > *").animate({opacity:'1'},200);
-    document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
+    fade(document.getElementsByClassName('OutOfsearchBox'), 'in', 300);
+    fade(document.getElementsByClassName('fullScreen'), 'in', 300);
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
+        Velocity(e, {opacity: '1'}, 200);
+    });
+    setTimeout(() => {
+        document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
+        searchBarDOM.classList.add("mdui-color-theme");
+    }, 0);
     document.getElementsByClassName("seainput")[0].focus();
     document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
     if(ifOffline){
@@ -92,11 +97,13 @@ for(let ele of document.getElementsByClassName("sea-close")){
 }
 function closeSearch(){
     document.getElementsByClassName("seainput")[0].blur();
-    $("#SearchBar > *").animate({opacity:'0'},200);
-    $(".fullScreen").fadeOut(300);
-    $(".OutOfsearchBox").fadeOut(300);
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
+        Velocity(e, {opacity: '0'}, 200);
+    });
+    fade(document.getElementsByClassName('fullScreen'), 'out', 300);
+    fade(document.getElementsByClassName('OutOfsearchBox'), 'out', 300);
     document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
-    window.setTimeout("hideBar()",300);
+    window.setTimeout(hideBar, 300);
     document.getElementById("SearchBar").classList.remove("mdui-color-theme");
     setTimeout(() => {
         let bodyDOM = document.getElementsByTagName("body")[0];
@@ -114,12 +121,12 @@ function hideBar(){
  //tap tp top
  document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function(){
     if(mdx_tapToTop==1){
-        $("body,html").animate({scrollTop:0},500);
+        Velocity(document.getElementsByTagName("html")[0], {scrollTop: "0px"}, 500);
     }
 })
 
 //init menu
-$(function(){
+window.addEventListener('DOMContentLoaded', () => {
     scrollDiff();
     var mdxHaveChild = 0;
     var mdxIsC = 0;
@@ -127,7 +134,7 @@ $(function(){
         if(ele.classList.contains('menu-item-has-children')){
             ele.classList.add('mdui-collapse-item');
             ele.classList.remove('mdui-list-item');
-            ele.innerHTML = '<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="'+ele.getElementsByTagName("a")[0].getAttribute('href')+'">'+ele.getElementsByTagName("a")[0].innerHTML+'</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">'+ele.getElementsByTagName("ul")[0].innerHTML+'</ul>';
+            ele.innerHTML = `<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="${ele.getElementsByTagName("a")[0].getAttribute('href')}">${ele.getElementsByTagName("a")[0].innerHTML}</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">${ele.getElementsByTagName("ul")[0].innerHTML}</ul>`;
             mdxHaveChild = 1;
             for(let ul of ele.getElementsByTagName("ul")){
                 for(let li of ul.getElementsByTagName("li")){
