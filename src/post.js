@@ -115,7 +115,6 @@ window.onload=function(){
                     var scro = DOMlist[parseInt(newpro[1])].offsetHeight*parseFloat(newpro[2])+DOMlist[parseInt(newpro[1])].offsetTop;
                     if(scro>200){
                         Velocity(ele("html"), {scrollTop: scro+"px"}, 700);
-                        // $("body,html").animate({scrollTop:scro},700);
                         snbar();
                     }
                 }else{
@@ -139,7 +138,6 @@ function backupPro(query){
     var scro = postHight3*oldpro;
     if(scro>200){
         Velocity(ele("html"), {scrollTop: scro+"px"}, 700);
-    //   $("body,html").animate({scrollTop:scro},700);
         snbar();
     }
 }
@@ -851,7 +849,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     var cfcc = document.getElementsByClassName('comment-form-cookies-consent');
     if(cfcc.length > 0){
-        $('#wp-comment-cookies-consent').after('<i class="mdui-checkbox-icon"></i>');
+        const checkboxIcon = document.createElement('i');
+        checkboxIcon.classList.add('mdui-checkbox-icon');
+        ele('#wp-comment-cookies-consent').insertAdjacentElement('afterend', checkboxIcon);
         cfcc[0].innerHTML = '<label class="mdui-checkbox">' + cfcc[0].innerHTML + '</label>';
     }
 
