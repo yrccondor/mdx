@@ -6,6 +6,7 @@
          local('MaterialIconsOutlined-Regular'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
+    font-display: block;
 }
 @font-face {
     font-family: "Montserrat";
@@ -15,6 +16,7 @@
     src: url("../fonts/Montserrat-Light.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-Light.woff2") format("woff2"),
          url("../fonts/Montserrat-Light.woff") format("woff");
+    font-display: swap;
 }
 @font-face {
     font-family: "Montserrat";
@@ -24,6 +26,7 @@
     src: url("../fonts/Montserrat-Regular.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-Regular.woff2") format("woff2"),
          url("../fonts/Montserrat-Regular.woff") format("woff");
+    font-display: swap;
 }
 @font-face {
     font-family: "Montserrat";
@@ -33,6 +36,7 @@
     src: url("../fonts/Montserrat-SemiBold.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
+    font-display: swap;
 }
 .mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error {
     border-radius: 8px!important;
