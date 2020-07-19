@@ -355,7 +355,6 @@ window.addEventListener('DOMContentLoaded', () => {
     //ImgBox
     if(mdx_imgBox==1){
         ele('article a > img', (e) => {
-            console.log(233)
             var imgUrlEach = e.getAttribute('src');
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
@@ -369,7 +368,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
         ele('article a > figure > img.lazyload, article a > figure > img.lazyloaded, article a > figure > img.lazyloading', (e) => {
-            console.log(344)
             var imgUrlEach = e.getAttribute('src');
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
@@ -618,7 +616,7 @@ ele("#oth-div").addEventListener("click", () => {
     }else{
         let min = -Infinity;
         var mini = 0;
-        var list = document.querySelectorAll(".PostMain article.mdui-typo > *")
+        var list = document.querySelectorAll(".PostMain article.post[id^='post-'] > *");
         for(let i in list){
             let delta = list[i].offsetTop - howFar2;
             if(delta <= 0){
@@ -629,8 +627,8 @@ ele("#oth-div").addEventListener("click", () => {
             }
         }
         if(min > -Infinity){
-            var ele = list[mini];
-            var percent = ((0-min)/ele.offsetHeight).toFixed(3);
+            var elem = list[mini];
+            var percent = ((0-min)/elem.offsetHeight).toFixed(3);
             nowPro2 = "v2:"+mini+":"+percent+":"+nowPro2;
         }else{
             nowPro2 = 0;
