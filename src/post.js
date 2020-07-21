@@ -658,7 +658,7 @@ function share_wechat(e){
         });
     }else{
         mdui.dialog({
-            content: '<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n_3+'</div>',
+            content: `<div id="mdx-share-wechat-qrcode"></div><div class="share-wechat-tip"><i class="mdui-icon material-icons">&#xe80d;</i> ${mdx_si_i18n_3}</div>`,
             buttons: [{
                 text: mdx_si_i18n_2,
             }],
@@ -787,63 +787,84 @@ function mdx_show_img(e){
 
 // 评论分页
 if(!mdx_comment_ajax){
-$('#comments').on('click', '#comments-navi > a', function(e){
-    e.preventDefault();
-    ele('#comments-navi', (e) => {
-        e.parentNode.removeChild(e);
-    });
-    ele('ul.mdui-list.ajax-comments', (e) => {
-        e.parentNode.removeChild(e);
-    });
-    fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
-    Velocity(ele("html"), {scrollTop: $('#reply-title').offset().top - 65 + "px"}, 500);
-    betterFetch($(this).attr('href')).then((out) => {
-        let result = $(out).find('ul.mdui-list.ajax-comments');
-        let nextlink = $(out).find('#comments-navi');
-        $('#comments').prepend(result);
-        $('ul.mdui-list.ajax-comments').after(nextlink);
-        ele("div#comments ul li p", (e) => {
-            e.classList.add('mdui-typo');
+    $('#comments').on('click', '#comments-navi > a', function(e){
+        e.preventDefault();
+        ele('#comments-navi', (e) => {
+            e.parentNode.removeChild(e);
         });
-        ele('.comment-reply-login, .comment-reply-link', (e) => {
-            e.classList.add("mdui-btn");
-            e.style.opacity = 0;
-        });
-        window.addComment.init();
-        ele('.mdx-comments-loading').style.display = 'none';
-    })
-});
-}else{
-$('#comments').on('click', '#comments-navi > button', function(e){
-    e.preventDefault();
-    ele('#comments-navi', (e) => {
-        e.parentNode.removeChild(e);
-    });
-    fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
-    betterFetch($(this).attr('data-comment-url')).then((out) => {
-        let result = $(out).find('ul.mdui-list.ajax-comments').html();
-        let nextUrl = $(out).find('#comments-navi>a.prev').attr('href');
-        let nextlink = '';
-        if(nextUrl){
-            nextlink = $(out).find('#comments-navi').html(`<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="${$(out).find('#comments-navi>a.prev').attr('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`);
-        }else{
-            nextlink = $(out).find('#comments-navi').html(`<button class="mdui-btn" disabled>${nomorecomment}</button>`);
-        }
-        $('ul.mdui-list.ajax-comments').after(nextlink);
         ele('ul.mdui-list.ajax-comments', (e) => {
-            e.innerHTML += result;
+            e.parentNode.removeChild(e);
+        });
+        fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
+        Velocity(ele("html"), {scrollTop: $('#reply-title').offset().top - 65 + "px"}, 500);
+        betterFetch($(this).attr('href')).then((out) => {
+            let htmlParser = new DOMParser();
+            let htmlParsed = htmlParser.parseFromString(out, "text/html");
+            let result = htmlParsed.querySelector('ul.mdui-list.ajax-comments');
+            let nextlink = htmlParsed.getElementById('comments-navi');
+            $('#comments').prepend(result);
+            $('ul.mdui-list.ajax-comments').after(nextlink);
+            ele("div#comments ul li p", (e) => {
+                e.classList.add('mdui-typo');
+            });
+            ele('.comment-reply-login, .comment-reply-link', (e) => {
+                e.classList.add("mdui-btn");
+                e.style.opacity = 0;
+            });
+            window.addComment.init();
+            ele('.mdx-comments-loading').style.display = 'none';
         })
-        ele("div#comments ul li p", (e) => {
-            e.classList.add('mdui-typo');
-        });
-        ele('.comment-reply-login, .comment-reply-link', (e) => {
-            e.classList.add("mdui-btn");
-            e.style.opacity = 0;
-        });
-        window.addComment.init();
-        ele('.mdx-comments-loading').style.display = 'none';
     });
-});
+}else{
+    ele('#comments').addEventListener('click', commentNavi, false);
+}
+function commentNavi(e){
+    if((e.target.tagName === 'BUTTON' || e.target.tagName === 'I') && e.target.closest('#comments-navi') !== null){
+        e.preventDefault();
+        ele('#comments-navi', (e) => {
+            e.parentNode.removeChild(e);
+        });
+        fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
+        let elem = e.target;
+        if(elem.tagName === "I"){
+            elem = elem.parentNode;
+        }
+        betterFetch(elem.getAttribute('data-comment-url')).then((out) => {
+            let htmlParser = new DOMParser();
+            let htmlParsed = htmlParser.parseFromString(out, "text/html");
+            let result = '';
+            let ajaxComments = htmlParsed.querySelector('ul.mdui-list.ajax-comments');
+            if(ajaxComments){
+                result = ajaxComments.innerHTML;
+            }
+            let nextUrl = false;
+            let prevA = htmlParsed.querySelector('#comments-navi>a.prev');
+            if(prevA){
+                nextUrl = prevA.getAttribute('href');
+            }
+            let nextlink = '';
+            if(nextUrl){
+                htmlParsed.getElementById('comments-navi').innerHTML = `<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="${htmlParsed.querySelector('#comments-navi>a.prev').getAttribute('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`;
+                nextlink = htmlParsed.getElementById('comments-navi');
+            }else{
+                htmlParsed.getElementById('comments-navi').innerHTML = `<button class="mdui-btn" disabled>${nomorecomment}</button>`;
+                nextlink = htmlParsed.getElementById('comments-navi');
+            }
+            ele('ul.mdui-list.ajax-comments').insertAdjacentElement('afterend', nextlink);
+            ele('ul.mdui-list.ajax-comments', (e) => {
+                e.innerHTML += result;
+            })
+            ele("div#comments ul li p", (e) => {
+                e.classList.add('mdui-typo');
+            });
+            ele('.comment-reply-login, .comment-reply-link', (e) => {
+                e.classList.add("mdui-btn");
+                e.style.opacity = 0;
+            });
+            window.addComment.init();
+            ele('.mdx-comments-loading').style.display = 'none';
+        });
+    }
 }
 
 //tap tp top
