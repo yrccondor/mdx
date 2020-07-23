@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import ele from './ele.js';
 import fade from './fade.js';
 import betterFetch from './betterFetch.js';
@@ -290,8 +289,8 @@ if(nsButton){
 
 var lazyloadImg = document.querySelectorAll("article > *:not(figure) figure:not(.wp-block-image) img, article > figure:not(.wp-block-image) > img");
 if(lazyloadImg.length){
-    for(let e of lazyloadImg){
-        e.addEventListener('lazyloaded', function(e){
+    for(let el of lazyloadImg){
+        el.addEventListener('lazyloaded', function(e){
             setTimeout(() => {
                 var prevDom;
                 if(e.target.previousSibling){
@@ -309,8 +308,8 @@ if(lazyloadImg.length){
 };
 var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image img");
 if(lazyloadImg2.length){
-    for(let e of lazyloadImg2){
-        e.addEventListener('lazyloaded', function(e){
+    for(let el of lazyloadImg2){
+        el.addEventListener('lazyloaded', function(e){
             var prevDom;
             if(e.target.previousSibling){
                 prevDom = e.target.previousSibling;
@@ -362,7 +361,11 @@ window.addEventListener('DOMContentLoaded', () => {
             var imgHrefa = e.parentNode.getAttribute('href').replace(/\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.getAttribute('href')+"-towebp"){
                 e.classList.add("mdx-img-in-post");
-                $(e).unwrap();
+                let wrapper = e.parentNode;
+                for(let el of wrapper.childNodes){
+                    wrapper.parentNode.insertBefore(el, wrapper);
+                }
+                wrapper.parentNode.removeChild(wrapper);
             }else{
                 e.parentNode.classList.add("mdx-img-in-post-with-link");
             }
@@ -375,14 +378,22 @@ window.addEventListener('DOMContentLoaded', () => {
             var imgHrefa = e.parentNode.parentNode.getAttribute('href').replace(/\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href')+"-towebp"){
                 e.classList.add("mdx-img-in-post");
-                $(e).parent("figure").unwrap();
+                let wrapper = e.parentNode.parentNode;
+                for(let el of wrapper.childNodes){
+                    wrapper.parentNode.insertBefore(el, wrapper);
+                }
+                wrapper.parentNode.removeChild(wrapper);
             }else{
                 let wrapper = document.createElement('a');
                 wrapper.classList.add('mdx-img-in-post-with-link');
                 wrapper.setAttribute('href', e.parentNode.parentNode.getAttribute('href'));
                 e.parentNode.appendChild(wrapper);
                 wrapper.appendChild(e);
-                $(e).parent("a").parent("figure").unwrap();
+                let raw_wrapper = e.parentNode.parentNode.parentNode;
+                for(let el of raw_wrapper.childNodes){
+                    raw_wrapper.parentNode.insertBefore(el, raw_wrapper);
+                }
+                raw_wrapper.parentNode.removeChild(wrapper);
             }
         });
         ele('img.mdx-img-in-post', (el) => {
@@ -394,9 +405,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 imgRaw = e.target;
                 imgRaw.style.opacity = 0;
-                mdui.JQ('div.mdui-drawer').before('<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+                ele('div.mdui-drawer', (e) => {
+                    e.insertAdjacentHTML('beforebegin', '<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+                })
                 mdui.updateSpinners();
-                mdui.JQ('.mdx-img-viewer').append(`<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">`);
+                ele('.mdx-img-viewer', (elem) => {
+                    elem.innerHTML += `<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">`;
+                })
                 ele('#img-box').style.display = "flex";
                 ele('#img-box').style.opacity = 1;
                 getImageWidth(imgUrl,function(w,h,img){
@@ -517,7 +532,9 @@ window.addEventListener('DOMContentLoaded', () => {
         e.classList.add('mdui-btn');
         e.style.opacity = 0;
     })
-    mdui.JQ('p.form-submit').prepend(`<a mdui-tooltip="{content: ${moreinput}, position: 'top'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>`);
+    ele('p.form-submit', (e) => {
+        e.innerHTML = `<a mdui-tooltip="{content: ${moreinput}, position: 'top'}" class="mdui-btn mdui-btn-icon mdui-ripple moreInComm"><i class="mdui-icon material-icons">&#xe313;</i></a>` + e.innerHTML;
+    })
     var ifOpenComm = 0;
     ele('a.moreInComm', (e) => {
         e.addEventListener('click', () => {
@@ -539,7 +556,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //密码优化
     var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
-    $('form.post-password-form p').eq(1).html('<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">'+mdx_i18n_password+'</label><input class="mdui-textfield-input" type="password" name="post_password" id="'+inputId+'"></div>');
+    const passwordForm = document.querySelectorAll('form.post-password-form p');
+    if(passwordForm.length > 0){
+        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>'`;
+    }
 
     if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
         var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -747,7 +767,12 @@ function convertCanvasToImage(canvas) {
     });
     setTimeout(() => {
         window.share_dialog.handleUpdate();
-        $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n+'</span>');
+        ele(".mdx-share-img-dialog .mdui-dialog-actions", (e) => {
+            let spanDom = document.createElement('span');
+            spanDom.classList.add('mdx-save-info');
+            spanDom.innerHTML = `<i class="mdui-icon material-icons">&#xe80d;</i> ${mdx_si_i18n}`
+            e.insertBefore(spanDom, e.firstChild);
+        });
     }, 5);
 }
 
@@ -764,7 +789,7 @@ function mdx_show_img(e){
         cssClass: 'mdx-share-img-dialog'
     });
     mdui.updateSpinners();
-    ele('#mdx-share-img').style.display = '';
+    ele('#mdx-share-img').style.display = 'block';
 
     if(!sessionStorage.getItem('si_'+url_hash)){
         html2canvas(document.getElementById("mdx-share-img"),{useCORS: true}).then(function(canvas){
@@ -780,14 +805,24 @@ function mdx_show_img(e){
         });
         setTimeout(() => {
             window.share_dialog.handleUpdate();
-            $(".mdx-share-img-dialog .mdui-dialog-actions").prepend('<span class="mdx-save-info"><i class="mdui-icon material-icons">&#xe80d;</i> '+mdx_si_i18n+'</span>');
+            ele(".mdx-share-img-dialog .mdui-dialog-actions", (e) => {
+                let spanDom = document.createElement('span');
+                spanDom.classList.add('mdx-save-info');
+                spanDom.innerHTML = `<i class="mdui-icon material-icons">&#xe80d;</i> ${mdx_si_i18n}`
+                e.insertBefore(spanDom, e.firstChild);
+            });
         }, 5);
     }
 }
 
 // 评论分页
 if(!mdx_comment_ajax){
-    $('#comments').on('click', '#comments-navi > a', function(e){
+    ele('#comments').addEventListener('click', commentNaviLink, false);
+}else{
+    ele('#comments').addEventListener('click', commentNavi, false);
+}
+function commentNaviLink(e){
+    if(e.target.tagName === 'A' && e.target.closest('#comments-navi') !== null){
         e.preventDefault();
         ele('#comments-navi', (e) => {
             e.parentNode.removeChild(e);
@@ -796,14 +831,14 @@ if(!mdx_comment_ajax){
             e.parentNode.removeChild(e);
         });
         fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
-        Velocity(ele("html"), {scrollTop: $('#reply-title').offset().top - 65 + "px"}, 500);
-        betterFetch($(this).attr('href')).then((out) => {
+        Velocity(ele("html"), {scrollTop: ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65 + "px"}, 500);
+        betterFetch(e.target.getAttribute('href')).then((out) => {
             let htmlParser = new DOMParser();
             let htmlParsed = htmlParser.parseFromString(out, "text/html");
             let result = htmlParsed.querySelector('ul.mdui-list.ajax-comments');
             let nextlink = htmlParsed.getElementById('comments-navi');
-            $('#comments').prepend(result);
-            $('ul.mdui-list.ajax-comments').after(nextlink);
+            ele('#comments').insertBefore(result, ele('#comments').firstChild);
+            ele('ul.mdui-list.ajax-comments').insertAdjacentElement('afterend', nextlink);
             ele("div#comments ul li p", (e) => {
                 e.classList.add('mdui-typo');
             });
@@ -814,9 +849,7 @@ if(!mdx_comment_ajax){
             window.addComment.init();
             ele('.mdx-comments-loading').style.display = 'none';
         })
-    });
-}else{
-    ele('#comments').addEventListener('click', commentNavi, false);
+    }
 }
 function commentNavi(e){
     if((e.target.tagName === 'BUTTON' || e.target.tagName === 'I') && e.target.closest('#comments-navi') !== null){

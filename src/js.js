@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import ele from './ele.js';
 import fade from './fade.js';
 import '../style.less';

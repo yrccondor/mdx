@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import fade from './fade.js';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
