@@ -57,6 +57,7 @@ $arr = array(
 'mdx_icp_num'=>!empty(get_option('zh_cn_l10n_icp_num')) ? get_option('zh_cn_l10n_icp_num') : '',
 'mdx_use_cdn'=>'none',
 'mdx_custom_cdn_root'=>'',
+'mdx_jquery'=>'false',
 
 'mdx_styles'=>'indigo',
 'mdx_styles_hex'=>'#3f51b5',

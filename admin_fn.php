@@ -70,6 +70,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_icp_num', $_POST['mdx_icp_num']);
     mdx_update_option("mdx_use_cdn", $_POST['mdx_use_cdn']);
     mdx_update_option("mdx_custom_cdn_root", $_POST['mdx_custom_cdn_root']);
+    mdx_update_option("mdx_jquery", $_POST['mdx_jquery']);
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>
@@ -625,6 +626,17 @@ wp_nonce_field('mdx_options_update');
     <th scope="row"><label for="mdx_icp_num"><?php _e('ICP 备案号', 'mdx');?></label></th>
     <td><input name="mdx_icp_num" type="text" id="mdx_icp_num" value="<?php echo esc_attr(mdx_get_option('mdx_icp_num'))?>" class="regular-text">
     <p class="description"><?php _e('在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有用。', 'mdx');?></p></td>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('在前端载入 jQuery', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_jquery=mdx_get_option('mdx_jquery');?>
+        <fieldset>
+        <label><input type="radio" name="mdx_jquery" value="true" <?php if($mdx_v_jquery=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+        <label><input type="radio" name="mdx_jquery" value="false" <?php if($mdx_v_jquery=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+        <p class="description"><?php _e('自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/">主题文档</a>', 'mdx');?></p>
+        </fieldset>
+    </td>
     </tr>
 </tbody>
 </table><?php submit_button(); ?></form></div>

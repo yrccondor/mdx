@@ -156,11 +156,13 @@ if(mdx_get_option("mdx_login_md") === "true"){
 
 function mdx_js(){
     global $files_root;
-    wp_register_script('mdx_jquery', $files_root.'/js/jquery.min.js', false, '', true);
+    if(mdx_get_option("mdx_jquery") === "true"){
+        wp_register_script('mdx_jquery', $files_root.'/js/jquery.min.js', false, '', true);
+        wp_enqueue_script('mdx_jquery');
+    }
     wp_register_script('mdx_velocity', $files_root.'/js/velocity.min.js', false, '', true);
     wp_register_script('mdx_mdui_js', $files_root.'/mdui/js/mdui.min.js', false, '', true);
     wp_register_script('mdx_sl_js', $files_root.'/js/lazyload.js', false, '', true);
-    wp_enqueue_script('mdx_jquery');
     wp_enqueue_script('mdx_velocity');
     wp_enqueue_script('mdx_mdui_js');
     if(mdx_get_option("mdx_real_search")=="true"){
@@ -204,10 +206,8 @@ add_action('wp_enqueue_scripts', 'mdx_js');
 function mdx_js_login(){
     global $files_root;
     if(mdx_get_option("mdx_login_md")=="true"){
-        wp_register_script('mdx_jquery_login', $files_root.'/js/jquery.min.js', false, '', true);
         wp_register_script('mdx_mdui_js_login', $files_root.'/mdui/js/mdui.min.js', false, '', true);
         wp_register_script('mdx_js_login', $files_root.'/js/login.js', false, '', true);
-        wp_enqueue_script('mdx_jquery_login');
         wp_enqueue_script('mdx_mdui_js_login');
         wp_enqueue_script('mdx_js_login');
     }
