@@ -256,16 +256,34 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
         setTimeout(() => {
             document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
         }, 500);
-        mdui.JQ("#mdx-search-anim").css({'width': this.offsetWidth - 12 + 'px', 'top': this.getBoundingClientRect().top + 'px', 'left': this.getBoundingClientRect().left + 'px'});
+        ele("#mdx-search-anim", (e) => {
+            e.style.width = this.offsetWidth - 12 + 'px';
+            e.style.top = this.getBoundingClientRect().top + 'px';
+            e.style.left = this.getBoundingClientRect().left + 'px';
+        })
         document.getElementById("mdx-search-anim").classList.add('mdx-search-anim-show');
         this.style.visibility = 'hidden';
         let searchBarDOM = document.getElementById("SearchBar");
         searchBarDOM.style.display = "block";
         var searchDom = document.getElementsByClassName('outOfSearch');
         if(document.getElementsByClassName("mdx-theme-white").length){
-            mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(152, 152, 152, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+            ele("#mdx-search-anim", (e) => {
+                e.style.width = document.getElementById('searchform').offsetWidth*.75 - 12 + 'px';
+                e.style.height = searchDom[0].offsetHeight - 10 + 'px';
+                e.style.top = searchDom[0].getBoundingClientRect().top + 'px';
+                e.style.left = '7px';
+                e.style.backgroundColor = 'rgba(152, 152, 152, 0.3)';
+                e.style.color = 'rgba(255, 255, 255, .3)';
+            })
         }else{
-            mdui.JQ("#mdx-search-anim").css({'width': document.getElementById('searchform').offsetWidth*.75 - 12 + 'px', 'height': searchDom[0].offsetHeight - 10 + 'px', 'top': searchDom[0].getBoundingClientRect().top + 'px', 'left': '7px', 'backgroundColor': 'rgba(255, 255, 255, 0.3)', 'color': 'rgba(255, 255, 255, .3)'});
+            ele("#mdx-search-anim", (e) => {
+                e.style.width = document.getElementById('searchform').offsetWidth*.75 - 12 + 'px';
+                e.style.height = searchDom[0].offsetHeight - 10 + 'px';
+                e.style.top = searchDom[0].getBoundingClientRect().top + 'px';
+                e.style.left = '7px';
+                e.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                e.style.color = 'rgba(255, 255, 255, .3)';
+            })
         }
         setTimeout(() => {
             document.getElementById('searchform').classList.add("mdx-searchform-show");
@@ -299,7 +317,14 @@ function closeSearch(){
         document.querySelector('a.mdui-btn.mdui-btn-icon.sea-close').removeAttribute('style');
         document.getElementById("searchform").classList.remove("mdx-searchform-show");
         searchAnim.classList.add('mdx-search-anim-show');
-        mdui.JQ("#mdx-search-anim").css({'width': searchAnimDom.offsetWidth - 22 + 'px', 'height': '50px', 'top': searchAnimDom.getBoundingClientRect().top + 'px', 'left': searchAnimDom.getBoundingClientRect().left + 'px', 'backgroundColor': window.getComputedStyle(searchAnimDom).backgroundColor, 'color': window.getComputedStyle(searchAnimDom).color});
+        ele("#mdx-search-anim", (e) => {
+            e.style.width = searchAnimDom.offsetWidth - 22 + 'px';
+            e.style.height = '50px';
+            e.style.top = searchAnimDom.getBoundingClientRect().top + 'px';
+            e.style.left = searchAnimDom.getBoundingClientRect().left + 'px';
+            e.style.backgroundColor = window.getComputedStyle(searchAnimDom).backgroundColor;
+            e.style.color = window.getComputedStyle(searchAnimDom).color;
+        })
         searchAnim.getElementsByTagName("i")[0].style.color = window.getComputedStyle(searchAnimDom.getElementsByTagName("i")[0]).color;
         fade(ele('.OutOfsearchBox', null, 'array'), 'out', 500);
         window.setTimeout(hideBar, 500);

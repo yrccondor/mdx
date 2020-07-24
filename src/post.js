@@ -107,7 +107,7 @@ window.addEventListener("load", () => {
     document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
         item.setAttribute('mdui-panel', '');
     });
-    mdui.JQ(".wp-block-mdx-fold").mutation();
+    mdui.$(".wp-block-mdx-fold").mutation();
     if(ifscr == 1){
         var query = GetQueryString("_pro");
         if(query){
@@ -183,7 +183,7 @@ function init_wp_block() {
                 wrapper.appendChild(e);
             }
         });
-        mdui.JQ(".mdx-dny-table").mutation();
+        mdui.$(".mdx-dny-table").mutation();
     }
 }
 
@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             })
         })
-        mdui.JQ('body').on('click','.mdx-img-viewer',function(){
+        mdui.$('body').on('click','.mdx-img-viewer',function(){
             ele('#img-box').style.opacity = '0';
             ele('#img-box').style.pointerEvents = 'none';
             ele('.mdx-img-viewer img', (e) => {
