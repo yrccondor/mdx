@@ -632,7 +632,7 @@ ele("#oth-div").addEventListener("click", () => {
     if(document.getElementsByClassName("ArtMain").length > 0){
         var postHight2 = ele(".ArtMain").getBoundingClientRect().height + ele(".ArtMain").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     }else{
-        var postHight2 = ele("article.mdui-typo").getBoundingClientRect().height + ele("article.mdui-typo").offset().getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
+        var postHight2 = ele("article.mdui-typo").getBoundingClientRect().height + ele("article.mdui-typo").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     }
     var nowPro2 = (howFar2/postHight2).toFixed(3);
     if(nowPro2 > 1){
