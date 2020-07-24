@@ -362,7 +362,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
             }
-            var imgHrefa = e.parentNode.getAttribute('href').replace(/\.[^.]+$/, '-');
+            var imgHrefa = e.parentNode.getAttribute('href').replace(/(-scaled)*\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.getAttribute('href')+"-towebp"){
                 e.classList.add("mdx-img-in-post");
                 let wrapper = e.parentNode;
@@ -379,7 +379,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if(imgUrlEach=='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' || imgUrlEach=='data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw=='){
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
             }
-            var imgHrefa = e.parentNode.parentNode.getAttribute('href').replace(/\.[^.]+$/, '-');
+            var imgHrefa = e.parentNode.parentNode.getAttribute('href').replace(/(-scaled)*\.[^.]+$/, '-');
             if(imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href')+"-towebp"){
                 e.classList.add("mdx-img-in-post");
                 let wrapper = e.parentNode.parentNode;
