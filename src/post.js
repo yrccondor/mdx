@@ -191,7 +191,7 @@ function mdx_shortcode(){
     if(document.getElementsByClassName("mdx-github-cot").length>0){
         for(var i=0;i<document.getElementsByClassName("mdx-github-cot").length;i++){
             document.getElementsByClassName("mdx-github-cot")[i].id = "mdx-github-"+document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithuba+"/"+document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithubp;
-            var apiurl = "https://api.github.com/repos/"+document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithuba+"/"+document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithubp;
+            var apiurl = `${document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithubg}repos/${document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithuba}/${document.getElementsByClassName("mdx-github-cot")[i].dataset.mdxgithubp}`;
             betterFetch(apiurl).then((data) => {
                 let githubHomepage = "";
                 if(data.homepage !== "" && data.homepage !== null){
