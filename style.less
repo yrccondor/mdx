@@ -4229,6 +4229,20 @@ body.mdx-list-page.mdui-theme-layout-dark {
     margin: 0!important;
     width: 100%;
 }
+.mdui-typo a.mdx-article-long-link {
+    display: inline!important;
+    text-decoration: underline!important;
+    text-decoration-color: transparent!important;
+}
+.mdui-typo a.mdx-article-long-link:before {
+    display: none;
+}
+.mdui-typo a.mdx-article-long-link:hover {
+    text-decoration-color: unset!important;
+}
+.mdui-typo a.mdx-article-long-link:hover:before {
+    display: none;
+}
 @media screen and (orientation:landscape) and (min-width: 750px) {
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
