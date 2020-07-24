@@ -109,15 +109,16 @@
       ?>
     <script>
       //Show Read Pro'
-      $('#indic').radialIndicator({
-        displayNumber: false,
-        radius: 27,
-        barColor: '#ffffff',
-        roundCorner: false,
-        barWidth: 3,
-        barBgColor: '<?php echo $mdx_style_act_hex;?>',
-      });
-      var ind = $('#indic').data('radialIndicator');
+      if(document.getElementById('indic')){
+        var ind = radialIndicator("#indic", {
+            displayNumber: false,
+            radius: 27,
+            barColor: '#ffffff',
+            roundCorner: false,
+            barWidth: 3,
+            barBgColor: '<?php echo $mdx_style_act_hex;?>',
+        });
+      }
       </script>
       <?php }if(is_single() || (is_page())){?><script>
       function snbar(){
@@ -126,7 +127,7 @@
           buttonText: '<?php _e("从头阅读","mdx");?>',
           timeout: 10000,
           onButtonClick: function(){
-              $("body,html").animate({scrollTop:0},700);
+            Velocity(ele("html"), {scrollTop: "0px"}, 700);
           },
         });
       }
@@ -149,12 +150,11 @@
 <?php }?>
 <?php if(function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj')=="true") && (is_single() || is_page())){?>
     <script>
-     $('.mdx-emj-cli').click(function(){
-      $('.mdx-emj').slideToggle(200);
-     })
-</script>
-<?php }?>
-<?php
+        document.getElementsByClassName('mdx-emj-cli')[0].addEventListener('click', function(){
+            document.getElementsByClassName('mdx-emj')[0].classList.toggle('mdx-emj-open');
+        })
+    </script>
+<?php }
 global $files_root;
 if(is_home()){$mdx_js_name='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name='ac';}elseif(is_single()||$pageType=='page-postlike.php'){$mdx_js_name='post';}elseif(is_page()||$pageType!='page-postlike.php'){$mdx_js_name='page';}elseif(is_page()&&$pageType=='page-postlike.php'){$mdx_js_name='post';}else{$mdx_js_name='js';}?>
 <script type='text/javascript' src='<?php echo $files_root;?>/js/<?php echo $mdx_js_name?>.js?ver=<?php echo get_option("mdx_version_commit");?>'></script><?php echo htmlspecialchars_decode(mdx_get_option('mdx_footer_js'));?></body>

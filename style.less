@@ -1146,6 +1146,9 @@ div#comments ul li {
     border-radius: 5px;
     background-color: #ededed;
 }
+#respond p.logged-in-as + div + i.mdx-emj-cli {
+    transform: translateY(31px);
+}
 .mdx-hot-posts .mdx-hot-posts-lazyload {
     position: absolute;
     top: 0;
@@ -1326,8 +1329,8 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     border-radius: 3px;
     color: rgba(0, 0, 0, .54);
     cursor: pointer;
-    -webkit-transition: all .2s;
     transition: all .2s;
+    user-select: none;
 }
 .mdui-theme-layout-dark .mdx-emj-cli {
     color: hsla(0, 0%, 100%, .54);
@@ -1336,11 +1339,27 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     background-color: rgba(0, 0, 0, .1);
 }
 .mdx-emj {
-    display: none;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 0 10px;
     border-radius: 5px;
+    max-height: 0;
+    user-select: none;
+    transition: all .2s;
+}
+.mdx-emj.mdx-emj-open {
+    max-height: 49px;
+    padding: 10px;
+}
+@media(max-width: 720px) {
+    .mdx-emj.mdx-emj-open {
+        max-height: 75px;
+    }
+}
+@media(max-width: 450px) {
+    .mdx-emj.mdx-emj-open {
+        max-height: 150px;
+    }
 }
 .ArtMain0 #respond, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
     display: block!important;

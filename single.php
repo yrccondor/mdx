@@ -272,7 +272,6 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页', 'mdx');?></a>
         <div>
     </div>
-    <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
     </script>
 </body>
 </html>
@@ -293,7 +292,6 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页', 'mdx');?></a>
         <div>
     </div>
-    <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 </body>
 </html>
 <?php }elseif ($mdx_post_show=='3' && !is_user_logged_in()) {?>
@@ -313,7 +311,6 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
             <a href="javascript:history.go(-1);" class="mdui-btn mdui-color-theme-accent mdui-ripple"><?php _e('返回上一页', 'mdx');?></a>
         <div>
     </div>
-    <script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 </body>
 </html>
 <?php }?>

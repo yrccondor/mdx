@@ -1,38 +1,23 @@
-jQuery(document).ready(function(jQuery) {
-    var __cancel = jQuery('#cancel-comment-reply-link'),
-        __cancel_text = __cancel.text(),
-        __list = 'ajax-comments';//your comment wrapprer
-    jQuery(document).on("submit", "#commentform", function() {
-        $('#submit').attr('disabled','disabled');
-        jQuery.ajax({
-            url: ajaxcomment.ajax_url,
-            timeout : 15000,
-            data: jQuery(this).serialize() + "&action=ajax_comment",
-            type: jQuery(this).attr('method'),
-            error: function(request) {
-                var t = faAjax;
-                $('#submit').removeAttr('disabled');
-                if(request.responseText){
-                    mdui.snackbar({
-                         message: request.responseText,
-                          timeout: 5000,
-                        position: 'top',
-                    });
-                }else{
-                    mdui.snackbar({
-                        message: ajaxcomment.i18n_2,
-                        timeout: 5000,
-                        position: 'top',
-                   });
+window.addEventListener('DOMContentLoaded', () => {
+    var __list = 'ajax-comments';
+    function getNext(dom){
+        return dom.nextElementSibling;
+    }
+    document.getElementById('commentform').addEventListener('submit', function(e){
+        e.preventDefault();
+        document.getElementById('submit').setAttribute('disabled','disabled');
+        var xmlHttpReq = new XMLHttpRequest();
+        xmlHttpReq.open("POST", ajaxcomment.ajax_url, true);
+        xmlHttpReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlHttpReq.send(new URLSearchParams(Array.from(new FormData(document.getElementById('commentform')))).toString() + "&action=ajax_comment");
+        xmlHttpReq.onreadystatechange = function(){
+            if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){
+                for(var el of document.getElementsByTagName('textarea')){
+                    el.value = ''
                 }
-            },
-            success: function(data) {
-                jQuery('textarea').each(function() {
-                    this.value = ''
-                });
-                $('#submit').removeAttr('disabled');
+                document.getElementById('submit').removeAttribute('disabled');
                 mdui.snackbar({
-                     message: ajaxcomment.i18n_1,
+                    message: ajaxcomment.i18n_1,
                     timeout: 5000,
                     position: 'top',
                 });
@@ -42,20 +27,21 @@ jQuery(document).ready(function(jQuery) {
                     respond = t.I('respond'),
                     parent = t.I('comment_parent').value;
                 if (parent != '0') {
-                    jQuery('#respond').parent('li.mdui-list-item').after('<li><li class="mdui-divider-inset mdui-m-y-0"></li><ul class="children">' + data + '</ul></li>');
-                    jQuery('ul.children').next('li').remove();
-                } else if (!jQuery('.' + __list ).length) {
-                    if (ajaxcomment.formpostion == 'bottom') {
-                        jQuery('#respond').before('<div class="comms mdui-center" id="comments"><ul class="mdui-list ' + __list + '">' + data + '</ul></div>');
-                    } else {
-                        jQuery('#respond').after('<div class="comms mdui-center" id="comments"><ul class="mdui-list ' + __list + '">' + data + '</ul></div>');
+                    document.getElementById('respond').closest('li.mdui-list-item').insertAdjacentHTML('afterend', `<li><li class="mdui-divider-inset mdui-m-y-0"></li><ul class="children">${xmlHttpReq.responseText}</ul></li>`);
+                    for(var li of document.querySelectorAll('ul.children+ li.mdui-divider-inset.mdui-m-y-0')){
+                        li.parentNode.removeChild(li);
                     }
-
+                } else if (document.getElementsByClassName(__list ).length < 1) {
+                    if (ajaxcomment.formpostion == 'bottom') {
+                        document.getElementById('respond').insertAdjacentHTML('beforebegin', `<div class="comms mdui-center" id="comments"><ul class="mdui-list ${__list}">${xmlHttpReq.responseText}</ul></div>`);
+                    } else {
+                        document.getElementById('respond').insertAdjacentHTML('afterend', `<div class="comms mdui-center" id="comments"><ul class="mdui-list ${__list}">${xmlHttpReq.responseText}</ul></div>`);
+                    }
                 } else {
                     if (ajaxcomment.order == 'asc') {
-                        jQuery('.' + __list ).append(data);
+                        document.getElementsByClassName(__list)[0].insertAdjacentHTML('beforeend', xmlHttpReq.responseText);
                     } else {
-                        jQuery('.' + __list ).prepend(data);
+                        document.getElementsByClassName(__list)[0].insertAdjacentHTML('afterbegin', xmlHttpReq.responseText);
                     }
                 }
                 cancel.style.display = 'none';
@@ -65,8 +51,24 @@ jQuery(document).ready(function(jQuery) {
                     temp.parentNode.insertBefore(respond, temp);
                     temp.parentNode.removeChild(temp)
                 }
+            }else if(xmlHttpReq.readyState === 4){
+                var t = faAjax;
+                document.getElementById('submit').removeAttribute('disabled');
+                if(xmlHttpReq.responseText){
+                    mdui.snackbar({
+                        message: xmlHttpReq.responseText,
+                        timeout: 5000,
+                        position: 'top',
+                    });
+                }else{
+                    mdui.snackbar({
+                        message: ajaxcomment.i18n_2,
+                        timeout: 5000,
+                        position: 'top',
+                   });
+                }
             }
-        });
+        }
         return false;
     });
     faAjax = {

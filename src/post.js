@@ -90,9 +90,13 @@ function scrollDiff(){
     }
     var nowPro = howFar/postHight*100;
     if(nowPro < 100){
-        ind.value(nowPro);
+        if(ind){
+            ind.value(nowPro);
+        }
     }else if(nowPro >=100){
-        ind.value(100);
+        if(ind){
+            ind.value(100);
+        }
     }
     ticking = false;
 };
