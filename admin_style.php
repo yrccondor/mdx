@@ -262,6 +262,7 @@ wp_nonce_field('mdx_options_update');
         <option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
         <option value="2" <?php if($mdx_v_index_show=='2'){?>selected="selected"<?php }?>><?php _e('两栏', 'mdx');?></option>
         <option value="3" <?php if($mdx_v_index_show=='3'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
+        <option value="4" <?php if($mdx_v_index_show=='4'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
     </select>
     <div class="mdx-svg-preview" id="mdx-index-preview"></div>
     </td>
