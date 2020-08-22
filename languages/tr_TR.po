@@ -58,8 +58,8 @@ msgid "MDx 已发布新版本 "
 msgstr "MDx için güncelleme mevcut."
 
 #: admin_fn.php:87 admin_style.php:118
-msgid "。<a href=\"/wp-admin/admin.php?page=mdx_about\">重新检查</a>"
-msgstr "<a href=\"/wp-admin/admin.php?page=mdx_about\">Kontrol Et</a>."
+msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
+msgstr "<a href=\"./admin.php?page=mdx_about\">Kontrol Et</a>."
 
 #: admin_fn.php:97
 msgid "WordPress 安装方式"
