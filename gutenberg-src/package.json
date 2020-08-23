@@ -21,7 +21,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-wordpress": "^0.1.0",
     "marked": "^0.7.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "react-autosize-textarea": "^7.0.0",
     "traverse": "^0.6.6",
     "turndown": "^5.0.3",
