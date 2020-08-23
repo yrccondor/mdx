@@ -85,7 +85,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 }?>
 <?php if(get_option('mdx_new_ver') !=get_option('mdx_version')){?>
 <div class="notice notice-info is-dismissible">
-<p><?php _e('MDx 已发布新版本 ', 'mdx');echo get_option('mdx_new_ver');_e('。<a href="/wp-admin/admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
+<p><?php _e('MDx 已发布新版本 ', 'mdx');echo get_option('mdx_new_ver');_e('。<a href="./admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
 </div>
 <?php }?>
 <nav class="nav-tab-wrapper wp-clearfix" aria-label="Secondary menu"> 
