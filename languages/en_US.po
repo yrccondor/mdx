@@ -589,10 +589,9 @@ msgstr "Advertising"
 
 #: admin_fn.php:507
 msgid ""
-"在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。"
-"<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 "
-"<code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动"
-"广告，请将其填写在“页头脚本”选项处。"
+"在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。<br>如果要在文章内插入广告，"
+"在这里填写广告代码后，你可以在文章中使用 <code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 "
+"Google AdSense 自动广告，请将其填写在“脚本 - 页头脚本”选项处。"
 msgstr ""
 "Enter code for advertisements here, and MDx will determine where ads should "
 "appear. Leave it blank to disable it. <br>If you want to insert ads in "
@@ -1064,9 +1063,8 @@ msgstr "Use Bing images"
 
 #: admin_style.php:375
 msgid ""
-"你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。点击弹出层中的“插入"
-"到文章”按钮以选定图片，弹出层中的其他选项不会生效。<strong>注意，“简单”首页样"
-"式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0"
+"你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，"
+"“简单”首页样式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0"
 "为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。"
 msgstr ""
 "You can update or select an image from your media library as your homepage "
@@ -1736,6 +1734,10 @@ msgstr "Post-specific primary color"
 msgid "跟随全局设置"
 msgstr "Global setting"
 
+#: admin_style.php:126
+msgid "全局"
+msgstr "Global settings"
+
 #: functions.php:720
 msgid "在这里为这篇文章设置单独的主题颜色。"
 msgstr "Set primary color specific for this post"
@@ -1967,6 +1969,160 @@ msgstr "Previous"
 #: includes/toggleposts.php:18, includes/toggleposts.php:33
 msgid "下一篇"
 msgstr "Next"
+
+#: admin_style.php:128
+msgid "文章页"
+msgstr "Posts"
+
+#: admin_style.php:129
+msgid "文章列表"
+msgstr "Post List"
+
+#: admin_style.php:130
+msgid "标题栏"
+msgstr "Blog Title"
+
+#: admin_style.php:389
+msgid "自动隐藏标题栏"
+msgstr "Automatically hide the title"
+
+#: admin_style.php:395
+msgid "开启后，页面向下滚动时标题栏会向上隐藏，向上滚动时会出现。"
+msgstr ""
+"The title bar will automatically hide when scrolling down, "
+"it will reappear on scrolling up."
+
+#: admin_style.php:400
+msgid "标题栏显示内容"
+msgstr "Title bar displays"
+
+#: admin_style.php:426
+msgid "点击标题栏返回顶部"
+msgstr "Return to top on click"
+
+#: admin_style.php:432
+msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。</strong>"
+msgstr "Click the title bar after opening to return to top."
+
+#: admin_style.php:502
+msgid "如使用自定义 API，你需要在括号内填写 API URL 并确保 API 返回 <code>{\"text\":\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/custom_api/\" target=\"_blank\">详细信息</a></code>"
+msgstr "If you are using a custom API, you'll need to fill-in the API URL in parentheses and make sure that the API returns the JSON format <code>{\"text\":\"quote\"}</code> <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/custom_api/\" target=\"_blank\">details</a></code>"
+
+#: admin_style.php:500
+msgid "使用一言 API（自定义）"
+msgstr "Use a quote API (custom)"
+
+#: admin_style.php:132
+msgid "页脚"
+msgstr "Footer"
+
+#: admin_style.php:133
+msgid "Touch Bar 图标"
+msgstr "Touch Bar Icon"
+
+#: admin_style.php:134
+msgid "杂项"
+msgstr "Misc"
+
+#: admin_fn.php:92
+msgid "文章"
+msgstr "Article"
+
+#: 
+msgid "首页推荐文章获取方式"
+msgstr "get recommended articles from"
+
+#: 
+msgid "某一分类"
+msgstr "A certain category"
+
+#: 
+msgid "置顶文章"
+msgstr "Top articles"
+
+#: 
+msgid "在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页推荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
+msgstr ""
+"Set the source of recommended articles. If you select \"Top articles\" when there is no top article, then the recommended "
+"article module will not be displayed and the article list will remain in the original order."
+
+#: 
+msgid "在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。"
+msgstr ""
+"Set the name of the category where the recommended articles should be fetched from. "
+"The latest articles will be displayed when the category does not exist."
+
+#: 
+msgid "评论"
+msgstr "Comments"
+
+#: 
+msgid "“发送评论”文本自定义"
+msgstr "<q>Send Comment</q> text customization"
+
+#: 
+msgid "在此自定义“发送评论”按钮上的文本。"
+msgstr "Customize the text on the <q>Send Comment</q> button."
+
+#: 
+msgid "无障碍"
+msgstr "Accessibility"
+
+#: 
+msgid "广告"
+msgstr "Advertising"
+
+#: 
+msgid "使用 CDN 加载前端主题文件"
+msgstr "Use CDN to load front-end theme files"
+
+#: 
+msgid "不使用"
+msgstr "Disable"
+
+#: 
+msgid "自定义"
+msgstr "Custom"
+
+#: 
+msgid "在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>"
+msgstr "In <strong>some cases</strong>, using a CDN can help the front-end page load faster. This option <strong>only affects</strong> the front-end files of the theme, and does not affect the files of WordPress and other plugins. <br><ul><li><code>Disable</code>: Load files from the same server as the page</li><li><code>jsDelivr</code>: Use the free CDN provided by jsDelivr </li><li><code>Custom</code>: Use a custom CDN</li></ul>"
+
+#: 
+msgid "自定义 CDN 根路径"
+msgstr "Custom CDN URL"
+
+#: 
+msgid "在这里输入自定义的 CDN 根路径 URL，不要在最后添加 <code>/</code>，如 <code>https://cdn.example.com/mdx_files</code>。<br>CDN 服务需添加适当的 <code>access-control-allow-origin</code> 头。"
+msgstr "Enter the customized CDN root path URL here, do not add <code>/</code> at the end, such as <code>https://cdn.example.com/mdx_files</code>. <br>CDN services need to add the appropriate <code>access-control-allow-origin</code> header."
+
+#: 
+msgid "脚本"
+msgstr "External Scripts"
+
+#: 
+msgid "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 <code>HTML</code> 格式。"
+msgstr "Edit the website announcement here. Announcements will be displayed at the top of the article list on the homepage, and will not be displayed if left blank. Support <code>HTML</code> format."
+
+#: 
+msgid "开启后，可使用 Preload 预加载技术加速页面加载。"
+msgstr "You can use Preload technology to speed up page loading by enabling this option."
+
+#: 
+msgid "在前端载入 jQuery"
+msgstr "Load jQuery on the front end"
+
+#: 
+msgid ""
+"自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，"
+"请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，"
+"请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/\">主题文档</a>"
+msgstr "" 
+"Since version 2.0.0, MDx no longer depends on jQuery and no longer loads jQuery scripts on the front end. "
+"If you encounter problems such as abnormal page display after upgrading MDx, please try to enable this option.<br>"
+"<strong>This is a temporary option and will be removed in a future version. If your front-end page has other resources "
+"that rely on jQuery, please make sure that they are not affected by MDx's removal of jQuery.</strong>"
+"For more information about upgrading from MDx 1.x to 2.x, please refer to the <a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/\">theme document</a>"
 
 #: template-parts/content-1-status.php:3,
 #: template-parts/content-2-status.php:3,
