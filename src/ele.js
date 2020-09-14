@@ -49,5 +49,5 @@ export default (selector, callback = null, returnType = 'single') => {
             return [elems];
         }
     }
-    
+
 }

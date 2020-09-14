@@ -8,7 +8,7 @@ var metaColor = document.querySelector("meta[name='theme-color']");
 var colorEnabled = false;
 var nowColor = '';
 var openFromTwoRows = false;
-if(metaColor){
+if (metaColor) {
     nowColor = document.querySelector("meta[name='mdx-main-color']").getAttribute('content');
     colorEnabled = true;
 }
@@ -18,16 +18,16 @@ var currentStyle = 'unset';
 var barHight;
 var totalHight;
 var ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
-if(document.getElementsByClassName("theFirstPage").length === 0){
+if (document.getElementsByClassName("theFirstPage").length === 0) {
     mdxStyle = 0;
-}else{
+} else {
     barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
-    totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
+    totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight * .37 - 20;
 }
 window.addEventListener('load', () => {
     scrollDiff();
     let indexBgDom = document.getElementsByClassName('theFirstPage');
-    if(indexBgDom.length > 0){
+    if (indexBgDom.length > 0) {
         setTimeout(() => {
             indexBgDom[0].classList.add("mdx-anmi-loaded");
             indexBgDom[0].style.setProperty('transition', 'opacity 0s', 'important');
@@ -35,57 +35,57 @@ window.addEventListener('load', () => {
     }
 })
 window.addEventListener('scroll', () => {
-    if(!ticking) {
+    if (!ticking) {
         requestAnimationFrame(scrollDiff);
         ticking = true;
     }
 })
 window.addEventListener('resize', () => {
-    if(mdxStyle){
+    if (mdxStyle) {
         barHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight - document.getElementsByClassName("titleBarGobal")[0].offsetHeight - 1;
-        totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight*.37 - 20;
+        totalHight = document.getElementsByClassName("theFirstPage")[0].offsetHeight * .37 - 20;
     }
     toggleHotPostsOverlay();
     displayHotPostsOverlay();
 })
-function scrollDiff(){
-    if(mdxStyle){
+function scrollDiff() {
+    if (mdxStyle) {
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
-        if(howFar > barHight & whetherChange == 0){
+        if (howFar > barHight & whetherChange == 0) {
             document.getElementsByClassName("mdui-toolbar-self")[0].classList.toggle("mdui-color-theme");
             document.getElementById("titleBar").classList.toggle("mdui-shadow-2");
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 1;
         }
-        if(howFar <= barHight & whetherChange == 1){
+        if (howFar <= barHight & whetherChange == 1) {
             document.getElementsByClassName("mdui-toolbar-self")[0].classList.toggle("mdui-color-theme");
             document.getElementById("titleBar").classList.toggle("mdui-shadow-2");
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 0;
         }
         let opacityHeight = 0;
-        if(currentStyle!=='single'){
-            if(howFar <= barHight){
-                opacityHeight = (barHight - howFar)/totalHight;
-                if(opacityHeight > 1){
+        if (currentStyle !== 'single') {
+            if (howFar <= barHight) {
+                opacityHeight = (barHight - howFar) / totalHight;
+                if (opacityHeight > 1) {
                     opacityHeight = 1;
                 }
-            }else if(howFar > barHight){
+            } else if (howFar > barHight) {
                 opacityHeight = 0;
-            }else{
+            } else {
                 opacityHeight = 1;
             }
             document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
         }
-    }else if(!mdxStyle){
+    } else if (!mdxStyle) {
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
-        if(howFar > 20 & whetherChange == 0){
+        if (howFar > 20 & whetherChange == 0) {
             document.getElementsByClassName("mdui-toolbar-self")[0].classList.toggle("mdui-color-theme");
             document.getElementById("titleBar").classList.toggle("mdui-shadow-2");
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
             whetherChange = 1;
         }
-        if(howFar <= 20 & whetherChange == 1){
+        if (howFar <= 20 & whetherChange == 1) {
             document.getElementsByClassName("mdui-toolbar-self")[0].classList.toggle("mdui-color-theme");
             document.getElementById("titleBar").classList.toggle("mdui-shadow-2");
             document.getElementsByClassName("scrollToTop")[0].classList.toggle("mdui-fab-hide");
@@ -96,23 +96,23 @@ function scrollDiff(){
 };
 
 //Scroll To the Top
-document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function(){
-    Velocity(ele("html"), {scrollTop: "0px"}, 500);
+document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
+    Velocity(ele("html"), { scrollTop: "0px" }, 500);
 }, false);
 
 //Night Styles
 var nsButton = document.getElementById("tgns");
-if(nsButton){
-    document.getElementById("tgns").addEventListener("click", function(){
-        if(!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")){
+if (nsButton) {
+    document.getElementById("tgns").addEventListener("click", function () {
+        if (!document.getElementsByTagName("body")[0].classList.contains("mdui-theme-layout-dark")) {
             sessionStorage.setItem('ns_night-styles', 'true');
-            if(colorEnabled){
-                metaColor.setAttribute('content',"#212121");
+            if (colorEnabled) {
+                metaColor.setAttribute('content', "#212121");
             }
-        }else{
+        } else {
             sessionStorage.setItem('ns_night-styles', 'false');
-            if(colorEnabled){
-                metaColor.setAttribute('content',nowColor);
+            if (colorEnabled) {
+                metaColor.setAttribute('content', nowColor);
             }
         }
         document.getElementsByTagName("body")[0].classList.toggle("mdui-theme-layout-dark");
@@ -123,48 +123,48 @@ window.addEventListener('DOMContentLoaded', () => {
     //hot posts
     toggleHotPostsOverlay();
 
-    if(document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")){
+    if (document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")) {
         var hsc = window.matchMedia("screen and (orientation:landscape) and (min-width: 750px)");
-        hsc.addListener(handleSearchChange);
+        hsc.addEventListener(handleSearchChange);
         handleSearchChange(hsc);
     }
 
-    if(document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
+    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
         var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
-        mrm.addListener(handleMotionChange);
+        mrm.addEventListener(handleMotionChange);
         handleMotionChange(mrm);
     }
 
     displayHotPostsOverlay();
 })
 
-function handleSearchChange(hsc){
-    if(hsc.matches){
-        if(currentStyle === 'tworow'){
+function handleSearchChange(hsc) {
+    if (hsc.matches) {
+        if (currentStyle === 'tworow') {
             closeSearch();
             document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', 1, 'important');
         }
         currentStyle = 'single';
-    }else{
-        if(currentStyle === 'single'){
+    } else {
+        if (currentStyle === 'single') {
             closeSearch();
         }
         currentStyle = 'tworow';
     }
 }
 
-function handleMotionChange(mrm){
-    if(sessionStorage.getItem("mrm_enable") === "user"){
+function handleMotionChange(mrm) {
+    if (sessionStorage.getItem("mrm_enable") === "user") {
         document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
         return;
     }
-    if(mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")){
-        if(!sessionStorage.getItem("mrm_enable")){
+    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
+        if (!sessionStorage.getItem("mrm_enable")) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
-                onButtonClick: function(){
+                onButtonClick: function () {
                     sessionStorage.setItem("mrm_enable", "user");
                     document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
                 },
@@ -173,8 +173,8 @@ function handleMotionChange(mrm){
             sessionStorage.setItem("mrm_enable", "sys");
             document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
         }
-    }else{
-        if(sessionStorage.getItem("mrm_enable")){
+    } else {
+        if (sessionStorage.getItem("mrm_enable")) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
@@ -186,29 +186,29 @@ function handleMotionChange(mrm){
 }
 
 function toggleHotPostsOverlay() {
-    if(document.getElementsByClassName("mdx-hp-g-r").length){
+    if (document.getElementsByClassName("mdx-hp-g-r").length) {
         document.getElementsByClassName("mdx-hp-g-r")[0].style.display = "block";
         var mdxChange = 1;
         var mdxChange2 = 1;
-        var mdxSpW = (210 + parseInt(getComputedStyle(document.querySelector("a>div.mdx-li.mdui-card"), null).marginRight))*document.querySelectorAll("a>div.mdx-li.mdui-card").length+10;
+        var mdxSpW = (210 + parseInt(getComputedStyle(document.querySelector("a>div.mdx-li.mdui-card"), null).marginRight)) * document.querySelectorAll("a>div.mdx-li.mdui-card").length + 10;
         var mdxSpWw = 0;
         var mdxSpS = 0;
         var elem = document.getElementById("mdx-sp-out-c");
-        elem.onscroll=function(){
+        elem.onscroll = function () {
             mdxSpWw = elem.offsetWidth;
             mdxSpS = elem.scrollLeft;
-            if(mdxSpS>5 && mdxChange){
+            if (mdxSpS > 5 && mdxChange) {
                 fade(ele('.mdx-hp-g-l', null, 'array'), 'in', 200);
                 mdxChange = 0;
             }
-            else if(mdxSpS<=5 && !mdxChange){
+            else if (mdxSpS <= 5 && !mdxChange) {
                 fade(ele('.mdx-hp-g-l', null, 'array'), 'out', 200);
                 mdxChange = 1;
             }
-            if((mdxSpW - mdxSpWw - mdxSpS)<=1 && mdxChange2){
+            if ((mdxSpW - mdxSpWw - mdxSpS) <= 1 && mdxChange2) {
                 fade(ele('.mdx-hp-g-r', null, 'array'), 'out', 200);
                 mdxChange2 = 0;
-            }else if((mdxSpW - mdxSpWw - mdxSpS)>1 && !mdxChange2){
+            } else if ((mdxSpW - mdxSpWw - mdxSpS) > 1 && !mdxChange2) {
                 fade(ele('.mdx-hp-g-r', null, 'array'), 'in', 200);
                 mdxChange2 = 1;
             }
@@ -216,43 +216,43 @@ function toggleHotPostsOverlay() {
     }
 }
 
-function displayHotPostsOverlay(){
+function displayHotPostsOverlay() {
     var parentDOM = document.getElementsByClassName("mdx-posts-may-related");
-    if(parentDOM.length){
+    if (parentDOM.length) {
         let DOMList = document.getElementsByClassName("mdx-posts-may-related")[0].getElementsByClassName("mdx-li");
         var listWidth = (DOMList[0].offsetWidth + 8) * DOMList.length - 15;
-        if(listWidth < parentDOM[0].offsetWidth){
-            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility="hidden";
-            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility="hidden";
-        }else{
-            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility="visible";
-            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility="visible";
+        if (listWidth < parentDOM[0].offsetWidth) {
+            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility = "hidden";
+            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility = "hidden";
+        } else {
+            document.getElementsByClassName("mdx-hp-g-l")[0].style.visibility = "visible";
+            document.getElementsByClassName("mdx-hp-g-r")[0].style.visibility = "visible";
         }
     }
 }
 
 //Search
-document.getElementsByClassName("seai")[0].addEventListener("click", function(){
+document.getElementsByClassName("seai")[0].addEventListener("click", function () {
     let searchBarDOM = document.getElementById("SearchBar");
     searchBarDOM.style.display = "block";
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => Velocity(e, {opacity: '1'}, 200));
+    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '1' }, 200));
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
         searchBarDOM.classList.add("mdui-color-theme");
     }, 0);
     document.getElementsByClassName("seainput")[0].focus();
     document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
-    if(ifOffline){
+    if (ifOffline) {
         let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
-        searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
+        searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">' + tipMutiOff + '</div>';
         searchBoxDOM.style.pointerEvents = 'auto';
-        document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
+        document.getElementsByClassName("seainput")[0].setAttribute('disabled', 'disabled');
     }
 }, false);
-if(document.getElementsByClassName("mdx-tworow-search").length){
-    document.getElementsByClassName("mdx-tworow-search")[0].addEventListener("click", function(){
+if (document.getElementsByClassName("mdx-tworow-search").length) {
+    document.getElementsByClassName("mdx-tworow-search")[0].addEventListener("click", function () {
         setTimeout(() => {
             document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
         }, 500);
@@ -266,18 +266,18 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
         let searchBarDOM = document.getElementById("SearchBar");
         searchBarDOM.style.display = "block";
         var searchDom = document.getElementsByClassName('outOfSearch');
-        if(document.getElementsByClassName("mdx-theme-white").length){
+        if (document.getElementsByClassName("mdx-theme-white").length) {
             ele("#mdx-search-anim", (e) => {
-                e.style.width = document.getElementById('searchform').offsetWidth*.75 - 12 + 'px';
+                e.style.width = document.getElementById('searchform').offsetWidth * .75 - 12 + 'px';
                 e.style.height = searchDom[0].offsetHeight - 10 + 'px';
                 e.style.top = searchDom[0].getBoundingClientRect().top + 'px';
                 e.style.left = '7px';
                 e.style.backgroundColor = 'rgba(152, 152, 152, 0.3)';
                 e.style.color = 'rgba(255, 255, 255, .3)';
             })
-        }else{
+        } else {
             ele("#mdx-search-anim", (e) => {
-                e.style.width = document.getElementById('searchform').offsetWidth*.75 - 12 + 'px';
+                e.style.width = document.getElementById('searchform').offsetWidth * .75 - 12 + 'px';
                 e.style.height = searchDom[0].offsetHeight - 10 + 'px';
                 e.style.top = searchDom[0].getBoundingClientRect().top + 'px';
                 e.style.left = '7px';
@@ -295,22 +295,22 @@ if(document.getElementsByClassName("mdx-tworow-search").length){
         searchBarDOM.classList.add("mdui-color-theme");
         fade(ele('.fullScreen', null, 'array'), 'in', 500);
         document.getElementsByClassName("seainput")[0].focus();
-        if(ifOffline){
+        if (ifOffline) {
             let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
-            searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">'+tipMutiOff+'</div>';
+            searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">' + tipMutiOff + '</div>';
             searchBoxDOM.style.pointerEvents = 'auto';
-            document.getElementsByClassName("seainput")[0].setAttribute('disabled','disabled');
+            document.getElementsByClassName("seainput")[0].setAttribute('disabled', 'disabled');
         }
         openFromTwoRows = true;
     }, false);
 }
-for(let elem of document.getElementsByClassName("sea-close")){
+for (let elem of document.getElementsByClassName("sea-close")) {
     elem.addEventListener("click", closeSearch, false);
 }
 
-function closeSearch(){
+function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
-    if(openFromTwoRows){
+    if (openFromTwoRows) {
         var searchAnimDom = document.getElementsByClassName("mdx-tworow-search")[0];
         var searchAnim = document.getElementById("mdx-search-anim");
         fade(ele('.fullScreen', null, 'array'), 'out', 500);
@@ -331,14 +331,14 @@ function closeSearch(){
         document.getElementById("SearchBar").classList.remove("mdui-color-theme");
         setTimeout(() => {
             let bodyDOM = document.getElementsByTagName("body")[0];
-            if(bodyDOM.classList.contains('mdx-search-lock')){
+            if (bodyDOM.classList.contains('mdx-search-lock')) {
                 bodyDOM.classList.toggle('mdx-search-lock');
             }
             document.getElementById("mdx-search-anim").classList.remove('mdx-search-anim-show');
             document.getElementsByClassName("mdx-tworow-search")[0].style.visibility = 'visible';
         }, 500);
-    }else{
-        ele("#SearchBar > *", (e) => Velocity(e, {opacity: '0'}, 200));
+    } else {
+        ele("#SearchBar > *", (e) => Velocity(e, { opacity: '0' }, 200));
         fade(ele('.fullScreen', null, 'array'), 'out', 300);
         fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
         document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
@@ -346,7 +346,7 @@ function closeSearch(){
         document.getElementById("SearchBar").classList.remove("mdui-color-theme");
         setTimeout(() => {
             let bodyDOM = document.getElementsByTagName("body")[0];
-            if(bodyDOM.classList.contains('mdx-search-lock')){
+            if (bodyDOM.classList.contains('mdx-search-lock')) {
                 bodyDOM.classList.toggle('mdx-search-lock');
             }
             document.getElementsByClassName("outOfSearch")[0].removeAttribute("style");
@@ -355,14 +355,14 @@ function closeSearch(){
     openFromTwoRows = false;
 };
 
-function hideBar(){
+function hideBar() {
     document.getElementById("SearchBar").style.display = "none";
 }
 
- //tap tp top
-document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function(){
-    if(mdx_tapToTop==1){
-        Velocity(ele("html"), {scrollTop: "0px"}, 500);
+//tap tp top
+document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
+    if (mdx_tapToTop == 1) {
+        Velocity(ele("html"), { scrollTop: "0px" }, 500);
     }
 })
 
@@ -370,29 +370,29 @@ document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click
 window.addEventListener('DOMContentLoaded', () => {
     var mdxHaveChild = 0;
     var mdxIsC = 0;
-    for(let elem of document.querySelectorAll('#mdx_menu > li')){
-        if(elem.classList.contains('menu-item-has-children')){
+    for (let elem of document.querySelectorAll('#mdx_menu > li')) {
+        if (elem.classList.contains('menu-item-has-children')) {
             elem.classList.add('mdui-collapse-item');
             elem.classList.remove('mdui-list-item');
             elem.innerHTML = `<div class="mdui-collapse-item-header mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><a class="mdx-sub-menu-a" href="${elem.getElementsByTagName("a")[0].getAttribute('href')}">${elem.getElementsByTagName("a")[0].innerHTML}</a></div><i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i></div><ul class="mdui-collapse-item-body mdui-list mdui-list-dense">${elem.getElementsByTagName("ul")[0].innerHTML}</ul>`;
             mdxHaveChild = 1;
-            for(let ul of elem.getElementsByTagName("ul")){
-                for(let li of ul.getElementsByTagName("li")){
-                    if(li.classList.contains('current-menu-item')){
+            for (let ul of elem.getElementsByTagName("ul")) {
+                for (let li of ul.getElementsByTagName("li")) {
+                    if (li.classList.contains('current-menu-item')) {
                         mdxIsC = 1;
                     }
                 }
             }
-            if(mdxIsC){
+            if (mdxIsC) {
                 elem.classList.remove('current-menu-item', 'current_page_item');
                 elem.classList.add('mdui-collapse-item-open');
             }
             mdxIsC = 0;
         }
-        if(mdxHaveChild){
+        if (mdxHaveChild) {
             let menuDOM = document.getElementById('mdx_menu');
             menuDOM.classList.add('mdui-collapse');
-            menuDOM.setAttribute('mdui-collapse','');
+            menuDOM.setAttribute('mdui-collapse', '');
         }
     }
     new mdui.Collapse("#mdx_menu");
@@ -401,13 +401,13 @@ window.addEventListener('DOMContentLoaded', () => {
     var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
     var flagName = typeof cookieFlagName === "undefined" ? "mdx_cookie" : cookieFlagName;
     var cookieEle = document.getElementById("mdx-cookie-notice");
-    if(ifDisplay && cookieEle && !localStorage.getItem(flagName)){
+    if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
         cookieEle.classList.add("mdx-cookie-notice-show");
         cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
     }
 
-    function agreeCookie(){
-        localStorage.setItem(flagName ,"true");
+    function agreeCookie() {
+        localStorage.setItem(flagName, "true");
         document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
         setTimeout(() => {
             document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
