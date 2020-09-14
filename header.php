@@ -7,6 +7,7 @@
 <?php if(is_home()){$mdx_js_name2='js';}elseif(is_category()||is_archive()||is_search()){$mdx_js_name2='ac';}elseif(is_single()){$mdx_js_name2='post';}elseif(is_page()){$mdx_js_name2='page';}else{$mdx_js_name2='js';}
 global $files_root;
 ?>
+<link rel="preload" href="<?php echo $files_root;?>/js/common.js?ver=<?php echo get_option("mdx_version_commit");?>" as="script">
 <link rel="preload" href="<?php echo $files_root;?>/js/<?php echo $mdx_js_name2?>.js?ver=<?php echo get_option("mdx_version_commit");?>" as="script">
 <link rel="preload" href="<?php echo $files_root;?>/mdui/icons/material-icons/<?php if(mdx_get_option("mdx_md2")=="false"){ ?>MaterialIcons-Regular.woff2<?php }else{ ?>material_2_icon_font.woff2<?php } ?>" as="font" type="font/woff2" crossorigin>
 <?php if(mdx_get_option('mdx_md2')=="true" && mdx_get_option('mdx_md2_font')=="true"){?>

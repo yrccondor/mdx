@@ -27,7 +27,7 @@ div.mdui-card > div > div > div > a {
 .click:hover {
     opacity: .5;
 }
-body.customize-support #titleBar, body.customize-support #titleBarinPost, body.customize-support .mdui-toolbar, body.customize-support .titleBarinAc {
+body.has-admin-bar #titleBar, body.has-admin-bar #titleBarinPost, body.has-admin-bar .mdui-toolbar, body.has-admin-bar .titleBarinAc {
     top: 2pc;
 }
 .has-admin-bar .mdui-drawer {
@@ -4341,6 +4341,9 @@ body.mdx-list-page.mdui-theme-layout-dark {
         border-radius: 0!important;
         z-index: 10;
     }
+    body.mdx-first-tworows.has-admin-bar .mdxNotice {
+        top: 32px;
+    }
     body.mdx-first-tworows .main, body.mdx-first-tworows .main-in-other {
         z-index: 7;
     }
@@ -4663,8 +4666,11 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:782px) {
-    body.customize-support #titleBarinPost, body.customize-support .mdui-toolbar, body.customize-support .titleBarinAc {
+    body.has-admin-bar #titleBar, body.has-admin-bar #titleBarinPost, body.has-admin-bar .mdui-toolbar, body.has-admin-bar .titleBarinAc {
         top: 46px;
+    }
+    .has-admin-bar .mdui-drawer {
+        padding-top: 46px;
     }
 }
 @media(max-width:770px) {
@@ -4785,7 +4791,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
     #menu, button.seai, div.mdui-toolbar > .mdui-typo-headline {
         margin: 0 2px!important;
     }
-    body.customize-support #SearchBar, body.customize-support #titleBar, body.customize-support #titleBarinPost, body.customize-support .mdui-toolbar, body.customize-support .titleBarinAc {
+    body.has-admin-bar #SearchBar, body.has-admin-bar #titleBar, body.has-admin-bar #titleBarinPost, body.has-admin-bar .mdui-toolbar, body.has-admin-bar .titleBarinAc {
         top: 0;
     }
     .mdx-ad-after-links {
