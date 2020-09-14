@@ -1147,7 +1147,7 @@ div#comments ul li {
     margin-top: 20px;
     margin-right: auto!important;
     margin-left: auto!important;
-    padding: 30px 30px 10px;
+    padding: 30px 20px 10px;
     width: 55%;
     border-radius: 5px;
     background-color: #ededed;
@@ -1371,7 +1371,7 @@ body.mdx-first-simple div.main .mdx-hot-posts h3 {
     display: block!important;
     box-sizing: border-box;
     margin-top: 0;
-    padding: 30px 30px 10px;
+    padding: 30px 20px 10px;
     width: 100%;
     max-width: 6250pc;
     border-radius: 0;
@@ -1504,7 +1504,7 @@ body.mdui-theme-primary-blue-grey #submit {
 #reply-title {
     margin: 0;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 22px;
 }
 .mdx-author-c h3, .mdx-hot-posts > h3, .mdx-same-posts > h3 {
     margin: 20px;
@@ -1514,7 +1514,7 @@ body.mdui-theme-primary-blue-grey #submit {
 .mdx-author-c h3 {
     margin-bottom: 0;
     margin-top: 15px;
-    font-size: 27px;
+    font-size: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -1731,15 +1731,21 @@ div.mdui-chip {
     border-radius: 3px;
     background-color: #ededed;
     color: rgba(0, 0, 0, .5)!important;
+    line-height: 27px;
 }
 .ArtMain0 .spanout {
     padding: 7px 5px 10px 9pt;
     border-radius: 0;
 }
 .spanout > a {
-    margin: 0 5px;
+    margin-left: 2px;
+    margin-right: 7px;
     color: rgba(0, 0, 0, .5)!important;
     text-decoration: none;
+    transition: opacity .3s;
+    &:hover {
+        opacity: .7;
+    }
 }
 .spanout > i {
     padding-left: 20px;

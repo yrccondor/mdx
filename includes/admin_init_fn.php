@@ -27,6 +27,7 @@ $arr = array(
 'mdx_post_list_1'=>'view',
 'mdx_post_list_2'=>'time',
 'mdx_post_list_3'=>'blank',
+'mdx_post_time_positon'=>'foot',
 'mdx_post_edit_time'=>'post',
 'mdx_author_card'=>'false',
 "mdx_lazy_load_mode"=>'speed',
