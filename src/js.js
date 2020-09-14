@@ -125,13 +125,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (document.getElementsByTagName("body")[0].classList.contains("mdx-first-tworows")) {
         var hsc = window.matchMedia("screen and (orientation:landscape) and (min-width: 750px)");
-        hsc.addEventListener(handleSearchChange);
+        hsc.addEventListener('change', handleSearchChange);
         handleSearchChange(hsc);
     }
 
     if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
         var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
-        mrm.addEventListener(handleMotionChange);
+        mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 

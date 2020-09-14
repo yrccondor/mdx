@@ -504,7 +504,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
         var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
-        mrm.addEventListener(handleMotionChange);
+        mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 })

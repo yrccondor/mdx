@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const mdxVersion = '1.9.10';
+const mdxVersion = '2.0.0';
 
 module.exports = {
     entry: {
@@ -19,7 +19,20 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'js'),
-        publicPath: '/wp-content/themes/mdx/js'
+        publicPath: '/wp-content/themes/mdx/js',
+        chunkFilename: '[name].js'
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                common: { 
+                    name: 'common',
+                    chunks: 'all',
+                    minSize: 10,
+                    minChunks: 2
+                }
+            }
+        }
     },
     devtool: 'source-map',
     mode: 'production',
@@ -58,29 +71,7 @@ module.exports = {
                             publicPath: './img/social-icons',
                             name: '[name].[ext]',
                         }
-                    },
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 85
-                            },
-                            optipng: {
-                                enabled: false,
-                            },
-                            pngquant: {
-                                quality: [0.65, 0.90],
-                                speed: 4
-                            },
-                            gifsicle: {
-                                interlaced: false,
-                            },
-                            webp: {
-                                quality: 85
-                            }
-                        }
-                    },
+                    }
                 ]
             },
             {
