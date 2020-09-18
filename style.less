@@ -207,7 +207,7 @@ body.mdui-theme-layout-dark .ct1-p {
     left: 0;
     z-index: 3;
     box-sizing: border-box;
-    padding: 0 30px;
+    padding: 0 10px;
     width: 100%;
     height: 33%;
     text-align: center;
@@ -4702,7 +4702,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:800px) {
-    .PostTitle {
+    .PostTitle, .PostTitle h1 {
         font-size: 37px;
     }
     .page-tags > article {
@@ -4785,8 +4785,17 @@ body.mdx-list-page.mdui-theme-layout-dark {
     .mdx-pni-am0 article.mdui-typo {
         margin-top: 0!important;
     }
+    .PostMain.date-in-title-post.mdx-pni-am0 {
+        top: 48%;
+    }
     .mdx-pni-t0 {
         height: 45%;
+    }
+    .date-in-title {
+        .time-in-post-title {
+            font-size: 15px;
+            margin-top: -5px;
+        }
     }
 }
 @media(max-width:700px) {
@@ -4801,7 +4810,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:600px) {
-    .PostTitle {
+    .PostTitle, .PostTitle h1 {
         font-size: 2pc;
     }
     article p {
@@ -4862,7 +4871,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
     .mdui-card-primary-subtitle {
         display: none;
     }
-    .PostTitle {
+    .PostTitle, .PostTitle h1 {
         font-size: 27px;
     }
     .title, article h2, article h3 {
@@ -4920,7 +4929,7 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:350px) {
-    .PostTitle {
+    .PostTitle, .PostTitle h1 {
         font-size: 23px;
     }
     .title, article h2, article h3, article h4 {
