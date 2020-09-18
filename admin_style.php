@@ -78,6 +78,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
     mdx_update_option('mdx_index_show', $_POST['mdx_index_show']);
     mdx_update_option('mdx_post_style', $_POST['mdx_post_style']);
+    mdx_update_option('mdx_post_time_positon', $_POST['mdx_post_time_positon']);
     mdx_update_option('mdx_post_nav_style', $_POST['mdx_post_nav_style']);
     mdx_update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
     mdx_update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
@@ -323,6 +324,17 @@ wp_nonce_field('mdx_options_update');
     </select>
     <div class="mdx-svg-preview" id="mdx-post-preview"></div>
     <p class="description"><?php _e('同时影响文章页、单独页面的样式。', 'mdx');?></p>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><label for="mdx_post_time_positon"><?php _e('文章时间显示位置', 'mdx');?></label></th>
+    <td>
+    <?php $mdx_v_post_time_positon=mdx_get_option('mdx_post_time_positon');?>
+    <select name="mdx_post_time_positon" id="mdx_post_time_positon">
+        <option value="title" <?php if($mdx_v_post_time_positon=='title'){?>selected="selected"<?php }?>><?php _e('标题旁', 'mdx');?></option>
+        <option value="foot" <?php if($mdx_v_post_time_positon=='foot'){?>selected="selected"<?php }?>><?php _e('文章末尾', 'mdx');?></option>
+        <option value="none" <?php if($mdx_v_post_time_positon=='none'){?>selected="selected"<?php }?>><?php _e('不显示', 'mdx');?></option>
+    </select>
     </td>
     </tr>
     <tr>

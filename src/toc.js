@@ -23,6 +23,56 @@ window.addEventListener('DOMContentLoaded', () => {
         isInited = true;
         scrollToc();
     }
+    ele('.PostMain').addEventListener('click', function (e) {
+        if (e.target.id === 'mdx-toc-preview') {
+            if (ele('#mdx-toc').style.transform !== 'translateX(0px)' && showPreview) {
+                mdx_toc.next();
+                ele('#mdx-toc').style.transform = 'translateX(0)';
+                ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
+                tocShown = true;
+                scrollToc();
+            }
+        }
+    })
+    
+    ele('#left-drawer').addEventListener('change.mdui.tab', function (e) {
+        if (e._detail.index === 0) {
+            e.preventDefault();
+            ele('#mdx_menu').style.transform = 'translateX(0)';
+            ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
+            tocShown = false;
+            return;
+        } else if (e._detail.index === 1) {
+            e.preventDefault();
+            tocShown = true;
+            scrollToc();
+            ele('#mdx-toc').style.transform = 'translateX(0)';
+            ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
+            return;
+        }
+    })
+    ele('#left-drawer').addEventListener('click', function (e) {
+        if (e.target.classList.contains('mdx-toc-item')) {
+            e.preventDefault();
+            Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
+            return;
+        } else if (e.target.closest('.mdx-toc-item') !== null) {
+            e.preventDefault();
+            Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
+            return;
+        }
+    })
+    document.getElementById('left-drawer').addEventListener('open.mdui.drawer', function () {
+        if (ele('#mdx-toc').style.transform !== 'translateX(0px)') {
+            tocShown = false;
+        } else {
+            tocShown = true;
+        }
+        scrollToc();
+    });
+    document.getElementById('left-drawer').addEventListener('close.mdui.drawer', function () {
+        tocShown = false;
+    });
 })
 
 function getTitleListHtml(minLevel = 1, maxLevel = 6) {
@@ -95,43 +145,6 @@ function addToc(titleList) {
     menu.style.transform = `translateX(-${menu.clientWidth}px)`;
 }
 
-ele('.PostMain').addEventListener('click', function (e) {
-    if (e.target.id === 'mdx-toc-preview') {
-        if (ele('#mdx-toc').style.transform !== 'translateX(0px)' && showPreview) {
-            mdx_toc.next();
-            ele('#mdx-toc').style.transform = 'translateX(0)';
-            ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
-            tocShown = true;
-            scrollToc();
-        }
-    }
-})
-
-ele('#left-drawer').addEventListener('click', function (e) {
-    if (e.target.id === 'mdx-toc-menu' || e.target.closest('#mdx-toc-menu') !== null) {
-        e.preventDefault();
-        ele('#mdx_menu').style.transform = 'translateX(0)';
-        ele('#mdx-toc').style.transform = `translateX(${ele('#mdx-toc').getBoundingClientRect().width}px)`;
-        tocShown = false;
-        return;
-    } else if (e.target.id === 'mdx-toc-toc' || e.target.closest('#mdx-toc-toc') !== null) {
-        e.preventDefault();
-        tocShown = true;
-        scrollToc();
-        ele('#mdx-toc').style.transform = 'translateX(0)';
-        ele('#mdx_menu').style.transform = `translateX(-${ele('#mdx_menu').getBoundingClientRect().width}px)`;
-        return;
-    } else if (e.target.classList.contains('mdx-toc-item')) {
-        e.preventDefault();
-        Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
-        return;
-    } else if (e.target.closest('.mdx-toc-item') !== null) {
-        e.preventDefault();
-        Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
-        return;
-    }
-})
-
 window.addEventListener('resize', function () {
     if (isToc) {
         if (ele('#mdx-toc').style.transform === 'translateX(0px)') {
@@ -145,19 +158,6 @@ window.addEventListener('resize', function () {
     }
 })
 
-document.getElementById('left-drawer').addEventListener('open.mdui.drawer', function () {
-    if (ele('#mdx-toc').style.transform !== 'translateX(0px)') {
-        tocShown = false;
-    } else {
-        tocShown = true;
-    }
-    scrollToc();
-});
-
-document.getElementById('left-drawer').addEventListener('close.mdui.drawer', function () {
-    tocShown = false;
-});
-
 let tickingToc = false;
 window.addEventListener('scroll', function () {
     if (isToc && isInited) {
@@ -168,8 +168,8 @@ window.addEventListener('scroll', function () {
             tickingToc = true;
         }
     }
-
 })
+
 function scrollToc() {
     if (!isInited) {
         return;

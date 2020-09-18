@@ -71,9 +71,9 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
         <?php get_template_part('includes/searchform')?>
 
     <?php if($post_style=="0"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url=$full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-      <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }?>">
+      <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title-post<?php }?>">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
             <?php if($mdx_image_url!=""){?>
             <img class="PostMainImg0" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }else{?>
@@ -115,9 +115,9 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
         <div id="indic"></div>
 
       <?php }else if($post_style=="1"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title-post<?php }?>">
             <div class="ArtMain mdui-center mdui-typo">
                 <?php if($mdx_image_url!=""){?>
                 <img class="PostMainImg mdui-img-rounded mdui-shadow-7" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }?>
@@ -171,7 +171,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
                 <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
             </div>
         </div></header>
-        <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2<?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain PostMain2">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
@@ -210,7 +210,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
 <?php get_template_part('includes/toggleposts')?>
         <div id="indic"></div>
       <?php }else if($post_style=="3"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle mdx-clean-style-article-head-background mdx-pni-t" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center mdx-clean-style-article-title"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle mdx-clean-style-article-head-background mdx-pni-t<?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center mdx-clean-style-article-title"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme mdx-clean-style-article-title-background"></div>
         <div class="mdx-clean-style-article-main <?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
             <div class="ArtMain mdui-center mdui-typo mdx-clean-style-article-content">

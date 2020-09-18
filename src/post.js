@@ -6,7 +6,7 @@ import betterFetch from './betterFetch.js';
 var whetherChange = 0;
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;
-var postTitle = ele('div.PostTitle').innerText;
+var postTitle = ele('div.PostTitle h1').innerText;
 var blogUrl = ele('div.mdui-toolbar > a.mdui-typo-headline').getAttribute("href");
 var metaColor = document.querySelector("meta[name='theme-color']");
 var colorEnabled = false;
