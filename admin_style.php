@@ -367,6 +367,7 @@ wp_nonce_field('mdx_options_update');
         <option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
         <option value="5" <?php if($mdx_v_default_style=='5'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
         <option value="6" <?php if($mdx_v_default_style=='6'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
+        <option value="7" <?php if($mdx_v_default_style=='7'){?>selected="selected"<?php }?>><?php _e('图文列表', 'mdx');?></option>
     </select>
     <div class="mdx-svg-preview" id="mdx-list-preview"></div>
     <p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>

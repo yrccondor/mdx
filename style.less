@@ -1738,6 +1738,9 @@ div.mdui-chip {
     background-color: #ededed;
     color: rgba(0, 0, 0, .5)!important;
     line-height: 27px;
+    a:before {
+        display: none;
+    }
 }
 .ArtMain0 .spanout {
     padding: 7px 5px 10px 9pt;
@@ -4281,6 +4284,54 @@ body.mdx-list-page.mdui-theme-layout-dark {
 .PostMain.date-in-title-post:not(.mdx-pni-am) {
     top: 30%;
 }
+body.mdx-post-style-3 {
+    background-color: #f7f7f7;
+    &.mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme, &.mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme * {
+        background-color: #f3f3f3!important;
+    }
+}
+body.mdx-post-style-3.mdui-theme-layout-dark {
+    background-color: #303030;
+    &.mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme, &.mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme * {
+        background-color: #212121!important;
+    }
+}
+body.mdx-index-void {
+    & > div.mdui-drawer ~ div.theFirstPageSay, & > div.mdui-drawer ~ div.theFirstPageBackGround {
+        background-color: #f7f7f7!important;
+        & > * {
+            color: rgba(0, 0, 0, .87);
+        }
+    }
+    .theFirstPage, .theFirstPageBackGround, .theFirstPageSay {
+        height: 45%;
+    }
+    .main {
+        top: 45%;
+    }
+    .topBarAni {
+        transition: all .2s;
+        color: rgba(0, 0, 0, .87)!important;
+    }
+    .mdxNotice {
+        background-color: #ececec;
+        border-radius: 3px;
+    }
+}
+body.mdx-index-void.mdui-theme-layout-dark {
+    & > div.mdui-drawer ~ div.theFirstPageSay, & > div.mdui-drawer ~ div.theFirstPageBackGround {
+        background-color: #303030!important;
+        & > * {
+            color: rgba(255, 255, 255, .87);
+        }
+    }
+}
+.mdx-hot-posts h3 > i.mdui-text-color-theme-accent, h3.mdx-all-posts > i.mdui-text-color-theme-accent {
+    vertical-align: top;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 25px;
+}
 @media screen and (orientation:landscape) and (min-width: 750px) {
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {
         width: 38.2%;
@@ -4732,6 +4783,13 @@ body.mdx-list-page.mdui-theme-layout-dark {
     main .mdx-postlist-simple {
         width: 95%;
     }
+    .mdxNotice {
+        border-radius: 0!important;
+        max-width: 770px;
+    }
+    .mdx-first-simple .mdxNotice {
+        border-radius: 8px!important;
+    }
 }
 @media(max-width:720px) {
     .ArtMain0, .mdxNotice {
@@ -4800,12 +4858,6 @@ body.mdx-list-page.mdui-theme-layout-dark {
     }
 }
 @media(max-width:700px) {
-    .mdxNotice {
-        border-radius: 0!important;
-    }
-    .mdx-first-simple .mdxNotice {
-        border-radius: 8px!important;
-    }
     .mdx-post-cot, .mdx-post-wait-out-c, .mdx-post-wait-out-c2 {
         height: 230px;
     }
