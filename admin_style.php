@@ -80,6 +80,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_post_style', $_POST['mdx_post_style']);
     mdx_update_option('mdx_post_time_positon', $_POST['mdx_post_time_positon']);
     mdx_update_option('mdx_post_nav_style', $_POST['mdx_post_nav_style']);
+    mdx_update_option('mdx_post_list_width', $_POST['mdx_post_list_width']);
     mdx_update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
     mdx_update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
     mdx_update_option('mdx_post_def_img', $_POST['mdx_post_def_img']);
@@ -367,10 +368,19 @@ wp_nonce_field('mdx_options_update');
         <option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
         <option value="5" <?php if($mdx_v_default_style=='5'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
         <option value="6" <?php if($mdx_v_default_style=='6'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
-        <option value="7" <?php if($mdx_v_default_style=='7'){?>selected="selected"<?php }?>><?php _e('图文列表', 'mdx');?></option>
     </select>
     <div class="mdx-svg-preview" id="mdx-list-preview"></div>
     <p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('文章列表宽度', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_post_list_width=mdx_get_option('mdx_post_list_width');?>
+        <fieldset>
+        <label><input type="radio" name="mdx_post_list_width" value="normal" <?php if($mdx_v_post_list_width=='normal'){?>checked="checked"<?php }?>> <?php _e('正常', 'mdx');?></label><br>
+        <label><input type="radio" name="mdx_post_list_width" value="wide" <?php if($mdx_v_post_list_width=='wide'){?>checked="checked"<?php }?>> <?php _e('较宽', 'mdx');?></label><br>
+        </fieldset>
     </td>
     </tr>
     <tr>
@@ -474,7 +484,7 @@ wp_nonce_field('mdx_options_update');
     <input name="mdx_side_head" type="url" id="mdx_side_head" value="<?php echo esc_attr(mdx_get_option('mdx_side_head'))?>" class="regular-text mdx_stbsip22">
     <button type="button" id="insert-media-button-4" class="button mdx_stbsip1 mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
     <p class="description"><?php _e('选择一张图片作为抽屉顶部显示的头像。留空则不显示。', 'mdx');?></p>
-    <img id="img3" style="width:100%;max-width:300px;height:auto;margin-top:5px;;margi-top:5px;"></img>
+    <img id="img3" style="width:100%;max-width:300px;height:auto;margin-top:5px;;margin-top:5px;"></img>
     </td>
     </tr>
     <tr>

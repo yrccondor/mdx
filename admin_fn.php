@@ -28,6 +28,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_allow_scale', $_POST['mdx_allow_scale']);
     mdx_update_option('mdx_reduce_motion', $_POST['mdx_reduce_motion']);
     mdx_update_option('mdx_img_box', $_POST['mdx_img_box']);
+    mdx_update_option('mdx_img_box_show_alt', $_POST['mdx_img_box_show_alt']);
     mdx_update_option("mdx_readmore", $_POST['mdx_readmore']);
     mdx_update_option("mdx_post_money", $_POST['mdx_post_money']);
     mdx_update_option('mdx_read_pro', $_POST['mdx_read_pro']);
@@ -118,6 +119,17 @@ wp_nonce_field('mdx_options_update');
         <label><input type="radio" name="mdx_img_box" value="true" <?php if($mdx_v_img_box=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" name="mdx_img_box" value="false" <?php if($mdx_v_img_box=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
         <p class="description"><?php _e('开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。', 'mdx');?></p>
+        </fieldset>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('ImgBox 显示描述文本', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_img_box_show_alt=mdx_get_option('mdx_img_box_show_alt');?>
+        <fieldset>
+        <label><input type="radio" name="mdx_img_box_show_alt" value="true" <?php if($mdx_v_img_box_show_alt=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+        <label><input type="radio" name="mdx_img_box_show_alt" value="false" <?php if($mdx_v_img_box_show_alt=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+        <p class="description"><?php _e('开启后，点击查看大图时，如果图片的 <code>alt</code> 属性不为空，图片下方将会显示 <code>alt</code> 属性内的文本。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>

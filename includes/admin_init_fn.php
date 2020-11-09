@@ -2,7 +2,7 @@
 require_once('admin_init_ver.php');
 $mdx_subdir_flag_init = "normal";
 if(stripos(explode('//', home_url())[1], "/")){
-	$mdx_subdir_flag_init = "sub";
+    $mdx_subdir_flag_init = "sub";
 }
 $arr = array(
 'mdx_install'=>$mdx_subdir_flag_init,
@@ -15,6 +15,7 @@ $arr = array(
 'mdx_allow_scale'=>'true',
 'mdx_reduce_motion'=>'true',
 'mdx_img_box'=>'true',
+'mdx_img_box_show_alt'=>'true',
 "mdx_readmore"=>__('去围观','mdx'),
 "mdx_post_money"=>'',
 'mdx_read_pro'=>'true',
@@ -71,6 +72,7 @@ $arr = array(
 'mdx_title_bar'=>'false',
 'mdx_tap_to_top'=>'true',
 'mdx_default_style'=>'1',
+'mdx_post_list_width'=>'normal',
 'mdx_index_show'=>'0',
 'mdx_post_style'=>'0',
 'mdx_post_time_positon'=>'foot',
