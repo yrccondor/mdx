@@ -131,21 +131,21 @@
           },
         });
       }
-      var moreinput = "'<?php _e("更多选项","mdx");?>'";
+      var moreinput = "<?php _e("更多选项","mdx");?>";
       var morecomment = "<?php _e("加载更多评论","mdx");?>";
       var nomorecomment = "<?php _e("没有更多了","mdx");?>";
-      var mdx_si_i18n = '<?php _e('长按/右键保存图片','mdx'); ?>';
-      var mdx_si_i18n_2 = '<?php _e('关闭','mdx'); ?>';
-      var mdx_si_i18n_3 = '<?php _e('使用微信扫描后在微信内分享','mdx'); ?>';
-      var mdx_si_i18n_4 = '<?php _e('点按右上角按钮即可分享','mdx'); ?>';
-      var mdx_i18n_password = '<?php _e('密码','mdx'); ?>';
-      var mdx_github_i18n_1 = '<?php _e('在 GitHub 上查阅','mdx'); ?>';
-      var mdx_github_i18n_2 = '<?php _e('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
-      var mdx_post_i18n_1 = '<?php _e('这个页面没有摘要。','mdx'); ?>';
-      var mdx_post_i18n_2 = '<?php _e('前往页面','mdx'); ?>';
-      var mdx_post_i18n_3 = '<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>';
-      var mdx_toc_i18n_1 = '<?php _e('菜单','mdx'); ?>';
-      var mdx_toc_i18n_2 = '<?php _e('目录','mdx'); ?>';
+      var mdx_si_i18n = "<?php _e('长按/右键保存图片','mdx'); ?>";
+      var mdx_si_i18n_2 = "<?php _e('关闭','mdx'); ?>";
+      var mdx_si_i18n_3 = "<?php _e('使用微信扫描后在微信内分享','mdx'); ?>";
+      var mdx_si_i18n_4 = "<?php _e('点按右上角按钮即可分享','mdx'); ?>";
+      var mdx_i18n_password = "<?php _e('密码','mdx'); ?>";
+      var mdx_github_i18n_1 = "<?php _e('在 GitHub 上查阅','mdx'); ?>";
+      var mdx_github_i18n_2 = "<?php _e('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>";
+      var mdx_post_i18n_1 = "<?php _e('这个页面没有摘要。','mdx'); ?>";
+      var mdx_post_i18n_2 = "<?php _e('前往页面','mdx'); ?>";
+      var mdx_post_i18n_3 = "<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>";
+      var mdx_toc_i18n_1 = "<?php _e('菜单','mdx'); ?>";
+      var mdx_toc_i18n_2 = "<?php _e('目录','mdx'); ?>";
       </script>
 <?php }?>
 <?php if(function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj')=="true") && (is_single() || is_page())){?>
