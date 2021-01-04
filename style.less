@@ -440,158 +440,6 @@ h3.link-title {
     width: calc(92% - 16px);
     margin: 0 auto;
 }
-body.mdui-theme-primary-red article h3.link-title:after {
-    color: #f44336;
-    content: " •";
-}
-body.mdui-theme-primary-red article h3.link-title:before {
-    color: #f44336;
-    content: "• ";
-}
-body.mdui-theme-primary-pink article h3.link-title:after {
-    color: #e91e63;
-    content: " •";
-}
-body.mdui-theme-primary-pink article h3.link-title:before {
-    color: #e91e63;
-    content: "• ";
-}
-body.mdui-theme-primary-purple article h3.link-title:after {
-    color: #9c27b0;
-    content: " •";
-}
-body.mdui-theme-primary-purple article h3.link-title:before {
-    color: #9c27b0;
-    content: "• ";
-}
-body.mdui-theme-primary-deep-purple article h3.link-title:after {
-    color: #673ab7;
-    content: " •";
-}
-body.mdui-theme-primary-deep-purple article h3.link-title:before {
-    color: #673ab7;
-    content: "• ";
-}
-body.mdui-theme-primary-indigo article h3.link-title:after {
-    color: #3f51b5;
-    content: " •";
-}
-body.mdui-theme-primary-indigo article h3.link-title:before {
-    color: #3f51b5;
-    content: "• ";
-}
-body.mdui-theme-primary-blue article h3.link-title:after {
-    color: #2196f3;
-    content: " •";
-}
-body.mdui-theme-primary-blue article h3.link-title:before {
-    color: #2196f3;
-    content: "• ";
-}
-body.mdui-theme-primary-light-blue article h3.link-title:after {
-    color: #03a9f4;
-    content: " •";
-}
-body.mdui-theme-primary-light-blue article h3.link-title:before {
-    color: #03a9f4;
-    content: "• ";
-}
-body.mdui-theme-primary-cyan article h3.link-title:after {
-    color: #00bcd4;
-    content: " •";
-}
-body.mdui-theme-primary-cyan article h3.link-title:before {
-    color: #00bcd4;
-    content: "• ";
-}
-body.mdui-theme-primary-teal article h3.link-title:after {
-    color: #009688;
-    content: " •";
-}
-body.mdui-theme-primary-teal article h3.link-title:before {
-    color: #009688;
-    content: "• ";
-}
-body.mdui-theme-primary-green article h3.link-title:after {
-    color: #4caf50;
-    content: " •";
-}
-body.mdui-theme-primary-green article h3.link-title:before {
-    color: #4caf50;
-    content: "• ";
-}
-body.mdui-theme-primary-light-green article h3.link-title:after {
-    color: #8bc34a;
-    content: " •";
-}
-body.mdui-theme-primary-light-green article h3.link-title:before {
-    color: #8bc34a;
-    content: "• ";
-}
-body.mdui-theme-primary-lime article h3.link-title:after {
-    color: #cddc39;
-    content: " •";
-}
-body.mdui-theme-primary-lime article h3.link-title:before {
-    color: #cddc39;
-    content: "• ";
-}
-body.mdui-theme-primary-yellow article h3.link-title:after {
-    color: #ffeb3b;
-    content: " •";
-}
-body.mdui-theme-primary-yellow article h3.link-title:before {
-    color: #ffeb3b;
-    content: "• ";
-}
-body.mdui-theme-primary-amber article h3.link-title:after {
-    color: #ffc107;
-    content: " •";
-}
-body.mdui-theme-primary-amber article h3.link-title:before {
-    color: #ffc107;
-    content: "• ";
-}
-body.mdui-theme-primary-orange article h3.link-title:after {
-    color: #ff9800;
-    content: " •";
-}
-body.mdui-theme-primary-orange article h3.link-title:before {
-    color: #ff9800;
-    content: "• ";
-}
-body.mdui-theme-primary-deep-orange article h3.link-title:after {
-    color: #ff5722;
-    content: " •";
-}
-body.mdui-theme-primary-deep-orange article h3.link-title:before {
-    color: #ff5722;
-    content: "• ";
-}
-body.mdui-theme-primary-brown article h3.link-title:after {
-    color: #795548;
-    content: " •";
-}
-body.mdui-theme-primary-brown article h3.link-title:before {
-    color: #795548;
-    content: "• ";
-}
-body.mdui-theme-primary-grey article h3.link-title:after {
-    color: #9e9e9e;
-    content: " •";
-}
-body.mdui-theme-primary-grey article h3.link-title:before {
-    color: #9e9e9e;
-    content: "• ";
-}
-body.mdui-theme-primary-blue-grey article h3.link-title:after {
-    color: #607d8b;
-    content: " •";
-}
-body.mdui-theme-primary-blue-grey article h3.link-title:before {
-    color: #607d8b;
-    content: "• ";
-}
 body.mdui-theme-primary-red .title, body.mdui-theme-primary-red article h1, body.mdui-theme-primary-red article h2, body.mdui-theme-primary-red article h3 {
     color: #f44336;
 }
@@ -2760,9 +2608,6 @@ article img.mdx-img-in-post {
 article > img.mdx-img-in-post {
     margin: 10px 0;
 }
-.mdx-img-viewer {
-    cursor: zoom-out;
-}
 .mdx-comment-login-needed {
     margin-top: 20px;
     margin-right: auto!important;
@@ -2993,6 +2838,23 @@ article > img.mdx-img-in-post {
     height: 100%;
     z-index: 9999999;
     display: none;
+    cursor: zoom-out;
+    .image-view-alt {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 16px;
+        line-height: 25px;
+        padding: 15px;
+        padding-top: 25px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+        color: white;
+        background-image: linear-gradient(to bottom, rgba(36, 36, 36, 0) 0%, rgba(36, 36, 36, .8) 80%);
+        opacity: 0;
+        transition: all .2s;
+    }
 }
 .mdx-img-viewer img {
     position: fixed;
@@ -3629,6 +3491,9 @@ body.mdui-theme-layout-dark input#s::placeholder {
     margin: 10px 0!important;
     display: block;
     width: 100%;
+}
+.wp-block-gallery .blocks-gallery-item .mdx-lazyload-container {
+    margin: 0!important;
 }
 .mdx-lazyload-container a.mdx-img-in-post-with-link {
     height: 100%;
@@ -4338,6 +4203,10 @@ body.mdx-index-void.mdui-theme-layout-dark {
     margin-left: 10px;
     display: inline-block;
     font-size: 25px;
+}
+.blocks-gallery-grid .blocks-gallery-image figcaption, .blocks-gallery-grid .blocks-gallery-item figcaption, .wp-block-gallery .blocks-gallery-image figcaption, .wp-block-gallery .blocks-gallery-item figcaption {
+    z-index: 99;
+    box-sizing: border-box;
 }
 @media screen and (orientation:landscape) and (min-width: 750px) {
     body.mdx-first-tworows .theFirstPageBackGround, body.mdx-first-tworows .mdx-index-img-bg, body.mdx-first-tworows .theFirstPage, body.mdx-first-tworows .theFirstPageSay {

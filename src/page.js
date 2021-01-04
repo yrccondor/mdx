@@ -351,7 +351,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
                 mdui.updateSpinners();
                 ele('.mdx-img-viewer', (elem) => {
-                    elem.innerHTML += `<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">`;
+                    elem.innerHTML += `<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">${(e.target.getAttribute('alt') !== '' && e.target.getAttribute('alt') !== e.target.dataset.src) ? `<div class="image-view-alt">${mdx_img_alt && e.target.getAttribute('alt').replace(/[<>&"]/g, (c) => {return {'<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;'}[c]})}</div>` : ''}`;
                 })
                 ele('#img-box').style.display = "flex";
                 ele('#img-box').style.opacity = 1;
@@ -368,6 +368,16 @@ window.addEventListener('DOMContentLoaded', () => {
                                     e.style.top = (winheight - (winwidth / imgWdh)) / 2 + 'px';
                                     e.style.left = '0';
                                 })
+                                if (mdx_img_alt) {
+                                    ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                        e.style.paddingLeft = e.style.paddingRight = '15px';
+                                    });
+                                    setTimeout(() => {
+                                        ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                            e.style.opacity = '1';
+                                        })
+                                    }, 200);
+                                }
                             }, 0);
                         } else {
                             ele('.mdx-img-viewer img').style.transition = 'all .2s';
@@ -378,6 +388,16 @@ window.addEventListener('DOMContentLoaded', () => {
                                     e.style.top = (winheight - (img.naturalHeight)) / 2 + 'px';
                                     e.style.left = (winwidth - (img.naturalWidth)) / 2 + 'px';
                                 })
+                                if (mdx_img_alt) {
+                                    ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                        e.style.paddingLeft = e.style.paddingRight = (winwidth - (img.naturalWidth)) / 2 + 15 + 'px';
+                                    });
+                                    setTimeout(() => {
+                                        ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                            e.style.opacity = '1';
+                                        })
+                                    }, 200);
+                                }
                             }, 0);
                         }
                     } else {
@@ -390,6 +410,16 @@ window.addEventListener('DOMContentLoaded', () => {
                                     e.style.top = '0';
                                     e.style.left = (winwidth - (winheight * imgWdh)) / 2 + 'px';
                                 })
+                                if (mdx_img_alt) {
+                                    ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                        e.style.paddingLeft = e.style.paddingRight = (winwidth - (winheight * imgWdh)) / 2 + 15 + 'px';
+                                    });
+                                    setTimeout(() => {
+                                        ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                            e.style.opacity = '1';
+                                        })
+                                    }, 200);
+                                }
                             }, 0);
                         } else {
                             ele('.mdx-img-viewer img').style.transition = 'all .2s';
@@ -400,6 +430,16 @@ window.addEventListener('DOMContentLoaded', () => {
                                     e.style.top = (winheight - (img.naturalHeight)) / 2 + 'px';
                                     e.style.left = (winwidth - (img.naturalWidth)) / 2 + 'px';
                                 })
+                                if (mdx_img_alt) {
+                                    ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                        e.style.paddingLeft = e.style.paddingRight = (winwidth - (img.naturalWidth)) / 2 + 15 + 'px';
+                                    });
+                                    setTimeout(() => {
+                                        ele('.mdx-img-viewer .image-view-alt', (e) => {
+                                            e.style.opacity = '1';
+                                        })
+                                    }, 200);
+                                }
                             }, 0);
                         }
                     }
@@ -435,6 +475,11 @@ window.addEventListener('DOMContentLoaded', () => {
         mdui.$('body').on('click', '.mdx-img-viewer', function () {
             ele('#img-box').style.opacity = '0';
             ele('#img-box').style.pointerEvents = 'none';
+            if (mdx_img_alt) {
+                ele('.mdx-img-viewer .image-view-alt', (e) => {
+                    e.style.opacity = '0';
+                })
+            }
             ele('.mdx-img-viewer img', (e) => {
                 e.style.width = ele('.mdx-img-viewer img').getAttribute("data-raww") + "px";
                 e.style.height = ele('.mdx-img-viewer img').getAttribute("data-rawh") + "px";
@@ -451,6 +496,13 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             window.setTimeout(afterCloseImgBox, 200);
         })
+    } else {
+        ele('article a > img', (e) => {
+            e.parentNode.classList.add("mdx-img-in-post-with-link");
+        });
+        ele('article a > figure > img.lazyload, article a > figure > img.lazyloaded, article a > figure > img.lazyloading', (e) => {
+            e.parentNode.parentNode.classList.add("mdx-img-in-post-with-link");
+        });
     }
     ele('article a > img:not(.lazyload):not(.lazyloaded):not(.lazyloading)', (e) => {
         e.parentNode.classList.add('mdx-nonlazy-link');

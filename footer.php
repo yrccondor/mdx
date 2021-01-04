@@ -146,6 +146,7 @@
       var mdx_post_i18n_3 = '<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>';
       var mdx_toc_i18n_1 = '<?php _e('菜单','mdx'); ?>';
       var mdx_toc_i18n_2 = '<?php _e('目录','mdx'); ?>';
+      var mdx_img_alt = <?php echo mdx_get_option('mdx_img_box_show_alt'); ?>;
       </script>
 <?php }?>
 <?php if(function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj')=="true") && (is_single() || is_page())){?>
