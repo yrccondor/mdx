@@ -181,10 +181,8 @@ function mdx_js(){
     if(is_single() || is_page()){
         wp_register_script('mdx_qr_js', $files_root.'/js/qr.js', false, '', true);
         wp_register_script('mdx_ra_js', $files_root.'/js/ra.js', false, '', true);
-        wp_register_script('mdx_h2c_js', $files_root.'/js/h2c.js', false, '', true);
         wp_enqueue_script('mdx_qr_js');
         wp_enqueue_script('mdx_ra_js');
-        wp_enqueue_script('mdx_h2c_js');
         if(mdx_get_option("mdx_toc")=="true" && is_single()){
             wp_register_script('mdx_toc_js', $files_root.'/js/toc.js', false, '', true);
             wp_enqueue_script('mdx_toc_js');
@@ -303,12 +301,12 @@ $GLOBALS['comment'] = $comment;?>
 <?php }
 
 //回复的评论加@
-function comment_add_at( $comment_text, $comment=''){
-    if( $comment->comment_parent > 0){
-    $comment_text='<a rel="nofollow" class="comment_at" href="#comment-'.$comment->comment_parent.'">@'.get_comment_author($comment->comment_parent).'：</a> '.$comment_text;
+function comment_add_at( $comment_text, $comment){
+    if ($comment->comment_parent > 0) {
+        $comment_text='<a rel="nofollow" class="comment_at" href="#comment-'.$comment->comment_parent.'">@'.get_comment_author($comment->comment_parent).'：</a> '.$comment_text;
     }
     return $comment_text;
-    }
+}
 add_filter('comment_text', 'comment_add_at', 10, 2);
 
 //获取链接

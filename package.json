@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "html2canvas": "1.0.0-alpha.11"
   },
   "browserslist": [
     "> 1% in CN",

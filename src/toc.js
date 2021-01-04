@@ -89,7 +89,7 @@ function getTitleListHtml(minLevel = 1, maxLevel = 6) {
     finalNode.id = 'mdx-toc';
     finalNode.style.transform = 'translateX(0)';
 
-    let finalPreview = "";
+    let finalPreview = '';
 
     let counter = 0;
     let titles = [...Array(maxLevel)].map(() => 0);

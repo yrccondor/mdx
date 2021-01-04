@@ -798,9 +798,11 @@ function mdx_show_img(e) {
     ele('#mdx-share-img').style.display = 'block';
 
     if (!sessionStorage.getItem('si_' + url_hash)) {
-        html2canvas(document.getElementById("mdx-share-img"), { useCORS: true }).then(function (canvas) {
-            convertCanvasToImage(canvas);
-        });
+        import(/* webpackPrefetch: true, webpackChunkName: 'html2canvas' */ 'html2canvas').then(module => {
+            module.default(document.getElementById("mdx-share-img"), { useCORS: true }).then(function (canvas) {
+                convertCanvasToImage(canvas);
+            });
+        })
     } else {
         var image = new Image();
         image.src = sessionStorage.getItem('si_' + url_hash);
