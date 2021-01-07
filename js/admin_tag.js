@@ -38,6 +38,12 @@ jQuery(document).ready(function(){
     }else if(mdx_val_toc=='false'){
         jQuery('input.mdx_toc_preview').attr("disabled","disabled");
     }
+    var mdx_val_img_box = jQuery('input.mdx_img_box:checked').val();
+    if(mdx_val_img_box=='true'){
+        jQuery('input.mdx_img_box_alt').removeAttr("disabled");
+    }else if(mdx_val_img_box=='false'){
+        jQuery('input.mdx_img_box_alt').attr("disabled","disabled");
+    }
     var selectVO = document.getElementById('mdx_use_cdn').options[document.getElementById('mdx_use_cdn').options.selectedIndex].value;
     if(selectVO ==='none' || selectVO ==='jsdelivr'){
         jQuery('.cdn_custom').hide();
@@ -83,6 +89,14 @@ jQuery(".mdx_toc").click(function(){
         jQuery('input.mdx_toc_preview').removeAttr("disabled");
     }else if(mdx_val=='false'){
         jQuery('input.mdx_toc_preview').attr("disabled","disabled");
+    }
+});
+jQuery(".mdx_img_box").click(function(){
+    var mdx_val = jQuery('input.mdx_img_box:checked').val();
+    if(mdx_val=='true'){
+        jQuery('input.mdx_img_box_alt').removeAttr("disabled");
+    }else if(mdx_val=='false'){
+        jQuery('input.mdx_img_box_alt').attr("disabled","disabled");
     }
 });
 function img1(){

@@ -1,4 +1,6 @@
 import fade from './fade.js';
+import './ajax_ac.js';
+import Velocity from 'velocity-animate';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;

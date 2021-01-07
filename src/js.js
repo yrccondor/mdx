@@ -1,5 +1,8 @@
 import ele from './ele.js';
 import fade from './fade.js';
+import './ajax.js';
+import Velocity from 'velocity-animate';
+
 import '../style.less';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes

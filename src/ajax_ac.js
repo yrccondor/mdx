@@ -12,28 +12,28 @@ const init = () => {
             urlV = ele('div.nextpage a').getAttribute('href');
             ele('#postlist').insertAdjacentHTML('afterend', `<div class="mdui-hoverable nextpage2">${textV}</div>`);
             ele('div.nextpage', (e) => { e.parentNode.removeChild(e) });
-            ele('div.main').addEventListener("click", (e) => {
+            ele('div.main-in-other').addEventListener("click", (e) => {
                 if (e.target.classList.contains('nextpage2') && e.target.tagName.toLowerCase() === 'div') {
                     ele('div.nextpage2').style.display = 'none';
                     ele('div.nextpage2').insertAdjacentHTML('afterend', `<div class="mdui-spinner mdx-ajax-loading mdui-center"></div>`);
                     mdui.updateSpinners();
-                    ajax_load_index(urlV);
+                    ajax_load_ac(urlV);
                 }
             });
         }
         if (enhanced_ajax && document.getElementById("postlist").getElementsByTagName("a").length > 0) {
-            if (!sessionStorage.getItem("mdx_index_page_1")) {
-                sessionStorage.setItem("mdx_index_page_1", window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href)));
-                sessionStorage.setItem("mdx_index_loaded_page", 1);
-            } else if (sessionStorage.getItem("mdx_index_page_1") !== window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href))) {
-                for (let i = 1; i <= parseInt(sessionStorage.getItem("mdx_index_loaded_page")); i++) {
-                    sessionStorage.removeItem("mdx_index_page_" + i);
+            if (!sessionStorage.getItem("mdx_" + window.location.href + "_page_1")) {
+                sessionStorage.setItem("mdx_" + window.location.href + "_page_1", window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href)));
+                sessionStorage.setItem("mdx_" + window.location.href + "_loaded_page", 1);
+            } else if (sessionStorage.getItem("mdx_" + window.location.href + "_page_1") !== window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href))) {
+                for (let i = 1; i <= parseInt(sessionStorage.getItem("mdx_" + window.location.href + "_loaded_page")); i++) {
+                    sessionStorage.removeItem("mdx_" + window.location.href + "_page_" + i);
                 }
-                sessionStorage.setItem("mdx_index_page_1", window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href)));
-                sessionStorage.setItem("mdx_index_loaded_page", 1);
-            } else if (parseInt(sessionStorage.getItem("mdx_index_loaded_page")) > 1) {
-                for (let i = 2; i <= parseInt(sessionStorage.getItem("mdx_index_loaded_page")); i++) {
-                    var data = decodeURIComponent(window.atob(sessionStorage.getItem("mdx_index_page_" + i)));
+                sessionStorage.setItem("mdx_" + window.location.href + "_page_1", window.btoa(encodeURIComponent(document.getElementById("postlist").getElementsByTagName("a")[0].href)));
+                sessionStorage.setItem("mdx_" + window.location.href + "_loaded_page", 1);
+            } else if (parseInt(sessionStorage.getItem("mdx_" + window.location.href + "_loaded_page")) > 1) {
+                for (let i = 2; i <= parseInt(sessionStorage.getItem("mdx_" + window.location.href + "_loaded_page")); i++) {
+                    var data = decodeURIComponent(window.atob(sessionStorage.getItem("mdx_" + window.location.href + "_page_" + i)));
                     let dom = new DOMParser().parseFromString(data, "text/html");
                     urlV = dom.querySelector('div.nextpage a');
                     let data2 = '';
@@ -55,14 +55,14 @@ const init = () => {
         }
     })
 
-    function ajax_load_index(url) {
+    function ajax_load_ac(url) {
         betterFetch(url, { credentials: 'same-origin' }).then((data) => {
             page++;
             let dom = new DOMParser().parseFromString(data, "text/html");
             urlV = dom.querySelector('div.nextpage a');
-            if (enhanced_ajax && parseInt(sessionStorage.getItem("mdx_index_loaded_page")) <= 30) {
-                sessionStorage.setItem("mdx_index_page_" + page, window.btoa(encodeURIComponent(data)));
-                sessionStorage.setItem("mdx_index_loaded_page", page);
+            if (enhanced_ajax && parseInt(sessionStorage.getItem("mdx_" + window.location.href + "_loaded_page")) <= 15) {
+                sessionStorage.setItem("mdx_" + window.location.href + "_page_" + page, window.btoa(encodeURIComponent(data)));
+                sessionStorage.setItem("mdx_" + window.location.href + "_loaded_page", page);
             }
             let data2 = '';
             if (urlV === null) {

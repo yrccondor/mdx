@@ -1,4 +1,5 @@
 import ele from './ele.js';
+import Velocity from 'velocity-animate';
 
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;

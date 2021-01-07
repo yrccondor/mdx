@@ -12,9 +12,7 @@ module.exports = {
         search: './src/search.js',
         ac: './src/ac.js',
         toc: './src/toc.js',
-        login: './src/login.js',
-        ajax: './src/ajax.js',
-        ajax_other: './src/ajax_other.js'
+        login: './src/login.js'
     },
     output: {
         filename: '[name].js',

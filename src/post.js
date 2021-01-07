@@ -1,6 +1,7 @@
 import ele from './ele.js';
 import fade from './fade.js';
 import betterFetch from './betterFetch.js';
+import Velocity from 'velocity-animate';
 
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;

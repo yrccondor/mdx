@@ -30,6 +30,7 @@ export default (selector, callback = null, returnType = 'single') => {
 
     if (callback !== null) {
         if (!idSelector) {
+            elems = [...elems];
             Array.prototype.map.call(elems, (e) => { callback(e); return e });
         } else {
             callback(elems);

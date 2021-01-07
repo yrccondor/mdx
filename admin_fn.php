@@ -48,6 +48,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
     mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
     mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
+    mdx_update_option('mdx_hot_posts_style', $_POST['mdx_hot_posts_style']);
     mdx_update_option('mdx_hot_posts_get', $_POST['mdx_hot_posts_get']);
     mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
     mdx_update_option('mdx_hot_posts_cat', $_POST['mdx_hot_posts_cat']);
@@ -90,7 +91,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 </div>
 <?php }?>
 <nav class="nav-tab-wrapper wp-clearfix" aria-label="Secondary menu"> 
-    <a href="#" class="nav-tab nav-tab-active mdx-admin-nav" id="mdx-admin-nav-post"><?php _e('文章', 'mdx');?></a>
+    <a href="#" class="nav-tab nav-tab-active mdx-admin-nav" id="mdx-admin-nav-post"><?php _e('文章页', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-post-list"><?php _e('文章列表', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-toc"><?php _e('目录', 'mdx');?></a>
     <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-suggestion"><?php _e('推荐文章', 'mdx');?></a>
@@ -116,8 +117,8 @@ wp_nonce_field('mdx_options_update');
     <td>
     <?php $mdx_v_img_box=mdx_get_option('mdx_img_box');?>
         <fieldset>
-        <label><input type="radio" name="mdx_img_box" value="true" <?php if($mdx_v_img_box=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-        <label><input type="radio" name="mdx_img_box" value="false" <?php if($mdx_v_img_box=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+        <label><input type="radio" class="mdx_img_box" name="mdx_img_box" value="true" <?php if($mdx_v_img_box=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+        <label><input type="radio" class="mdx_img_box" name="mdx_img_box" value="false" <?php if($mdx_v_img_box=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
         <p class="description"><?php _e('开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。', 'mdx');?></p>
         </fieldset>
     </td>
@@ -127,8 +128,8 @@ wp_nonce_field('mdx_options_update');
     <td>
     <?php $mdx_v_img_box_show_alt=mdx_get_option('mdx_img_box_show_alt');?>
         <fieldset>
-        <label><input type="radio" name="mdx_img_box_show_alt" value="true" <?php if($mdx_v_img_box_show_alt=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
-        <label><input type="radio" name="mdx_img_box_show_alt" value="false" <?php if($mdx_v_img_box_show_alt=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
+        <label><input type="radio" class="mdx_img_box_alt" name="mdx_img_box_show_alt" value="true" <?php if($mdx_v_img_box_show_alt=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
+        <label><input type="radio" class="mdx_img_box_alt" name="mdx_img_box_show_alt" value="false" <?php if($mdx_v_img_box_show_alt=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
         <p class="description"><?php _e('开启后，点击查看大图时，如果图片的 <code>alt</code> 属性不为空，图片下方将会显示 <code>alt</code> 属性内的文本。', 'mdx');?></p>
         </fieldset>
     </td>
@@ -319,6 +320,16 @@ wp_nonce_field('mdx_options_update');
     </td>
     </tr>
     <tr>
+    <th scope="row"><?php _e('首页推荐文章形式', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_hot_posts_style=mdx_get_option('mdx_hot_posts_style');?>
+        <fieldset>
+        <label><input type="radio" class="mdx_apspc2" name="mdx_hot_posts_style" value="block" <?php if($mdx_v_hot_posts_style=='block'){?>checked="checked"<?php }?>> <?php  _e('独立模块', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_apspc2" name="mdx_hot_posts_style" value="slide" <?php if($mdx_v_hot_posts_style=='slide'){?>checked="checked"<?php }?>> <?php _e('页首幻灯片', 'mdx');?></label>
+        </fieldset>
+    </td>
+    </tr>
+    <tr>
     <th scope="row"><label for="mdx_hot_posts_num"><?php _e('首页推荐文章数量', 'mdx');?></label></th>
     <td><input name="mdx_hot_posts_num" type="text" id="mdx_hot_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_num'))?>" class="regular-text mdx_apspc2">
     <p class="description"><?php _e('在此设定首页推荐文章篇数。请输入整数。', 'mdx');?></p></td>
@@ -328,8 +339,8 @@ wp_nonce_field('mdx_options_update');
     <td>
     <?php $mdx_v_hot_posts_get=mdx_get_option('mdx_hot_posts_get');?>
         <fieldset>
-        <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="cat" <?php if($mdx_v_hot_posts_get=='cat'){?>checked="checked"<?php }?>> <?php  _e('某一分类', 'mdx');?></label><br>
-        <label><input type="radio" class="mdx_get" name="mdx_hot_posts_get" value="sticky" <?php if($mdx_v_hot_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_get mdx_apspc2" name="mdx_hot_posts_get" value="cat" <?php if($mdx_v_hot_posts_get=='cat'){?>checked="checked"<?php }?>> <?php  _e('某一分类', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_get mdx_apspc2" name="mdx_hot_posts_get" value="sticky" <?php if($mdx_v_hot_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
         <p class="description"><?php _e('在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页推荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。', 'mdx');?></p>
         </fieldset>
     </td>
