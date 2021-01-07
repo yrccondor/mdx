@@ -201,8 +201,18 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .mdui-theme-layout-dark .mdx-post-cot {
     border: 2px solid #454545;
 }
-.mdui-table td, .mdui-table th {
+.mdui-table thead th {
     border-bottom: 2px solid #e2e2e2;
+}
+.mdui-table tbody td, .mdui-table tbody th {
+    border-bottom: 2px solid #e2e2e2;
+}
+.mdui-table tfoot {
+    background-color: rgb(243, 243, 243);
+}
+.mdui-table tfoot td, .mdui-table tfoot th {
+    border-top: 2px solid #e2e2e2;
+    border-bottom: none;
 }
 .mdui-theme-layout-dark .mdui-table td, .mdui-theme-layout-dark .mdui-table th {
     border-bottom: 2px solid #454545;

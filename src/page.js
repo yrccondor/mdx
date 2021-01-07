@@ -115,10 +115,17 @@ function init_wp_block() {
             const table = e.getElementsByTagName('table');
             if (table.length > 0) {
                 table[0].classList.add("mdui-table", "mdx-dny-table", "mdui-table-hoverable");
-                let wrapper = document.createElement('div');
+                const wrapper = document.createElement('div');
                 wrapper.classList.add('mdui-table-fluid');
                 e.parentNode.insertBefore(wrapper, e);
                 wrapper.appendChild(table[0]);
+                const figcaption = e.getElementsByTagName('figcaption');
+                if (figcaption.length > 0) {
+                    const figure = document.createElement('figure');
+                    wrapper.parentNode.insertBefore(figure, wrapper);
+                    figure.appendChild(wrapper);
+                    figure.appendChild(figcaption[0]);
+                }
                 e.parentNode.removeChild(e);
             } else {
                 e.classList.remove("wp-block-table", "has-subtle-pale-blue-background-color", "has-background", "is-style-stripes", "has-fixed-layout", "is-style-regular", "has-subtle-pale-green-background-color", "has-subtle-pale-pink-background-color", "has-subtle-light-gray-background-color");
