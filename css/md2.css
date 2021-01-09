@@ -81,7 +81,7 @@
     border-radius: 5px;
     box-shadow: none;
 }
-.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button, .wp-block-file a.mdui-btn {
+.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button, .wp-block-file a.mdui-btn, .theFirstPageSay a.mdui-btn {
     border-radius: 5px;
 }
 #wp-submit, #wp-webauthn, #wp-webauthn-check, #submit {
@@ -231,7 +231,7 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
     border-bottom-right-radius: 8px;
 }
 .wp-block-cover {
-	border-radius: 8px;
+    border-radius: 8px;
 }
 .wp-block-file {
     border-radius: 8px;
@@ -239,7 +239,7 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 #mdx-toc-preview .mdx-toc-preview-item {
     border-radius: 0 8px 8px 0;
 }
-body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-md2-font .mdx-background-404 span, body.mdx-md2-font .mdx-si-head, body.mdx-md2-font #theFirstPageSayContent {
+body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-md2-font .mdx-background-404 span, body.mdx-md2-font .mdx-si-head, body.mdx-md2-font #theFirstPageSayContent, body.mdx-md2-font .theFirstPageSay h1 {
     font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     font-weight: bold;
 }
@@ -258,6 +258,9 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 }
 .comment-reply-link, .comment-reply-login {
     border-radius: 5px;
+}
+body.mdx-index-void .mdxNotice {
+    border-radius: 8px!important;
 }
 @media screen and (orientation:landscape) and (min-width: 750px){
     body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {

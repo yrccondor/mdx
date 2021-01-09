@@ -48,7 +48,6 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_speed_pre', $_POST['mdx_speed_pre']);
     mdx_update_option('mdx_share_area', $_POST['mdx_share_area']);
     mdx_update_option('mdx_hot_posts', $_POST['mdx_hot_posts']);
-    mdx_update_option('mdx_hot_posts_style', $_POST['mdx_hot_posts_style']);
     mdx_update_option('mdx_hot_posts_get', $_POST['mdx_hot_posts_get']);
     mdx_update_option('mdx_hot_posts_num', $_POST['mdx_hot_posts_num']);
     mdx_update_option('mdx_hot_posts_cat', $_POST['mdx_hot_posts_cat']);
@@ -316,16 +315,6 @@ wp_nonce_field('mdx_options_update');
         <label><input type="radio" class="mdx_apsp2" name="mdx_hot_posts" value="true" <?php if($mdx_v_hot_posts=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" class="mdx_apsp2" name="mdx_hot_posts" value="false" <?php if($mdx_v_hot_posts=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
         <p class="description"><?php _e('开启后，首页会展示推荐文章，请在下方进行设置。', 'mdx');?></p>
-        </fieldset>
-    </td>
-    </tr>
-    <tr>
-    <th scope="row"><?php _e('首页推荐文章形式', 'mdx');?></th>
-    <td>
-    <?php $mdx_v_hot_posts_style=mdx_get_option('mdx_hot_posts_style');?>
-        <fieldset>
-        <label><input type="radio" class="mdx_apspc2" name="mdx_hot_posts_style" value="block" <?php if($mdx_v_hot_posts_style=='block'){?>checked="checked"<?php }?>> <?php  _e('独立模块', 'mdx');?></label><br>
-        <label><input type="radio" class="mdx_apspc2" name="mdx_hot_posts_style" value="slide" <?php if($mdx_v_hot_posts_style=='slide'){?>checked="checked"<?php }?>> <?php _e('页首幻灯片', 'mdx');?></label>
         </fieldset>
     </td>
     </tr>

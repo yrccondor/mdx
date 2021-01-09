@@ -3,6 +3,8 @@ import fade from './fade.js';
 import betterFetch from './betterFetch.js';
 import Velocity from 'velocity-animate';
 
+__webpack_public_path__ = window.mdxPublicPath;
+
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;

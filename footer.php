@@ -47,6 +47,7 @@
       var reduce_motion_i18n_1 = "<?php _e("检测到减弱动画模式，已为你减弱动画效果","mdx");?>";
       var reduce_motion_i18n_2 = "<?php _e("撤销","mdx");?>";
       var reduce_motion_i18n_3 = "<?php _e("减弱动画模式关闭，已启用完整动画效果","mdx");?>";
+      var mdxPublicPath = "<?php echo get_template_directory_uri().'/js/'; ?>";
       var cookieFlagName = "<?php echo mdx_get_option('mdx_cookie_flag');?>";
       var ifscr = 0;
       <?php if(mdx_get_option('mdx_auto_scroll')=='true'){?>
@@ -67,33 +68,33 @@
       </script>
     <?php if(is_home()){?>
       <script>
-        enhanced_ajax = false;
+        var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
-        enhanced_ajax = true;
+          enhanced_ajax = true;
         <?php }?>
       </script>
     <?php }else if(is_search()){?>
       <script>
         var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
-        enhanced_ajax = false;
+        var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
-        enhanced_ajax = true;
+          enhanced_ajax = true;
         <?php }?>
       </script>
     <?php }else if(is_author()){?>
       <script>
-       var acPageTitle = '<?php _e('作者归档：'.get_the_author(),'mdx');?>';
-       enhanced_ajax = false;
+        var acPageTitle = '<?php _e('作者归档：'.get_the_author(),'mdx');?>';
+        var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
-        enhanced_ajax = true;
+          enhanced_ajax = true;
         <?php }?>
       </script>
       <?php } else if(is_category()||is_archive()){?>
       <script>
         var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
-        enhanced_ajax = false;
+        var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
-        enhanced_ajax = true;
+          enhanced_ajax = true;
         <?php }?>
       </script>
     <?php }?>

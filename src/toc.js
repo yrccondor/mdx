@@ -1,6 +1,8 @@
 import ele from './ele.js';
 import Velocity from 'velocity-animate';
 
+__webpack_public_path__ = window.mdxPublicPath;
+
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;
 let titleArr = [];

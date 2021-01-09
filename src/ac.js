@@ -2,6 +2,7 @@ import fade from './fade.js';
 import './ajax_ac.js';
 import Velocity from 'velocity-animate';
 
+__webpack_public_path__ = window.mdxPublicPath;
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;

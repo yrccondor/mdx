@@ -135,6 +135,10 @@ function mdx_css(){
         wp_register_style('mdx_md2', $files_root.'/css/md2.css', '', '', 'all');
         wp_enqueue_style('mdx_md2');
     }
+    if(is_home() && mdx_get_option('mdx_index_head_style') === 'slide'){
+        wp_register_style('mdx_swiper_css', $files_root.'/css/swiper.min.css', '', '', 'all');
+        wp_enqueue_style('mdx_swiper_css');
+    }
 }
 add_action('wp_enqueue_scripts', 'mdx_css');
 function mdx_css_login(){
@@ -184,12 +188,16 @@ function mdx_js(){
         wp_enqueue_script('better-comment', $files_root.'/js/better_comment.js', array(), AC_VERSION , true);
         wp_enqueue_script('ajax-comment', $files_root.'/ajax-comment/app.js', array(), AC_VERSION , true);
         wp_localize_script('ajax-comment', 'ajaxcomment', array(
-            'ajax_url'   => admin_url('admin-ajax.php'),
+            'ajax_url' => admin_url('admin-ajax.php'),
             'order' => get_option('comment_order'),
             'formpostion' => 'top',
             'i18n_1' => __('发送成功。', 'mdx'),
             'i18n_2' => __('<strong>错误：</strong> 未知错误。', 'mdx'),
         ));
+    }
+    if(is_home() && mdx_get_option('mdx_index_head_style') === 'slide'){
+        wp_register_script('mdx_swiper_js', $files_root.'/js/swiper.min.js', array(), AC_VERSION , true);
+        wp_enqueue_script('mdx_swiper_js');
     }
     wp_enqueue_script('mdx_sl_js');
 }
@@ -208,8 +216,7 @@ if(mdx_get_option("mdx_login_md")=="true"){
 }
 
 // 添加古腾堡资源
-function mdx_load_blocks()
-{
+function mdx_load_blocks(){
   wp_enqueue_script(
     'mdx_block_js',
     get_template_directory_uri() . '/blocks/blocks.build.js',

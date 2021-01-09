@@ -87,6 +87,11 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_gravatar_actived', $_POST['mdx_gravatar_actived']);
     mdx_update_option('mdx_link_rand_order', $_POST['mdx_link_rand_order']);
     mdx_update_option('mdx_title_med', $_POST['mdx_title_med']);
+    mdx_update_option('mdx_index_head_style', $_POST['mdx_index_head_style']);
+    mdx_update_option('mdx_index_slide_posts_style', $_POST['mdx_index_slide_posts_style']);
+    mdx_update_option('mdx_index_slide_posts_num', $_POST['mdx_index_slide_posts_num']);
+    mdx_update_option('mdx_index_slide_posts_get', $_POST['mdx_index_slide_posts_get']);
+    mdx_update_option('mdx_index_slide_posts_cat', $_POST['mdx_index_slide_posts_cat']);
     mdx_update_option('mdx_index_img', $_POST['mdx_index_img']);
     mdx_update_option('mdx_index_img_bg', $_POST['mdx_index_img_bg']);
     mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
@@ -274,7 +279,7 @@ wp_nonce_field('mdx_options_update');
     <td>
     <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
     <button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
-    <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简单”首页样式不会显示首页图片。</strong><br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
+    <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，你都需要设定一张首页图片。<br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
     <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
     </td>
     </tr>
@@ -288,7 +293,19 @@ wp_nonce_field('mdx_options_update');
         <p class="description"><?php _e('在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不生效。', 'mdx');?></p>
     </fieldset>
     </td>
-    </tr><tr>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('首页头部展示内容', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_index_head_style=mdx_get_option('mdx_index_head_style');?>
+    <fieldset>
+        <label><input type="radio" name="mdx_index_head_style" value="saying" <?php if($mdx_v_index_head_style=='saying'){?>checked="checked"<?php }?>> <?php _e('格言');?></label><br>
+        <label><input type="radio" name="mdx_index_head_style" value="slide" <?php if($mdx_v_index_head_style=='slide'){?>checked="checked"<?php }?>> <?php _e('幻灯片');?></label><br>
+        <p class="description"><?php _e('指定首页头部展示的内容。在下方进行详细设置。', 'mdx');?></p>
+    </fieldset>
+    </td>
+    </tr>
+    <tr>
     <th scope="row"><?php _e('首页格言', 'mdx');?></th>
     <td>
     <input name="mdx_index_say" type="text" id="mdx_index_say" value="<?php echo esc_attr(mdx_get_option('mdx_index_say'))?>" class="regular-text">
@@ -309,6 +326,38 @@ wp_nonce_field('mdx_options_update');
     </select>
     <p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。', 'mdx');?></p>
     </td>
+    </tr>
+    <tr>
+    <th scope="row"><label for="mdx_index_slide_posts_style"><?php _e('首页幻灯片样式', 'mdx');?></label></th>
+    <td>
+    <?php $mdx_v_index_slide_posts_style=mdx_get_option('mdx_index_slide_posts_style');?>
+    <select name="mdx_index_slide_posts_style" id="mdx_index_slide_posts_style">
+        <option value="1" <?php if($mdx_v_index_slide_posts_style=='1'){?>selected="selected"<?php }?>><?php _e('居中', 'mdx');?></option>
+        <option value="2" <?php if($mdx_v_index_slide_posts_style=='2'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
+        <option value="3" <?php if($mdx_v_index_slide_posts_style=='3'){?>selected="selected"<?php }?>><?php _e('图文', 'mdx');?></option>
+    </select>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
+    <td><input name="mdx_index_slide_posts_num" type="text" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
+    <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('首页幻灯片文章获取方式', 'mdx');?></th>
+    <td>
+    <?php $mdx_v_index_slide_posts_get=mdx_get_option('mdx_index_slide_posts_get');?>
+        <fieldset>
+        <label><input type="radio" class="mdx_get" name="mdx_index_slide_posts_get" value="cat" <?php if($mdx_v_index_slide_posts_get=='cat'){?>checked="checked"<?php }?>> <?php _e('某一分类', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_get" name="mdx_index_slide_posts_get" value="sticky" <?php if($mdx_v_index_slide_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
+        <p class="description"><?php _e('在此设定首页幻灯片文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，将会显示首页图片，同时文章列表将保持原始顺序而不会被置顶文章打乱。', 'mdx');?></p>
+        </fieldset>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><label for="mdx_index_slide_posts_cat"><?php _e('首页幻灯片文章分类名', 'mdx');?></label></th>
+    <td><input name="mdx_index_slide_posts_cat" type="text" id="mdx_index_slide_posts_cat" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_cat'))?>" class="regular-text">
+    <p class="description"><?php _e('在此设定首页幻灯片文章的分类名。当分类不存在时，将显示最新文章。', 'mdx');?></p></td>
     </tr>
 </tbody>
 
@@ -381,6 +430,7 @@ wp_nonce_field('mdx_options_update');
         <label><input type="radio" name="mdx_post_list_width" value="normal" <?php if($mdx_v_post_list_width=='normal'){?>checked="checked"<?php }?>> <?php _e('正常', 'mdx');?></label><br>
         <label><input type="radio" name="mdx_post_list_width" value="wide" <?php if($mdx_v_post_list_width=='wide'){?>checked="checked"<?php }?>> <?php _e('较宽', 'mdx');?></label><br>
         </fieldset>
+        <p class="description"><?php _e('使用“较宽”，文章列表将会以多列显示。', 'mdx');?></p>
     </td>
     </tr>
     <tr>

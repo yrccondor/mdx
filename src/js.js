@@ -5,6 +5,8 @@ import Velocity from 'velocity-animate';
 
 import '../style.less';
 
+__webpack_public_path__ = window.mdxPublicPath;
+
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var metaColor = document.querySelector("meta[name='theme-color']");
@@ -79,6 +81,15 @@ function scrollDiff() {
                 opacityHeight = 1;
             }
             document.getElementsByClassName("theFirstPage")[0].style.setProperty('opacity', opacityHeight, 'important');
+            const slideDOM = document.getElementsByClassName('mdx-slide-content');
+            if (slideDOM.length > 0) {
+                for (const e of [...slideDOM]) {
+                    e.style.setProperty('background-color', `rgba(var(--mdx-theme-color-with-white-head), ${(1 - opacityHeight) * .4 + .6})`, 'important');
+                }
+                ele('.swiper-pagination', (e) => {
+                    e.style.setProperty('opacity', opacityHeight, 'important');
+                })
+            }
         }
     } else if (!mdxStyle) {
         var howFar = document.documentElement.scrollTop || document.body.scrollTop;
@@ -139,6 +150,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     displayHotPostsOverlay();
+
+    const sliderDOM = document.getElementsByClassName('mdx-swiper');
+    if (sliderDOM.length > 0) {
+        new Swiper(sliderDOM[0], {
+            autoplay: true,
+            loop: true,
+            keyboard: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
+    }
 })
 
 function handleSearchChange(hsc) {
