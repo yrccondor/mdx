@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="https://img.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
+<img src="https://acdn.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
 </p>
 
 <h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
@@ -24,14 +24,14 @@
 
 ## İçerikler
 
-- [İçerikler](#%c4%b0%c3%a7erikler)
-- [Tanıtım](#tan%c4%b1t%c4%b1m)
+- [İçerikler](#i̇çerikler)
+- [Tanıtım](#tanıtım)
 - [Demo](#demo)
-- [İndir](#%c4%b0ndir)
-- [Globalleştirme](#globalle%c5%9ftirme)
-- [Dökümanlar](#d%c3%b6k%c3%bcmanlar)
+- [İndir](#i̇ndir)
+- [Globalleştirme](#globalleştirme)
+- [Dökümanlar](#dökümanlar)
 - [Lisans](#lisans)
-- [Çıktı](#%c3%87%c4%b1kt%c4%b1)
+- [Çıktı](#çıktı)
 
 
 ## Tanıtım
@@ -99,4 +99,4 @@ GPL 3.0 altında açık kaynak olarak lisanslanmıştır.
 
 ## Çıktı
 
-![](https://img.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
+![](https://acdn.flyhigher.top/wp-content/uploads/2017/11/det.jpg)

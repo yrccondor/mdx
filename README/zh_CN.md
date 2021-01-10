@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="https://img.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
+<img src="https://acdn.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
 </p>
 
 <h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
@@ -95,4 +95,4 @@ MDx 支持多语言，默认语言为简体中文。
 
 ## 渲染
 
-![](https://img.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
+![](https://acdn.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
