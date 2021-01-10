@@ -528,7 +528,7 @@ wp_nonce_field('mdx_options_update');
 </tbody>
 
 <tbody class="mdx-admin-section" id="mdx-admin-nav-cdn-section">
-<tr>
+    <tr>
     <th scope="row"><label for="mdx_use_cdn"><?php _e('使用 CDN 加载前端主题文件', 'mdx');?></label></th>
     <td>
     <?php $mdx_v_use_cdn=mdx_get_option('mdx_use_cdn');?>

@@ -299,20 +299,20 @@ wp_nonce_field('mdx_options_update');
     <td>
     <?php $mdx_v_index_head_style=mdx_get_option('mdx_index_head_style');?>
     <fieldset>
-        <label><input type="radio" name="mdx_index_head_style" value="saying" <?php if($mdx_v_index_head_style=='saying'){?>checked="checked"<?php }?>> <?php _e('格言');?></label><br>
-        <label><input type="radio" name="mdx_index_head_style" value="slide" <?php if($mdx_v_index_head_style=='slide'){?>checked="checked"<?php }?>> <?php _e('幻灯片');?></label><br>
+        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="saying" <?php if($mdx_v_index_head_style=='saying'){?>checked="checked"<?php }?>> <?php _e('格言');?></label><br>
+        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="slide" <?php if($mdx_v_index_head_style=='slide'){?>checked="checked"<?php }?>> <?php _e('幻灯片');?></label><br>
         <p class="description"><?php _e('指定首页头部展示的内容。在下方进行详细设置。', 'mdx');?></p>
     </fieldset>
     </td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_saying">
     <th scope="row"><?php _e('首页格言', 'mdx');?></th>
     <td>
-    <input name="mdx_index_say" type="text" id="mdx_index_say" value="<?php echo esc_attr(mdx_get_option('mdx_index_say'))?>" class="regular-text">
+    <input name="mdx_index_say" type="text" id="mdx_index_say" value="<?php echo esc_attr(mdx_get_option('mdx_index_say'))?>" class="regular-text mdx_index_head_style">
     <p class="description"><?php _e('这句话会展示在首页。', 'mdx');?></p>
     </td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_saying">
     <th scope="row"><label for="mdx_index_say_size"><?php _e('首页格言字体大小', 'mdx');?></label></th>
     <td>
     <?php $mdx_v_index_say_size=mdx_get_option('mdx_index_say_size');?>
@@ -327,7 +327,7 @@ wp_nonce_field('mdx_options_update');
     <p class="description"><?php _e('字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。', 'mdx');?></p>
     </td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_slide">
     <th scope="row"><label for="mdx_index_slide_posts_style"><?php _e('首页幻灯片样式', 'mdx');?></label></th>
     <td>
     <?php $mdx_v_index_slide_posts_style=mdx_get_option('mdx_index_slide_posts_style');?>
@@ -338,23 +338,23 @@ wp_nonce_field('mdx_options_update');
     </select>
     </td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_slide">
     <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
     <td><input name="mdx_index_slide_posts_num" type="text" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
     <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_slide">
     <th scope="row"><?php _e('首页幻灯片文章获取方式', 'mdx');?></th>
     <td>
     <?php $mdx_v_index_slide_posts_get=mdx_get_option('mdx_index_slide_posts_get');?>
         <fieldset>
-        <label><input type="radio" class="mdx_get" name="mdx_index_slide_posts_get" value="cat" <?php if($mdx_v_index_slide_posts_get=='cat'){?>checked="checked"<?php }?>> <?php _e('某一分类', 'mdx');?></label><br>
-        <label><input type="radio" class="mdx_get" name="mdx_index_slide_posts_get" value="sticky" <?php if($mdx_v_index_slide_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_index_get" name="mdx_index_slide_posts_get" value="cat" <?php if($mdx_v_index_slide_posts_get=='cat'){?>checked="checked"<?php }?>> <?php _e('某一分类', 'mdx');?></label><br>
+        <label><input type="radio" class="mdx_index_get" name="mdx_index_slide_posts_get" value="sticky" <?php if($mdx_v_index_slide_posts_get=='sticky'){?>checked="checked"<?php }?>> <?php _e('置顶文章', 'mdx');?></label><br>
         <p class="description"><?php _e('在此设定首页幻灯片文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，将会显示首页图片，同时文章列表将保持原始顺序而不会被置顶文章打乱。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>
-    <tr>
+    <tr class="mdx_index_head_style_slide">
     <th scope="row"><label for="mdx_index_slide_posts_cat"><?php _e('首页幻灯片文章分类名', 'mdx');?></label></th>
     <td><input name="mdx_index_slide_posts_cat" type="text" id="mdx_index_slide_posts_cat" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_cat'))?>" class="regular-text">
     <p class="description"><?php _e('在此设定首页幻灯片文章的分类名。当分类不存在时，将显示最新文章。', 'mdx');?></p></td>

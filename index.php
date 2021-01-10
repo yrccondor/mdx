@@ -135,6 +135,12 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         <div class="swiper-bottom-void"></div>
         <?php } ?>
     </div>
+    <?php }elseif($mdx_index_show === "1" || $mdx_index_show === "4"){?>
+        <div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>">
+            <?php if($mdx_index_show === "4"){?>
+            <div class="swiper-bottom-void"></div>
+            <?php } ?>
+        </div>
     <?php }}
     if($mdx_index_show=="2"){?>
     <div class="mdui-valign" id="mdx-search-anim">

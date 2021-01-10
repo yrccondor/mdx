@@ -154,7 +154,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const sliderDOM = document.getElementsByClassName('mdx-swiper');
     if (sliderDOM.length > 0) {
         new Swiper(sliderDOM[0], {
-            autoplay: true,
+            autoplay: {
+                delay: 5000
+            },
             loop: true,
             keyboard: true,
             pagination: {
