@@ -9,7 +9,7 @@
     font-display: block;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 300;
     font-style: normal;
     src: url("../fonts/../fonts/Montserrat-Light.eot");
@@ -19,7 +19,7 @@
     font-display: swap;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 400;
     font-style: normal;
     src: url("../fonts/Montserrat-Regular.eot");
@@ -29,7 +29,7 @@
     font-display: swap;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 600;
     font-style: normal;
     src: url("../fonts/Montserrat-SemiBold.eot");
@@ -49,7 +49,7 @@
     width: 170px;
     height: 170px;
 }
-.mdx-sn-wechat-qr::after {
+.mdx-sn-wechat-qr:after {
     border-radius: 8px;
 }
 .mdui-snackbar.mdui-snackbar-top {
@@ -78,7 +78,6 @@
     box-shadow: none!important;
 }
 #submit {
-    border-radius: 5px;
     box-shadow: none;
 }
 .mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button, .wp-block-file a.mdui-btn, .theFirstPageSay a.mdui-btn {
@@ -102,14 +101,14 @@
     border-color: #E0E0E0!important;
 }
 #login_error {
-    border: #dc3232 solid 2px!important;
+    border: 2px solid #dc3232!important;
+}
+#login_error, .message {
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
 .message {
-    border: #00a0d2 solid 2px!important;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
+    border: 2px solid #00a0d2!important;
 }
 .ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
     border-radius: 0!important;
@@ -201,14 +200,11 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .mdui-theme-layout-dark .mdx-post-cot {
     border: 2px solid #454545;
 }
-.mdui-table thead th {
-    border-bottom: 2px solid #e2e2e2;
-}
-.mdui-table tbody td, .mdui-table tbody th {
+.mdui-table tbody td, .mdui-table tbody th, .mdui-table thead th {
     border-bottom: 2px solid #e2e2e2;
 }
 .mdui-table tfoot {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
 }
 .mdui-table tfoot td, .mdui-table tfoot th {
     border-top: 2px solid #e2e2e2;
@@ -218,22 +214,19 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
     border-bottom: 2px solid #454545;
 }
 .mdui-table tbody tr:last-child td, .mdui-table tbody tr:last-child th {
-    border-bottom: 0px solid #e2e2e2;
+    border-bottom: 0 solid #e2e2e2;
 }
 .mdui-table thead {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
 }
 .mdui-theme-layout-dark .mdui-table thead {
-    background-color: rgb(58, 58, 58);
+    background-color: #3a3a3a;
 }
 .links-des {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-.wp-block-cover {
-    border-radius: 8px;
-}
-.wp-block-file {
+.wp-block-cover, .wp-block-file {
     border-radius: 8px;
 }
 #mdx-toc-preview .mdx-toc-preview-item {
@@ -243,7 +236,7 @@ body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-
     font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     font-weight: bold;
 }
-body.mdx-md2-font .mdx-background-404 span > span{
+body.mdx-md2-font .mdx-background-404 span > span {
     font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     font-weight: normal;
 }
@@ -262,8 +255,8 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 body.mdx-index-void .mdxNotice {
     border-radius: 8px!important;
 }
-@media screen and (orientation:landscape) and (min-width: 750px){
-    body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {
+@media screen and (orientation: landscape) and (min-width: 750px) {
+    body.mdx-first-tworows #mdx-search-anim, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows .mdx-tworows-title > div {
         border-radius: 8px;
     }
     body.mdx-first-tworows.mdx-md2-font .mdx-tworows-title > div > span {
