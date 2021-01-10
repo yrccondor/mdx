@@ -161,6 +161,7 @@ window.addEventListener('DOMContentLoaded', () => {
             keyboard: true,
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true
             },
         })
     }
