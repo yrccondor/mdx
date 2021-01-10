@@ -334,7 +334,7 @@ wp_nonce_field('mdx_options_update');
     <select name="mdx_index_slide_posts_style" id="mdx_index_slide_posts_style">
         <option value="1" <?php if($mdx_v_index_slide_posts_style=='1'){?>selected="selected"<?php }?>><?php _e('居中', 'mdx');?></option>
         <option value="2" <?php if($mdx_v_index_slide_posts_style=='2'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
-        <option value="3" <?php if($mdx_v_index_slide_posts_style=='3'){?>selected="selected"<?php }?>><?php _e('图文', 'mdx');?></option>
+        <option value="3" <?php if($mdx_v_index_slide_posts_style=='3'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
     </select>
     </td>
     </tr>

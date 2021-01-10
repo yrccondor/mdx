@@ -273,6 +273,9 @@ body.mdx-index-void .mdxNotice {
     .PostMainImg0 {
         border-radius: 8px;
     }
+    .ArtMain0 .mdx-say-after.mdui-card {
+        border-radius: 8px!important;
+    }
 }
 @media (max-width: 600px) {
     .mdui-snackbar {

@@ -107,28 +107,65 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     if(count($mdx_posts_slide) > 0 || mdx_get_option('mdx_index_slide_posts_get') !== "sticky"){?>
     <div class="theFirstPageSay mdui-typo mdx-swiper swiper-container slide-style-<?php echo mdx_get_option('mdx_index_slide_posts_style');?>">
         <div class="swiper-wrapper">
-            <?php foreach($mdx_posts_slide as $post_item):?><div class="swiper-item swiper-slide">
+            <?php foreach($mdx_posts_slide as $post_item){?><div class="swiper-item swiper-slide">
+                <?php if(mdx_get_option("mdx_index_slide_posts_style") === "1"){?>
                 <div class="mdx-slide-bg<?php $mdx_img_slide = wp_get_attachment_image_src(get_post_thumbnail_id($post_item->ID),'large');
-                        if($mdx_img_slide !== false){
-                            $mdx_img_slide = $mdx_img_slide[0];
+                    if($mdx_img_slide !== false){
+                        $mdx_img_slide = $mdx_img_slide[0];
+                    }else{
+                        $mdx_img_slide = "";
+                    }
+                    if($mdx_img_slide !== ""){
+                        ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
+                    }else{
+                        if(mdx_get_option("mdx_post_def_img") === "true"){
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
                         }else{
-                            $mdx_img_slide = "";
+                            ?>"<?php
                         }
-                        if($mdx_img_slide !== ""){
-                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
-                        }else{
-                            if(mdx_get_option("mdx_post_def_img") === "true"){
-                                ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
-                            }else{
-                                ?>"<?php
-                            }
-                        }?>></div>
+                    }?>></div>
                 <section class="mdx-slide-content">
                     <h1><?php echo $post_item->post_title; ?></h1>
-                    <div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div>
+                    <div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php echo get_the_time('Y-m-d', $post_item);}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php echo get_the_modified_time('Y-m-d', $post_item);}?></div>
                     <a class="mdui-btn mdui-ripple" href="<?php echo get_permalink($post_item->ID); ?>"><?php _e("前往阅读", "mdx");?> <i class="mdui-icon material-icons">&#xe5c8;</i></a>
                 </section>
-            </div><?php endforeach;?>
+                <?php }elseif(mdx_get_option("mdx_index_slide_posts_style") === "2"){?>
+                <div class="mdx-slide-bg<?php $mdx_img_slide = wp_get_attachment_image_src(get_post_thumbnail_id($post_item->ID),'large');
+                    if($mdx_img_slide !== false){
+                        $mdx_img_slide = $mdx_img_slide[0];
+                    }else{
+                        $mdx_img_slide = "";
+                    }
+                    if($mdx_img_slide !== ""){
+                        ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
+                    }else{
+                        if(mdx_get_option("mdx_post_def_img") === "true"){
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                        }else{
+                            ?>"<?php
+                        }
+                    }?>></div>
+                <section class="mdx-slide-content">
+                    <div class="slide-wrap">
+                        <div class="slide-part">
+                            <h1><?php echo $post_item->post_title; ?></h1>
+                            <div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php echo get_the_time('Y-m-d', $post_item);}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php echo get_the_modified_time('Y-m-d', $post_item);}?></div>
+                            <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p><?php if(post_password_required($post_item)){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ_slider = mdx_get_post_excerpt($post_item, 180);if($summ_slider !== ""){echo $summ_slider;}else{_e("这篇文章没有摘要");}}?></p><?php }?>
+                        </div>
+                        <a class="mdui-btn mdui-ripple" href="<?php echo get_permalink($post_item->ID); ?>"><i class="mdui-icon material-icons">&#xe5c8;</i></a>
+                    </div>
+                </section>
+                <?php }else{?>
+                <section class="mdx-slide-content">
+                    <div class="slide-wrap">
+                        <div class="slide-part">
+                            <h1><?php echo $post_item->post_title; ?></h1>
+                            <div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php echo get_the_time('Y-m-d', $post_item);}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php echo get_the_modified_time('Y-m-d', $post_item);}?></div>
+                        </div>
+                        <a class="mdui-btn mdui-ripple" href="<?php echo get_permalink($post_item->ID); ?>"><i class="mdui-icon material-icons">&#xe5c8;</i></a>
+                    </div>
+                </section>
+            <?php }?></div><?php }?>
         </div>
         <div class="swiper-pagination"></div>
         <?php if($mdx_index_show === "4"){?>

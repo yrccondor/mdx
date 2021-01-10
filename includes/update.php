@@ -10,7 +10,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -28,7 +28,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -47,7 +47,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -68,7 +68,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -90,7 +90,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -113,7 +113,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -138,7 +138,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -172,7 +172,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -209,7 +209,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -252,7 +252,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -303,7 +303,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -356,7 +356,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -411,7 +411,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -472,7 +472,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -533,7 +533,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -601,7 +601,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -669,7 +669,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -740,7 +740,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -816,7 +816,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -892,7 +892,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
@@ -969,7 +969,7 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_post_list_width', 'normal');
     mdx_update_option('mdx_img_box_show_alt', 'false');
     mdx_update_option('mdx_index_head_style', 'saying');
-    mdx_update_option('mdx_index_slide_posts_style', '2');
+    mdx_update_option('mdx_index_slide_posts_style', '1');
     mdx_update_option('mdx_index_slide_posts_num', '5');
     mdx_update_option('mdx_index_slide_posts_get', 'cat');
     mdx_update_option('mdx_index_slide_posts_cat', '');
