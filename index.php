@@ -167,7 +167,6 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                 </section>
             <?php }?></div><?php }?>
         </div>
-        <div class="swiper-pagination"></div>
         <?php if($mdx_index_show === "4"){?>
         <div class="swiper-bottom-void"></div>
         <?php } ?>

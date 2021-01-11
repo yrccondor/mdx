@@ -4075,13 +4075,29 @@ body.mdx-index-void.mdui-theme-layout-dark {
 .mdx-swiper {
     z-index: 4!important;
     position: absolute!important;
-    --swiper-theme-color: rgb(var(--mdx-text-color-head));
-    .swiper-pagination-bullet {
-        background-color: rgb(var(--mdx-text-color-head));
-    }
     .swiper-wrapper {
         width: 100%;
         height: 100%;
+        .flickity-viewport {
+            cursor: default!important;
+            &.is-pointer-down {
+                cursor: -webkit-grabbing!important;
+                cursor: grabbing!important;
+            }
+        }
+        .flickity-page-dots {
+            z-index: 3;
+            box-sizing: border-box;
+            bottom: 20px;
+            margin: 0;
+            padding: 0;
+            .dot {
+                background-color: rgb(var(--mdx-text-color-head));
+                margin: 0 5px;
+                width: 8px;
+                height: 8px;
+            }
+        }
         .swiper-item {
             width: 100%;
             height: 100%;
@@ -4159,9 +4175,6 @@ body.mdx-index-void.mdui-theme-layout-dark {
             }
         }
     }
-    .swiper-pagination {
-        z-index: 3;
-    }
     &.slide-style-2, &.slide-style-3 {
         .swiper-wrapper .swiper-item .mdx-slide-content {
             background-image: linear-gradient(65deg, rgba(var(--mdx-theme-color-with-white-head), 1) 30%, rgba(var(--mdx-theme-color-with-white-head), .1) 80%);
@@ -4207,6 +4220,11 @@ body.mdx-index-void.mdui-theme-layout-dark {
 body.mdx-first-simple .mdx-swiper .swiper-wrapper .swiper-item .mdx-slide-content h1 {
     margin-top: -5px;
 }
+body.mdx-index-void {
+    .flickity-page-dots {
+        bottom: 0!important;
+    }
+}
 .swiper-bottom-void {
     position: absolute;
     bottom: 0;
@@ -4220,8 +4238,8 @@ body.mdx-first-simple .mdx-swiper .swiper-wrapper .swiper-item .mdx-slide-conten
 .mdx-first-simple .mdx-swiper {
     z-index: 2!important;
     height: 43%;
-    .swiper-pagination {
-        bottom: 11%;
+    .flickity-page-dots {
+        bottom: 12.5%!important;
     }
 }
 .mdx-first-tworows .mdx-swiper {

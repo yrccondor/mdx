@@ -96,7 +96,7 @@ function scrollDiff() {
                     for (const e of [...slideDOMStyle2]) {
                         e.style.setProperty('background-image', `linear-gradient(65deg, rgba(var(--mdx-theme-color-with-white-head), 1) 30%, rgba(var(--mdx-theme-color-with-white-head), ${(1 - opacityHeight * .9 + .1)}) 80%)`, 'important');
                     }
-                    ele('.swiper-pagination', (e) => {
+                    ele('.flickity-page-dots', (e) => {
                         e.style.setProperty('opacity', opacityHeight, 'important');
                     })
                 }
@@ -164,17 +164,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const sliderDOM = document.getElementsByClassName('mdx-swiper');
     if (sliderDOM.length > 0) {
-        new Swiper(sliderDOM[0], {
-            autoplay: {
-                delay: 5000
-            },
-            loop: true,
-            keyboard: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-        })
+        new Flickity('.swiper-wrapper', {
+            accessibility: true,
+            autoPlay: 5000,
+            cellAlign: 'center',
+            cellSelector: '.swiper-item',
+            draggable: '>1',
+            dragThreshold: 3,
+            lazyLoad: false,
+            percentPosition: true,
+            prevNextButtons: false,
+            pageDots: true,
+            resize: true,
+            setGallerySize: false,
+            watchCSS: false,
+            wrapAround: true
+          });
     }
 })
 
