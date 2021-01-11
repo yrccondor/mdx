@@ -55,61 +55,61 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
         'orange'=>'#ffab40',
         'deep-orange'=>'#ff6e40',
     );
-    mdx_update_option('mdx_styles', $_POST['mdx_styles']);
-    mdx_update_option('mdx_styles_hex', $mdx_color_arr[$_POST['mdx_styles']]);
-    mdx_update_option('mdx_styles_act', $_POST['mdx_styles_act']);
-    mdx_update_option('mdx_act_hex', $mdx_act_arr[$_POST['mdx_styles_act']]);
-    mdx_update_option('mdx_styles_dark', $_POST['mdx_styles_dark']);
+    mdx_update_option('mdx_styles', sanitize_text_field($_POST['mdx_styles']));
+    mdx_update_option('mdx_styles_hex', $mdx_color_arr[sanitize_text_field($_POST['mdx_styles'])]);
+    mdx_update_option('mdx_styles_act', sanitize_text_field($_POST['mdx_styles_act']));
+    mdx_update_option('mdx_act_hex', $mdx_act_arr[sanitize_text_field($_POST['mdx_styles_act'])]);
+    mdx_update_option('mdx_styles_dark', sanitize_text_field($_POST['mdx_styles_dark']));
     if($_POST['mdx_styles_dark'] !== "disable"){
         mdx_update_option('mdx_night_style', 'false');
         mdx_update_option('mdx_auto_night_style', 'false');
     }
     mdx_update_option('mdx_md2', $_POST['mdx_md2']);
-    $md2_font = $_POST['mdx_md2_font'];
+    $md2_font = sanitize_text_field($_POST['mdx_md2_font']);
     if(isset($md2_font)){
         mdx_update_option('mdx_md2_font', $md2_font);
     }else{
         mdx_update_option('mdx_md2_font', 'false');
     }
-    mdx_update_option('mdx_login_md', $_POST['mdx_login_md']);
-    mdx_update_option('mdx_chrome_color', $_POST['mdx_chrome_color']);
-    mdx_update_option('mdx_title_bar', $_POST['mdx_title_bar']);
-    mdx_update_option('mdx_tap_to_top', $_POST['mdx_tap_to_top']);
-    mdx_update_option('mdx_default_style', $_POST['mdx_default_style']);
-    mdx_update_option('mdx_index_show', $_POST['mdx_index_show']);
-    mdx_update_option('mdx_post_style', $_POST['mdx_post_style']);
-    mdx_update_option('mdx_post_time_positon', $_POST['mdx_post_time_positon']);
-    mdx_update_option('mdx_post_nav_style', $_POST['mdx_post_nav_style']);
-    mdx_update_option('mdx_post_list_width', $_POST['mdx_post_list_width']);
-    mdx_update_option('mdx_echo_post_sum', $_POST['mdx_echo_post_sum']);
-    mdx_update_option('mdx_post_list_img_height', $_POST['mdx_post_list_img_height']);
-    mdx_update_option('mdx_post_def_img', $_POST['mdx_post_def_img']);
-    mdx_update_option('mdx_gravatar_actived', $_POST['mdx_gravatar_actived']);
-    mdx_update_option('mdx_link_rand_order', $_POST['mdx_link_rand_order']);
-    mdx_update_option('mdx_title_med', $_POST['mdx_title_med']);
-    mdx_update_option('mdx_index_head_style', $_POST['mdx_index_head_style']);
-    mdx_update_option('mdx_index_slide_posts_style', $_POST['mdx_index_slide_posts_style']);
-    mdx_update_option('mdx_index_slide_posts_num', $_POST['mdx_index_slide_posts_num']);
-    mdx_update_option('mdx_index_slide_posts_get', $_POST['mdx_index_slide_posts_get']);
-    mdx_update_option('mdx_index_slide_posts_cat', $_POST['mdx_index_slide_posts_cat']);
-    mdx_update_option('mdx_index_img', $_POST['mdx_index_img']);
-    mdx_update_option('mdx_index_img_bg', $_POST['mdx_index_img_bg']);
-    mdx_update_option('mdx_side_img', $_POST['mdx_side_img']);
-    mdx_update_option('mdx_side_info', $_POST['mdx_side_info']);
-    mdx_update_option('mdx_side_head', $_POST['mdx_side_head']);
+    mdx_update_option('mdx_login_md', sanitize_text_field($_POST['mdx_login_md']));
+    mdx_update_option('mdx_chrome_color', sanitize_text_field($_POST['mdx_chrome_color']));
+    mdx_update_option('mdx_title_bar', sanitize_text_field($_POST['mdx_title_bar']));
+    mdx_update_option('mdx_tap_to_top', sanitize_text_field($_POST['mdx_tap_to_top']));
+    mdx_update_option('mdx_default_style', sanitize_text_field($_POST['mdx_default_style']));
+    mdx_update_option('mdx_index_show', sanitize_text_field($_POST['mdx_index_show']));
+    mdx_update_option('mdx_post_style', sanitize_text_field($_POST['mdx_post_style']));
+    mdx_update_option('mdx_post_time_positon', sanitize_text_field($_POST['mdx_post_time_positon']));
+    mdx_update_option('mdx_post_nav_style', sanitize_text_field($_POST['mdx_post_nav_style']));
+    mdx_update_option('mdx_post_list_width', sanitize_text_field($_POST['mdx_post_list_width']));
+    mdx_update_option('mdx_echo_post_sum', sanitize_text_field($_POST['mdx_echo_post_sum']));
+    mdx_update_option('mdx_post_list_img_height', sanitize_text_field($_POST['mdx_post_list_img_height']));
+    mdx_update_option('mdx_post_def_img', sanitize_text_field($_POST['mdx_post_def_img']));
+    mdx_update_option('mdx_gravatar_actived', sanitize_text_field($_POST['mdx_gravatar_actived']));
+    mdx_update_option('mdx_link_rand_order', sanitize_text_field($_POST['mdx_link_rand_order']));
+    mdx_update_option('mdx_title_med', sanitize_text_field($_POST['mdx_title_med']));
+    mdx_update_option('mdx_index_head_style', sanitize_text_field($_POST['mdx_index_head_style']));
+    mdx_update_option('mdx_index_slide_posts_style', sanitize_text_field($_POST['mdx_index_slide_posts_style']));
+    mdx_update_option('mdx_index_slide_posts_num', sanitize_text_field($_POST['mdx_index_slide_posts_num']));
+    mdx_update_option('mdx_index_slide_posts_get', sanitize_text_field($_POST['mdx_index_slide_posts_get']));
+    mdx_update_option('mdx_index_slide_posts_cat', sanitize_text_field($_POST['mdx_index_slide_posts_cat']));
+    mdx_update_option('mdx_index_img', sanitize_text_field($_POST['mdx_index_img']));
+    mdx_update_option('mdx_index_img_bg', sanitize_text_field($_POST['mdx_index_img_bg']));
+    mdx_update_option('mdx_side_img', esc_url_raw($_POST['mdx_side_img']));
+    mdx_update_option('mdx_side_info', sanitize_text_field($_POST['mdx_side_info']));
+    mdx_update_option('mdx_side_head', esc_url_raw($_POST['mdx_side_head']));
     mdx_update_option('mdx_side_name', htmlentities(stripslashes($_POST['mdx_side_name'])));
     mdx_update_option('mdx_side_more', htmlentities(stripslashes($_POST['mdx_side_more'])));
     mdx_update_option('mdx_index_say', htmlentities(stripslashes($_POST['mdx_index_say'])));
-    mdx_update_option('mdx_index_say_size', $_POST['mdx_index_say_size']);
+    mdx_update_option('mdx_index_say_size', sanitize_text_field($_POST['mdx_index_say_size']));
     mdx_update_option('mdx_say_after', htmlentities(stripslashes($_POST['mdx_say_after'])));
-    mdx_update_option('mdx_logo_way', $_POST['mdx_logo_way']);
-    mdx_update_option('mdx_logo', $_POST['mdx_logo']);
-    mdx_update_option('mdx_logo_text', $_POST['mdx_logo_text']);
-    mdx_update_option('mdx_safari', $_POST['mdx_safari']);
-    mdx_update_option('mdx_svg', $_POST['mdx_svg']);
-    mdx_update_option('mdx_svg_color', $_POST['mdx_svg_color']);
-    mdx_update_option('mdx_tags_color', $_POST['mdx_tags_color']);
-    mdx_update_option('mdx_styles_footer', $_POST['mdx_styles_footer']);
+    mdx_update_option('mdx_logo_way', sanitize_text_field($_POST['mdx_logo_way']));
+    mdx_update_option('mdx_logo', esc_url_raw($_POST['mdx_logo']));
+    mdx_update_option('mdx_logo_text', sanitize_text_field($_POST['mdx_logo_text']));
+    mdx_update_option('mdx_safari', sanitize_text_field($_POST['mdx_safari']));
+    mdx_update_option('mdx_svg', esc_url_raw($_POST['mdx_svg']));
+    mdx_update_option('mdx_svg_color', sanitize_text_field($_POST['mdx_svg_color']));
+    mdx_update_option('mdx_tags_color', sanitize_text_field($_POST['mdx_tags_color']));
+    mdx_update_option('mdx_styles_footer', sanitize_text_field($_POST['mdx_styles_footer']));
     mdx_update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
     mdx_update_option('mdx_footer', htmlentities(stripslashes($_POST['mdx_footer'])));
 ?>
@@ -602,7 +602,7 @@ wp_nonce_field('mdx_options_update');
     <th scope="row"><label for="mdx_svg_color"><?php _e('Touch Bar 图标背景颜色', 'mdx');?></label></th>
     <td><input class="mdx_stbsip regular-text mdx_stbsip3" name="mdx_svg_color" type="text" id="mdx_svg_color" value="<?php echo esc_attr(mdx_get_option('mdx_svg_color'))?>" required="required"><br>
     <a id="change-color" class="button mdx_stbsip5" href="javascript:jQuery('#mdx_svg_color').val('<?php echo mdx_get_option('mdx_styles_hex');?>');jQuery('#mdx_svg_color').wpColorPicker('color', '<?php echo mdx_get_option('mdx_styles_hex');?>');"><?php _e('使用当前主题颜色', 'mdx');?></a>
-    <p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。', 'mdx');?></p></td>
+    <p class="description" id="mdx_footer"><?php _e('请设置 Touch Bar 图标背景颜色。16 进制颜色或 RGB 颜色。', 'mdx');?></p></td>
     </tr>
 </tbody>
 

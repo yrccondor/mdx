@@ -109,17 +109,21 @@
       }
       ?>
     <script>
-      //Show Read Pro'
-      if(document.getElementById('indic')){
-        var ind = radialIndicator("#indic", {
-            displayNumber: false,
-            radius: 27,
-            barColor: '#ffffff',
-            roundCorner: false,
-            barWidth: 3,
-            barBgColor: '<?php echo $mdx_style_act_hex;?>',
-        });
-      }
+        var ind = false;
+        <?php if (mdx_get_option("mdx_read_pro") === "true") { ?>
+        //Show Read Pro'
+        if(document.getElementById('indic')){
+            ind = radialIndicator("#indic", {
+                displayNumber: false,
+                radius: 26.5,
+                barColor: '#ffffff',
+                roundCorner: false,
+                barWidth: 3,
+                precision: 3,
+                barBgColor: '<?php echo $mdx_style_act_hex;?>',
+            });
+        }
+        <?php } ?>
       </script>
       <?php }if(is_single() || (is_page())){?><script>
       function snbar(){
