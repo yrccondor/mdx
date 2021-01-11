@@ -199,9 +199,9 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky){
         global $post;
         if(mdx_get_option('mdx_hot_posts_get') === "sticky"){
-            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num'),'post__in' =>$sticky_id));
+            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1,'post__in' =>$sticky_id));
         }else{
-            $mdx_posts = get_posts('numberposts='.mdx_get_option('mdx_hot_posts_num').'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));
+            $mdx_posts = get_posts('numberposts='.strval((int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1).'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));
         }?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>">
             <?php if(count($mdx_posts) > 0){?>
             <h3><?php echo mdx_get_option('mdx_hot_posts_text');?><i class="mdui-icon material-icons mdui-text-color-theme-accent">&#xe5c8;</i></h3>

@@ -54,6 +54,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_hot_posts_text', $_POST['mdx_hot_posts_text']);
     mdx_update_option('mdx_all_posts_text', $_POST['mdx_all_posts_text']);
     mdx_update_option('mdx_you_may_like', $_POST['mdx_you_may_like']);
+    mdx_update_option('mdx_you_may_like_num', $_POST['mdx_you_may_like_num']);
     mdx_update_option('mdx_you_may_like_way', $_POST['mdx_you_may_like_way']);
     mdx_update_option('mdx_you_may_like_text', $_POST['mdx_you_may_like_text']);
     mdx_update_option('mdx_real_search', $_POST['mdx_real_search']);
@@ -320,8 +321,8 @@ wp_nonce_field('mdx_options_update');
     </tr>
     <tr>
     <th scope="row"><label for="mdx_hot_posts_num"><?php _e('首页推荐文章数量', 'mdx');?></label></th>
-    <td><input name="mdx_hot_posts_num" type="text" id="mdx_hot_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_num'))?>" class="regular-text mdx_apspc2">
-    <p class="description"><?php _e('在此设定首页推荐文章篇数。请输入整数。', 'mdx');?></p></td>
+    <td><input name="mdx_hot_posts_num" type="number" id="mdx_hot_posts_num" min="1" value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_num'))?>" class="regular-text mdx_apspc2">
+    <p class="description"><?php _e('在此设定首页推荐文章篇数。请输入大于 0 的整数。', 'mdx');?></p></td>
     </tr>
     <tr>
     <th scope="row"><?php _e('首页推荐文章获取方式', 'mdx');?></th>
@@ -360,6 +361,11 @@ wp_nonce_field('mdx_options_update');
         <p class="description"><?php _e('开启后，文章末会展示最多5篇相似文章。', 'mdx');?></p>
         </fieldset>
     </td>
+    </tr>
+    <tr>
+    <th scope="row"><label for="mdx_you_may_like_num"><?php _e('文末推荐文章数量', 'mdx');?></label></th>
+    <td><input name="mdx_you_may_like_num" type="number" id="mdx_you_may_like_num" min="1" value="<?php echo esc_attr(mdx_get_option('mdx_you_may_like_num'))?>" class="regular-text mdx_apspc">
+    <p class="description"><?php _e('在此文末首页推荐文章篇数。请输入大于 0 的整数。', 'mdx');?></p></td>
     </tr>
     <tr>
     <th scope="row"><?php _e('文末推荐文章计算方式', 'mdx');?></th>

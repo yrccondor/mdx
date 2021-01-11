@@ -42,6 +42,7 @@ $arr = array(
 'mdx_hot_posts_text'=>__('推荐文章','mdx'),
 'mdx_all_posts_text'=>__('最新文章','mdx'),
 'mdx_you_may_like'=>'false',
+'mdx_you_may_like_num'=>'5',
 'mdx_you_may_like_way'=>'tag',
 'mdx_you_may_like_text'=>__('推荐文章','mdx'),
 'mdx_real_search'=>'false',
