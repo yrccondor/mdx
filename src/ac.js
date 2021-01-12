@@ -180,6 +180,26 @@ window.addEventListener('DOMContentLoaded', () => {
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
+
+    if (document.body.classList.contains('mdx-wide-post-list')) {
+        const postList = document.getElementById('postlist');
+        let gutter = 30;
+        if (postList.getElementsByClassName('indexgaid').length > 0) {
+            gutter = 20;
+        }
+        window.mdxMasonry = new Masonry(postList, {
+            itemSelector: '.post-item',
+            columnWidth: '.post-item',
+            gutter,
+            stagger: 10,
+            percentPosition: true
+        });
+        document.addEventListener('lazyloaded', (e) => {
+            if (e.target.matches('#postlist > .post-item img')) {
+                window.mdxMasonry.layout()
+            }
+        })
+    }
 })
 
 function handleMotionChange(mrm) {

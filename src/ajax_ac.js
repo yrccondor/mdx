@@ -78,6 +78,15 @@ const init = () => {
             ele('div.mdx-ajax-loading', (e) => { e.parentNode.removeChild(e) });
             let getValue = (typeof data2Parsed !== 'undefined' ? data2Parsed : new DOMParser().parseFromString(data2, "text/html")).getElementById('postlist').innerHTML;
             ele('#postlist').insertAdjacentHTML('beforeend', getValue);
+            if (window.mdxMasonry) {
+                const addList = [];
+                for (const el of document.getElementById('postlist').children) {
+                    if (el.style.position !== 'absolute') {
+                        addList.push(el);
+                    }
+                }
+                window.mdxMasonry.appended(addList);
+            }
         }).catch(() => {
             mdui.snackbar({
                 message: ajax_error,

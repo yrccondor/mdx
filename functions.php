@@ -201,7 +201,7 @@ function mdx_js(){
         wp_register_script('mdx_flickity_js', $files_root.'/js/flickity.min.js', array(), AC_VERSION , true);
         wp_enqueue_script('mdx_flickity_js');
     }
-    if(is_home() && mdx_get_option('mdx_post_list_width') === 'wide'){
+    if((!is_single() && !is_page() && !is_404()) && mdx_get_option('mdx_post_list_width') === 'wide'){
         wp_register_script('mdx_masonry_js', $files_root.'/js/masonry.min.js', array(), AC_VERSION , true);
         wp_enqueue_script('mdx_masonry_js');
     }
@@ -533,12 +533,12 @@ function mdx_breadcrumbs(){
         } elseif ( is_page() && !$post->post_parent ) {
             echo $before . get_the_title() . $after;
         } elseif ( is_page() && $post->post_parent ) {
-            $parent_id  = $post->post_parent;
+            $parent_id = $post->post_parent;
             $breadcrumbs = array();
             while ($parent_id) {
-                $page = get_page($parent_id);
+                $page = get_post($parent_id);
                 $breadcrumbs[] = '<a itemprop="breadcrumb" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-                $parent_id  = $page->post_parent;
+                $parent_id = $page->post_parent;
             }
             $breadcrumbs = array_reverse($breadcrumbs);
             foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';

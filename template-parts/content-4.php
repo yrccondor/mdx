@@ -1,5 +1,5 @@
 <?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}if(mdx_get_option("mdx_post_def_img")=="false" && $Imagesurl == ""){?>
-  <article class="mdui-grid-tile indexgaid mdui-shadow-3 mdui-color-theme">
+<article class="mdui-grid-tile indexgaid mdui-shadow-3 mdui-color-theme post-item">
   <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
   <a href="<?php the_permalink();?>">
   <?php }?>
@@ -13,7 +13,7 @@
   <?php }?>
 </article>
 <?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
-<article class="mdui-grid-tile indexgaid mdui-shadow-3 mdui-color-theme">
+<article class="mdui-grid-tile indexgaid mdui-shadow-3 mdui-color-theme post-item">
 <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
 <a href="<?php the_permalink();?>">
 <?php }?>

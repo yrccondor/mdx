@@ -38,8 +38,11 @@
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
     font-display: swap;
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error, .mdx-first-simple .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error {
     border-radius: 8px!important;
+}
+.mdx-first-simple .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
+    border-radius: 8px 8px 0 0!important;
 }
 .spanout, .mdx-first-simple .mdxNotice, #respond, body.mdx-index-void .mdxNotice {
     border-radius: 8px;

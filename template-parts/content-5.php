@@ -1,5 +1,5 @@
 <?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}?>
-<div class="mdx-postlist-simple<?php if(!(mdx_get_option("mdx_post_def_img")=="true" || $Imagesurl !== "")){?> mdx-postlist-simple-has-no-img<?php }?>">
+<div class="mdx-postlist-simple post-item<?php if(!(mdx_get_option("mdx_post_def_img")=="true" || $Imagesurl !== "")){?> mdx-postlist-simple-has-no-img<?php }?>">
 <?php if(mdx_get_option('mdx_post_list_img_height') === "auto"){if($Imagesurl !== ""){?>
 <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><img src="data:image/gif;base64,R0lGODlhAgABAIAAALGxsQAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==" data-src="<?php echo $Imagesurl;?>" alt="<?php echo $Imagesurl;?>" title="<?php the_title();?>" class="lazyload"><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
 <?php }else if(mdx_get_option("mdx_post_def_img")=="true" && $Imagesurl == ""){ ?>

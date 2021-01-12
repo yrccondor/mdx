@@ -430,7 +430,7 @@ wp_nonce_field('mdx_options_update');
         <label><input type="radio" name="mdx_post_list_width" value="normal" <?php if($mdx_v_post_list_width=='normal'){?>checked="checked"<?php }?>> <?php _e('正常', 'mdx');?></label><br>
         <label><input type="radio" name="mdx_post_list_width" value="wide" <?php if($mdx_v_post_list_width=='wide'){?>checked="checked"<?php }?>> <?php _e('较宽', 'mdx');?></label><br>
         </fieldset>
-        <p class="description"><?php _e('使用“较宽”，文章列表将会以多列显示。', 'mdx');?></p>
+        <p class="description"><?php _e('使用“较宽”，文章列表将会以多列瀑布流显示。', 'mdx');?></p>
     </td>
     </tr>
     <tr>
