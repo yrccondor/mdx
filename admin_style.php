@@ -268,7 +268,7 @@ wp_nonce_field('mdx_options_update');
         <option value="0" <?php if($mdx_v_index_show=='0'){?>selected="selected"<?php }?>><?php _e('默认', 'mdx');?></option>
         <option value="1" <?php if($mdx_v_index_show=='1'){?>selected="selected"<?php }?>><?php _e('简单', 'mdx');?></option>
         <option value="2" <?php if($mdx_v_index_show=='2'){?>selected="selected"<?php }?>><?php _e('两栏', 'mdx');?></option>
-        <option value="3" <?php if($mdx_v_index_show=='3'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
+        <!-- <option value="3" <?php if($mdx_v_index_show=='3'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option> -->
         <option value="4" <?php if($mdx_v_index_show=='4'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
     </select>
     <div class="mdx-svg-preview" id="mdx-index-preview"></div>
@@ -416,7 +416,7 @@ wp_nonce_field('mdx_options_update');
         <option value="3" <?php if($mdx_v_default_style=='3'){?>selected="selected"<?php }?>><?php _e('干净', 'mdx');?></option>
         <option value="4" <?php if($mdx_v_default_style=='4'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
         <option value="5" <?php if($mdx_v_default_style=='5'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
-        <option value="6" <?php if($mdx_v_default_style=='6'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
+        <!-- <option value="6" <?php if($mdx_v_default_style=='6'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option> -->
     </select>
     <div class="mdx-svg-preview" id="mdx-list-preview"></div>
     <p class="description"><?php _e('同时影响首页、搜索结果页、归档页的文章列表样式。', 'mdx');?></p>
