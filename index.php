@@ -43,7 +43,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
       <div class="sideImg mdui-color-theme">
       <div class="mdx-side-lazyload lazyload" data-bg="<?php echo $mdx_side_img;?>"></div>
       <?php if(mdx_get_option('mdx_night_style')!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php echo addslashes(__('切换日间/夜间模式','mdx'));?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(mdx_get_option('mdx_side_head')!=''){;?>
       <div class="side-info-head mdui-shadow-3 lazyload" data-bg="<?php echo mdx_get_option('mdx_side_head');?>"></div>
@@ -54,7 +54,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         <div class="mdx-side-title">
         <a href="<?php bloginfo('url');?>"><span><?php $mdx_logo_way=mdx_get_option('mdx_logo_way');if($mdx_logo_way=="2"){$mdx_logo=mdx_get_option('mdx_logo');if($mdx_logo!=""){echo '<img class="mdx-logo" src="'.$mdx_logo.'">';}else{bloginfo('name');}}elseif($mdx_logo_way=="1"){bloginfo('name');}elseif($mdx_logo_way=="3"){$mdx_logo_text=mdx_get_option('mdx_logo_text');if($mdx_logo_text!=""){echo $mdx_logo_text;}else{bloginfo('name');}}?></span></a>
         <?php if(mdx_get_option('mdx_night_style')!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){?>
-        <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e('切换日间/夜间模式','mdx');?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php echo addslashes(__('切换日间/夜间模式','mdx'));?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
         <?php }?>
        </div>
     <?php }?>
@@ -185,7 +185,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php }?>
     <div class="main">
     <?php if($mdx_index_show=="2"){?>
-        <div class="mdx-tworow-search mdui-valign" role="button">
+    <div class="mdx-tworow-search mdui-valign" role="button">
         <i class="mdui-icon material-icons seaicon">&#xe8b6;</i> <?php _e('搜索什么...', 'mdx');?>
     </div>
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
@@ -203,7 +203,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
             $mdx_posts = get_posts('numberposts='.strval((int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1).'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));
         }?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>">
             <?php if(count($mdx_posts) > 0){?>
-            <h3><?php echo mdx_get_option('mdx_hot_posts_text');?><i class="mdui-icon material-icons mdui-text-color-theme-accent">&#xe5c8;</i></h3>
+            <?php if(mdx_get_option('mdx_hot_posts_text') !== ''){ ?><h3><?php echo mdx_get_option('mdx_hot_posts_text');?><i class="mdui-icon material-icons mdui-text-color-theme-accent">&#xe5c8;</i></h3><?php } ?>
             <div class="mdx-hp-h3-fill"></div>
             <div id="mdx-sp-out-c">
                 <div class="mdx-hp-g-l"></div>
@@ -231,7 +231,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
             </div>
         <?php }?>
         </div>
-        <h3 class="mdx-all-posts"><?php echo mdx_get_option('mdx_all_posts_text');?><i class="mdui-icon material-icons mdui-text-color-theme-accent">&#xe5c8;</i></h3>
+        <?php if(mdx_get_option('mdx_all_posts_text') !== ''){ ?><h3 class="mdx-all-posts"><?php echo mdx_get_option('mdx_all_posts_text');?><i class="mdui-icon material-icons mdui-text-color-theme-accent">&#xe5c8;</i></h3><?php } ?>
     <?php }?>
     <main class="postList mdui-center" id="postlist">
         <?php
