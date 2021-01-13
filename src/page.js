@@ -684,7 +684,7 @@ function commentNaviLink(e) {
         ele('ul.mdui-list.ajax-comments', (e) => {
             e.parentNode.removeChild(e);
         });
-        fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
+        ele('.mdx-comments-loading').style.display = 'block';
         Velocity(ele("html"), { scrollTop: ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65 + "px" }, 500);
         betterFetch(e.target.getAttribute('href')).then((out) => {
             let htmlParser = new DOMParser();
@@ -710,7 +710,7 @@ function commentNavi(e) {
         ele('#comments-navi', (e) => {
             e.parentNode.removeChild(e);
         });
-        fade(ele('.mdx-comments-loading', null, 'array'), 'in', 200);
+        ele('.mdx-comments-loading').style.display = 'block';
         let elem = e.target;
         if (elem.tagName === "I") {
             elem = elem.parentNode;
