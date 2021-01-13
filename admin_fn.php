@@ -88,6 +88,14 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
 <div class="notice notice-info is-dismissible">
 <p><?php _e('MDx 已发布新版本 ', 'mdx');echo get_option('mdx_new_ver');_e('。<a href="./admin.php?page=mdx_about">重新检查</a>', 'mdx');?></p>
 </div>
+<?php }
+if(!defined('ALU_VERSION')){
+    define('ALU_VERSION', '1.0.6');
+}
+if(ALU_VERSION !== '1.0.6'){?>
+<div class="notice notice-warning is-dismissible">
+<p><?php _e('你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/" target="_blank">MDx文档</a> 下载安装新版插件。', 'mdx');?></p>
+</div>
 <?php }?>
 <nav class="nav-tab-wrapper wp-clearfix" aria-label="Secondary menu"> 
     <a href="#" class="nav-tab nav-tab-active mdx-admin-nav" id="mdx-admin-nav-post"><?php _e('文章页', 'mdx');?></a>
