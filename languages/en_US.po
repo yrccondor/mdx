@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-13 19:05+0800\n"
+"PO-Revision-Date: 2021-01-13 22:25+0800\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -43,7 +43,7 @@ msgstr "https://flyhigher.top"
 
 #: 404.php:12 single.php:271
 msgid "尴尬的是，这个页面不见了"
-msgstr "Uh-oh! Page not found"
+msgstr "Oops! Page not found"
 
 #: 404.php:16
 msgid "前往首页"
@@ -75,7 +75,7 @@ msgstr "Settings NOT saved."
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "MDx 已发布新版本 "
-msgstr "A newer version of MDx theme is released "
+msgstr "A newer version of theme MDx has been released"
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
@@ -91,7 +91,7 @@ msgstr "Post List"
 
 #: admin_fn.php:95 footer.php:153
 msgid "目录"
-msgstr "Subdirectory"
+msgstr "Table of Content"
 
 #: admin_fn.php:96 includes/admin_init_fn.php:42 includes/admin_init_fn.php:47
 #: includes/update.php:435 includes/update.php:499 includes/update.php:560
@@ -132,7 +132,7 @@ msgstr "CDN"
 
 #: admin_fn.php:104
 msgid "脚本"
-msgstr "External Scripts"
+msgstr "Scripts"
 
 #: admin_fn.php:105 admin_style.php:141
 msgid "杂项"
@@ -144,8 +144,7 @@ msgstr "ImgBox"
 
 #: admin_fn.php:121
 msgid "开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。"
-msgstr ""
-"For images with \"link to media file\", users can click to enlarge them."
+msgstr "Users can click to enlarge images that has link to \"Media File\"."
 
 #: admin_fn.php:126
 msgid "ImgBox 显示描述文本"
@@ -173,8 +172,8 @@ msgid ""
 "你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部"
 "显示赞赏按钮。"
 msgstr ""
-"You can upload an image or choose one in your media library. Leave this to "
-"blank to disable Donation QR Codes at the end of each article."
+"You can upload an image or choose from your media library. The QR Code (if "
+"selected) will be shown at the end of posts."
 
 #: admin_fn.php:146
 msgid "阅读进度展示"
@@ -188,16 +187,16 @@ msgstr ""
 
 #: admin_fn.php:157
 msgid "转移设备时记录阅读进度"
-msgstr "Continue reading elsewhere"
+msgstr "Continue reading from your phone"
 
 #: admin_fn.php:163
 msgid ""
 "开启后，文章中通过二维码转移到其他设备阅读时会自动记录阅读进度并滚动。建议在"
 "网页加载速度较快时启用。"
 msgstr ""
-"When enabled, users can scan QR code to continue reading elsewhere "
-"seamlessly at the point they stopped. Recommended when you have a fast "
-"loading speed."
+"When enabled, users can scan QR code to continue reading on other devices "
+"seamlessly from where they left. Recommended when your pages load fast "
+"enough."
 
 #: admin_fn.php:168
 msgid "页面加载进度条"
@@ -208,9 +207,9 @@ msgid ""
 "开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），"
 "页面加载完成后消失。"
 msgstr ""
-"When enabled, a loading progress bar (a fake animation, does not reflect "
-"true progress) will be shown at the top of each page/post. The progress bar "
-"will disappear after the webpage is loaded."
+"When enabled, a loading progress bar (a simulated animation that does not "
+"reflect true progress) will be shown at the top of each page/post. The "
+"progress bar will disappear after the page is fully loaded."
 
 #: admin_fn.php:179
 msgid "文章时间信息"
@@ -253,19 +252,19 @@ msgstr ""
 "Specify the sharing providers available to users. <br>\"Only Chinese "
 "Providers\" include Weibo, WeChat, QQ, QZone. <br>\"Only providers outside "
 "China\" include Telegram, Twitter, Facebook. <br>Regardless of this setting, "
-"\"image excerpt sharing\" is always enabled."
+"\"image excerpt sharing\" is always available."
 
 #: admin_fn.php:214
 msgid "“阅读更多”文本自定义"
-msgstr "Customizing \"Read More\""
+msgstr "Customize \"Read More\""
 
 #: admin_fn.php:216
 msgid "在此自定义“阅读更多”按钮上的文本。"
-msgstr "Customize the text shown on \"Read More\" tag."
+msgstr "Customize the text shown on \"Read More\" button."
 
 #: admin_fn.php:219
 msgid "文章列表链接可点击区域"
-msgstr "Clickable area in posts list"
+msgstr "Clickable areas in posts list"
 
 #: admin_fn.php:223
 msgid "仅标题"
@@ -306,8 +305,8 @@ msgstr "Information bar for posts - Area 3"
 #: admin_fn.php:268
 msgid "详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
 msgstr ""
-"The information bar is displayed under each posts on the post page. Choose "
-"the information you want to display here."
+"The information bar goes under each posts on the post list. Choose the "
+"information that should be displayed."
 
 #: admin_fn.php:272
 msgid "增强的文章列表加载方式"
@@ -320,7 +319,7 @@ msgid ""
 msgstr ""
 "Enable this option to load posts list faster, and to remember the scroll "
 "position while going back in browsers. <br>Due to browser limitations, this "
-"feature may not perform well for a large quantity of posts."
+"feature may not perform well for a huge number of posts."
 
 #: admin_fn.php:286
 msgid "文章目录"
@@ -338,30 +337,30 @@ msgstr "Unobtrusive Table of Content"
 msgid "开启后，桌面端文章左侧会显示简略目录，点击即可打开完整目录。"
 msgstr ""
 "When enabled, a simple and unobtrusive TOC will be shown to the left of the "
-"article. Visitors can click on it to open the full TOC."
+"article. Visitors can click on it to expand the full TOC."
 
 #: admin_fn.php:311
 msgid "首页推荐文章"
-msgstr "Posts recommendation"
+msgstr "Homepage posts recommendation"
 
 #: admin_fn.php:317
 msgid "开启后，首页会展示推荐文章，请在下方进行设置。"
 msgstr ""
-"When enabled, users can see a list of recommended posts on the homepage."
+"When enabled, users can see a list of recommended posts on the homepage. The "
+"settings are shown below."
 
 #: admin_fn.php:322
 msgid "首页推荐文章数量"
 msgstr "Number"
 
 #: admin_fn.php:324
-#, fuzzy
-#| msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgid "在此设定首页推荐文章篇数。请输入大于 0 的整数。"
-msgstr "Number of recommended posts. Please enter an integer."
+msgstr ""
+"Number of recommended posts on the homepage. Please enter a positive integer."
 
 #: admin_fn.php:327
 msgid "首页推荐文章获取方式"
-msgstr "get recommended posts from"
+msgstr "Recommend posts from"
 
 #: admin_fn.php:331 admin_style.php:351
 msgid "某一分类"
@@ -369,16 +368,16 @@ msgstr "A certain category"
 
 #: admin_fn.php:332 admin_style.php:352
 msgid "置顶文章"
-msgstr "Top posts"
+msgstr "Pinned posts"
 
 #: admin_fn.php:333
 msgid ""
 "在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页推"
 "荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
 msgstr ""
-"Set the source of recommended posts. If you select \"Top posts\" when there "
-"is no top post, then the recommended post module will not be displayed and "
-"the post list will remain in the original order."
+"Set the source of recommended posts. If you select \"Pinned posts\" when "
+"there are none, the recommended post module will be hidden and the post list "
+"will remain in the original order."
 
 #: admin_fn.php:338
 msgid "首页推荐文章分类名"
@@ -387,27 +386,27 @@ msgstr "Category"
 #: admin_fn.php:340
 msgid "在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。"
 msgstr ""
-"Set the name of the category where the recommended posts should be fetched "
-"from. The latest posts will be displayed when the category does not exist."
+"Set the category from which posts will be recommended. The latest posts will "
+"be displayed when the category does not exist."
 
 #: admin_fn.php:343
 msgid "首页推荐文章模块标题"
-msgstr "Title for Homepage Recommendation"
+msgstr "Title for Recommendation Section"
 
 #: admin_fn.php:345
 msgid "在此设定首页推荐文章模块标题。"
-msgstr "Set the title for homepage post recommendation"
+msgstr "Set the title for homepage post recommendation section"
 
 #: admin_fn.php:348
 msgid "首页最新文章模块标题"
-msgstr "Title for latest posts on homepage"
+msgstr "Title for Latest Post section"
 
 #: admin_fn.php:350
 msgid ""
 "在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
 msgstr ""
-"Set the title for latest posts section on homepage. This is only in effect "
-"if \"homepage post recommendation\" feature is enabled"
+"Set the title for latest posts section on homepage. This setting is only "
+"effective when \"homepage post recommendation\" feature is enabled"
 
 #: admin_fn.php:354
 msgid "文末推荐文章"
@@ -415,25 +414,21 @@ msgstr "Recommend similar posts"
 
 #: admin_fn.php:360
 msgid "开启后，文章末会展示最多5篇相似文章。"
-msgstr ""
-"When enabled, users are recommended a list of similar posts at the end of "
-"each post."
+msgstr "Recommended at most 5 similar posts at the end of each post."
 
 #: admin_fn.php:365
-#, fuzzy
-#| msgid "文末推荐文章"
 msgid "文末推荐文章数量"
-msgstr "Recommend similar posts"
+msgstr "Number"
 
 #: admin_fn.php:367
-#, fuzzy
-#| msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgid "在此文末首页推荐文章篇数。请输入大于 0 的整数。"
-msgstr "Number of recommended posts. Please enter an integer."
+msgstr ""
+"Number of posts to recommend at the end of posts. Please enter a positive "
+"integer."
 
 #: admin_fn.php:370
 msgid "文末推荐文章计算方式"
-msgstr "Algorithm for similar posts"
+msgstr "Algorithm for finding similar posts"
 
 #: admin_fn.php:374
 msgid "相同标签"
@@ -445,7 +440,7 @@ msgstr "Same category"
 
 #: admin_fn.php:380
 msgid "文末推荐文章模块标题"
-msgstr "Title for similar posts recommendation"
+msgstr "Title for Similar Posts section"
 
 #: admin_fn.php:387
 msgid "“发送评论”文本自定义"
@@ -457,19 +452,19 @@ msgstr "Customize the text on the <q>Send Comment</q> button."
 
 #: admin_fn.php:392
 msgid "评论无限加载"
-msgstr "Load comments Pinterest-like"
+msgstr "Infinite scrolling comments"
 
 #: admin_fn.php:398
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。</strong>"
 msgstr ""
-"When enabled, will load all post comments (without page separation). All "
-"comments are loaded with AJAX. </strong>"
+"When enabled, the post comments will be loaded with infinite scrolling "
+"(unpaginated). All comments are loaded with AJAX. </strong>"
 
 #: admin_fn.php:403
 msgid "评论表情"
-msgstr "Comment Emoji"
+msgstr "Emoji in comments"
 
 #: admin_fn.php:409
 msgid ""
@@ -477,10 +472,10 @@ msgid ""
 "mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载插件安装包。"
 msgstr ""
-"Enable support for emojis in comments. Requires extra plugin (Alu emojis by "
-"mayuko). Please visit <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/"
-"emoji-in-comment/\" target=\"_blank\">MDx documentation</a> to download the "
-"plugin."
+"Enable support for emojis in comments. Note that extra emoji plugins are "
+"needed. Only Alu emojis by mayuko are now officially supported. Please visit "
+"<a href=\"https://doc.flyhigher.top/mdx/en-US/config/emoji-in-comment/\" "
+"target=\"_blank\">MDx documentation</a> to download it."
 
 #: admin_fn.php:417
 msgid "LazyLoad 模式"
@@ -506,15 +501,15 @@ msgid ""
 "度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性"
 "图片会使用"
 msgstr ""
-"Lazy loading is technique that defers loading of non-critical resources at "
+"Lazy loading is a technique that defers loading of non-critical resources at "
 "page load time. It boosts loading speed but may affect website SEO. "
 "<br>Prioritize Speed: lazy loading all images. <br>Prioritize SEO (Medium): "
-"All images excepting in-article ones are lazy loaded. <br>Prioritize SEO "
-"(Full): No, excepting a few decorative, images are lazy loaded."
+"All images except in-article ones are lazy loaded. <br>Prioritize SEO "
+"(Full): None, excepting a few decorative, images are lazy loaded."
 
 #: admin_fn.php:429
 msgid "兼容性 Lazyload"
-msgstr "Fallback Lazyload"
+msgstr "Compatibility Lazyload"
 
 #: admin_fn.php:435
 msgid ""
@@ -523,12 +518,12 @@ msgid ""
 "的 Lazyload，可以尝试打开此选项。"
 msgstr ""
 "Attmpts to load pictures with better compatibility, <strong>but might break "
-"some enhanced features.</strong><br>If you have a problem Lazyloading your "
+"some enhanced features.</strong><br>If you have a problem with Lazyload your "
 "pictures in posts, you may want to consider this option."
 
 #: admin_fn.php:443
 msgid "允许用户缩放页面"
-msgstr "Allow page zoom"
+msgstr "Allow zoom"
 
 #: admin_fn.php:449
 msgid ""
@@ -536,10 +531,10 @@ msgid ""
 "障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器"
 "对此可能会有不同的表现。"
 msgstr ""
-"When enabled, users can zoom in/out webpages. It may help the visually "
-"impaired to read better, at the cost of (possibly) disrupting webpage "
-"structures. When disabled, zoom rate is fixed at default. Note that "
-"different browsers may behave differently."
+"When enabled, users can zoom in/out webpages. It may help visually impaired "
+"users to read better, at the cost of (possibly) disrupting webpage "
+"structure. When disabled, zoom rate is fixed at default. Note that different "
+"browsers may behave differently."
 
 #: admin_fn.php:454
 msgid "允许使用减弱动画模式"
@@ -564,11 +559,11 @@ msgid ""
 "<code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动"
 "广告，请将其填写在“脚本 - 页头脚本”选项处。"
 msgstr ""
-"Enter code for advertisements here, and MDx will determine where ads should "
-"appear. Leave it blank to disable it. <br>If you want to insert ads in "
-"posts, you can use <code>[mdx_ad][/mdx_ad]</code> in your posts. <br>If you "
-"are using Google AdSense Auto ads, please include them in the \"header script"
-"\" section."
+"Enter code for advertisements here. MDx will automatically determine where "
+"to display them. Leave it blank to disable it. <br>If you want to insert ads "
+"inside posts, you can use <code>[mdx_ad][/mdx_ad]</code> shortcode. <br>If "
+"you are using Google AdSense Auto ads, please include them in the \"Script - "
+"header script\" settings."
 
 #: admin_fn.php:473
 msgid "对已登录的用户禁用广告"
@@ -597,7 +592,7 @@ msgstr "Auto toggle dark mode"
 
 #: admin_fn.php:502
 msgid "跟随系统"
-msgstr "Following browser"
+msgstr "Following system setting"
 
 #: admin_fn.php:503
 msgid "跟随时间"
@@ -611,10 +606,11 @@ msgid ""
 "模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
 "<strong>Please make sure dark mode is enabled before enabling this.</strong> "
-"<br> <ul> <li> <code>Following browser</code>: Automatically toggle "
-"according to the color theme of user's browser. Users may override this "
-"setting. </li> <li> <code> Following time</code>: \n"
-"Automatically toggle on from 22:30 to 5:30. Users may override this setting."
+"<br> <ul> <li> <code>Following system setting</code>: Automatically toggle "
+"dark mode according to the setting of user's operating system. Users may "
+"manually override dark mode settings. </li> <li> <code> Following time</"
+"code>: Automatically toggle on from 22:30 to 5:30. Users may manually "
+"override dark mode settings."
 
 #: admin_fn.php:513
 msgid "SEO 关键词"
@@ -622,11 +618,13 @@ msgstr "SEO keywords"
 
 #: admin_fn.php:515
 msgid "用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。"
-msgstr "Separate keywords (less than 5) with \",\" Leave it blank to disable."
+msgstr ""
+"Separate keywords (less than 5 recommended) with \",\" Leave it blank to "
+"disable."
 
 #: admin_fn.php:518
 msgid "自动生成网页描述"
-msgstr "Generate description automatically"
+msgstr "Auto generate meta description"
 
 #: admin_fn.php:524
 msgid ""
@@ -646,9 +644,10 @@ msgid ""
 "在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面"
 "会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。"
 msgstr ""
-"Edit meta description for homepage here. Other pages will automatically "
-"generate meta descriptions. Leave this blank to disable SEO meta description "
-"globally."
+"Edit meta description here. If \"auto generate meta description\" is "
+"enabled, the setting will apply only to homepage, with others automatically "
+"generating meta descriptions. Leave this blank to disable SEO meta "
+"description globally."
 
 #: admin_fn.php:537
 msgid "使用 CDN 加载前端主题文件"
@@ -656,11 +655,11 @@ msgstr "Use CDN to load front-end theme files"
 
 #: admin_fn.php:541
 msgid "不使用"
-msgstr "Disable"
+msgstr "Disabled"
 
 #: admin_fn.php:542
 msgid "jsDelivr"
-msgstr ""
+msgstr "jsDelivr"
 
 #: admin_fn.php:543
 msgid "自定义"
@@ -674,12 +673,12 @@ msgid ""
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
 "定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
-"In <strong>some cases</strong>, using a CDN can help the front-end page load "
-"faster. This option <strong>only affects</strong> the front-end files of the "
-"theme, and does not affect the files of WordPress and other plugins. "
-"<br><ul><li><code>Disable</code>: Load files from the same server as the "
-"page</li><li><code>jsDelivr</code>: Use the free CDN provided by jsDelivr </"
-"li><li><code>Custom</code>: Use a custom CDN</li></ul>"
+"In <strong>some cases</strong>, using a CDN can speed up loading for front-"
+"end page. This option <strong>only affects</strong> the front-end assets of "
+"the theme, and does not affect files from WordPress or other plugins. "
+"<br><ul><li><code>Disabled</code>: Load files from the same server as the "
+"page</li><li><code>jsDelivr</code>: Use the free CDN provider jsDelivr </"
+"li><li><code>Custom</code>: Use your custom CDN</li></ul>"
 
 #: admin_fn.php:549
 msgid "自定义 CDN 根路径"
@@ -692,9 +691,9 @@ msgid ""
 "<code>access-control-allow-origin</code> 头。"
 msgstr ""
 "Enter the customized CDN root path URL here, do not add <code>/</code> at "
-"the end, such as <code>https://cdn.example.com/mdx_files</code>. <br>CDN "
-"services need to add the appropriate <code>access-control-allow-origin</"
-"code> header."
+"the end, e.g. <code>https://cdn.example.com/mdx_files</code>. <br>The CDN "
+"service need to be configured with appropriate <code>access-control-allow-"
+"origin</code> header."
 
 #: admin_fn.php:558
 msgid "页头脚本"
@@ -718,11 +717,11 @@ msgstr "WordPress Installation Method"
 
 #: admin_fn.php:574
 msgid "常规安装"
-msgstr "Installed normally"
+msgstr "installed normally"
 
 #: admin_fn.php:576
 msgid "子目录安装"
-msgstr "Installed in a subdirectory"
+msgstr "installed in a subdirectory"
 
 #: admin_fn.php:579
 msgid "常规"
@@ -739,7 +738,7 @@ msgid ""
 msgstr ""
 "To better implement some features, MDx needs to know how your WordPress is "
 "installed. If you are not sure, please refer to the detected result below. "
-"<br>MDx detects that your wordpress seem to be "
+"<br>MDx detects that your wordpress seems to be "
 
 #: admin_fn.php:586
 msgid "网站公告"
@@ -751,8 +750,8 @@ msgid ""
 "<code>HTML</code> 格式。"
 msgstr ""
 "Edit the website announcement here. Announcements will be displayed at the "
-"top of the post list on the homepage, and will not be displayed if left "
-"blank. Support <code>HTML</code> format."
+"top of the post list on homepage, and will not be displayed if left blank. "
+"<code>HTML</code> formatting is supported."
 
 #: admin_fn.php:591
 msgid "使用手势打开抽屉菜单"
@@ -810,22 +809,20 @@ msgstr "Enable Preload"
 
 #: admin_fn.php:626
 msgid "开启后，可使用 Preload 预加载技术加速页面加载。"
-msgstr ""
-"You can use Preload technology to speed up page loading by enabling this "
-"option."
+msgstr "Enable Preload technology to speed up page loading."
 
 #: admin_fn.php:631
 msgid "实时搜索"
-msgstr "Realtime Searching"
+msgstr "Instant search"
 
 #: admin_fn.php:637
 msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
 msgstr ""
-"When enabled, will return results on users' typing on-the-fly. "
-"<strong>Require WordPress REST API support. Please make sure you did not "
-"disable it.</strong>"
+"Enable users to preview search results on-the-fly. <strong>Requires "
+"WordPress REST API support, which should be enabled by default. Please make "
+"sure you did not disable it.</strong>"
 
 #: admin_fn.php:642
 msgid "ICP 备案号"
@@ -840,7 +837,7 @@ msgstr ""
 "The ICP license number will be shown at the footer and linked to the website "
 "of <i>Ministry of Industry and Information Technology of the Chinese "
 "government</i>. Leave it blank to disable it. This may be particularly "
-"useful if your website is hosted in China。"
+"useful if your website is hosted within China."
 
 #: admin_fn.php:647
 msgid "在前端载入 jQuery"
@@ -855,15 +852,14 @@ msgid ""
 "2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
 "\">主题文档</a>"
 msgstr ""
-"Since version 2.0.0, MDx no longer depends on jQuery and no longer loads "
-"jQuery scripts on the front end. If you encounter problems such as abnormal "
-"page display after upgrading MDx, please try to enable this option."
-"<br><strong>This is a temporary option and will be removed in a future "
-"version. If your front-end page has other resources that rely on jQuery, "
-"please make sure that they are not affected by MDx's removal of jQuery.</"
-"strong>For more information about upgrading from MDx 1.x to 2.x, please "
-"refer to the <a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
-"\">theme documentation</a>"
+"Since version 2.0.0, MDx no longer depends on jQuery and stops loading it on "
+"the front end. If you encounter display issues after upgrading, please try "
+"to enable this option.<br><strong>This is a interim option and will be "
+"removed in the future. If you have other front-end assets that depend on "
+"jQuery, please make sure that they are not affected by this upgrade.</"
+"strong><br>For more information on upgrading from MDx 1.x to 2.x, please "
+"read the <a href=\"https://doc.flyhigher.top/mdx/en-US/upgrade_tip/\">theme "
+"documentation</a>"
 
 #: admin_functions.php:3
 msgid "MDx主题"
@@ -879,7 +875,7 @@ msgstr "MDx theme - Appearances"
 
 #: admin_functions.php:6
 msgid "样式"
-msgstr "Apperance"
+msgstr "Apperances"
 
 #: admin_functions.php:7
 msgid "功能"
@@ -908,8 +904,8 @@ msgid ""
 "警告：你可能修改了主题底部的版权信息，请将其重新改正。MDx主题要求你保留版权信"
 "息。"
 msgstr ""
-"Warning: if you have edited the copyright information at the bottom, please "
-"revert them. MDx theme requires you to keep copyright information."
+"Warning: You may have edited the theme copyright notice at the page footer, "
+"please revert them. MDx theme requires you to keep this information."
 
 #: admin_functions.php:67
 msgid "感谢使用 MDx 主题"
@@ -921,11 +917,11 @@ msgstr "I am Axton Yao, the developer of this theme. My personal website is"
 
 #: admin_functions.php:68 admin_functions.php:69 admin_functions.php:71
 msgid "。"
-msgstr ""
+msgstr "."
 
 #: admin_functions.php:69
 msgid "对主题有任何疑问，建议先查阅 "
-msgstr "Should you have any trouble, please refer to "
+msgstr "Should you have any questions, please refer to "
 
 #: admin_functions.php:69
 msgid "主题文档"
@@ -933,7 +929,7 @@ msgstr "the theme documentation"
 
 #: admin_functions.php:70
 msgid "这个项目的 Github 地址是 "
-msgstr "The GitHub address for this project is "
+msgstr "This project is open sourced on GitHub at "
 
 #: admin_functions.php:70
 msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。"
@@ -949,7 +945,7 @@ msgstr ""
 
 #: admin_functions.php:73
 msgid "感谢以下译者帮助翻译 MDx："
-msgstr "Thanks to following translators:"
+msgstr "Special thanks to the following translators:"
 
 #: admin_functions.php:80
 msgid "当前版本 v"
@@ -965,15 +961,15 @@ msgstr "Latest Release v"
 
 #: admin_functions.php:84
 msgid "这款主题献给 Demi Zhou"
-msgstr "This theme be dedicated to Demi Zhou"
+msgstr "This theme is dedicated to Demi Zhou"
 
 #: admin_functions.php:119
 msgid ""
 "MDx 主题现已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主题设置页"
 "面</a>对主题进行个性化定制。"
 msgstr ""
-"MDx theme is now activated, you can go to <a href=\"admin.php?page=mdx_styles"
-"\">theme settings</a> to customize it."
+"The MDx theme is now activated, you can go to <a href=\"admin.php?"
+"page=mdx_styles\">theme settings</a> to customize it."
 
 #: admin_functions.php:124
 msgid ""
@@ -990,7 +986,7 @@ msgid ""
 msgstr ""
 "PHP <code>mbstring</code> extension not enabled. MDx may not function "
 "normally. Please refer to <a href=\"https://doc.flyhigher.top/mdx/en-US/tech/"
-"php-errors/#mb_strimwidth\">documents</a> to fix this error."
+"php-errors/#mb_strimwidth\">the documentation</a> to fix this error."
 
 #: admin_style.php:133
 msgid "全局"
@@ -1022,7 +1018,7 @@ msgstr "Primary color"
 
 #: admin_style.php:176
 msgid "主题颜色会影响所有页面的主色。"
-msgstr "The primary color used throughout all webpages."
+msgstr "The primary color is used throughout all pages."
 
 #: admin_style.php:180
 msgid "强调颜色"
@@ -1030,7 +1026,7 @@ msgstr "Accent color"
 
 #: admin_style.php:201
 msgid "强调颜色会影响所有页面的强调色。"
-msgstr "The color used to call attention to key elements."
+msgstr "The accent color is used to call attention to key elements."
 
 #: admin_style.php:205
 msgid "黑暗主题"
@@ -1038,15 +1034,15 @@ msgstr "Dark theme"
 
 #: admin_style.php:209
 msgid "禁用"
-msgstr "Disable"
+msgstr "Disabled"
 
 #: admin_style.php:210
 msgid "启用"
-msgstr "Enable"
+msgstr "Enabled"
 
 #: admin_style.php:211
 msgid "启用 (OLED)"
-msgstr "Enable (optimized for OLED screens)"
+msgstr "Enabled (optimized for OLED screens)"
 
 #: admin_style.php:213
 msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
@@ -1071,8 +1067,8 @@ msgid ""
 "开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该"
 "字体仅包含拉丁字符。</strong>"
 msgstr ""
-"When enabled, some heading texts will be shown in Material Design 2 styled "
-"fonts. <strong>Note that only Latin characters are supported.</strong>"
+"When enabled, some headers will be shown in Material Design 2 styled fonts. "
+"<strong>Note that the font supports only Latin characters.</strong>"
 
 #: admin_style.php:239
 msgid "移动 Chrome 标题栏颜色"
@@ -1093,8 +1089,8 @@ msgid ""
 "开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显"
 "示。"
 msgstr ""
-"Show default image when the featured image of post is not set. Affects posts "
-"list and posts page. When disabled, no image is shown."
+"Show default image when the featured image of post is not set manually. "
+"Affects posts list and posts page. When disabled, no image will be shown."
 
 #: admin_style.php:264
 msgid "首页样式"
@@ -1131,12 +1127,6 @@ msgid "使用必应美图"
 msgstr "Use Bing images"
 
 #: admin_style.php:282
-#, fuzzy
-#| msgid ""
-#| "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注"
-#| "意，“简单”首页样式不会显示首页图片。</strong><br>如使用必应美图，可在括号"
-#| "内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此"
-#| "类推，最多到前16日。"
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简"
 "单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，"
@@ -1144,12 +1134,12 @@ msgid ""
 "日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。"
 msgstr ""
 "You can update or select an image from your media library as your homepage "
-"theme image. Click \"insert into post\" to select the image, other options "
-"are irrelevant will have no effect. <strong>Be aware that \"simple\" "
-"homepage style does not show a homepage theme image.</strong> If you want to "
-"use Bing Images, you can select the image date in parentheses. 0 stands for "
-"today, -1 stands for tomorrow, 1 stands for yesterday, and so on. The "
-"maximum date is 16."
+"theme image. <strong>Be aware that homepage styles \"simple\" and \"plain\" "
+"do not show a theme image.</strong><br>Regardless of whether \"homepage "
+"slideshow\" is enabled, a theme image should be selected.<br> If you want to "
+"use Bing Images, you can select the image date in the parentheses. 0 stands "
+"for today, -1 stands for tomorrow, 1 stands for yesterday, and so on. The "
+"allowed maximum number is 16."
 
 #: admin_style.php:287
 msgid "增加首页图片文字对比度"
@@ -1160,16 +1150,16 @@ msgid ""
 "在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不"
 "生效。"
 msgstr ""
-"Enable this when the texts can't be see clearly under white homepage images. "
-"Does not work for some homepage styles."
+"Enable this when the texts can't be seen clearly under white homepage "
+"images. Does not work under some homepage styles."
 
 #: admin_style.php:298
 msgid "首页头部展示内容"
-msgstr ""
+msgstr "Homepage header content"
 
 #: admin_style.php:304
 msgid "指定首页头部展示的内容。在下方进行详细设置。"
-msgstr ""
+msgstr "Sets the content displayed at your homepage header below."
 
 #: admin_style.php:309
 msgid "首页格言"
@@ -1190,56 +1180,43 @@ msgstr ""
 
 #: admin_style.php:331
 msgid "首页幻灯片样式"
-msgstr ""
+msgstr "Homepage slideshow"
 
 #: admin_style.php:335
 msgid "居中"
-msgstr ""
+msgstr "Centered"
 
 #: admin_style.php:342
-#, fuzzy
-#| msgid "首页推荐文章数量"
 msgid "首页幻灯片文章数量"
 msgstr "Number"
 
 #: admin_style.php:344
-#, fuzzy
-#| msgid "在此设定首页推荐文章篇数。请输入整数。"
 msgid "在此设定首页幻灯片文章篇数。请输入整数。"
-msgstr "Number of recommended posts. Please enter an integer."
+msgstr ""
+"Number of posts featured on the homepage slideshow. Please enter an integer."
 
 #: admin_style.php:347
-#, fuzzy
-#| msgid "首页推荐文章获取方式"
 msgid "首页幻灯片文章获取方式"
-msgstr "get recommended posts from"
+msgstr "Show posts from"
 
 #: admin_style.php:353
-#, fuzzy
-#| msgid ""
-#| "在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页"
-#| "推荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
 msgid ""
 "在此设定首页幻灯片文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，将会"
 "显示首页图片，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
 msgstr ""
-"Set the source of recommended posts. If you select \"Top posts\" when there "
-"is no top post, then the recommended post module will not be displayed and "
-"the post list will remain in the original order."
+"Sets the source of slideshow posts. If you select \"Pinned posts\" when "
+"there is none, the homepage theme image will be shown instead and the post "
+"list will remain in the original order."
 
 #: admin_style.php:358
-#, fuzzy
-#| msgid "首页推荐文章分类名"
 msgid "首页幻灯片文章分类名"
 msgstr "Category"
 
 #: admin_style.php:360
-#, fuzzy
-#| msgid "在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。"
 msgid "在此设定首页幻灯片文章的分类名。当分类不存在时，将显示最新文章。"
 msgstr ""
-"Set the name of the category where the recommended posts should be fetched "
-"from. The latest posts will be displayed when the category does not exist."
+"Posts from this category are shown in the slides. The latest posts will be "
+"displayed when this category does not exist."
 
 #: admin_style.php:366
 msgid "文章页样式"
@@ -1262,30 +1239,24 @@ msgid "同时影响文章页、单独页面的样式。"
 msgstr "Affect styles of both posts and pages."
 
 #: admin_style.php:380
-#, fuzzy
-#| msgid "文章时间信息"
 msgid "文章时间显示位置"
-msgstr "Time of posts"
+msgstr "Location of time posted"
 
 #: admin_style.php:384
-#, fuzzy
-#| msgid "标题栏"
 msgid "标题旁"
-msgstr "Blog title bar"
+msgstr "Next to the title"
 
 #: admin_style.php:385
 msgid "文章末尾"
-msgstr ""
+msgstr "End of post"
 
 #: admin_style.php:386
-#, fuzzy
-#| msgid "正常显示"
 msgid "不显示"
-msgstr "Display normally"
+msgstr "Do not display"
 
 #: admin_style.php:391
 msgid "文章导航栏配色方案"
-msgstr "Color scheme for article breadcrumb trail"
+msgstr "Color scheme for posts breadcrumb navigation"
 
 #: admin_style.php:395
 msgid "主题色"
@@ -1298,7 +1269,7 @@ msgstr "Low saturation"
 #: admin_style.php:398
 msgid "影响文章末尾文章导航栏区域的配色。"
 msgstr ""
-"Affects the color scheme of article breadcrumb trail (at end of articles)"
+"Affects the color scheme of posts breadcrumb navigation (at end of posts)"
 
 #: admin_style.php:402 functions.php:800
 msgid "文末信息"
@@ -1312,9 +1283,9 @@ msgid ""
 "小写敏感）。"
 msgstr ""
 "The message shown at the end of each post. Leave it blank to disable this "
-"feature. <code>HTML</code> codes are supported. <code>--PostLink--</code> "
-"will be replaced with post title linked to the post; <code>--PostURL--</"
-"code> will be replaced with post URL linked to this page."
+"feature. <code>HTML</code> formatting is supported. <code>--PostLink--</"
+"code> will be replaced with a anchored title to the current post; <code>--"
+"PostURL--</code> will be replaced with anchored post URL to this page."
 
 #: admin_style.php:410
 msgid "文章列表样式"
@@ -1338,24 +1309,20 @@ msgstr ""
 "Affect posts list style on homepage, search results page, and archive page."
 
 #: admin_style.php:426
-#, fuzzy
-#| msgid "文章列表"
 msgid "文章列表宽度"
-msgstr "Post List"
+msgstr "Width of Post List"
 
 #: admin_style.php:430
-#, fuzzy
-#| msgid "正常显示"
 msgid "正常"
-msgstr "Display normally"
+msgstr "Normal"
 
 #: admin_style.php:431
 msgid "较宽"
-msgstr ""
+msgstr "Wider"
 
 #: admin_style.php:433
 msgid "使用“较宽”，文章列表将会以多列瀑布流显示。"
-msgstr ""
+msgstr "The post list will be shown in multi columns if \"wider\" is selected."
 
 #: admin_style.php:437
 msgid "文章列表显示文章摘要"
@@ -1386,21 +1353,22 @@ msgid ""
 msgstr ""
 "<code>Adaptive</code> will fully display your feature image. <code>Keep "
 "aspect ratio</code> may only display a proportion of the image but prevents "
-"stretching the image (best when your featured image is too high or too wide)."
+"stretching the image (useful when your featured image is too high or too "
+"wide)."
 
 #: admin_style.php:462
 msgid "自动隐藏标题栏"
-msgstr "Automatically hide the title bar"
+msgstr "Auto hide title bar"
 
 #: admin_style.php:468
 msgid "开启后，页面向下滚动时标题栏会向上隐藏，向上滚动时会出现。"
 msgstr ""
-"The title bar will automatically hide when scrolling down, it will reappear "
+"The title bar will automatically hide when scrolling down and will reappear "
 "on scrolling up."
 
 #: admin_style.php:473
 msgid "标题栏显示内容"
-msgstr "Title bar displays"
+msgstr "Title bar content"
 
 #: admin_style.php:477
 msgid "博客名称"
@@ -1415,8 +1383,6 @@ msgid "自定义名称"
 msgstr "Custom name"
 
 #: admin_style.php:484
-#, fuzzy
-#| msgid "顶部栏 Logo"
 msgid "标题栏 Logo"
 msgstr "Title bar Logo"
 
@@ -1425,8 +1391,6 @@ msgid "选择一张图片作为网站 Logo。"
 msgstr "Choose an image as the website Logo"
 
 #: admin_style.php:493
-#, fuzzy
-#| msgid "顶部栏自定义名称"
 msgid "标题栏自定义名称"
 msgstr "Customize title bar content"
 
@@ -1436,7 +1400,9 @@ msgstr "Return to top on click"
 
 #: admin_style.php:505
 msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。</strong>"
-msgstr "Click the title bar after opening to return to top."
+msgstr ""
+"When enabled, users can return to top by clicking the title bar. This "
+"setting affects all pages.</strong>"
 
 #: admin_style.php:513
 msgid "抽屉菜单顶部展示个人信息"
@@ -1444,15 +1410,15 @@ msgstr "Show personal information in sidebar"
 
 #: admin_style.php:519
 msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
-msgstr "Show avatar and name at top of the sidebar"
+msgstr "Show avatar and name at top of the sidebar. Please specify below."
 
 #: admin_style.php:524
 msgid "抽屉菜单顶部图片"
-msgstr "Sidebar image"
+msgstr "Sidebar top image"
 
 #: admin_style.php:532
 msgid "抽屉菜单信息头像"
-msgstr "Avatar"
+msgstr "Sidebar author avatar"
 
 #: admin_style.php:536
 msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
@@ -1462,11 +1428,11 @@ msgstr ""
 
 #: admin_style.php:541
 msgid "抽屉菜单信息名称"
-msgstr "Author's name"
+msgstr "Sidebar author name"
 
 #: admin_style.php:547
 msgid "抽屉菜单详细信息"
-msgstr "Description"
+msgstr "Sidebar description"
 
 #: admin_style.php:550
 msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
@@ -1485,8 +1451,8 @@ msgid ""
 "在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</"
 "strong>"
 msgstr ""
-"Set footer styles here. <strong> If \"simple\" mode is chosen, then footer "
-"quotes will not be displayed.</strong>"
+"Set footer styles here. <strong> Footer quotes will not be displayed for "
+"\"simple\" style.</strong>"
 
 #: admin_style.php:569
 msgid "页脚格言"
@@ -1510,8 +1476,8 @@ msgid ""
 "页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。"
 msgstr ""
 "This quote will be shown at the footer of each page. Leave it blank to "
-"disable it. If you want to use Hitokoto.cn, you will receive a new quote per "
-"refreshing. This API is from a third-party, please be aware of security "
+"disable it. For Hitokoto.cn APIs, you will receive a different quote per "
+"refreshing. This API is from a third-party, please be aware of the security "
 "risks."
 
 #: admin_style.php:575
@@ -1522,8 +1488,8 @@ msgid ""
 msgstr ""
 "If you are using a custom API, you'll need to fill-in the API URL in "
 "parentheses and make sure that the API returns the JSON format <code>{\"text"
-"\":\"quote\"}</code> <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/"
-"custom_api/\" target=\"_blank\">details</a></code>"
+"\":\"quote\"}</code> <a href=\"https://doc.flyhigher.top/mdx/en-US/config/"
+"custom_api/\" target=\"_blank\">Learn More</a></code>"
 
 #: admin_style.php:578
 msgid "页脚内容"
@@ -1535,7 +1501,7 @@ msgstr "Social media icon editor"
 
 #: admin_style.php:580
 msgid "在这里编辑页脚内容。支持 <code>HTML</code> 格式。"
-msgstr "Edit footer content here. <code>HTML</code> codes are supported."
+msgstr "Edit footer content here. <code>HTML</code> styling is supported."
 
 #: admin_style.php:586
 msgid "Safari Touch Bar 图标支持"
@@ -1548,10 +1514,10 @@ msgid ""
 "AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
 "target=\"_blank\">详细了解</a>"
 msgstr ""
-"Enable support for Safari Touch Bar icon, please finish further settings "
-"below. <a href=\"https://developer.apple.com/library/content/documentation/"
-"AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
-"target=\"_blank\">Learn more</a>"
+"Enable support for Safari Touch Bar icon, please complete the following "
+"configurations. <a href=\"https://developer.apple.com/library/content/"
+"documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/"
+"pinnedTabs.html\" target=\"_blank\">Learn more</a>"
 
 #: admin_style.php:597
 msgid "Touch Bar 图标地址"
@@ -1574,12 +1540,10 @@ msgid "使用当前主题颜色"
 msgstr "Use primary color"
 
 #: admin_style.php:605
-#, fuzzy
-#| msgid "请设置 Touch Bar 图标背景颜色。16进制颜色或 RGB 颜色。"
 msgid "请设置 Touch Bar 图标背景颜色。16 进制颜色或 RGB 颜色。"
 msgstr ""
 "Please set background color for Touch Bar icon. Either HEX or RGB format is "
-"acceoted"
+"accepted."
 
 #: admin_style.php:611
 msgid "登录页 Material Design"
@@ -1633,8 +1597,8 @@ msgid ""
 msgstr ""
 "<code>WordPress default</code> gives control to WordPress, and is compatible "
 "with major SEO plugins. <br><code>MDx optimized</code> lets MDx take "
-"control. This method may work better in some occasions but is incompatible "
-"with SEO plugins."
+"control. It may work better under some scenarios but is incompatible with "
+"other SEO plugins."
 
 #: admin_style.php:655
 msgid "多彩标签云"
@@ -1817,11 +1781,11 @@ msgstr "Personal website link"
 
 #: admin_style.php:752 admin_style.php:753
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
 #: admin_style.php:753
 msgid "RSS 地址"
-msgstr ""
+msgstr "RSS Address"
 
 #: admin_style.php:756
 msgid "生成结果"
@@ -1896,7 +1860,7 @@ msgstr "Agree"
 
 #: footer.php:29
 msgid "没有激活的小工具"
-msgstr "No widgets enabled"
+msgstr "No widgets activated"
 
 #: footer.php:37
 msgid "搜索功能暂时不可用。"
@@ -1912,7 +1876,7 @@ msgstr "Only showing the top 10 results. Hit Enter to show more"
 
 #: footer.php:40
 msgid "无法连接到实时搜索服务"
-msgstr "Can't connect to realtime search service"
+msgstr "Can't connect to Instant Search service"
 
 #: footer.php:46
 msgid "<strong>加载失败：</strong> 未知错误。"
@@ -1931,7 +1895,8 @@ msgstr "Undo"
 #: footer.php:49
 msgid "减弱动画模式关闭，已启用完整动画效果"
 msgstr ""
-"&quot;Reduce Motion&quot; mod off. All screen motion effects are enabled now."
+"&quot;Reduce Motion&quot; mode off. All screen motion effects are enabled "
+"now."
 
 #: footer.php:78
 msgid "搜索结果："
@@ -1947,7 +1912,7 @@ msgstr "Archives:"
 
 #: footer.php:131
 msgid "已自动定位到你此前阅读处"
-msgstr "Located where you left"
+msgstr "Located where you left off"
 
 #: footer.php:132
 msgid "从头阅读"
@@ -1963,7 +1928,7 @@ msgstr "Load more comments"
 
 #: footer.php:141
 msgid "没有更多了"
-msgstr "That's all"
+msgstr "No more comments..."
 
 #: footer.php:142
 msgid "长按/右键保存图片"
@@ -1971,7 +1936,7 @@ msgstr "Touch and hold/right click to save image"
 
 #: footer.php:144
 msgid "使用微信扫描后在微信内分享"
-msgstr "Scan the QR code in WeChat to share"
+msgstr "Scan the QR code with WeChat to share"
 
 #: footer.php:145
 msgid "点按右上角按钮即可分享"
@@ -1987,7 +1952,7 @@ msgstr "Check on GitHub"
 
 #: footer.php:148
 msgid "获取 GitHub 仓库信息时出现问题<br>尝试直接访问"
-msgstr "Error fetching descriptions from GitHub. <br> Directly visit it"
+msgstr "Error fetching descriptions from GitHub. <br>Visit it directly"
 
 #: footer.php:149
 msgid "这个页面没有摘要。"
@@ -1995,7 +1960,7 @@ msgstr "This post has no excerpt."
 
 #: footer.php:150
 msgid "前往页面"
-msgstr "Check this post"
+msgstr "Read this post"
 
 #: footer.php:151
 msgid "获取页面信息时出现问题<br>尝试直接访问"
@@ -2017,7 +1982,7 @@ msgstr ""
 
 #: functions.php:196
 msgid "发送成功。"
-msgstr ""
+msgstr "Successfully sent!"
 
 #: functions.php:197
 msgid "<strong>错误：</strong> 未知错误。"
@@ -2063,7 +2028,7 @@ msgstr "(Page %s)"
 
 #: functions.php:574 gutenberg-src/src/mdx/mdx.js:16
 msgid "被折叠内容"
-msgstr "Folded content"
+msgstr "Collapsed content"
 
 #: functions.php:594 gutenberg-src/src/mdx/mdx.js:94
 msgid "警告"
@@ -2089,7 +2054,7 @@ msgstr "Global setting"
 
 #: functions.php:750
 msgid "在这里为这篇文章设置单独的主题颜色。"
-msgstr "Set primary color specific for this post"
+msgstr "Set primary color specifically for this post"
 
 #: functions.php:752
 msgid "文章强调色"
@@ -2097,7 +2062,7 @@ msgstr "Post-specific accent color"
 
 #: functions.php:773
 msgid "在这里为这篇文章设置单独的强调色。"
-msgstr "Set accent color specific for this post"
+msgstr "Set accent color specifically for this post"
 
 #: functions.php:775
 msgid "文章样式"
@@ -2109,7 +2074,7 @@ msgstr "Override style setting for this post."
 
 #: functions.php:786
 msgid "文章展示模式"
-msgstr "Post's display mode"
+msgstr "Hide this post"
 
 #: functions.php:789
 msgid "正常显示"
@@ -2165,7 +2130,7 @@ msgstr "Latest posts"
 
 #: includes/admin_init_fn.php:49
 msgid "发送"
-msgstr ""
+msgstr "Send"
 
 #: includes/author_card.php:1
 msgid "访问作者网站"
@@ -2296,7 +2261,7 @@ msgstr "Homepage"
 
 #: single.php:291 single.php:310
 msgid "哎呀..."
-msgstr "Uh-oh..."
+msgstr "Oops..."
 
 #: single.php:291
 msgid "根据相关法律法规，此文章暂时不予显示"
@@ -2318,78 +2283,72 @@ msgid "状态"
 msgstr "Status"
 
 #: gutenberg-src/src/mdx/mdx.js:9
-#, fuzzy
-#| msgid "被折叠内容"
 msgid "MDx 折叠内容"
-msgstr "Folded content"
+msgstr "MDx Collapsible Section"
 
 #: gutenberg-src/src/mdx/mdx.js:12 gutenberg-src/src/mdx/mdx.js:44
-#, fuzzy
-#| msgid "被折叠内容"
 msgid "折叠内容"
-msgstr "Folded content"
+msgstr "Collapsed content"
 
 #: gutenberg-src/src/mdx/mdx.js:37 gutenberg-src/src/mdx/mdx.js:111
-#, fuzzy
-#| msgid "仅标题"
 msgid "标题"
-msgstr "Title only"
+msgstr "Title"
 
 #: gutenberg-src/src/mdx/mdx.js:51
 msgid "默认打开"
-msgstr ""
+msgstr "Expand by default"
 
 #: gutenberg-src/src/mdx/mdx.js:87
 msgid "MDx 警告内容"
-msgstr ""
+msgstr "MDx Warning Section"
 
 #: gutenberg-src/src/mdx/mdx.js:90 gutenberg-src/src/mdx/mdx.js:118
 msgid "警告内容"
-msgstr ""
+msgstr "Warning content"
 
 #: gutenberg-src/src/mdx/mdx.js:144
 msgid "MDx 进度指示器"
-msgstr ""
+msgstr "MDx progress indicator"
 
 #: gutenberg-src/src/mdx/mdx.js:147
 msgid "进度指示器"
-msgstr ""
+msgstr "Progress indicator"
 
 #: gutenberg-src/src/mdx/mdx.js:157
 msgid "进度 (0-100)"
-msgstr ""
+msgstr "Progress (0-100)"
 
 #: gutenberg-src/src/mdx/mdx.js:179
 msgid "MDx Github 信息卡"
-msgstr ""
+msgstr "MDx GitHub Info Card"
 
 #: gutenberg-src/src/mdx/mdx.js:239
 msgid "作者用户名"
-msgstr ""
+msgstr "Author"
 
 #: gutenberg-src/src/mdx/mdx.js:250
 msgid "仓库名"
-msgstr ""
+msgstr "Repository"
 
 #: gutenberg-src/src/mdx/mdx.js:262
 msgid "API 网关"
-msgstr ""
+msgstr "API Gateway"
 
 #: gutenberg-src/src/mdx/mdx.js:303
 msgid "MDx 文章信息卡"
-msgstr ""
+msgstr "MDx Posts Info Card"
 
 #: gutenberg-src/src/mdx/mdx.js:306 gutenberg-src/src/mdx/mdx.js:330
 msgid "文章信息卡"
-msgstr ""
+msgstr "Posts Info Card"
 
 #: gutenberg-src/src/mdx/mdx.js:333
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: gutenberg-src/src/mdx/mdx.js:362
 msgid "MDx 广告"
-msgstr ""
+msgstr "MDx Ads"
 
 #~ msgid ""
 #~ "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "
