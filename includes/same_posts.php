@@ -22,7 +22,7 @@ if ($post_tags) {
     if($related_posts){?><div class="mdx-same-posts"><h3><?php echo mdx_get_option('mdx_you_may_like_text');?></h3><div id="mdx-sp-out-c"><ul class="mdx-posts-may-related"><?php foreach ($related_posts as $related_post){?>
         <a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><li class="mdui-card mdui-color-theme"><div class="mdx-lazyload lazyload"<?php $mdx_img_raw = wp_get_attachment_image_src(get_post_thumbnail_id($related_post->ID),'large'); $mdx_img = $mdx_img_raw === false ? '' : $mdx_img_raw[0]; if($mdx_img!=""){?> data-bg="<?php echo $mdx_img.'"';}else{if(mdx_get_option("mdx_post_def_img")==="true"){ ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';}}?>></div>
             <span<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span>
-            <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i>
+            <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php echo htmlspecialchars(__("前往阅读","mdx"));?>">&#xe5c8;</i>
             <div class="mdx-sp-fill<?php if($mdx_img=="" && mdx_get_option("mdx_post_def_img")==="false"){?> mdx-hot-posts-have-img<?php }?>"><div>
         </li></a>
 <?php }?></ul></div></div><?php }}}elseif($mdx_way=="category"){
@@ -46,6 +46,6 @@ if ($post_tags) {
       <?php foreach ($related as $related_post){?><a href="<?php echo get_permalink($related_post->ID); ?>" rel="bookmark" title="<?php echo $related_post->post_title; ?>"><li class="mdui-card mdui-color-theme">
           <div class="mdx-lazyload lazyload"<?php $mdx_img_raw = wp_get_attachment_image_src(get_post_thumbnail_id($related_post->ID),'large'); $mdx_img = $mdx_img_raw === false ? '' : $mdx_img_raw[0]; if($mdx_img!==""){?> data-bg="<?php echo $mdx_img.'"';}else{if(mdx_get_option("mdx_post_def_img")==="true"){ ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';}}?>></div>
           <span<?php if($mdx_img!="" || mdx_get_option("mdx_post_def_img")==="true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span>
-          <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i>
+          <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php echo htmlspecialchars(__("前往阅读","mdx"));?>">&#xe5c8;</i>
           <div class="mdx-sp-fill<?php if($mdx_img=="" && mdx_get_option("mdx_post_def_img")==="false"){?> mdx-hot-posts-have-img<?php }?>"><div>
       </li></a><?php }?></ul></div></div><?php }}}?>

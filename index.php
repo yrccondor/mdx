@@ -224,7 +224,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                             }
                         }?>></div>
                         <span<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span>
-                        <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php _e("前往阅读","mdx");?>">&#xe5c8;</i>
+                        <i class="mdui-icon material-icons<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> mdx-same-posts-img<?php }?>" title="<?php echo htmlspecialchars(__("前往阅读","mdx"));?>">&#xe5c8;</i>
                         <div class="mdx-sp-fill<?php if($mdx_img === "" && mdx_get_option("mdx_post_def_img") === "false"){?> mdx-hot-posts-have-img<?php }?>"></div>
                     </div></a><?php endforeach;?>
                 </div>

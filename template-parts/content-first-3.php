@@ -39,7 +39,7 @@
     </div>
 </div>
 <?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
-<div class="mdui-card postDiv mdui-center mdui-hoverable">
+<div class="mdui-card postDiv mdui-center mdui-hoverable post-item">
     <div class="mdui-card-media mdui-color-theme">
     <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
     <a href="<?php the_permalink();?>">

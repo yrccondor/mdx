@@ -34,19 +34,19 @@
     <?php wp_footer();?>
     <?php if(mdx_get_option('mdx_real_search')=='true'){?>
     <script>
-    var tipMutiOff = '<?php _e('搜索功能暂时不可用。','mdx')?>';
-    var tipMutiOffRes = '<?php _e('评论功能暂时不可用。','mdx');?><br><br>';
-    var tipMuti = '<?php _e('仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面','mdx');?>';
-    var snackMuti = "<?php _e('无法连接到实时搜索服务','mdx');?>";
+    var tipMutiOff = '<?php echo addslashes(__('搜索功能暂时不可用。','mdx'));?>';
+    var tipMutiOffRes = '<?php echo addslashes(__('评论功能暂时不可用。','mdx'));?><br><br>';
+    var tipMuti = '<?php echo addslashes(__('仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面','mdx'));?>';
+    var snackMuti = "<?php echo addslashes(__('无法连接到实时搜索服务','mdx'));?>";
     var moreMuti = '<?php echo mdx_get_option("mdx_readmore");?>';
     </script>
     <?php }?>
     <?php wp_enqueue_script('comment-reply');?>
     <script>
-      var ajax_error = "<?php _e("<strong>加载失败：</strong> 未知错误。","mdx");?>";
-      var reduce_motion_i18n_1 = "<?php _e("检测到减弱动画模式，已为你减弱动画效果","mdx");?>";
-      var reduce_motion_i18n_2 = "<?php _e("撤销","mdx");?>";
-      var reduce_motion_i18n_3 = "<?php _e("减弱动画模式关闭，已启用完整动画效果","mdx");?>";
+      var ajax_error = "<?php echo addslashes(__("<strong>加载失败：</strong> 未知错误。","mdx"));?>";
+      var reduce_motion_i18n_1 = "<?php echo addslashes(__("检测到减弱动画模式，已为你减弱动画效果","mdx"));?>";
+      var reduce_motion_i18n_2 = "<?php echo addslashes(__("撤销","mdx"));?>";
+      var reduce_motion_i18n_3 = "<?php echo addslashes(__("减弱动画模式关闭，已启用完整动画效果","mdx"));?>";
       var mdxPublicPath = "<?php echo get_template_directory_uri().'/js/'; ?>";
       var cookieFlagName = "<?php echo mdx_get_option('mdx_cookie_flag');?>";
       var ifscr = 0;
@@ -75,7 +75,7 @@
       </script>
     <?php }else if(is_search()){?>
       <script>
-        var acPageTitle = '<?php _e('搜索结果：','mdx');the_search_query();?>';
+        var acPageTitle = '<?php echo addslashes(__('搜索结果：','mdx'));the_search_query();?>';
         var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
           enhanced_ajax = true;
@@ -83,7 +83,7 @@
       </script>
     <?php }else if(is_author()){?>
       <script>
-        var acPageTitle = '<?php _e('作者归档：'.get_the_author(),'mdx');?>';
+        var acPageTitle = '<?php echo addslashes(__('作者归档：'.get_the_author(),'mdx'));?>';
         var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
           enhanced_ajax = true;
@@ -91,7 +91,7 @@
       </script>
       <?php } else if(is_category()||is_archive()){?>
       <script>
-        var acPageTitle = '<?php _e('文章归档：','mdx');single_cat_title('',true);?>';
+        var acPageTitle = '<?php echo addslashes(__('文章归档：','mdx'));single_cat_title('',true);?>';
         var enhanced_ajax = false;
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
           enhanced_ajax = true;
@@ -128,29 +128,29 @@
       <?php }if(is_single() || (is_page())){?><script>
       function snbar(){
         mdui.snackbar({
-          message: '<?php _e("已自动定位到你此前阅读处","mdx");?>&nbsp;&nbsp;&nbsp;',
-          buttonText: '<?php _e("从头阅读","mdx");?>',
+          message: '<?php echo addslashes(__("已自动定位到你此前阅读处","mdx"));?>&nbsp;&nbsp;&nbsp;',
+          buttonText: '<?php echo addslashes(__("从头阅读","mdx"));?>',
           timeout: 10000,
           onButtonClick: function(){
             Velocity(ele("html"), {scrollTop: "0px"}, 700);
           },
         });
       }
-      var moreinput = "'<?php _e("更多选项","mdx");?>'";
-      var morecomment = "<?php _e("加载更多评论","mdx");?>";
-      var nomorecomment = "<?php _e("没有更多了","mdx");?>";
-      var mdx_si_i18n = '<?php _e('长按/右键保存图片','mdx'); ?>';
-      var mdx_si_i18n_2 = '<?php _e('关闭','mdx'); ?>';
-      var mdx_si_i18n_3 = '<?php _e('使用微信扫描后在微信内分享','mdx'); ?>';
-      var mdx_si_i18n_4 = '<?php _e('点按右上角按钮即可分享','mdx'); ?>';
-      var mdx_i18n_password = '<?php _e('密码','mdx'); ?>';
-      var mdx_github_i18n_1 = '<?php _e('在 GitHub 上查阅','mdx'); ?>';
-      var mdx_github_i18n_2 = '<?php _e('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx'); ?>';
-      var mdx_post_i18n_1 = '<?php _e('这个页面没有摘要。','mdx'); ?>';
-      var mdx_post_i18n_2 = '<?php _e('前往页面','mdx'); ?>';
-      var mdx_post_i18n_3 = '<?php _e('获取页面信息时出现问题<br>尝试直接访问','mdx'); ?>';
-      var mdx_toc_i18n_1 = '<?php _e('菜单','mdx'); ?>';
-      var mdx_toc_i18n_2 = '<?php _e('目录','mdx'); ?>';
+      var moreinput = "'<?php echo addslashes(__("更多选项","mdx"));?>'";
+      var morecomment = "<?php echo addslashes(__("加载更多评论","mdx"));?>";
+      var nomorecomment = "<?php echo addslashes(__("没有更多了","mdx"));?>";
+      var mdx_si_i18n = '<?php echo addslashes(__('长按/右键保存图片','mdx')); ?>';
+      var mdx_si_i18n_2 = '<?php echo addslashes(__('关闭','mdx')); ?>';
+      var mdx_si_i18n_3 = '<?php echo addslashes(__('使用微信扫描后在微信内分享','mdx')); ?>';
+      var mdx_si_i18n_4 = '<?php echo addslashes(__('点按右上角按钮即可分享','mdx')); ?>';
+      var mdx_i18n_password = '<?php echo addslashes(__('密码','mdx')); ?>';
+      var mdx_github_i18n_1 = '<?php echo addslashes(__('在 GitHub 上查阅','mdx')); ?>';
+      var mdx_github_i18n_2 = '<?php echo addslashes(__('获取 GitHub 仓库信息时出现问题<br>尝试直接访问','mdx')); ?>';
+      var mdx_post_i18n_1 = '<?php echo addslashes(__('这个页面没有摘要。','mdx')); ?>';
+      var mdx_post_i18n_2 = '<?php echo addslashes(__('前往页面','mdx')); ?>';
+      var mdx_post_i18n_3 = '<?php echo addslashes(__('获取页面信息时出现问题<br>尝试直接访问','mdx')); ?>';
+      var mdx_toc_i18n_1 = '<?php echo addslashes(__('菜单','mdx')); ?>';
+      var mdx_toc_i18n_2 = '<?php echo addslashes(__('目录','mdx')); ?>';
       var mdx_img_alt = <?php echo mdx_get_option('mdx_img_box_show_alt'); ?>;
       </script>
 <?php }?>

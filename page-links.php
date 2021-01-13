@@ -28,7 +28,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <div class="sideImg mdui-color-theme">
       <div class="mdx-side-lazyload lazyload" data-bg="<?php echo $mdx_side_img;?>"></div>
       <?php if(mdx_get_option('mdx_night_style')!=='false' && mdx_get_option('mdx_styles_dark')=='disable'){;?>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php _e("切换日间/夜间模式","mdx");?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple nightVision mdui-text-color-white mdui-valign mdui-text-center" mdui-tooltip="{content: '<?php echo addslashes(__('切换日间/夜间模式','mdx'));?>'}" id="tgns" mdui-drawer-close="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe3a9;</i></button>
       <?php }?>
       <?php if(mdx_get_option('mdx_side_head')!=''){;?>
       <div class="side-info-head mdui-shadow-3 lazyload" data-bg="<?php echo mdx_get_option('mdx_side_head');?>"></div>
