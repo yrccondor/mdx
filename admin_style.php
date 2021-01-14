@@ -510,7 +510,7 @@ wp_nonce_field('mdx_options_update');
         <fieldset>
         <label><input type="radio" name="mdx_tap_to_top" value="true" <?php if($mdx_v_tap_to_top=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" name="mdx_tap_to_top" value="false" <?php if($mdx_v_tap_to_top=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-        <p class="description"><?php _e('开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。</strong>', 'mdx');?></p>
+        <p class="description"><?php _e('开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>

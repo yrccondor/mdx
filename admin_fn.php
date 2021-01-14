@@ -403,7 +403,7 @@ wp_nonce_field('mdx_options_update');
         <fieldset>
         <label><input type="radio" name="mdx_comment_ajax" value="true" <?php if($mdx_v_comment_ajax=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" name="mdx_comment_ajax" value="false" <?php if($mdx_v_comment_ajax=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-        <p class="description"><?php _e('开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 AJAX 加载。</strong>', 'mdx');?></p>
+        <p class="description"><?php _e('开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 AJAX 加载。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>

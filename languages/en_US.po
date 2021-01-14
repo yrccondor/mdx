@@ -468,10 +468,10 @@ msgstr "Infinite scrolling comments"
 #: admin_fn.php:406
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
-"AJAX 加载。</strong>"
+"AJAX 加载。"
 msgstr ""
 "When enabled, the post comments will be loaded with infinite scrolling "
-"(unpaginated). All comments are loaded with AJAX. </strong>"
+"(unpaginated). All comments are loaded with AJAX."
 
 #: admin_fn.php:411
 msgid "评论表情"
@@ -1429,10 +1429,10 @@ msgid "点击标题栏返回顶部"
 msgstr "Return to top on click"
 
 #: admin_style.php:513
-msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。</strong>"
+msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。"
 msgstr ""
 "When enabled, users can return to top by clicking the title bar. This "
-"setting affects all pages.</strong>"
+"setting affects all pages."
 
 #: admin_style.php:521
 msgid "抽屉菜单顶部展示个人信息"
