@@ -32,7 +32,7 @@ msgstr "標題"
 
 #: mdx.js:51
 msgid "默认打开"
-msgstr "預設打開"
+msgstr "默認打開"
 
 #: mdx.js:87
 msgid "MDx 警告内容"

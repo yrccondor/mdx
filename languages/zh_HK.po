@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 18:12+0800\n"
+"PO-Revision-Date: 2021-01-14 18:10+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: zh_TW\n"
+"Language: zh_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,7 +87,7 @@ msgid ""
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
 "\"_blank\">MDx 文档</a> 下载安装新版插件。"
 msgstr ""
-"你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不相容，你需要前往 <a href="
+"你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不兼容，你需要前往 <a href="
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
 "\"_blank\">MDx 文檔</a> 下載安裝新版外掛。"
 
@@ -203,19 +203,19 @@ msgid ""
 "网页加载速度较快时启用。"
 msgstr ""
 "開啟後，文章中通過 QR Code 轉移到其他設備閱讀時會自動記錄閱讀進度並滾動。建議"
-"在網頁載入速度較快時啟用。"
+"在網頁加載速度較快時啟用。"
 
 #: admin_fn.php:176
 msgid "页面加载进度条"
-msgstr "頁面載入進度條"
+msgstr "頁面加載進度條"
 
 #: admin_fn.php:182
 msgid ""
 "开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），"
 "页面加载完成后消失。"
 msgstr ""
-"開啟後，文章/單獨頁面載入時會在頁面頂部顯示載入進度條（僅動畫，非真實進度），"
-"頁面載入完成後消失。"
+"開啟後，文章/單獨頁面加載時會在頁面頂部顯示加載進度條（僅動畫，非真實進度），"
+"頁面加載完成後消失。"
 
 #: admin_fn.php:187
 msgid "文章时间信息"
@@ -315,14 +315,14 @@ msgstr "詳細信息顯示在文章列表每篇文章的底部。在此指定你
 
 #: admin_fn.php:280
 msgid "增强的文章列表加载方式"
-msgstr "增強的文章列表載入方式"
+msgstr "增強的文章列表加載方式"
 
 #: admin_fn.php:286
 msgid ""
 "启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持"
 "滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。"
 msgstr ""
-"啟用此選項以加快文章列表的載入速度，並使瀏覽器在後退到文章列表時盡可能地保持"
+"啟用此選項以加快文章列表的加載速度，並使瀏覽器在後退到文章列表時盡可能地保持"
 "滾動位置。 <br>受瀏覽器限制，在擁有大量文章時此功能效果可能會受限。"
 
 #: admin_fn.php:294
@@ -445,15 +445,15 @@ msgstr "在此自訂“發送評論”按鈕上的文本。"
 
 #: admin_fn.php:400
 msgid "评论无限加载"
-msgstr "評論無限載入"
+msgstr "評論無限加載"
 
 #: admin_fn.php:406
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。"
 msgstr ""
-"開啟後，文章評論載入時將使用無限載入，關閉則使用分頁載入。無論如何，評論均為 "
-"AJAX 載入。"
+"開啟後，文章評論加載時將使用無限加載，關閉則使用分頁加載。無論如何，評論均為 "
+"AJAX 加載。"
 
 #: admin_fn.php:411
 msgid "评论表情"
@@ -493,15 +493,15 @@ msgid ""
 "有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图"
 "片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>"
 msgstr ""
-"LazyLoad 即圖片會在即將滾動到螢幕內時才開始載入的技術（可能會影響 SEO）。此設"
-"置會影響圖片載入模式。 </p><ul><li><code>速度優先</code>：幾乎所有圖片都會使"
+"LazyLoad 即圖片會在即將滾動到螢幕內時才開始加載的技術（可能會影響 SEO）。此設"
+"置會影響圖片加載模式。 </p><ul><li><code>速度優先</code>：幾乎所有圖片都會使"
 "用 LazyLoad</li><li><code>SEO優先（輕度）</code>：除文章內使用的圖片外幾乎所"
 "有圖片都會使用 LazyLoad</li><li><code>SEO優先（重度）</code>：文章內使用的圖"
 "片和文章列表使用的圖片不會使用 LazyLoad，但仍有少量裝飾性圖片會使用</li></ul>"
 
 #: admin_fn.php:437
 msgid "兼容性 Lazyload"
-msgstr "相容性 Lazyload"
+msgstr "兼容性 Lazyload"
 
 #: admin_fn.php:443
 msgid ""
@@ -509,13 +509,13 @@ msgid ""
 "strong><br>如果你发现文章内图片的 Lazyload 加载出现问题且希望保留文章内图片"
 "的 Lazyload，可以尝试打开此选项。"
 msgstr ""
-"嘗試以相容性更好的方式載入圖片，<strong>但會導致一些增強特性不可用。 </"
-"strong><br>如果你發現文章內圖片的 Lazyload 載入出現問題且希望保留文章內圖片"
+"嘗試以兼容性更好的方式加載圖片，<strong>但會導致一些增強特性不可用。 </"
+"strong><br>如果你發現文章內圖片的 Lazyload 加載出現問題且希望保留文章內圖片"
 "的 Lazyload，可以嘗試打開此選項。"
 
 #: admin_fn.php:451
 msgid "允许用户缩放页面"
-msgstr "允許使用者縮放頁面"
+msgstr "允許用戶縮放頁面"
 
 #: admin_fn.php:457
 msgid ""
@@ -523,9 +523,9 @@ msgid ""
 "障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器"
 "对此可能会有不同的表现。"
 msgstr ""
-"如果允許使用者縮放頁面，使用者將可以放大頁面。這可能會破壞頁面結構，但有助於"
-"視力障礙使用者更好地閱讀。關閉即可將頁面的縮放強制固定在預設倍率。注意，不同"
-"瀏覽器對此可能會有不同的表現。"
+"如果允許用戶縮放頁面，用戶將可以放大頁面。這可能會破壞頁面結構，但有助於視力"
+"障礙用戶更好地閱讀。關閉即可將頁面的縮放強制固定在默認倍率。注意，不同瀏覽器"
+"對此可能會有不同的表現。"
 
 #: admin_fn.php:462
 msgid "允许使用减弱动画模式"
@@ -536,7 +536,7 @@ msgid ""
 "开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动"
 "画。"
 msgstr ""
-"開啟後，如果使用者的系統開啟了減弱動畫模式，MDx 會自動地盡可能減弱網頁內的動"
+"開啟後，如果用戶的系統開啟了減弱動畫模式，MDx 會自動地盡可能減弱網頁內的動"
 "畫。"
 
 #: admin_fn.php:476
@@ -557,7 +557,7 @@ msgstr ""
 
 #: admin_fn.php:481
 msgid "对已登录的用户禁用广告"
-msgstr "對已登錄的使用者禁用廣告"
+msgstr "對已登錄的用戶禁用廣告"
 
 #: admin_fn.php:485
 msgid "禁用广告"
@@ -595,9 +595,9 @@ msgid ""
 "模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
 "<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong></p><ul><li><code>跟"
-"隨系統</code>：夜間模式隨使用者系統的配色方案實時切換，優先順序低於使用者自行"
-"設定</li><li><code >跟隨時間</code>：22:30 至第二天5:30 之間打開頁面時自動載"
-"入夜間模式，優先順序低於使用者自行設定</li></ul>"
+"隨系統</code>：夜間模式隨用戶系統的配色方案實時切換，優先順序低於用戶自行設定"
+"</li><li><code >跟隨時間</code>：22:30 至第二天5:30 之間打開頁面時自動加載夜"
+"間模式，優先順序低於用戶自行設定</li></ul>"
 
 #: admin_fn.php:521
 msgid "SEO 关键词"
@@ -633,7 +633,7 @@ msgstr ""
 
 #: admin_fn.php:545
 msgid "使用 CDN 加载前端主题文件"
-msgstr "使用 CDN 載入前端主題文件"
+msgstr "使用 CDN 加載前端主題文件"
 
 #: admin_fn.php:549
 msgid "不使用"
@@ -655,9 +655,9 @@ msgid ""
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
 "定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
-"在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地載入。此選項"
+"在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地加載。此選項"
 "<strong>隻影響</strong>主題的前端文件，不影響 WordPress 和其他外掛的文件。</"
-"p><ul><li><code>不使用</code>：從和頁面一致的伺服器載入文件</"
+"p><ul><li><code>不使用</code>：從和頁面一致的伺服器加載文件</"
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免費 CDN</li><li><code>自"
 "訂</code>：使用自訂的 CDN</li></ul>"
 
@@ -748,7 +748,7 @@ msgid ""
 "开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从"
 "屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。"
 msgstr ""
-"開啟後，每個頁面右下角都會顯示小工具欄浮動按鈕。小工具欄預設隱藏，可以通過從"
+"開啟後，每個頁面右下角都會顯示小工具欄浮動按鈕。小工具欄默認隱藏，可以通過從"
 "螢幕右側側向中心滑動或按鈕調出右側小工具欄。"
 
 #: admin_fn.php:621
@@ -763,11 +763,11 @@ msgid ""
 "到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到"
 "此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。"
 msgstr ""
-"Cookie 使用提示將會在使用者第一次訪問網站時顯示,以向使用者說明你網站的 "
-"Cookie 政策。 如果你的網站有來自歐盟地區的訪客,此選項可能會很有用。<br>在這裡"
-"編輯 Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 Safari "
-"中，受到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重置所有"
-"訪客看到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
+"Cookie 使用提示將會在用戶第一次訪問網站時顯示,以向用戶說明你網站的 Cookie 政"
+"策。 如果你的網站有來自歐盟地區的訪客,此選項可能會很有用。<br>在這裡編輯 "
+"Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 Safari 中，受"
+"到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重置所有訪客看"
+"到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
 
 #: admin_fn.php:624
 msgid "重置显示状态"
@@ -779,11 +779,11 @@ msgstr "重置成功,保存設定後生效。"
 
 #: admin_fn.php:628
 msgid "使用 Preload 技术加速页面加载"
-msgstr "使用 Preload 技術加速頁面載入"
+msgstr "使用 Preload 技術加速頁面加載"
 
 #: admin_fn.php:634
 msgid "开启后，可使用 Preload 预加载技术加速页面加载。"
-msgstr "開啟後，可使用 Preload 預載入技術加速頁面載入。"
+msgstr "開啟後，可使用 Preload 預加載技術加速頁面加載。"
 
 #: admin_fn.php:639
 msgid "实时搜索"
@@ -794,8 +794,8 @@ msgid ""
 "开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
 "API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
 msgstr ""
-"開啟後，進行搜索時會隨使用者輸入實時反饋搜索結果。 <strong>需要 WordPress "
-"REST API 支援。此 API 預設開啟，請確保你沒有將其關閉。 </strong>"
+"開啟後，進行搜索時會隨用戶輸入實時反饋搜索結果。 <strong>需要 WordPress REST "
+"API 支援。此 API 默認開啟，請確保你沒有將其關閉。 </strong>"
 
 #: admin_fn.php:650
 msgid "ICP 备案号"
@@ -813,7 +813,7 @@ msgstr ""
 
 #: admin_fn.php:655
 msgid "在前端载入 jQuery"
-msgstr "在前端載入 jQuery"
+msgstr "在前端加載 jQuery"
 
 #: admin_fn.php:661
 msgid ""
@@ -824,7 +824,7 @@ msgid ""
 "2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
 "\">主题文档</a>。"
 msgstr ""
-"自 2.0.0 版本起，MDx 已不再依賴 jQuery 且不再在前端載入 jQuery 腳本。如果你在"
+"自 2.0.0 版本起，MDx 已不再依賴 jQuery 且不再在前端加載 jQuery 腳本。如果你在"
 "升級 MDx 後碰到頁面顯示不正常等問題，請嘗試打開此選項。<br><strong>這是一個臨"
 "時選項，將會在未來版本中被移除。如果你的前端頁面中有依賴 jQuery 的其他資源，"
 "請確保其不受 MDx 移除 jQuery 的影響。</strong><br>有關更多從 MDx 1.x 升級至 "
@@ -1029,7 +1029,7 @@ msgid ""
 "字体仅包含拉丁字符。</strong>"
 msgstr ""
 "開啟後，部分標題文字將會使用 Material Design 2 風格字體顯示。 <strong>請注意"
-"該字體僅包含拉丁字元。 </strong>"
+"該字體僅包含拉丁字符。 </strong>"
 
 #: admin_style.php:247
 msgid "移动 Chrome 标题栏颜色"
@@ -1041,14 +1041,14 @@ msgstr "開啟後，移動 Chrome 訪問時，其標題欄的背景顏色會隨�
 
 #: admin_style.php:258
 msgid "文章无特色图像时显示默认图像"
-msgstr "文章無特色圖像時顯示預設圖像"
+msgstr "文章無特色圖像時顯示默認圖像"
 
 #: admin_style.php:264
 msgid ""
 "开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显"
 "示。"
 msgstr ""
-"開啟後，文章無特色圖像時將顯示預設圖像，影響文章列表和文章頁。若關閉則不顯"
+"開啟後，文章無特色圖像時將顯示默認圖像，影響文章列表和文章頁。若關閉則不顯"
 "示。"
 
 #: admin_style.php:272
@@ -1057,7 +1057,7 @@ msgstr "首頁樣式"
 
 #: admin_style.php:276
 msgid "默认"
-msgstr "預設"
+msgstr "默認"
 
 #: admin_style.php:277 admin_style.php:570
 msgid "简单"
@@ -1094,7 +1094,7 @@ msgid ""
 msgstr ""
 "你可以上傳或指定你的媒體庫中的圖片作為首頁上方顯示的圖片。 <strong>注意，“簡"
 "單”和“朴素”首頁樣式不會顯示首頁圖片。</strong><br>無論你是否使用首頁幻燈片，"
-"你都需要設定一張首頁圖片。<br>如使用必應美圖，可在括弧內指定圖片的日期。 0為"
+"你都需要設定一張首頁圖片。<br>如使用必應美圖，可在括號內指定圖片的日期。 0為"
 "今日圖片，-1為明日準備使用的圖片，1為昨日的圖片，以此類推，最多到前16日。"
 
 #: admin_style.php:295
@@ -1435,7 +1435,7 @@ msgid ""
 "\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/custom_api/\" target=\"_blank\">详细信息</a></code>"
 msgstr ""
-"如使用自訂義 API，你需要在括弧內填寫 API URL 並確保 API 返回 <code>{\"text\":"
+"如使用自訂 API，你需要在括號內填寫 API URL 並確保 API 返回 <code>{\"text\":"
 "\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/custom_api/\" target=\"_blank\">詳細信息</a></code>"
 
@@ -1497,7 +1497,7 @@ msgstr "登錄頁 Material Design"
 
 #: admin_style.php:625
 msgid "将 Material Design 样式应用到登录页。可能与部分插件样式不兼容。"
-msgstr "將 Material Design 樣式應用到登錄頁。可能與部分外掛樣式不相容。"
+msgstr "將 Material Design 樣式應用到登錄頁。可能與部分外掛樣式不兼容。"
 
 #: admin_style.php:630
 msgid "启用友链 Gravatar 支持"
@@ -1525,7 +1525,7 @@ msgstr "網頁標題計算方式"
 
 #: admin_style.php:656
 msgid "WordPress 默认"
-msgstr "WordPress 預設"
+msgstr "WordPress 默認"
 
 #: admin_style.php:657
 msgid "MDx 优化"
@@ -1537,9 +1537,9 @@ msgid ""
 "大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此"
 "方式在部分情况下更合适，但不兼容 SEO 插件。"
 msgstr ""
-"選擇 <code>WordPress 預設</code>，WordPress 會接管網頁標題的內容，此方式相容"
+"選擇 <code>WordPress 默認</code>，WordPress 會接管網頁標題的內容，此方式兼容"
 "大部分 SEO 外掛。 <br>選擇 <code>MDx 優化</code>，MDx 會接管網頁標題的內容，"
-"此方式在部分情況下更合適，但與 SEO 外掛不相容。"
+"此方式在部分情況下更合適，但與 SEO 外掛不兼容。"
 
 #: admin_style.php:663
 msgid "多彩标签云"
@@ -1627,7 +1627,7 @@ msgstr "GitHub"
 
 #: admin_style.php:713
 msgid "GitHub 用户名"
-msgstr "GitHub 使用者名称"
+msgstr "GitHub 用戶名"
 
 #: admin_style.php:716 admin_style.php:717
 msgid "Facebook"
@@ -1643,7 +1643,7 @@ msgstr "Twitter"
 
 #: admin_style.php:721
 msgid "Twitter 用户名"
-msgstr "Twitter 使用者名称"
+msgstr "Twitter 用戶名"
 
 #: admin_style.php:724 admin_style.php:725
 msgid "Telegram"
@@ -1651,7 +1651,7 @@ msgstr "Telegram"
 
 #: admin_style.php:725
 msgid "Telegram 用户名"
-msgstr "Telegram 使用者名称"
+msgstr "Telegram 用戶名"
 
 #: admin_style.php:728 admin_style.php:729
 msgid "Steam"
@@ -1659,7 +1659,7 @@ msgstr "Steam"
 
 #: admin_style.php:729
 msgid "Steam 用户名"
-msgstr "Steam 使用者名称"
+msgstr "Steam 用戶名"
 
 #: admin_style.php:732 admin_style.php:733
 msgid "WhatsApp"
@@ -1747,7 +1747,7 @@ msgstr "文章歸檔"
 
 #: archive.php:79 author.php:79 category.php:78 index.php:272 search.php:80
 msgid "加载更多"
-msgstr "載入更多"
+msgstr "加載更多"
 
 #: author.php:45
 msgid "作者归档"
@@ -1818,7 +1818,7 @@ msgstr "無法連接到實時搜索服務"
 
 #: footer.php:46
 msgid "<strong>加载失败：</strong> 未知错误。"
-msgstr "<strong>載入失敗：</strong> 未知錯誤。"
+msgstr "<strong>加載失敗：</strong> 未知錯誤。"
 
 #: footer.php:47
 msgid "检测到减弱动画模式，已为你减弱动画效果"
@@ -1858,7 +1858,7 @@ msgstr "更多選項"
 
 #: footer.php:140
 msgid "加载更多评论"
-msgstr "載入更多評論"
+msgstr "加載更多評論"
 
 #: footer.php:141
 msgid "没有更多了"
@@ -1910,7 +1910,7 @@ msgstr "右側菜單"
 
 #: functions.php:46
 msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
-msgstr "在每個頁面的右側，預設隱藏，可以通過滑動或按鈕調出。"
+msgstr "在每個頁面的右側，默認隱藏，可以通過滑動或按鈕調出。"
 
 #: functions.php:196
 msgid "发送成功。"
