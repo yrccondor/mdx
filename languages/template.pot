@@ -137,7 +137,6 @@ msgid "无障碍"
 msgstr ""
 
 #: admin_fn.php:108
-#: gutenberg-src/src/mdx/mdx.js:365
 msgid "广告"
 msgstr ""
 
@@ -811,7 +810,7 @@ msgid "全局"
 msgstr ""
 
 #: admin_style.php:142
-#: functions.php:492
+#: functions.php:493
 msgid "首页"
 msgstr ""
 
@@ -928,7 +927,7 @@ msgstr ""
 #: admin_style.php:345
 #: admin_style.php:381
 #: admin_style.php:426
-#: functions.php:782
+#: functions.php:783
 msgid "朴素"
 msgstr ""
 
@@ -954,6 +953,14 @@ msgstr ""
 
 #: admin_style.php:306
 msgid "首页头部展示内容"
+msgstr ""
+
+#: admin_style.php:310
+msgid "格言"
+msgstr ""
+
+#: admin_style.php:311
+msgid "幻灯片"
 msgstr ""
 
 #: admin_style.php:312
@@ -1013,18 +1020,18 @@ msgid "文章页样式"
 msgstr ""
 
 #: admin_style.php:378
-#: functions.php:779
+#: functions.php:780
 msgid "标准"
 msgstr ""
 
 #: admin_style.php:379
 #: admin_style.php:422
-#: functions.php:780
+#: functions.php:781
 msgid "简洁"
 msgstr ""
 
 #: admin_style.php:380
-#: functions.php:781
+#: functions.php:782
 msgid "通透"
 msgstr ""
 
@@ -1065,7 +1072,7 @@ msgid "影响文章末尾文章导航栏区域的配色。"
 msgstr ""
 
 #: admin_style.php:410
-#: functions.php:800
+#: functions.php:801
 msgid "文末信息"
 msgstr ""
 
@@ -1758,111 +1765,111 @@ msgstr ""
 msgid "<strong>错误：</strong> 未知错误。"
 msgstr ""
 
-#: functions.php:301
+#: functions.php:302
 msgid "博主"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:305
 msgid "前"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:305
 msgid "回复"
 msgstr ""
 
-#: functions.php:381
+#: functions.php:382
 msgid "添加 <code>nofollow</code> 属性"
 msgstr ""
 
-#: functions.php:548
+#: functions.php:549
 msgid "搜索结果： %s"
 msgstr ""
 
-#: functions.php:552
+#: functions.php:553
 msgid "标签存档 %s"
 msgstr ""
 
-#: functions.php:558
+#: functions.php:559
 msgid "作者存档 %s"
 msgstr ""
 
-#: functions.php:562
+#: functions.php:563
 msgid "什么也没找到"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:568
 msgid "( 第 %s 页 )"
 msgstr ""
 
-#: functions.php:574
+#: functions.php:575
 msgid "被折叠内容"
 msgstr ""
 
-#: functions.php:594
+#: functions.php:595
 msgid "警告"
 msgstr ""
 
-#: functions.php:718
+#: functions.php:719
 msgid ""
 "\n"
 "        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟随全局设置请留空</p>"
 msgstr ""
 
-#: functions.php:725
+#: functions.php:726
 msgid "文章主题颜色"
 msgstr ""
 
-#: functions.php:728
-#: functions.php:755
-#: functions.php:778
+#: functions.php:729
+#: functions.php:756
+#: functions.php:779
 msgid "跟随全局设置"
 msgstr ""
 
-#: functions.php:750
+#: functions.php:751
 msgid "在这里为这篇文章设置单独的主题颜色。"
 msgstr ""
 
-#: functions.php:752
+#: functions.php:753
 msgid "文章强调色"
 msgstr ""
 
-#: functions.php:773
+#: functions.php:774
 msgid "在这里为这篇文章设置单独的强调色。"
 msgstr ""
 
-#: functions.php:775
+#: functions.php:776
 msgid "文章样式"
 msgstr ""
 
-#: functions.php:784
+#: functions.php:785
 msgid "在这里为这篇文章设置单独的样式。"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:787
 msgid "文章展示模式"
 msgstr ""
 
-#: functions.php:789
+#: functions.php:790
 msgid "正常显示"
 msgstr ""
 
-#: functions.php:790
+#: functions.php:791
 msgid "404模式"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:792
 msgid "隐藏模式"
 msgstr ""
 
-#: functions.php:792
+#: functions.php:793
 msgid "对游客隐藏模式"
 msgstr ""
 
-#: functions.php:794
+#: functions.php:795
 msgid "在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 HTTP 404 头。"
 msgstr ""
 
-#: functions.php:799
+#: functions.php:800
 msgid "文章设置"
 msgstr ""
 

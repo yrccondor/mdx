@@ -307,8 +307,8 @@ wp_nonce_field('mdx_options_update');
     <td>
     <?php $mdx_v_index_head_style=mdx_get_option('mdx_index_head_style');?>
     <fieldset>
-        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="saying" <?php if($mdx_v_index_head_style=='saying'){?>checked="checked"<?php }?>> <?php _e('格言');?></label><br>
-        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="slide" <?php if($mdx_v_index_head_style=='slide'){?>checked="checked"<?php }?>> <?php _e('幻灯片');?></label><br>
+        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="saying" <?php if($mdx_v_index_head_style=='saying'){?>checked="checked"<?php }?>> <?php _e('格言', 'mdx');?></label><br>
+        <label><input class="mdx-index-head-style-input" type="radio" name="mdx_index_head_style" value="slide" <?php if($mdx_v_index_head_style=='slide'){?>checked="checked"<?php }?>> <?php _e('幻灯片', 'mdx');?></label><br>
         <p class="description"><?php _e('指定首页头部展示的内容。在下方进行详细设置。', 'mdx');?></p>
     </fieldset>
     </td>

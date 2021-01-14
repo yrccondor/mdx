@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 15:00+0800\n"
+"PO-Revision-Date: 2021-01-14 15:19+0800\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -125,7 +125,7 @@ msgstr "Lazyload"
 msgid "无障碍"
 msgstr "Accessibility"
 
-#: admin_fn.php:108 gutenberg-src/src/mdx/mdx.js:365
+#: admin_fn.php:108
 msgid "广告"
 msgstr "Advertising"
 
@@ -1014,7 +1014,7 @@ msgstr ""
 msgid "全局"
 msgstr "Global settings"
 
-#: admin_style.php:142 functions.php:492
+#: admin_style.php:142 functions.php:493
 msgid "首页"
 msgstr "Homepage"
 
@@ -1136,7 +1136,7 @@ msgid "现代"
 msgstr "Modern"
 
 #: admin_style.php:280 admin_style.php:345 admin_style.php:381
-#: admin_style.php:426 functions.php:782
+#: admin_style.php:426 functions.php:783
 msgid "朴素"
 msgstr "Plain"
 
@@ -1178,6 +1178,14 @@ msgstr ""
 #: admin_style.php:306
 msgid "首页头部展示内容"
 msgstr "Homepage header content"
+
+#: admin_style.php:310
+msgid "格言"
+msgstr "Quotes"
+
+#: admin_style.php:311
+msgid "幻灯片"
+msgstr "Slideshow"
 
 #: admin_style.php:312
 msgid "指定首页头部展示的内容。在下方进行详细设置。"
@@ -1244,15 +1252,15 @@ msgstr ""
 msgid "文章页样式"
 msgstr "Posts style"
 
-#: admin_style.php:378 functions.php:779
+#: admin_style.php:378 functions.php:780
 msgid "标准"
 msgstr "Standard"
 
-#: admin_style.php:379 admin_style.php:422 functions.php:780
+#: admin_style.php:379 admin_style.php:422 functions.php:781
 msgid "简洁"
 msgstr "Flat"
 
-#: admin_style.php:380 functions.php:781
+#: admin_style.php:380 functions.php:782
 msgid "通透"
 msgstr "Clear"
 
@@ -1293,7 +1301,7 @@ msgid "影响文章末尾文章导航栏区域的配色。"
 msgstr ""
 "Affects the color scheme of posts breadcrumb navigation (at end of posts)"
 
-#: admin_style.php:410 functions.php:800
+#: admin_style.php:410 functions.php:801
 msgid "文末信息"
 msgstr "End-of-post message"
 
@@ -2010,53 +2018,53 @@ msgstr "Successfully sent!"
 msgid "<strong>错误：</strong> 未知错误。"
 msgstr "<strong>Error:</strong> Unknown Error."
 
-#: functions.php:301
+#: functions.php:302
 msgid "博主"
 msgstr "Owner"
 
 # Space before it required for English
-#: functions.php:304
+#: functions.php:305
 msgid "前"
 msgstr " ago"
 
 # This is the "Reply" button next to comments posted
-#: functions.php:304
+#: functions.php:305
 msgid "回复"
 msgstr "Reply"
 
-#: functions.php:381
+#: functions.php:382
 msgid "添加 <code>nofollow</code> 属性"
 msgstr "Add <code>nofollow</code> attributes to links"
 
-#: functions.php:548
+#: functions.php:549
 msgid "搜索结果： %s"
 msgstr "Search results: %s"
 
-#: functions.php:552
+#: functions.php:553
 msgid "标签存档 %s"
 msgstr "Tag archive %s"
 
-#: functions.php:558
+#: functions.php:559
 msgid "作者存档 %s"
 msgstr "Author archive %s"
 
-#: functions.php:562
+#: functions.php:563
 msgid "什么也没找到"
 msgstr "Nothing found"
 
-#: functions.php:567
+#: functions.php:568
 msgid "( 第 %s 页 )"
 msgstr "(Page %s)"
 
-#: functions.php:574
+#: functions.php:575
 msgid "被折叠内容"
 msgstr "Collapsed content"
 
-#: functions.php:594
+#: functions.php:595
 msgid "警告"
 msgstr "Warning"
 
-#: functions.php:718
+#: functions.php:719
 msgid ""
 "\n"
 "        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
@@ -2066,55 +2074,55 @@ msgstr ""
 "        <p class=\"description\">Please set a post-specific end-of-post "
 "message here. Leave it blank to follow the global settings."
 
-#: functions.php:725
+#: functions.php:726
 msgid "文章主题颜色"
 msgstr "Post-specific primary color"
 
-#: functions.php:728 functions.php:755 functions.php:778
+#: functions.php:729 functions.php:756 functions.php:779
 msgid "跟随全局设置"
 msgstr "Global setting"
 
-#: functions.php:750
+#: functions.php:751
 msgid "在这里为这篇文章设置单独的主题颜色。"
 msgstr "Set primary color specifically for this post"
 
-#: functions.php:752
+#: functions.php:753
 msgid "文章强调色"
 msgstr "Post-specific accent color"
 
-#: functions.php:773
+#: functions.php:774
 msgid "在这里为这篇文章设置单独的强调色。"
 msgstr "Set accent color specifically for this post"
 
-#: functions.php:775
+#: functions.php:776
 msgid "文章样式"
 msgstr "Post-specific style"
 
-#: functions.php:784
+#: functions.php:785
 msgid "在这里为这篇文章设置单独的样式。"
 msgstr "Override style setting for this post."
 
-#: functions.php:786
+#: functions.php:787
 msgid "文章展示模式"
 msgstr "Hide this post"
 
-#: functions.php:789
+#: functions.php:790
 msgid "正常显示"
 msgstr "Display normally"
 
-#: functions.php:790
+#: functions.php:791
 msgid "404模式"
 msgstr "404"
 
-#: functions.php:791
+#: functions.php:792
 msgid "隐藏模式"
 msgstr "Hidden"
 
-#: functions.php:792
+#: functions.php:793
 msgid "对游客隐藏模式"
 msgstr "Hidden to guests"
 
-#: functions.php:794
+#: functions.php:795
 msgid ""
 "在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页"
 "面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显"
@@ -2129,7 +2137,7 @@ msgstr ""
 "the article\" <br> For the first two method, the article can be found and "
 "searched on the homepage; but none will return a HTTP 404 header."
 
-#: functions.php:799
+#: functions.php:800
 msgid "文章设置"
 msgstr "Post's setting"
 
