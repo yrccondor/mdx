@@ -282,7 +282,8 @@ if (lazyloadImg2.length) {
 
 window.addEventListener('DOMContentLoaded', () => {
     if (mdx_comment_ajax && ele('#comments-navi>a.prev').getAttribute('href')) {
-        ele('#comments-navi').innerHTML = `<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="${ele('#comments-navi>a.prev').getAttribute('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`;
+        ele('#comments-navi').innerHTML = `<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-tooltip="{content: '${morecomment}'}" data-comment-url="${ele('#comments-navi>a.prev').getAttribute('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`;
+        mdui.$('ul.mdui-list.ajax-comments').mutation();
     }
 
     if (ifOffline) {
@@ -715,6 +716,9 @@ function commentNavi(e) {
         if (elem.tagName === "I") {
             elem = elem.parentNode;
         }
+        ele('.mdui-tooltip-open', (e) => {
+            e.parentNode.removeChild(e);
+        });
         betterFetch(elem.getAttribute('data-comment-url')).then((out) => {
             let htmlParser = new DOMParser();
             let htmlParsed = htmlParser.parseFromString(out, "text/html");
@@ -730,7 +734,7 @@ function commentNavi(e) {
             }
             let nextlink = '';
             if (nextUrl) {
-                htmlParsed.getElementById('comments-navi').innerHTML = `<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" data-comment-url="${htmlParsed.querySelector('#comments-navi>a.prev').getAttribute('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`;
+                htmlParsed.getElementById('comments-navi').innerHTML = `<button class="mdx-more-comments mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-tooltip="{content: '${morecomment}'}" data-comment-url="${htmlParsed.querySelector('#comments-navi>a.prev').getAttribute('href')}"><i class="mdui-icon material-icons">keyboard_arrow_down</i></button>`;
                 nextlink = htmlParsed.getElementById('comments-navi');
             } else {
                 htmlParsed.getElementById('comments-navi').innerHTML = `<button class="mdui-btn" disabled>${nomorecomment}</button>`;
@@ -747,7 +751,9 @@ function commentNavi(e) {
                 e.classList.add("mdui-btn");
                 e.style.opacity = 0;
             });
+            window.addComment.init();
             ele('.mdx-comments-loading').style.display = 'none';
+            mdui.$('ul.mdui-list.ajax-comments').mutation();
         });
     }
 }
