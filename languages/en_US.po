@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 00:36+0800\n"
+"PO-Revision-Date: 2021-01-14 15:00+0800\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -75,7 +75,7 @@ msgstr "Settings NOT saved."
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "MDx 已发布新版本 "
-msgstr "A newer version of theme MDx has been released"
+msgstr "A newer version of theme MDx has been released: "
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
@@ -2048,11 +2048,11 @@ msgstr "Nothing found"
 msgid "( 第 %s 页 )"
 msgstr "(Page %s)"
 
-#: functions.php:574 gutenberg-src/src/mdx/mdx.js:16
+#: functions.php:574
 msgid "被折叠内容"
 msgstr "Collapsed content"
 
-#: functions.php:594 gutenberg-src/src/mdx/mdx.js:94
+#: functions.php:594
 msgid "警告"
 msgstr "Warning"
 
@@ -2303,74 +2303,6 @@ msgstr "Log in to view the article"
 #: template-parts/content-first-5-status.php:2
 msgid "状态"
 msgstr "Status"
-
-#: gutenberg-src/src/mdx/mdx.js:9
-msgid "MDx 折叠内容"
-msgstr "MDx Collapsible Section"
-
-#: gutenberg-src/src/mdx/mdx.js:12 gutenberg-src/src/mdx/mdx.js:44
-msgid "折叠内容"
-msgstr "Collapsed content"
-
-#: gutenberg-src/src/mdx/mdx.js:37 gutenberg-src/src/mdx/mdx.js:111
-msgid "标题"
-msgstr "Title"
-
-#: gutenberg-src/src/mdx/mdx.js:51
-msgid "默认打开"
-msgstr "Expand by default"
-
-#: gutenberg-src/src/mdx/mdx.js:87
-msgid "MDx 警告内容"
-msgstr "MDx Warning Section"
-
-#: gutenberg-src/src/mdx/mdx.js:90 gutenberg-src/src/mdx/mdx.js:118
-msgid "警告内容"
-msgstr "Warning content"
-
-#: gutenberg-src/src/mdx/mdx.js:144
-msgid "MDx 进度指示器"
-msgstr "MDx progress indicator"
-
-#: gutenberg-src/src/mdx/mdx.js:147
-msgid "进度指示器"
-msgstr "Progress indicator"
-
-#: gutenberg-src/src/mdx/mdx.js:157
-msgid "进度 (0-100)"
-msgstr "Progress (0-100)"
-
-#: gutenberg-src/src/mdx/mdx.js:179
-msgid "MDx Github 信息卡"
-msgstr "MDx GitHub Info Card"
-
-#: gutenberg-src/src/mdx/mdx.js:239
-msgid "作者用户名"
-msgstr "Author"
-
-#: gutenberg-src/src/mdx/mdx.js:250
-msgid "仓库名"
-msgstr "Repository"
-
-#: gutenberg-src/src/mdx/mdx.js:262
-msgid "API 网关"
-msgstr "API Gateway"
-
-#: gutenberg-src/src/mdx/mdx.js:303
-msgid "MDx 文章信息卡"
-msgstr "MDx Posts Info Card"
-
-#: gutenberg-src/src/mdx/mdx.js:306 gutenberg-src/src/mdx/mdx.js:330
-msgid "文章信息卡"
-msgstr "Posts Info Card"
-
-#: gutenberg-src/src/mdx/mdx.js:333
-msgid "URL"
-msgstr "URL"
-
-#: gutenberg-src/src/mdx/mdx.js:362
-msgid "MDx 广告"
-msgstr "MDx Ads"
 
 #~ msgid ""
 #~ "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "

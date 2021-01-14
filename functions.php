@@ -229,6 +229,7 @@ function mdx_load_blocks(){
     ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
     true
   );
+  wp_set_script_translations('mdx_block_js', 'mdx', get_template_directory().'/blocks/languages/');
 }
 add_action('enqueue_block_editor_assets', 'mdx_load_blocks');
 
