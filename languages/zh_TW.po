@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 18:12+0800\n"
+"PO-Revision-Date: 2021-01-14 18:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -733,11 +733,11 @@ msgstr ""
 
 #: admin_fn.php:599
 msgid "使用手势打开抽屉菜单"
-msgstr "使用手勢打開抽屜菜單"
+msgstr "使用手勢打開抽屜選單"
 
 #: admin_fn.php:605
 msgid "开启后，可以通过从屏幕左侧向中心滑动的方式调出抽屉菜单。"
-msgstr "開啟後，可以通過從螢幕左側向中心滑動的方式調出抽屜菜單。"
+msgstr "開啟後，可以通過從螢幕左側向中心滑動的方式調出抽屜選單。"
 
 #: admin_fn.php:610
 msgid "右侧小工具栏"
@@ -965,7 +965,7 @@ msgstr "標題欄"
 
 #: admin_style.php:146 functions.php:41
 msgid "抽屉菜单"
-msgstr "抽屜菜單"
+msgstr "抽屜選單"
 
 #: admin_style.php:147
 msgid "页脚"
@@ -1359,7 +1359,7 @@ msgstr "開啟後，點擊頂部欄可以返回頁面頂部。此設定影響所
 
 #: admin_style.php:521
 msgid "抽屉菜单顶部展示个人信息"
-msgstr "抽屜菜單頂部展示個人信息"
+msgstr "抽屜選單頂部展示個人信息"
 
 #: admin_style.php:527
 msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
@@ -1367,11 +1367,11 @@ msgstr "開啟後，抽屜頂部會顯示頭像及名稱，請在下方設定。
 
 #: admin_style.php:532
 msgid "抽屉菜单顶部图片"
-msgstr "抽屜菜單頂部圖片"
+msgstr "抽屜選單頂部圖片"
 
 #: admin_style.php:540
 msgid "抽屉菜单信息头像"
-msgstr "抽屜菜單信息頭像"
+msgstr "抽屜選單信息頭像"
 
 #: admin_style.php:544
 msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
@@ -1379,15 +1379,15 @@ msgstr "選擇一張圖片作為抽屜頂部顯示的頭像。留空則不顯示
 
 #: admin_style.php:549
 msgid "抽屉菜单信息名称"
-msgstr "抽屜菜單信息名稱"
+msgstr "抽屜選單信息名稱"
 
 #: admin_style.php:555
 msgid "抽屉菜单详细信息"
-msgstr "抽屜菜單詳細信息"
+msgstr "抽屜選單詳細信息"
 
 #: admin_style.php:558
 msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
-msgstr "這裡的內容會顯示在抽屜菜單信息名稱的下方。"
+msgstr "這裡的內容會顯示在抽屜選單信息名稱的下方。"
 
 #: admin_style.php:565
 msgid "页脚样式"
@@ -1902,11 +1902,11 @@ msgstr "獲取頁面信息時出現問題<br>嘗試直接訪問"
 
 #: footer.php:152
 msgid "菜单"
-msgstr "菜單"
+msgstr "選單"
 
 #: functions.php:44
 msgid "右侧菜单"
-msgstr "右側菜單"
+msgstr "右側選單"
 
 #: functions.php:46
 msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
