@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 15:19+0800\n"
+"PO-Revision-Date: 2021-01-14 17:38+0800\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -30,7 +30,7 @@ msgid "https://flyhigher.top/develop/788.html"
 msgstr "https://flyhigher.top/develop/788.html"
 
 #. Description of the theme
-msgid "MDx - Material Design WordPress Theme"
+msgid "MDx - Material Design 风格的 WordPress 主题"
 msgstr "MDx - Material Design WordPress Theme"
 
 #. Author of the theme
@@ -81,11 +81,11 @@ msgstr "A newer version of theme MDx has been released: "
 msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
 msgstr ". <a href=\"./admin.php?page=mdx_about\"> Check again</a>"
 
-#: admin_fn.php:97
+#: admin_fn.php:97 admin_style.php:137
 msgid ""
 "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
-"\"_blank\">MDx文档</a> 下载安装新版插件。"
+"\"_blank\">MDx 文档</a> 下载安装新版插件。"
 msgstr ""
 "You seem to be using an outdated version of Alu emoji plugin, which is "
 "incompatible with MDx 2.x. Please visit <a href=\"https://doc.flyhigher.top/"
@@ -256,14 +256,16 @@ msgstr "Only providers outside China"
 
 #: admin_fn.php:215
 msgid ""
-"指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、"
-"QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分"
-"享<br>无论如何，“生成分享图”始终启用。"
+"指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</"
+"code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</"
+"code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分"
+"享图”始终启用。"
 msgstr ""
-"Specify the sharing providers available to users. <br>\"Only Chinese "
-"Providers\" include Weibo, WeChat, QQ, QZone. <br>\"Only providers outside "
-"China\" include Telegram, Twitter, Facebook. <br>Regardless of this setting, "
-"\"image excerpt sharing\" is always available."
+"Specify the sharing providers available to users. </p><ul><li><code>Only "
+"Chinese Providers</code>: Includes Weibo, WeChat, QQ, QZone. </"
+"li><li><code>Only providers outside China</code>: Includes Telegram, "
+"Twitter, Facebook. </li></ul><p>Regardless of this setting, \"image excerpt "
+"sharing\" is always available."
 
 #: admin_fn.php:222
 msgid "“阅读更多”文本自定义"
@@ -507,16 +509,17 @@ msgstr "Prioritize SEO (Full)"
 #: admin_fn.php:433
 msgid ""
 "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设"
-"置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先"
-"（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重"
-"度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性"
-"图片会使用"
+"置会影响图片加载模式。</p><ul><li><code>速度优先</code>：几乎所有图片都会使"
+"用 LazyLoad</li><li><code>SEO优先（轻度）</code>：除文章内使用的图片外几乎所"
+"有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图"
+"片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>"
 msgstr ""
 "Lazy loading is a technique that defers loading of non-critical resources at "
-"page load time. It boosts loading speed but may affect website SEO. "
-"<br>Prioritize Speed: lazy loading all images. <br>Prioritize SEO (Medium): "
-"All images except in-article ones are lazy loaded. <br>Prioritize SEO "
-"(Full): None, excepting a few decorative, images are lazy loaded."
+"page load time. It boosts loading speed but may affect website SEO. </"
+"p><ul><li><code>Prioritize Speed</code>: lazy loading all images. </"
+"li><li><code>Prioritize SEO (Medium)</code>: All images except in-article "
+"ones are lazy loaded. </li><li><code>Prioritize SEO (Full)</code>: None, "
+"excepting a few decorative, images are lazy loaded.</li></ul>"
 
 #: admin_fn.php:437
 msgid "兼容性 Lazyload"
@@ -611,17 +614,17 @@ msgstr "Following time"
 
 #: admin_fn.php:514
 msgid ""
-"<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随"
+"<strong>仅当开启夜间模式功能后此选项方可生效。</strong></p><ul><li><code>跟随"
 "系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</"
 "li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间"
 "模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
-"<strong>Please make sure dark mode is enabled before enabling this.</strong> "
-"<br> <ul> <li> <code>Following system setting</code>: Automatically toggle "
-"dark mode according to the setting of user's operating system. Users may "
-"manually override dark mode settings. </li> <li> <code> Following time</"
+"<strong>Please make sure dark mode is enabled before enabling this.</"
+"strong></p><ul><li><code>Following system setting</code>: Automatically "
+"toggle dark mode according to the setting of user's operating system. Users "
+"may manually override dark mode settings. </li><li><code> Following time</"
 "code>: Automatically toggle on from 22:30 to 5:30. Users may manually "
-"override dark mode settings."
+"override dark mode settings.</li></ul>"
 
 #: admin_fn.php:521
 msgid "SEO 关键词"
@@ -679,15 +682,15 @@ msgstr "Custom"
 #: admin_fn.php:553
 msgid ""
 "在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项"
-"<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。"
-"<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</"
+"<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。</"
+"p><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</"
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
 "定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
 "In <strong>some cases</strong>, using a CDN can speed up loading for front-"
 "end page. This option <strong>only affects</strong> the front-end assets of "
-"the theme, and does not affect files from WordPress or other plugins. "
-"<br><ul><li><code>Disabled</code>: Load files from the same server as the "
+"the theme, and does not affect files from WordPress or other plugins. </"
+"p><ul><li><code>Disabled</code>: Load files from the same server as the "
 "page</li><li><code>jsDelivr</code>: Use the free CDN provider jsDelivr </"
 "li><li><code>Custom</code>: Use your custom CDN</li></ul>"
 
@@ -861,7 +864,7 @@ msgid ""
 "时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，"
 "请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 "
 "2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
-"\">主题文档</a>"
+"\">主题文档</a>。"
 msgstr ""
 "Since version 2.0.0, MDx no longer depends on jQuery and stops loading it on "
 "the front end. If you encounter display issues after upgrading, please try "
@@ -870,11 +873,7 @@ msgstr ""
 "jQuery, please make sure that they are not affected by this upgrade.</"
 "strong><br>For more information on upgrading from MDx 1.x to 2.x, please "
 "read the <a href=\"https://doc.flyhigher.top/mdx/en-US/upgrade_tip/\">theme "
-"documentation</a>"
-
-#: admin_functions.php:3
-msgid "MDx主题"
-msgstr "MDx theme"
+"documentation</a>."
 
 #: admin_functions.php:3 admin_functions.php:11
 msgid "MDx 主题"
@@ -998,17 +997,6 @@ msgstr ""
 "PHP <code>mbstring</code> extension not enabled. MDx may not function "
 "normally. Please refer to <a href=\"https://doc.flyhigher.top/mdx/en-US/tech/"
 "php-errors/#mb_strimwidth\">the documentation</a> to fix this error."
-
-#: admin_style.php:137
-msgid ""
-"你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
-"\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
-"\"_blank\">MDx 文档</a> 下载安装新版插件。"
-msgstr ""
-"You seem to be using an outdated version of Alu emoji plugin, which is "
-"incompatible with MDx 2.x. Please visit <a href=\"https://doc.flyhigher.top/"
-"mdx/en-US/config/emoji-in-comment/\" target=\"_blank\">MDx documentation</a> "
-"to download the latest version."
 
 #: admin_style.php:141
 msgid "全局"
@@ -2226,47 +2214,47 @@ msgid "下一篇"
 msgstr "Next"
 
 #. Template Name of the theme
-msgid "Links"
+msgid "链接"
 msgstr "Links"
 
 #. Template Name of the theme
-msgid "PostLike"
-msgstr "PostLike"
+msgid "类文章页"
+msgstr "Post-Like"
 
-#: page-postlike.php:56 page-postlike.php:156 single.php:64 single.php:170
+#: page-postlike.php:56 page-postlike.php:158 single.php:64 single.php:170
 msgid "在其他设备上继续阅读"
 msgstr "Continue reading on other devices"
 
-#: page-postlike.php:79 page-postlike.php:81 page-postlike.php:119
-#: page-postlike.php:121 page-postlike.php:170 page-postlike.php:172
-#: page-postlike.php:210 page-postlike.php:212 single.php:87 single.php:89
+#: page-postlike.php:79 page-postlike.php:81 page-postlike.php:120
+#: page-postlike.php:122 page-postlike.php:172 page-postlike.php:174
+#: page-postlike.php:213 page-postlike.php:215 single.php:87 single.php:89
 #: single.php:130 single.php:132 single.php:184 single.php:186 single.php:227
 #: single.php:229
 msgid "赞赏"
 msgstr "Donate"
 
-#: page-postlike.php:99 page-postlike.php:139 page-postlike.php:190
-#: page-postlike.php:230 single.php:109 single.php:152 single.php:206
+#: page-postlike.php:100 page-postlike.php:141 page-postlike.php:193
+#: page-postlike.php:234 single.php:109 single.php:152 single.php:206
 #: single.php:249
 msgid "生成分享图"
 msgstr "Generate image excerpt"
 
-#: page-postlike.php:102 page-postlike.php:142 page-postlike.php:193
-#: page-postlike.php:233 single.php:112 single.php:155 single.php:209
+#: page-postlike.php:103 page-postlike.php:144 page-postlike.php:196
+#: page-postlike.php:237 single.php:112 single.php:155 single.php:209
 #: single.php:252
 msgid "没有标签"
 msgstr "No tag"
 
-#: page-postlike.php:238 single.php:260
+#: page-postlike.php:242 single.php:260
 msgid "扫描二维码继续阅读"
 msgstr "Scan QR code to continue reading"
 
 #. Template Name of the theme
-msgid "Tags"
-msgstr "Tags"
+msgid "标签云"
+msgstr "Tag Cloud"
 
 #. Template Name of the theme
-msgid "Timeline"
+msgid "时间轴"
 msgstr "Timeline"
 
 #: search.php:46 search.php:83
@@ -2311,6 +2299,31 @@ msgstr "Log in to view the article"
 #: template-parts/content-first-5-status.php:2
 msgid "状态"
 msgstr "Status"
+
+#~ msgid ""
+#~ "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a "
+#~ "href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" "
+#~ "target=\"_blank\">MDx文档</a> 下载安装新版插件。"
+#~ msgstr ""
+#~ "You seem to be using an outdated version of Alu emoji plugin, which is "
+#~ "incompatible with MDx 2.x. Please visit <a href=\"https://doc.flyhigher."
+#~ "top/mdx/en-US/config/emoji-in-comment/\" target=\"_blank\">MDx "
+#~ "documentation</a> to download the latest version."
+
+#~ msgid "MDx主题"
+#~ msgstr "MDx theme"
+
+#~ msgid "Links"
+#~ msgstr "Links"
+
+#~ msgid "PostLike"
+#~ msgstr "PostLike"
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
+
+#~ msgid "Timeline"
+#~ msgstr "Timeline"
 
 #~ msgid ""
 #~ "在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "

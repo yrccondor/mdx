@@ -22,7 +22,7 @@ msgid "https://flyhigher.top/develop/788.html"
 msgstr ""
 
 #. Description of the theme
-msgid "MDx - Material Design WordPress Theme"
+msgid "MDx - Material Design 风格的 WordPress 主题"
 msgstr ""
 
 #. Author of the theme
@@ -86,7 +86,8 @@ msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
 msgstr ""
 
 #: admin_fn.php:97
-msgid "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载安装新版插件。"
+#: admin_style.php:137
+msgid "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载安装新版插件。"
 msgstr ""
 
 #: admin_fn.php:101
@@ -251,7 +252,7 @@ msgid "只有国际服务商"
 msgstr ""
 
 #: admin_fn.php:215
-msgid "指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。"
+msgid "指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分享图”始终启用。"
 msgstr ""
 
 #: admin_fn.php:222
@@ -461,7 +462,7 @@ msgid "SEO优先（重度）"
 msgstr ""
 
 #: admin_fn.php:433
-msgid "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用"
+msgid "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。</p><ul><li><code>速度优先</code>：几乎所有图片都会使用 LazyLoad</li><li><code>SEO优先（轻度）</code>：除文章内使用的图片外几乎所有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>"
 msgstr ""
 
 #: admin_fn.php:437
@@ -525,7 +526,7 @@ msgid "跟随时间"
 msgstr ""
 
 #: admin_fn.php:514
-msgid "<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>"
+msgid "<strong>仅当开启夜间模式功能后此选项方可生效。</strong></p><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
 
 #: admin_fn.php:521
@@ -569,7 +570,7 @@ msgid "自定义"
 msgstr ""
 
 #: admin_fn.php:553
-msgid "在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>"
+msgid "在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。</p><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
 
 #: admin_fn.php:557
@@ -689,11 +690,7 @@ msgid "在前端载入 jQuery"
 msgstr ""
 
 #: admin_fn.php:661
-msgid "自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/\">主题文档</a>"
-msgstr ""
-
-#: admin_functions.php:3
-msgid "MDx主题"
+msgid "自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/\">主题文档</a>。"
 msgstr ""
 
 #: admin_functions.php:3
@@ -799,10 +796,6 @@ msgstr ""
 
 #: admin_functions.php:129
 msgid "你似乎没有启用 <code>mbstring</code> PHP 拓展，这会导致 MDx 无法正常运行。请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/#mb_strimwidth\">文档</a>来修复此错误。"
-msgstr ""
-
-#: admin_style.php:137
-msgid "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载安装新版插件。"
 msgstr ""
 
 #: admin_style.php:141
@@ -1981,15 +1974,15 @@ msgid "下一篇"
 msgstr ""
 
 #. Template Name of the theme
-msgid "Links"
+msgid "链接"
 msgstr ""
 
 #. Template Name of the theme
-msgid "PostLike"
+msgid "类文章页"
 msgstr ""
 
 #: page-postlike.php:56
-#: page-postlike.php:156
+#: page-postlike.php:158
 #: single.php:64
 #: single.php:170
 msgid "在其他设备上继续阅读"
@@ -1997,12 +1990,12 @@ msgstr ""
 
 #: page-postlike.php:79
 #: page-postlike.php:81
-#: page-postlike.php:119
-#: page-postlike.php:121
-#: page-postlike.php:170
+#: page-postlike.php:120
+#: page-postlike.php:122
 #: page-postlike.php:172
-#: page-postlike.php:210
-#: page-postlike.php:212
+#: page-postlike.php:174
+#: page-postlike.php:213
+#: page-postlike.php:215
 #: single.php:87
 #: single.php:89
 #: single.php:130
@@ -2014,10 +2007,10 @@ msgstr ""
 msgid "赞赏"
 msgstr ""
 
-#: page-postlike.php:99
-#: page-postlike.php:139
-#: page-postlike.php:190
-#: page-postlike.php:230
+#: page-postlike.php:100
+#: page-postlike.php:141
+#: page-postlike.php:193
+#: page-postlike.php:234
 #: single.php:109
 #: single.php:152
 #: single.php:206
@@ -2025,10 +2018,10 @@ msgstr ""
 msgid "生成分享图"
 msgstr ""
 
-#: page-postlike.php:102
-#: page-postlike.php:142
-#: page-postlike.php:193
-#: page-postlike.php:233
+#: page-postlike.php:103
+#: page-postlike.php:144
+#: page-postlike.php:196
+#: page-postlike.php:237
 #: single.php:112
 #: single.php:155
 #: single.php:209
@@ -2036,17 +2029,17 @@ msgstr ""
 msgid "没有标签"
 msgstr ""
 
-#: page-postlike.php:238
+#: page-postlike.php:242
 #: single.php:260
 msgid "扫描二维码继续阅读"
 msgstr ""
 
 #. Template Name of the theme
-msgid "Tags"
+msgid "标签云"
 msgstr ""
 
 #. Template Name of the theme
-msgid "Timeline"
+msgid "时间轴"
 msgstr ""
 
 #: search.php:46

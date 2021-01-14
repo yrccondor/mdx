@@ -1,6 +1,6 @@
 <?php
 function mdx_admin_function(){
-    add_menu_page(__('MDx主题', 'mdx'), __('MDx 主题', 'mdx'), 'manage_options', 'mdx_admin','mdx_display_sub_function','dashicons-admin-customizer');
+    add_menu_page(__('MDx 主题', 'mdx'), __('MDx 主题', 'mdx'), 'manage_options', 'mdx_admin','mdx_display_sub_function','dashicons-admin-customizer');
 }
 function mdx_add_admin(){
     add_submenu_page('mdx_admin', __('MDx 主题 - 样式', 'mdx'), __('样式', 'mdx'), 'manage_options', 'mdx_styles', 'mdx_display_sub_function_one');

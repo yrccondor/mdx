@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Timeline
+Template Name: 时间轴
 */
 $pageType = 2;
 ?>

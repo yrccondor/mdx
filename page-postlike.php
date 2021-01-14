@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: PostLike
+Template Name: 类文章页
 */
 global $pageType;
 $pageType = 3;
@@ -63,9 +63,9 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
         <?php get_template_part('includes/searchform')?>
 
         <?php if($post_style=="0"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url=$full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t0<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }?>">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am0<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title-post<?php }?>">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
             <?php if($mdx_image_url!=""){?>
             <img class="PostMainImg0" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }else{?>
@@ -84,6 +84,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <?php }?>
                 <?php if(mdx_get_option('mdx_say_after')!=''){?>
                     <div class="mdui-card mdx-say-after">
+                        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><path d="M512 106.7a405.3 405.3 0 110 810.6 405.3 405.3 0 010-810.6zm0 85.3a320 320 0 100 640 320 320 0 000-640zm42.7 277.3V704h-85.4V469.3h85.4zM512 298.7a47 47 0 110 93.8 47 47 0 010-93.8z"/></svg>
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
                             $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
@@ -92,11 +93,11 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-	                }?>
+                        echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+                    }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
-                <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
+                <li class="mdui-menu-item mdx-s-img-li"><a href="#"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
                 <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');if(mdx_get_option('mdx_post_time_positon') !== 'none' && mdx_get_option('mdx_post_time_positon') !== 'title'){?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span><?php }?>
@@ -105,9 +106,9 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
         <div id="indic"></div>
 
       <?php }else if($post_style=="1"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle<?php if($mdx_image_url==""){?> mdx-pni-t<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme"></div>
-        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
+        <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title-post<?php }?>">
             <div class="ArtMain mdui-center mdui-typo">
             <?php if($mdx_image_url!=""){?>
                 <img class="PostMainImg mdui-img-rounded mdui-shadow-7" alt="<?php the_title(); ?>" src="<?php echo $mdx_image_url;?>"><?php }?>
@@ -124,6 +125,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <?php }?>
                 <?php if(mdx_get_option('mdx_say_after')!=''){?>
                     <div class="mdui-card mdx-say-after">
+                        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><path d="M512 106.7a405.3 405.3 0 110 810.6 405.3 405.3 0 010-810.6zm0 85.3a320 320 0 100 640 320 320 0 000-640zm42.7 277.3V704h-85.4V469.3h85.4zM512 298.7a47 47 0 110 93.8 47 47 0 010-93.8z"/></svg>
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
                             $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
@@ -132,11 +134,11 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-	                }?>
+                        echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+                    }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
-                <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
+                <li class="mdui-menu-item mdx-s-img-li"><a href="#"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
                 <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');if(mdx_get_option('mdx_post_time_positon') !== 'none' && mdx_get_option('mdx_post_time_positon') !== 'title'){?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span><?php }?>
@@ -159,7 +161,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                     <button class="mdui-btn mdui-btn-icon seai"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
                 </div>
             </div></header>
-        <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-typo-display-2 mdui-valign PostTitle PostTitle2<?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="<?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain PostMain2">
             <div class="ArtMain0 mdui-center mdui-shadow-12">
                 <article class="<?php $post_classes=get_post_class();foreach($post_classes as $classes){echo $classes." ";}?> mdui-typo" id="post-<?php the_ID();?>" itemprop="articleBody">
@@ -175,6 +177,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <?php }?>
                 <?php if(mdx_get_option('mdx_say_after')!=''){?>
                     <div class="mdui-card mdx-say-after">
+                        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><path d="M512 106.7a405.3 405.3 0 110 810.6 405.3 405.3 0 010-810.6zm0 85.3a320 320 0 100 640 320 320 0 000-640zm42.7 277.3V704h-85.4V469.3h85.4zM512 298.7a47 47 0 110 93.8 47 47 0 010-93.8z"/></svg>
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
                             $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
@@ -183,11 +186,11 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-	                }?>
+                        echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+                    }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
-                <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
+                <li class="mdui-menu-item mdx-s-img-li"><a href="#"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
                 <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');if(mdx_get_option('mdx_post_time_positon') !== 'none' && mdx_get_option('mdx_post_time_positon') !== 'title'){?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span><?php }?>
@@ -196,7 +199,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
 <div id="indic"></div>
 
 <?php }else if($post_style=="3"){if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_image_url = $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_image_url="";}else{$mdx_image_url=get_bloginfo("template_url")."/img/dpic.jpg";}}?>
-        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle mdx-clean-style-article-head-background mdx-pni-t" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center mdx-clean-style-article-title"><?php the_title();?></h1></div>
+        <div class="mdui-text-color-white-text mdui-color-theme mdui-typo-display-2 mdui-valign PostTitle mdx-clean-style-article-head-background mdx-pni-t<?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?> date-in-title<?php }?>" itemprop="name headline" itemtype="http://schema.org/BlogPosting"><h1 class="mdui-typo-display-2 mdui-center mdx-clean-style-article-title"><?php the_title();?></h1><?php if(mdx_get_option('mdx_post_time_positon') === 'title'){?><div class="time-in-post-title" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></div><?php }?></div>
         <div class="PostTitleFill mdui-color-theme mdx-clean-style-article-title-background"></div>
         <div class="mdx-clean-style-article-main <?php if($mdx_widget){?>mdx-tools-up-in <?php }?>PostMain<?php if($mdx_image_url==""){?> mdx-pni-am<?php }?>">
             <div class="ArtMain mdui-center mdui-typo mdx-clean-style-article-content">
@@ -215,6 +218,7 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                 <?php }?>
                 <?php if(mdx_get_option('mdx_say_after')!=''){?>
                     <div class="mdui-card mdx-say-after">
+                        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="128" height="128"><path d="M512 106.7a405.3 405.3 0 110 810.6 405.3 405.3 0 010-810.6zm0 85.3a320 320 0 100 640 320 320 0 000-640zm42.7 277.3V704h-85.4V469.3h85.4zM512 298.7a47 47 0 110 93.8 47 47 0 010-93.8z"/></svg>
                         <div class="mdui-card-actions mdui-typo">
                         <?php 
                             $mdx_info = htmlspecialchars_decode(mdx_get_option('mdx_say_after'));
@@ -223,11 +227,11 @@ $mdx_share_area=mdx_get_option('mdx_share_area');$mdx_index_img=mdx_get_option('
                         </div>
                     </div>
                     <?php }if((mdx_get_option('mdx_logged_in_ad')==="false" && !empty(mdx_get_option('mdx_ad'))) || ((mdx_get_option('mdx_logged_in_ad')==="true" && !is_user_logged_in()) && !empty(mdx_get_option('mdx_ad')))){
-		                echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
-	                }?>
+                        echo '<div class="mdx-ad-after-article">'.htmlspecialchars_decode(mdx_get_option('mdx_ad')).'</div>';
+                    }?>
                 <div class="spanout"><button class="mdui-fab mdui-fab-mini mdui-color-theme-accent mdui-ripple mdx-share" mdui-menu="{target: '#mdxshare'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
                 <ul class="mdui-menu" id="mdxshare">
-                <li class="mdui-menu-item mdx-s-img-li"><a href="javascript:mdx_show_img()"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
+                <li class="mdui-menu-item mdx-s-img-li"><a href="#"><i class="mdui-icon material-icons mdx-share-icon mdui-menu-item-icon">&#xe3f4;</i> <?php _e('生成分享图','mdx');?></a></li>
                 <?php if($mdx_share_area=="all" || $mdx_share_area=="china"){include('includes/share_cn.php');}if($mdx_share_area=="all" || $mdx_share_area=="oversea"){include('includes/share_oversea.php');}?>
             </ul>
                 <i class="mdui-icon material-icons">&#xe54e;</i> <?php _e('没有标签','mdx');if(mdx_get_option('mdx_post_time_positon') !== 'none' && mdx_get_option('mdx_post_time_positon') !== 'title'){?><span class="mdui-text-color-black-disabled timeInPost" itemprop="datePublished"><?php if(mdx_get_option('mdx_post_edit_time')==="post"){?><i class="mdui-icon material-icons info-icon">&#xe192;</i> <?php the_time('Y-m-d');}else{?><i class="mdui-icon material-icons info-icon">&#xe3c9;</i> <?php the_modified_time('Y-m-d');}?></span><?php }?>

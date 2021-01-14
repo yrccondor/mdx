@@ -156,9 +156,12 @@
 <?php }?>
 <?php if(function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj')=="true") && (is_single() || is_page())){?>
     <script>
-        document.getElementsByClassName('mdx-emj-cli')[0].addEventListener('click', function(){
-            document.getElementsByClassName('mdx-emj')[0].classList.toggle('mdx-emj-open');
-        })
+        var emjDOM = document.getElementsByClassName('mdx-emj-cli');
+        if (emjDOM.length > 0){
+            emjDOM[0].addEventListener('click', function(){
+                document.getElementsByClassName('mdx-emj')[0].classList.toggle('mdx-emj-open');
+            })
+        }
     </script>
 <?php }
 global $files_root;

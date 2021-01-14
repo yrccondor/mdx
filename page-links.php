@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Links
+Template Name: 链接
 */
 $pageType = 2;
 ?>

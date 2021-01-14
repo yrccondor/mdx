@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Tags
+Template Name: 标签云
 */
 $pageType = 2;
 ?>

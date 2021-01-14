@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 16:51+0800\n"
+"PO-Revision-Date: 2021-01-14 17:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -30,8 +30,8 @@ msgid "https://flyhigher.top/develop/788.html"
 msgstr "https://flyhigher.top/develop/788.html"
 
 #. Description of the theme
-msgid "MDx - Material Design WordPress Theme"
-msgstr "MDx - Material Design WordPress Theme"
+msgid "MDx - Material Design 风格的 WordPress 主题"
+msgstr "MDx - Material Design 風格的 WordPress 主題"
 
 #. Author of the theme
 msgid "AxtonYao"
@@ -81,11 +81,11 @@ msgstr "MDx 已發佈新版本 "
 msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
 msgstr "。<a href=\"./admin.php?page=mdx_about\">重新檢查</a>"
 
-#: admin_fn.php:97
+#: admin_fn.php:97 admin_style.php:137
 msgid ""
 "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
-"\"_blank\">MDx文档</a> 下载安装新版插件。"
+"\"_blank\">MDx 文档</a> 下载安装新版插件。"
 msgstr ""
 "你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不相容，你需要前往 <a href="
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
@@ -251,13 +251,15 @@ msgstr "只有國際服務商"
 
 #: admin_fn.php:215
 msgid ""
-"指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、"
-"QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分"
-"享<br>无论如何，“生成分享图”始终启用。"
+"指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</"
+"code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</"
+"code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分"
+"享图”始终启用。"
 msgstr ""
-"指定你想提供給訪問者的分享服務商。 <br>“只有中國國內服務商”提供：微博、微信、"
-"QQ、QQ 空間的分享<br>“只有國際服務商”提供：Telegrame、Twitter、Facebook 的分"
-"享<br>無論如何，“生成分享圖”始終啟用。"
+"指定你想提供給訪問者的分享服務商。 </p><ul><li><code>只有中國國內服務商</"
+"code>：提供 微博、微信、QQ、QQ 空間的分享</li><li><code>只有國際服務商</"
+"code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>無論如何，“生成分"
+"享圖”始終啟用。"
 
 #: admin_fn.php:222
 msgid "“阅读更多”文本自定义"
@@ -486,16 +488,16 @@ msgstr "SEO優先（重度）"
 #: admin_fn.php:433
 msgid ""
 "LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设"
-"置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先"
-"（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重"
-"度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性"
-"图片会使用"
+"置会影响图片加载模式。</p><ul><li><code>速度优先</code>：几乎所有图片都会使"
+"用 LazyLoad</li><li><code>SEO优先（轻度）</code>：除文章内使用的图片外几乎所"
+"有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图"
+"片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>"
 msgstr ""
 "LazyLoad 即圖片會在即將滾動到螢幕內時才開始載入的技術（可能會影響 SEO）。此設"
-"置會影響圖片載入模式。 <br>速度優先：幾乎所有圖片都會使用LazyLoad<br>SEO優先"
-"（輕度）：除文章內使用的圖片外幾乎所有圖片都會使用LazyLoad<br>SEO優先（重"
-"度）：文章內使用的圖片和文章列表使用的圖片不會使用LazyLoad，但仍有少量裝飾性"
-"圖片會使用"
+"置會影響圖片載入模式。 </p><ul><li><code>速度優先</code>：幾乎所有圖片都會使"
+"用LazyLoad</li><li><code>SEO優先（輕度）</code>：除文章內使用的圖片外幾乎所有"
+"圖片都會使用LazyLoad</li><li><code>SEO優先（重度）</code>：文章內使用的圖片和"
+"文章列表使用的圖片不會使用LazyLoad，但仍有少量裝飾性圖片會使用</li></ul>"
 
 #: admin_fn.php:437
 msgid "兼容性 Lazyload"
@@ -587,12 +589,12 @@ msgstr "跟隨時間"
 
 #: admin_fn.php:514
 msgid ""
-"<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随"
+"<strong>仅当开启夜间模式功能后此选项方可生效。</strong></p><ul><li><code>跟随"
 "系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</"
 "li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间"
 "模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
-"<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong><br><ul><li><code>跟"
+"<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong></p><ul><li><code>跟"
 "隨系統</code>：夜間模式隨使用者系統的配色方案實時切換，優先順序低於使用者自行"
 "設定</li><li><code >跟隨時間</code>：22:30 至第二天5:30 之間打開頁面時自動載"
 "入夜間模式，優先順序低於使用者自行設定</li></ul>"
@@ -648,14 +650,14 @@ msgstr "自訂"
 #: admin_fn.php:553
 msgid ""
 "在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项"
-"<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。"
-"<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</"
+"<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。</"
+"p><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</"
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
 "定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
 "在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地載入。此選項"
-"<strong>隻影響</strong>主題的前端文件，不影響 WordPress 和其他外掛的文件。"
-"<br><ul><li><code>不使用</code>：從和頁面一致的伺服器載入文件</"
+"<strong>隻影響</strong>主題的前端文件，不影響 WordPress 和其他外掛的文件。</"
+"p><ul><li><code>不使用</code>：從和頁面一致的伺服器載入文件</"
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免費 CDN</li><li><code>自"
 "訂</code>：使用自訂的 CDN</li></ul>"
 
@@ -820,18 +822,14 @@ msgid ""
 "时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，"
 "请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 "
 "2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
-"\">主题文档</a>"
+"\">主题文档</a>。"
 msgstr ""
 "自 2.0.0 版本起，MDx 已不再依賴 jQuery 且不再在前端載入 jQuery 腳本。如果你在"
 "升級 MDx 後碰到頁面顯示不正常等問題，請嘗試打開此選項。<br><strong>這是一個臨"
 "時選項，將會在未來版本中被移除。如果你的前端頁面中有依賴 jQuery 的其他資源，"
 "請確保其不受 MDx 移除 jQuery 的影響。</strong><br>有關更多從 MDx 1.x 升級至 "
 "2.x 的信息，請參閱<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
-"\">主題文檔</a>"
-
-#: admin_functions.php:3
-msgid "MDx主题"
-msgstr "MDx主題"
+"\">主題文檔</a>。"
 
 #: admin_functions.php:3 admin_functions.php:11
 msgid "MDx 主题"
@@ -952,16 +950,6 @@ msgstr ""
 "你似乎沒有啟用 <code>mbstring</code> PHP 拓展，這會導致 MDx 無法正常運行。請"
 "參閱<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/"
 "#mb_strimwidth\">文檔</a>來修復此錯誤。"
-
-#: admin_style.php:137
-msgid ""
-"你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
-"\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
-"\"_blank\">MDx 文档</a> 下载安装新版插件。"
-msgstr ""
-"你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不相容，你需要前往 <a href="
-"\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
-"\"_blank\">MDx 文檔</a> 下載安裝新版外掛。"
 
 #: admin_style.php:141
 msgid "全局"
@@ -2135,48 +2123,48 @@ msgid "下一篇"
 msgstr "下一篇"
 
 #. Template Name of the theme
-msgid "Links"
-msgstr "Links"
+msgid "链接"
+msgstr "連結"
 
 #. Template Name of the theme
-msgid "PostLike"
-msgstr "PostLike"
+msgid "类文章页"
+msgstr "類文章頁"
 
-#: page-postlike.php:56 page-postlike.php:156 single.php:64 single.php:170
+#: page-postlike.php:56 page-postlike.php:158 single.php:64 single.php:170
 msgid "在其他设备上继续阅读"
 msgstr "在其他設備上繼續閱讀"
 
-#: page-postlike.php:79 page-postlike.php:81 page-postlike.php:119
-#: page-postlike.php:121 page-postlike.php:170 page-postlike.php:172
-#: page-postlike.php:210 page-postlike.php:212 single.php:87 single.php:89
+#: page-postlike.php:79 page-postlike.php:81 page-postlike.php:120
+#: page-postlike.php:122 page-postlike.php:172 page-postlike.php:174
+#: page-postlike.php:213 page-postlike.php:215 single.php:87 single.php:89
 #: single.php:130 single.php:132 single.php:184 single.php:186 single.php:227
 #: single.php:229
 msgid "赞赏"
 msgstr "讚賞"
 
-#: page-postlike.php:99 page-postlike.php:139 page-postlike.php:190
-#: page-postlike.php:230 single.php:109 single.php:152 single.php:206
+#: page-postlike.php:100 page-postlike.php:141 page-postlike.php:193
+#: page-postlike.php:234 single.php:109 single.php:152 single.php:206
 #: single.php:249
 msgid "生成分享图"
 msgstr "生成分享圖"
 
-#: page-postlike.php:102 page-postlike.php:142 page-postlike.php:193
-#: page-postlike.php:233 single.php:112 single.php:155 single.php:209
+#: page-postlike.php:103 page-postlike.php:144 page-postlike.php:196
+#: page-postlike.php:237 single.php:112 single.php:155 single.php:209
 #: single.php:252
 msgid "没有标签"
 msgstr "沒有標籤"
 
-#: page-postlike.php:238 single.php:260
+#: page-postlike.php:242 single.php:260
 msgid "扫描二维码继续阅读"
 msgstr "掃描 QR Code 繼續閱讀"
 
 #. Template Name of the theme
-msgid "Tags"
-msgstr "Tags"
+msgid "标签云"
+msgstr "標籤雲"
 
 #. Template Name of the theme
-msgid "Timeline"
-msgstr "Timeline"
+msgid "时间轴"
+msgstr "時間軸"
 
 #: search.php:46 search.php:83
 msgid "搜索结果"
@@ -2220,6 +2208,30 @@ msgstr "登錄後才能查看此文章"
 #: template-parts/content-first-5-status.php:2
 msgid "状态"
 msgstr "狀態"
+
+#~ msgid ""
+#~ "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a "
+#~ "href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" "
+#~ "target=\"_blank\">MDx文档</a> 下载安装新版插件。"
+#~ msgstr ""
+#~ "你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不相容，你需要前往 <a "
+#~ "href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" "
+#~ "target=\"_blank\">MDx 文檔</a> 下載安裝新版外掛。"
+
+#~ msgid "MDx主题"
+#~ msgstr "MDx主題"
+
+#~ msgid "Links"
+#~ msgstr "Links"
+
+#~ msgid "PostLike"
+#~ msgstr "PostLike"
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
+
+#~ msgid "Timeline"
+#~ msgstr "Timeline"
 
 #~ msgid ""
 #~ "选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 "

@@ -93,11 +93,13 @@ module.exports = {
             banner: `/*
 Theme Name: MDx
 Theme URI: https://flyhigher.top/develop/788.html
-Description: MDx - Material Design WordPress Theme
+Description: MDx - Material Design 风格的 WordPress 主题
 Version: ${mdxVersion}
 Author: AxtonYao
 Author URI: https://flyhigher.top
 Tags: Material Design, Personal Blog, Simple Theme
+Text Domain: mdx
+Domain Path: /languages
 */`,
             test: /\.css$/,
             raw: true

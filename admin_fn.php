@@ -94,7 +94,7 @@ if(!defined('ALU_VERSION')){
 }
 if(ALU_VERSION !== '1.0.6'){?>
 <div class="notice notice-warning is-dismissible">
-<p><?php _e('你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/" target="_blank">MDx文档</a> 下载安装新版插件。', 'mdx');?></p>
+<p><?php _e('你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/" target="_blank">MDx 文档</a> 下载安装新版插件。', 'mdx');?></p>
 </div>
 <?php }?>
 <nav class="nav-tab-wrapper wp-clearfix" aria-label="Secondary menu"> 
@@ -212,7 +212,7 @@ wp_nonce_field('mdx_options_update');
         <option value="china" <?php if($mdx_v_share_area=='china'){?>selected="selected"<?php }?>><?php _e('只有中国国内服务商', 'mdx');?></option>
         <option value="oversea" <?php if($mdx_v_share_area=='oversea'){?>selected="selected"<?php }?>><?php _e('只有国际服务商', 'mdx');?></option>
     </select>
-    <p class="description"><?php _e('指定你想提供给访问者的分享服务商。<br>“只有中国国内服务商”提供：微博、微信、QQ、QQ 空间 的分享<br>“只有国际服务商”提供：Telegrame、Twitter、Facebook 的分享<br>无论如何，“生成分享图”始终启用。', 'mdx');?></p>
+    <p class="description"><?php _e('指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分享图”始终启用。', 'mdx');?></p>
     </td>
     </tr>
 </tbody>
@@ -430,7 +430,7 @@ wp_nonce_field('mdx_options_update');
         <option value="seo1" <?php if($mdx_v_lazy_load_mode=='seo1'){?>selected="selected"<?php }?>><?php _e('SEO优先（轻度）', 'mdx');?></option>
         <option value="seo2" <?php if($mdx_v_lazy_load_mode=='seo2'){?>selected="selected"<?php }?>><?php _e('SEO优先（重度）', 'mdx');?></option>
     </select>
-    <p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。<br>速度优先：几乎所有图片都会使用 LazyLoad<br>SEO优先（轻度）：除文章内使用的图片外几乎所有图片都会使用 LazyLoad<br>SEO优先（重度）：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用', 'mdx');?></p>
+    <p class="description"><?php _e('LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设置会影响图片加载模式。</p><ul><li><code>速度优先</code>：几乎所有图片都会使用 LazyLoad</li><li><code>SEO优先（轻度）</code>：除文章内使用的图片外几乎所有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>', 'mdx');?>
     </td>
     </tr>
     <tr>
@@ -511,7 +511,7 @@ wp_nonce_field('mdx_options_update');
         <option value="true" <?php if($mdx_v_auto_night_style=='true'){?>selected="selected"<?php }?>><?php echo _e("跟随时间", "mdx");?></option>
         <option value="false" <?php if($mdx_v_auto_night_style=='false'){?>selected="selected"<?php }?>><?php echo $falseoff;?></option>
     </select>
-    <p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong><br><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>', 'mdx');?></p>
+    <p class="description"><?php _e('<strong>仅当开启夜间模式功能后此选项方可生效。</strong></p><ul><li><code>跟随系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间模式，优先级低于用户自行设置</li></ul>', 'mdx');?>
     </td>
     </tr>
 </tbody>
@@ -550,7 +550,7 @@ wp_nonce_field('mdx_options_update');
         <option value="jsdelivr" <?php if($mdx_v_use_cdn=='jsdelivr'){?>selected="selected"<?php }?>><?php _e('jsDelivr', 'mdx');?></option>
         <option value="custom" <?php if($mdx_v_use_cdn=='custom'){?>selected="selected"<?php }?>><?php _e('自定义', 'mdx');?></option>
     </select>
-    <p class="description"><?php _e('在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。<br><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>', 'mdx');?></p>
+    <p class="description"><?php _e('在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。</p><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自定义</code>：使用自定义的 CDN</li></ul>', 'mdx');?>
     </td>
     </tr>
     <tr class="cdn_custom">
@@ -658,7 +658,7 @@ wp_nonce_field('mdx_options_update');
         <fieldset>
         <label><input type="radio" name="mdx_jquery" value="true" <?php if($mdx_v_jquery=='true'){?>checked="checked"<?php }?>> <?php echo $trueon;?></label><br>
         <label><input type="radio" name="mdx_jquery" value="false" <?php if($mdx_v_jquery=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
-        <p class="description"><?php _e('自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/">主题文档</a>', 'mdx');?></p>
+        <p class="description"><?php _e('自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/">主题文档</a>。', 'mdx');?></p>
         </fieldset>
     </td>
     </tr>
