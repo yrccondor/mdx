@@ -893,7 +893,7 @@ msgstr "主題文檔"
 
 #: admin_functions.php:70
 msgid "这个项目的 Github 地址是 "
-msgstr "這個項目的 Github 地址是 "
+msgstr "這個項目的 Github 位址是 "
 
 #: admin_functions.php:70
 msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。"
@@ -1469,14 +1469,14 @@ msgstr ""
 
 #: admin_style.php:605
 msgid "Touch Bar 图标地址"
-msgstr "Touch Bar 圖標地址"
+msgstr "Touch Bar 圖標位址"
 
 #: admin_style.php:607
 msgid ""
 "请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为\"0 0 "
 "16 16\"。"
 msgstr ""
-"請設定 Touch Bar 圖標地址。格式為 SVG，必須為單層，viewbox 屬性必須為\"0 0 "
+"請設定 Touch Bar 圖標位址。格式為 SVG，必須為單層，viewbox 屬性必須為\"0 0 "
 "16 16\"。"
 
 #: admin_style.php:610
@@ -1707,7 +1707,7 @@ msgstr "郵箱"
 
 #: admin_style.php:753
 msgid "邮箱地址"
-msgstr "郵箱地址"
+msgstr "郵箱位址"
 
 #: admin_style.php:756 admin_style.php:757
 msgid "个人主页"
@@ -1715,7 +1715,7 @@ msgstr "個人主頁"
 
 #: admin_style.php:757
 msgid "个人主页地址"
-msgstr "個人主頁地址"
+msgstr "個人主頁位址"
 
 #: admin_style.php:760 admin_style.php:761
 msgid "RSS"
@@ -1723,7 +1723,7 @@ msgstr "RSS"
 
 #: admin_style.php:761
 msgid "RSS 地址"
-msgstr "RSS 地址"
+msgstr "RSS 位址"
 
 #: admin_style.php:764
 msgid "生成结果"
