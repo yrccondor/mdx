@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 18:29+0800\n"
+"PO-Revision-Date: 2021-01-14 21:11+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_HK\n"
@@ -67,11 +67,11 @@ msgstr "MDx 主題 - 功能"
 
 #: admin_fn.php:77 admin_style.php:117
 msgid "设置已保存。"
-msgstr "設定已保存。"
+msgstr "設定已儲存。"
 
 #: admin_fn.php:83 admin_style.php:123
 msgid "更改未能保存。"
-msgstr "更改未能保存。"
+msgstr "更改未能儲存。"
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "MDx 已发布新版本 "
@@ -463,11 +463,11 @@ msgstr "評論表情"
 msgid ""
 "开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 "
 "mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
-"config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载插件安装包。"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载插件安装包。"
 msgstr ""
-"開啟後，評論時可輸入表情。開啟後仍需安裝表情外掛才可正常使用。目前僅支援來自"
-"mayuko 的Alu 表情外掛，請前往<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
-"config/emoji-in-comment/\" target=\"_blank\">MDx文檔</a> 下載外掛安裝包。"
+"開啟後，評論時可輸入表情。開啟後仍需安裝表情外掛才可正常使用。目前僅支援來自 "
+"mayuko 的 Alu 表情外掛，請前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文檔</a> 下載外掛安裝包。"
 
 #: admin_fn.php:425
 msgid "LazyLoad 模式"
@@ -595,9 +595,9 @@ msgid ""
 "模式，优先级低于用户自行设置</li></ul>"
 msgstr ""
 "<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong></p><ul><li><code>跟"
-"隨系統</code>：夜間模式隨用戶系統的配色方案實時切換，優先順序低於用戶自行設定"
-"</li><li><code >跟隨時間</code>：22:30 至第二天5:30 之間打開頁面時自動加載夜"
-"間模式，優先順序低於用戶自行設定</li></ul>"
+"隨系統</code>：夜間模式隨用戶系統的配色方案實時切換，優先級低於用戶自行設定</"
+"li><li><code >跟隨時間</code>：22:30 至第二天 5:30 之間打開頁面時自動加載夜間"
+"模式，優先級低於用戶自行設定</li></ul>"
 
 #: admin_fn.php:521
 msgid "SEO 关键词"
@@ -655,7 +655,7 @@ msgid ""
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
 "定义</code>：使用自定义的 CDN</li></ul>"
 msgstr ""
-"在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地加載。此選項"
+"在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地載入。此選項"
 "<strong>隻影響</strong>主題的前端文件，不影響 WordPress 和其他外掛的文件。</"
 "p><ul><li><code>不使用</code>：從和頁面一致的伺服器加載文件</"
 "li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免費 CDN</li><li><code>自"
@@ -763,8 +763,8 @@ msgid ""
 "到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到"
 "此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。"
 msgstr ""
-"Cookie 使用提示將會在用戶第一次訪問網站時顯示,以向用戶說明你網站的 Cookie 政"
-"策。 如果你的網站有來自歐盟地區的訪客,此選項可能會很有用。<br>在這裡編輯 "
+"Cookie 使用提示將會在用戶第一次訪問網站時顯示，以向用戶說明你網站的 Cookie 政"
+"策。 如果你的網站有來自歐盟地區的訪客，此選項可能會很有用。<br>在這裡編輯 "
 "Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 Safari 中，受"
 "到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重置所有訪客看"
 "到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
@@ -775,7 +775,7 @@ msgstr "重置顯示狀態"
 
 #: admin_fn.php:624
 msgid "重置成功，保存设置后生效。"
-msgstr "重置成功,保存設定後生效。"
+msgstr "重置成功，儲存設定後生效。"
 
 #: admin_fn.php:628
 msgid "使用 Preload 技术加速页面加载"
@@ -1866,7 +1866,7 @@ msgstr "沒有更多了"
 
 #: footer.php:142
 msgid "长按/右键保存图片"
-msgstr "長按/右鍵保存圖片"
+msgstr "長按/右鍵儲存圖片"
 
 #: footer.php:144
 msgid "使用微信扫描后在微信内分享"

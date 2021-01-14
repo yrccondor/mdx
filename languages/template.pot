@@ -442,7 +442,7 @@ msgid "评论表情"
 msgstr ""
 
 #: admin_fn.php:417
-msgid "开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载插件安装包。"
+msgid "开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载插件安装包。"
 msgstr ""
 
 #: admin_fn.php:425

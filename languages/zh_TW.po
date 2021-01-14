@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 18:29+0800\n"
+"PO-Revision-Date: 2021-01-14 21:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -67,11 +67,11 @@ msgstr "MDx 主題 - 功能"
 
 #: admin_fn.php:77 admin_style.php:117
 msgid "设置已保存。"
-msgstr "設定已保存。"
+msgstr "設定已儲存。"
 
 #: admin_fn.php:83 admin_style.php:123
 msgid "更改未能保存。"
-msgstr "更改未能保存。"
+msgstr "更改未能儲存。"
 
 #: admin_fn.php:89 admin_style.php:129
 msgid "MDx 已发布新版本 "
@@ -114,7 +114,7 @@ msgstr "推薦文章"
 
 #: admin_fn.php:105
 msgid "评论"
-msgstr "評論"
+msgstr "留言"
 
 #: admin_fn.php:106
 msgid "Lazyload"
@@ -295,7 +295,7 @@ msgstr "發表時間"
 
 #: admin_fn.php:243
 msgid "评论数"
-msgstr "評論數"
+msgstr "留言數"
 
 #: admin_fn.php:244
 msgid "空"
@@ -437,37 +437,37 @@ msgstr "文末推薦文章模塊標題"
 
 #: admin_fn.php:395
 msgid "“发送评论”文本自定义"
-msgstr "“發送評論”文本自訂"
+msgstr "“發送留言”文本自訂"
 
 #: admin_fn.php:397
 msgid "在此自定义“发送评论”按钮上的文本。"
-msgstr "在此自訂“發送評論”按鈕上的文本。"
+msgstr "在此自訂“發送留言”按鈕上的文本。"
 
 #: admin_fn.php:400
 msgid "评论无限加载"
-msgstr "評論無限載入"
+msgstr "留言無限載入"
 
 #: admin_fn.php:406
 msgid ""
 "开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
 "AJAX 加载。"
 msgstr ""
-"開啟後，文章評論載入時將使用無限載入，關閉則使用分頁載入。無論如何，評論均為 "
+"開啟後，文章留言載入時將使用無限載入，關閉則使用分頁載入。無論如何，留言均為 "
 "AJAX 載入。"
 
 #: admin_fn.php:411
 msgid "评论表情"
-msgstr "評論表情"
+msgstr "留言表情"
 
 #: admin_fn.php:417
 msgid ""
 "开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 "
 "mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
-"config/emoji-in-comment/\" target=\"_blank\">MDx文档</a> 下载插件安装包。"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载插件安装包。"
 msgstr ""
-"開啟後，評論時可輸入表情。開啟後仍需安裝表情外掛才可正常使用。目前僅支援來自"
-"mayuko 的Alu 表情外掛，請前往<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
-"config/emoji-in-comment/\" target=\"_blank\">MDx文檔</a> 下載外掛安裝包。"
+"開啟後，留言時可輸入表情。開啟後仍需安裝表情外掛才可正常使用。目前僅支援來自 "
+"mayuko 的 Alu 表情外掛，請前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文檔</a> 下載外掛安裝包。"
 
 #: admin_fn.php:425
 msgid "LazyLoad 模式"
@@ -596,7 +596,7 @@ msgid ""
 msgstr ""
 "<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong></p><ul><li><code>跟"
 "隨系統</code>：夜間模式隨使用者系統的配色方案實時切換，優先順序低於使用者自行"
-"設定</li><li><code >跟隨時間</code>：22:30 至第二天5:30 之間打開頁面時自動載"
+"設定</li><li><code >跟隨時間</code>：22:30 至第二天 5:30 之間打開頁面時自動載"
 "入夜間模式，優先順序低於使用者自行設定</li></ul>"
 
 #: admin_fn.php:521
@@ -763,11 +763,11 @@ msgid ""
 "到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到"
 "此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。"
 msgstr ""
-"Cookie 使用提示將會在使用者第一次訪問網站時顯示,以向使用者說明你網站的 "
-"Cookie 政策。 如果你的網站有來自歐盟地區的訪客,此選項可能會很有用。<br>在這裡"
-"編輯 Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 Safari "
-"中，受到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重置所有"
-"訪客看到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
+"Cookie 使用提示將會在使用者第一次訪問網站時顯示，以向使用者說明你網站的 "
+"Cookie 政策。 如果你的網站有來自歐盟地區的訪客，此選項可能會很有用。<br>在這"
+"裡編輯 Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 "
+"Safari 中，受到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重"
+"置所有訪客看到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
 
 #: admin_fn.php:624
 msgid "重置显示状态"
@@ -775,7 +775,7 @@ msgstr "重置顯示狀態"
 
 #: admin_fn.php:624
 msgid "重置成功，保存设置后生效。"
-msgstr "重置成功,保存設定後生效。"
+msgstr "重置成功，儲存設定後生效。"
 
 #: admin_fn.php:628
 msgid "使用 Preload 技术加速页面加载"
@@ -1435,7 +1435,7 @@ msgid ""
 "\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/custom_api/\" target=\"_blank\">详细信息</a></code>"
 msgstr ""
-"如使用自訂義 API，你需要在括弧內填寫 API URL 並確保 API 返回 <code>{\"text\":"
+"如使用自訂 API，你需要在括弧內填寫 API URL 並確保 API 返回 <code>{\"text\":"
 "\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
 "config/custom_api/\" target=\"_blank\">詳細信息</a></code>"
 
@@ -1755,7 +1755,7 @@ msgstr "作者歸檔"
 
 #: comments.php:9
 msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论。"
-msgstr "你需要先 <a href=\"%s\">登錄</a> 才能發表評論。"
+msgstr "你需要先 <a href=\"%s\">登錄</a> 才能發表留言。"
 
 #: comments.php:24 includes/update.php:4 includes/update.php:23
 #: includes/update.php:43 includes/update.php:65 includes/update.php:88
@@ -1806,7 +1806,7 @@ msgstr "搜索功能暫時不可用。"
 
 #: footer.php:38
 msgid "评论功能暂时不可用。"
-msgstr "評論功能暫時不可用。"
+msgstr "留言功能暫時不可用。"
 
 #: footer.php:39
 msgid "仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面"
@@ -1858,7 +1858,7 @@ msgstr "更多選項"
 
 #: footer.php:140
 msgid "加载更多评论"
-msgstr "載入更多評論"
+msgstr "載入更多留言"
 
 #: footer.php:141
 msgid "没有更多了"
@@ -1866,7 +1866,7 @@ msgstr "沒有更多了"
 
 #: footer.php:142
 msgid "长按/右键保存图片"
-msgstr "長按/右鍵保存圖片"
+msgstr "長按/右鍵儲存圖片"
 
 #: footer.php:144
 msgid "使用微信扫描后在微信内分享"
