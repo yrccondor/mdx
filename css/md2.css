@@ -6,38 +6,45 @@
          local('MaterialIconsOutlined-Regular'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff2) format('woff2'),
          url(../mdui/icons/material-icons/material_2_icon_font.woff) format('woff');
+    font-display: block;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 300;
     font-style: normal;
     src: url("../fonts/../fonts/Montserrat-Light.eot");
     src: url("../fonts/Montserrat-Light.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-Light.woff2") format("woff2"),
          url("../fonts/Montserrat-Light.woff") format("woff");
+    font-display: swap;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 400;
     font-style: normal;
     src: url("../fonts/Montserrat-Regular.eot");
     src: url("../fonts/Montserrat-Regular.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-Regular.woff2") format("woff2"),
          url("../fonts/Montserrat-Regular.woff") format("woff");
+    font-display: swap;
 }
 @font-face {
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 600;
     font-style: normal;
     src: url("../fonts/Montserrat-SemiBold.eot");
     src: url("../fonts/Montserrat-SemiBold.eot?#iefix") format('embedded-opentype'),
          url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
+    font-display: swap;
 }
 .mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error {
     border-radius: 8px!important;
 }
-.spanout, .mdx-first-simple .mdxNotice, #respond {
+.mdx-first-simple .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
+    border-radius: 8px 8px 0 0!important;
+}
+.spanout, .mdx-first-simple .mdxNotice, #respond, body.mdx-index-void .mdxNotice {
     border-radius: 8px;
 }
 #qrcode {
@@ -45,7 +52,7 @@
     width: 170px;
     height: 170px;
 }
-.mdx-sn-wechat-qr::after {
+.mdx-sn-wechat-qr:after {
     border-radius: 8px;
 }
 .mdui-snackbar.mdui-snackbar-top {
@@ -74,13 +81,12 @@
     box-shadow: none!important;
 }
 #submit {
-    border-radius: 5px;
     box-shadow: none;
 }
-.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button {
+.mdui-card-actions .mdui-btn, .mdui-snackbar-action.mdui-btn, .searchCard .mdui-btn, .mdui-dialog .mdui-btn, .mdx-main-404 .mdui-btn, article.mdui-typo .mdui-btn, #mdx-cookie-notice button, .wp-block-file a.mdui-btn, .theFirstPageSay a.mdui-btn {
     border-radius: 5px;
 }
-#wp-submit, #wp-webauthn, #wp-webauthn-check {
+#wp-submit, #wp-webauthn, #wp-webauthn-check, #submit {
     border-radius: 5px!important;
     box-shadow: none;
 }
@@ -98,14 +104,14 @@
     border-color: #E0E0E0!important;
 }
 #login_error {
-    border: #dc3232 solid 2px!important;
+    border: 2px solid #dc3232!important;
+}
+#login_error, .message {
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
 .message {
-    border: #00a0d2 solid 2px!important;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
+    border: 2px solid #00a0d2!important;
 }
 .ArtMain0 .spanout, .ArtMain0 .mdx-author-c, .ArtMain0 .mdx-hot-posts, .ArtMain0 .mdx-same-posts {
     border-radius: 0!important;
@@ -197,43 +203,53 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .mdui-theme-layout-dark .mdx-post-cot {
     border: 2px solid #454545;
 }
-.mdui-table td, .mdui-table th {
+.mdui-table tbody td, .mdui-table tbody th, .mdui-table thead th {
     border-bottom: 2px solid #e2e2e2;
+}
+.mdui-table tfoot {
+    background-color: #f3f3f3;
+}
+.mdui-theme-layout-dark .mdui-table tfoot {
+    background-color: #3A3A3A;
+}
+.mdui-table tfoot td, .mdui-table tfoot th {
+    border-top: 2px solid #e2e2e2;
+    border-bottom: none;
+}
+.mdui-theme-layout-dark .mdui-table tfoot td, .mdui-table tfoot th {
+    border-color: #454545;
 }
 .mdui-theme-layout-dark .mdui-table td, .mdui-theme-layout-dark .mdui-table th {
     border-bottom: 2px solid #454545;
 }
 .mdui-table tbody tr:last-child td, .mdui-table tbody tr:last-child th {
-    border-bottom: 0px solid #e2e2e2;
+    border-bottom: 0 solid #e2e2e2;
 }
 .mdui-table thead {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
 }
 .mdui-theme-layout-dark .mdui-table thead {
-    background-color: rgb(58, 58, 58);
+    background-color: #3a3a3a;
 }
 .links-des {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-.wp-block-cover {
-	border-radius: 8px;
-}
-.wp-block-file {
+.wp-block-cover, .wp-block-file {
     border-radius: 8px;
 }
 #mdx-toc-preview .mdx-toc-preview-item {
     border-radius: 0 8px 8px 0;
 }
-body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-md2-font .mdx-background-404 span, body.mdx-md2-font .mdx-si-head {
+body.mdx-md2-font .mdx-hot-posts h3, body.mdx-md2-font .mdx-all-posts, body.mdx-md2-font .mdx-background-404 span, body.mdx-md2-font .mdx-si-head, body.mdx-md2-font #theFirstPageSayContent, body.mdx-md2-font .theFirstPageSay h1 {
     font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     font-weight: bold;
 }
-body.mdx-md2-font .mdx-background-404 span > span{
+body.mdx-md2-font .mdx-background-404 span > span {
     font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     font-weight: normal;
 }
-body.mdx-md2-font .mdx-side-title span, body.mdx-md2-font .mdx-clean-footer .mdx-footer-title, body.mdx-md2-font .mdui-toolbar .mdui-typo-headline, body.mdx-md2-font .mdx-author-info h3, body.mdx-md2-font #reply-title, body.mdx-md2-font .PostTitle > span, body.mdx-md2-font .mdui-card-actions h1, body.mdx-md2-font .mdui-card-primary div, body.mdx-md2-font article.searchCard h1, body.mdx-md2-font #mdx-right-drawer .mdui-card-primary-title, body.mdx-md2-font .PostTitlePage span, body.mdx-md2-font .theFirstPageSmall h1, body.mdx-md2-font .mdx-same-posts h3, body.mdx-md2-font .ArtMain article h1, body.mdx-md2-font .ArtMain article h2, body.mdx-md2-font .ArtMain article h3, body.mdx-md2-font .ArtMain0 article h1, body.mdx-md2-font .ArtMain0 article h2, body.mdx-md2-font .ArtMain0 article h3, body.mdx-md2-font main .mdx-postlist-simple h1 {
+body.mdx-md2-font .mdx-side-title span, body.mdx-md2-font .mdx-clean-footer .mdx-footer-title, body.mdx-md2-font .mdui-toolbar .mdui-typo-headline, body.mdx-md2-font .mdx-author-info h3, body.mdx-md2-font #reply-title, body.mdx-md2-font .PostTitle > h1, body.mdx-md2-font .mdui-card-actions h1, body.mdx-md2-font .mdui-card-primary div, body.mdx-md2-font article.searchCard h1, body.mdx-md2-font #mdx-right-drawer .mdui-card-primary-title, body.mdx-md2-font .PostTitlePage span, body.mdx-md2-font .theFirstPageSmall h1, body.mdx-md2-font .mdx-same-posts h3, body.mdx-md2-font .ArtMain article h1, body.mdx-md2-font .ArtMain article h2, body.mdx-md2-font .ArtMain article h3, body.mdx-md2-font .ArtMain0 article h1, body.mdx-md2-font .ArtMain0 article h2, body.mdx-md2-font .ArtMain0 article h3, body.mdx-md2-font main .mdx-postlist-simple h1 {
     font-family: 'Montserrat', -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 body.mdx-md2-font .theFirstPageSmall h1 small {
@@ -245,8 +261,11 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 .comment-reply-link, .comment-reply-login {
     border-radius: 5px;
 }
-@media screen and (orientation:landscape) and (min-width: 750px){
-    body.mdx-first-tworows .mdx-tworows-title > div, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows #mdx-search-anim {
+body.mdx-index-void .mdxNotice {
+    border-radius: 8px!important;
+}
+@media screen and (orientation: landscape) and (min-width: 750px) {
+    body.mdx-first-tworows #mdx-search-anim, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows .mdx-tworows-title > div {
         border-radius: 8px;
     }
     body.mdx-first-tworows.mdx-md2-font .mdx-tworows-title > div > span {
@@ -259,6 +278,12 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
     }
     .ArtMain0 .spanout {
         border-radius: 8px 8px 0 0!important;
+    }
+    .PostMainImg0 {
+        border-radius: 8px;
+    }
+    .ArtMain0 .mdx-say-after.mdui-card {
+        border-radius: 8px!important;
     }
 }
 @media (max-width: 600px) {

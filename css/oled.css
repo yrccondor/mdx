@@ -1,3 +1,9 @@
+body.mdui-theme-layout-dark {
+    --mdx-theme-color-with-white-head: 18, 18, 18!important;
+}
+body.mdui-theme-layout-dark.mdx-index-void {
+    --mdx-theme-color-with-white-head: 0, 0, 0!important;
+}
 .mdui-theme-layout-dark .PostMainPage, .mdui-theme-layout-dark .main, .mdui-theme-layout-dark .mdx-hot-posts, .mdui-theme-layout-dark #left-drawer, .mdui-theme-layout-dark #mdx-right-drawer, .mdui-theme-layout-dark #img-box, body.mdui-theme-layout-dark.body-grey, body.mdui-theme-layout-dark.body-grey1, .mdui-theme-layout-dark, .mdui-theme-layout-dark #mdx_menu li ul.mdui-collapse-item-body {
     background-color: black!important;
 }
@@ -75,6 +81,21 @@ body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-na
 }
 .mdui-theme-layout-dark .m-title:before {
     background: #000;
+}
+.mdui-theme-layout-dark main .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
+    background-color: #000000!important;
+    border-color: #000000!important;
+}
+.mdui-theme-layout-dark .mdx-say-after.mdui-card, .mdui-theme-layout-dark .mdx-author-info {
+    background-color: #202020!important;
+}
+.mdui-theme-layout-dark .ArtMain0 .mdx-say-after.mdui-card {
+    background-color: #2b2b2b!important;
+}
+@media(max-width:720px) {
+    .mdui-theme-layout-dark .ArtMain0 .mdx-say-after.mdui-card {
+        background-color: #202020!important;
+    }
 }
 @media screen and (orientation:landscape){
     body.mdx-first-tworows.mdui-theme-layout-dark .mdx-tworow-search {

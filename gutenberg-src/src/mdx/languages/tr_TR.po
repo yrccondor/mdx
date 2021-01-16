@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-01-14T14:14:25+08:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: mdx\n"
+
+#: mdx.js:9
+msgid "MDx 折叠内容"
+msgstr ""
+
+#: mdx.js:12
+#: mdx.js:44
+msgid "折叠内容"
+msgstr ""
+
+#: mdx.js:16
+msgid "被折叠内容"
+msgstr ""
+
+#: mdx.js:37
+#: mdx.js:111
+msgid "标题"
+msgstr ""
+
+#: mdx.js:51
+msgid "默认打开"
+msgstr ""
+
+#: mdx.js:87
+msgid "MDx 警告内容"
+msgstr ""
+
+#: mdx.js:90
+#: mdx.js:118
+msgid "警告内容"
+msgstr ""
+
+#: mdx.js:94
+msgid "警告"
+msgstr ""
+
+#: mdx.js:144
+msgid "MDx 进度指示器"
+msgstr ""
+
+#: mdx.js:147
+msgid "进度指示器"
+msgstr ""
+
+#: mdx.js:157
+msgid "进度 (0-100)"
+msgstr ""
+
+#: mdx.js:179
+msgid "MDx Github 信息卡"
+msgstr ""
+
+#: mdx.js:239
+msgid "作者用户名"
+msgstr ""
+
+#: mdx.js:250
+msgid "仓库名"
+msgstr ""
+
+#: mdx.js:262
+msgid "API 网关"
+msgstr ""
+
+#: mdx.js:303
+msgid "MDx 文章信息卡"
+msgstr ""
+
+#: mdx.js:306
+#: mdx.js:330
+msgid "文章信息卡"
+msgstr ""
+
+#: mdx.js:333
+msgid "URL"
+msgstr ""
+
+#: mdx.js:362
+msgid "MDx 广告"
+msgstr ""
+
+#: mdx.js:365
+msgid "广告"
+msgstr ""

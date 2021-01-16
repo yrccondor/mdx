@@ -1,0 +1,2278 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MDx\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2021-01-14 21:11+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Theme Name of the theme
+msgid "MDx"
+msgstr "MDx"
+
+#. Theme URI of the theme
+msgid "https://flyhigher.top/develop/788.html"
+msgstr "https://flyhigher.top/develop/788.html"
+
+#. Description of the theme
+msgid "MDx - Material Design 风格的 WordPress 主题"
+msgstr "MDx - Material Design 風格的 WordPress 主題"
+
+#. Author of the theme
+msgid "AxtonYao"
+msgstr "AxtonYao"
+
+#. Author URI of the theme
+msgid "https://flyhigher.top"
+msgstr "https://flyhigher.top"
+
+#: 404.php:12 single.php:271
+msgid "尴尬的是，这个页面不见了"
+msgstr "尷尬的是，這個頁面不見了"
+
+#: 404.php:16
+msgid "前往首页"
+msgstr "前往首頁"
+
+#: 404.php:17 single.php:276 single.php:296 single.php:315
+msgid "返回上一页"
+msgstr "返回上一頁"
+
+#: admin_fn.php:3 admin_style.php:3
+msgid "开启"
+msgstr "開啟"
+
+#: admin_fn.php:4 admin_style.php:4 footer.php:143
+msgid "关闭"
+msgstr "關閉"
+
+#: admin_fn.php:9 admin_functions.php:7
+msgid "MDx 主题 - 功能"
+msgstr "MDx 主題 - 功能"
+
+#: admin_fn.php:77 admin_style.php:117
+msgid "设置已保存。"
+msgstr "設定已儲存。"
+
+#: admin_fn.php:83 admin_style.php:123
+msgid "更改未能保存。"
+msgstr "更改未能儲存。"
+
+#: admin_fn.php:89 admin_style.php:129
+msgid "MDx 已发布新版本 "
+msgstr "MDx 已發佈新版本 "
+
+#: admin_fn.php:89 admin_style.php:129
+msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
+msgstr "。<a href=\"./admin.php?page=mdx_about\">重新檢查</a>"
+
+#: admin_fn.php:97 admin_style.php:137
+msgid ""
+"你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
+"\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
+"\"_blank\">MDx 文档</a> 下载安装新版插件。"
+msgstr ""
+"你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不兼容，你需要前往 <a href="
+"\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
+"\"_blank\">MDx 文檔</a> 下載安裝新版外掛。"
+
+#: admin_fn.php:101 admin_style.php:143
+msgid "文章页"
+msgstr "文章頁"
+
+#: admin_fn.php:102 admin_style.php:144
+msgid "文章列表"
+msgstr "文章列表"
+
+#: admin_fn.php:103 footer.php:153
+msgid "目录"
+msgstr "目錄"
+
+#: admin_fn.php:104 includes/admin_init_fn.php:42 includes/admin_init_fn.php:47
+#: includes/update.php:435 includes/update.php:499 includes/update.php:560
+#: includes/update.php:566 includes/update.php:629 includes/update.php:635
+#: includes/update.php:701 includes/update.php:707 includes/update.php:778
+#: includes/update.php:784 includes/update.php:855 includes/update.php:861
+#: includes/update.php:933 includes/update.php:939
+msgid "推荐文章"
+msgstr "推薦文章"
+
+#: admin_fn.php:105
+msgid "评论"
+msgstr "評論"
+
+#: admin_fn.php:106
+msgid "Lazyload"
+msgstr "Lazyload"
+
+#: admin_fn.php:107
+msgid "无障碍"
+msgstr "無障礙"
+
+#: admin_fn.php:108
+msgid "广告"
+msgstr "廣告"
+
+#: admin_fn.php:109 admin_fn.php:494
+msgid "夜间模式"
+msgstr "夜間模式"
+
+#: admin_fn.php:110
+msgid "SEO"
+msgstr "SEO"
+
+#: admin_fn.php:111
+msgid "CDN"
+msgstr "CDN"
+
+#: admin_fn.php:112
+msgid "脚本"
+msgstr "腳本"
+
+#: admin_fn.php:113 admin_style.php:149
+msgid "杂项"
+msgstr "雜項"
+
+#: admin_fn.php:123
+msgid "ImgBox"
+msgstr "ImgBox"
+
+#: admin_fn.php:129
+msgid "开启后，对于文章内包裹在指向自身的链接中的图片可点击查看大图。"
+msgstr "開啟後，對於文章內包裹在指向自身的連結中的圖片可點擊查看大圖。"
+
+#: admin_fn.php:134
+msgid "ImgBox 显示描述文本"
+msgstr "ImgBox 顯示描述文本"
+
+#: admin_fn.php:140
+msgid ""
+"开启后，点击查看大图时，如果图片的 <code>alt</code> 属性不为空，图片下方将会"
+"显示 <code>alt</code> 属性内的文本。"
+msgstr ""
+"開啟後，點擊查看大圖時，如果圖片的 <code>alt</code> 屬性不為空，圖片下方將會"
+"顯示 <code>alt</code> 屬性內的文本。"
+
+#: admin_fn.php:145
+msgid "赞赏二维码"
+msgstr "讚賞 QR Code"
+
+#: admin_fn.php:148 admin_style.php:289 admin_style.php:495 admin_style.php:535
+#: admin_style.php:543
+msgid "选择图片"
+msgstr "選擇圖片"
+
+#: admin_fn.php:149
+msgid ""
+"你可以上传或指定你的媒体库中的图片作为赞赏二维码。当此空不为空时将在文章底部"
+"显示赞赏按钮。"
+msgstr ""
+"你可以上傳或指定你的媒體庫中的圖片作為讚賞 QR Code。當此空不為空時將在文章底"
+"部顯示讚賞按鈕。"
+
+#: admin_fn.php:154
+msgid "阅读进度展示"
+msgstr "閱讀進度展示"
+
+#: admin_fn.php:160
+msgid "开启后，会在文章/单独页面展示阅读进度。"
+msgstr "開啟後，會在文章/單獨頁面展示閱讀進度。"
+
+#: admin_fn.php:165
+msgid "转移设备时记录阅读进度"
+msgstr "轉移設備時記錄閱讀進度"
+
+#: admin_fn.php:171
+msgid ""
+"开启后，文章中通过二维码转移到其他设备阅读时会自动记录阅读进度并滚动。建议在"
+"网页加载速度较快时启用。"
+msgstr ""
+"開啟後，文章中通過 QR Code 轉移到其他設備閱讀時會自動記錄閱讀進度並滾動。建議"
+"在網頁加載速度較快時啟用。"
+
+#: admin_fn.php:176
+msgid "页面加载进度条"
+msgstr "頁面加載進度條"
+
+#: admin_fn.php:182
+msgid ""
+"开启后，文章/单独页面加载时会在页面顶部显示加载进度条（仅动画，非真实进度），"
+"页面加载完成后消失。"
+msgstr ""
+"開啟後，文章/單獨頁面加載時會在頁面頂部顯示加載進度條（僅動畫，非真實進度），"
+"頁面加載完成後消失。"
+
+#: admin_fn.php:187
+msgid "文章时间信息"
+msgstr "文章時間信息"
+
+#: admin_fn.php:191
+msgid "发布时间"
+msgstr "發佈時間"
+
+#: admin_fn.php:192
+msgid "最后编辑时间"
+msgstr "最後編輯時間"
+
+#: admin_fn.php:197
+msgid "文末作者信息栏"
+msgstr "文末作者信息欄"
+
+#: admin_fn.php:207
+msgid "分享到的服务商"
+msgstr "分享到的服務商"
+
+#: admin_fn.php:211
+msgid "所有服务商"
+msgstr "所有服務商"
+
+#: admin_fn.php:212
+msgid "只有中国国内服务商"
+msgstr "只有中國國內服務商"
+
+#: admin_fn.php:213
+msgid "只有国际服务商"
+msgstr "只有國際服務商"
+
+#: admin_fn.php:215
+msgid ""
+"指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</"
+"code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</"
+"code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分"
+"享图”始终启用。"
+msgstr ""
+"指定你想提供給訪問者的分享服務商。 </p><ul><li><code>只有中國國內服務商</"
+"code>：提供 微博、微信、QQ、QQ 空間的分享</li><li><code>只有國際服務商</"
+"code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>無論如何，“生成分"
+"享圖”始終啟用。"
+
+#: admin_fn.php:222
+msgid "“阅读更多”文本自定义"
+msgstr "“閱讀更多”文本自訂"
+
+#: admin_fn.php:224
+msgid "在此自定义“阅读更多”按钮上的文本。"
+msgstr "在此自訂“閱讀更多”按鈕上的文本。"
+
+#: admin_fn.php:227
+msgid "文章列表链接可点击区域"
+msgstr "文章列表連結可點擊區域"
+
+#: admin_fn.php:231
+msgid "仅标题"
+msgstr "僅標題"
+
+#: admin_fn.php:232
+msgid "标题和文章特色图像"
+msgstr "標題和文章特色圖像"
+
+#: admin_fn.php:237
+msgid "文章列表详细信息 - 位置1"
+msgstr "文章列表詳細信息 - 位置1"
+
+#: admin_fn.php:241
+msgid "浏览量"
+msgstr "瀏覽量"
+
+#: admin_fn.php:242
+msgid "发表时间"
+msgstr "發表時間"
+
+#: admin_fn.php:243
+msgid "评论数"
+msgstr "評論數"
+
+#: admin_fn.php:244
+msgid "空"
+msgstr "空"
+
+#: admin_fn.php:255
+msgid "文章列表详细信息 - 位置2"
+msgstr "文章列表詳細信息 - 位置2"
+
+#: admin_fn.php:267
+msgid "文章列表详细信息 - 位置3"
+msgstr "文章列表詳細信息 - 位置3"
+
+#: admin_fn.php:276
+msgid "详细信息显示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
+msgstr "詳細信息顯示在文章列表每篇文章的底部。在此指定你希望展示的信息。"
+
+#: admin_fn.php:280
+msgid "增强的文章列表加载方式"
+msgstr "增強的文章列表加載方式"
+
+#: admin_fn.php:286
+msgid ""
+"启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持"
+"滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。"
+msgstr ""
+"啟用此選項以加快文章列表的加載速度，並使瀏覽器在後退到文章列表時盡可能地保持"
+"滾動位置。 <br>受瀏覽器限制，在擁有大量文章時此功能效果可能會受限。"
+
+#: admin_fn.php:294
+msgid "文章目录"
+msgstr "文章目錄"
+
+#: admin_fn.php:300
+msgid "开启后，侧边栏会显示文章目录。"
+msgstr "開啟後，側邊欄會顯示文章目錄。"
+
+#: admin_fn.php:305
+msgid "文章目录缩略显示"
+msgstr "文章目錄縮顯示"
+
+#: admin_fn.php:311
+msgid "开启后，桌面端文章左侧会显示简略目录，点击即可打开完整目录。"
+msgstr "開啟後，桌面端文章左側會顯示簡略目錄，點擊即可打開完整目錄。"
+
+#: admin_fn.php:319
+msgid "首页推荐文章"
+msgstr "首頁推薦文章"
+
+#: admin_fn.php:325
+msgid "开启后，首页会展示推荐文章，请在下方进行设置。"
+msgstr "開啟後，首頁會展示推薦文章，請在下方進行設定。"
+
+#: admin_fn.php:330
+msgid "首页推荐文章数量"
+msgstr "首頁推薦文章數量"
+
+#: admin_fn.php:332
+msgid "在此设定首页推荐文章篇数。请输入大于 0 的整数。"
+msgstr "在此設定首頁推薦文章篇數。請輸入大于 0 的整數。"
+
+#: admin_fn.php:335
+msgid "首页推荐文章获取方式"
+msgstr "首頁推薦文章獲取方式"
+
+#: admin_fn.php:339 admin_style.php:359
+msgid "某一分类"
+msgstr "某一分類"
+
+#: admin_fn.php:340 admin_style.php:360
+msgid "置顶文章"
+msgstr "置頂文章"
+
+#: admin_fn.php:341
+msgid ""
+"在此设定首页推荐文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，首页推"
+"荐文章模块将不会显示，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
+msgstr ""
+"在此設定首頁推薦文章的獲取方式。<br>若選擇置頂文章，當沒有置頂文章時，首頁推"
+"薦文章模塊將不會顯示，同時文章列表將保持原始順序而不會被置頂文章打亂。"
+
+#: admin_fn.php:346
+msgid "首页推荐文章分类名"
+msgstr "首頁推薦文章分類名"
+
+#: admin_fn.php:348
+msgid "在此设定首页推荐文章的分类名。当分类不存在时，将显示最新文章。"
+msgstr "在此設定首頁推薦文章的分類名。當分類不存在時，將顯示最新文章。"
+
+#: admin_fn.php:351
+msgid "首页推荐文章模块标题"
+msgstr "首頁推薦文章模塊標題"
+
+#: admin_fn.php:353
+msgid "在此设定首页推荐文章模块标题。"
+msgstr "在此設定首頁推薦文章模塊標題。"
+
+#: admin_fn.php:356
+msgid "首页最新文章模块标题"
+msgstr "首頁最新文章模塊標題"
+
+#: admin_fn.php:358
+msgid ""
+"在此设定首页最新文章模块标题。只有开启了“首页推荐文章”功能时此空才会生效。"
+msgstr ""
+"在此設定首頁最新文章模塊標題。只有開啟了“首頁推薦文章”功能時此空才會生效。"
+
+#: admin_fn.php:362
+msgid "文末推荐文章"
+msgstr "文末推薦文章"
+
+#: admin_fn.php:368
+msgid "开启后，文章末会展示最多5篇相似文章。"
+msgstr "開啟後，文章末會展示最多5篇相似文章。"
+
+#: admin_fn.php:373
+msgid "文末推荐文章数量"
+msgstr "文末推薦文章數量"
+
+#: admin_fn.php:375
+msgid "在此文末首页推荐文章篇数。请输入大于 0 的整数。"
+msgstr "在此文末首頁推薦文章篇數。請輸入大于 0 的整數。"
+
+#: admin_fn.php:378
+msgid "文末推荐文章计算方式"
+msgstr "文末推薦文章計算方式"
+
+#: admin_fn.php:382
+msgid "相同标签"
+msgstr "相同標籤"
+
+#: admin_fn.php:383
+msgid "相同分类"
+msgstr "相同分類"
+
+#: admin_fn.php:388
+msgid "文末推荐文章模块标题"
+msgstr "文末推薦文章模塊標題"
+
+#: admin_fn.php:395
+msgid "“发送评论”文本自定义"
+msgstr "“發送評論”文本自訂"
+
+#: admin_fn.php:397
+msgid "在此自定义“发送评论”按钮上的文本。"
+msgstr "在此自訂“發送評論”按鈕上的文本。"
+
+#: admin_fn.php:400
+msgid "评论无限加载"
+msgstr "評論無限加載"
+
+#: admin_fn.php:406
+msgid ""
+"开启后，文章评论加载时将使用无限加载，关闭则使用分页加载。无论如何，评论均为 "
+"AJAX 加载。"
+msgstr ""
+"開啟後，文章評論加載時將使用無限加載，關閉則使用分頁加載。無論如何，評論均為 "
+"AJAX 加載。"
+
+#: admin_fn.php:411
+msgid "评论表情"
+msgstr "評論表情"
+
+#: admin_fn.php:417
+msgid ""
+"开启后，评论时可输入表情。开启后仍需安装表情插件才可正常使用。目前仅支持来自 "
+"mayuko 的 Alu 表情插件，请前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文档</a> 下载插件安装包。"
+msgstr ""
+"開啟後，評論時可輸入表情。開啟後仍需安裝表情外掛才可正常使用。目前僅支援來自 "
+"mayuko 的 Alu 表情外掛，請前往 <a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/emoji-in-comment/\" target=\"_blank\">MDx 文檔</a> 下載外掛安裝包。"
+
+#: admin_fn.php:425
+msgid "LazyLoad 模式"
+msgstr "LazyLoad 模式"
+
+#: admin_fn.php:429
+msgid "速度优先"
+msgstr "速度優先"
+
+#: admin_fn.php:430
+msgid "SEO优先（轻度）"
+msgstr "SEO優先（輕度）"
+
+#: admin_fn.php:431
+msgid "SEO优先（重度）"
+msgstr "SEO優先（重度）"
+
+#: admin_fn.php:433
+msgid ""
+"LazyLoad 即图片会在即将滚动到屏幕内时才开始加载的技术（可能会影响 SEO）。此设"
+"置会影响图片加载模式。</p><ul><li><code>速度优先</code>：几乎所有图片都会使"
+"用 LazyLoad</li><li><code>SEO优先（轻度）</code>：除文章内使用的图片外几乎所"
+"有图片都会使用 LazyLoad</li><li><code>SEO优先（重度）</code>：文章内使用的图"
+"片和文章列表使用的图片不会使用 LazyLoad，但仍有少量装饰性图片会使用</li></ul>"
+msgstr ""
+"LazyLoad 即圖片會在即將滾動到螢幕內時才開始加載的技術（可能會影響 SEO）。此設"
+"置會影響圖片加載模式。 </p><ul><li><code>速度優先</code>：幾乎所有圖片都會使"
+"用 LazyLoad</li><li><code>SEO優先（輕度）</code>：除文章內使用的圖片外幾乎所"
+"有圖片都會使用 LazyLoad</li><li><code>SEO優先（重度）</code>：文章內使用的圖"
+"片和文章列表使用的圖片不會使用 LazyLoad，但仍有少量裝飾性圖片會使用</li></ul>"
+
+#: admin_fn.php:437
+msgid "兼容性 Lazyload"
+msgstr "兼容性 Lazyload"
+
+#: admin_fn.php:443
+msgid ""
+"尝试以兼容性更好的方式加载图片，<strong>但会导致一些增强特性不可用。</"
+"strong><br>如果你发现文章内图片的 Lazyload 加载出现问题且希望保留文章内图片"
+"的 Lazyload，可以尝试打开此选项。"
+msgstr ""
+"嘗試以兼容性更好的方式加載圖片，<strong>但會導致一些增強特性不可用。 </"
+"strong><br>如果你發現文章內圖片的 Lazyload 加載出現問題且希望保留文章內圖片"
+"的 Lazyload，可以嘗試打開此選項。"
+
+#: admin_fn.php:451
+msgid "允许用户缩放页面"
+msgstr "允許用戶縮放頁面"
+
+#: admin_fn.php:457
+msgid ""
+"如果允许用户缩放页面，用户将可以放大页面。这可能会破坏页面结构，但有助于视力"
+"障碍用户更好地阅读。关闭即可将页面的缩放强制固定在默认倍率。注意，不同浏览器"
+"对此可能会有不同的表现。"
+msgstr ""
+"如果允許用戶縮放頁面，用戶將可以放大頁面。這可能會破壞頁面結構，但有助於視力"
+"障礙用戶更好地閱讀。關閉即可將頁面的縮放強制固定在默認倍率。注意，不同瀏覽器"
+"對此可能會有不同的表現。"
+
+#: admin_fn.php:462
+msgid "允许使用减弱动画模式"
+msgstr "允許使用減弱動畫模式"
+
+#: admin_fn.php:468
+msgid ""
+"开启后，如果用户的系统开启了减弱动画模式，MDx 会自动地尽可能减弱网页内的动"
+"画。"
+msgstr ""
+"開啟後，如果用戶的系統開啟了減弱動畫模式，MDx 會自動地盡可能減弱網頁內的動"
+"畫。"
+
+#: admin_fn.php:476
+msgid "广告代码"
+msgstr "廣告代碼"
+
+#: admin_fn.php:478
+msgid ""
+"在这里填写广告代码，MDx 会自行决定广告应出现在何处。此空留空则不会显示广告。"
+"<br>如果要在文章内插入广告，在这里填写广告代码后，你可以在文章中使用 "
+"<code>[mdx_ad][/mdx_ad]</code> 短代码。<br>如果你计划使用 Google AdSense 自动"
+"广告，请将其填写在“脚本 - 页头脚本”选项处。"
+msgstr ""
+"在這裡填寫廣告代碼，MDx 會自行決定廣告應出現在何處。此空留空則不會顯示廣告。"
+"<br>如果要在文章內插入廣告，在這裡填寫廣告代碼後，你可以在文章中使用 "
+"<code>[mdx_ad][/mdx_ad]</code> 短代碼。 <br>如果你計劃使用 Google AdSense 自"
+"動廣告，請將其填寫在“腳本 - 頁頭腳本”選項處。"
+
+#: admin_fn.php:481
+msgid "对已登录的用户禁用广告"
+msgstr "對已登錄的用戶禁用廣告"
+
+#: admin_fn.php:485
+msgid "禁用广告"
+msgstr "禁用廣告"
+
+#: admin_fn.php:486
+msgid "不禁用广告"
+msgstr "不禁用廣告"
+
+#: admin_fn.php:502
+msgid ""
+"开启后，侧边栏中会出现夜间模式切换按钮。<strong>如果你启用了“黑暗主题”，那么"
+"夜间模式将会自动禁用。</strong>"
+msgstr ""
+"開啟後，側邊欄中會出現夜間模式切換按鈕。 <strong>如果你啟用了“黑暗主題”，那麼"
+"夜間模式將會自動禁用。 </strong>"
+
+#: admin_fn.php:506
+msgid "自动夜间模式"
+msgstr "自動夜間模式"
+
+#: admin_fn.php:510
+msgid "跟随系统"
+msgstr "跟隨系統"
+
+#: admin_fn.php:511
+msgid "跟随时间"
+msgstr "跟隨時間"
+
+#: admin_fn.php:514
+msgid ""
+"<strong>仅当开启夜间模式功能后此选项方可生效。</strong></p><ul><li><code>跟随"
+"系统</code>：夜间模式随用户系统的配色方案实时切换，优先级低于用户自行设置</"
+"li><li><code>跟随时间</code>：22:30 至第二天 5:30 之间打开页面时自动加载夜间"
+"模式，优先级低于用户自行设置</li></ul>"
+msgstr ""
+"<strong>僅當開啟夜間模式功能後此選項方可生效。 </strong></p><ul><li><code>跟"
+"隨系統</code>：夜間模式隨用戶系統的配色方案實時切換，優先級低於用戶自行設定</"
+"li><li><code >跟隨時間</code>：22:30 至第二天 5:30 之間打開頁面時自動加載夜間"
+"模式，優先級低於用戶自行設定</li></ul>"
+
+#: admin_fn.php:521
+msgid "SEO 关键词"
+msgstr "SEO 關鍵詞"
+
+#: admin_fn.php:523
+msgid "用半角逗号分割关键词，数量在5个以内最佳。留空代表不开启此功能。"
+msgstr "用半形逗號分割關鍵詞，數量在5個以內最佳。留空代表不開啟此功能。"
+
+#: admin_fn.php:526
+msgid "自动生成网页描述"
+msgstr "自動生成網頁描述"
+
+#: admin_fn.php:532
+msgid ""
+"开启后，会自动生成 SEO 网页描述。<strong>对首页无效，请在下方输入首页描述。</"
+"strong>"
+msgstr ""
+"開啟後，會自動生成 SEO 網頁描述。 <strong>對首頁無效，請在下方輸入首頁描述。 "
+"</strong>"
+
+#: admin_fn.php:537
+msgid "SEO 描述"
+msgstr "SEO 描述"
+
+#: admin_fn.php:539
+msgid ""
+"在这里编辑网页描述。如开启自动生成网页描述功能，则此空仅对首页有效，其他页面"
+"会自动生成网页描述。此空留空则表示关闭全局 SEO 描述功能。"
+msgstr ""
+"在這裡編輯網頁描述。如開啟自動生成網頁描述功能，則此空僅對首頁有效，其他頁面"
+"會自動生成網頁描述。此空留空則表示關閉全局 SEO 描述功能。"
+
+#: admin_fn.php:545
+msgid "使用 CDN 加载前端主题文件"
+msgstr "使用 CDN 加載前端主題文件"
+
+#: admin_fn.php:549
+msgid "不使用"
+msgstr "不使用"
+
+#: admin_fn.php:550
+msgid "jsDelivr"
+msgstr "jsDelivr"
+
+#: admin_fn.php:551
+msgid "自定义"
+msgstr "自訂"
+
+#: admin_fn.php:553
+msgid ""
+"在<strong>部分情况</strong>下，使用 CDN 有助于前端页面更快地载入。此选项"
+"<strong>只影响</strong>主题的前端文件，不影响 WordPress 和其他插件的文件。</"
+"p><ul><li><code>不使用</code>：从和页面一致的服务器加载文件</"
+"li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免费 CDN</li><li><code>自"
+"定义</code>：使用自定义的 CDN</li></ul>"
+msgstr ""
+"在<strong>部分情况</strong>下，使用 CDN 有助于前端頁面更快地載入。此選項"
+"<strong>隻影響</strong>主題的前端文件，不影響 WordPress 和其他外掛的文件。</"
+"p><ul><li><code>不使用</code>：從和頁面一致的伺服器加載文件</"
+"li><li><code>jsDelivr</code>：使用由 jsDelivr 提供的免費 CDN</li><li><code>自"
+"訂</code>：使用自訂的 CDN</li></ul>"
+
+#: admin_fn.php:557
+msgid "自定义 CDN 根路径"
+msgstr "自訂 CDN 根路徑"
+
+#: admin_fn.php:560
+msgid ""
+"在这里输入自定义的 CDN 根路径 URL，不要在最后添加 <code>/</code>，如 "
+"<code>https://cdn.example.com/mdx_files</code>。<br>CDN 服务需添加适当的 "
+"<code>access-control-allow-origin</code> 头。"
+msgstr ""
+"在這裡輸入自訂的 CDN 根路徑 URL，不要在最後添加 <code>/</code>，如 "
+"<code>https://cdn.example.com/mdx_files</code>。<br>CDN 服務需添加適當的 "
+"<code>access-control-allow-origin</code> 頭。"
+
+#: admin_fn.php:566
+msgid "页头脚本"
+msgstr "頁頭腳本"
+
+#: admin_fn.php:568
+msgid "在这里插入脚本，会被插入至所有页面头部。"
+msgstr "在這裡插入腳本，會被插入至所有頁面頭部。"
+
+#: admin_fn.php:571
+msgid "页尾脚本"
+msgstr "頁尾腳本"
+
+#: admin_fn.php:573
+msgid "在这里插入脚本，会被插入至所有页面最后。"
+msgstr "在這裡插入腳本，會被插入至所有頁面最後。"
+
+#: admin_fn.php:579
+msgid "WordPress 安装方式"
+msgstr "WordPress 安裝方式"
+
+#: admin_fn.php:582
+msgid "常规安装"
+msgstr "常規安裝"
+
+#: admin_fn.php:584
+msgid "子目录安装"
+msgstr "子目錄安裝"
+
+#: admin_fn.php:587
+msgid "常规"
+msgstr "常規"
+
+#: admin_fn.php:588
+msgid "子目录"
+msgstr "子目錄"
+
+#: admin_fn.php:589
+msgid ""
+"为了更好地实现某些功能，MDx 需要知道你的 WordPress 的安装方式。如果你不确定，"
+"请参考下方的检测结果。<br>MDx 检测到你的 WordPress 似乎是"
+msgstr ""
+"為了更好地實現某些功能，MDx 需要知道你的 WordPress 的安裝方式。如果你不確定，"
+"請參考下方的檢測結果。 <br>MDx 檢測到你的 WordPress 似乎是"
+
+#: admin_fn.php:594
+msgid "网站公告"
+msgstr "網站公告"
+
+#: admin_fn.php:596
+msgid ""
+"在这里编辑网站公告。公告会显示在首页文章列表的顶部，留空则不会显示。支持 "
+"<code>HTML</code> 格式。"
+msgstr ""
+"在這裡編輯網站公告。公告會顯示在首頁文章列表的頂部，留空則不會顯示。支援 "
+"<code>HTML</code> 格式。"
+
+#: admin_fn.php:599
+msgid "使用手势打开抽屉菜单"
+msgstr "使用手勢打開抽屜選單"
+
+#: admin_fn.php:605
+msgid "开启后，可以通过从屏幕左侧向中心滑动的方式调出抽屉菜单。"
+msgstr "開啟後，可以通過從螢幕左側向中心滑動的方式調出抽屜選單。"
+
+#: admin_fn.php:610
+msgid "右侧小工具栏"
+msgstr "右側小工具欄"
+
+#: admin_fn.php:616
+msgid ""
+"开启后，每个页面右下角都会显示小工具栏浮动按钮。小工具栏默认隐藏，可以通过从"
+"屏幕右侧侧向中心滑动或按钮调出右侧小工具栏。"
+msgstr ""
+"開啟後，每個頁面右下角都會顯示小工具欄浮動按鈕。小工具欄默認隱藏，可以通過從"
+"螢幕右側側向中心滑動或按鈕調出右側小工具欄。"
+
+#: admin_fn.php:621
+msgid "Cookie 使用提示 (GDPR)"
+msgstr "Cookie 使用提示 (GDPR)"
+
+#: admin_fn.php:623
+msgid ""
+"Cookie 使用提示将会在用户第一次访问站点时显示，以向用户说明你站点的 Cookie 政"
+"策。如果你的站点有来自欧盟地区的访客，此选项可能会很有用。<br>在这里编辑 "
+"Cookie 使用提示，支持 <code>HTML</code>，留空则不会显示。<br>在 Safari 中，受"
+"到浏览器政策影响，提示隐藏时间最多为 7 天（不与网站交互）。要重置所有访客看到"
+"此提示的状态以向所有访客显示新的提示，请点击下方的重置按钮。"
+msgstr ""
+"Cookie 使用提示將會在用戶第一次訪問網站時顯示，以向用戶說明你網站的 Cookie 政"
+"策。 如果你的網站有來自歐盟地區的訪客，此選項可能會很有用。<br>在這裡編輯 "
+"Cookie 使用提示，支援 <code>HTML</code>，留空則不會顯示。<br>在 Safari 中，受"
+"到瀏覽器政策影響，提示隱藏時間最多為 7 天（不與網站交互）。 要重置所有訪客看"
+"到此提示的狀態以向所有訪客顯示新的提示，請點擊下方的重置按鈕。"
+
+#: admin_fn.php:624
+msgid "重置显示状态"
+msgstr "重置顯示狀態"
+
+#: admin_fn.php:624
+msgid "重置成功，保存设置后生效。"
+msgstr "重置成功，儲存設定後生效。"
+
+#: admin_fn.php:628
+msgid "使用 Preload 技术加速页面加载"
+msgstr "使用 Preload 技術加速頁面加載"
+
+#: admin_fn.php:634
+msgid "开启后，可使用 Preload 预加载技术加速页面加载。"
+msgstr "開啟後，可使用 Preload 預加載技術加速頁面加載。"
+
+#: admin_fn.php:639
+msgid "实时搜索"
+msgstr "實時搜索"
+
+#: admin_fn.php:645
+msgid ""
+"开启后，进行搜索时会随用户输入实时反馈搜索结果。<strong>需要 WordPress REST "
+"API 支持。此 API 默认开启，请确保你没有将其关闭。</strong>"
+msgstr ""
+"開啟後，進行搜索時會隨用戶輸入實時反饋搜索結果。 <strong>需要 WordPress REST "
+"API 支援。此 API 默認開啟，請確保你沒有將其關閉。 </strong>"
+
+#: admin_fn.php:650
+msgid "ICP 备案号"
+msgstr "ICP 備案號"
+
+#: admin_fn.php:652
+msgid ""
+"在这里填写的 ICP 备案号会显示在页脚并自动链接到 <i>中华人民共和国工业和信息化"
+"部</i> 网站，留空则不显示。如果你的服务器在中国大陆境内，这个选项可能会很有"
+"用。"
+msgstr ""
+"在這裡填寫的 ICP 備案號會顯示在頁腳並自動連結到 <i>中華人民共和國工業和信息化"
+"部</i> 網站，留空則不顯示。如果你的伺服器在中國大陸境內，這個選項可能會很有"
+"用。"
+
+#: admin_fn.php:655
+msgid "在前端载入 jQuery"
+msgstr "在前端加載 jQuery"
+
+#: admin_fn.php:661
+msgid ""
+"自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在"
+"升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临"
+"时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，"
+"请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 "
+"2.x 的信息，请参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
+"\">主题文档</a>。"
+msgstr ""
+"自 2.0.0 版本起，MDx 已不再依賴 jQuery 且不再在前端加載 jQuery 腳本。如果你在"
+"升級 MDx 後碰到頁面顯示不正常等問題，請嘗試打開此選項。<br><strong>這是一個臨"
+"時選項，將會在未來版本中被移除。如果你的前端頁面中有依賴 jQuery 的其他資源，"
+"請確保其不受 MDx 移除 jQuery 的影響。</strong><br>有關更多從 MDx 1.x 升級至 "
+"2.x 的信息，請參閱<a href=\"https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/"
+"\">主題文檔</a>。"
+
+#: admin_functions.php:3 admin_functions.php:11
+msgid "MDx 主题"
+msgstr "MDx 主題"
+
+#: admin_functions.php:6 admin_style.php:15
+msgid "MDx 主题 - 样式"
+msgstr "MDx 主題 - 樣式"
+
+#: admin_functions.php:6
+msgid "样式"
+msgstr "樣式"
+
+#: admin_functions.php:7
+msgid "功能"
+msgstr "功能"
+
+#: admin_functions.php:8 admin_functions.php:65
+msgid "MDx 主题 - 关于"
+msgstr "MDx 主題 - 關於"
+
+#: admin_functions.php:8
+msgid "关于"
+msgstr "關於"
+
+#: admin_functions.php:36
+msgid "通知："
+msgstr "通知："
+
+#: admin_functions.php:54
+msgid "新版本已经发布。去<a href=\"update-core.php\">更新</a>。"
+msgstr "新版本已經發佈。去<a href=\"update-core.php\">更新</a>。"
+
+#: admin_functions.php:61
+msgid ""
+"警告：你可能修改了主题底部的版权信息，请将其重新改正。MDx主题要求你保留版权信"
+"息。"
+msgstr ""
+"警告：你可能修改了主題底部的版權資訊，請將其重新改正。 MDx主題要求你保留版權"
+"資訊。"
+
+#: admin_functions.php:67
+msgid "感谢使用 MDx 主题"
+msgstr "感謝使用 MDx 主題"
+
+#: admin_functions.php:68
+msgid "我是 Axton Yao，这个主题由我开发。我的网站是"
+msgstr "我是 Axton Yao，這個主題由我開發。我的網站是"
+
+#: admin_functions.php:68 admin_functions.php:69 admin_functions.php:71
+msgid "。"
+msgstr "。"
+
+#: admin_functions.php:69
+msgid "对主题有任何疑问，建议先查阅 "
+msgstr "對主題有任何疑問，建議先查閱 "
+
+#: admin_functions.php:69
+msgid "主题文档"
+msgstr "主題文檔"
+
+#: admin_functions.php:70
+msgid "这个项目的 Github 地址是 "
+msgstr "這個項目的 Github 網址是 "
+
+#: admin_functions.php:70
+msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。"
+msgstr "。如果你有興趣，歡迎為這個項目做出貢獻。同時，求 Star。"
+
+#: admin_functions.php:71
+msgid ""
+"这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站"
+"上了解更多："
+msgstr ""
+"這個主題的誕生離不開 MDUI，這是一個優秀的前端框架項目，你可以在他們的官方網站"
+"上瞭解更多："
+
+#: admin_functions.php:73
+msgid "感谢以下译者帮助翻译 MDx："
+msgstr "感謝以下譯者幫助翻譯 MDx："
+
+#: admin_functions.php:80
+msgid "当前版本 v"
+msgstr "當前版本 v"
+
+#: admin_functions.php:81
+msgid "构建版本 v"
+msgstr "構建版本 v"
+
+#: admin_functions.php:82
+msgid "最新版本 v"
+msgstr "最新版本 v"
+
+#: admin_functions.php:84
+msgid "这款主题献给 Demi Zhou"
+msgstr "這款主題獻給 Demi Zhou"
+
+#: admin_functions.php:119
+msgid ""
+"MDx 主题现已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主题设置页"
+"面</a>对主题进行个性化定制。"
+msgstr ""
+"MDx 主題現已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主題設定頁"
+"面</a>對主題進行個性化定製。"
+
+#: admin_functions.php:124
+msgid ""
+"由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。"
+msgstr ""
+"由於你的 PHP 配置問題，MDx 未能成功獲取密鑰，但這不影響你正常使用 MDx 主題。"
+
+#: admin_functions.php:129
+msgid ""
+"你似乎没有启用 <code>mbstring</code> PHP 拓展，这会导致 MDx 无法正常运行。请"
+"参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/"
+"#mb_strimwidth\">文档</a>来修复此错误。"
+msgstr ""
+"你似乎沒有啟用 <code>mbstring</code> PHP 拓展，這會導致 MDx 無法正常運行。請"
+"參閱<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/"
+"#mb_strimwidth\">文檔</a>來修復此錯誤。"
+
+#: admin_style.php:141
+msgid "全局"
+msgstr "全局"
+
+#: admin_style.php:142 functions.php:493
+msgid "首页"
+msgstr "首頁"
+
+#: admin_style.php:145
+msgid "标题栏"
+msgstr "標題欄"
+
+#: admin_style.php:146 functions.php:41
+msgid "抽屉菜单"
+msgstr "抽屜選單"
+
+#: admin_style.php:147
+msgid "页脚"
+msgstr "頁腳"
+
+#: admin_style.php:148
+msgid "Touch Bar 图标"
+msgstr "Touch Bar 圖標"
+
+#: admin_style.php:159
+msgid "主题颜色"
+msgstr "主題顏色"
+
+#: admin_style.php:184
+msgid "主题颜色会影响所有页面的主色。"
+msgstr "主題顏色會影響所有頁面的主色。"
+
+#: admin_style.php:188
+msgid "强调颜色"
+msgstr "強調顏色"
+
+#: admin_style.php:209
+msgid "强调颜色会影响所有页面的强调色。"
+msgstr "強調顏色會影響所有頁面的強調色。"
+
+#: admin_style.php:213
+msgid "黑暗主题"
+msgstr "黑暗主題"
+
+#: admin_style.php:217
+msgid "禁用"
+msgstr "禁用"
+
+#: admin_style.php:218
+msgid "启用"
+msgstr "啟用"
+
+#: admin_style.php:219
+msgid "启用 (OLED)"
+msgstr "啟用 (OLED)"
+
+#: admin_style.php:221
+msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
+msgstr "如果啟用，頁面將忽略夜間模式相關設定並強制始終以黑暗主題顯示。"
+
+#: admin_style.php:225
+msgid "Material Design 2"
+msgstr "Material Design 2"
+
+#: admin_style.php:231
+msgid "开启后，主题将会使用 Material Design 2 风格。"
+msgstr "開啟後，主題將會使用 Material Design 2 風格。"
+
+#: admin_style.php:236
+msgid "Material Design 2 字体"
+msgstr "Material Design 2 字體"
+
+#: admin_style.php:242
+msgid ""
+"开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该"
+"字体仅包含拉丁字符。</strong>"
+msgstr ""
+"開啟後，部分標題文字將會使用 Material Design 2 風格字體顯示。 <strong>請注意"
+"該字體僅包含拉丁字符。 </strong>"
+
+#: admin_style.php:247
+msgid "移动 Chrome 标题栏颜色"
+msgstr "移動 Chrome 標題欄顏色"
+
+#: admin_style.php:253
+msgid "开启后，移动 Chrome 访问时，其标题栏的背景颜色会随主题颜色变化。"
+msgstr "開啟後，移動 Chrome 訪問時，其標題欄的背景顏色會隨主題顏色變化。"
+
+#: admin_style.php:258
+msgid "文章无特色图像时显示默认图像"
+msgstr "文章無特色圖像時顯示默認圖像"
+
+#: admin_style.php:264
+msgid ""
+"开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显"
+"示。"
+msgstr ""
+"開啟後，文章無特色圖像時將顯示默認圖像，影響文章列表和文章頁。若關閉則不顯"
+"示。"
+
+#: admin_style.php:272
+msgid "首页样式"
+msgstr "首頁樣式"
+
+#: admin_style.php:276
+msgid "默认"
+msgstr "默認"
+
+#: admin_style.php:277 admin_style.php:570
+msgid "简单"
+msgstr "簡單"
+
+#: admin_style.php:278
+msgid "两栏"
+msgstr "兩欄"
+
+#: admin_style.php:279 admin_style.php:344 admin_style.php:427
+#: admin_style.php:571
+msgid "现代"
+msgstr "現代"
+
+#: admin_style.php:280 admin_style.php:345 admin_style.php:381
+#: admin_style.php:426 functions.php:783
+msgid "朴素"
+msgstr "樸素"
+
+#: admin_style.php:286
+msgid "首页图片"
+msgstr "首頁圖片"
+
+#: admin_style.php:289
+msgid "使用必应美图"
+msgstr "使用必應美圖"
+
+#: admin_style.php:290
+msgid ""
+"你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简"
+"单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，"
+"你都需要设定一张首页图片。<br>如使用必应美图，可在括号内指定图片的日期。0为今"
+"日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。"
+msgstr ""
+"你可以上傳或指定你的媒體庫中的圖片作為首頁上方顯示的圖片。 <strong>注意，“簡"
+"單”和“朴素”首頁樣式不會顯示首頁圖片。</strong><br>無論你是否使用首頁幻燈片，"
+"你都需要設定一張首頁圖片。<br>如使用必應美圖，可在括號內指定圖片的日期。 0為"
+"今日圖片，-1為明日準備使用的圖片，1為昨日的圖片，以此類推，最多到前16日。"
+
+#: admin_style.php:295
+msgid "增加首页图片文字对比度"
+msgstr "增加首頁圖片文字對比度"
+
+#: admin_style.php:301
+msgid ""
+"在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不"
+"生效。"
+msgstr ""
+"在首頁圖片中含大面積白色導致首頁格言無法看清時啟用此選項。在部分首頁樣式下不"
+"生效。"
+
+#: admin_style.php:306
+msgid "首页头部展示内容"
+msgstr "首頁頭部展示內容"
+
+#: admin_style.php:310
+msgid "格言"
+msgstr "格言"
+
+#: admin_style.php:311
+msgid "幻灯片"
+msgstr "幻燈片"
+
+#: admin_style.php:312
+msgid "指定首页头部展示的内容。在下方进行详细设置。"
+msgstr "指定首頁頭部展示的內容。在下方進行詳細設定。"
+
+#: admin_style.php:317
+msgid "首页格言"
+msgstr "首頁格言"
+
+#: admin_style.php:320
+msgid "这句话会展示在首页。"
+msgstr "這句話會展示在首頁。"
+
+#: admin_style.php:324
+msgid "首页格言字体大小"
+msgstr "首頁格言字體大小"
+
+#: admin_style.php:335
+msgid "字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。"
+msgstr "字體大小由 H1 至 H6 依次變小。在部分首頁樣式中無效。"
+
+#: admin_style.php:339
+msgid "首页幻灯片样式"
+msgstr "首頁幻燈片樣式"
+
+#: admin_style.php:343
+msgid "居中"
+msgstr "居中"
+
+#: admin_style.php:350
+msgid "首页幻灯片文章数量"
+msgstr "首頁幻燈片文章數量"
+
+#: admin_style.php:352
+msgid "在此设定首页幻灯片文章篇数。请输入整数。"
+msgstr "在此設定首頁幻燈片文章篇數。請輸入整數。"
+
+#: admin_style.php:355
+msgid "首页幻灯片文章获取方式"
+msgstr "首頁幻燈片文章獲取方式"
+
+#: admin_style.php:361
+msgid ""
+"在此设定首页幻灯片文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，将会"
+"显示首页图片，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
+msgstr ""
+"在此設定首頁幻燈片文章的獲取方式。<br>若選擇置頂文章，當沒有置頂文章時，將會"
+"顯示首頁圖片，同時文章列表將保持原始順序而不會被置頂文章打亂。"
+
+#: admin_style.php:366
+msgid "首页幻灯片文章分类名"
+msgstr "首頁幻燈片文章分類名"
+
+#: admin_style.php:368
+msgid "在此设定首页幻灯片文章的分类名。当分类不存在时，将显示最新文章。"
+msgstr "在此設定首頁幻燈片文章的分類名。當分類不存在時，將顯示最新文章。"
+
+#: admin_style.php:374
+msgid "文章页样式"
+msgstr "文章頁樣式"
+
+#: admin_style.php:378 functions.php:780
+msgid "标准"
+msgstr "標準"
+
+#: admin_style.php:379 admin_style.php:422 functions.php:781
+msgid "简洁"
+msgstr "簡潔"
+
+#: admin_style.php:380 functions.php:782
+msgid "通透"
+msgstr "通透"
+
+#: admin_style.php:384
+msgid "同时影响文章页、单独页面的样式。"
+msgstr "同時影響文章頁、單獨頁面的樣式。"
+
+#: admin_style.php:388
+msgid "文章时间显示位置"
+msgstr "文章時間顯示位置"
+
+#: admin_style.php:392
+msgid "标题旁"
+msgstr "標題旁"
+
+#: admin_style.php:393
+msgid "文章末尾"
+msgstr "文章末尾"
+
+#: admin_style.php:394
+msgid "不显示"
+msgstr "不顯示"
+
+#: admin_style.php:399
+msgid "文章导航栏配色方案"
+msgstr "文章導航欄配色方案"
+
+#: admin_style.php:403
+msgid "主题色"
+msgstr "主題色"
+
+#: admin_style.php:404
+msgid "低饱和度"
+msgstr "低飽和度"
+
+#: admin_style.php:406
+msgid "影响文章末尾文章导航栏区域的配色。"
+msgstr "影響文章末尾文章導航欄區域的配色。"
+
+#: admin_style.php:410 functions.php:801
+msgid "文末信息"
+msgstr "文末信息"
+
+#: admin_style.php:412
+msgid ""
+"在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 "
+"<code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的"
+"文章标题，<code>--PostURL--</code> 会被替换为链接到当前文章的当前文章 URL（大"
+"小写敏感）。"
+msgstr ""
+"在這裡編輯文末信息。文末信息會顯示在每篇文章的底部，留空則不會顯示。支援 "
+"<code>HTML</code> 格式。 <code>--PostLink--</code> 會被替換為連結到當前文章的"
+"文章標題，<code>--PostURL--</code> 會被替換為連結到當前文章的當前文章URL（大"
+"小寫敏感）。"
+
+#: admin_style.php:418
+msgid "文章列表样式"
+msgstr "文章列表樣式"
+
+#: admin_style.php:423
+msgid "列表"
+msgstr "列表"
+
+#: admin_style.php:424
+msgid "干净"
+msgstr "乾淨"
+
+#: admin_style.php:425
+msgid "网格"
+msgstr "網格"
+
+#: admin_style.php:430
+msgid "同时影响首页、搜索结果页、归档页的文章列表样式。"
+msgstr "同時影響首頁、搜索結果頁、歸檔頁的文章列表樣式。"
+
+#: admin_style.php:434
+msgid "文章列表宽度"
+msgstr "文章列表寬度"
+
+#: admin_style.php:438
+msgid "正常"
+msgstr "正常"
+
+#: admin_style.php:439
+msgid "较宽"
+msgstr "較寬"
+
+#: admin_style.php:441
+msgid "使用“较宽”，文章列表将会以多列瀑布流显示。"
+msgstr "使用“較寬”，文章列表將會以多列瀑布流顯示。"
+
+#: admin_style.php:445
+msgid "文章列表显示文章摘要"
+msgstr "文章列表顯示文章摘要"
+
+#: admin_style.php:451
+msgid ""
+"开启后，文章列表可显示每篇文章的摘要，影响首页和归档页。若关闭则不显示。"
+msgstr ""
+"開啟後，文章列表可顯示每篇文章的摘要，影響首頁和歸檔頁。若關閉則不顯示。"
+
+#: admin_style.php:456
+msgid "文章列表图片高度"
+msgstr "文章列表圖片高度"
+
+#: admin_style.php:460
+msgid "自适应"
+msgstr "自適應"
+
+#: admin_style.php:461
+msgid "固定宽高比"
+msgstr "固定寬高比"
+
+#: admin_style.php:463
+msgid ""
+"选择 <code>自适应</code>，文章特色图像可以完全展示。<br>选择 <code>固定宽高比"
+"</code>，文章特色图像可能会只显示部分以保持宽高比，但图像不会被拉伸，适合于图"
+"像过宽/过高的情况。"
+msgstr ""
+"選擇 <code>自適應</code>，文章特色圖像可以完全展示。 <br>選擇 <code>固定寬高"
+"比</code>，文章特色圖像可能會只顯示部分以保持寬高比，但圖像不會被拉伸，適合於"
+"圖像過寬/過高的情況。"
+
+#: admin_style.php:470
+msgid "自动隐藏标题栏"
+msgstr "自動隱藏標題欄"
+
+#: admin_style.php:476
+msgid "开启后，页面向下滚动时标题栏会向上隐藏，向上滚动时会出现。"
+msgstr "開啟後，頁面向下滾動時標題欄會向上隱藏，向上滾動時會出現。"
+
+#: admin_style.php:481
+msgid "标题栏显示内容"
+msgstr "標題欄顯示內容"
+
+#: admin_style.php:485
+msgid "博客名称"
+msgstr "博客名稱"
+
+#: admin_style.php:486
+msgid "自定义 Logo"
+msgstr "自訂 Logo"
+
+#: admin_style.php:487
+msgid "自定义名称"
+msgstr "自訂名稱"
+
+#: admin_style.php:492
+msgid "标题栏 Logo"
+msgstr "標題欄 Logo"
+
+#: admin_style.php:496
+msgid "选择一张图片作为网站 Logo。"
+msgstr "選擇一張圖片作為網站 Logo。"
+
+#: admin_style.php:501
+msgid "标题栏自定义名称"
+msgstr "標題欄自訂名稱"
+
+#: admin_style.php:507
+msgid "点击标题栏返回顶部"
+msgstr "點擊標題欄返回頂部"
+
+#: admin_style.php:513
+msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。"
+msgstr "開啟後，點擊頂部欄可以返回頁面頂部。此設定影響所有頁面。"
+
+#: admin_style.php:521
+msgid "抽屉菜单顶部展示个人信息"
+msgstr "抽屜選單頂部展示個人信息"
+
+#: admin_style.php:527
+msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
+msgstr "開啟後，抽屜頂部會顯示頭像及名稱，請在下方設定。"
+
+#: admin_style.php:532
+msgid "抽屉菜单顶部图片"
+msgstr "抽屜選單頂部圖片"
+
+#: admin_style.php:540
+msgid "抽屉菜单信息头像"
+msgstr "抽屜選單信息頭像"
+
+#: admin_style.php:544
+msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
+msgstr "選擇一張圖片作為抽屜頂部顯示的頭像。留空則不顯示。"
+
+#: admin_style.php:549
+msgid "抽屉菜单信息名称"
+msgstr "抽屜選單信息名稱"
+
+#: admin_style.php:555
+msgid "抽屉菜单详细信息"
+msgstr "抽屜選單詳細信息"
+
+#: admin_style.php:558
+msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
+msgstr "這裡的內容會顯示在抽屜選單信息名稱的下方。"
+
+#: admin_style.php:565
+msgid "页脚样式"
+msgstr "頁腳樣式"
+
+#: admin_style.php:569
+msgid "传统"
+msgstr "傳統"
+
+#: admin_style.php:573
+msgid ""
+"在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</"
+"strong>"
+msgstr ""
+"在此設定頁腳樣式。 <strong>如果選擇“簡單”樣式，那麼頁腳格言將不會顯示。 </"
+"strong>"
+
+#: admin_style.php:577
+msgid "页脚格言"
+msgstr "頁腳格言"
+
+#: admin_style.php:579
+msgid "使用一言 API（常规）"
+msgstr "使用一言 API（常規）"
+
+#: admin_style.php:580
+msgid "使用一言 API（古诗词）"
+msgstr "使用一言 API（古詩詞）"
+
+#: admin_style.php:581
+msgid "使用一言 API（自定义）"
+msgstr "使用一言 API（自訂）"
+
+#: admin_style.php:582
+msgid ""
+"这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次"
+"页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。"
+msgstr ""
+"這句話會顯示在每個頁面的頁腳，如果不希望顯示，請留空。若調用一言 API，則每次"
+"頁面刷新後都會顯示不同的格言。此 API 來自第三方，請注意安全風險。"
+
+#: admin_style.php:583
+msgid ""
+"如使用自定义 API，你需要在括号内填写 API URL 并确保 API 返回 <code>{\"text\":"
+"\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/custom_api/\" target=\"_blank\">详细信息</a></code>"
+msgstr ""
+"如使用自訂 API，你需要在括號內填寫 API URL 並確保 API 返回 <code>{\"text\":"
+"\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
+"config/custom_api/\" target=\"_blank\">詳細信息</a></code>"
+
+#: admin_style.php:586
+msgid "页脚内容"
+msgstr "頁腳內容"
+
+#: admin_style.php:587
+msgid "社交网站图标编辑器"
+msgstr "社交網站圖標編輯器"
+
+#: admin_style.php:588
+msgid "在这里编辑页脚内容。支持 <code>HTML</code> 格式。"
+msgstr "在這裡編輯頁腳內容。支援 <code>HTML</code> 格式。"
+
+#: admin_style.php:594
+msgid "Safari Touch Bar 图标支持"
+msgstr "Safari Touch Bar 圖標支援"
+
+#: admin_style.php:601
+msgid ""
+"开启后会启用对 Safari Touch Bar 图标的支持，请在下方完成相关设置。<a href="
+"\"https://developer.apple.com/library/content/documentation/"
+"AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
+"target=\"_blank\">详细了解</a>"
+msgstr ""
+"開啟後會啟用對 Safari Touch Bar 圖標的支援，請在下方完成相關設定。 <a href="
+"\"https://developer.apple.com/library/content/documentation/"
+"AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html\" "
+"target=\"_blank\">詳細瞭解</a>"
+
+#: admin_style.php:605
+msgid "Touch Bar 图标地址"
+msgstr "Touch Bar 圖標網址"
+
+#: admin_style.php:607
+msgid ""
+"请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为\"0 0 "
+"16 16\"。"
+msgstr ""
+"請設定 Touch Bar 圖標網址。格式為 SVG，必須為單層，viewbox 屬性必須為\"0 0 "
+"16 16\"。"
+
+#: admin_style.php:610
+msgid "Touch Bar 图标背景颜色"
+msgstr "Touch Bar 圖標背景顏色"
+
+#: admin_style.php:612
+msgid "使用当前主题颜色"
+msgstr "使用當前主題顏色"
+
+#: admin_style.php:613
+msgid "请设置 Touch Bar 图标背景颜色。16 进制颜色或 RGB 颜色。"
+msgstr "請設定 Touch Bar 圖標背景顏色。16 進位顏色或 RGB 顏色。"
+
+#: admin_style.php:619
+msgid "登录页 Material Design"
+msgstr "登錄頁 Material Design"
+
+#: admin_style.php:625
+msgid "将 Material Design 样式应用到登录页。可能与部分插件样式不兼容。"
+msgstr "將 Material Design 樣式應用到登錄頁。可能與部分外掛樣式不兼容。"
+
+#: admin_style.php:630
+msgid "启用友链 Gravatar 支持"
+msgstr "啟用友鏈 Gravatar 支援"
+
+#: admin_style.php:636
+msgid ""
+"开启后，将尝试从备注栏中获取邮箱并将与邮箱对应的 Gravatar 头像作为友情链接图"
+"像。关闭则只使用图片链接。"
+msgstr ""
+"開啟後，將嘗試從備註欄中獲取郵箱並將與郵箱對應的 Gravatar 頭像作為友情連結圖"
+"像。關閉則只使用圖片連結。"
+
+#: admin_style.php:641
+msgid "友情链接随机顺序"
+msgstr "友情連結隨機順序"
+
+#: admin_style.php:647
+msgid "开启后，友情链接将以随机顺序显示。关闭则使用字典序。"
+msgstr "開啟後，友情連結將以隨機順序顯示。關閉則使用字典序。"
+
+#: admin_style.php:652
+msgid "网页标题计算方式"
+msgstr "網頁標題計算方式"
+
+#: admin_style.php:656
+msgid "WordPress 默认"
+msgstr "WordPress 默認"
+
+#: admin_style.php:657
+msgid "MDx 优化"
+msgstr "MDx 優化"
+
+#: admin_style.php:659
+msgid ""
+"选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容"
+"大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此"
+"方式在部分情况下更合适，但不兼容 SEO 插件。"
+msgstr ""
+"選擇 <code>WordPress 默認</code>，WordPress 會接管網頁標題的內容，此方式兼容"
+"大部分 SEO 外掛。 <br>選擇 <code>MDx 優化</code>，MDx 會接管網頁標題的內容，"
+"此方式在部分情況下更合適，但與 SEO 外掛不兼容。"
+
+#: admin_style.php:663
+msgid "多彩标签云"
+msgstr "多彩標籤雲"
+
+#: admin_style.php:669
+msgid "开启后，标签云页面输出的标签会带有随机颜色，反之为同一颜色。"
+msgstr "開啟後，標籤雲頁面輸出的標籤會帶有隨機顏色，反之為同一顏色。"
+
+#: admin_style.php:677
+msgid ""
+"在这里获取受 MDx 样式支持的社交网站图标链接。填写完成之后，你可以将获取到的代"
+"码粘贴到包括页脚内容在内的任何地方或是自定义代码内容。未填写的项目将被忽略。"
+msgstr ""
+"在這裡獲取受 MDx 樣式支援的社交網站圖標連結。填寫完成之後，你可以將獲取到的代"
+"碼粘貼到包括頁腳內容在內的任何地方或是自訂代碼內容。未填寫的項目將被忽略。"
+
+#: admin_style.php:680 admin_style.php:681
+msgid "QQ"
+msgstr "QQ"
+
+#: admin_style.php:681
+msgid "QQ 号"
+msgstr "QQ 號"
+
+#: admin_style.php:684 admin_style.php:685
+msgid "微信"
+msgstr "微信"
+
+#: admin_style.php:685
+msgid "微信二维码图片链接"
+msgstr "微信 QR Code 圖片連結"
+
+#: admin_style.php:688 admin_style.php:689
+msgid "微博"
+msgstr "微博"
+
+#: admin_style.php:689
+msgid "微博链接"
+msgstr "微博連結"
+
+#: admin_style.php:692 admin_style.php:693
+msgid "知乎"
+msgstr "知乎"
+
+#: admin_style.php:693
+msgid "知乎链接"
+msgstr "知乎連結"
+
+#: admin_style.php:696 admin_style.php:697
+msgid "哔哩哔哩"
+msgstr "嗶哩嗶哩"
+
+#: admin_style.php:697
+msgid "哔哩哔哩链接"
+msgstr "嗶哩嗶哩連結"
+
+#: admin_style.php:700 admin_style.php:701
+msgid "网易云音乐"
+msgstr "網易云音樂"
+
+#: admin_style.php:701
+msgid "网易云音乐链接"
+msgstr "網易云音樂連結"
+
+#: admin_style.php:704 admin_style.php:705
+msgid "酷安"
+msgstr "酷安"
+
+#: admin_style.php:705
+msgid "酷安链接"
+msgstr "酷安連結"
+
+#: admin_style.php:708 admin_style.php:709
+msgid "豆瓣"
+msgstr "豆瓣"
+
+#: admin_style.php:709
+msgid "豆瓣链接"
+msgstr "豆瓣連結"
+
+#: admin_style.php:712 admin_style.php:713
+msgid "GitHub"
+msgstr "GitHub"
+
+#: admin_style.php:713
+msgid "GitHub 用户名"
+msgstr "GitHub 用戶名"
+
+#: admin_style.php:716 admin_style.php:717
+msgid "Facebook"
+msgstr "Facebook"
+
+#: admin_style.php:717
+msgid "Fackbook 链接"
+msgstr "Fackbook 連結"
+
+#: admin_style.php:720 admin_style.php:721
+msgid "Twitter"
+msgstr "Twitter"
+
+#: admin_style.php:721
+msgid "Twitter 用户名"
+msgstr "Twitter 用戶名"
+
+#: admin_style.php:724 admin_style.php:725
+msgid "Telegram"
+msgstr "Telegram"
+
+#: admin_style.php:725
+msgid "Telegram 用户名"
+msgstr "Telegram 用戶名"
+
+#: admin_style.php:728 admin_style.php:729
+msgid "Steam"
+msgstr "Steam"
+
+#: admin_style.php:729
+msgid "Steam 用户名"
+msgstr "Steam 用戶名"
+
+#: admin_style.php:732 admin_style.php:733
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: admin_style.php:733
+msgid "WhatsApp 链接"
+msgstr "WhatsApp 連結"
+
+#: admin_style.php:736 admin_style.php:737
+msgid "Instagram"
+msgstr "Instagram"
+
+#: admin_style.php:737
+msgid "Instagram 链接"
+msgstr "Instagram 連結"
+
+#: admin_style.php:740 admin_style.php:741
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: admin_style.php:741
+msgid "Dribbble 链接"
+msgstr "Dribbble 連結"
+
+#: admin_style.php:744 admin_style.php:745
+msgid "Behance"
+msgstr "Behance"
+
+#: admin_style.php:745
+msgid "Behance 链接"
+msgstr "Behance 連結"
+
+#: admin_style.php:748 admin_style.php:749
+msgid "电话"
+msgstr "電話"
+
+#: admin_style.php:749
+msgid "电话号码"
+msgstr "電話號碼"
+
+#: admin_style.php:752 admin_style.php:753 comments.php:32
+msgid "邮箱"
+msgstr "郵箱"
+
+#: admin_style.php:753
+msgid "邮箱地址"
+msgstr "郵箱地址"
+
+#: admin_style.php:756 admin_style.php:757
+msgid "个人主页"
+msgstr "個人主頁"
+
+#: admin_style.php:757
+msgid "个人主页地址"
+msgstr "個人主頁網址"
+
+#: admin_style.php:760 admin_style.php:761
+msgid "RSS"
+msgstr "RSS"
+
+#: admin_style.php:761
+msgid "RSS 地址"
+msgstr "RSS 網址"
+
+#: admin_style.php:764
+msgid "生成结果"
+msgstr "生成結果"
+
+#: ajax-comment/main.php:38
+msgid "刚刚"
+msgstr "剛剛"
+
+#: archive.php:19 archive.php:30 author.php:19 author.php:30 category.php:19
+#: category.php:30 index.php:46 index.php:57 page-links.php:31
+#: page-links.php:42 page-postlike.php:33 page-postlike.php:44 page-tags.php:31
+#: page-tags.php:42 page-timeline.php:31 page-timeline.php:42 page.php:25
+#: page.php:36 search.php:19 search.php:30 single.php:41 single.php:52
+msgid "切换日间/夜间模式"
+msgstr "切換日間/夜間模式"
+
+#: archive.php:45 category.php:45
+msgid "文章归档"
+msgstr "文章歸檔"
+
+#: archive.php:79 author.php:79 category.php:78 index.php:272 search.php:80
+msgid "加载更多"
+msgstr "加載更多"
+
+#: author.php:45
+msgid "作者归档"
+msgstr "作者歸檔"
+
+#: comments.php:9
+msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论。"
+msgstr "你需要先 <a href=\"%s\">登錄</a> 才能發表評論。"
+
+#: comments.php:24 includes/update.php:4 includes/update.php:23
+#: includes/update.php:43 includes/update.php:65 includes/update.php:88
+#: includes/update.php:112 includes/update.php:138 includes/update.php:173
+#: includes/update.php:211 includes/update.php:255 includes/update.php:307
+#: includes/update.php:361 includes/update.php:417 includes/update.php:479
+#: includes/update.php:541 includes/update.php:610 includes/update.php:679
+#: includes/update.php:751 includes/update.php:828 includes/update.php:905
+#: includes/update.php:983
+msgid "发射"
+msgstr "發射"
+
+#: comments.php:27
+msgid "取消回复"
+msgstr "取消回复"
+
+#: comments.php:28
+msgid "说点什么..."
+msgstr "說點什麼..."
+
+#: comments.php:30
+msgid "昵称"
+msgstr "暱稱"
+
+#: comments.php:30
+msgid "昵称不能为空"
+msgstr "暱稱不能為空"
+
+#: comments.php:32
+msgid "请按格式填写邮箱"
+msgstr "請按格式填寫郵箱"
+
+#: comments.php:34
+msgid "网站（如果有）http(s)://"
+msgstr "網站（如果有）http(s)://"
+
+#: footer.php:4
+msgid "同意"
+msgstr "同意"
+
+#: footer.php:29
+msgid "没有激活的小工具"
+msgstr "沒有激活的小工具"
+
+#: footer.php:37
+msgid "搜索功能暂时不可用。"
+msgstr "搜索功能暫時不可用。"
+
+#: footer.php:38
+msgid "评论功能暂时不可用。"
+msgstr "評論功能暫時不可用。"
+
+#: footer.php:39
+msgid "仅显示匹配的前10条记录，要查看更多请按下回车前往搜索结果页面"
+msgstr "僅顯示匹配的前10條記錄，要查看更多請按下回車前往搜索結果頁面"
+
+#: footer.php:40
+msgid "无法连接到实时搜索服务"
+msgstr "無法連接到實時搜索服務"
+
+#: footer.php:46
+msgid "<strong>加载失败：</strong> 未知错误。"
+msgstr "<strong>加載失敗：</strong> 未知錯誤。"
+
+#: footer.php:47
+msgid "检测到减弱动画模式，已为你减弱动画效果"
+msgstr "檢測到減弱動畫模式，已為你減弱動畫效果"
+
+#: footer.php:48
+msgid "撤销"
+msgstr "撤銷"
+
+#: footer.php:49
+msgid "减弱动画模式关闭，已启用完整动画效果"
+msgstr "減弱動畫模式關閉，已啟用完整動畫效果"
+
+#: footer.php:78
+msgid "搜索结果："
+msgstr "搜索結果："
+
+#: footer.php:86
+msgid "作者归档："
+msgstr "作者歸檔："
+
+#: footer.php:94
+msgid "文章归档："
+msgstr "文章歸檔："
+
+#: footer.php:131
+msgid "已自动定位到你此前阅读处"
+msgstr "已自動定位到你此前閱讀處"
+
+#: footer.php:132
+msgid "从头阅读"
+msgstr "從頭閱讀"
+
+#: footer.php:139
+msgid "更多选项"
+msgstr "更多選項"
+
+#: footer.php:140
+msgid "加载更多评论"
+msgstr "加載更多評論"
+
+#: footer.php:141
+msgid "没有更多了"
+msgstr "沒有更多了"
+
+#: footer.php:142
+msgid "长按/右键保存图片"
+msgstr "長按/右鍵儲存圖片"
+
+#: footer.php:144
+msgid "使用微信扫描后在微信内分享"
+msgstr "使用微信掃描後在微信內分享"
+
+#: footer.php:145
+msgid "点按右上角按钮即可分享"
+msgstr "點按右上角按鈕即可分享"
+
+#: footer.php:146
+msgid "密码"
+msgstr "密碼"
+
+#: footer.php:147
+msgid "在 GitHub 上查阅"
+msgstr "在 GitHub 上查閱"
+
+#: footer.php:148
+msgid "获取 GitHub 仓库信息时出现问题<br>尝试直接访问"
+msgstr "獲取 GitHub 倉庫信息時出現問題<br>嘗試直接訪問"
+
+#: footer.php:149
+msgid "这个页面没有摘要。"
+msgstr "這個頁面沒有摘要。"
+
+#: footer.php:150
+msgid "前往页面"
+msgstr "前往頁面"
+
+#: footer.php:151
+msgid "获取页面信息时出现问题<br>尝试直接访问"
+msgstr "獲取頁面信息時出現問題<br>嘗試直接訪問"
+
+#: footer.php:152
+msgid "菜单"
+msgstr "選單"
+
+#: functions.php:44
+msgid "右侧菜单"
+msgstr "右側選單"
+
+#: functions.php:46
+msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
+msgstr "在每個頁面的右側，默認隱藏，可以通過滑動或按鈕調出。"
+
+#: functions.php:196
+msgid "发送成功。"
+msgstr "發送成功。"
+
+#: functions.php:197
+msgid "<strong>错误：</strong> 未知错误。"
+msgstr "<strong>錯誤：</strong> 未知錯誤。"
+
+#: functions.php:302
+msgid "博主"
+msgstr "博主"
+
+#: functions.php:305
+msgid "前"
+msgstr "前"
+
+#: functions.php:305
+msgid "回复"
+msgstr "回复"
+
+#: functions.php:382
+msgid "添加 <code>nofollow</code> 属性"
+msgstr "添加 <code>nofollow</code> 屬性"
+
+#: functions.php:549
+msgid "搜索结果： %s"
+msgstr "搜索結果： %s"
+
+#: functions.php:553
+msgid "标签存档 %s"
+msgstr "標籤存檔 %s"
+
+#: functions.php:559
+msgid "作者存档 %s"
+msgstr "作者存檔 %s"
+
+#: functions.php:563
+msgid "什么也没找到"
+msgstr "什麼也沒找到"
+
+#: functions.php:568
+msgid "( 第 %s 页 )"
+msgstr "( 第 %s 頁 )"
+
+#: functions.php:575
+msgid "被折叠内容"
+msgstr "被摺疊內容"
+
+#: functions.php:595
+msgid "警告"
+msgstr "警告"
+
+#: functions.php:719
+msgid ""
+"\n"
+"        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
+"随全局设置请留空</p>"
+msgstr ""
+"\n"
+"        <p class=\"description\">在這里為這篇文章設定單獨的文末信息。若希望跟"
+"隨全局設定請留空</p>"
+
+#: functions.php:726
+msgid "文章主题颜色"
+msgstr "文章主題顏色"
+
+#: functions.php:729 functions.php:756 functions.php:779
+msgid "跟随全局设置"
+msgstr "跟隨全局設定"
+
+#: functions.php:751
+msgid "在这里为这篇文章设置单独的主题颜色。"
+msgstr "在這里為這篇文章設定單獨的主題顏色。"
+
+#: functions.php:753
+msgid "文章强调色"
+msgstr "文章強調色"
+
+#: functions.php:774
+msgid "在这里为这篇文章设置单独的强调色。"
+msgstr "在這里為這篇文章設定單獨的強調色。"
+
+#: functions.php:776
+msgid "文章样式"
+msgstr "文章樣式"
+
+#: functions.php:785
+msgid "在这里为这篇文章设置单独的样式。"
+msgstr "在這里為這篇文章設定單獨的樣式。"
+
+#: functions.php:787
+msgid "文章展示模式"
+msgstr "文章展示模式"
+
+#: functions.php:790
+msgid "正常显示"
+msgstr "正常顯示"
+
+#: functions.php:791
+msgid "404模式"
+msgstr "404模式"
+
+#: functions.php:792
+msgid "隐藏模式"
+msgstr "隱藏模式"
+
+#: functions.php:793
+msgid "对游客隐藏模式"
+msgstr "對遊客隱藏模式"
+
+#: functions.php:795
+msgid ""
+"在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页"
+"面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显"
+"示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用"
+"前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 "
+"HTTP 404 头。"
+msgstr ""
+"在這里為這篇文章設定展示模式。 <br>404 模式：當訪客進入此文章時，會顯示404 頁"
+"面<br>隱藏模式：當訪客進入此文章時，會顯示“根據相關法律法規，此文章暫時不予顯"
+"示”<br>對遊客隱藏模式：若訪問者未登錄，則顯示“登錄後才能查看此文章”<br>若使用"
+"前兩種模式，這篇文章將可在首頁找到或是被搜索到。但無論何種模式都不會發送 "
+"HTTP 404 頭。"
+
+#: functions.php:800
+msgid "文章设置"
+msgstr "文章設定"
+
+#: header.php:43 header.php:50 header.php:55 template-parts/content-3.php:5
+msgid "这篇文章受密码保护，输入密码后才能查看。"
+msgstr "這篇文章受密碼保護，輸入密碼後才能查看。"
+
+#: includes/admin_init_fn.php:19 includes/update.php:694
+#: includes/update.php:771 includes/update.php:848 includes/update.php:926
+msgid "去围观"
+msgstr "去圍觀"
+
+#: includes/admin_init_fn.php:43 includes/update.php:436
+#: includes/update.php:500 includes/update.php:567 includes/update.php:636
+#: includes/update.php:708 includes/update.php:785 includes/update.php:862
+#: includes/update.php:940
+msgid "最新文章"
+msgstr "最新文章"
+
+#: includes/admin_init_fn.php:49
+msgid "发送"
+msgstr "發送"
+
+#: includes/author_card.php:1
+msgid "访问作者网站"
+msgstr "訪問作者網站"
+
+#: includes/author_card.php:1
+msgid "文章作者"
+msgstr "文章作者"
+
+#: includes/same_posts.php:25 includes/same_posts.php:49 index.php:130
+#: index.php:227
+msgid "前往阅读"
+msgstr "前往閱讀"
+
+#: includes/searchform.php:5 index.php:183 index.php:189 searchform.php:3
+msgid "搜索什么..."
+msgstr "搜索什麼..."
+
+#: includes/share_cn.php:2
+msgid "分享到 微博"
+msgstr "分享到 微博"
+
+#: includes/share_cn.php:5
+msgid "分享到 微信"
+msgstr "分享到 微信"
+
+#: includes/share_cn.php:8 index.php:153 template-parts/content-1.php:5
+#: template-parts/content-1.php:55 template-parts/content-2.php:4
+#: template-parts/content-3.php:62 template-parts/content-5.php:15
+#: template-parts/content-first-1.php:5 template-parts/content-first-1.php:55
+#: template-parts/content-first-2.php:4 template-parts/content-first-3.php:5
+#: template-parts/content-first-3.php:62 template-parts/content-first-5.php:16
+msgid "这篇文章受密码保护，输入密码才能看哦"
+msgstr "這篇文章受密碼保護，輸入密碼才能看哦"
+
+#: includes/share_cn.php:8
+msgid "分享到 QQ"
+msgstr "分享到 QQ"
+
+#: includes/share_cn.php:11
+msgid "分享到 QQ 空间"
+msgstr "分享到 QQ 空間"
+
+#: includes/share_oversea.php:2
+msgid "分享到 Telegram"
+msgstr "分享到 Telegram"
+
+#: includes/share_oversea.php:5
+msgid "分享到 Facebook"
+msgstr "分享到 Facebook"
+
+#: includes/share_oversea.php:8
+msgid "分享到 Twitter"
+msgstr "分享到 Twitter"
+
+#: includes/toggleposts.php:11 includes/toggleposts.php:47
+msgid "上一篇"
+msgstr "上一篇"
+
+#: includes/toggleposts.php:18 includes/toggleposts.php:33
+msgid "下一篇"
+msgstr "下一篇"
+
+#. Template Name of the theme
+msgid "链接"
+msgstr "連結"
+
+#. Template Name of the theme
+msgid "类文章页"
+msgstr "類文章頁"
+
+#: page-postlike.php:56 page-postlike.php:158 single.php:64 single.php:170
+msgid "在其他设备上继续阅读"
+msgstr "在其他設備上繼續閱讀"
+
+#: page-postlike.php:79 page-postlike.php:81 page-postlike.php:120
+#: page-postlike.php:122 page-postlike.php:172 page-postlike.php:174
+#: page-postlike.php:213 page-postlike.php:215 single.php:87 single.php:89
+#: single.php:130 single.php:132 single.php:184 single.php:186 single.php:227
+#: single.php:229
+msgid "赞赏"
+msgstr "讚賞"
+
+#: page-postlike.php:100 page-postlike.php:141 page-postlike.php:193
+#: page-postlike.php:234 single.php:109 single.php:152 single.php:206
+#: single.php:249
+msgid "生成分享图"
+msgstr "生成分享圖"
+
+#: page-postlike.php:103 page-postlike.php:144 page-postlike.php:196
+#: page-postlike.php:237 single.php:112 single.php:155 single.php:209
+#: single.php:252
+msgid "没有标签"
+msgstr "沒有標籤"
+
+#: page-postlike.php:242 single.php:260
+msgid "扫描二维码继续阅读"
+msgstr "掃描 QR Code 繼續閱讀"
+
+#. Template Name of the theme
+msgid "标签云"
+msgstr "標籤雲"
+
+#. Template Name of the theme
+msgid "时间轴"
+msgstr "時間軸"
+
+#: search.php:46 search.php:83
+msgid "搜索结果"
+msgstr "搜索結果"
+
+#: search.php:87
+msgid "这里似乎空空如也"
+msgstr "這裡似乎空空如也"
+
+#: search.php:88
+msgid "什么也没找到，换个词搜索试试？"
+msgstr "什麼也沒找到，換個詞搜索試試？"
+
+#: searchform.php:5
+msgid "搜索"
+msgstr "搜索"
+
+#: single.php:275 single.php:295 single.php:314
+msgid "去首页"
+msgstr "去首頁"
+
+#: single.php:291 single.php:310
+msgid "哎呀..."
+msgstr "哎呀..."
+
+#: single.php:291
+msgid "根据相关法律法规，此文章暂时不予显示"
+msgstr "根據相關法律法規，此文章暫時不予顯示"
+
+#: single.php:310
+msgid "登录后才能查看此文章"
+msgstr "登錄後才能查看此文章"
+
+#: template-parts/content-1-status.php:3 template-parts/content-2-status.php:3
+#: template-parts/content-3-status.php:3 template-parts/content-4-status.php:4
+#: template-parts/content-5-status.php:2
+#: template-parts/content-first-1-status.php:3
+#: template-parts/content-first-2-status.php:3
+#: template-parts/content-first-3-status.php:3
+#: template-parts/content-first-4-status.php:4
+#: template-parts/content-first-5-status.php:2
+msgid "状态"
+msgstr "狀態"
+
+#~ msgid ""
+#~ "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a "
+#~ "href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" "
+#~ "target=\"_blank\">MDx文档</a> 下载安装新版插件。"
+#~ msgstr ""
+#~ "你似乎正在使用舊版本的 Alu 表情外掛。這與 MDx 2.x 不相容，你需要前往 <a "
+#~ "href=\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" "
+#~ "target=\"_blank\">MDx 文檔</a> 下載安裝新版外掛。"
+
+#~ msgid "MDx主题"
+#~ msgstr "MDx主題"
+
+#~ msgid "Links"
+#~ msgstr "Links"
+
+#~ msgid "PostLike"
+#~ msgstr "PostLike"
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
+
+#~ msgid "Timeline"
+#~ msgstr "Timeline"
+
+#~ msgid ""
+#~ "选择 <code>发布时间</code>，文章底部信息栏会显示文章发布时间。<br>选择 "
+#~ "<code>最后编辑时间</code>，文章底部信息栏会显示文章最后编辑时间。"
+#~ msgstr ""
+#~ "選擇 <code>發佈時間</code>，文章底部信息欄會顯示文章發佈時間。 <br>選擇 "
+#~ "<code>最後編輯時間</code>，文章底部信息欄會顯示文章最後編輯時間。"
+
+#~ msgid ""
+#~ "开启后，可使用 Preload 预加载技术加速页面加载。请确保你<strong>没有</"
+#~ "strong>对主题 Javascript 脚本和字体文件使用和页面不同的域名加载。"
+#~ msgstr ""
+#~ "開啟後，可使用 Preload 預載入技術加速頁面載入。請確保你<strong>沒有</"
+#~ "strong>對主題 Javascript 腳本和字體文件使用和頁面不同的域名載入。"
+
+#~ msgid ""
+#~ "选择一张图片作为抽屉顶部显示的图片。点击弹出层中的“插入到文章”按钮以选定图"
+#~ "片，弹出层中的其他选项不会生效。"
+#~ msgstr ""
+#~ "選擇一張圖片作為抽屜頂部顯示的圖片。點擊彈出層中的“插入到文章”按鈕以選定圖"
+#~ "片，彈出層中的其他選項不會生效。"
+
+#~ msgid "发射成功！"
+#~ msgstr "發射成功！"
+
+#, php-format
+#~ msgid "由 %s 发布"
+#~ msgstr "由 %s 發布"
+
+#~ msgid "nofollow"
+#~ msgstr "nofollow"
+
+#, php-format
+#~ msgid "第 %s 页"
+#~ msgstr "第 %s 頁"
+
+#~ msgid "There is no changelog available."
+#~ msgstr "There is no changelog available."
+
+#~ msgid "这篇文章没有摘要"
+#~ msgstr "這篇文章沒有摘要"
+
+#~ msgid "这篇文章没有摘要。"
+#~ msgstr "這篇文章沒有摘要。"

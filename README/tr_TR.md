@@ -3,7 +3,7 @@
 <br>
 
 <p align="center">
-<img src="https://img.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
+<img src="https://acdn.flyhigher.top/mdx-2020-new.jpg" alt="MDx">
 </p>
 
 <h1 align="center"><a href="https://mdx.flyhigher.top" target="_blank">MDx</a></h1>
@@ -11,27 +11,25 @@
 > Basit görünüşlü, güçlü.
 
 <p align="center">
-<img alt="Versiyon" src="https://img.shields.io/badge/version-1.9.9-3f51b5.svg?style=flat-square"/>
-<img alt="sürüm" src="https://img.shields.io/badge/dynamic/json.svg?label=build&url=https%3A%2F%2Fbuildmdx.flyhigher.top%2Fbuild.json&query=%24.sta&colorB=44cc11&style=flat-square"/>
-<a href="https://github.com/yrccondor/mdx/releases"><img alt="sürümler" src="https://img.shields.io/github/release/yrccondor/mdx.svg?style=flat-square"/></a>
-<a href="https://flyhigher.top"><img alt="Yazar" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
-<img alt="WordPress" src="https://img.shields.io/badge/WordPress-4.4%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="İndir" src="https://img.shields.io/badge/download-2.28M-brightgreen.svg?style=flat-square"/></a>
-<a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="Lisans" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
+<img alt="Version" src="https://img.shields.io/badge/version-1.9.10-3f51b5.svg?style=flat-square"/>
+<a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
+<img alt="WordPress" src="https://img.shields.io/badge/WordPress-5.0%2B-blue.svg?style=flat-square"/>
+<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.28M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=shield"/></a>
 </p>
 
 
 ## İçerikler
 
-- [İçerikler](#%c4%b0%c3%a7erikler)
-- [Tanıtım](#tan%c4%b1t%c4%b1m)
+- [İçerikler](#i̇çerikler)
+- [Tanıtım](#tanıtım)
 - [Demo](#demo)
-- [İndir](#%c4%b0ndir)
-- [Globalleştirme](#globalle%c5%9ftirme)
-- [Dökümanlar](#d%c3%b6k%c3%bcmanlar)
+- [İndir](#i̇ndir)
+- [Globalleştirme](#globalleştirme)
+- [Dökümanlar](#dökümanlar)
 - [Lisans](#lisans)
-- [Çıktı](#%c3%87%c4%b1kt%c4%b1)
+- [Çıktı](#çıktı)
 
 
 ## Tanıtım
@@ -42,7 +40,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 
 - Tamamen Materyal Tasarım ile tasarlandı, isteğe bağlı Materyal Tasarım 2 kullanılabilir.
 - 3 anasayfa stili, 5 gönderi stili, 3 footer stili & 3 sayfa stili
-- 19 tema rengi & 16 vurgu rengi
+- 20 tema rengi & 16 vurgu rengi
 - Gece modu ve daima koyu mod özellikleri isteğe bağlı ayarlanabilir
 - SEO dostu, Facebook ve Twitter'da kolay paylaşım
 - Hızlı ve hafif, Pagespeed puanı 99% & YSlow puanı 98% (Küçültülmüş kurulumla test edildi)
@@ -50,7 +48,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 - Yerleşik TOC
 - Yerleşik lightbox 
 - 7 adet yerleşik kısakod
-- Çoklu dil desteği (Basitleştirilmiş Çince, Türkçe & İngilizce)
+- Çoklu dil desteği (Basitleştirilmiş Çince, Geleneksel Çince, Türkçe & İngilizce)
 - ✨ İnteraktif arama
 - ✨ Çarpraz platformlarda kolayca okumaya devam etme
 
@@ -99,4 +97,4 @@ GPL 3.0 altında açık kaynak olarak lisanslanmıştır.
 
 ## Çıktı
 
-![](https://img.flyhigher.top/wp-content/uploads/2017/11/det.jpg)
+![](https://acdn.flyhigher.top/wp-content/uploads/2017/11/det.jpg)

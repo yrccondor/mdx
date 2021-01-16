@@ -1,6 +1,6 @@
 <?php
 function mdx_admin_function(){
-    add_menu_page(__('MDx主题', 'mdx'), __('MDx 主题', 'mdx'), 'manage_options', 'mdx_admin','mdx_display_sub_function','dashicons-hammer');
+    add_menu_page(__('MDx 主题', 'mdx'), __('MDx 主题', 'mdx'), 'manage_options', 'mdx_admin','mdx_display_sub_function','dashicons-admin-customizer');
 }
 function mdx_add_admin(){
     add_submenu_page('mdx_admin', __('MDx 主题 - 样式', 'mdx'), __('样式', 'mdx'), 'manage_options', 'mdx_styles', 'mdx_display_sub_function_one');
@@ -16,6 +16,8 @@ function mdx_display_sub_function_one(){
     require_once('admin_style.php');
 }
 function mdx_display_sub_function_two(){
+    wp_register_style('mdx_admin_functions', get_template_directory_uri().'/includes/admin_functions.css');
+    wp_enqueue_style('mdx_admin_functions');
     require_once('admin_fn.php');
 }
 function mdx_display_sub_function_three(){
@@ -63,10 +65,10 @@ echo '<div class="wrap">
 <h1>'.__('MDx 主题 - 关于', 'mdx').'</h1>'.$mdx_ifedit.$mdx_news.'
 <p class="mdx-admin-img"><img src="../wp-content/themes/mdx/img/admin.jpg"></p>
 <h2 style="font-size:19px;">'.__('感谢使用 MDx 主题', 'mdx').'</h2>
-<p style="font-size:15px;">'.__('我是 Axton Yao，这个主题由我开发。我的网站是', 'mdx').' <a href="https://flyhigher.top" target="_blank">flyhigher.top</a></p>
-<p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://doc.flyhigher.top/mdx/" target="_blank">'.__('主题文档', 'mdx').'</a></p>
+<p style="font-size:15px;">'.__('我是 Axton Yao，这个主题由我开发。我的网站是', 'mdx').' <a href="https://flyhigher.top" target="_blank">flyhigher.top</a>'.__('。', 'mdx').'</p>
+<p style="font-size:15px;">'.__('对主题有任何疑问，建议先查阅 ', 'mdx').'<a href="https://doc.flyhigher.top/mdx/" target="_blank">'.__('主题文档', 'mdx').'</a>'.__('。', 'mdx').'</p>
 <p style="font-size:15px;">'.__('这个项目的 Github 地址是 ', 'mdx').'<a href="https://github.com/yrccondor/mdx" target="_blank">github.com/yrccondor/mdx</a>'.__('。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。', 'mdx').'</p>
-<p style="font-size:15px;">'.__('这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a></p>
+<p style="font-size:15px;">'.__('这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站上了解更多：', 'mdx').'<a href="https://mdui.org" target="_blank">mdui.org</a>'.__('。', 'mdx').'</p>
 <br>
 <p style="font-size:17px;"><strong>'.__('感谢以下译者帮助翻译 MDx：', 'mdx').'</strong></p>
 <ul style="font-size:15px;margin-left:17px;list-style:disc">

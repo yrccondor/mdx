@@ -1,8 +1,8 @@
 <?php if(wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()))){$Imagesurl=wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));}else{$Imagesurl="";}if(mdx_get_option("mdx_post_def_img")=="false" && $Imagesurl == ""){?>
-    <div class="mdui-card postDiv mdui-center mdui-hoverable">
+<div class="mdui-card postDiv mdui-center mdui-hoverable post-item">
     <div class="mdui-card-actions">
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme ainList"><h1><?php the_title();?></h1></a>
-        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 250);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p><?php }?>
+        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black cont2"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 250);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?></p><?php }?>
         <div class="mdui-divider underline"></div>
         <?php
         $mdx_more_1 = mdx_get_option("mdx_post_list_1");
@@ -39,7 +39,7 @@
     </div>
 </div>
 <?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
-<div class="mdui-card postDiv mdui-center mdui-hoverable">
+<div class="mdui-card postDiv mdui-center mdui-hoverable post-item">
     <div class="mdui-card-media mdui-color-theme">
     <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
     <a href="<?php the_permalink();?>">
@@ -59,7 +59,7 @@
         <?php }?>
     </div>
     <div class="mdui-card-actions">
-        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 170);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?><p>
+        <?php if(mdx_get_option("mdx_echo_post_sum")=="true"){ ?><p class="ct1-p mdui-text-color-black"><?php if(post_password_required()){_e('这篇文章受密码保护，输入密码才能看哦', 'mdx');}else{$summ = mdx_get_post_excerpt($post, 170);if($summ !== ""){echo $summ;}else{_e("这篇文章没有摘要");}}?></p>
         <div class="mdui-divider underline"></div><?php }?>
         <?php
         $mdx_more_1 = mdx_get_option("mdx_post_list_1");

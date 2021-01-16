@@ -1,0 +1,38 @@
+.nav-tab:focus {
+    box-shadow: none;
+}
+tbody.mdx-admin-section {
+    display:  none;
+}
+tbody.mdx-admin-section.mdx-admin-section-active{
+    display: table-row-group;
+}
+p.submit {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 16px 20px 40px 0!important;
+    margin: 0;
+    background: #f9f9f9;
+    z-index: 0;
+    border-top: 1px solid #ccc!important;
+}
+.form-table {
+    margin-bottom: 60px;
+}
+#wpfooter {
+    position: fixed;
+}
+@media (max-width: 782px){
+    p.submit {
+        padding: 12px 15px 12px 0!important;
+    }
+    p.submit #submit {
+        margin: 0;
+    }
+    .form-table {
+        margin-bottom: 5px;
+    }
+}
