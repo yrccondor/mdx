@@ -1,6 +1,6 @@
 import "./style.scss";
 import "./editor.scss";
-import { TextControl, CheckboxControl } from "@wordpress/components";
+import { TextControl, TextareaControl, CheckboxControl } from "@wordpress/components";
 
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
@@ -40,7 +40,7 @@ registerBlockType("mdx/fold", {
                         setAttributes({ title: val });
                     }}
                 />
-                <TextControl
+                <TextareaControl
                     label={__("折叠内容", "mdx")}
                     value={attributes.content}
                     onChange={val => {
@@ -114,7 +114,7 @@ registerBlockType("mdx/warning", {
                         setAttributes({ title: val });
                     }}
                 />
-                <TextControl
+                <TextareaControl
                     label={__("警告内容", "mdx")}
                     value={attributes.content}
                     onChange={val => {
