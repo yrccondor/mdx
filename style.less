@@ -252,10 +252,14 @@ body.has-admin-bar #titleBar, body.has-admin-bar #titleBarinPost, body.has-admin
 }
 .staDivgaid {
     display: inline-block!important;
-    margin: 5px!important;
-    width: 25pc;
+    margin: 5px 8px 5px 2px!important;
+    width: 343px;
     height: 230px;
     border-radius: 3px;
+}
+.mdx-wide-post-list .staDivgaid {
+    width: calc(33.3% - 13.4px)!important;
+    margin: 10px 0!important;
 }
 .sayInSta {
     padding: 70px 30px 50px;
@@ -3291,6 +3295,15 @@ main .mdx-postlist-simple div.mdx-fixed-img > div {
 main .mdx-postlist-simple div.mdx-fixed-img > div.mdx-bg-loaded {
     opacity: 1;
 }
+main .mdx-postlist-simple.mdx-postlist-simple-sta {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #efefef;
+    border-radius: 3px;
+}
+.mdui-theme-layout-dark main .mdx-postlist-simple.mdx-postlist-simple-sta {
+    background-color: #292929;
+}
 main .mdx-postlist-simple.mdx-postlist-simple-sta article {
     font-size: 18px;
     opacity: .8;
@@ -4787,7 +4800,7 @@ body.mdx-index-void {
             max-width: 45pc;
         }
     }
-    .mdx-wide-post-list .indexgaid {
+    .mdx-wide-post-list .indexgaid, .mdx-wide-post-list .staDivgaid {
         width: calc(50% - 10px)!important;
     }
 }
@@ -4877,6 +4890,10 @@ body.mdx-index-void {
     .indexgaid {
         width: 100%;
     }
+    .staDivgaid {
+        width: 100%;
+        margin: 5px!important;
+    }
 }
 @media(max-width:720px) {
     .ArtMain0, .mdxNotice {
@@ -4959,7 +4976,7 @@ body.mdx-index-void {
     .mdx-post-cot, .mdx-post-wait-out-c, .mdx-post-wait-out-c2 {
         height: 230px;
     }
-    .mdx-wide-post-list .indexgaid {
+    .mdx-wide-post-list .indexgaid, .mdx-wide-post-list .staDivgaid {
         width: 100%!important;
     }
 }

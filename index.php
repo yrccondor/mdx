@@ -13,6 +13,7 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
 }
 $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};
 $ignore_sticky = false;
+$ignore_sticky_2 = false;
 if(mdx_get_option('mdx_index_head_style') === "slide"){
     $sticky_id_slide = get_option('sticky_posts');
     $mdx_posts_slide = array();
@@ -191,14 +192,13 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
     <div class="mdxNotice mdui-center<?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?> mdx-notice-default<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i><p class="mdui-typo"><?php echo htmlspecialchars_decode(mdx_get_option('mdx_notice'));?></p></div>
     <?php }
-    $sticky_id = get_option('sticky_posts');
     if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id) > 0){
-        $ignore_sticky = true;
+        $ignore_sticky_2 = true;
     }
-    if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky){
+    if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky_2){
         global $post;
         if(mdx_get_option('mdx_hot_posts_get') === "sticky"){
-            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1,'post__in' =>$sticky_id));
+            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1,'post__in' =>$sticky_id_slide));
         }else{
             $mdx_posts = get_posts('numberposts='.strval((int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1).'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));
         }?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>">
@@ -237,7 +237,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php
         $style=mdx_get_option('mdx_default_style');
         $post_num=0;
-        if($ignore_sticky){
+        if($ignore_sticky || $ignore_sticky_2){
             $args = array(
                 'ignore_sticky_posts' => 1,
                 'showposts' => get_option('posts_per_page'),
