@@ -22,7 +22,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     if((mdx_get_option('mdx_index_head_style') === "slide" && mdx_get_option('mdx_index_slide_posts_get') !== "sticky") || $ignore_sticky){
         global $post;
         if(mdx_get_option('mdx_index_slide_posts_get') === "sticky"){
-            $mdx_posts_slide = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_index_slide_posts_num'),'post__in' =>$sticky_id));
+            $mdx_posts_slide = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_index_slide_posts_num'),'post__in' =>$sticky_id_slide));
         }else{
             $mdx_posts_slide = get_posts('numberposts='.mdx_get_option('mdx_index_slide_posts_num').'&category='.get_cat_ID(mdx_get_option('mdx_index_slide_posts_cat')));
         }
