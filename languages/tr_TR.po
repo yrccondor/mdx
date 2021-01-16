@@ -95,7 +95,7 @@ msgstr "Öne Çıkan Makaleler"
 
 #: admin_fn.php:105
 msgid "评论"
-msgstr "Yorumlarda Ifade Kullanımı"
+msgstr "Yorumlar"
 
 #: admin_fn.php:106
 msgid "Lazyload"
@@ -281,7 +281,7 @@ msgstr "Yayınlanma Tarihi"
 
 #: admin_fn.php:243
 msgid "评论数"
-msgstr "Yorumlarda Ifade Kullanımı"
+msgstr "Yorum Sayısı"
 
 #: admin_fn.php:244
 msgid "空"
