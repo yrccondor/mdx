@@ -1,10 +1,12 @@
-import ele from './ele.js';
-import fade from './fade.js';
-import betterFetch from './betterFetch.js';
-import Velocity from 'velocity-animate';
+import ele from './tools/ele.js';
+import fade from './tools/fade.js';
+import betterFetch from './tools/betterFetch.js';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
+const HTMLScrollTo = new ScrollTo(document.documentElement);
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;
@@ -120,8 +122,15 @@ window.addEventListener("load", () => {
                 if (DOMlist[parseInt(newpro[1])]) {
                     var scro = DOMlist[parseInt(newpro[1])].offsetHeight * parseFloat(newpro[2]) + DOMlist[parseInt(newpro[1])].offsetTop;
                     if (scro > 200) {
-                        Velocity(ele("html"), { scrollTop: scro + "px" }, 700);
-                        snbar();
+                        HTMLScrollTo.to(scro, 700);
+                        mdui.snackbar({
+                            message: snbar_message,
+                            buttonText: snbar_buttonText,
+                            timeout: 10000,
+                            onButtonClick: () => {
+                                HTMLScrollTo.to(0, 700);
+                            },
+                        });
                     }
                 } else {
                     backupPro(newpro[3]);
@@ -143,8 +152,15 @@ function backupPro(query) {
     }
     var scro = postHight3 * oldpro;
     if (scro > 200) {
-        Velocity(ele("html"), { scrollTop: scro + "px" }, 700);
-        snbar();
+        HTMLScrollTo.to(scro, 700);
+        mdui.snackbar({
+            message: snbar_message,
+            buttonText: snbar_buttonText,
+            timeout: 10000,
+            onButtonClick: () => {
+                HTMLScrollTo.to(0, 700);
+            },
+        });
     }
 }
 
@@ -281,7 +297,7 @@ function mdxAjaxPost(i) {
 
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(ele("html"), { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -384,7 +400,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 wrapper.parentNode.removeChild(wrapper);
             } else {
-                console.log(e.parentNode)
                 e.parentNode.classList.add("mdx-img-in-post-with-link");
             }
         });
@@ -403,7 +418,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 wrapper.parentNode.removeChild(wrapper);
             } else {
                 let wrapper = document.createElement('a');
-                console.log(wrapper)
                 wrapper.classList.add('mdx-img-in-post-with-link');
                 wrapper.setAttribute('href', e.parentNode.parentNode.getAttribute('href'));
                 e.parentNode.appendChild(wrapper);
@@ -774,7 +788,7 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     searchBarDOM.style.display = "block";
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '1' }, 200));
+    ele("#SearchBar > *", (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
         searchBarDOM.classList.add("mdui-color-theme");
@@ -793,7 +807,7 @@ for (let ele of document.getElementsByClassName("sea-close")) {
 }
 function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '0' }, 200));
+    ele("#SearchBar > *", (e) => new Opacity(e, 0, 200));
     fade(ele('.fullScreen', null, 'array'), 'out', 300);
     fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
     document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
@@ -904,7 +918,7 @@ function commentNaviLink(e) {
             e.parentNode.removeChild(e);
         });
         ele('.mdx-comments-loading').style.display = 'block';
-        Velocity(ele("html"), { scrollTop: ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65 + "px" }, 500);
+        HTMLScrollTo.to(ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65, 500);
         betterFetch(e.target.getAttribute('href')).then((out) => {
             let htmlParser = new DOMParser();
             let htmlParsed = htmlParser.parseFromString(out, "text/html");
@@ -980,7 +994,7 @@ function commentNavi(e) {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(ele("html"), { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 

@@ -126,16 +126,8 @@
         <?php } ?>
       </script>
       <?php }if(is_single() || (is_page())){?><script>
-      function snbar(){
-        mdui.snackbar({
-          message: '<?php echo addslashes(__("已自动定位到你此前阅读处","mdx"));?>&nbsp;&nbsp;&nbsp;',
-          buttonText: '<?php echo addslashes(__("从头阅读","mdx"));?>',
-          timeout: 10000,
-          onButtonClick: function(){
-            Velocity(ele("html"), {scrollTop: "0px"}, 700);
-          },
-        });
-      }
+      var snbar_message = '<?php echo addslashes(__("已自动定位到你此前阅读处","mdx"));?>&nbsp;&nbsp;&nbsp;';
+      var snbar_buttonText = '<?php echo addslashes(__("从头阅读","mdx"));?>';
       var moreinput = "'<?php echo addslashes(__("更多选项","mdx"));?>'";
       var morecomment = "<?php echo addslashes(__("加载更多评论","mdx"));?>";
       var nomorecomment = "<?php echo addslashes(__("没有更多了","mdx"));?>";

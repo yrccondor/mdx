@@ -1,8 +1,11 @@
-import fade from './fade.js';
+import fade from './tools/fade.js';
 import './ajax_ac.js';
-import Velocity from 'velocity-animate';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
+
+const HTMLScrollTo = new ScrollTo(document.documentElement);
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;
@@ -50,7 +53,7 @@ function scrollDiff() {
 };
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(document.getElementsByTagName("html")[0], { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -79,7 +82,7 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     fade(document.getElementsByClassName('OutOfsearchBox'), 'in', 300);
     fade(document.getElementsByClassName('fullScreen'), 'in', 300);
     Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
-        Velocity(e, { opacity: '1' }, 200);
+        new Opacity(e, 1, 200)
     });
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
@@ -100,7 +103,7 @@ for (let ele of document.getElementsByClassName("sea-close")) {
 function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
     Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
-        Velocity(e, { opacity: '0' }, 200);
+        new Opacity(e, 0, 200)
     });
     fade(document.getElementsByClassName('fullScreen'), 'out', 300);
     fade(document.getElementsByClassName('OutOfsearchBox'), 'out', 300);
@@ -123,7 +126,7 @@ function hideBar() {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(document.getElementsByTagName("html")[0], { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 

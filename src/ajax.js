@@ -1,5 +1,5 @@
-import betterFetch from './betterFetch.js';
-import ele from './ele.js';
+import betterFetch from './tools/betterFetch.js';
+import ele from './tools/ele.js';
 
 const init = () => {
     var urlV;
