@@ -25,12 +25,12 @@
     "postcss-inline-svg": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "core-js": "^3.6.5",
+    "core-js": "^3.8.3",
     "html2canvas": "1.0.0-alpha.11"
   },
   "browserslist": [
