@@ -24,7 +24,9 @@ module.exports = {
             cacheGroups: {
                 common: { 
                     name: 'common',
-                    chunks: 'all',
+                    chunks (chunk) {
+                        return chunk.name !== 'login';
+                    },
                     minSize: 10,
                     minChunks: 2
                 }
