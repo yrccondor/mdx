@@ -33,7 +33,7 @@ body.mdui-theme-layout-dark .mdxNotice.mdui-center, .mdui-theme-layout-dark.mdx-
 body.mdui-theme-layout-dark .searchCard, .mdui-theme-layout-dark .page-footer-nav, .mdui-theme-layout-dark .page-footer-nav-left, .mdui-theme-layout-dark .page-footer-nav-right {
     background-color: #131313!important;
 }
-.mdui-theme-layout-dark .ArtMain0 {
+.mdui-theme-layout-dark .ArtMain0, .mdui-theme-layout-dark main .mdx-postlist-simple.mdx-postlist-simple-sta {
     background-color: #151515;
 }
 .mdui-theme-layout-dark #respond, .mdui-theme-layout-dark .mdx-author-c, .mdui-theme-layout-dark .mdx-hot-posts, .mdui-theme-layout-dark .mdx-same-posts, .mdui-theme-layout-dark .spanout {
