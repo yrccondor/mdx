@@ -39,7 +39,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 Öne Çıkan ÖZellikler:
 
 - Tamamen Materyal Tasarım ile tasarlandı, isteğe bağlı Materyal Tasarım 2 kullanılabilir.
-- 3 anasayfa stili, 5 gönderi stili, 3 footer stili & 3 sayfa stili
+- 4 anasayfa stili, 5 gönderi stili, 3 footer stili & 4 sayfa stili
 - 20 tema rengi & 16 vurgu rengi
 - Gece modu ve daima koyu mod özellikleri isteğe bağlı ayarlanabilir
 - SEO dostu, Facebook ve Twitter'da kolay paylaşım
@@ -48,7 +48,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 - Yerleşik TOC
 - Yerleşik lightbox 
 - 7 adet yerleşik kısakod
-- Çoklu dil desteği (Basitleştirilmiş Çince, Geleneksel Çince, Türkçe & İngilizce)
+- Çoklu dil desteği (Basitleştirilmiş Çince, Geleneksel Çince(Tayvan), Geleneksel Çince(Hong Kong), Türkçe & İngilizce)
 - ✨ İnteraktif arama
 - ✨ Çarpraz platformlarda kolayca okumaya devam etme
 
@@ -76,7 +76,8 @@ Desteklenen dil(ler):
 - Çince (Basitleştirilmiş)
 - Türkçe ([Hasan CAN](https://github.com/Sn0bzy) tarafından)
 - İngilizce ([Ye Shu](https://github.com/yechs) tarafından)
-- Geleneksel Çince ([AngelKitty](https://github.com/AngelKitty) tarafından)
+- Geleneksel Çince(Tayvan) ([AngelKitty](https://github.com/AngelKitty) tarafından)
+- Geleneksel Çince(Hong Kong)
 
 > MDx'i diğer dillere çevirmemize yardımcı olabilirsiniz!
 
