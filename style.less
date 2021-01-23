@@ -3804,6 +3804,9 @@ li.menu-item .mdx-sn-icon.mdx_sn_rss {
 .mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme.mdui-toolbar {
     background-color: #fff!important;
 }
+.mdui-theme-primary-grey.mdx-theme-white.mdx-first-tworows .mdui-color-theme.mdui-toolbar {
+    background-color: transparent!important;
+}
 .mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme, .mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme * {
     background-color: #f7f7f7!important;
 }
@@ -3988,10 +3991,14 @@ body.mdx-list-page.mdui-theme-layout-dark {
     width: 55%!important;
     &+.time-in-post-title {
         width: 55%!important;
+        color: rgba(0, 0, 0, .87)!important;
     }
 }
 .mdui-theme-layout-dark .mdx-clean-style-article-title {
     color: rgba(255, 255, 255, .87)!important;
+    &+.time-in-post-title {
+        color: rgba(255, 255, 255, .87)!important;
+    }
 }
 .mdx-clean-style-article-hero-image {
     width: 100%;

@@ -12,7 +12,7 @@ var whetherChange = 0;
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;
 var postTitle = ele('div.PostTitle h1').innerText;
-var blogUrl = ele('div.mdui-toolbar > a.mdui-typo-headline').getAttribute("href");
+var blogUrl = ele('div.mdui-toolbar > a.mdui-typo-headline').getAttribute('href');
 var metaColor = document.querySelector("meta[name='theme-color']");
 var colorEnabled = false;
 var nowColor = '';
@@ -21,11 +21,11 @@ if (metaColor) {
     nowColor = document.querySelector("meta[name='mdx-main-color']").getAttribute('content');
     colorEnabled = true;
 }
-var url_hash = window.location.href;
+var urlHash = window.location.href;
 var ticking = false;
 var winheight = window.innerHeight;
 var winwidth = document.body.clientWidth;
-var ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
+var ifOffline = typeof offlineMode === 'undefined' ? false : offlineMode;
 if (document.getElementsByClassName('PostMain2').length > 0) {
     var postStyle2 = true;
 } else {
@@ -109,7 +109,7 @@ function scrollDiff() {
 window.addEventListener("load", () => {
     init_wp_block();
     fade(ele('body > .mdui-progress', null, 'array'), 'out', 200);
-    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+    document.querySelectorAll('.wp-block-mdx-fold').forEach((item) => {
         item.setAttribute('mdui-panel', '');
     });
     mdui.$(".wp-block-mdx-fold").mutation();
@@ -843,7 +843,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function convertCanvasToImage(canvas) {
     var image = new Image();
     var canvasData = canvas.toDataURL("image/png");
-    sessionStorage.setItem('si_' + url_hash, canvasData);
+    sessionStorage.setItem('si_' + urlHash, canvasData);
     image.src = canvasData;
     document.getElementById('mdx-share-img-loaded-container').appendChild(image);
     ele('#mdx-share-img').style.display = 'none';
@@ -876,15 +876,13 @@ function mdx_show_img(e) {
     mdui.updateSpinners();
     ele('#mdx-share-img').style.display = 'block';
 
-    if (!sessionStorage.getItem('si_' + url_hash)) {
-        import(/* webpackPrefetch: true, webpackChunkName: 'html2canvas' */ 'html2canvas').then(module => {
-            module.default(document.getElementById("mdx-share-img"), { useCORS: true }).then(function (canvas) {
-                convertCanvasToImage(canvas);
-            });
+    if (!sessionStorage.getItem('si_' + urlHash)) {
+        import(/* webpackPrefetch: true, webpackChunkName: 'html2canvas' */ 'html2canvas').then((module) => {
+            module.default(document.getElementById('mdx-share-img'), { useCORS: true }).then(convertCanvasToImage);
         })
     } else {
         var image = new Image();
-        image.src = sessionStorage.getItem('si_' + url_hash);
+        image.src = sessionStorage.getItem('si_' + urlHash);
         document.getElementById('mdx-share-img-loaded-container').appendChild(image);
         ele('#mdx-share-img').style.display = 'none';
         ele('div.mdx-share-img-loading', (e) => {
@@ -892,7 +890,7 @@ function mdx_show_img(e) {
         });
         setTimeout(() => {
             window.share_dialog.handleUpdate();
-            ele(".mdx-share-img-dialog .mdui-dialog-actions", (e) => {
+            ele('.mdx-share-img-dialog .mdui-dialog-actions', (e) => {
                 let spanDom = document.createElement('span');
                 spanDom.classList.add('mdx-save-info');
                 spanDom.innerHTML = `<i class="mdui-icon material-icons">&#xe80d;</i> ${mdx_si_i18n}`

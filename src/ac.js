@@ -81,7 +81,7 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     searchBarDOM.style.display = "block";
     fade(document.getElementsByClassName('OutOfsearchBox'), 'in', 300);
     fade(document.getElementsByClassName('fullScreen'), 'in', 300);
-    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), (e) => {
         new Opacity(e, 1, 200)
     });
     setTimeout(() => {
@@ -102,7 +102,7 @@ for (let ele of document.getElementsByClassName("sea-close")) {
 }
 function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
-    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), (e) => {
         new Opacity(e, 0, 200)
     });
     fade(document.getElementsByClassName('fullScreen'), 'out', 300);

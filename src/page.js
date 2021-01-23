@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
     init_wp_block();
     scrollDiff();
     fade(ele('body > .mdui-progress', null, 'array'), 'out', 200);
-    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+    document.querySelectorAll('.wp-block-mdx-fold').forEach((item) => {
         item.setAttribute('mdui-panel', '');
     });
     mdui.$(".wp-block-mdx-fold").mutation();
