@@ -995,4 +995,5 @@ if($mdx_version_base=="1.9.10"){
     mdx_update_option('mdx_index_slide_posts_cat', '');
     mdx_update_option('mdx_you_may_like_num', '5');
 }
+include_once('admin_init_ver.php');
 ?>

@@ -76,8 +76,7 @@ if(!get_option('mdx_first_init')){
 }
 
 //更新时初始化新功能
-require_once('includes/update.php');
-include_once('includes/admin_init_ver.php');
+require('includes/update.php');
 
 //后台菜单添加
 if(is_admin()){
