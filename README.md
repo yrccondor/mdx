@@ -14,7 +14,7 @@
 <img alt="Version" src="https://img.shields.io/badge/version-2.0.0-3f51b5.svg?style=flat-square"/>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-5.0%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.28M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.49M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=shield"/></a>
 </p>
