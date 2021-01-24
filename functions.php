@@ -318,10 +318,10 @@ function get_link_items(){
     $linkcats = get_terms('link_category');
     if(!empty($linkcats)){
         $result = '';
-        foreach($linkcats as $linkcat){            
+        foreach($linkcats as $linkcat){
             $result.='<h3 class="link-title">'.$linkcat->name.'</h3>';
             if($linkcat->description)$result .= '<div class="link-description">'.$linkcat->description.'</div>';
-            $result .=  get_the_link_items($linkcat->term_id);
+            $result .= get_the_link_items($linkcat->term_id);
         }
     }else{
         $result = get_the_link_items();
@@ -334,7 +334,7 @@ function get_the_link_items($id = null){
     $mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
     $order_rule = 'category='.$id;
     if ($mdx_link_rand_order == 'true') {
-        $order_rule .= 'title_li=&orderby=rand';
+        $order_rule .= $order_rule === '' ? 'orderby=rand' : '&orderby=rand';
     }
     $bookmarks = get_bookmarks($order_rule);
     $output = '';
