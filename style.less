@@ -3805,9 +3805,6 @@ li.menu-item .mdx-sn-icon.mdx_sn_rss {
 .mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme.mdui-toolbar {
     background-color: #fff!important;
 }
-.mdui-theme-primary-grey.mdx-theme-white.mdx-first-tworows .mdui-color-theme.mdui-toolbar {
-    background-color: transparent!important;
-}
 .mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme, .mdui-theme-primary-grey.mdx-theme-white .page-footer-nav.mdui-color-theme * {
     background-color: #f7f7f7!important;
 }
@@ -4664,6 +4661,14 @@ body.mdx-index-void {
     body.mdx-first-tworows a.mdui-btn.mdui-btn-icon.sea-close {
         opacity: 0;
         transition: all .3s;
+    }
+    body.mdx-first-tworows {
+        .mdx-hot-posts {
+            max-width: 715px;
+        }
+        &.mdui-theme-primary-grey.mdx-theme-white .mdui-color-theme.mdui-toolbar {
+            background-color: transparent!important;
+        }
     }
 }
 @media screen and (orientation:landscape) and (max-width: 1024px) and (min-width: 750px) {
