@@ -332,7 +332,10 @@ function get_link_items(){
 function get_the_link_items($id = null){
     $mdx_gravatar_actived = mdx_get_option('mdx_gravatar_actived');
     $mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
-    $order_rule = 'category='.$id;
+    $order_rule = '';
+    if ($id !== null) {
+        $order_rule = 'category='.$id;
+    }
     if ($mdx_link_rand_order == 'true') {
         $order_rule .= $order_rule === '' ? 'orderby=rand' : '&orderby=rand';
     }
