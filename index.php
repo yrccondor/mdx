@@ -14,8 +14,8 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
 $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};
 $ignore_sticky = false;
 $ignore_sticky_2 = false;
+$sticky_id_slide = get_option('sticky_posts');
 if(mdx_get_option('mdx_index_head_style') === "slide"){
-    $sticky_id_slide = get_option('sticky_posts');
     $mdx_posts_slide = array();
     if(mdx_get_option('mdx_index_head_style') === "slide" && mdx_get_option('mdx_index_slide_posts_get') === "sticky" && count($sticky_id_slide) > 0){
         $ignore_sticky = true;
@@ -192,7 +192,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
     <div class="mdxNotice mdui-center<?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?> mdx-notice-default<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i><p class="mdui-typo"><?php echo htmlspecialchars_decode(mdx_get_option('mdx_notice'));?></p></div>
     <?php }
-    if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id) > 0){
+    if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id_slide) > 0){
         $ignore_sticky_2 = true;
     }
     if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky_2){
