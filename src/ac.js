@@ -1,3 +1,4 @@
+import ele from './tools/ele.js';
 import fade from './tools/fade.js';
 import './ajax_ac.js';
 import Opacity from './tools/opacity.js';
@@ -198,10 +199,18 @@ window.addEventListener('DOMContentLoaded', () => {
                 stagger: 10,
                 percentPosition: true
             });
-            document.addEventListener('lazyloaded', (e) => {
+            document.getElementById('postlist').addEventListener('lazyloaded', (e) => {
                 if (e.target.matches('#postlist > .post-item img')) {
                     window.mdxMasonry.layout()
                 }
+            })
+            ele('#postlist img:not([data-src])', (el) => {
+                el.addEventListener('load', () => {
+                    window.mdxMasonry.layout();
+                })
+                el.addEventListener('error', () => {
+                    window.mdxMasonry.layout();
+                })
             })
         }
     }
