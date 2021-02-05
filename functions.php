@@ -95,7 +95,7 @@ if(is_admin()){
 //主题升级
 require 'plugin-update-checker/plugin-update-checker.php';
 $mdxUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://cdn.jsdelivr.net/gh/axton-the-robot/mdx-assets/info.json',
+    'https://cdn.jsdelivr.net/gh/axton-the-robot/mdx-assets@latest/info.json',
     __FILE__,
     'mdx'
 );
