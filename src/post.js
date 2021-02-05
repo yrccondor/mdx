@@ -338,7 +338,7 @@ if (lazyloadImg.length) {
         })
     }
 };
-var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image img");
+var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image > figure.mdx-lazyload-container img");
 if (lazyloadImg2.length) {
     for (let el of lazyloadImg2) {
         el.addEventListener('lazyloaded', function (e) {
@@ -351,6 +351,17 @@ if (lazyloadImg2.length) {
             }
             prevDom.previousSibling.remove();
             prevDom.remove();
+            e.target.classList.add("mdx-img-loaded-no-anim");
+        })
+    }
+};
+var lazyloadImg3 = document.querySelectorAll("article > figure.wp-block-image > img, article > figure.wp-block-image > a > img");
+if (lazyloadImg3.length) {
+    for (let el of lazyloadImg3) {
+        el.addEventListener('lazyloaded', function (e) {
+            if (!e.target.previousSibling) {
+                e.target.parentNode.classList.add("mdx-img-loaded-no-anim");
+            }
             e.target.classList.add("mdx-img-loaded-no-anim");
         })
     }
@@ -400,7 +411,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 wrapper.parentNode.removeChild(wrapper);
             } else {
-                e.parentNode.classList.add("mdx-img-in-post-with-link");
+                e.parentNode.classList.add('mdx-img-in-post-with-link');
             }
         });
         ele('article a > figure > img.lazyload, article a > figure > img.lazyloaded, article a > figure > img.lazyloading', (e) => {
@@ -409,8 +420,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
             }
             var imgHrefa = e.parentNode.parentNode.getAttribute('href').replace(/(-scaled)*\.[^.]+$/, '-');
-            if (imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href') + "-towebp") {
-                e.classList.add("mdx-img-in-post");
+            if (imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href') + '-towebp') {
+                e.classList.add('mdx-img-in-post');
                 let wrapper = e.parentNode.parentNode;
                 for (let el of wrapper.childNodes) {
                     wrapper.parentNode.insertBefore(el, wrapper);
