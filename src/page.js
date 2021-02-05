@@ -6,7 +6,7 @@ import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
-const HTMLScrollTo = new ScrollTo(document.documentElement);
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;

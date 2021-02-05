@@ -3,7 +3,7 @@ import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
-const HTMLScrollTo = new ScrollTo(document.documentElement);
+const HTMLScrollTo = new ScrollTo('document');
 const sideScrollTo = new ScrollTo(ele('#left-drawer', null, 'single'));
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;

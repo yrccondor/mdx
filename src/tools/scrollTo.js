@@ -4,6 +4,7 @@ export default class ScrollTo {
         if (this.dom === null) {
             return;
         }
+
         this.destination = this.scrollTop;
         this.duration = 0;
         this.startTime = -1;
@@ -14,7 +15,11 @@ export default class ScrollTo {
         }
         this.destination = destination;
         this.duration = duration;
-        this.from = this.dom.scrollTop;
+        if (this.dom === 'document') {
+            this.from = document.documentElement.scrollTop || document.body.scrollTop;
+        } else {
+            this.from = this.dom.scrollTop;
+        }
         this.startTime = Date.now();
         this.doScroll();
     }
@@ -29,10 +34,18 @@ export default class ScrollTo {
         }
 
         if (currentTime >= this.duration) {
-            this.dom.scrollTop = this.destination;
+            if (this.dom === 'document') {
+                document.documentElement.scrollTop = document.body.scrollTop = this.destination;
+            } else {
+                this.dom.scrollTop = this.destination;
+            }
             return;
         }
-        this.dom.scrollTop = this.from + (this.destination - this.from) * (Math.pow((currentTime / this.duration - 1), 3) + 1);
+        if (this.dom === 'document') {
+            document.documentElement.scrollTop = document.body.scrollTop = this.from + (this.destination - this.from) * (Math.pow((currentTime / this.duration - 1), 3) + 1);
+        } else {
+            this.dom.scrollTop = this.from + (this.destination - this.from) * (Math.pow((currentTime / this.duration - 1), 3) + 1);
+        }
 
         requestAnimationFrame(this.doScroll.bind(this));
     }

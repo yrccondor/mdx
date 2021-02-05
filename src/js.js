@@ -9,7 +9,7 @@ import '../style.less';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
-const HTMLScrollTo = new ScrollTo(document.documentElement);
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var metaColor = document.querySelector("meta[name='theme-color']");
