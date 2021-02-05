@@ -1,28 +1,38 @@
 <?php
 $mdx_all_options = get_option("mdx_all_options");
 
-function mdx_get_option($option_name){
-    return $GLOBALS['mdx_all_options'][$option_name];
-}
-
 function mdx_update_option($option_name, $option_value){
     $GLOBALS['mdx_all_options'][$option_name] = $option_value;
-    update_option('mdx_all_options',$GLOBALS['mdx_all_options']);
+    update_option('mdx_all_options', $GLOBALS['mdx_all_options']);
     return true;
+}
+
+function mdx_get_option($option_name){
+    if(isset($GLOBALS['mdx_all_options'][$option_name])){
+        return $GLOBALS['mdx_all_options'][$option_name];
+    }
+
+    require('includes/default_value.php');
+    if(isset($mdx_default_values[$option_name])){
+        mdx_update_option($option_name, $mdx_default_values[$option_name]);
+        return $mdx_default_values[$option_name];
+    }
+
+    return false;
 }
 
 $mdx_now_url = '';
 $mdx_flag_subdir = false;
-if(stripos(explode('//', home_url())[1], "/") || mdx_get_option('mdx_install') === "sub"){
+if(stripos(explode('//', home_url())[1], '/') || mdx_get_option('mdx_install') === 'sub'){
     $mdx_flag_subdir = true;
 }
 if(!$mdx_flag_subdir){
     global $wp;
     $mdx_now_url = home_url(add_query_arg(array()));
-}else if($mdx_flag_subdir && get_option("permalink_structure") === ""){
+}else if($mdx_flag_subdir && get_option('permalink_structure') === ''){
     global $wp;
     $mdx_now_url = add_query_arg($wp->query_string, '', home_url($wp->request));
-}else if($mdx_flag_subdir && get_option("permalink_structure") !== ""){
+}else if($mdx_flag_subdir && get_option('permalink_structure') !== ''){
     global $wp;
     $current_url = home_url(add_query_arg(array(), $wp->request));
 }else{
@@ -75,8 +85,7 @@ if(!get_option('mdx_first_init')){
     include_once('includes/admin_init_fn.php');
 }
 
-//更新时初始化新功能
-require('includes/update.php');
+include_once('includes/admin_init_ver.php');
 
 //后台菜单添加
 if(is_admin()){
