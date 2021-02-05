@@ -40,7 +40,7 @@ function mdx_display_sub_function_three(){
     }
 
     if(function_exists('file_get_contents')){
-        $mdx_data = json_decode(file_get_contents('https://cdn.jsdelivr.net/gh/axton-the-robot/mdx-assets/info.json', false));
+        $mdx_data = json_decode(file_get_contents('https://cdn.jsdelivr.net/gh/axton-the-robot/mdx-assets@latest/info.json', false));
         $mdx_now_version = $mdx_data->version;
         update_option('mdx_new_ver',$mdx_now_version);
     }else{
