@@ -44,6 +44,7 @@ MDx: hafif, zarif ve güçlü Materyal Tasarım ile donatılmış WordPress tema
 - Gece modu ve daima koyu mod özellikleri isteğe bağlı ayarlanabilir
 - SEO dostu, Facebook ve Twitter'da kolay paylaşım
 - Hızlı ve hafif, Pagespeed puanı 99% & YSlow puanı 98% (Küçültülmüş kurulumla test edildi)
+- jQuery bağımlılığı yok
 - İşinizi güzel paylaşım kartları ile paylaşma
 - Yerleşik TOC
 - Yerleşik lightbox 
