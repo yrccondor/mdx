@@ -84,6 +84,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_echo_post_sum', sanitize_text_field($_POST['mdx_echo_post_sum']));
     mdx_update_option('mdx_post_list_img_height', sanitize_text_field($_POST['mdx_post_list_img_height']));
     mdx_update_option('mdx_post_def_img', sanitize_text_field($_POST['mdx_post_def_img']));
+    mdx_update_option('mdx_post_def_img_url', esc_url_raw($_POST['mdx_post_def_img_url'] === '' ? get_template_directory_uri().'/img/dpic.jpg' : $_POST['mdx_post_def_img_url']));
     mdx_update_option('mdx_gravatar_actived', sanitize_text_field($_POST['mdx_gravatar_actived']));
     mdx_update_option('mdx_link_rand_order', sanitize_text_field($_POST['mdx_link_rand_order']));
     mdx_update_option('mdx_title_med', sanitize_text_field($_POST['mdx_title_med']));
@@ -263,6 +264,15 @@ wp_nonce_field('mdx_options_update');
         <label><input type="radio" name="mdx_post_def_img" value="false" <?php if($mdx_v_post_def_img=='false'){?>checked="checked"<?php }?>> <?php echo $falseoff;?></label><br>
         <p class="description"><?php _e('开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显示。', 'mdx');?></p>
         </fieldset>
+    </td>
+    </tr>
+    <tr>
+    <th scope="row"><?php _e('文章默认特色图像', 'mdx');?></th>
+    <td>
+    <input name="mdx_post_def_img_url" type="text" id="mdx_post_def_img_url" value="<?php echo esc_attr(mdx_get_option('mdx_post_def_img_url'))?>" class="regular-text">
+    <button type="button" id="insert-media-button-5" class="button" style="margin-top:5px;display:block"><?php _e('选择图片', 'mdx');?></button>
+    <p class="description"><?php _e('指定文章默认特色图像，留空则使用主题内置默认特色图像。', 'mdx');?></p>
+    <img id="img5" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
     </td>
     </tr>
 </tbody>
