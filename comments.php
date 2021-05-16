@@ -5,7 +5,7 @@
 ?>
 
 <?php if(comments_open()):?>
-<?php if(get_option('comment_registration') && !$user_ID):?>
+<?php if(get_option('comment_registration') && !is_user_logged_in()):?>
 <p class="mdx-comment-login-needed mdui-typo"><?php printf(__('你需要先 <a href="%s">登录</a> 才能发表评论。','mdx'), get_option('siteurl')."/wp-login.php?redirect_to=".urlencode(get_permalink()));?></p>
 <?php else:
 if(function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj')=="true")){

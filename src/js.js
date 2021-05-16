@@ -4,7 +4,6 @@ import './ajax.js';
 import Opacity from './tools/opacity.js';
 import ScrollTo from './tools/scrollTo.js';
 
-
 import '../style.less';
 
 __webpack_public_path__ = window.mdxPublicPath;
