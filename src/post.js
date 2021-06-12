@@ -654,45 +654,45 @@ window.addEventListener('DOMContentLoaded', () => {
     var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
     const passwordForm = document.querySelectorAll('form.post-password-form p');
     if (passwordForm.length > 0) {
-        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>'`;
+        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>`;
     }
 
-    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        var mrm = window.matchMedia('(prefers-reduced-motion: reduce)');
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 })
 
 function handleMotionChange(mrm) {
-    if (sessionStorage.getItem("mrm_enable") === "user") {
-        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+    if (sessionStorage.getItem('mrm_enable') === 'user') {
+        document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
         return;
     }
-    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        if (!sessionStorage.getItem("mrm_enable")) {
+    if (mrm.matches && document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        if (!sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
                 onButtonClick: function () {
-                    sessionStorage.setItem("mrm_enable", "user");
-                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                    sessionStorage.setItem('mrm_enable', 'user');
+                    document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
                 },
                 position: 'top',
             });
-            sessionStorage.setItem("mrm_enable", "sys");
-            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+            sessionStorage.setItem('mrm_enable', 'sys');
+            document.getElementsByTagName('body')[0].classList.add('mdx-reduce-motion');
         }
     } else {
-        if (sessionStorage.getItem("mrm_enable")) {
+        if (sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
                 position: 'top',
             });
         }
-        sessionStorage.removeItem("mrm_enable");
+        sessionStorage.removeItem('mrm_enable');
     }
 }
 
@@ -719,12 +719,12 @@ ele('#comment').addEventListener('focus', () => {
 
 var now_url = '';
 
-ele("#oth-div").addEventListener("click", () => {
+ele('#oth-div').addEventListener('click', () => {
     var howFar2 = document.documentElement.scrollTop || document.body.scrollTop;
-    if (document.getElementsByClassName("ArtMain").length > 0) {
-        var postHight2 = ele(".ArtMain").getBoundingClientRect().height + ele(".ArtMain").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
+    if (document.getElementsByClassName('ArtMain').length > 0) {
+        var postHight2 = ele('.ArtMain').getBoundingClientRect().height + ele('.ArtMain').getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     } else {
-        var postHight2 = ele("article.mdui-typo").getBoundingClientRect().height + ele("article.mdui-typo").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
+        var postHight2 = ele('article.mdui-typo').getBoundingClientRect().height + ele('article.mdui-typo').getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     }
     var nowPro2 = (howFar2 / postHight2).toFixed(3);
     if (nowPro2 > 1) {
@@ -745,15 +745,15 @@ ele("#oth-div").addEventListener("click", () => {
         if (min > -Infinity) {
             var elem = list[mini];
             var percent = ((0 - min) / elem.offsetHeight).toFixed(3);
-            nowPro2 = "v2:" + mini + ":" + percent + ":" + nowPro2;
+            nowPro2 = 'v2:' + mini + ':' + percent + ':' + nowPro2;
         } else {
             nowPro2 = 0;
         }
     }
-    let now_url_p = window.location.href.split("?_pro=")[0].split("&_pro=")[0];
-    let now_url = now_url_p.indexOf("?") === -1 ? now_url_p + '?_pro=' + nowPro2 : now_url_p + '&_pro=' + nowPro2;
+    let now_url_p = window.location.href.split('?_pro=')[0].split('&_pro=')[0];
+    let now_url = now_url_p.indexOf('?') === -1 ? now_url_p + '?_pro=' + nowPro2 : now_url_p + '&_pro=' + nowPro2;
     ele('#qrcode').innerHTML = '';
-    new QRCode(document.getElementById("qrcode"), {
+    new QRCode(document.getElementById('qrcode'), {
         text: now_url,
         width: 150,
         height: 150,
@@ -781,8 +781,8 @@ function share_wechat(e) {
             history: false,
             cssClass: 'mdx-share-wechat-dialog',
             onOpen: function () {
-                now_url = window.location.href.replace(window.location.search, "");
-                new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
+                now_url = window.location.href.replace(window.location.search, '');
+                new QRCode(document.getElementById('mdx-share-wechat-qrcode'), {
                     text: now_url,
                     width: 250,
                     height: 250,

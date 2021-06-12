@@ -575,45 +575,45 @@ window.addEventListener('DOMContentLoaded', () => {
     var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
     const passwordForm = document.querySelectorAll('form.post-password-form p');
     if (passwordForm.length > 0) {
-        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>'`;
+        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>`;
     }
 
-    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        var mrm = window.matchMedia('(prefers-reduced-motion: reduce)');
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 })
 
 function handleMotionChange(mrm) {
-    if (sessionStorage.getItem("mrm_enable") === "user") {
-        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+    if (sessionStorage.getItem('mrm_enable') === 'user') {
+        document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
         return;
     }
-    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        if (!sessionStorage.getItem("mrm_enable")) {
+    if (mrm.matches && document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        if (!sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
                 onButtonClick: function () {
-                    sessionStorage.setItem("mrm_enable", "user");
-                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                    sessionStorage.setItem('mrm_enable', 'user');
+                    document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
                 },
                 position: 'top',
             });
-            sessionStorage.setItem("mrm_enable", "sys");
-            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+            sessionStorage.setItem('mrm_enable', 'sys');
+            document.getElementsByTagName('body')[0].classList.add('mdx-reduce-motion');
         }
     } else {
-        if (sessionStorage.getItem("mrm_enable")) {
+        if (sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
                 position: 'top',
             });
         }
-        sessionStorage.removeItem("mrm_enable");
+        sessionStorage.removeItem('mrm_enable');
     }
 }
 
@@ -640,47 +640,47 @@ ele('#comment').addEventListener('focus', () => {
 
 
 //Search
-document.getElementsByClassName("seai")[0].addEventListener("click", function () {
-    let searchBarDOM = document.getElementById("SearchBar");
-    searchBarDOM.style.display = "block";
+document.getElementsByClassName('seai')[0].addEventListener('click', function () {
+    let searchBarDOM = document.getElementById('SearchBar');
+    searchBarDOM.style.display = 'block';
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => (e) => new Opacity(e, 1, 200));
+    ele('#SearchBar > *', (e) => (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
-        document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
-        searchBarDOM.classList.add("mdui-color-theme");
+        document.getElementsByClassName('outOfSearch')[0].style.width = '75%';
+        searchBarDOM.classList.add('mdui-color-theme');
     }, 0);
-    document.getElementsByClassName("seainput")[0].focus();
-    document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
+    document.getElementsByClassName('seainput')[0].focus();
+    document.getElementsByTagName('body')[0].classList.toggle('mdx-search-lock');
     if (ifOffline) {
         let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
         searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">' + tipMutiOff + '</div>';
         searchBoxDOM.style.pointerEvents = 'auto';
-        document.getElementsByClassName("seainput")[0].setAttribute('disabled', 'disabled');
+        document.getElementsByClassName('seainput')[0].setAttribute('disabled', 'disabled');
     }
 }, false);
-for (let ele of document.getElementsByClassName("sea-close")) {
-    ele.addEventListener("click", closeSearch, false);
+for (let ele of document.getElementsByClassName('sea-close')) {
+    ele.addEventListener('click', closeSearch, false);
 }
 function closeSearch() {
-    document.getElementsByClassName("seainput")[0].blur();
-    ele("#SearchBar > *", (e) => new Opacity(e, 0, 200));
+    document.getElementsByClassName('seainput')[0].blur();
+    ele('#SearchBar > *', (e) => new Opacity(e, 0, 200));
     fade(ele('.fullScreen', null, 'array'), 'out', 300);
     fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
-    document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
+    document.getElementsByClassName('outOfSearch')[0].style.width = '30%';
     window.setTimeout(hideBar, 300);
-    document.getElementById("SearchBar").classList.remove("mdui-color-theme");
+    document.getElementById('SearchBar').classList.remove('mdui-color-theme');
     setTimeout(() => {
-        let bodyDOM = document.getElementsByTagName("body")[0];
+        let bodyDOM = document.getElementsByTagName('body')[0];
         if (bodyDOM.classList.contains('mdx-search-lock')) {
             bodyDOM.classList.toggle('mdx-search-lock');
         }
-        document.getElementsByClassName("outOfSearch")[0].removeAttribute("style");
+        document.getElementsByClassName('outOfSearch')[0].removeAttribute('style');
     }, 300);
 };
 
 function hideBar() {
-    document.getElementById("SearchBar").style.display = "none";
+    document.getElementById('SearchBar').style.display = 'none';
 }
 
 // 评论分页
