@@ -12,7 +12,7 @@
   </a>
   <?php }?>
 </article>
-<?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
+<?php }else{if($Imagesurl == ""){$Imagesurl=mdx_get_post_default_url();}?>
 <article class="mdui-grid-tile indexgaid mdui-shadow-3 post-item">
 <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>
 <a href="<?php the_permalink();?>">

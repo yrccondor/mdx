@@ -4,12 +4,12 @@
 <?php if(mdx_get_option('mdx_post_list_img_height') === "auto"){if($Imagesurl !== ""){?>
     <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><img src="<?php echo $Imagesurl;?>" alt="<?php echo $Imagesurl;?>" title="<?php the_title();?>"><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
 <?php }else if(mdx_get_option("mdx_post_def_img")=="true" && $Imagesurl == ""){ ?>
-    <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><img src="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" alt="<?php echo get_template_directory_uri().'/img/dpic.jpg'?>" title="<?php the_title();?>"><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
+    <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><img src="<?php echo mdx_get_post_default_url();?>" alt="<?php echo mdx_get_post_default_url();?>" title="<?php the_title();?>"><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
 <?php }}else{ ?>
     <?php if($Imagesurl !== ""){?>
         <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><div class="mdx-fixed-img mdui-color-theme"><div class="mdx-bg-loaded" style="background-image:url(<?php echo $Imagesurl;?>)" title="<?php the_title();?>"></div></div><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
 <?php }else if(mdx_get_option("mdx_post_def_img")=="true" && $Imagesurl == ""){ ?>
-    <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><div class="mdx-fixed-img mdui-color-theme"><div class="mdx-bg-loaded" style="background-image:url(<?php echo get_template_directory_uri().'/img/dpic.jpg'?>)" title="<?php the_title();?>"></div></div><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
+    <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?><a href="<?php the_permalink();?>"><?php }?><div class="mdx-fixed-img mdui-color-theme"><div class="mdx-bg-loaded" style="background-image:url(<?php echo mdx_get_post_default_url()?>)" title="<?php the_title();?>"></div></div><?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?></a><?php }?>
 <?php }}?>
     <div class="card-text">
         <a href="<?php the_permalink();?>" class="mdui-text-color-theme ainList"><h1><?php the_title();?></h1></a>

@@ -120,7 +120,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                         ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
                     }else{
                         if(mdx_get_option("mdx_post_def_img") === "true"){
-                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo mdx_get_post_default_url().'"';
                         }else{
                             ?>"<?php
                         }
@@ -141,7 +141,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                         ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
                     }else{
                         if(mdx_get_option("mdx_post_def_img") === "true"){
-                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo mdx_get_post_default_url().'"';
                         }else{
                             ?>"<?php
                         }
@@ -220,7 +220,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                             ?> data-bg="<?php echo $mdx_img.'"';
                         }else{
                             if(mdx_get_option("mdx_post_def_img") === "true"){
-                                ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                                ?> data-bg="<?php echo mdx_get_post_default_url().'"';
                             }
                         }?>></div>
                         <span<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span>

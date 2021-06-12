@@ -241,6 +241,10 @@ function mdx_load_blocks(){
 }
 add_action('enqueue_block_editor_assets', 'mdx_load_blocks');
 
+function mdx_get_post_default_url(){
+    return mdx_get_option('mdx_post_def_img_url') ? mdx_get_option('mdx_post_def_img_url') : get_template_directory_uri().'/img/dpic.jpg';
+}
+
 //Ajax评论
 require('ajax-comment/main.php');
 

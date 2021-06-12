@@ -40,7 +40,7 @@ $mdx_index_img=mdx_get_option('mdx_index_img');$mdx_side_img=mdx_get_option('mdx
     <nav role="navigation"><?php wp_nav_menu(array('theme_location'=>'mdx_menu','menu'=>'mdx_menu','depth'=>2,'container'=>false,'menu_class'=>'mdui-list','menu_id'=>'mdx_menu'));?></nav>
     </div>
         <?php get_template_part('includes/searchform')?>
-        <?php if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_img_url="";}else{$mdx_img_url=get_bloginfo("template_url")."/img/dpic.jpg";}}if($mdx_img_url!=""){?>
+        <?php if($full_image_url!=false&&$full_image_url[0]!=""){$mdx_img_url =  $full_image_url[0];}else{if(mdx_get_option("mdx_post_def_img")=="false"){$mdx_img_url="";}else{$mdx_img_url=mdx_get_post_default_url();}}if($mdx_img_url!=""){?>
         <div class="PostTitleFillPage mdui-color-theme lazyload" data-bg="<?php echo $mdx_img_url;?>" id="PostTitleFillPage"></div><?php }?>
         <div class="PostTitleFillPageBackGround mdui-color-theme"></div>
     <header role="banner"><div class="titleBarGobal mdui-appbar mdui-shadow-0 <?php if(mdx_get_option('mdx_title_bar')=='true'){;?>mdui-appbar-scroll-hide<?php }?> mdui-text-color-white-text" id="titleBarinPost">
