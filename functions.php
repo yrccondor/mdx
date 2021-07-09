@@ -280,18 +280,19 @@ add_action('get_header', 'set_post_views');
 
 // 同时删除head和feed中的WP版本号
 function mdx_remove_wp_version(){
-  return '';
+    return '';
 }
 add_filter('the_generator', 'mdx_remove_wp_version');
 
 // 隐藏js/css附加的WP版本号
 function mdx_remove_wp_version_strings($src){
-  global $wp_version;
-  parse_str(parse_url($src, PHP_URL_QUERY), $query);
-  if ( !empty($query['ver']) && $query['ver'] === $wp_version ) {
-    $src = str_replace($wp_version, get_option('mdx_version_commit'), $src);
-  }
-  return $src;
+    global $wp_version;
+    $query_string = parse_url($src, PHP_URL_QUERY);
+    parse_str($query_string, $query);
+    if (!empty($query['ver']) && $query['ver'] === $wp_version) {
+        $src = str_replace($query_string, str_replace('ver='.$wp_version, 'ver='.get_option('mdx_version_commit'), $query_string), $src);
+    }
+    return $src;
 }
 add_filter('script_loader_src', 'mdx_remove_wp_version_strings');
 add_filter('style_loader_src', 'mdx_remove_wp_version_strings');
