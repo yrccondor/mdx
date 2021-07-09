@@ -3,13 +3,26 @@ settings_errors();
 $trueon=__('开启', 'mdx');
 $falseoff=__('关闭', 'mdx');
 
+include('includes/cdn_version.php');
+
 wp_enqueue_script('my-tag', get_bloginfo('template_url' ).'/js/admin_tag.js');
 wp_enqueue_media();
 ?>
 <div class="wrap"><h1><?php _e('MDx 主题 - 功能', 'mdx');?></h1>
 <?php
-if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')){
-    mdx_update_option('mdx_install', $_POST['mdx_install']);
+if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_referer('mdx_options_update')) {
+    global $files_root;
+    if (mdx_get_option('mdx_post_def_img_url') === $files_root.'/img/dpic.jpg') {
+        if ($_POST['mdx_use_cdn'] === 'jsdelivr') {
+            mdx_update_option('mdx_post_def_img_url', esc_url_raw('https://cdn.jsdelivr.net/gh/yrccondor/mdx@'.$cdn_commit_version.'/img/dpic.jpg'));
+        } else if ($_POST['mdx_use_cdn'] === 'custom') {
+            mdx_update_option('mdx_post_def_img_url', esc_url_raw(mdx_get_option('mdx_custom_cdn_root').'/img/dpic.jpg'));
+        } else {
+            mdx_update_option('mdx_post_def_img_url', esc_url_raw(get_template_directory_uri().'/img/dpic.jpg'));
+        }
+    }
+
+    mdx_update_option('mdx_install', sanitize_text_field($_POST['mdx_install']));
     if(isset($_POST['mdx_night_style'])){
         mdx_update_option('mdx_night_style', $_POST['mdx_night_style']);
     }else{
@@ -69,9 +82,9 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_head_js', htmlentities(stripslashes($_POST['mdx_head_js'])));
     mdx_update_option('mdx_footer_js', htmlentities(stripslashes($_POST['mdx_footer_js'])));
     mdx_update_option('mdx_icp_num', sanitize_text_field($_POST['mdx_icp_num']));
-    mdx_update_option("mdx_use_cdn", sanitize_text_field($_POST['mdx_use_cdn']));
-    mdx_update_option("mdx_custom_cdn_root", esc_url_raw($_POST['mdx_custom_cdn_root']));
-    mdx_update_option("mdx_jquery", sanitize_text_field($_POST['mdx_jquery']));
+    mdx_update_option('mdx_use_cdn', sanitize_text_field($_POST['mdx_use_cdn']));
+    mdx_update_option('mdx_custom_cdn_root', esc_url_raw($_POST['mdx_custom_cdn_root']));
+    mdx_update_option('mdx_jquery', sanitize_text_field($_POST['mdx_jquery']));
 ?>
 <div class="notice notice-success is-dismissible">
 <p><?php _e('设置已保存。', 'mdx'); ?></p>

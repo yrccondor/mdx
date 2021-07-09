@@ -84,7 +84,12 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_echo_post_sum', sanitize_text_field($_POST['mdx_echo_post_sum']));
     mdx_update_option('mdx_post_list_img_height', sanitize_text_field($_POST['mdx_post_list_img_height']));
     mdx_update_option('mdx_post_def_img', sanitize_text_field($_POST['mdx_post_def_img']));
-    mdx_update_option('mdx_post_def_img_url', esc_url_raw($_POST['mdx_post_def_img_url'] === '' ? get_template_directory_uri().'/img/dpic.jpg' : $_POST['mdx_post_def_img_url']));
+    if ($_POST['mdx_post_def_img_url'] === '') {
+        global $files_root;
+        mdx_update_option('mdx_post_def_img_url', esc_url_raw($files_root.'/img/dpic.jpg'));
+    } else {
+        mdx_update_option('mdx_post_def_img_url', esc_url_raw($_POST['mdx_post_def_img_url']));
+    }
     mdx_update_option('mdx_gravatar_actived', sanitize_text_field($_POST['mdx_gravatar_actived']));
     mdx_update_option('mdx_link_rand_order', sanitize_text_field($_POST['mdx_link_rand_order']));
     mdx_update_option('mdx_title_med', sanitize_text_field($_POST['mdx_title_med']));
