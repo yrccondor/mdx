@@ -71,7 +71,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     </div></header>
     <?php get_template_part('includes/searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
-    <?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?><div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>"></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
+    <?php if(($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3") && mdx_get_option('mdx_index_head_style') !== "slide"){?><div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>"></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
     <div class="mdx-index-img-bg mdui-color-theme"></div>
     <?php }
     if(mdx_get_option('mdx_index_head_style') !== "slide"){ ?>
@@ -172,7 +172,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         <div class="swiper-bottom-void"></div>
         <?php } ?>
     </div>
-    <?php }elseif($mdx_index_show === "1" || $mdx_index_show === "4"){?>
+    <?php }else if($mdx_index_show === "1" || $mdx_index_show === "4"){?>
         <div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>">
             <?php if($mdx_index_show === "4"){?>
             <div class="swiper-bottom-void"></div>
