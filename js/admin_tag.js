@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
         var custom_uploader = wp.media({
             multiple: false,
             library: {
-                    type: ['image']
+                type: ['image']
             }
         }).on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();

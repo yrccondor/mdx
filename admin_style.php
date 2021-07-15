@@ -300,7 +300,7 @@ wp_nonce_field('mdx_options_update');
     <tr>
     <th scope="row"><?php _e('首页图片', 'mdx');?></th>
     <td>
-    <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
+    <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" required="required">
     <button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
     <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，你都需要设定一张首页图片。<br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
     <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
@@ -546,7 +546,7 @@ wp_nonce_field('mdx_options_update');
     <tr>
     <th scope="row"><?php _e('抽屉菜单顶部图片', 'mdx');?></th>
     <td>
-    <input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2" readonly="readonly">
+    <input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2">
     <button type="button" id="insert-media-button-3" class="button mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
     <img id="img2" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
     </td>

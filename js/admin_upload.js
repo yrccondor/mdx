@@ -185,7 +185,6 @@ jQuery(document).ready(function(){
     setInterval("img3()",500);
     setInterval("img4()",500);
     setInterval("img5()",500);
-    setInterval("bing()",300);
     var disable_color = false;
     if(jQuery("#mdx_svg_color").attr("disabled") === "disabled"){
         disable_color = true;
@@ -260,14 +259,6 @@ jQuery("#use-api3").click(function(){
 jQuery("#use-bing-api").click(function(){
     jQuery('#mdx_index_img').val('--BingImagesActivated(0)--');
 });
-function bing(){
-    var img1=jQuery("#mdx_index_img").val();
-    if(img1.substring(0,4) != 'http'){
-        jQuery('#mdx_index_img').removeAttr('readonly');
-    }else{
-        jQuery('#mdx_index_img').attr('readonly','readonly');
-    }
-}
 function img1(){
     var img1=jQuery("#mdx_index_img").val();
     if(img1.substring(0,4) != 'http'){
