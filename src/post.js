@@ -382,6 +382,15 @@ window.addEventListener('DOMContentLoaded', () => {
         ele('#respond').innerHTML = tipMutiOffRes;
     }
 
+    // Wrap plain table
+    ele('article > table:not([class]):not([id])', (e) => {
+        e.classList.add('mdui-table', 'mdx-dny-table', 'mdui-table-hoverable');
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('mdui-table-fluid');
+        e.parentNode.insertBefore(wrapper, e);
+        wrapper.appendChild(e);
+    })
+
     ele('article a > figure > img.lazyload, article > figure > img.lazyload, article a > figure > img.lazyloaded, article > figure > img.lazyloaded, article a > figure > img.lazyloading, article > figure > img.lazyloading', (e) => {
         if (e.classList.contains("aligncenter")) {
             e.parentNode.classList.add("aligncenter");
