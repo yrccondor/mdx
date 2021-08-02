@@ -654,7 +654,7 @@ document.getElementsByClassName('seai')[0].addEventListener('click', function ()
     searchBarDOM.style.display = 'block';
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele('#SearchBar > *', (e) => (e) => new Opacity(e, 1, 200));
+    ele('#SearchBar > *', (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
         document.getElementsByClassName('outOfSearch')[0].style.width = '75%';
         searchBarDOM.classList.add('mdui-color-theme');

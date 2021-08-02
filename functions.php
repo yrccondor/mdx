@@ -908,7 +908,6 @@ function mdx_colored_cloud($text) {
 function mdx_colored_cloud_call_back($matches) {
     $text = $matches[1];
     $color = dechex(rand(0,16777215));
-    $pattern = '/style=(\'|\")(.*)(\'|\")/i';
     $text = str_replace("style=\"","style=\"color:#{$color};",$text);
     $text = str_replace("style='","style='color:#{$color};",$text);
     return "<a $text>";
