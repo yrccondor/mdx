@@ -647,7 +647,6 @@ ele('#comment').addEventListener('focus', () => {
     });
 })
 
-
 //Search
 document.getElementsByClassName('seai')[0].addEventListener('click', function () {
     let searchBarDOM = document.getElementById('SearchBar');
