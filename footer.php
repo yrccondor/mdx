@@ -72,6 +72,7 @@
         <?php if(mdx_get_option('mdx_enhanced_ajax')=='true'){?>
           enhanced_ajax = true;
         <?php }?>
+        var slideInterval = <?php echo intval(mdx_get_option('mdx_index_slide_interval') ? mdx_get_option('mdx_index_slide_interval') : '5');?>;
       </script>
     <?php }else if(is_search()){?>
       <script>

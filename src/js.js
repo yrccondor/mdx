@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (sliderDOM.length > 0) {
         new Flickity('.swiper-wrapper', {
             accessibility: true,
-            autoPlay: 5000,
+            autoPlay: slideInterval * 1000 || 5000,
             cellAlign: 'center',
             cellSelector: '.swiper-item',
             draggable: '>1',

@@ -105,7 +105,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         </div>
     </div>
     <?php }else{
-    if(count($mdx_posts_slide) > 0 || mdx_get_option('mdx_index_slide_posts_get') !== "sticky"){?>
+    if(count($mdx_posts_slide) > 0 || mdx_get_option('mdx_index_slide_posts_get') !== 'sticky'){?>
     <div class="theFirstPageSay mdui-typo mdx-swiper swiper-container slide-style-<?php echo mdx_get_option('mdx_index_slide_posts_style');?>">
         <div class="swiper-wrapper">
             <?php foreach($mdx_posts_slide as $post_item){?><div class="swiper-item swiper-slide">

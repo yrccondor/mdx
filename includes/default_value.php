@@ -83,6 +83,7 @@ $mdx_default_values = array(
     'mdx_index_head_style' => 'saying',
     'mdx_index_slide_posts_style' => '1',
     'mdx_index_slide_posts_num' => '5',
+    'mdx_index_slide_interval' => '5',
     'mdx_index_slide_posts_get' => 'cat',
     'mdx_index_slide_posts_cat' => '',
     'mdx_index_img' => get_bloginfo('template_url').'/img/def_index.jpg',

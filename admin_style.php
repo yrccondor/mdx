@@ -96,6 +96,7 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_index_head_style', sanitize_text_field($_POST['mdx_index_head_style']));
     mdx_update_option('mdx_index_slide_posts_style', sanitize_text_field($_POST['mdx_index_slide_posts_style']));
     mdx_update_option('mdx_index_slide_posts_num', sanitize_text_field($_POST['mdx_index_slide_posts_num']));
+    mdx_update_option('mdx_index_slide_interval', sanitize_text_field($_POST['mdx_index_slide_interval']));
     mdx_update_option('mdx_index_slide_posts_get', sanitize_text_field($_POST['mdx_index_slide_posts_get']));
     mdx_update_option('mdx_index_slide_posts_cat', sanitize_text_field($_POST['mdx_index_slide_posts_cat']));
     mdx_update_option('mdx_index_img', sanitize_text_field($_POST['mdx_index_img']));
@@ -358,13 +359,19 @@ wp_nonce_field('mdx_options_update');
         <option value="1" <?php if($mdx_v_index_slide_posts_style=='1'){?>selected="selected"<?php }?>><?php _e('居中', 'mdx');?></option>
         <option value="2" <?php if($mdx_v_index_slide_posts_style=='2'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
         <option value="3" <?php if($mdx_v_index_slide_posts_style=='3'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
+        <option value="4" <?php if($mdx_v_index_slide_posts_style=='4'){?>selected="selected"<?php }?>><?php _e('纯色', 'mdx');?></option>
     </select>
     </td>
     </tr>
     <tr class="mdx_index_head_style_slide">
-    <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
-    <td><input name="mdx_index_slide_posts_num" type="text" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
-    <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
+        <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
+        <td><input name="mdx_index_slide_posts_num" type="number" min="1" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
+        <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
+    </tr>
+    <tr class="mdx_index_head_style_slide">
+        <th scope="row"><label for="mdx_index_slide_interval"><?php _e('首页幻灯片自动切换时间', 'mdx');?></label></th>
+        <td><input name="mdx_index_slide_interval" type="number" min="1" id="mdx_index_slide_interval" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_interval'))?>" class="regular-text">
+        <p class="description"><?php _e('单位为秒。请输入整数。', 'mdx');?></p></td>
     </tr>
     <tr class="mdx_index_head_style_slide">
     <th scope="row"><?php _e('首页幻灯片文章获取方式', 'mdx');?></th>
