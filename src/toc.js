@@ -1,4 +1,5 @@
 import ele from './tools/ele.js';
+import debounce from './tools/debounce.js'
 import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
@@ -150,7 +151,19 @@ function addToc(titleList) {
     menu.style.transform = `translateX(-${menu.clientWidth}px)`;
 }
 
+const debouncedReflow = debounce(() => {
+    const tabEle = ele('#mdx-toc-select');
+    const halfWidth = tabEle.clientWidth / 2;
+    const borderEle = tabEle.getElementsByClassName('mdui-tab-indicator')[0];
+
+    if (borderEle.style.left !== '0px') {
+        borderEle.style.left = `${halfWidth}px`;
+    }
+    borderEle.style.width = `${halfWidth}px`;
+}, 300);
+
 window.addEventListener('resize', function () {
+    debouncedReflow();
     if (isToc) {
         if (ele('#mdx-toc').style.transform === 'translateX(0px)') {
             ele('#mdx-toc').style.transform = 'translateX(0)';
