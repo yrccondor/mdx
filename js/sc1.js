@@ -18,7 +18,7 @@
     tinymce.create('tinymce.plugins.mdx_warning', {
         init : function(ed, url){
             ed.addButton('mdx_warning', {
-                title : 'Worning',
+                title : 'Warning',
                 image : url+'/bt_icon/warning.png',
                 onclick : function(){
                     ed.selection.setContent('[mdx_warning title="Your title here..."][/mdx_warning]');
