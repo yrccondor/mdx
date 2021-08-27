@@ -217,7 +217,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                             $mdx_img = "";
                         }
                         if($mdx_img !== ""){
-                            ?> data-bg="<?php echo $mdx_img.'"';
+                            ?> data-bg="<?php echo mdx_get_option("mdx_hot_posts_prefix").$mdx_img.mdx_get_option("mdx_hot_posts_suffix").'"';
                         }else{
                             if(mdx_get_option("mdx_post_def_img") === "true"){
                                 ?> data-bg="<?php echo mdx_get_post_default_url().'"';

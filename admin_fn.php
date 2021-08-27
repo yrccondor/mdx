@@ -54,6 +54,8 @@ wp_enqueue_media();
         mdx_update_option('mdx_post_list_2', sanitize_text_field($_POST['mdx_post_list_2']));
         mdx_update_option('mdx_post_list_3', sanitize_text_field($_POST['mdx_post_list_3']));
         mdx_update_option('mdx_post_edit_time', sanitize_text_field($_POST['mdx_post_edit_time']));
+        mdx_update_option('mdx_post_list_img_prefix', sanitize_text_field($_POST['mdx_post_list_img_prefix']));
+        mdx_update_option('mdx_post_list_img_suffix', sanitize_text_field($_POST['mdx_post_list_img_suffix']));
         mdx_update_option('mdx_author_card', sanitize_text_field($_POST['mdx_author_card']));
         mdx_update_option("mdx_lazy_load_mode", sanitize_text_field($_POST['mdx_lazy_load_mode']));
         mdx_update_option("mdx_lazyload_fallback", sanitize_text_field($_POST['mdx_lazyload_fallback']));
@@ -70,6 +72,8 @@ wp_enqueue_media();
         mdx_update_option('mdx_you_may_like_num', sanitize_text_field($_POST['mdx_you_may_like_num']));
         mdx_update_option('mdx_you_may_like_way', sanitize_text_field($_POST['mdx_you_may_like_way']));
         mdx_update_option('mdx_you_may_like_text', sanitize_text_field($_POST['mdx_you_may_like_text']));
+        mdx_update_option('mdx_hot_posts_prefix', sanitize_text_field($_POST['mdx_hot_posts_prefix']));
+        mdx_update_option('mdx_hot_posts_suffix', sanitize_text_field($_POST['mdx_hot_posts_suffix']));
         mdx_update_option('mdx_real_search', sanitize_text_field($_POST['mdx_real_search']));
         mdx_update_option('mdx_submit_comment', sanitize_text_field($_POST['mdx_submit_comment']));
         mdx_update_option('mdx_comment_ajax', sanitize_text_field($_POST['mdx_comment_ajax']));
@@ -356,6 +360,20 @@ wp_enqueue_media();
                     </fieldset>
                 </td>
             </tr>
+            <tr>
+                <th scope="row"><label for="mdx_post_list_img_prefix"><?php _e('文章列表图片地址前缀', 'mdx'); ?></label></th>
+                <td>
+                    <input name="mdx_post_list_img_prefix" type="text" id="mdx_post_list_img_prefix" value="<?php echo mdx_get_option('mdx_post_list_img_prefix');?>" class="regular-text mdx_stbsip22">
+                    <p class="description"><?php _e('在文章列表显示的图片的地址中添加指定前缀', 'mdx'); ?></p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="mdx_post_list_img_suffix"><?php _e('文章列表图片地址后缀', 'mdx'); ?></label></th>
+                <td>
+                    <input name="mdx_post_list_img_suffix" type="text" id="mdx_post_list_img_suffix" value="<?php echo mdx_get_option('mdx_post_list_img_suffix');?>" class="regular-text mdx_stbsip22">
+                    <p class="description"><?php _e('在文章列表显示的图片的地址中添加指定后缀', 'mdx'); ?></p>
+                </td>
+            </tr>
             </tbody>
 
             <tbody class="mdx-admin-section" id="mdx-admin-nav-toc-section">
@@ -494,6 +512,23 @@ wp_enqueue_media();
                 <td><input name="mdx_you_may_like_text" type="text" id="mdx_you_may_like_text"
                            value="<?php echo esc_attr(mdx_get_option('mdx_you_may_like_text')) ?>"
                            class="regular-text mdx_apspc">
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="mdx_hot_posts_prefix"><?php _e('推荐文章图片链接前缀', 'mdx'); ?></label></th>
+                <td><input name="mdx_hot_posts_prefix" type="text" id="mdx_hot_posts_prefix"
+                           value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_prefix')) ?>"
+                           class="regular-text mdx_apspc2">
+                    <p class="description"><?php _e('在此设定推荐文章图片链接前缀。只有开启了“首页推荐文章”或“文末推荐文章”功能时此空才会生效。', 'mdx'); ?></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="mdx_hot_posts_suffix"><?php _e('推荐文章图片链接后缀', 'mdx'); ?></label></th>
+                <td><input name="mdx_hot_posts_suffix" type="text" id="mdx_hot_posts_suffix"
+                           value="<?php echo esc_attr(mdx_get_option('mdx_hot_posts_suffix')) ?>"
+                           class="regular-text mdx_apspc2">
+                    <p class="description"><?php _e('在此设定推荐文章图片链接后缀。只有开启了“首页推荐文章”或“文末推荐文章”功能时此空才会生效。', 'mdx'); ?></p></td>
             </tr>
             </tbody>
 
