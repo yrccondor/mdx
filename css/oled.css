@@ -7,6 +7,9 @@ body.mdui-theme-layout-dark.mdx-index-void {
 .mdui-theme-layout-dark .PostMainPage, .mdui-theme-layout-dark .main, .mdui-theme-layout-dark .mdx-hot-posts, .mdui-theme-layout-dark #left-drawer, .mdui-theme-layout-dark #mdx-right-drawer, .mdui-theme-layout-dark #img-box, body.mdui-theme-layout-dark.body-grey, body.mdui-theme-layout-dark.body-grey1, .mdui-theme-layout-dark, .mdui-theme-layout-dark #mdx_menu li ul.mdui-collapse-item-body {
     background-color: black!important;
 }
+.mdui-theme-layout-dark #img-box.opacity-bg {
+    background-color: rgba(0, 0, 0, .85)!important;
+}
 .mdui-theme-layout-dark .mdx-hot-posts .mdx-hp-g-l {
     background: -webkit-linear-gradient(left,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%);
     background: linear-gradient(to right,rgba(0,0,0,1) 10%,rgba(0,0,0,0) 100%);

@@ -1,9 +1,9 @@
 export default (fn, time) => {
-    let timer = null
+    let timer = null;
     return function() {
         if (timer) {
-            clearTimeout(timer) 
+            clearTimeout(timer);
         }
-        timer = setTimeout(fn, time)
+        timer = setTimeout(fn, time);
     }
 }

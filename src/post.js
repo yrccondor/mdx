@@ -459,7 +459,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgRaw = e.target;
                 imgRaw.style.opacity = 0;
                 ele('div.mdui-drawer', (e) => {
-                    e.insertAdjacentHTML('beforebegin', '<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+                    e.insertAdjacentHTML('beforebegin', `<div id="img-box" class="mdui-valign${mdx_img_box_opacity ? ' opacity-bg' : ''}"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>`);
                 })
                 mdui.updateSpinners();
                 ele('.mdx-img-viewer', (elem) => {

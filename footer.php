@@ -1,17 +1,13 @@
 <?php mdx_get_option('mdx_widget') === "true" ? $mdx_widget = true : $mdx_widget = false; ?>
-<button
-    class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple<?php if ($mdx_widget) { ?> mdx-tools-up<?php } ?>">
-    <i class="mdui-icon material-icons">&#xe316;</i></button>
+<button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-fab-hide scrollToTop mdui-ripple<?php if ($mdx_widget) { ?> mdx-tools-up<?php } ?>"><i class="mdui-icon material-icons">&#xe316;</i></button>
 <?php if ($mdx_widget) { ?>
-    <button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple"
-            mdui-drawer="{target:'#mdx-right-drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">&#xe5c3;</i>
+    <button class="mdui-fab mdui-color-theme-accent mdui-fab-fixed mdui-ripple" mdui-drawer="{target:'#mdx-right-drawer',overlay:true,swipe:true}"><i class="mdui-icon material-icons">&#xe5c3;</i>
     </button><?php } ?>
 <?php if (!empty(mdx_get_option("mdx_cookie"))) { ?>
     <div id="mdx-cookie-notice" class="mdui-shadow-8"><i class="mdui-icon material-icons">&#xe88e;</i>
     <p class="mdui-typo"><?php echo htmlspecialchars_decode(mdx_get_option("mdx_cookie")); ?></p>
     <button class="mdui-btn mdui-color-theme mdui-ripple"><?php _e("同意", "mdx"); ?></button></div><?php } ?>
-<footer
-    class="foot mdui-text-center<?php if (mdx_get_option("mdx_styles_footer") === "2") { ?> mdx-footer-clean<?php } else if (mdx_get_option("mdx_styles_footer") === "3") { ?>  mdx-footer-morden<?php } ?>">
+<footer class="foot mdui-text-center<?php if (mdx_get_option("mdx_styles_footer") === "2") { ?> mdx-footer-clean<?php } else if (mdx_get_option("mdx_styles_footer") === "3") { ?> mdx-footer-morden<?php } ?>">
     <?php if (mdx_get_option("mdx_styles_footer") === "1") {
         if (!empty(mdx_get_option('mdx_footer'))) {
             echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));
@@ -20,11 +16,14 @@
             echo "<br>";
         }
         if (!empty(mdx_get_option('mdx_icp_num'))) { ?>
-            <a href="https://beian.miit.gov.cn/" rel="noopener"
-               target="_blank"
-               class="click"
-            >
-                <?php echo mdx_get_option('mdx_icp_num'); ?>
+            <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo mdx_get_option('mdx_icp_num'); ?></a>
+        <?php } if (!empty(mdx_get_option('mdx_footer')) && !empty(mdx_get_option('mdx_wangan_num'))) { ?>
+            <br>
+        <?php } if (!empty(mdx_get_option('mdx_wangan_num'))) {
+            preg_match("/.公网安备\s*(\d+)\s*号/", mdx_get_option('mdx_wangan_num'), $mdx_wangannum_match);?>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo count($mdx_wangannum_match) ? $mdx_wangannum_match[1] : ''; ?>" rel="noopener" target="_blank" class="click wanan-link">
+                <img src="<?php global $files_root;echo $files_root."/img/beian.png"; ?>">
+                <?php echo mdx_get_option('mdx_wangan_num'); ?>
             </a>
         <?php } ?>
         <br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a>
@@ -39,35 +38,22 @@
             <br><?php echo '<span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "' . substr($mdx_footer_say, 21, -3) . '", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){document.getElementById("k-text").innerText = JSON.parse(xmlHttpReq.responseText)["text"];}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
         }
     } else if (mdx_get_option("mdx_styles_footer") === "2") { ?>
-        <div class="mdx-clean-footer"><?php if (!empty(mdx_get_option('mdx_footer'))) {
+        <div class="mdx-clean-footer">
+            <?php if (!empty(mdx_get_option('mdx_footer'))) {
                 echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));
             }
             if (!empty(mdx_get_option('mdx_footer')) && !empty(mdx_get_option('mdx_icp_num'))) {
                 echo "<br>";
             }
             if (!empty(mdx_get_option('mdx_icp_num'))) { ?>
-                <a href="https://beian.miit.gov.cn/"
-                   rel="noopener"
-                   target="_blank"
-                   class="click"
-                   id="beian"
-                >
-                    <?php echo mdx_get_option('mdx_icp_num'); ?>
-                </a>
+                <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click" id="beian"><?php echo mdx_get_option('mdx_icp_num'); ?></a>
             <?php }
             if (!empty(mdx_get_option('mdx_wangan_num'))) { ?>
-                <br/>
-                <!-- 由于公安备案网址不支持HTTPS，链接仅能使用HTTP协议 -->
-                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo mdx_get_option('mdx_wangan_num_id') ?>"
-                   rel="noopener"
-                   target="_blank"
-                   class="click"
-                   id="wangan"
-                >
-                    <img src="<?php global $files_root; echo $files_root."/img/beian.png"; ?>"
-                         alt="网安备案" style="height: 20px;width: auto;display: inline-flex"/>
-                    <?php
-                        echo mdx_get_option('mdx_wangan_num'); ?>
+                <br>
+                <?php preg_match("/.公网安备\s*(\d+)\s*号/", mdx_get_option('mdx_wangan_num'), $mdx_wangannum_match);?>
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo count($mdx_wangannum_match) ? $mdx_wangannum_match[1] : '';?>" rel="noopener" target="_blank" class="click wanan-link">
+                    <img src="<?php global $files_root; echo $files_root."/img/beian.png"; ?>">
+                    <?php echo mdx_get_option('mdx_wangan_num'); ?>
                 </a>
             <?php } ?>
             <div class="mdx-copyright">
@@ -76,8 +62,7 @@
         </div>
     <?php } else if (mdx_get_option("mdx_styles_footer") === "3") { ?>
         <div class="mdx-clean-footer">
-            <a href="<?php bloginfo('url'); ?>"
-               class="mdx-footer-title"><?php $mdx_logo_way = mdx_get_option('mdx_logo_way');
+            <a href="<?php bloginfo('url'); ?>" class="mdx-footer-title"><?php $mdx_logo_way = mdx_get_option('mdx_logo_way');
                 if ($mdx_logo_way == "2") {
                     $mdx_logo = mdx_get_option('mdx_logo');
                     if ($mdx_logo != "") {
@@ -99,8 +84,7 @@
                     echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));
                 }
                 $mdx_footer_say = mdx_get_option('mdx_footer_say');
-                if ($mdx_footer_say != '' && $mdx_footer_say != '--HitokotoAPIActivated--' && $mdx_footer_say != '--HitokotoPoemAPIActivated--') {
-                    ?>
+                if ($mdx_footer_say != '' && $mdx_footer_say != '--HitokotoAPIActivated--' && $mdx_footer_say != '--HitokotoPoemAPIActivated--') { ?>
                     <br><?php echo $mdx_footer_say; ?>
                 <?php } else if ($mdx_footer_say == '--HitokotoAPIActivated--') { ?>
                     <?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.hitokoto.cn/?encode=json", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){var hitokotoText = JSON.parse(xmlHttpReq.response); document.getElementById("k-text").innerText = hitokotoText.hitokoto;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
@@ -108,35 +92,30 @@
                 } ?></span>
             <hr>
             <div class="mdx-footer-copyright">
-                <span class="axton-copyright">
-                    Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a>
-                </span>
-                <?php if (!empty(mdx_get_option('mdx_wangan_num'))) { ?>
-                    <div class="mdx-wangan">
-                        <!-- 由于公安备案网站不支持HTTPS，此处只得使用HTTP协议链接 -->
-                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo mdx_get_option('mdx_wangan_num_id'); ?>"
-                           rel="noopener" target="_blank" class="click">
-                            <img src="<?php global $files_root;echo $files_root."/img/beian.png"; ?>"
-                                 alt="网安备案">
-                            <?php echo mdx_get_option('mdx_wangan_num'); ?>
-                        </a>
-                    </div>
-                <?php } ?>
-                <?php if (!empty(mdx_get_option('mdx_icp_num'))) { ?>
-                    <div class="mdx-icp">
-                        <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click">
-                            <?php echo mdx_get_option('mdx_icp_num'); ?>
-                        </a>
-                    </div>
-                <?php } ?>
+                <span>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></span>
+                <div class="mdx-footer-copyright-right">
+                    <?php if (!empty(mdx_get_option('mdx_icp_num'))) { ?>
+                        <div class="mdx-icp">
+                            <a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank" class="click"><?php echo mdx_get_option('mdx_icp_num'); ?></a>
+                        </div>
+                    <?php } ?>
+                    <?php if (!empty(mdx_get_option('mdx_wangan_num'))) { ?>
+                        <div class="mdx-wangan">
+                            <?php preg_match("/.公网安备\s*(\d+)\s*号/", mdx_get_option('mdx_wangan_num'), $mdx_wangannum_match);?>
+                            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo count($mdx_wangannum_match) ? $mdx_wangannum_match[1] : ''; ?>" rel="noopener" target="_blank" class="click wanan-link">
+                                <img src="<?php global $files_root;echo $files_root."/img/beian.png"; ?>">
+                                <?php echo mdx_get_option('mdx_wangan_num'); ?>
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     <?php } ?>
 </footer>
 </div>
 <?php if ($mdx_widget) { ?>
-    <div id="mdx-right-drawer" role="complementary"
-         class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
+    <div id="mdx-right-drawer" role="complementary" class="mdui-drawer mdui-drawer-right mdui-drawer-close mdui-drawer-full-height">
     <?php
     if (is_active_sidebar('widget_right')) {
         dynamic_sidebar('widget_right');
@@ -261,7 +240,8 @@ if (is_single() || (is_page())) { ?>
         var mdx_post_i18n_3 = '<?php echo addslashes(__('获取页面信息时出现问题<br>尝试直接访问', 'mdx')); ?>';
         var mdx_toc_i18n_1 = '<?php echo addslashes(__('菜单', 'mdx')); ?>';
         var mdx_toc_i18n_2 = '<?php echo addslashes(__('目录', 'mdx')); ?>';
-        var mdx_img_alt = <?php echo((mdx_get_option('mdx_img_box_show_alt') === 'true' || mdx_get_option('mdx_img_box_show_alt') === 'true') ? mdx_get_option('mdx_img_box_show_alt') : 'false'); ?>;
+        var mdx_img_alt = <?php echo(mdx_get_option('mdx_img_box_show_alt') === 'true' ? 'true' : 'false'); ?>;
+        var mdx_img_box_opacity = <?php echo(mdx_get_option('mdx_img_box_opacity') === 'true' ? 'true' : 'false'); ?>;
     </script>
 <?php } ?>
 <?php if (function_exists('alu_get_wpsmiliestrans') && (mdx_get_option('mdx_comment_emj') == "true") && (is_single() || is_page())) { ?>
@@ -288,7 +268,6 @@ if (is_home()) {
 } else {
     $mdx_js_name = 'js';
 } ?>
-<script type='text/javascript'
-        src='<?php echo $files_root; ?>/js/<?php echo $mdx_js_name ?>.js?ver=<?php echo get_option("mdx_version_commit"); ?>'></script><?php echo htmlspecialchars_decode(mdx_get_option('mdx_footer_js')); ?></body>
+<script type='text/javascript' src='<?php echo $files_root; ?>/js/<?php echo $mdx_js_name ?>.js?ver=<?php echo get_option("mdx_version_commit"); ?>'></script><?php echo htmlspecialchars_decode(mdx_get_option('mdx_footer_js')); ?></body>
 <!--Theme MDx Version <?php echo get_option('mdx_version_commit'); ?>-->
 </html>
