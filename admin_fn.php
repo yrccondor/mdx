@@ -61,6 +61,7 @@ wp_enqueue_media();
         mdx_update_option("mdx_enhanced_ajax", sanitize_text_field($_POST['mdx_enhanced_ajax']));
         mdx_update_option('mdx_speed_pre', sanitize_text_field($_POST['mdx_speed_pre']));
         mdx_update_option('mdx_share_area', sanitize_text_field($_POST['mdx_share_area']));
+        mdx_update_option('mdx_share_twitter_card', sanitize_text_field($_POST['mdx_share_twitter_card'])??"summary");
         mdx_update_option('mdx_hot_posts', sanitize_text_field($_POST['mdx_hot_posts']));
         mdx_update_option('mdx_hot_posts_get', sanitize_text_field($_POST['mdx_hot_posts_get']));
         mdx_update_option('mdx_hot_posts_num', sanitize_text_field($_POST['mdx_hot_posts_num']));
@@ -255,6 +256,20 @@ wp_enqueue_media();
                             <option value="oversea" <?php if ($mdx_v_share_area == 'oversea'){ ?>selected="selected"<?php } ?>><?php _e('只有国际服务商', 'mdx'); ?></option>
                         </select>
                         <p class="description"><?php _e('指定你想提供给访问者的分享服务商。</p><ul><li><code>只有中国国内服务商</code>：提供 微博、微信、QQ、QQ 空间 的分享</li><li><code>只有国际服务商</code>：提供 Telegrame、Twitter、Facebook 的分享</li></ul><p>无论如何，“生成分享图”始终启用。', 'mdx'); ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="mdx_share_twitter_card"><?php _e('Twitter Card 分享类型', 'mdx'); ?></label></th>
+                    <td>
+                        <?php $mdx_v_share_twitter_card = mdx_get_option('mdx_share_twitter_card'); ?>
+                        <fieldset>
+                            <label>
+                                <input type="radio" name="mdx_share_twitter_card" value="summary" <?php if ($mdx_v_share_twitter_card == 'summary'){ ?>checked="checked"<?php } ?>> <?php _e("描述卡片","mdx"); ?>
+                            </label><br>
+                            <label>
+                                <input type="radio" name="mdx_share_twitter_card" value="summary_large_image" <?php if ($mdx_v_share_twitter_card == 'summary_large_image'){ ?>checked="checked"<?php } ?>> <?php _e("大型带图卡片","mdx"); ?>
+                            </label><br>
+                        </fieldset>
                     </td>
                 </tr>
             </tbody>

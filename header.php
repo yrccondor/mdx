@@ -3,6 +3,12 @@
 global $wp;
 global $files_root;
 global $page, $paged;
+/**
+ * @var string TwitterCard分享类型 summary|summary_large_image
+ * @see https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards Developer Document
+ * @see https://cards-dev.twitter.com/validator Site for Test
+ */
+$opt_mdx_share_twitter_card = mdx_get_option("mdx_share_twitter_card");
 
 // 获取当前页面Title
 $title = "";
@@ -15,7 +21,7 @@ if ($paged >= 2 || $page >= 2) $title .= ' - ' . sprintf(__('第 %s 页'), max($
 // 获取当前页面分享图
 $opt_mdx_index_img = mdx_get_option('mdx_index_img');
 $coverPicIsBing = (bool)substr($opt_mdx_index_img, 0, 6) == "--Bing";
-$index_image = !(!is_single() && !is_page() && $coverPicIsBing)?((is_single() || is_page())?(wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0]??""):$opt_mdx_index_img):mdx_get_option('mdx_side_head');
+$index_image = !(!(is_single() || is_page()) && $coverPicIsBing)?((is_single() || is_page())?(wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0]??""):$opt_mdx_index_img):mdx_get_option('mdx_side_head');
 
 // 获取当前页面社会分享描述
 $social_describe = "";
@@ -80,7 +86,7 @@ if (is_single() || is_page()) {
         $mdx_a_des = mdx_get_option('mdx_auto_des'); ?>
         <meta property="og:description" content="<?php echo $social_describe; ?>">
         <meta property="og:image" content="<?php echo $index_image; ?>">
-        <meta name="twitter:card" content="summary">
+        <meta name="twitter:card" content="<?php echo (is_single()||is_page())?(($opt_mdx_share_twitter_card=="summary"||$opt_mdx_share_twitter_card=="summary_large_image")?$opt_mdx_share_twitter_card:"summary"):"summary"; ?>">
         <meta name="twitter:title" content="<?php echo $title; ?>">
         <meta name="twitter:description" content="<?php echo $social_describe; ?>">
         <meta name="twitter:url" content="<?php echo $mdx_current_url; ?>">
