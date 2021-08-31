@@ -58,7 +58,6 @@ if (is_single() || is_page()) {
     <?php } ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Theme developed by AxtonYao -->
-    <meta name="author" content="AxtonYao" />
     <?php if (mdx_get_option('mdx_safari') == "true") { ?>
         <link rel="mask-icon" href="<?php echo mdx_get_option('mdx_svg'); ?>" color="<?php echo mdx_get_option('mdx_svg_color'); ?>">
     <?php } ?>
@@ -83,10 +82,14 @@ if (is_single() || is_page()) {
         <?php
         $mdx_des = mdx_get_option('mdx_seo_des');
         $mdx_s_key = mdx_get_option('mdx_seo_key');
-        $mdx_a_des = mdx_get_option('mdx_auto_des'); ?>
+        $mdx_a_des = mdx_get_option('mdx_auto_des');
+        $opt_mdx_share_twitter_username = mdx_get_option('mdx_share_twitter_username');?>
         <meta property="og:description" content="<?php echo $social_describe; ?>">
         <meta property="og:image" content="<?php echo $index_image; ?>">
         <meta name="twitter:card" content="<?php echo (is_single()||is_page())?(($opt_mdx_share_twitter_card=="summary"||$opt_mdx_share_twitter_card=="summary_large_image")?$opt_mdx_share_twitter_card:"summary"):"summary"; ?>">
+        <?php if(preg_match("/@?([A-Za-z0-9_]+)/i",$opt_mdx_share_twitter_username,$v_opt_mdx_share_twitter_username)>0){ ?>
+            <meta name="twitter:site" content="@<?php echo $v_opt_mdx_share_twitter_username[1]; ?>">
+        <?php } ?>
         <meta name="twitter:title" content="<?php echo $title; ?>">
         <meta name="twitter:description" content="<?php echo $social_describe; ?>">
         <meta name="twitter:url" content="<?php echo $mdx_current_url; ?>">
