@@ -12,7 +12,7 @@ $opt_mdx_share_twitter_card = mdx_get_option("mdx_share_twitter_card");
 
 // 获取当前页面Title
 $title = "";
-$title .= wp_title('-', true, 'right');
+$title .= wp_title('-', false, 'right');
 $title .= get_bloginfo('name');
 $site_description = get_bloginfo('description', 'display');
 if ($site_description && (is_home() || is_front_page())) $title .= " - $site_description";
