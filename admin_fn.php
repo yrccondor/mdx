@@ -260,14 +260,7 @@ wp_enqueue_media();
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="mdx_share_twitter_username"><?php _e('Twitter 用户名', 'mdx'); ?></label></th>
-                    <td>
-                        <input name="mdx_share_twitter_username" type="text" id="mdx_share_twitter_username" value="<?php echo esc_attr(mdx_get_option('mdx_share_twitter_username')) ?>" class="regular-text">
-                        <p class="description"><?php _e('直接输入Twitter用户名，不要加入‘@’等，网站链接分享至Twitter时会显示站点所有者。<br/>具体请前往<a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image#reference" target="_blank">https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image</a>', 'mdx'); ?></p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="mdx_share_twitter_card"><?php _e('Twitter Card 分享类型', 'mdx'); ?></label></th>
+                    <th scope="row"><label for="mdx_share_twitter_card"><?php _e('Twitter 分享类型', 'mdx'); ?></label></th>
                     <td>
                         <?php $mdx_v_share_twitter_card = mdx_get_option('mdx_share_twitter_card'); ?>
                         <fieldset>
@@ -275,9 +268,16 @@ wp_enqueue_media();
                                 <input type="radio" name="mdx_share_twitter_card" value="summary" <?php if ($mdx_v_share_twitter_card == 'summary'){ ?>checked="checked"<?php } ?>> <?php _e("描述卡片","mdx"); ?>
                             </label><br>
                             <label>
-                                <input type="radio" name="mdx_share_twitter_card" value="summary_large_image" <?php if ($mdx_v_share_twitter_card == 'summary_large_image'){ ?>checked="checked"<?php } ?>> <?php _e("大型带图卡片","mdx"); ?>
+                                <input type="radio" name="mdx_share_twitter_card" value="summary_large_image" <?php if ($mdx_v_share_twitter_card == 'summary_large_image'){ ?>checked="checked"<?php } ?>> <?php _e("图片卡片","mdx"); ?>
                             </label><br>
                         </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="mdx_share_twitter_username"><?php _e('Twitter 分享用户名', 'mdx'); ?></label></th>
+                    <td>
+                        <input name="mdx_share_twitter_username" type="text" id="mdx_share_twitter_username" value="<?php echo esc_attr(mdx_get_option('mdx_share_twitter_username')) ?>" class="regular-text">
+                        <p class="description"><?php _e('直接输入 Twitter用户名，不要加入‘@’等，网站链接分享至 Twitter 时会显示站点所有者为此账户。', 'mdx'); ?></p>
                     </td>
                 </tr>
             </tbody>
@@ -822,7 +822,7 @@ wp_enqueue_media();
                             </label><br>
                             <label><input type="radio" name="mdx_jquery" value="false" <?php if ($mdx_v_jquery == 'false'){ ?>checked="checked"<?php } ?>> <?php echo $falseoff; ?>
                             </label><br>
-                            <p class="description"><?php _e('自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/upgrade_tip/">主题文档</a>。', 'mdx'); ?></p>
+                            <p class="description"><?php _e('自 2.0.0 版本起，MDx 已不再依赖 jQuery 且不再在前端载入 jQuery 脚本。如果你在升级 MDx 后碰到页面显示不正常等问题，请尝试打开此选项。<br><strong>这是一个临时选项，将会在未来版本中被移除。如果你的前端页面中有依赖 jQuery 的其他资源，请确保其不受 MDx 移除 jQuery 的影响。</strong><br>有关更多从 MDx 1.x 升级至 2.x 的信息，请参阅<a href="https://doc.flyhigher.top/mdx/zh-CN/upgrade-tip/">主题文档</a>。', 'mdx'); ?></p>
                         </fieldset>
                     </td>
                 </tr>

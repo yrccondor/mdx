@@ -3,11 +3,6 @@
 global $wp;
 global $files_root;
 global $page, $paged;
-/**
- * @var string TwitterCard分享类型 summary|summary_large_image
- * @see https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards Developer Document
- * @see https://cards-dev.twitter.com/validator Site for Test
- */
 $opt_mdx_share_twitter_card = mdx_get_option("mdx_share_twitter_card");
 
 // 获取当前页面Title
@@ -37,34 +32,26 @@ if (is_single() || is_page()) {
 } else {
     $social_describe = get_bloginfo('description', 'display');
 }
-
-// PS: 判断页面类型的我还能再优化，但实在太懒（划掉）
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=<?php echo (mdx_get_option('mdx_allow_scale') == 'false')?"1, user-scalable=no":"5"; ?>">
     <?php if (mdx_get_option('mdx_speed_pre') == 'true' && !is_404()) {
         if (is_home()) { $mdx_js_name2 = 'js'; } else if (is_category() || is_archive() || is_search()) { $mdx_js_name2 = 'ac'; } else if (is_single()) { $mdx_js_name2 = 'post'; } else if (is_page()) { $mdx_js_name2 = 'page'; } else { $mdx_js_name2 = 'js'; } ?>
-
         <link rel="preload" href="<?php echo $files_root; ?>/js/common.js?ver=<?php echo get_option("mdx_version_commit"); ?>" as="script">
         <link rel="preload" href="<?php echo $files_root; ?>/js/<?php echo $mdx_js_name2 ?>.js?ver=<?php echo get_option("mdx_version_commit"); ?>" as="script">
         <link rel="preload" href="<?php echo $files_root; ?>/mdui/icons/material-icons/<?php echo (mdx_get_option("mdx_md2") == "false")?"MaterialIcons-Regular.woff2":"material_2_icon_font.woff2" ?>" as="font" type="font/woff2" crossorigin>
         <?php if (mdx_get_option('mdx_md2') == "true" && mdx_get_option('mdx_md2_font') == "true") { ?>
             <link rel="preload" href="<?php echo $files_root; ?>/fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
             <link rel="preload" href="<?php echo $files_root; ?>/fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-        <?php } ?>
-    <?php } ?>
+        <?php }} ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Theme developed by AxtonYao -->
     <?php if (mdx_get_option('mdx_safari') == "true") { ?>
         <link rel="mask-icon" href="<?php echo mdx_get_option('mdx_svg'); ?>" color="<?php echo mdx_get_option('mdx_svg_color'); ?>">
-    <?php } ?>
-    <?php if (mdx_get_option("mdx_title_med") == "diy") { ?>
+    <?php } if (mdx_get_option("mdx_title_med") == "diy") { ?>
         <title itemprop="name"><?php echo $title; ?></title>
-    <?php } ?>
-    <?php if (is_single() || is_page()) {
+    <?php } if (is_single() || is_page()) {
         if (function_exists('get_query_var')) {
             $cpage = intval(get_query_var('cpage'));
             $commentPage = intval(get_query_var('comment-page'));
@@ -72,8 +59,7 @@ if (is_single() || is_page()) {
         if (!empty($cpage) || !empty($commentPage)) {
             echo '<meta name="robots" content="noindex, nofollow">';
         }
-    } ?>
-    <?php if (!is_404()) { ?>
+    } if (!is_404()) { ?>
         <meta property="og:title" content="<?php echo $title; ?>">
         <meta property="og:type" content="article">
         <meta property="og:url" content="<?php
@@ -139,6 +125,5 @@ if (is_single() || is_page()) {
         <meta name="mdx-main-color" content="<?php echo $mdx_theme_color; ?>">
     <?php } ?>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <?php wp_head(); ?>
-    <?php echo htmlspecialchars_decode(mdx_get_option('mdx_head_js')); ?>
+    <?php wp_head(); echo htmlspecialchars_decode(mdx_get_option('mdx_head_js')); ?>
 </head>

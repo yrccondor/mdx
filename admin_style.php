@@ -793,23 +793,23 @@ function input_onchange(ele){
     for(ele of jQuery("#TB_ajaxContent .regular-text")){
         if(jQuery(ele).val() !== ""){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
-                html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i>\n';
+                html_str += '<!-- qq -->\n<span class="mdx-footer-icon-link"><i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
-                html_str += '<!-- wechat -->\n<span style="--background:url('+jQuery(ele).val()+')" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
+                html_str += '<!-- wechat -->\n<span style="--background:url('+jQuery(ele).val()+')" class="mdx-sn-wechat-qr mdx-footer-icon-link"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){
-                html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- tel -->\n<a class="mdx-footer-icon-link" href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_github"){
-                html_str += '<!-- github -->\n<a href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- github -->\n<a class="mdx-footer-icon-link" href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_twitter"){
-                html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- twitter -->\n<a class="mdx-footer-icon-link" href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_telegram"){
-                html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- telegram -->\n<a class="mdx-footer-icon-link" href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_steam"){
-                html_str += '<!-- steam -->\n<a href="https://steamcommunity.com/id/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_steam" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- steam -->\n<a class="mdx-footer-icon-link" href="https://steamcommunity.com/id/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_steam" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_email"){
-                html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- email -->\n<a class="mdx-footer-icon-link" href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else{
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a class="mdx-footer-icon-link" href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }
         }
     }

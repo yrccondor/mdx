@@ -815,21 +815,22 @@ window.addEventListener('DOMContentLoaded', () => {
             menuDOM.setAttribute('mdui-collapse', '');
         }
     }
-    new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse('#mdx_menu');
 
     //cookie
-    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    var cookieEle = document.getElementById("mdx-cookie-notice");
-    if (ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")) {
-        cookieEle.classList.add("mdx-cookie-notice-show");
-        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+    var ifDisplay = typeof displayCookie === 'undefined' ? true : displayCookie;
+    var cookieEle = document.getElementById('mdx-cookie-notice');
+    var flagName = typeof cookieFlagName === 'undefined' ? 'mdx_cookie' : cookieFlagName;
+    if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
+        cookieEle.classList.add('mdx-cookie-notice-show');
+        cookieEle.getElementsByTagName('button')[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie() {
-        localStorage.setItem("mdx_cookie", "true");
-        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        localStorage.setItem(flagName, 'true');
+        document.getElementById('mdx-cookie-notice').style.bottom = '-400px';
         setTimeout(() => {
-            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+            document.getElementById('mdx-cookie-notice').classList.remove('mdx-cookie-notice-show');
         }, 400);
     }
 

@@ -228,9 +228,23 @@ body.has-admin-bar #titleBar, body.has-admin-bar #titleBarinPost, body.has-admin
     font-weight: 300;
     font-size: 15px;
     line-height: 25px;
+    .mdx-footer-icon-link {
+        display: inline-flex;
+    }
 }
 .foot.mdx-footer-clean {
     padding: 10px 0;
+    .mdx-copyright {
+        float: right;
+    }
+    &:after{
+        content: " ";
+        display: block;
+        height: 0;
+        width: 0;
+        clear: both;
+        visibility: hidden;;
+    }
 }
 .foot.mdx-footer-morden {
     padding: 30px 0;
