@@ -110,4 +110,20 @@
         },
     });
     tinymce.PluginManager.add('mdx_ad', tinymce.plugins.mdx_ad);
+
+    tinymce.create('tinymce.plugins.mdx_list', {
+        init : function(ed, url){
+            ed.addButton('mdx_list', {
+                title : 'List',
+                image : url+'/bt_icon/list.png',
+                onclick : function(){
+                    ed.selection.setContent('[mdx_list]<br />[mdx_list_item avatar="" title="" subtitle="" action="" blank="false"]Item content here...[/mdx_list_item]<br />[/mdx_list]');
+                }
+            });
+        },
+        createControl:function(n, cm){
+            return null;
+        },
+    });
+    tinymce.PluginManager.add('mdx_list', tinymce.plugins.mdx_list);
 })();

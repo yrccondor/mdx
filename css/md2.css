@@ -264,6 +264,14 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 body.mdx-index-void .mdxNotice {
     border-radius: 8px!important;
 }
+article .mdx-sc-list {
+    box-shadow: none!important;
+    border: 2px solid #e2e2e2;
+    border-radius: 8px;
+}
+.mdui-theme-layout-dark article .mdx-sc-list {
+    border: 2px solid #555;
+}
 @media screen and (orientation: landscape) and (min-width: 750px) {
     body.mdx-first-tworows #mdx-search-anim, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows .mdx-tworows-title > div {
         border-radius: 8px;

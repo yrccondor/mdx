@@ -525,6 +525,42 @@ article a {
 article a:hover {
     opacity: .9;
 }
+article .mdx-sc-list {
+    overflow: auto;
+    padding: 0;
+    margin-bottom: 1.2em!important;
+    background-color: rgba(127, 127, 127, .03);
+    border-radius: 2px;
+    & > a {
+        color: currentColor!important;
+        width: 100%;
+        &::before {
+            height: 0;
+            display: none;
+            content: none;
+        }
+    }
+    .mdx-sc-list-item {
+        .mdx-sc-list-subtitle {
+            font-size: 14px;
+            margin-top: -7px;
+        }
+        .mdui-list-item-title + .mdui-list-item-text {
+            margin-top: 0;
+        }
+        .mdui-list-item-avatar figure {
+            margin: 0!important;
+            height: 100%;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+article .mdx-sc-list.mdui-list {
+    padding-left: 0;
+}
 .title, article h2, article h3, article h4 {
     text-align: left;
     font-weight: 700;
