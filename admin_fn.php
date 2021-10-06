@@ -47,6 +47,7 @@ wp_enqueue_media();
         mdx_update_option("mdx_post_money", esc_url_raw($_POST['mdx_post_money']));
         mdx_update_option('mdx_read_pro', sanitize_text_field($_POST['mdx_read_pro']));
         mdx_update_option('mdx_auto_scroll', sanitize_text_field($_POST['mdx_auto_scroll']));
+        mdx_update_option('mdx_click_status', sanitize_text_field($_POST['mdx_click_status']));
         mdx_update_option('mdx_toc', sanitize_text_field($_POST['mdx_toc']));
         mdx_update_option('mdx_toc_preview', sanitize_text_field($_POST['mdx_toc_preview']));
         mdx_update_option('mdx_load_pro', sanitize_text_field($_POST['mdx_load_pro']));
@@ -352,6 +353,19 @@ wp_enqueue_media();
                             <label><input type="radio" name="mdx_enhanced_ajax" value="false" <?php if ($mdx_v_enhanced_ajax == 'false'){ ?>checked="checked"<?php } ?>> <?php echo $falseoff; ?>
                             </label><br>
                             <p class="description"><?php _e('启用此选项以加快文章列表的加载速度，并使浏览器在后退到文章列表时尽可能地保持滚动位置。<br>受浏览器限制，在拥有大量文章时此功能效果可能会受限。', 'mdx'); ?></p>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><?php _e('允许通过文章列表进入状态页', 'mdx'); ?></th>
+                    <td>
+                        <?php $mdx_v_click_status = mdx_get_option('mdx_click_status'); ?>
+                        <fieldset>
+                            <label><input type="radio" name="mdx_click_status" value="true" <?php if ($mdx_v_click_status == 'true'){ ?>checked="checked"<?php } ?>> <?php echo $trueon; ?>
+                            </label><br>
+                            <label><input type="radio" name="mdx_click_status" value="false" <?php if ($mdx_v_click_status == 'false'){ ?>checked="checked"<?php } ?>> <?php echo $falseoff; ?>
+                            </label><br>
+                            <p class="description"><?php _e('开启后，文章列表中的“状态”类型文章将会链接到对应文章页。', 'mdx'); ?></p>
                         </fieldset>
                     </td>
                 </tr>

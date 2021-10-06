@@ -17,6 +17,7 @@ $mdx_default_values = array(
     'mdx_read_pro' => 'true',
     'mdx_pro_save' => 'true',
     'mdx_auto_scroll' => 'false',
+    'mdx_click_status' => 'false',
     'mdx_toc' => 'true',
     'mdx_toc_preview' => 'true',
     'mdx_load_pro' => 'true',
