@@ -278,7 +278,7 @@ wp_enqueue_media();
                     <th scope="row"><label for="mdx_share_twitter_username"><?php _e('Twitter 分享用户名', 'mdx'); ?></label></th>
                     <td>
                         <input name="mdx_share_twitter_username" type="text" id="mdx_share_twitter_username" value="<?php echo esc_attr(mdx_get_option('mdx_share_twitter_username')) ?>" class="regular-text">
-                        <p class="description"><?php _e('直接输入 Twitter用户名，不要加入‘@’等，网站链接分享至 Twitter 时会显示站点所有者为此账户。', 'mdx'); ?></p>
+                        <p class="description"><?php _e('直接输入 Twitter 用户名，不要加入 <code>@<code>，网站链接分享至 Twitter 时会显示站点所有者为此账户。', 'mdx'); ?></p>
                     </td>
                 </tr>
             </tbody>
