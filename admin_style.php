@@ -84,12 +84,19 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_echo_post_sum', sanitize_text_field($_POST['mdx_echo_post_sum']));
     mdx_update_option('mdx_post_list_img_height', sanitize_text_field($_POST['mdx_post_list_img_height']));
     mdx_update_option('mdx_post_def_img', sanitize_text_field($_POST['mdx_post_def_img']));
+    if ($_POST['mdx_post_def_img_url'] === '') {
+        global $files_root;
+        mdx_update_option('mdx_post_def_img_url', esc_url_raw($files_root.'/img/dpic.jpg'));
+    } else {
+        mdx_update_option('mdx_post_def_img_url', esc_url_raw($_POST['mdx_post_def_img_url']));
+    }
     mdx_update_option('mdx_gravatar_actived', sanitize_text_field($_POST['mdx_gravatar_actived']));
     mdx_update_option('mdx_link_rand_order', sanitize_text_field($_POST['mdx_link_rand_order']));
     mdx_update_option('mdx_title_med', sanitize_text_field($_POST['mdx_title_med']));
     mdx_update_option('mdx_index_head_style', sanitize_text_field($_POST['mdx_index_head_style']));
     mdx_update_option('mdx_index_slide_posts_style', sanitize_text_field($_POST['mdx_index_slide_posts_style']));
     mdx_update_option('mdx_index_slide_posts_num', sanitize_text_field($_POST['mdx_index_slide_posts_num']));
+    mdx_update_option('mdx_index_slide_interval', sanitize_text_field($_POST['mdx_index_slide_interval']));
     mdx_update_option('mdx_index_slide_posts_get', sanitize_text_field($_POST['mdx_index_slide_posts_get']));
     mdx_update_option('mdx_index_slide_posts_cat', sanitize_text_field($_POST['mdx_index_slide_posts_cat']));
     mdx_update_option('mdx_index_img', sanitize_text_field($_POST['mdx_index_img']));
@@ -265,6 +272,15 @@ wp_nonce_field('mdx_options_update');
         </fieldset>
     </td>
     </tr>
+    <tr>
+    <th scope="row"><?php _e('文章默认特色图像', 'mdx');?></th>
+    <td>
+    <input name="mdx_post_def_img_url" type="text" id="mdx_post_def_img_url" value="<?php echo esc_attr(mdx_get_option('mdx_post_def_img_url'))?>" class="regular-text">
+    <button type="button" id="insert-media-button-5" class="button" style="margin-top:5px;display:block"><?php _e('选择图片', 'mdx');?></button>
+    <p class="description"><?php _e('指定文章默认特色图像，留空则使用主题内置默认特色图像。', 'mdx');?></p>
+    <img id="img5" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
+    </td>
+    </tr>
 </tbody>
 
 <tbody class="mdx-admin-section" id="mdx-admin-nav-index-section">
@@ -285,7 +301,7 @@ wp_nonce_field('mdx_options_update');
     <tr>
     <th scope="row"><?php _e('首页图片', 'mdx');?></th>
     <td>
-    <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" readonly="readonly" required="required">
+    <input name="mdx_index_img" type="text" id="mdx_index_img" value="<?php echo esc_attr(mdx_get_option('mdx_index_img'))?>" class="regular-text" required="required">
     <button type="button" id="insert-media-button" class="button"><?php _e('选择图片', 'mdx');?></button> <button type="button" id="use-bing-api" class="button mdx_stbsip8"><?php _e('使用必应美图', 'mdx');?></button>
     <p class="description"><?php _e('你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，你都需要设定一张首页图片。<br>如使用必应美图，可在括号内指定图片的日期。0为今日图片，-1为明日准备使用的图片，1为昨日的图片，以此类推，最多到前16日。', 'mdx');?></p>
     <img id="img1" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
@@ -343,13 +359,19 @@ wp_nonce_field('mdx_options_update');
         <option value="1" <?php if($mdx_v_index_slide_posts_style=='1'){?>selected="selected"<?php }?>><?php _e('居中', 'mdx');?></option>
         <option value="2" <?php if($mdx_v_index_slide_posts_style=='2'){?>selected="selected"<?php }?>><?php _e('现代', 'mdx');?></option>
         <option value="3" <?php if($mdx_v_index_slide_posts_style=='3'){?>selected="selected"<?php }?>><?php _e('朴素', 'mdx');?></option>
+        <option value="4" <?php if($mdx_v_index_slide_posts_style=='4'){?>selected="selected"<?php }?>><?php _e('纯色', 'mdx');?></option>
     </select>
     </td>
     </tr>
     <tr class="mdx_index_head_style_slide">
-    <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
-    <td><input name="mdx_index_slide_posts_num" type="text" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
-    <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
+        <th scope="row"><label for="mdx_index_slide_posts_num"><?php _e('首页幻灯片文章数量', 'mdx');?></label></th>
+        <td><input name="mdx_index_slide_posts_num" type="number" min="1" id="mdx_index_slide_posts_num" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_posts_num'))?>" class="regular-text">
+        <p class="description"><?php _e('在此设定首页幻灯片文章篇数。请输入整数。', 'mdx');?></p></td>
+    </tr>
+    <tr class="mdx_index_head_style_slide">
+        <th scope="row"><label for="mdx_index_slide_interval"><?php _e('首页幻灯片自动切换时间', 'mdx');?></label></th>
+        <td><input name="mdx_index_slide_interval" type="number" min="1" id="mdx_index_slide_interval" value="<?php echo esc_attr(mdx_get_option('mdx_index_slide_interval'))?>" class="regular-text">
+        <p class="description"><?php _e('单位为秒。请输入整数。', 'mdx');?></p></td>
     </tr>
     <tr class="mdx_index_head_style_slide">
     <th scope="row"><?php _e('首页幻灯片文章获取方式', 'mdx');?></th>
@@ -531,7 +553,7 @@ wp_nonce_field('mdx_options_update');
     <tr>
     <th scope="row"><?php _e('抽屉菜单顶部图片', 'mdx');?></th>
     <td>
-    <input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2" readonly="readonly">
+    <input name="mdx_side_img" type="url" id="mdx_side_img" value="<?php echo esc_attr(mdx_get_option('mdx_side_img'))?>" class="regular-text mdx_stbsip2">
     <button type="button" id="insert-media-button-3" class="button mdx_stbsip22"><?php _e('选择图片', 'mdx');?></button>
     <img id="img2" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
     </td>
@@ -771,23 +793,23 @@ function input_onchange(ele){
     for(ele of jQuery("#TB_ajaxContent .regular-text")){
         if(jQuery(ele).val() !== ""){
             if(jQuery(ele).attr("id") === "mdx_sn_qq"){
-                html_str += '<!-- qq -->\n<i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i>\n';
+                html_str += '<!-- qq -->\n<span class="mdx-footer-icon-link"><i class="mdx-sn-icon mdx_sn_qq" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_wechat"){
-                html_str += '<!-- wechat -->\n<span style="--background:url('+jQuery(ele).val()+')" class="mdx-sn-wechat-qr"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
+                html_str += '<!-- wechat -->\n<span style="--background:url('+jQuery(ele).val()+')" class="mdx-sn-wechat-qr mdx-footer-icon-link"><i class="mdx-sn-icon mdx_sn_wechat" title="'+jQuery(ele)[0].dataset.alt+'"> </i></span>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_tel"){
-                html_str += '<!-- tel -->\n<a href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- tel -->\n<a class="mdx-footer-icon-link" href="tel:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_tel" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_github"){
-                html_str += '<!-- github -->\n<a href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- github -->\n<a class="mdx-footer-icon-link" href="https://github.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_github" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_twitter"){
-                html_str += '<!-- twitter -->\n<a href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- twitter -->\n<a class="mdx-footer-icon-link" href="https://twitter.com/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_twitter" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_telegram"){
-                html_str += '<!-- telegram -->\n<a href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- telegram -->\n<a class="mdx-footer-icon-link" href="https://t.me/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_telegram" mdui-tooltip="{content: \'@'+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_steam"){
-                html_str += '<!-- steam -->\n<a href="https://steamcommunity.com/id/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_steam" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- steam -->\n<a class="mdx-footer-icon-link" href="https://steamcommunity.com/id/'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_steam" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else if(jQuery(ele).attr("id") === "mdx_sn_email"){
-                html_str += '<!-- email -->\n<a href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- email -->\n<a class="mdx-footer-icon-link" href="mailto:'+jQuery(ele).val()+'"><i class="mdx-sn-icon mdx_sn_email" mdui-tooltip="{content: \''+jQuery(ele).val()+'\', position: \'top\'}" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }else{
-                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
+                html_str += '<!-- '+jQuery(ele).attr("id").split("_").pop()+' -->\n<a class="mdx-footer-icon-link" href="'+jQuery(ele).val()+'"><i class="mdx-sn-icon '+jQuery(ele).attr("id")+'" title="'+jQuery(ele)[0].dataset.alt+'"> </i></a>\n';
             }
         }
     }

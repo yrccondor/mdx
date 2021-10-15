@@ -1,10 +1,12 @@
-import ele from './ele.js';
-import fade from './fade.js';
-import betterFetch from './betterFetch.js';
-import Velocity from 'velocity-animate';
+import ele from './tools/ele.js';
+import fade from './tools/fade.js';
+import betterFetch from './tools/betterFetch.js';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;
@@ -79,7 +81,7 @@ window.addEventListener("load", () => {
     init_wp_block();
     scrollDiff();
     fade(ele('body > .mdui-progress', null, 'array'), 'out', 200);
-    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+    document.querySelectorAll('.wp-block-mdx-fold').forEach((item) => {
         item.setAttribute('mdui-panel', '');
     });
     mdui.$(".wp-block-mdx-fold").mutation();
@@ -221,7 +223,7 @@ function mdxAjaxPost(i) {
 
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(ele("html"), { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -262,7 +264,7 @@ if (lazyloadImg.length) {
         })
     }
 };
-var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image img");
+var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image > figure.mdx-lazyload-container img");
 if (lazyloadImg2.length) {
     for (let el of lazyloadImg2) {
         el.addEventListener('lazyloaded', function (e) {
@@ -279,6 +281,17 @@ if (lazyloadImg2.length) {
         })
     }
 };
+var lazyloadImg3 = document.querySelectorAll("article > figure.wp-block-image > img, article > figure.wp-block-image > a > img");
+if (lazyloadImg3.length) {
+    for (let el of lazyloadImg3) {
+        el.addEventListener('lazyloaded', function (e) {
+            if (!e.target.previousSibling) {
+                e.target.parentNode.classList.add("mdx-img-loaded-no-anim");
+            }
+            e.target.classList.add("mdx-img-loaded-no-anim");
+        })
+    }
+};
 
 window.addEventListener('DOMContentLoaded', () => {
     if (mdx_comment_ajax && ele('#comments-navi>a.prev').getAttribute('href')) {
@@ -289,6 +302,15 @@ window.addEventListener('DOMContentLoaded', () => {
     if (ifOffline) {
         ele('#respond').innerHTML = tipMutiOffRes;
     }
+
+    // Wrap plain table
+    ele('article > table:not([class]):not([id])', (e) => {
+        e.classList.add('mdui-table', 'mdx-dny-table', 'mdui-table-hoverable');
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('mdui-table-fluid');
+        e.parentNode.insertBefore(wrapper, e);
+        wrapper.appendChild(e);
+    })
 
     ele('article a > figure > img.lazyload, article > figure > img.lazyload, article a > figure > img.lazyloaded, article > figure > img.lazyloaded, article a > figure > img.lazyloading, article > figure > img.lazyloading', (e) => {
         if (e.classList.contains("aligncenter")) {
@@ -358,7 +380,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgRaw = e.target;
                 imgRaw.style.opacity = 0;
                 ele('div.mdui-drawer', (e) => {
-                    e.insertAdjacentHTML('beforebegin', '<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+                    e.insertAdjacentHTML('beforebegin', `<div id="img-box" class="mdui-valign${mdx_img_box_opacity ? ' opacity-bg' : ''}"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>`);
                 })
                 mdui.updateSpinners();
                 ele('.mdx-img-viewer', (elem) => {
@@ -562,45 +584,45 @@ window.addEventListener('DOMContentLoaded', () => {
     var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
     const passwordForm = document.querySelectorAll('form.post-password-form p');
     if (passwordForm.length > 0) {
-        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>'`;
+        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>`;
     }
 
-    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        var mrm = window.matchMedia('(prefers-reduced-motion: reduce)');
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 })
 
 function handleMotionChange(mrm) {
-    if (sessionStorage.getItem("mrm_enable") === "user") {
-        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+    if (sessionStorage.getItem('mrm_enable') === 'user') {
+        document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
         return;
     }
-    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        if (!sessionStorage.getItem("mrm_enable")) {
+    if (mrm.matches && document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        if (!sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
                 onButtonClick: function () {
-                    sessionStorage.setItem("mrm_enable", "user");
-                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                    sessionStorage.setItem('mrm_enable', 'user');
+                    document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
                 },
                 position: 'top',
             });
-            sessionStorage.setItem("mrm_enable", "sys");
-            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+            sessionStorage.setItem('mrm_enable', 'sys');
+            document.getElementsByTagName('body')[0].classList.add('mdx-reduce-motion');
         }
     } else {
-        if (sessionStorage.getItem("mrm_enable")) {
+        if (sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
                 position: 'top',
             });
         }
-        sessionStorage.removeItem("mrm_enable");
+        sessionStorage.removeItem('mrm_enable');
     }
 }
 
@@ -625,49 +647,48 @@ ele('#comment').addEventListener('focus', () => {
     });
 })
 
-
 //Search
-document.getElementsByClassName("seai")[0].addEventListener("click", function () {
-    let searchBarDOM = document.getElementById("SearchBar");
-    searchBarDOM.style.display = "block";
+document.getElementsByClassName('seai')[0].addEventListener('click', function () {
+    let searchBarDOM = document.getElementById('SearchBar');
+    searchBarDOM.style.display = 'block';
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '1' }, 200));
+    ele('#SearchBar > *', (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
-        document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
-        searchBarDOM.classList.add("mdui-color-theme");
+        document.getElementsByClassName('outOfSearch')[0].style.width = '75%';
+        searchBarDOM.classList.add('mdui-color-theme');
     }, 0);
-    document.getElementsByClassName("seainput")[0].focus();
-    document.getElementsByTagName("body")[0].classList.toggle('mdx-search-lock');
+    document.getElementsByClassName('seainput')[0].focus();
+    document.getElementsByTagName('body')[0].classList.toggle('mdx-search-lock');
     if (ifOffline) {
         let searchBoxDOM = document.getElementsByClassName('OutOfsearchBox')[0];
         searchBoxDOM.innerHTML = '<div class="searchBoxFill"></div><div class="underRes">' + tipMutiOff + '</div>';
         searchBoxDOM.style.pointerEvents = 'auto';
-        document.getElementsByClassName("seainput")[0].setAttribute('disabled', 'disabled');
+        document.getElementsByClassName('seainput')[0].setAttribute('disabled', 'disabled');
     }
 }, false);
-for (let ele of document.getElementsByClassName("sea-close")) {
-    ele.addEventListener("click", closeSearch, false);
+for (let ele of document.getElementsByClassName('sea-close')) {
+    ele.addEventListener('click', closeSearch, false);
 }
 function closeSearch() {
-    document.getElementsByClassName("seainput")[0].blur();
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '0' }, 200));
+    document.getElementsByClassName('seainput')[0].blur();
+    ele('#SearchBar > *', (e) => new Opacity(e, 0, 200));
     fade(ele('.fullScreen', null, 'array'), 'out', 300);
     fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
-    document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
+    document.getElementsByClassName('outOfSearch')[0].style.width = '30%';
     window.setTimeout(hideBar, 300);
-    document.getElementById("SearchBar").classList.remove("mdui-color-theme");
+    document.getElementById('SearchBar').classList.remove('mdui-color-theme');
     setTimeout(() => {
-        let bodyDOM = document.getElementsByTagName("body")[0];
+        let bodyDOM = document.getElementsByTagName('body')[0];
         if (bodyDOM.classList.contains('mdx-search-lock')) {
             bodyDOM.classList.toggle('mdx-search-lock');
         }
-        document.getElementsByClassName("outOfSearch")[0].removeAttribute("style");
+        document.getElementsByClassName('outOfSearch')[0].removeAttribute('style');
     }, 300);
 };
 
 function hideBar() {
-    document.getElementById("SearchBar").style.display = "none";
+    document.getElementById('SearchBar').style.display = 'none';
 }
 
 // 评论分页
@@ -686,7 +707,7 @@ function commentNaviLink(e) {
             e.parentNode.removeChild(e);
         });
         ele('.mdx-comments-loading').style.display = 'block';
-        Velocity(ele("html"), { scrollTop: ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65 + "px" }, 500);
+        HTMLScrollTo.to(ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65, 500);
         betterFetch(e.target.getAttribute('href')).then((out) => {
             let htmlParser = new DOMParser();
             let htmlParsed = htmlParser.parseFromString(out, "text/html");
@@ -761,7 +782,7 @@ function commentNavi(e) {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(ele("html"), { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 
@@ -794,21 +815,22 @@ window.addEventListener('DOMContentLoaded', () => {
             menuDOM.setAttribute('mdui-collapse', '');
         }
     }
-    new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse('#mdx_menu');
 
     //cookie
-    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    var cookieEle = document.getElementById("mdx-cookie-notice");
-    if (ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")) {
-        cookieEle.classList.add("mdx-cookie-notice-show");
-        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+    var ifDisplay = typeof displayCookie === 'undefined' ? true : displayCookie;
+    var cookieEle = document.getElementById('mdx-cookie-notice');
+    var flagName = typeof cookieFlagName === 'undefined' ? 'mdx_cookie' : cookieFlagName;
+    if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
+        cookieEle.classList.add('mdx-cookie-notice-show');
+        cookieEle.getElementsByTagName('button')[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie() {
-        localStorage.setItem("mdx_cookie", "true");
-        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        localStorage.setItem(flagName, 'true');
+        document.getElementById('mdx-cookie-notice').style.bottom = '-400px';
         setTimeout(() => {
-            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+            document.getElementById('mdx-cookie-notice').classList.remove('mdx-cookie-notice-show');
         }, 400);
     }
 

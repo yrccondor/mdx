@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-14 17:38+0800\n"
+"PO-Revision-Date: 2021-02-05 20:09+0800\n"
 "Last-Translator: Ye Shu <hello@shuye.dev>\n"
 "Language-Team: Ye Shu <hello@shuye.dev>\n"
 "Language: en\n"
@@ -57,7 +57,7 @@ msgstr "Go Back"
 msgid "开启"
 msgstr "Enabled"
 
-#: admin_fn.php:4 admin_style.php:4 footer.php:143
+#: admin_fn.php:4 admin_style.php:4 footer.php:135
 msgid "关闭"
 msgstr "Disabled"
 
@@ -65,23 +65,23 @@ msgstr "Disabled"
 msgid "MDx 主题 - 功能"
 msgstr "MDx Theme - Features"
 
-#: admin_fn.php:77 admin_style.php:117
+#: admin_fn.php:77 admin_style.php:118
 msgid "设置已保存。"
 msgstr "Settings saved."
 
-#: admin_fn.php:83 admin_style.php:123
+#: admin_fn.php:83 admin_style.php:124
 msgid "更改未能保存。"
 msgstr "Settings NOT saved."
 
-#: admin_fn.php:89 admin_style.php:129
+#: admin_fn.php:89 admin_style.php:130
 msgid "MDx 已发布新版本 "
 msgstr "A newer version of theme MDx has been released: "
 
-#: admin_fn.php:89 admin_style.php:129
+#: admin_fn.php:89 admin_style.php:130
 msgid "。<a href=\"./admin.php?page=mdx_about\">重新检查</a>"
 msgstr ". <a href=\"./admin.php?page=mdx_about\"> Check again</a>"
 
-#: admin_fn.php:97 admin_style.php:137
+#: admin_fn.php:97 admin_style.php:138
 msgid ""
 "你似乎正在使用旧版本的 Alu 表情插件。这与 MDx 2.x 不兼容，你需要前往 <a href="
 "\"https://doc.flyhigher.top/mdx/zh-CN/config/emoji-in-comment/\" target="
@@ -92,24 +92,19 @@ msgstr ""
 "mdx/en-US/config/emoji-in-comment/\" target=\"_blank\">MDx documentation</a> "
 "to download the latest version."
 
-#: admin_fn.php:101 admin_style.php:143
+#: admin_fn.php:101 admin_style.php:144
 msgid "文章页"
 msgstr "Posts"
 
-#: admin_fn.php:102 admin_style.php:144
+#: admin_fn.php:102 admin_style.php:145
 msgid "文章列表"
 msgstr "Post List"
 
-#: admin_fn.php:103 footer.php:153
+#: admin_fn.php:103 footer.php:145
 msgid "目录"
 msgstr "Table of Content"
 
-#: admin_fn.php:104 includes/admin_init_fn.php:42 includes/admin_init_fn.php:47
-#: includes/update.php:435 includes/update.php:499 includes/update.php:560
-#: includes/update.php:566 includes/update.php:629 includes/update.php:635
-#: includes/update.php:701 includes/update.php:707 includes/update.php:778
-#: includes/update.php:784 includes/update.php:855 includes/update.php:861
-#: includes/update.php:933 includes/update.php:939
+#: admin_fn.php:104 includes/default_value.php:37 includes/default_value.php:42
 msgid "推荐文章"
 msgstr "Recommended posts"
 
@@ -145,7 +140,7 @@ msgstr "CDN"
 msgid "脚本"
 msgstr "Scripts"
 
-#: admin_fn.php:113 admin_style.php:149
+#: admin_fn.php:113 admin_style.php:150
 msgid "杂项"
 msgstr "Misc"
 
@@ -173,8 +168,8 @@ msgstr ""
 msgid "赞赏二维码"
 msgstr "Donation QR Code"
 
-#: admin_fn.php:148 admin_style.php:289 admin_style.php:495 admin_style.php:535
-#: admin_style.php:543
+#: admin_fn.php:148 admin_style.php:273 admin_style.php:299 admin_style.php:505
+#: admin_style.php:545 admin_style.php:553
 msgid "选择图片"
 msgstr "Choose an image"
 
@@ -375,11 +370,11 @@ msgstr ""
 msgid "首页推荐文章获取方式"
 msgstr "Recommend posts from"
 
-#: admin_fn.php:339 admin_style.php:359
+#: admin_fn.php:339 admin_style.php:369
 msgid "某一分类"
 msgstr "A certain category"
 
-#: admin_fn.php:340 admin_style.php:360
+#: admin_fn.php:340 admin_style.php:370
 msgid "置顶文章"
 msgstr "Pinned posts"
 
@@ -891,7 +886,7 @@ msgstr "Apperances"
 msgid "功能"
 msgstr "Features"
 
-#: admin_functions.php:8 admin_functions.php:65
+#: admin_functions.php:8 admin_functions.php:61
 msgid "MDx 主题 - 关于"
 msgstr "MDx theme - About"
 
@@ -903,13 +898,13 @@ msgstr "About"
 msgid "通知："
 msgstr "Notice: "
 
-#: admin_functions.php:54
+#: admin_functions.php:50
 msgid "新版本已经发布。去<a href=\"update-core.php\">更新</a>。"
 msgstr ""
 "A new version has been released. Please <a href=\"update-core.php\">update</"
 "a>."
 
-#: admin_functions.php:61
+#: admin_functions.php:57
 msgid ""
 "警告：你可能修改了主题底部的版权信息，请将其重新改正。MDx主题要求你保留版权信"
 "息。"
@@ -917,35 +912,35 @@ msgstr ""
 "Warning: You may have edited the theme copyright notice at the page footer, "
 "please revert them. MDx theme requires you to keep this information."
 
-#: admin_functions.php:67
+#: admin_functions.php:63
 msgid "感谢使用 MDx 主题"
 msgstr "Thanks for choosing MDx theme"
 
-#: admin_functions.php:68
+#: admin_functions.php:64
 msgid "我是 Axton Yao，这个主题由我开发。我的网站是"
 msgstr "I am Axton Yao, the developer of this theme. My personal website is"
 
-#: admin_functions.php:68 admin_functions.php:69 admin_functions.php:71
+#: admin_functions.php:64 admin_functions.php:65 admin_functions.php:67
 msgid "。"
 msgstr "."
 
-#: admin_functions.php:69
+#: admin_functions.php:65
 msgid "对主题有任何疑问，建议先查阅 "
 msgstr "Should you have any questions, please refer to "
 
-#: admin_functions.php:69
+#: admin_functions.php:65
 msgid "主题文档"
 msgstr "the theme documentation"
 
-#: admin_functions.php:70
+#: admin_functions.php:66
 msgid "这个项目的 Github 地址是 "
 msgstr "This project is open sourced on GitHub at "
 
-#: admin_functions.php:70
+#: admin_functions.php:66
 msgid "。如果你有兴趣，欢迎为这个项目做出贡献。同时，求 Star。"
 msgstr ". Pull requests and stars are welcomed."
 
-#: admin_functions.php:71
+#: admin_functions.php:67
 msgid ""
 "这个主题的诞生离不开 MDUI，这是一个优秀的前端框架项目，你可以在他们的官方网站"
 "上了解更多："
@@ -953,27 +948,27 @@ msgstr ""
 "This theme is inspired by MDUI, a promising frontend framework. You can "
 "learn more on their website:"
 
-#: admin_functions.php:73
+#: admin_functions.php:69
 msgid "感谢以下译者帮助翻译 MDx："
 msgstr "Special thanks to the following translators:"
 
-#: admin_functions.php:80
+#: admin_functions.php:76
 msgid "当前版本 v"
 msgstr "Current Version v"
 
-#: admin_functions.php:81
+#: admin_functions.php:77
 msgid "构建版本 v"
 msgstr "Build Version v"
 
-#: admin_functions.php:82
+#: admin_functions.php:78
 msgid "最新版本 v"
 msgstr "Latest Release v"
 
-#: admin_functions.php:84
+#: admin_functions.php:80
 msgid "这款主题献给 Demi Zhou"
 msgstr "This theme is dedicated to Demi Zhou"
 
-#: admin_functions.php:119
+#: admin_functions.php:115
 msgid ""
 "MDx 主题现已激活，你可以前往<a href=\"admin.php?page=mdx_styles\">主题设置页"
 "面</a>对主题进行个性化定制。"
@@ -981,14 +976,14 @@ msgstr ""
 "The MDx theme is now activated, you can go to <a href=\"admin.php?"
 "page=mdx_styles\">theme settings</a> to customize it."
 
-#: admin_functions.php:124
+#: admin_functions.php:120
 msgid ""
 "由于你的 PHP 配置问题，MDx 未能成功获取密钥，但这不影响你正常使用 MDx 主题。"
 msgstr ""
 "Due to your PHP configuration, MDx cannot acquire the key. Don't worry, MDx "
 "can still function normally."
 
-#: admin_functions.php:129
+#: admin_functions.php:125
 msgid ""
 "你似乎没有启用 <code>mbstring</code> PHP 拓展，这会导致 MDx 无法正常运行。请"
 "参阅<a href=\"https://doc.flyhigher.top/mdx/zh-CN/tech/php-errors/"
@@ -998,81 +993,81 @@ msgstr ""
 "normally. Please refer to <a href=\"https://doc.flyhigher.top/mdx/en-US/tech/"
 "php-errors/#mb_strimwidth\">the documentation</a> to fix this error."
 
-#: admin_style.php:141
+#: admin_style.php:142
 msgid "全局"
 msgstr "Global settings"
 
-#: admin_style.php:142 functions.php:493
+#: admin_style.php:143 functions.php:504
 msgid "首页"
 msgstr "Homepage"
 
-#: admin_style.php:145
+#: admin_style.php:146
 msgid "标题栏"
 msgstr "Blog title bar"
 
-#: admin_style.php:146 functions.php:41
+#: admin_style.php:147 functions.php:51
 msgid "抽屉菜单"
 msgstr "Left Sidebar"
 
-#: admin_style.php:147
+#: admin_style.php:148
 msgid "页脚"
 msgstr "Footer"
 
-#: admin_style.php:148
+#: admin_style.php:149
 msgid "Touch Bar 图标"
 msgstr "Touch Bar Icon"
 
-#: admin_style.php:159
+#: admin_style.php:160
 msgid "主题颜色"
 msgstr "Primary color"
 
-#: admin_style.php:184
+#: admin_style.php:185
 msgid "主题颜色会影响所有页面的主色。"
 msgstr "The primary color is used throughout all pages."
 
-#: admin_style.php:188
+#: admin_style.php:189
 msgid "强调颜色"
 msgstr "Accent color"
 
-#: admin_style.php:209
+#: admin_style.php:210
 msgid "强调颜色会影响所有页面的强调色。"
 msgstr "The accent color is used to call attention to key elements."
 
-#: admin_style.php:213
+#: admin_style.php:214
 msgid "黑暗主题"
 msgstr "Dark theme"
 
-#: admin_style.php:217
+#: admin_style.php:218
 msgid "禁用"
 msgstr "Disabled"
 
-#: admin_style.php:218
+#: admin_style.php:219
 msgid "启用"
 msgstr "Enabled"
 
-#: admin_style.php:219
+#: admin_style.php:220
 msgid "启用 (OLED)"
 msgstr "Enabled (optimized for OLED screens)"
 
-#: admin_style.php:221
+#: admin_style.php:222
 msgid "如果启用，页面将忽略夜间模式相关设置并强制始终以黑暗主题显示。"
 msgstr ""
 "When enabled, pages will always show a dark theme regardless of \"dark mode"
 "\" settings."
 
-#: admin_style.php:225
+#: admin_style.php:226
 msgid "Material Design 2"
 msgstr "Material Design 2"
 
-#: admin_style.php:231
+#: admin_style.php:232
 msgid "开启后，主题将会使用 Material Design 2 风格。"
 msgstr "When enabled, the theme will be in Material Design 2 style."
 
-#: admin_style.php:236
+#: admin_style.php:237
 msgid "Material Design 2 字体"
 msgstr "Material Design 2 Font"
 
-#: admin_style.php:242
+#: admin_style.php:243
 msgid ""
 "开启后，部分标题文字将会使用 Material Design 2 风格字体显示。<strong>请注意该"
 "字体仅包含拉丁字符。</strong>"
@@ -1080,21 +1075,21 @@ msgstr ""
 "When enabled, some headers will be shown in Material Design 2 styled fonts. "
 "<strong>Note that the font supports only Latin characters.</strong>"
 
-#: admin_style.php:247
+#: admin_style.php:248
 msgid "移动 Chrome 标题栏颜色"
 msgstr "Browser theme color on Chrome for Android"
 
-#: admin_style.php:253
+#: admin_style.php:254
 msgid "开启后，移动 Chrome 访问时，其标题栏的背景颜色会随主题颜色变化。"
 msgstr ""
 "When enabled, Chrome for Android will display the primary color on browser "
 "toolbar."
 
-#: admin_style.php:258
+#: admin_style.php:259
 msgid "文章无特色图像时显示默认图像"
 msgstr "Default featured image"
 
-#: admin_style.php:264
+#: admin_style.php:265
 msgid ""
 "开启后，文章无特色图像时将显示默认图像，影响文章列表和文章页。若关闭则不显"
 "示。"
@@ -1102,41 +1097,51 @@ msgstr ""
 "Show default image when the featured image of post is not set manually. "
 "Affects posts list and posts page. When disabled, no image will be shown."
 
-#: admin_style.php:272
+#: admin_style.php:270
+msgid "文章默认特色图像"
+msgstr "Default featured image"
+
+#: admin_style.php:274
+msgid "指定文章默认特色图像，留空则使用主题内置默认特色图像。"
+msgstr ""
+"Specify the default featured image of posts, leave it blank to use the built-"
+"in default featured image."
+
+#: admin_style.php:282
 msgid "首页样式"
 msgstr "Homepage style"
 
-#: admin_style.php:276
+#: admin_style.php:286
 msgid "默认"
 msgstr "Default"
 
-#: admin_style.php:277 admin_style.php:570
+#: admin_style.php:287 admin_style.php:580
 msgid "简单"
 msgstr "Simple"
 
-#: admin_style.php:278
+#: admin_style.php:288
 msgid "两栏"
 msgstr "Columned"
 
-#: admin_style.php:279 admin_style.php:344 admin_style.php:427
-#: admin_style.php:571
+#: admin_style.php:289 admin_style.php:354 admin_style.php:437
+#: admin_style.php:581
 msgid "现代"
 msgstr "Modern"
 
-#: admin_style.php:280 admin_style.php:345 admin_style.php:381
-#: admin_style.php:426 functions.php:783
+#: admin_style.php:290 admin_style.php:355 admin_style.php:391
+#: admin_style.php:436 functions.php:794
 msgid "朴素"
 msgstr "Plain"
 
-#: admin_style.php:286
+#: admin_style.php:296
 msgid "首页图片"
 msgstr "Homepage image"
 
-#: admin_style.php:289
+#: admin_style.php:299
 msgid "使用必应美图"
 msgstr "Use Bing images"
 
-#: admin_style.php:290
+#: admin_style.php:300
 msgid ""
 "你可以上传或指定你的媒体库中的图片作为首页上方显示的图片。<strong>注意，“简"
 "单”和“朴素”首页样式不会显示首页图片。</strong><br>无论你是否使用首页幻灯片，"
@@ -1151,11 +1156,11 @@ msgstr ""
 "for today, -1 stands for tomorrow, 1 stands for yesterday, and so on. The "
 "allowed maximum number is 16."
 
-#: admin_style.php:295
+#: admin_style.php:305
 msgid "增加首页图片文字对比度"
 msgstr "Increase contrast for texts on homepage image"
 
-#: admin_style.php:301
+#: admin_style.php:311
 msgid ""
 "在首页图片中含大面积白色导致首页格言无法看清时启用此选项。在部分首页样式下不"
 "生效。"
@@ -1163,61 +1168,61 @@ msgstr ""
 "Enable this when the texts can't be seen clearly under white homepage "
 "images. Does not work under some homepage styles."
 
-#: admin_style.php:306
+#: admin_style.php:316
 msgid "首页头部展示内容"
 msgstr "Homepage header content"
 
-#: admin_style.php:310
+#: admin_style.php:320
 msgid "格言"
 msgstr "Quotes"
 
-#: admin_style.php:311
+#: admin_style.php:321
 msgid "幻灯片"
 msgstr "Slideshow"
 
-#: admin_style.php:312
+#: admin_style.php:322
 msgid "指定首页头部展示的内容。在下方进行详细设置。"
 msgstr "Sets the content displayed at your homepage header below."
 
-#: admin_style.php:317
+#: admin_style.php:327
 msgid "首页格言"
 msgstr "Homepage quotes"
 
-#: admin_style.php:320
+#: admin_style.php:330
 msgid "这句话会展示在首页。"
 msgstr "This quote will be shown on your homepage."
 
-#: admin_style.php:324
+#: admin_style.php:334
 msgid "首页格言字体大小"
 msgstr "Quote font size"
 
-#: admin_style.php:335
+#: admin_style.php:345
 msgid "字体大小由 H1 至 H6 依次变小。在部分首页样式中无效。"
 msgstr ""
 "Font size decreases from H1 to H6. Does not work in some homepage styles"
 
-#: admin_style.php:339
+#: admin_style.php:349
 msgid "首页幻灯片样式"
 msgstr "Homepage slideshow"
 
-#: admin_style.php:343
+#: admin_style.php:353
 msgid "居中"
 msgstr "Centered"
 
-#: admin_style.php:350
+#: admin_style.php:360
 msgid "首页幻灯片文章数量"
 msgstr "Number"
 
-#: admin_style.php:352
+#: admin_style.php:362
 msgid "在此设定首页幻灯片文章篇数。请输入整数。"
 msgstr ""
 "Number of posts featured on the homepage slideshow. Please enter an integer."
 
-#: admin_style.php:355
+#: admin_style.php:365
 msgid "首页幻灯片文章获取方式"
 msgstr "Show posts from"
 
-#: admin_style.php:361
+#: admin_style.php:371
 msgid ""
 "在此设定首页幻灯片文章的获取方式。<br>若选择置顶文章，当没有置顶文章时，将会"
 "显示首页图片，同时文章列表将保持原始顺序而不会被置顶文章打乱。"
@@ -1226,74 +1231,74 @@ msgstr ""
 "there is none, the homepage theme image will be shown instead and the post "
 "list will remain in the original order."
 
-#: admin_style.php:366
+#: admin_style.php:376
 msgid "首页幻灯片文章分类名"
 msgstr "Category"
 
-#: admin_style.php:368
+#: admin_style.php:378
 msgid "在此设定首页幻灯片文章的分类名。当分类不存在时，将显示最新文章。"
 msgstr ""
 "Posts from this category are shown in the slides. The latest posts will be "
 "displayed when this category does not exist."
 
-#: admin_style.php:374
+#: admin_style.php:384
 msgid "文章页样式"
 msgstr "Posts style"
 
-#: admin_style.php:378 functions.php:780
+#: admin_style.php:388 functions.php:791
 msgid "标准"
 msgstr "Standard"
 
-#: admin_style.php:379 admin_style.php:422 functions.php:781
+#: admin_style.php:389 admin_style.php:432 functions.php:792
 msgid "简洁"
 msgstr "Flat"
 
-#: admin_style.php:380 functions.php:782
+#: admin_style.php:390 functions.php:793
 msgid "通透"
 msgstr "Clear"
 
-#: admin_style.php:384
+#: admin_style.php:394
 msgid "同时影响文章页、单独页面的样式。"
 msgstr "Affect styles of both posts and pages."
 
-#: admin_style.php:388
+#: admin_style.php:398
 msgid "文章时间显示位置"
 msgstr "Location of time posted"
 
-#: admin_style.php:392
+#: admin_style.php:402
 msgid "标题旁"
 msgstr "Next to the title"
 
-#: admin_style.php:393
+#: admin_style.php:403
 msgid "文章末尾"
 msgstr "End of post"
 
-#: admin_style.php:394
+#: admin_style.php:404
 msgid "不显示"
 msgstr "Do not display"
 
-#: admin_style.php:399
+#: admin_style.php:409
 msgid "文章导航栏配色方案"
 msgstr "Color scheme for posts breadcrumb navigation"
 
-#: admin_style.php:403
+#: admin_style.php:413
 msgid "主题色"
 msgstr "Theme color"
 
-#: admin_style.php:404
+#: admin_style.php:414
 msgid "低饱和度"
 msgstr "Low saturation"
 
-#: admin_style.php:406
+#: admin_style.php:416
 msgid "影响文章末尾文章导航栏区域的配色。"
 msgstr ""
 "Affects the color scheme of posts breadcrumb navigation (at end of posts)"
 
-#: admin_style.php:410 functions.php:801
+#: admin_style.php:420 functions.php:812
 msgid "文末信息"
 msgstr "End-of-post message"
 
-#: admin_style.php:412
+#: admin_style.php:422
 msgid ""
 "在这里编辑文末信息。文末信息会显示在每篇文章的底部，留空则不会显示。支持 "
 "<code>HTML</code> 格式。<code>--PostLink--</code> 会被替换为链接到当前文章的"
@@ -1305,65 +1310,65 @@ msgstr ""
 "code> will be replaced with a anchored title to the current post; <code>--"
 "PostURL--</code> will be replaced with anchored post URL to this page."
 
-#: admin_style.php:418
+#: admin_style.php:428
 msgid "文章列表样式"
 msgstr "Posts list style"
 
-#: admin_style.php:423
+#: admin_style.php:433
 msgid "列表"
 msgstr "Text-only Lists"
 
-#: admin_style.php:424
+#: admin_style.php:434
 msgid "干净"
 msgstr "Card-like"
 
-#: admin_style.php:425
+#: admin_style.php:435
 msgid "网格"
 msgstr "Grids"
 
-#: admin_style.php:430
+#: admin_style.php:440
 msgid "同时影响首页、搜索结果页、归档页的文章列表样式。"
 msgstr ""
 "Affect posts list style on homepage, search results page, and archive page."
 
-#: admin_style.php:434
+#: admin_style.php:444
 msgid "文章列表宽度"
 msgstr "Width of Post List"
 
-#: admin_style.php:438
+#: admin_style.php:448
 msgid "正常"
 msgstr "Normal"
 
-#: admin_style.php:439
+#: admin_style.php:449
 msgid "较宽"
 msgstr "Wider"
 
-#: admin_style.php:441
+#: admin_style.php:451
 msgid "使用“较宽”，文章列表将会以多列瀑布流显示。"
 msgstr "The post list will be shown in multi columns if \"wider\" is selected."
 
-#: admin_style.php:445
+#: admin_style.php:455
 msgid "文章列表显示文章摘要"
 msgstr "Show posts excerpt"
 
-#: admin_style.php:451
+#: admin_style.php:461
 msgid ""
 "开启后，文章列表可显示每篇文章的摘要，影响首页和归档页。若关闭则不显示。"
 msgstr "Show excerpts for each post on homepage and archive page"
 
-#: admin_style.php:456
+#: admin_style.php:466
 msgid "文章列表图片高度"
 msgstr "Featured images"
 
-#: admin_style.php:460
+#: admin_style.php:470
 msgid "自适应"
 msgstr "Adaptive"
 
-#: admin_style.php:461
+#: admin_style.php:471
 msgid "固定宽高比"
 msgstr "Keep aspect ratio"
 
-#: admin_style.php:463
+#: admin_style.php:473
 msgid ""
 "选择 <code>自适应</code>，文章特色图像可以完全展示。<br>选择 <code>固定宽高比"
 "</code>，文章特色图像可能会只显示部分以保持宽高比，但图像不会被拉伸，适合于图"
@@ -1374,97 +1379,97 @@ msgstr ""
 "stretching the image (useful when your featured image is too high or too "
 "wide)."
 
-#: admin_style.php:470
+#: admin_style.php:480
 msgid "自动隐藏标题栏"
 msgstr "Auto hide title bar"
 
-#: admin_style.php:476
+#: admin_style.php:486
 msgid "开启后，页面向下滚动时标题栏会向上隐藏，向上滚动时会出现。"
 msgstr ""
 "The title bar will automatically hide when scrolling down and will reappear "
 "on scrolling up."
 
-#: admin_style.php:481
+#: admin_style.php:491
 msgid "标题栏显示内容"
 msgstr "Title bar content"
 
-#: admin_style.php:485
+#: admin_style.php:495
 msgid "博客名称"
 msgstr "Blog name"
 
-#: admin_style.php:486
+#: admin_style.php:496
 msgid "自定义 Logo"
 msgstr "Custom Logo"
 
-#: admin_style.php:487
+#: admin_style.php:497
 msgid "自定义名称"
 msgstr "Custom name"
 
-#: admin_style.php:492
+#: admin_style.php:502
 msgid "标题栏 Logo"
 msgstr "Title bar Logo"
 
-#: admin_style.php:496
+#: admin_style.php:506
 msgid "选择一张图片作为网站 Logo。"
 msgstr "Choose an image as the website Logo"
 
-#: admin_style.php:501
+#: admin_style.php:511
 msgid "标题栏自定义名称"
 msgstr "Customize title bar content"
 
-#: admin_style.php:507
+#: admin_style.php:517
 msgid "点击标题栏返回顶部"
 msgstr "Return to top on click"
 
-#: admin_style.php:513
+#: admin_style.php:523
 msgid "开启后，点击标题栏可以返回页面顶部。此设置影响所有页面。"
 msgstr ""
 "When enabled, users can return to top by clicking the title bar. This "
 "setting affects all pages."
 
-#: admin_style.php:521
+#: admin_style.php:531
 msgid "抽屉菜单顶部展示个人信息"
 msgstr "Show personal information in sidebar"
 
-#: admin_style.php:527
+#: admin_style.php:537
 msgid "开启后，抽屉顶部会显示头像及名称，请在下方设置。"
 msgstr "Show avatar and name at top of the sidebar. Please specify below."
 
-#: admin_style.php:532
+#: admin_style.php:542
 msgid "抽屉菜单顶部图片"
 msgstr "Sidebar top image"
 
-#: admin_style.php:540
+#: admin_style.php:550
 msgid "抽屉菜单信息头像"
 msgstr "Sidebar author avatar"
 
-#: admin_style.php:544
+#: admin_style.php:554
 msgid "选择一张图片作为抽屉顶部显示的头像。留空则不显示。"
 msgstr ""
 "Choose an image for your avatar shown at top of the sidebar. Leave it blank "
 "to show nothing."
 
-#: admin_style.php:549
+#: admin_style.php:559
 msgid "抽屉菜单信息名称"
 msgstr "Sidebar author name"
 
-#: admin_style.php:555
+#: admin_style.php:565
 msgid "抽屉菜单详细信息"
 msgstr "Sidebar description"
 
-#: admin_style.php:558
+#: admin_style.php:568
 msgid "这里的内容会显示在抽屉菜单信息名称的下方。"
 msgstr "These information will be displayed below the author's name"
 
-#: admin_style.php:565
+#: admin_style.php:575
 msgid "页脚样式"
 msgstr "Footer styles"
 
-#: admin_style.php:569
+#: admin_style.php:579
 msgid "传统"
 msgstr "Traditional"
 
-#: admin_style.php:573
+#: admin_style.php:583
 msgid ""
 "在此设定页脚样式。<strong>如果选择“简单”样式，那么页脚格言将不会显示。</"
 "strong>"
@@ -1472,23 +1477,23 @@ msgstr ""
 "Set footer styles here. <strong> Footer quotes will not be displayed for "
 "\"simple\" style.</strong>"
 
-#: admin_style.php:577
+#: admin_style.php:587
 msgid "页脚格言"
 msgstr "Footer quotes"
 
-#: admin_style.php:579
+#: admin_style.php:589
 msgid "使用一言 API（常规）"
 msgstr "Use Hitokoto.cn API (General)"
 
-#: admin_style.php:580
+#: admin_style.php:590
 msgid "使用一言 API（古诗词）"
 msgstr "Use Hitokoto.cn API (Chinese Poetry)"
 
-#: admin_style.php:581
+#: admin_style.php:591
 msgid "使用一言 API（自定义）"
 msgstr "Use Hitokoto.cn API (custom)"
 
-#: admin_style.php:582
+#: admin_style.php:592
 msgid ""
 "这句话会显示在每个页面的页脚，如果不希望显示，请留空。若调用一言 API，则每次"
 "页面刷新后都会显示不同的格言。此 API 来自第三方，请注意安全风险。"
@@ -1498,7 +1503,7 @@ msgstr ""
 "refreshing. This API is from a third-party, please be aware of the security "
 "risks."
 
-#: admin_style.php:583
+#: admin_style.php:593
 msgid ""
 "如使用自定义 API，你需要在括号内填写 API URL 并确保 API 返回 <code>{\"text\":"
 "\"句子\"}</code> 的 JSON 格式。<a href=\"https://doc.flyhigher.top/mdx/zh-CN/"
@@ -1509,23 +1514,23 @@ msgstr ""
 "\":\"quote\"}</code> <a href=\"https://doc.flyhigher.top/mdx/en-US/config/"
 "custom_api/\" target=\"_blank\">Learn More</a></code>"
 
-#: admin_style.php:586
+#: admin_style.php:596
 msgid "页脚内容"
 msgstr "Footer content"
 
-#: admin_style.php:587
+#: admin_style.php:597
 msgid "社交网站图标编辑器"
 msgstr "Social media icon editor"
 
-#: admin_style.php:588
+#: admin_style.php:598
 msgid "在这里编辑页脚内容。支持 <code>HTML</code> 格式。"
 msgstr "Edit footer content here. <code>HTML</code> styling is supported."
 
-#: admin_style.php:594
+#: admin_style.php:604
 msgid "Safari Touch Bar 图标支持"
 msgstr "Support for Safari Touch Bar icon"
 
-#: admin_style.php:601
+#: admin_style.php:611
 msgid ""
 "开启后会启用对 Safari Touch Bar 图标的支持，请在下方完成相关设置。<a href="
 "\"https://developer.apple.com/library/content/documentation/"
@@ -1537,11 +1542,11 @@ msgstr ""
 "documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/"
 "pinnedTabs.html\" target=\"_blank\">Learn more</a>"
 
-#: admin_style.php:605
+#: admin_style.php:615
 msgid "Touch Bar 图标地址"
 msgstr "Touch Bar icon address"
 
-#: admin_style.php:607
+#: admin_style.php:617
 msgid ""
 "请设置 Touch Bar 图标地址。格式为 SVG，必须为单层，viewbox 属性必须为\"0 0 "
 "16 16\"。"
@@ -1549,35 +1554,35 @@ msgstr ""
 "Please set address for Touch Bar icon address. It should have SVG format "
 "with single layer and \"0 0 16 16\" viewbox attributes."
 
-#: admin_style.php:610
+#: admin_style.php:620
 msgid "Touch Bar 图标背景颜色"
 msgstr "Touch Bar icon background color"
 
-#: admin_style.php:612
+#: admin_style.php:622
 msgid "使用当前主题颜色"
 msgstr "Use primary color"
 
-#: admin_style.php:613
+#: admin_style.php:623
 msgid "请设置 Touch Bar 图标背景颜色。16 进制颜色或 RGB 颜色。"
 msgstr ""
 "Please set background color for Touch Bar icon. Either HEX or RGB format is "
 "accepted."
 
-#: admin_style.php:619
+#: admin_style.php:629
 msgid "登录页 Material Design"
 msgstr "Material Design Login Page"
 
-#: admin_style.php:625
+#: admin_style.php:635
 msgid "将 Material Design 样式应用到登录页。可能与部分插件样式不兼容。"
 msgstr ""
 "Apply Material Design styles to login page. May be incompatible with other "
 "plugins."
 
-#: admin_style.php:630
+#: admin_style.php:640
 msgid "启用友链 Gravatar 支持"
 msgstr "Enable Gravatar support for \"related links\""
 
-#: admin_style.php:636
+#: admin_style.php:646
 msgid ""
 "开启后，将尝试从备注栏中获取邮箱并将与邮箱对应的 Gravatar 头像作为友情链接图"
 "像。关闭则只使用图片链接。"
@@ -1585,29 +1590,29 @@ msgstr ""
 "When enabled, MDx will try to fetch Gravatar from email address as the "
 "\"related links\" image. Disable it to use image links only."
 
-#: admin_style.php:641
+#: admin_style.php:651
 msgid "友情链接随机顺序"
 msgstr "Randomize related links"
 
-#: admin_style.php:647
+#: admin_style.php:657
 msgid "开启后，友情链接将以随机顺序显示。关闭则使用字典序。"
 msgstr ""
 "When enabled, related links are shown in random orders. Disable it to use "
 "lexicographical order."
 
-#: admin_style.php:652
+#: admin_style.php:662
 msgid "网页标题计算方式"
 msgstr "Webpage Title"
 
-#: admin_style.php:656
+#: admin_style.php:666
 msgid "WordPress 默认"
 msgstr "WordPress default"
 
-#: admin_style.php:657
+#: admin_style.php:667
 msgid "MDx 优化"
 msgstr "MDx optimized"
 
-#: admin_style.php:659
+#: admin_style.php:669
 msgid ""
 "选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容"
 "大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此"
@@ -1618,17 +1623,17 @@ msgstr ""
 "control. It may work better under some scenarios but is incompatible with "
 "other SEO plugins."
 
-#: admin_style.php:663
+#: admin_style.php:673
 msgid "多彩标签云"
 msgstr "Colorful tags"
 
-#: admin_style.php:669
+#: admin_style.php:679
 msgid "开启后，标签云页面输出的标签会带有随机颜色，反之为同一颜色。"
 msgstr ""
 "Generate random colors for tags. When disabled, all tags share the same "
 "color."
 
-#: admin_style.php:677
+#: admin_style.php:687
 msgid ""
 "在这里获取受 MDx 样式支持的社交网站图标链接。填写完成之后，你可以将获取到的代"
 "码粘贴到包括页脚内容在内的任何地方或是自定义代码内容。未填写的项目将被忽略。"
@@ -1637,175 +1642,175 @@ msgstr ""
 "the obtained code at anywhere, including footer content or custom codes. "
 "Leave items blank to omit them."
 
-#: admin_style.php:680 admin_style.php:681
+#: admin_style.php:690 admin_style.php:691
 msgid "QQ"
 msgstr "QQ"
 
-#: admin_style.php:681
+#: admin_style.php:691
 msgid "QQ 号"
 msgstr "QQ number"
 
-#: admin_style.php:684 admin_style.php:685
+#: admin_style.php:694 admin_style.php:695
 msgid "微信"
 msgstr "WeChat"
 
-#: admin_style.php:685
+#: admin_style.php:695
 msgid "微信二维码图片链接"
 msgstr "WeChat QR Code Link"
 
-#: admin_style.php:688 admin_style.php:689
+#: admin_style.php:698 admin_style.php:699
 msgid "微博"
 msgstr "Weibo"
 
-#: admin_style.php:689
+#: admin_style.php:699
 msgid "微博链接"
 msgstr "Weibo Link"
 
-#: admin_style.php:692 admin_style.php:693
+#: admin_style.php:702 admin_style.php:703
 msgid "知乎"
 msgstr "Zhihu"
 
-#: admin_style.php:693
+#: admin_style.php:703
 msgid "知乎链接"
 msgstr "Zhihu Link"
 
-#: admin_style.php:696 admin_style.php:697
+#: admin_style.php:706 admin_style.php:707
 msgid "哔哩哔哩"
 msgstr "Bilibili"
 
-#: admin_style.php:697
+#: admin_style.php:707
 msgid "哔哩哔哩链接"
 msgstr "Bilibili Link"
 
-#: admin_style.php:700 admin_style.php:701
+#: admin_style.php:710 admin_style.php:711
 msgid "网易云音乐"
 msgstr "Netease Cloud Music"
 
-#: admin_style.php:701
+#: admin_style.php:711
 msgid "网易云音乐链接"
 msgstr "Netease Cloud Music Link"
 
-#: admin_style.php:704 admin_style.php:705
+#: admin_style.php:714 admin_style.php:715
 msgid "酷安"
 msgstr "Coolapk"
 
-#: admin_style.php:705
+#: admin_style.php:715
 msgid "酷安链接"
 msgstr "Coolapk Link"
 
-#: admin_style.php:708 admin_style.php:709
+#: admin_style.php:718 admin_style.php:719
 msgid "豆瓣"
 msgstr "Douban"
 
-#: admin_style.php:709
+#: admin_style.php:719
 msgid "豆瓣链接"
 msgstr "Douban Link"
 
-#: admin_style.php:712 admin_style.php:713
+#: admin_style.php:722 admin_style.php:723
 msgid "GitHub"
 msgstr "GitHub"
 
-#: admin_style.php:713
+#: admin_style.php:723
 msgid "GitHub 用户名"
 msgstr "GitHub Username"
 
-#: admin_style.php:716 admin_style.php:717
+#: admin_style.php:726 admin_style.php:727
 msgid "Facebook"
 msgstr "Facebook"
 
-#: admin_style.php:717
+#: admin_style.php:727
 msgid "Fackbook 链接"
 msgstr "Facebook Link"
 
-#: admin_style.php:720 admin_style.php:721
+#: admin_style.php:730 admin_style.php:731
 msgid "Twitter"
 msgstr "Twitter"
 
-#: admin_style.php:721
+#: admin_style.php:731
 msgid "Twitter 用户名"
 msgstr "Twitter Username"
 
-#: admin_style.php:724 admin_style.php:725
+#: admin_style.php:734 admin_style.php:735
 msgid "Telegram"
 msgstr "Telegram"
 
-#: admin_style.php:725
+#: admin_style.php:735
 msgid "Telegram 用户名"
 msgstr "Telegram Username"
 
-#: admin_style.php:728 admin_style.php:729
+#: admin_style.php:738 admin_style.php:739
 msgid "Steam"
 msgstr "Steam"
 
-#: admin_style.php:729
+#: admin_style.php:739
 msgid "Steam 用户名"
 msgstr "Steam Username"
 
-#: admin_style.php:732 admin_style.php:733
+#: admin_style.php:742 admin_style.php:743
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: admin_style.php:733
+#: admin_style.php:743
 msgid "WhatsApp 链接"
 msgstr "WhatsApp Link"
 
-#: admin_style.php:736 admin_style.php:737
+#: admin_style.php:746 admin_style.php:747
 msgid "Instagram"
 msgstr "Instagram"
 
-#: admin_style.php:737
+#: admin_style.php:747
 msgid "Instagram 链接"
 msgstr "Instagram Link"
 
-#: admin_style.php:740 admin_style.php:741
+#: admin_style.php:750 admin_style.php:751
 msgid "Dribbble"
 msgstr "Dribble"
 
-#: admin_style.php:741
+#: admin_style.php:751
 msgid "Dribbble 链接"
 msgstr "Dribble Link"
 
-#: admin_style.php:744 admin_style.php:745
+#: admin_style.php:754 admin_style.php:755
 msgid "Behance"
 msgstr "Behance"
 
-#: admin_style.php:745
+#: admin_style.php:755
 msgid "Behance 链接"
 msgstr "Behance Link"
 
-#: admin_style.php:748 admin_style.php:749
+#: admin_style.php:758 admin_style.php:759
 msgid "电话"
 msgstr "Tel"
 
-#: admin_style.php:749
+#: admin_style.php:759
 msgid "电话号码"
 msgstr "Telephone number"
 
-#: admin_style.php:752 admin_style.php:753 comments.php:32
+#: admin_style.php:762 admin_style.php:763 comments.php:32
 msgid "邮箱"
 msgstr "Email"
 
-#: admin_style.php:753
+#: admin_style.php:763
 msgid "邮箱地址"
 msgstr "Email address"
 
-#: admin_style.php:756 admin_style.php:757
+#: admin_style.php:766 admin_style.php:767
 msgid "个人主页"
 msgstr "Website"
 
-#: admin_style.php:757
+#: admin_style.php:767
 msgid "个人主页地址"
 msgstr "Personal website link"
 
-#: admin_style.php:760 admin_style.php:761
+#: admin_style.php:770 admin_style.php:771
 msgid "RSS"
 msgstr "RSS"
 
-#: admin_style.php:761
+#: admin_style.php:771
 msgid "RSS 地址"
 msgstr "RSS Address"
 
-#: admin_style.php:764
+#: admin_style.php:774
 msgid "生成结果"
 msgstr "Generated Results"
 
@@ -1814,7 +1819,7 @@ msgid "刚刚"
 msgstr "Just now"
 
 #: archive.php:19 archive.php:30 author.php:19 author.php:30 category.php:19
-#: category.php:30 index.php:46 index.php:57 page-links.php:31
+#: category.php:30 index.php:47 index.php:58 page-links.php:31
 #: page-links.php:42 page-postlike.php:33 page-postlike.php:44 page-tags.php:31
 #: page-tags.php:42 page-timeline.php:31 page-timeline.php:42 page.php:25
 #: page.php:36 search.php:19 search.php:30 single.php:41 single.php:52
@@ -1837,14 +1842,7 @@ msgstr "Author archives"
 msgid "你需要先 <a href=\"%s\">登录</a> 才能发表评论。"
 msgstr "You need to <a href=\"%s\">log in</a> before commenting."
 
-#: comments.php:24 includes/update.php:4 includes/update.php:23
-#: includes/update.php:43 includes/update.php:65 includes/update.php:88
-#: includes/update.php:112 includes/update.php:138 includes/update.php:173
-#: includes/update.php:211 includes/update.php:255 includes/update.php:307
-#: includes/update.php:361 includes/update.php:417 includes/update.php:479
-#: includes/update.php:541 includes/update.php:610 includes/update.php:679
-#: includes/update.php:751 includes/update.php:828 includes/update.php:905
-#: includes/update.php:983
+#: comments.php:24
 msgid "发射"
 msgstr "Send"
 
@@ -1928,131 +1926,131 @@ msgstr "Author's archives:"
 msgid "文章归档："
 msgstr "Archives:"
 
-#: footer.php:131
+#: footer.php:129
 msgid "已自动定位到你此前阅读处"
 msgstr "Located where you left off"
 
-#: footer.php:132
+#: footer.php:130
 msgid "从头阅读"
 msgstr "Read from the beginning"
 
-#: footer.php:139
+#: footer.php:131
 msgid "更多选项"
 msgstr "More options"
 
-#: footer.php:140
+#: footer.php:132
 msgid "加载更多评论"
 msgstr "Load more comments"
 
-#: footer.php:141
+#: footer.php:133
 msgid "没有更多了"
 msgstr "No more comments..."
 
-#: footer.php:142
+#: footer.php:134
 msgid "长按/右键保存图片"
 msgstr "Touch and hold/right click to save image"
 
-#: footer.php:144
+#: footer.php:136
 msgid "使用微信扫描后在微信内分享"
 msgstr "Scan the QR code with WeChat to share"
 
-#: footer.php:145
+#: footer.php:137
 msgid "点按右上角按钮即可分享"
 msgstr "Click the upper-right button to share"
 
-#: footer.php:146
+#: footer.php:138
 msgid "密码"
 msgstr "Password"
 
-#: footer.php:147
+#: footer.php:139
 msgid "在 GitHub 上查阅"
 msgstr "Check on GitHub"
 
-#: footer.php:148
+#: footer.php:140
 msgid "获取 GitHub 仓库信息时出现问题<br>尝试直接访问"
 msgstr "Error fetching descriptions from GitHub. <br>Visit it directly"
 
-#: footer.php:149
+#: footer.php:141
 msgid "这个页面没有摘要。"
 msgstr "This post has no excerpt."
 
-#: footer.php:150
+#: footer.php:142
 msgid "前往页面"
 msgstr "Read this post"
 
-#: footer.php:151
+#: footer.php:143
 msgid "获取页面信息时出现问题<br>尝试直接访问"
 msgstr "A problem occurred while fetching information. <br>Visit directly"
 
-#: footer.php:152
+#: footer.php:144
 msgid "菜单"
 msgstr "Left Sidebar"
 
-#: functions.php:44
+#: functions.php:54
 msgid "右侧菜单"
 msgstr "Right Sidebar"
 
-#: functions.php:46
+#: functions.php:56
 msgid "在每个页面的右侧，默认隐藏，可以通过滑动或按钮调出。"
 msgstr ""
 "At the right of each page. Default to hidden. You can access it by swiping "
 "or button."
 
-#: functions.php:196
+#: functions.php:204
 msgid "发送成功。"
 msgstr "Successfully sent!"
 
-#: functions.php:197
+#: functions.php:205
 msgid "<strong>错误：</strong> 未知错误。"
 msgstr "<strong>Error:</strong> Unknown Error."
 
-#: functions.php:302
+#: functions.php:310
 msgid "博主"
 msgstr "Owner"
 
 # Space before it required for English
-#: functions.php:305
+#: functions.php:313
 msgid "前"
 msgstr " ago"
 
 # This is the "Reply" button next to comments posted
-#: functions.php:305
+#: functions.php:313
 msgid "回复"
 msgstr "Reply"
 
-#: functions.php:382
+#: functions.php:393
 msgid "添加 <code>nofollow</code> 属性"
 msgstr "Add <code>nofollow</code> attributes to links"
 
-#: functions.php:549
+#: functions.php:560
 msgid "搜索结果： %s"
 msgstr "Search results: %s"
 
-#: functions.php:553
+#: functions.php:564
 msgid "标签存档 %s"
 msgstr "Tag archive %s"
 
-#: functions.php:559
+#: functions.php:570
 msgid "作者存档 %s"
 msgstr "Author archive %s"
 
-#: functions.php:563
+#: functions.php:574
 msgid "什么也没找到"
 msgstr "Nothing found"
 
-#: functions.php:568
+#: functions.php:579
 msgid "( 第 %s 页 )"
 msgstr "(Page %s)"
 
-#: functions.php:575
+#: functions.php:586
 msgid "被折叠内容"
 msgstr "Collapsed content"
 
-#: functions.php:595
+#: functions.php:606
 msgid "警告"
 msgstr "Warning"
 
-#: functions.php:719
+#: functions.php:730
 msgid ""
 "\n"
 "        <p class=\"description\">在这里为这篇文章设置单独的文末信息。若希望跟"
@@ -2062,55 +2060,55 @@ msgstr ""
 "        <p class=\"description\">Please set a post-specific end-of-post "
 "message here. Leave it blank to follow the global settings."
 
-#: functions.php:726
+#: functions.php:737
 msgid "文章主题颜色"
 msgstr "Post-specific primary color"
 
-#: functions.php:729 functions.php:756 functions.php:779
+#: functions.php:740 functions.php:767 functions.php:790
 msgid "跟随全局设置"
 msgstr "Global setting"
 
-#: functions.php:751
+#: functions.php:762
 msgid "在这里为这篇文章设置单独的主题颜色。"
 msgstr "Set primary color specifically for this post"
 
-#: functions.php:753
+#: functions.php:764
 msgid "文章强调色"
 msgstr "Post-specific accent color"
 
-#: functions.php:774
+#: functions.php:785
 msgid "在这里为这篇文章设置单独的强调色。"
 msgstr "Set accent color specifically for this post"
 
-#: functions.php:776
+#: functions.php:787
 msgid "文章样式"
 msgstr "Post-specific style"
 
-#: functions.php:785
+#: functions.php:796
 msgid "在这里为这篇文章设置单独的样式。"
 msgstr "Override style setting for this post."
 
-#: functions.php:787
+#: functions.php:798
 msgid "文章展示模式"
 msgstr "Hide this post"
 
-#: functions.php:790
+#: functions.php:801
 msgid "正常显示"
 msgstr "Display normally"
 
-#: functions.php:791
+#: functions.php:802
 msgid "404模式"
 msgstr "404"
 
-#: functions.php:792
+#: functions.php:803
 msgid "隐藏模式"
 msgstr "Hidden"
 
-#: functions.php:793
+#: functions.php:804
 msgid "对游客隐藏模式"
 msgstr "Hidden to guests"
 
-#: functions.php:795
+#: functions.php:806
 msgid ""
 "在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页"
 "面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显"
@@ -2125,7 +2123,7 @@ msgstr ""
 "the article\" <br> For the first two method, the article can be found and "
 "searched on the homepage; but none will return a HTTP 404 header."
 
-#: functions.php:800
+#: functions.php:811
 msgid "文章设置"
 msgstr "Post's setting"
 
@@ -2133,22 +2131,6 @@ msgstr "Post's setting"
 msgid "这篇文章受密码保护，输入密码后才能查看。"
 msgstr ""
 "This post is password-protected. Only those with a password can read it."
-
-#: includes/admin_init_fn.php:19 includes/update.php:694
-#: includes/update.php:771 includes/update.php:848 includes/update.php:926
-msgid "去围观"
-msgstr "Read more"
-
-#: includes/admin_init_fn.php:43 includes/update.php:436
-#: includes/update.php:500 includes/update.php:567 includes/update.php:636
-#: includes/update.php:708 includes/update.php:785 includes/update.php:862
-#: includes/update.php:940
-msgid "最新文章"
-msgstr "Latest posts"
-
-#: includes/admin_init_fn.php:49
-msgid "发送"
-msgstr "Send"
 
 #: includes/author_card.php:1
 msgid "访问作者网站"
@@ -2158,12 +2140,24 @@ msgstr "Visit author's website"
 msgid "文章作者"
 msgstr "Author"
 
-#: includes/same_posts.php:25 includes/same_posts.php:49 index.php:130
+#: includes/default_value.php:14
+msgid "去围观"
+msgstr "Read more"
+
+#: includes/default_value.php:38
+msgid "最新文章"
+msgstr "Latest posts"
+
+#: includes/default_value.php:44
+msgid "发送"
+msgstr "Send"
+
+#: includes/same_posts.php:25 includes/same_posts.php:49 index.php:131
 #: index.php:227
 msgid "前往阅读"
 msgstr "Read more"
 
-#: includes/searchform.php:5 index.php:183 index.php:189 searchform.php:3
+#: includes/searchform.php:5 index.php:184 index.php:190 searchform.php:3
 msgid "搜索什么..."
 msgstr "Search for something..."
 
@@ -2175,7 +2169,7 @@ msgstr "Share to Weibo"
 msgid "分享到 微信"
 msgstr "Share to WeChat"
 
-#: includes/share_cn.php:8 index.php:153 template-parts/content-1.php:5
+#: includes/share_cn.php:8 index.php:154 template-parts/content-1.php:5
 #: template-parts/content-1.php:55 template-parts/content-2.php:4
 #: template-parts/content-3.php:62 template-parts/content-5.php:15
 #: template-parts/content-first-1.php:5 template-parts/content-first-1.php:55

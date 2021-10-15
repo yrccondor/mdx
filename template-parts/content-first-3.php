@@ -38,7 +38,7 @@
         <a class="mdui-btn mdui-ripple mdui-ripple-white coun-read mdui-text-color-theme-accent" href="<?php the_permalink();?>"><?php echo mdx_get_option("mdx_readmore");?></a>
     </div>
 </div>
-<?php }else{if($Imagesurl == ""){$Imagesurl=get_template_directory_uri().'/img/dpic.jpg';}?>
+<?php }else{if($Imagesurl == ""){$Imagesurl=mdx_get_post_default_url();}?>
 <div class="mdui-card postDiv mdui-center mdui-hoverable post-item">
     <div class="mdui-card-media mdui-color-theme">
     <?php if(mdx_get_option('mdx_post_list_click_area') === "pic"){?>

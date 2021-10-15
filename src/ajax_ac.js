@@ -1,5 +1,5 @@
-import betterFetch from './betterFetch.js';
-import ele from './ele.js';
+import betterFetch from './tools/betterFetch.js';
+import ele from './tools/ele.js';
 
 const init = () => {
     var urlV;
@@ -83,6 +83,14 @@ const init = () => {
                 for (const el of document.getElementById('postlist').children) {
                     if (el.style.position !== 'absolute') {
                         addList.push(el);
+                        for (const element of el.querySelectorAll('img')) {
+                            element.addEventListener('load', (e) => {
+                                window.mdxMasonry.layout();
+                            })
+                            element.addEventListener('error', (e) => {
+                                window.mdxMasonry.layout();
+                            })
+                        }
                     }
                 }
                 window.mdxMasonry.appended(addList);

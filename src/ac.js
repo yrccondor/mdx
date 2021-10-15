@@ -1,8 +1,12 @@
-import fade from './fade.js';
+import ele from './tools/ele.js';
+import fade from './tools/fade.js';
 import './ajax_ac.js';
-import Velocity from 'velocity-animate';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
+
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;
@@ -50,7 +54,7 @@ function scrollDiff() {
 };
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(document.getElementsByTagName("html")[0], { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -78,8 +82,8 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     searchBarDOM.style.display = "block";
     fade(document.getElementsByClassName('OutOfsearchBox'), 'in', 300);
     fade(document.getElementsByClassName('fullScreen'), 'in', 300);
-    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
-        Velocity(e, { opacity: '1' }, 200);
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), (e) => {
+        new Opacity(e, 1, 200)
     });
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
@@ -99,8 +103,8 @@ for (let ele of document.getElementsByClassName("sea-close")) {
 }
 function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
-    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), e => {
-        Velocity(e, { opacity: '0' }, 200);
+    Array.prototype.forEach.call(document.querySelectorAll("#SearchBar > *"), (e) => {
+        new Opacity(e, 0, 200)
     });
     fade(document.getElementsByClassName('fullScreen'), 'out', 300);
     fade(document.getElementsByClassName('OutOfsearchBox'), 'out', 300);
@@ -123,7 +127,7 @@ function hideBar() {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(document.getElementsByTagName("html")[0], { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 
@@ -157,26 +161,27 @@ window.addEventListener('DOMContentLoaded', () => {
             menuDOM.setAttribute('mdui-collapse', '');
         }
     }
-    new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse('#mdx_menu');
 
     //cookie
-    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    var cookieEle = document.getElementById("mdx-cookie-notice");
-    if (ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")) {
-        cookieEle.classList.add("mdx-cookie-notice-show");
-        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+    var ifDisplay = typeof displayCookie === 'undefined' ? true : displayCookie;
+    var cookieEle = document.getElementById('mdx-cookie-notice');
+    var flagName = typeof cookieFlagName === 'undefined' ? 'mdx_cookie' : cookieFlagName;
+    if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
+        cookieEle.classList.add('mdx-cookie-notice-show');
+        cookieEle.getElementsByTagName('button')[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie() {
-        localStorage.setItem("mdx_cookie", "true");
-        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        localStorage.setItem(flagName, 'true');
+        document.getElementById('mdx-cookie-notice').style.bottom = '-400px';
         setTimeout(() => {
-            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+            document.getElementById('mdx-cookie-notice').classList.remove('mdx-cookie-notice-show');
         }, 400);
     }
 
-    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        var mrm = window.matchMedia('(prefers-reduced-motion: reduce)');
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
@@ -195,43 +200,51 @@ window.addEventListener('DOMContentLoaded', () => {
                 stagger: 10,
                 percentPosition: true
             });
-            document.addEventListener('lazyloaded', (e) => {
+            document.getElementById('postlist').addEventListener('lazyloaded', (e) => {
                 if (e.target.matches('#postlist > .post-item img')) {
                     window.mdxMasonry.layout()
                 }
+            })
+            ele('#postlist img:not([data-src])', (el) => {
+                el.addEventListener('load', () => {
+                    window.mdxMasonry.layout();
+                })
+                el.addEventListener('error', () => {
+                    window.mdxMasonry.layout();
+                })
             })
         }
     }
 })
 
 function handleMotionChange(mrm) {
-    if (sessionStorage.getItem("mrm_enable") === "user") {
-        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+    if (sessionStorage.getItem('mrm_enable') === 'user') {
+        document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
         return;
     }
-    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        if (!sessionStorage.getItem("mrm_enable")) {
+    if (mrm.matches && document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        if (!sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
                 onButtonClick: function () {
-                    sessionStorage.setItem("mrm_enable", "user");
-                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                    sessionStorage.setItem('mrm_enable', 'user');
+                    document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
                 },
                 position: 'top',
             });
-            sessionStorage.setItem("mrm_enable", "sys");
-            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+            sessionStorage.setItem('mrm_enable', 'sys');
+            document.getElementsByTagName('body')[0].classList.add('mdx-reduce-motion');
         }
     } else {
-        if (sessionStorage.getItem("mrm_enable")) {
+        if (sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
                 position: 'top',
             });
         }
-        sessionStorage.removeItem("mrm_enable");
+        sessionStorage.removeItem('mrm_enable');
     }
 }

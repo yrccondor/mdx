@@ -1,4 +1,4 @@
-import ele from './ele.js';
+import ele from './tools/ele.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 

@@ -13,8 +13,9 @@ if(substr($mdx_index_img,0,6)=="--Bing"){
 }
 $mdx_side_img=mdx_get_option('mdx_side_img');if($mdx_side_img==''){$mdx_side_img=$mdx_index_img;};
 $ignore_sticky = false;
+$ignore_sticky_2 = false;
+$sticky_id_slide = get_option('sticky_posts');
 if(mdx_get_option('mdx_index_head_style') === "slide"){
-    $sticky_id_slide = get_option('sticky_posts');
     $mdx_posts_slide = array();
     if(mdx_get_option('mdx_index_head_style') === "slide" && mdx_get_option('mdx_index_slide_posts_get') === "sticky" && count($sticky_id_slide) > 0){
         $ignore_sticky = true;
@@ -70,7 +71,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     </div></header>
     <?php get_template_part('includes/searchform')?>
     <div class="theFirstPageBackGround mdui-color-theme"></div>
-    <?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?><div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>"></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
+    <?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?><div class="theFirstPage<?php if(mdx_get_option('mdx_index_head_style') !== "slide"){?> lazyload<?php }?>"<?php if(mdx_get_option('mdx_index_head_style') !== "slide"){?> data-bg="<?php echo $mdx_index_img;?>"<?php }?>></div><?php }if(mdx_get_option('mdx_index_img_bg') === "true"){ ?>
     <div class="mdx-index-img-bg mdui-color-theme"></div>
     <?php }
     if(mdx_get_option('mdx_index_head_style') !== "slide"){ ?>
@@ -104,7 +105,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         </div>
     </div>
     <?php }else{
-    if(count($mdx_posts_slide) > 0 || mdx_get_option('mdx_index_slide_posts_get') !== "sticky"){?>
+    if(count($mdx_posts_slide) > 0 || mdx_get_option('mdx_index_slide_posts_get') !== 'sticky'){?>
     <div class="theFirstPageSay mdui-typo mdx-swiper swiper-container slide-style-<?php echo mdx_get_option('mdx_index_slide_posts_style');?>">
         <div class="swiper-wrapper">
             <?php foreach($mdx_posts_slide as $post_item){?><div class="swiper-item swiper-slide">
@@ -119,7 +120,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                         ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
                     }else{
                         if(mdx_get_option("mdx_post_def_img") === "true"){
-                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo mdx_get_post_default_url().'"';
                         }else{
                             ?>"<?php
                         }
@@ -140,7 +141,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                         ?> mdx-bg-lazyload lazyload" data-bg="<?php echo $mdx_img_slide.'"';
                     }else{
                         if(mdx_get_option("mdx_post_def_img") === "true"){
-                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                            ?> mdx-bg-lazyload lazyload" data-bg="<?php echo mdx_get_post_default_url().'"';
                         }else{
                             ?>"<?php
                         }
@@ -171,7 +172,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
         <div class="swiper-bottom-void"></div>
         <?php } ?>
     </div>
-    <?php }elseif($mdx_index_show === "1" || $mdx_index_show === "4"){?>
+    <?php }else if($mdx_index_show === "1" || $mdx_index_show === "4"){?>
         <div class="theFirstPage lazyload" data-bg="<?php echo $mdx_index_img;?>">
             <?php if($mdx_index_show === "4"){?>
             <div class="swiper-bottom-void"></div>
@@ -191,14 +192,13 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php }if(mdx_get_option('mdx_notice')!=""){?>
     <div class="mdxNotice mdui-center<?php if($mdx_index_show=="0" || $mdx_index_show=="2" || $mdx_index_show=="3"){?> mdx-notice-default<?php }if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>"><i class="mdui-icon material-icons">&#xe7f7;</i><p class="mdui-typo"><?php echo htmlspecialchars_decode(mdx_get_option('mdx_notice'));?></p></div>
     <?php }
-    $sticky_id = get_option('sticky_posts');
-    if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id) > 0){
-        $ignore_sticky = true;
+    if(mdx_get_option('mdx_hot_posts')==="true" && mdx_get_option('mdx_hot_posts_get')==="sticky" && count($sticky_id_slide) > 0){
+        $ignore_sticky_2 = true;
     }
-    if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky){
+    if((mdx_get_option('mdx_hot_posts') === "true" && mdx_get_option('mdx_hot_posts_get') !== "sticky") || $ignore_sticky_2){
         global $post;
         if(mdx_get_option('mdx_hot_posts_get') === "sticky"){
-            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1,'post__in' =>$sticky_id));
+            $mdx_posts = get_posts(array('numberposts'=>(int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1,'post__in' =>$sticky_id_slide));
         }else{
             $mdx_posts = get_posts('numberposts='.strval((int)mdx_get_option('mdx_hot_posts_num') > 0 ? (int)mdx_get_option('mdx_hot_posts_num') : 1).'&category='.get_cat_ID(mdx_get_option('mdx_hot_posts_cat')));
         }?><div class="mdx-hot-posts mdui-center<?php if($mdx_index_show=="1"){?> mdui-shadow-2<?php }?>">
@@ -220,7 +220,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
                             ?> data-bg="<?php echo $mdx_img.'"';
                         }else{
                             if(mdx_get_option("mdx_post_def_img") === "true"){
-                                ?> data-bg="<?php echo get_template_directory_uri().'/img/dpic.jpg"';
+                                ?> data-bg="<?php echo mdx_get_post_default_url().'"';
                             }
                         }?>></div>
                         <span<?php if($mdx_img !== "" || mdx_get_option("mdx_post_def_img") === "true"){?> class="mdx-same-posts-img"<?php }?>><?php echo $related_post->post_title; ?></span>
@@ -237,7 +237,7 @@ if(mdx_get_option('mdx_index_head_style') === "slide"){
     <?php
         $style=mdx_get_option('mdx_default_style');
         $post_num=0;
-        if($ignore_sticky){
+        if($ignore_sticky || $ignore_sticky_2){
             $args = array(
                 'ignore_sticky_posts' => 1,
                 'showposts' => get_option('posts_per_page'),

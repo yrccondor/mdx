@@ -1,8 +1,11 @@
-import ele from './ele.js';
-import Velocity from 'velocity-animate';
+import ele from './tools/ele.js';
+import debounce from './tools/debounce.js'
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
+const HTMLScrollTo = new ScrollTo('document');
+const sideScrollTo = new ScrollTo(ele('#left-drawer', null, 'single'));
 let showPreview = mdx_show_preview.preview === 'true' ? true : false;
 let tocShown = false;
 let titleArr = [];
@@ -57,11 +60,11 @@ window.addEventListener('DOMContentLoaded', () => {
     ele('#left-drawer').addEventListener('click', function (e) {
         if (e.target.classList.contains('mdx-toc-item')) {
             e.preventDefault();
-            Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
+            HTMLScrollTo.to(ele(`article *[data-mdxtoc="mdx-toc-${e.target.getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75, 500);
             return;
         } else if (e.target.closest('.mdx-toc-item') !== null) {
             e.preventDefault();
-            Velocity(ele('html'), { scrollTop: (ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75) + "px" }, { duration: 500, queue: false });
+            HTMLScrollTo.to(ele(`article *[data-mdxtoc="mdx-toc-${e.target.closest('.mdx-toc-item').getAttribute('id').split('-')[2]}"]`).getBoundingClientRect().top + window.pageYOffset - 75, 500);
             return;
         }
     })
@@ -148,7 +151,19 @@ function addToc(titleList) {
     menu.style.transform = `translateX(-${menu.clientWidth}px)`;
 }
 
+const debouncedReflow = debounce(() => {
+    const tabEle = ele('#mdx-toc-select');
+    const halfWidth = tabEle.clientWidth / 2;
+    const borderEle = tabEle.getElementsByClassName('mdui-tab-indicator')[0];
+
+    if (borderEle.style.left !== '0px') {
+        borderEle.style.left = `${halfWidth}px`;
+    }
+    borderEle.style.width = `${halfWidth}px`;
+}, 300);
+
 window.addEventListener('resize', function () {
+    debouncedReflow();
     if (isToc) {
         if (ele('#mdx-toc').style.transform === 'translateX(0px)') {
             ele('#mdx-toc').style.transform = 'translateX(0)';
@@ -212,9 +227,9 @@ function scrollToc() {
                 if (item !== null && tocShown) {
                     let topDist = item.getBoundingClientRect().top;
                     if (topDist + 48 > window.innerHeight) {
-                        Velocity(ele('#left-drawer'), { scrollTop: (document.getElementById('left-drawer').scrollTop + (topDist + 48 - window.innerHeight) + 8) + "px" }, { duration: 200, queue: false });
+                        sideScrollTo.to(document.getElementById('left-drawer').scrollTop + (topDist + 48 - window.innerHeight) + 8, 200);
                     } else if (topDist < 8) {
-                        Velocity(ele('#left-drawer'), { scrollTop: (document.getElementById('left-drawer').scrollTop + topDist - 8) + "px" }, { duration: 200, queue: false });
+                        sideScrollTo.to(document.getElementById('left-drawer').scrollTop + topDist - 8, 200);
                     }
                 }
             } else {

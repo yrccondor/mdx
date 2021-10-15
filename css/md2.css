@@ -38,7 +38,7 @@
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
     font-display: swap;
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error, main .mdx-postlist-simple.mdx-postlist-simple-sta {
     border-radius: 8px!important;
 }
 .mdx-first-simple .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
@@ -263,6 +263,14 @@ main .mdx-postlist-simple img, main .mdx-postlist-simple div.mdx-fixed-img {
 }
 body.mdx-index-void .mdxNotice {
     border-radius: 8px!important;
+}
+article .mdx-sc-list {
+    box-shadow: none!important;
+    border: 2px solid #e2e2e2;
+    border-radius: 8px;
+}
+.mdui-theme-layout-dark article .mdx-sc-list {
+    border: 2px solid #555;
 }
 @media screen and (orientation: landscape) and (min-width: 750px) {
     body.mdx-first-tworows #mdx-search-anim, body.mdx-first-tworows .mdx-tworow-search, body.mdx-first-tworows .mdx-tworows-title > div {

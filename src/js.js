@@ -1,12 +1,14 @@
-import ele from './ele.js';
-import fade from './fade.js';
+import ele from './tools/ele.js';
+import fade from './tools/fade.js';
 import './ajax.js';
-import Velocity from 'velocity-animate';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 import '../style.less';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var metaColor = document.querySelector("meta[name='theme-color']");
@@ -122,7 +124,7 @@ function scrollDiff() {
 
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(ele("html"), { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -166,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (sliderDOM.length > 0) {
         new Flickity('.swiper-wrapper', {
             accessibility: true,
-            autoPlay: 5000,
+            autoPlay: slideInterval * 1000 || 5000,
             cellAlign: 'center',
             cellSelector: '.swiper-item',
             draggable: '>1',
@@ -196,10 +198,18 @@ window.addEventListener('DOMContentLoaded', () => {
                 stagger: 10,
                 percentPosition: true
             });
-            document.addEventListener('lazyloaded', (e) => {
+            document.getElementById('postlist').addEventListener('lazyloaded', (e) => {
                 if (e.target.matches('#postlist > .post-item img')) {
                     window.mdxMasonry.layout()
                 }
+            })
+            ele('#postlist img:not([data-src])', (el) => {
+                el.addEventListener('load', () => {
+                    window.mdxMasonry.layout();
+                })
+                el.addEventListener('error', () => {
+                    window.mdxMasonry.layout();
+                })
             })
         }
     }
@@ -304,7 +314,7 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     searchBarDOM.style.display = "block";
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '1' }, 200));
+    ele("#SearchBar > *", (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
         searchBarDOM.classList.add("mdui-color-theme");
@@ -405,7 +415,7 @@ function closeSearch() {
             document.getElementsByClassName("mdx-tworow-search")[0].style.visibility = 'visible';
         }, 500);
     } else {
-        ele("#SearchBar > *", (e) => Velocity(e, { opacity: '0' }, 200));
+        ele("#SearchBar > *", (e) => new Opacity(e, 0, 200));
         fade(ele('.fullScreen', null, 'array'), 'out', 300);
         fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
         document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
@@ -429,7 +439,7 @@ function hideBar() {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(ele("html"), { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 
@@ -462,22 +472,22 @@ window.addEventListener('DOMContentLoaded', () => {
             menuDOM.setAttribute('mdui-collapse', '');
         }
     }
-    new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse('#mdx_menu');
 
     //cookie
-    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    var flagName = typeof cookieFlagName === "undefined" ? "mdx_cookie" : cookieFlagName;
-    var cookieEle = document.getElementById("mdx-cookie-notice");
+    var ifDisplay = typeof displayCookie === 'undefined' ? true : displayCookie;
+    var flagName = typeof cookieFlagName === 'undefined' ? 'mdx_cookie' : cookieFlagName;
+    var cookieEle = document.getElementById('mdx-cookie-notice');
     if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
-        cookieEle.classList.add("mdx-cookie-notice-show");
-        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+        cookieEle.classList.add('mdx-cookie-notice-show');
+        cookieEle.getElementsByTagName('button')[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie() {
-        localStorage.setItem(flagName, "true");
-        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        localStorage.setItem(flagName, 'true');
+        document.getElementById('mdx-cookie-notice').style.bottom = '-400px';
         setTimeout(() => {
-            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+            document.getElementById('mdx-cookie-notice').classList.remove('mdx-cookie-notice-show');
         }, 400);
     }
 })

@@ -40,11 +40,7 @@ function mdx_display_sub_function_three(){
     }
 
     if(function_exists('file_get_contents')){
-        $opt1 = array(
-            'http'=>array('method'=>"GET",'header'=>"User-Agent: MDxThemeinWordPress\r\n")
-        );
-        $contexts1 = stream_context_create($opt1);
-        $mdx_data = json_decode(file_get_contents('https://update.dlij.site/mdx/info.json', false, $contexts1));
+        $mdx_data = json_decode(file_get_contents('https://cdn.jsdelivr.net/gh/axton-the-robot/mdx-assets@latest/info.json', false));
         $mdx_now_version = $mdx_data->version;
         update_option('mdx_new_ver',$mdx_now_version);
     }else{

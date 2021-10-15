@@ -11,10 +11,10 @@
 > Looks light, power inside.
 
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.9.10-3f51b5.svg?style=flat-square"/>
+<img alt="Version" src="https://img.shields.io/badge/version-2.0.2-3f51b5.svg?style=flat-square"/>
 <a href="https://flyhigher.top"><img alt="Author" src="https://img.shields.io/badge/author-Axton-red.svg?style=flat-square"/></a>
 <img alt="WordPress" src="https://img.shields.io/badge/WordPress-5.0%2B-blue.svg?style=flat-square"/>
-<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.28M-brightgreen.svg?style=flat-square"/></a>
+<a href="https://mdx.flyhigher.top"><img alt="Download" src="https://img.shields.io/badge/download-2.49M-brightgreen.svg?style=flat-square"/></a>
 <a href="https://github.com/yrccondor/mdx/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-GPL%20V3.0-orange.svg?style=flat-square"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyrccondor%2Fmdx.svg?type=shield"/></a>
 </p>
@@ -39,16 +39,17 @@ MDx: a light, elegent and powerful WordPress theme with Material Design.
 Key features:
 
 - Completely designed in Material Design with optional Material Design 2 style
-- 3 index styles, 5 post list styles, 3 footer styles & 3 page styles
+- 4 index styles, 5 post list styles, 3 footer styles & 4 page styles
 - 20 theme colors & 16 accent colors
 - Night mode and Always-Dark mode with optional OLED optimization
 - SEO friendly, easily share on Facebook / Twitter
 - Fast and light, Pagespeed score 99% & YSlow score 98% (Based on minimized installation)
+- No jQuery dependency
 - Share your work with the beautiful share card
 - Built-in TOC
 - Built-in image light box
 - 7 built-in shortcodes
-- Multi-language support (Simplified Chinese, Traditional Chinese, Turkish & English)
+- Multi-language support (Simplified Chinese, Traditional Chinese(Taiwan), Traditional Chinese(Hong Kong), Turkish & English)
 - ✨ Interactive search
 - ✨ Easily continue reading cross-platformly
 
@@ -75,7 +76,8 @@ Supported language(s):
 - Chinese (Simplified)
 - Turkish (Thanks [Hasan CAN](https://github.com/Sn0bzy))
 - English (Thanks [Ye Shu](https://github.com/yechs))
-- Traditional Chinese (Thanks [AngelKitty](https://github.com/AngelKitty))
+- Traditional Chinese(Taiwan) (Thanks [AngelKitty](https://github.com/AngelKitty))
+- Traditional Chinese(Hong Kong)
 
 > You can help us to translate MDx into other languages!
 

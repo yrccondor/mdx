@@ -1,16 +1,18 @@
-import ele from './ele.js';
-import fade from './fade.js';
-import betterFetch from './betterFetch.js';
-import Velocity from 'velocity-animate';
+import ele from './tools/ele.js';
+import fade from './tools/fade.js';
+import betterFetch from './tools/betterFetch.js';
+import Opacity from './tools/opacity.js';
+import ScrollTo from './tools/scrollTo.js';
 
 __webpack_public_path__ = window.mdxPublicPath;
 
+const HTMLScrollTo = new ScrollTo('document');
 //Toggle TitleBar's Classes and "Scroll To the Top" Bottom's Classes
 var whetherChange = 0;
 var whetherChangeToTop = 0;
 var blogName = ele('div.mdui-toolbar > a.mdui-typo-headline').innerHTML;
 var postTitle = ele('div.PostTitle h1').innerText;
-var blogUrl = ele('div.mdui-toolbar > a.mdui-typo-headline').getAttribute("href");
+var blogUrl = ele('div.mdui-toolbar > a.mdui-typo-headline').getAttribute('href');
 var metaColor = document.querySelector("meta[name='theme-color']");
 var colorEnabled = false;
 var nowColor = '';
@@ -19,11 +21,11 @@ if (metaColor) {
     nowColor = document.querySelector("meta[name='mdx-main-color']").getAttribute('content');
     colorEnabled = true;
 }
-var url_hash = window.location.href;
+var urlHash = window.location.href;
 var ticking = false;
 var winheight = window.innerHeight;
 var winwidth = document.body.clientWidth;
-var ifOffline = typeof offlineMode === "undefined" ? false : offlineMode;
+var ifOffline = typeof offlineMode === 'undefined' ? false : offlineMode;
 if (document.getElementsByClassName('PostMain2').length > 0) {
     var postStyle2 = true;
 } else {
@@ -107,7 +109,7 @@ function scrollDiff() {
 window.addEventListener("load", () => {
     init_wp_block();
     fade(ele('body > .mdui-progress', null, 'array'), 'out', 200);
-    document.querySelectorAll('.wp-block-mdx-fold').forEach(item => {
+    document.querySelectorAll('.wp-block-mdx-fold').forEach((item) => {
         item.setAttribute('mdui-panel', '');
     });
     mdui.$(".wp-block-mdx-fold").mutation();
@@ -120,8 +122,15 @@ window.addEventListener("load", () => {
                 if (DOMlist[parseInt(newpro[1])]) {
                     var scro = DOMlist[parseInt(newpro[1])].offsetHeight * parseFloat(newpro[2]) + DOMlist[parseInt(newpro[1])].offsetTop;
                     if (scro > 200) {
-                        Velocity(ele("html"), { scrollTop: scro + "px" }, 700);
-                        snbar();
+                        HTMLScrollTo.to(scro, 700);
+                        mdui.snackbar({
+                            message: snbar_message,
+                            buttonText: snbar_buttonText,
+                            timeout: 10000,
+                            onButtonClick: () => {
+                                HTMLScrollTo.to(0, 700);
+                            },
+                        });
                     }
                 } else {
                     backupPro(newpro[3]);
@@ -143,8 +152,15 @@ function backupPro(query) {
     }
     var scro = postHight3 * oldpro;
     if (scro > 200) {
-        Velocity(ele("html"), { scrollTop: scro + "px" }, 700);
-        snbar();
+        HTMLScrollTo.to(scro, 700);
+        mdui.snackbar({
+            message: snbar_message,
+            buttonText: snbar_buttonText,
+            timeout: 10000,
+            onButtonClick: () => {
+                HTMLScrollTo.to(0, 700);
+            },
+        });
     }
 }
 
@@ -281,7 +297,7 @@ function mdxAjaxPost(i) {
 
 //Scroll To the Top
 document.getElementsByClassName("scrollToTop")[0].addEventListener("click", function () {
-    Velocity(ele("html"), { scrollTop: "0px" }, 500);
+    HTMLScrollTo.to(0, 500);
 }, false);
 
 //Night Styles
@@ -322,7 +338,7 @@ if (lazyloadImg.length) {
         })
     }
 };
-var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image img");
+var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image > figure.mdx-lazyload-container img");
 if (lazyloadImg2.length) {
     for (let el of lazyloadImg2) {
         el.addEventListener('lazyloaded', function (e) {
@@ -335,6 +351,17 @@ if (lazyloadImg2.length) {
             }
             prevDom.previousSibling.remove();
             prevDom.remove();
+            e.target.classList.add("mdx-img-loaded-no-anim");
+        })
+    }
+};
+var lazyloadImg3 = document.querySelectorAll("article > figure.wp-block-image > img, article > figure.wp-block-image > a > img");
+if (lazyloadImg3.length) {
+    for (let el of lazyloadImg3) {
+        el.addEventListener('lazyloaded', function (e) {
+            if (!e.target.previousSibling) {
+                e.target.parentNode.classList.add("mdx-img-loaded-no-anim");
+            }
             e.target.classList.add("mdx-img-loaded-no-anim");
         })
     }
@@ -354,6 +381,15 @@ window.addEventListener('DOMContentLoaded', () => {
     if (ifOffline) {
         ele('#respond').innerHTML = tipMutiOffRes;
     }
+
+    // Wrap plain table
+    ele('article > table:not([class]):not([id])', (e) => {
+        e.classList.add('mdui-table', 'mdx-dny-table', 'mdui-table-hoverable');
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('mdui-table-fluid');
+        e.parentNode.insertBefore(wrapper, e);
+        wrapper.appendChild(e);
+    })
 
     ele('article a > figure > img.lazyload, article > figure > img.lazyload, article a > figure > img.lazyloaded, article > figure > img.lazyloaded, article a > figure > img.lazyloading, article > figure > img.lazyloading', (e) => {
         if (e.classList.contains("aligncenter")) {
@@ -384,8 +420,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 wrapper.parentNode.removeChild(wrapper);
             } else {
-                console.log(e.parentNode)
-                e.parentNode.classList.add("mdx-img-in-post-with-link");
+                e.parentNode.classList.add('mdx-img-in-post-with-link');
             }
         });
         ele('article a > figure > img.lazyload, article a > figure > img.lazyloaded, article a > figure > img.lazyloading', (e) => {
@@ -394,8 +429,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgUrlEach = e.getAttribute('data-src').split("?")[0];
             }
             var imgHrefa = e.parentNode.parentNode.getAttribute('href').replace(/(-scaled)*\.[^.]+$/, '-');
-            if (imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href') + "-towebp") {
-                e.classList.add("mdx-img-in-post");
+            if (imgUrlEach.indexOf(imgHrefa) != -1 || imgUrlEach == e.parentNode.parentNode.getAttribute('href') || imgUrlEach == e.parentNode.parentNode.getAttribute('href') + '-towebp') {
+                e.classList.add('mdx-img-in-post');
                 let wrapper = e.parentNode.parentNode;
                 for (let el of wrapper.childNodes) {
                     wrapper.parentNode.insertBefore(el, wrapper);
@@ -403,7 +438,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 wrapper.parentNode.removeChild(wrapper);
             } else {
                 let wrapper = document.createElement('a');
-                console.log(wrapper)
                 wrapper.classList.add('mdx-img-in-post-with-link');
                 wrapper.setAttribute('href', e.parentNode.parentNode.getAttribute('href'));
                 e.parentNode.appendChild(wrapper);
@@ -425,7 +459,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 imgRaw = e.target;
                 imgRaw.style.opacity = 0;
                 ele('div.mdui-drawer', (e) => {
-                    e.insertAdjacentHTML('beforebegin', '<div id="img-box" class="mdui-valign"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>');
+                    e.insertAdjacentHTML('beforebegin', `<div id="img-box" class="mdui-valign${mdx_img_box_opacity ? ' opacity-bg' : ''}"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>`);
                 })
                 mdui.updateSpinners();
                 ele('.mdx-img-viewer', (elem) => {
@@ -629,45 +663,45 @@ window.addEventListener('DOMContentLoaded', () => {
     var inputId = ele('form.post-password-form p > label > input').getAttribute('id');
     const passwordForm = document.querySelectorAll('form.post-password-form p');
     if (passwordForm.length > 0) {
-        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>'`;
+        passwordForm[1].innerHTML = `<div class="mdui-textfield mdui-textfield-floating-label inpass"><label class="mdui-textfield-label">${mdx_i18n_password}</label><input class="mdui-textfield-input" type="password" name="post_password" id="${inputId}"></div>`;
     }
 
-    if (document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        var mrm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        var mrm = window.matchMedia('(prefers-reduced-motion: reduce)');
         mrm.addEventListener('change', handleMotionChange);
         handleMotionChange(mrm);
     }
 })
 
 function handleMotionChange(mrm) {
-    if (sessionStorage.getItem("mrm_enable") === "user") {
-        document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+    if (sessionStorage.getItem('mrm_enable') === 'user') {
+        document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
         return;
     }
-    if (mrm.matches && document.getElementsByTagName("body")[0].classList.contains("mdx-reduce-motion")) {
-        if (!sessionStorage.getItem("mrm_enable")) {
+    if (mrm.matches && document.getElementsByTagName('body')[0].classList.contains('mdx-reduce-motion')) {
+        if (!sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_1,
                 buttonText: reduce_motion_i18n_2,
                 timeout: 7000,
                 onButtonClick: function () {
-                    sessionStorage.setItem("mrm_enable", "user");
-                    document.getElementsByTagName("body")[0].classList.remove("mdx-reduce-motion");
+                    sessionStorage.setItem('mrm_enable', 'user');
+                    document.getElementsByTagName('body')[0].classList.remove('mdx-reduce-motion');
                 },
                 position: 'top',
             });
-            sessionStorage.setItem("mrm_enable", "sys");
-            document.getElementsByTagName("body")[0].classList.add("mdx-reduce-motion");
+            sessionStorage.setItem('mrm_enable', 'sys');
+            document.getElementsByTagName('body')[0].classList.add('mdx-reduce-motion');
         }
     } else {
-        if (sessionStorage.getItem("mrm_enable")) {
+        if (sessionStorage.getItem('mrm_enable')) {
             mdui.snackbar({
                 message: reduce_motion_i18n_3,
                 timeout: 5000,
                 position: 'top',
             });
         }
-        sessionStorage.removeItem("mrm_enable");
+        sessionStorage.removeItem('mrm_enable');
     }
 }
 
@@ -694,12 +728,12 @@ ele('#comment').addEventListener('focus', () => {
 
 var now_url = '';
 
-ele("#oth-div").addEventListener("click", () => {
+ele('#oth-div').addEventListener('click', () => {
     var howFar2 = document.documentElement.scrollTop || document.body.scrollTop;
-    if (document.getElementsByClassName("ArtMain").length > 0) {
-        var postHight2 = ele(".ArtMain").getBoundingClientRect().height + ele(".ArtMain").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
+    if (document.getElementsByClassName('ArtMain').length > 0) {
+        var postHight2 = ele('.ArtMain').getBoundingClientRect().height + ele('.ArtMain').getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     } else {
-        var postHight2 = ele("article.mdui-typo").getBoundingClientRect().height + ele("article.mdui-typo").getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
+        var postHight2 = ele('article.mdui-typo').getBoundingClientRect().height + ele('article.mdui-typo').getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientHeight;
     }
     var nowPro2 = (howFar2 / postHight2).toFixed(3);
     if (nowPro2 > 1) {
@@ -720,15 +754,15 @@ ele("#oth-div").addEventListener("click", () => {
         if (min > -Infinity) {
             var elem = list[mini];
             var percent = ((0 - min) / elem.offsetHeight).toFixed(3);
-            nowPro2 = "v2:" + mini + ":" + percent + ":" + nowPro2;
+            nowPro2 = 'v2:' + mini + ':' + percent + ':' + nowPro2;
         } else {
             nowPro2 = 0;
         }
     }
-    let now_url_p = window.location.href.split("?_pro=")[0].split("&_pro=")[0];
-    let now_url = now_url_p.indexOf("?") === -1 ? now_url_p + '?_pro=' + nowPro2 : now_url_p + '&_pro=' + nowPro2;
+    let now_url_p = window.location.href.split('?_pro=')[0].split('&_pro=')[0];
+    let now_url = now_url_p.indexOf('?') === -1 ? now_url_p + '?_pro=' + nowPro2 : now_url_p + '&_pro=' + nowPro2;
     ele('#qrcode').innerHTML = '';
-    new QRCode(document.getElementById("qrcode"), {
+    new QRCode(document.getElementById('qrcode'), {
         text: now_url,
         width: 150,
         height: 150,
@@ -756,8 +790,8 @@ function share_wechat(e) {
             history: false,
             cssClass: 'mdx-share-wechat-dialog',
             onOpen: function () {
-                now_url = window.location.href.replace(window.location.search, "");
-                new QRCode(document.getElementById("mdx-share-wechat-qrcode"), {
+                now_url = window.location.href.replace(window.location.search, '');
+                new QRCode(document.getElementById('mdx-share-wechat-qrcode'), {
                     text: now_url,
                     width: 250,
                     height: 250,
@@ -774,7 +808,7 @@ document.getElementsByClassName("seai")[0].addEventListener("click", function ()
     searchBarDOM.style.display = "block";
     fade(ele('.OutOfsearchBox', null, 'array'), 'in', 300);
     fade(ele('.fullScreen', null, 'array'), 'in', 300);
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '1' }, 200));
+    ele("#SearchBar > *", (e) => new Opacity(e, 1, 200));
     setTimeout(() => {
         document.getElementsByClassName("outOfSearch")[0].style.width = '75%';
         searchBarDOM.classList.add("mdui-color-theme");
@@ -793,7 +827,7 @@ for (let ele of document.getElementsByClassName("sea-close")) {
 }
 function closeSearch() {
     document.getElementsByClassName("seainput")[0].blur();
-    ele("#SearchBar > *", (e) => Velocity(e, { opacity: '0' }, 200));
+    ele("#SearchBar > *", (e) => new Opacity(e, 0, 200));
     fade(ele('.fullScreen', null, 'array'), 'out', 300);
     fade(ele('.OutOfsearchBox', null, 'array'), 'out', 300);
     document.getElementsByClassName("outOfSearch")[0].style.width = '30%';
@@ -829,7 +863,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function convertCanvasToImage(canvas) {
     var image = new Image();
     var canvasData = canvas.toDataURL("image/png");
-    sessionStorage.setItem('si_' + url_hash, canvasData);
+    sessionStorage.setItem('si_' + urlHash, canvasData);
     image.src = canvasData;
     document.getElementById('mdx-share-img-loaded-container').appendChild(image);
     ele('#mdx-share-img').style.display = 'none';
@@ -862,15 +896,13 @@ function mdx_show_img(e) {
     mdui.updateSpinners();
     ele('#mdx-share-img').style.display = 'block';
 
-    if (!sessionStorage.getItem('si_' + url_hash)) {
-        import(/* webpackPrefetch: true, webpackChunkName: 'html2canvas' */ 'html2canvas').then(module => {
-            module.default(document.getElementById("mdx-share-img"), { useCORS: true }).then(function (canvas) {
-                convertCanvasToImage(canvas);
-            });
+    if (!sessionStorage.getItem('si_' + urlHash)) {
+        import(/* webpackPrefetch: true, webpackChunkName: 'html2canvas' */ 'html2canvas').then((module) => {
+            module.default(document.getElementById('mdx-share-img'), { useCORS: true }).then(convertCanvasToImage);
         })
     } else {
         var image = new Image();
-        image.src = sessionStorage.getItem('si_' + url_hash);
+        image.src = sessionStorage.getItem('si_' + urlHash);
         document.getElementById('mdx-share-img-loaded-container').appendChild(image);
         ele('#mdx-share-img').style.display = 'none';
         ele('div.mdx-share-img-loading', (e) => {
@@ -878,7 +910,7 @@ function mdx_show_img(e) {
         });
         setTimeout(() => {
             window.share_dialog.handleUpdate();
-            ele(".mdx-share-img-dialog .mdui-dialog-actions", (e) => {
+            ele('.mdx-share-img-dialog .mdui-dialog-actions', (e) => {
                 let spanDom = document.createElement('span');
                 spanDom.classList.add('mdx-save-info');
                 spanDom.innerHTML = `<i class="mdui-icon material-icons">&#xe80d;</i> ${mdx_si_i18n}`
@@ -904,7 +936,7 @@ function commentNaviLink(e) {
             e.parentNode.removeChild(e);
         });
         ele('.mdx-comments-loading').style.display = 'block';
-        Velocity(ele("html"), { scrollTop: ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65 + "px" }, 500);
+        HTMLScrollTo.to(ele('#reply-title').getBoundingClientRect().top + window.pageYOffset - 65, 500);
         betterFetch(e.target.getAttribute('href')).then((out) => {
             let htmlParser = new DOMParser();
             let htmlParsed = htmlParser.parseFromString(out, "text/html");
@@ -980,7 +1012,7 @@ function commentNavi(e) {
 //tap tp top
 document.getElementsByClassName("mdui-typo-headline")[0].addEventListener("click", function () {
     if (mdx_tapToTop == 1) {
-        Velocity(ele("html"), { scrollTop: "0px" }, 500);
+        HTMLScrollTo.to(0, 500);
     }
 })
 
@@ -1013,21 +1045,22 @@ window.addEventListener('DOMContentLoaded', () => {
             menuDOM.setAttribute('mdui-collapse', '');
         }
     }
-    new mdui.Collapse("#mdx_menu");
+    new mdui.Collapse('#mdx_menu');
 
     //cookie
-    var ifDisplay = typeof displayCookie === "undefined" ? true : displayCookie;
-    var cookieEle = document.getElementById("mdx-cookie-notice");
-    if (ifDisplay && cookieEle && !localStorage.getItem("mdx_cookie")) {
-        cookieEle.classList.add("mdx-cookie-notice-show");
-        cookieEle.getElementsByTagName("button")[0].addEventListener('click', agreeCookie, false);
+    var ifDisplay = typeof displayCookie === 'undefined' ? true : displayCookie;
+    var cookieEle = document.getElementById('mdx-cookie-notice');
+    var flagName = typeof cookieFlagName === 'undefined' ? 'mdx_cookie' : cookieFlagName;
+    if (ifDisplay && cookieEle && !localStorage.getItem(flagName)) {
+        cookieEle.classList.add('mdx-cookie-notice-show');
+        cookieEle.getElementsByTagName('button')[0].addEventListener('click', agreeCookie, false);
     }
 
     function agreeCookie() {
-        localStorage.setItem("mdx_cookie", "true");
-        document.getElementById("mdx-cookie-notice").style.bottom = "-400px";
+        localStorage.setItem(flagName, 'true');
+        document.getElementById('mdx-cookie-notice').style.bottom = '-400px';
         setTimeout(() => {
-            document.getElementById("mdx-cookie-notice").classList.remove("mdx-cookie-notice-show");
+            document.getElementById('mdx-cookie-notice').classList.remove('mdx-cookie-notice-show');
         }, 400);
     }
 
