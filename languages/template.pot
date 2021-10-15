@@ -170,6 +170,15 @@ msgstr ""
 msgid "ImgBox 背景"
 msgstr ""
 
+#: admin_fn.php:172
+#: admin_style.php:362
+msgid "纯色"
+msgstr ""
+
+#: admin_fn.php:174
+msgid "半透明"
+msgstr ""
+
 #: admin_fn.php:180
 msgid "赞赏二维码"
 msgstr ""
@@ -1018,10 +1027,6 @@ msgstr ""
 
 #: admin_style.php:359
 msgid "居中"
-msgstr ""
-
-#: admin_style.php:362
-msgid "纯色"
 msgstr ""
 
 #: admin_style.php:367
