@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MDx\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-10-07 20:23+0800\n"
+"PO-Revision-Date: 2021-10-15 19:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_HK\n"
@@ -166,6 +166,14 @@ msgstr ""
 #: admin_fn.php:168
 msgid "ImgBox 背景"
 msgstr "ImgBox 背景"
+
+#: admin_fn.php:172 admin_style.php:362
+msgid "纯色"
+msgstr "純色"
+
+#: admin_fn.php:174
+msgid "半透明"
+msgstr "半透明"
 
 #: admin_fn.php:180
 msgid "赞赏二维码"
@@ -1200,10 +1208,6 @@ msgstr "首頁幻燈片樣式"
 #: admin_style.php:359
 msgid "居中"
 msgstr "居中"
-
-#: admin_style.php:362
-msgid "纯色"
-msgstr "純色"
 
 #: admin_style.php:367
 msgid "首页幻灯片文章数量"

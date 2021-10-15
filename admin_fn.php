@@ -169,9 +169,9 @@ wp_enqueue_media();
                     <td>
                         <?php $mdx_v_img_box_opacity = mdx_get_option('mdx_img_box_opacity'); ?>
                         <fieldset>
-                            <label><input type="radio" class="mdx_img_box_opacity" name="mdx_img_box_opacity" value="true" <?php if ($mdx_v_img_box_opacity == 'true'){ ?>checked="checked"<?php } ?>> <?php _e('纯色'); ?>
+                            <label><input type="radio" class="mdx_img_box_opacity" name="mdx_img_box_opacity" value="true" <?php if ($mdx_v_img_box_opacity == 'true'){ ?>checked="checked"<?php } ?>> <?php _e('纯色', 'mdx'); ?>
                             </label><br>
-                            <label><input type="radio" class="mdx_img_box_opacity" name="mdx_img_box_opacity" value="false" <?php if ($mdx_v_img_box_opacity == 'false'){ ?>checked="checked"<?php } ?>> <?php _e('半透明'); ?>
+                            <label><input type="radio" class="mdx_img_box_opacity" name="mdx_img_box_opacity" value="false" <?php if ($mdx_v_img_box_opacity == 'false'){ ?>checked="checked"<?php } ?>> <?php _e('半透明', 'mdx'); ?>
                             </label>
                         </fieldset>
                     </td>
