@@ -110,6 +110,7 @@ $mdx_default_values = array(
     'mdx_tags_color' => 'true',
     'mdx_styles_footer' => '1',
     'mdx_footer_say' => 'Hello => MDx!',
-    'mdx_footer' => ''
+    'mdx_footer' => '',
+    'mdx_hide_footer' => 'false'
 );
 ?>

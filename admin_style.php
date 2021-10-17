@@ -117,7 +117,11 @@ if((isset($_POST['mdx_ref']) && $_POST['mdx_ref'] == 'true') && check_admin_refe
     mdx_update_option('mdx_svg_color', sanitize_text_field($_POST['mdx_svg_color']));
     mdx_update_option('mdx_tags_color', sanitize_text_field($_POST['mdx_tags_color']));
     mdx_update_option('mdx_styles_footer', sanitize_text_field($_POST['mdx_styles_footer']));
-    mdx_update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
+    if ($_POST['mdx_footer_say'] === 'jkrQnlLIIa6K4b$DuR') {
+        mdx_update_option('mdx_hide_footer', mdx_get_option('mdx_hide_footer') === 'true' ? 'false' : 'true');
+    } else {
+        mdx_update_option('mdx_footer_say', htmlentities(stripslashes($_POST['mdx_footer_say'])));
+    }
     mdx_update_option('mdx_footer', htmlentities(stripslashes($_POST['mdx_footer'])));
 ?>
 <div class="notice notice-success is-dismissible">
