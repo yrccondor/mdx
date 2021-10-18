@@ -26,7 +26,7 @@
                 <?php echo mdx_get_option('mdx_wangan_num'); ?>
             </a>
         <?php } ?>
-        <?php if (mdx_get_option('mdx_hide_footer') === 'true') { ?><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php } ?>
+        <?php if (mdx_get_option('mdx_hide_footer') !== 'true') { ?><br>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a><?php } ?>
         <?php $mdx_footer_say = mdx_get_option('mdx_footer_say');
         if ($mdx_footer_say != '' && $mdx_footer_say != '--HitokotoAPIActivated--' && $mdx_footer_say != '--HitokotoPoemAPIActivated--' && substr($mdx_footer_say, 0, 21) !== '--CustomAPIActivated(') { ?>
             <br>&nbsp;<br><?php echo $mdx_footer_say;
@@ -56,7 +56,7 @@
                     <?php echo mdx_get_option('mdx_wangan_num'); ?>
                 </a>
             <?php }
-            if (mdx_get_option('mdx_hide_footer') === 'true') { ?>
+            if (mdx_get_option('mdx_hide_footer') !== 'true') { ?>
             <div class="mdx-copyright">
                 Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a>
             </div>
@@ -94,7 +94,7 @@
                 } ?></span>
             <hr>
             <div class="mdx-footer-copyright">
-            <?php if (mdx_get_option('mdx_hide_footer') === 'true') { ?><span>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></span><?php } ?>
+            <?php if (mdx_get_option('mdx_hide_footer') !== 'true') { ?><span>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></span><?php } ?>
                 <div class="mdx-footer-copyright-right">
                     <?php if (!empty(mdx_get_option('mdx_icp_num'))) { ?>
                         <div class="mdx-icp">

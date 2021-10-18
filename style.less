@@ -4391,8 +4391,15 @@ body.mdx-index-void {
     justify-content: space-between;
     .mdx-footer-copyright-right {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    span + .mdx-footer-copyright-right {
+        display: flex;
         flex-direction: column;
         text-align: right;
+        width: auto;
     }
 }
 .wanan-link img {

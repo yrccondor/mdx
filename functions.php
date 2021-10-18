@@ -125,9 +125,7 @@ add_filter('pre_option_link_manager_enabled', '__return_true');
 include('includes/cdn_version.php');
 $files_root = '';
 if (mdx_get_option("mdx_use_cdn") === "custom") {
-    // 使用正则表达式使得不论如何填写都能取到正确CDN域，可识别FTP等不同协议的URL
-	preg_match("/([a-zA-Z]+:\/\/[\w\-.\/]+)\//i",mdx_get_option("mdx_custom_cdn_root"),$custom_cdn_regex_output);
-    $files_root = $custom_cdn_regex_output[1];
+    $files_root = mdx_get_option("mdx_custom_cdn_root");
 } else if (mdx_get_option("mdx_use_cdn") === "jsdelivr") {
     $files_root = 'https://cdn.jsdelivr.net/gh/yrccondor/mdx@'.$cdn_commit_version;
 } else {
@@ -214,11 +212,11 @@ function mdx_js() {
         ));
     }
     if (is_home() && mdx_get_option('mdx_index_head_style') === 'slide') {
-        wp_register_script('mdx_flickity_js', $files_root.'/js/flickity.min.js', array(), AC_VERSION, true);
+        wp_register_script('mdx_flickity_js', $files_root.'/js/flickity.min.js', false, '', true);
         wp_enqueue_script('mdx_flickity_js');
     }
     if ((!is_single() && !is_page() && !is_404()) && mdx_get_option('mdx_post_list_width') === 'wide') {
-        wp_register_script('mdx_masonry_js', $files_root.'/js/masonry.min.js', array(), AC_VERSION, true);
+        wp_register_script('mdx_masonry_js', $files_root.'/js/masonry.min.js', false, '', true);
         wp_enqueue_script('mdx_masonry_js');
     }
     wp_enqueue_script('mdx_sl_js');
