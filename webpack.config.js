@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const mdxVersion = '2.0.2';
+const mdxVersion = '2.0.3';
 
 module.exports = {
     entry: {
