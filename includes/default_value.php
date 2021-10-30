@@ -69,6 +69,7 @@ $mdx_default_values = array(
     'mdx_styles_dark' => 'disable',
     'mdx_md2' => 'false',
     'mdx_md2_font' => 'false',
+	'mdx_buddha' => 'false',
     'mdx_login_md' => 'false',
     'mdx_chrome_color' => 'true',
     'mdx_title_bar' => 'false',
