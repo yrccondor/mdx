@@ -20,14 +20,32 @@ if ( ! $isUsedYoastSEO ) {
 	if ( $paged >= 2 || $page >= 2 ) {
 		$title .= ' - ' . sprintf( __( '第 %s 页' ), max( $paged, $page ) );
 	}
+
+	if ( ( is_single() || is_page() ) && ! empty( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ) ) {
+		if ( ( $opt_mdx_share_twitter_card == "summary" || $opt_mdx_share_twitter_card == "summary_large_image" ) ) {
+			$twitter_card_type = ( $opt_mdx_share_twitter_card );
+		} else {
+			$twitter_card_type = ( "summary" );
+		}
+	} else {
+		if ( empty( mdx_get_option( 'mdx_share_image' ) ) ) {
+			$twitter_card_type = "summary";
+		} else {
+			$twitter_card_type = "summary_large_image";
+		}
+	}
 }
 
 /* 获取当前页面图 */
-$opt_mdx_index_img = mdx_get_option( 'mdx_index_img' );
-if ( ! ( ! ( is_single() || is_page() ) && substr( $opt_mdx_index_img, 0, 6 ) == "--Bing" ) ) {
-	$index_image = is_single() || is_page() ? ( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?? "" ) : $opt_mdx_index_img;
+if ( (is_single() || is_page()) && ! empty( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ) ) {
+	$index_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+} else if (!empty(mdx_get_option('mdx_share_image'))) {
+    $index_image = mdx_get_option( 'mdx_share_image' );
+} else if(strncmp(mdx_get_option( 'mdx_index_img' ), "--BingImages", 12) !== 0) {
+	$index_image = mdx_get_option( 'mdx_index_img' );
 } else {
-	$index_image = mdx_get_option( 'mdx_side_head' );
+	$twitter_card_type = "summary";
+    $index_image = get_site_icon_url();
 }
 
 /* 获取当前页面社会描述 */
@@ -101,7 +119,7 @@ $mdx_current_url = mdx_get_now_url( is_single(), isset( $post ) ? $post->ID : 0 
 			<?php $opt_mdx_share_twitter_username = mdx_get_option( 'mdx_share_twitter_username' ); ?>
             <meta property="og:description" content="<?php echo $page_describe; ?>">
             <meta property="og:image" content="<?php echo $index_image; ?>">
-            <meta name="twitter:card" content="<?php echo ( is_single() || is_page() ) ? ( ( $opt_mdx_share_twitter_card == "summary" || $opt_mdx_share_twitter_card == "summary_large_image" ) ? $opt_mdx_share_twitter_card : "summary" ) : "summary"; ?>">
+            <meta name="twitter:card" content="<?php echo $twitter_card_type; ?>">
 			<?php if ( ! empty( $opt_mdx_share_twitter_username ) ) { ?>
                 <meta name="twitter:site" content="@<?php echo ltrim( $opt_mdx_share_twitter_username, "@" ); ?>"><?php } ?>
 		<?php endif; ?>
