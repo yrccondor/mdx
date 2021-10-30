@@ -24,8 +24,11 @@ if ( ! $isUsedYoastSEO ) {
 
 /* 获取当前页面图 */
 $opt_mdx_index_img = mdx_get_option( 'mdx_index_img' );
-$coverPicIsBing = (bool) substr( $opt_mdx_index_img, 0, 6 ) == "--Bing";
-$index_image = ! ( ! ( is_single() || is_page() ) && $coverPicIsBing ) ? ( ( is_single() || is_page() ) ? ( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?? "" ) : $opt_mdx_index_img ) : mdx_get_option( 'mdx_side_head' );
+if ( ! ( ! ( is_single() || is_page() ) && substr( $opt_mdx_index_img, 0, 6 ) == "--Bing" ) ) {
+	$index_image = is_single() || is_page() ? ( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?? "" ) : $opt_mdx_index_img;
+} else {
+	$index_image = mdx_get_option( 'mdx_side_head' );
+}
 
 /* 获取当前页面社会描述 */
 $mdx_des = mdx_get_option( 'mdx_seo_des' );
