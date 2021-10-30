@@ -17,3 +17,5 @@ node_modules
 .vscode
 
 dist
+
+yarn.lock
