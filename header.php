@@ -37,15 +37,15 @@ if ( ! $isUsedYoastSEO ) {
 }
 
 /* 获取当前页面图 */
-if ( ( is_single() || is_page() ) && ! empty( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ) ) {
+if ( (is_single() || is_page()) && ! empty( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ) ) {
 	$index_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
-} else if ( ! empty( mdx_get_option( 'mdx_share_image' ) ) ) {
-	$index_image = mdx_get_option( 'mdx_share_image' );
-} else if ( strncmp( mdx_get_option( 'mdx_index_img' ), "--BingImages", 12 ) !== 0 ) {
+} else if (!empty(mdx_get_option('mdx_share_image'))) {
+    $index_image = mdx_get_option( 'mdx_share_image' );
+} else if(strncmp(mdx_get_option( 'mdx_index_img' ), "--BingImages", 12) !== 0) {
 	$index_image = mdx_get_option( 'mdx_index_img' );
 } else {
 	$twitter_card_type = "summary";
-	$index_image       = get_site_icon_url();
+    $index_image = get_site_icon_url();
 }
 
 /* 获取当前页面社会描述 */
@@ -63,42 +63,7 @@ if ( is_single() || is_page() ) {
 }
 
 $mdx_current_url = mdx_get_now_url( is_single(), isset( $post ) ? $post->ID : 0 );
-?>
-<?php if ( mdx_get_option( "mdx_buddha" ) === "true" ): ?>
-    <!--
-							_ooOoo_
-						   o8888888o
-						   88" . "88
-						   (| -_- |)
-							O\ = /O
-						____/`---'\____
-					  .   ' \\| |// `.
-					   / \\||| : |||// \
-					 / _||||| -:- |||||- \
-					   | | \\\ - /// | |
-					 | \_| ''\---/'' | |
-					  \ .-\__ `-` ___/-. /
-				   ___`. .' /--.--\ `. . __
-				."" '< `.___\_<|>_/___.' >'"".
-			   | | : `- \`.;`\ _ /`;.`/ - ` : | |
-				 \ \ `-. \_ __\ /__ _/ .-` / /
-		 ======`-.____`-.___\_____/___.-`____.-'======
-							`=---='
-
-		 .............................................
-				  佛祖保佑             永无BUG
-
-				  写字楼里写字间，写字间里程序员。
-				  程序人员写程序，又拿程序换酒钱。
-				  酒醒只在网上坐，酒醉还来网下眠。
-				  酒醉酒醒日复日，网上网下年复年。
-				  但愿老死电脑间，不愿鞠躬老板前。
-				  奔驰宝马贵者趣，公交自行程序员。
-				  别人笑我忒疯癫，我笑自己命太贱。
-				  不见满街漂亮妹，哪个归得程序员？
-	-->
-<?php endif; // 博学多才的Axton一定会重写这个诗吧？ ?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <!-- The <Head> part of the theme starts to load -->

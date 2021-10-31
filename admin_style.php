@@ -90,7 +90,6 @@ wp_enqueue_script( 'wp-color-picker' );
 		} else {
 			mdx_update_option( 'mdx_post_def_img_url', esc_url_raw( $_POST['mdx_post_def_img_url'] ) );
 		}
-		mdx_update_option( 'mdx_buddha', sanitize_text_field( $_POST['mdx_buddha'] ) );
 		mdx_update_option( 'mdx_gravatar_actived', sanitize_text_field( $_POST['mdx_gravatar_actived'] ) );
 		mdx_update_option( 'mdx_link_rand_order', sanitize_text_field( $_POST['mdx_link_rand_order'] ) );
 		mdx_update_option( 'mdx_title_med', sanitize_text_field( $_POST['mdx_title_med'] ) );
@@ -299,19 +298,6 @@ wp_enqueue_script( 'wp-color-picker' );
                     <button type="button" id="insert-media-button-5" class="button" style="margin-top:5px;display:block"><?php _e( '选择图片', 'mdx' ); ?></button>
                     <p class="description"><?php _e( '指定文章默认特色图像，留空则使用主题内置默认特色图像。', 'mdx' ); ?></p>
                     <img id="img5" style="width:100%;max-width:300px;height:auto;margin-top:5px;"></img>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row"><?php _e( '以正当方式保证代码健康', 'mdx' ); ?></th>
-                <td>
-					<?php $mdx_v_buddha = mdx_get_option( 'mdx_buddha' ); ?>
-                    <fieldset>
-                        <label><input type="radio" name="mdx_buddha" value="true" <?php if ( $mdx_v_buddha === 'true' ){ ?>checked="checked"<?php } ?>> <?php echo $trueon; ?>
-                        </label><br>
-                        <label><input type="radio" name="mdx_buddha" value="false" <?php if ( $mdx_v_buddha === 'false' ){ ?>checked="checked"<?php } ?>> <?php echo $falseoff; ?>
-                        </label><br>
-                        <p class="description"><?php _e( '有趣的小功能，开启后请自行查看页面HTML代码的页首部分', 'mdx' ); ?></p>
-                    </fieldset>
                 </td>
             </tr>
             </tbody>
