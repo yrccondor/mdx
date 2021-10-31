@@ -1,5 +1,5 @@
 <?php
-$mdx_default_values = array(
+$mdx_default_values = [
     'mdx_install' => 'normal',
     'mdx_night_style' => 'true',
     'mdx_auto_night_style' => 'system',
@@ -113,5 +113,4 @@ $mdx_default_values = array(
     'mdx_footer_say' => 'Hello => MDx!',
     'mdx_footer' => '',
     'mdx_hide_footer' => 'false'
-);
-?>
+];
