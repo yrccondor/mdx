@@ -1,4 +1,4 @@
-<?php global $mdx_des; ?>
+<?php global $mdx_des, $post; ?>
 <li class="mdui-menu-item">
     <a href="http://service.weibo.com/share/share.php?appkey=&title=<?php the_title(); ?>&url=<?php echo mdx_get_now_url(); ?>&pic=<?php if ( isset( $full_image_url[0] ) ) {
 		echo $full_image_url[0];
@@ -19,7 +19,7 @@
 		if ( post_password_required() ) {
 			_e( '这篇文章受密码保护，输入密码才能看哦', 'mdx' );
 		} else {
-			echo mb_strimwidth( strip_shortcodes( strip_tags( apply_filters( 'the_content', $post->post_content ) ) ), 0, 100, "..." );
+			echo mdx_get_post_excerpt( $post, 100 );
 		}
 	} else if ( $mdx_des != '' ) {
 		echo $mdx_des;
