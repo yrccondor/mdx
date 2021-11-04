@@ -34,6 +34,7 @@ $mdx_default_values = array(
     'mdx_share_area' => 'all',
     'mdx_share_twitter_card' => 'summary',
     'mdx_share_twitter_username' => '',
+	'mdx_share_image' => '',
     'mdx_hot_posts' => 'false',
     'mdx_hot_posts_get' => 'cat',
     'mdx_hot_posts_num' => '10',
