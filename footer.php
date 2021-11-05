@@ -86,12 +86,13 @@
                     echo htmlspecialchars_decode(mdx_get_option('mdx_footer'));
                 }
                 $mdx_footer_say = mdx_get_option('mdx_footer_say');
-                if ($mdx_footer_say != '' && $mdx_footer_say != '--HitokotoAPIActivated--' && $mdx_footer_say != '--HitokotoPoemAPIActivated--') { ?>
+                if ($mdx_footer_say != '' && $mdx_footer_say != '--HitokotoAPIActivated--' && $mdx_footer_say != '--HitokotoPoemAPIActivated--' && substr($mdx_footer_say, 0, 21) !== '--CustomAPIActivated(') { ?>
                     <br><?php echo $mdx_footer_say; ?>
-                <?php } else if ($mdx_footer_say == '--HitokotoAPIActivated--') { ?>
-                    <?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.hitokoto.cn/?encode=json", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){var hitokotoText = JSON.parse(xmlHttpReq.response); document.getElementById("k-text").innerText = hitokotoText.hitokoto;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
+                <?php 
+                } else if ($mdx_footer_say == '--HitokotoAPIActivated--') { ?><?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.hitokoto.cn/?encode=json", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){var hitokotoText = JSON.parse(xmlHttpReq.response); document.getElementById("k-text").innerText = hitokotoText.hitokoto;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
                 } else if ($mdx_footer_say == '--HitokotoPoemAPIActivated--') { ?><?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "https://v1.jinrishici.com/all.txt", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){document.getElementById("k-text").innerText = xmlHttpReq.responseText;}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
-                } ?></span>
+                } else if (substr($mdx_footer_say, 0, 21) === '--CustomAPIActivated(') { ?><?php echo '<br><span id="k-text"></span><script>var xmlHttpReq = new XMLHttpRequest();xmlHttpReq.open("GET", "' . substr($mdx_footer_say, 21, -3) . '", true);xmlHttpReq.send();xmlHttpReq.onreadystatechange = function(){if(xmlHttpReq.readyState === 4 && xmlHttpReq.status === 200){document.getElementById("k-text").innerText = JSON.parse(xmlHttpReq.responseText)["text"];}else{document.getElementById("k-text").innerText = "Some Thing Went Wrong :-(";}}</script>';
+                }?></span>
             <hr>
             <div class="mdx-footer-copyright">
             <?php if (mdx_get_option('mdx_hide_footer') !== 'true') { ?><span>Theme: MDx By <a href="https://flyhigher.top" target="_blank" class="click">AxtonYao</a></span><?php } ?>
