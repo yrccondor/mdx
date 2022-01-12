@@ -734,7 +734,7 @@ wp_enqueue_script( 'wp-color-picker' );
                         <option value="wp" <?php if ( $mdx_v_title_med == 'wp' ){ ?>selected="selected"<?php } ?>><?php _e( 'WordPress 默认', 'mdx' ); ?></option>
                         <option value="diy" <?php if ( $mdx_v_title_med == 'diy' ){ ?>selected="selected"<?php } ?>><?php _e( 'MDx 优化', 'mdx' ); ?></option>
                     </select>
-                    <p class="description"><?php _e( '选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，此方式兼容大部分 SEO 插件。<br>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此方式在部分情况下更合适，但不兼容 SEO 插件。', 'mdx' ); ?></p>
+                    <p class="description"><?php _e( '选择 <code>WordPress 默认</code>，WordPress 会接管网页标题的内容，MDx设置的Twitter Card等内容会失效，此方式兼容大部分 SEO 插件。如果你正在使用<i>Yoast SEO</i>或<i>Rank Math SEO</i>等SEO插件，建议你开启。<br/>选择 <code>MDx 优化</code>，MDx 会接管网页标题的内容，此方式在部分情况下更合适，但不兼容 SEO 插件。', 'mdx' ); ?></p>
                 </td>
             </tr>
             <tr>
