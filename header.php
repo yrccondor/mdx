@@ -8,10 +8,12 @@ $opt_mdx_share_twitter_card = mdx_get_option( "mdx_share_twitter_card" );
 // 获取当前页面Title
 $title = wp_title( '-', false, 'right' );
 
-// Yoast SEO 接管配置
-/** @var bool 是否使用YoastSEO */
-$isUsedYoastSEO = defined( "WPSEO_NAMESPACES" );
-if ( ! $isUsedYoastSEO ) {
+// SEO配置
+/**
+ * @var bool 是否使用SEO软件或设置了WP接管SEO
+ */
+$isUsedSEO = defined( "WPSEO_NAMESPACES" ) || class_exists("RankMath") || mdx_get_option("mdx_title_med") === "wp";
+if ( ! $isUsedSEO ) {
 	$title            .= get_bloginfo( 'name' );
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) {
@@ -112,7 +114,7 @@ $mdx_current_url = mdx_get_now_url( is_single(), isset( $post ) ? $post->ID : 0 
 		$mdx_a_des = mdx_get_option( 'mdx_auto_des' );
 		?>
 
-		<?php if ( ! $isUsedYoastSEO ): ?>
+		<?php if ( ! $isUsedSEO ): ?>
             <meta property="og:title" content="<?php echo $title; ?>">
             <meta property="og:type" content="article">
             <meta property="og:url" content="<?php echo $mdx_current_url; ?>">
