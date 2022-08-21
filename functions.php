@@ -45,7 +45,7 @@ function mdx_get_now_url($is_post = false, $post_id = 0) {
     if ($is_post) {
         return get_permalink($post_id);
     }
-    return $GLOBALS['mdx_now_url'];
+    return htmlspecialchars($GLOBALS['mdx_now_url']);
 }
 
 //激活功能
