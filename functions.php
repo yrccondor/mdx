@@ -320,13 +320,13 @@ function mdx_comment_format($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment; ?>
     <li class="mdui-list-item" id="li-comment-<?php comment_ID(); ?>">
         <div class="mdui-list-item-avatar"><?php if (function_exists('get_avatar') && get_option('show_avatars')) {
-                echo get_avatar($comment, 80);
-            } ?></div>
+                                                echo get_avatar($comment, 80);
+                                            } ?></div>
         <div class="mdui-list-item-content outbu" id="comment-<?php comment_ID(); ?>">
             <div
                 class="mdui-list-item-title"><?php echo get_comment_author_link(); ?><?php if (user_can($comment->user_id, "update_core")) {
                     echo '<span class="mdx-admin">'.__('博主', 'mdx').'</span>';
-                } ?></div>
+                                                                                        } ?></div>
             <div class="mdui-list-item-text mdui-typo">
                 <?php comment_text(); ?>
             </div>
@@ -364,6 +364,7 @@ function get_link_items() {
 
 // 将在 图像链接 > 备注中的图像 url > 备注中的 Gravatar 邮箱(需设置中开启)中获取链接图像
 function get_the_link_items($id = null) {
+    $mdx_v_friendly_links_style = mdx_get_option('mdx_friendly_links_style');
     $mdx_gravatar_actived = mdx_get_option('mdx_gravatar_actived');
     $mdx_link_rand_order = mdx_get_option('mdx_link_rand_order');
     $order_rule = '';
@@ -391,7 +392,34 @@ function get_the_link_items($id = null) {
             if (!empty($bookmark->link_rel)) {
                 $rel = 'rel="'.$bookmark->link_rel.'" ';
             }
-            $output .= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co"><div class="links-c mdui-color-theme"></div><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="mdx-links-bg '.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+            if ($mdx_v_friendly_links_style == '0') {
+                $output .= '<div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co-grid"><div class="links-c-grid mdui-color-theme"></div><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'"><div class="mdx-links-bg-grid '.$lazy_load.'"></div></a><div class="mdui-grid-tile-actions links-des-grid"><div class="mdui-grid-tile-text"><div class="mdui-grid-tile-title links-name-grid"><a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">'.$bookmark->link_name.'</a></div><div class="mdui-grid-tile-subtitle">'.$bookmark->link_description.'</div></div></div></div>';
+            } elseif ($mdx_v_friendly_links_style == '1') {
+                if ($bookmark->link_rss != null) {
+                    $rss_html = '
+                    <button class="mdui-btn mdui-ripple">
+                      <a '.$rel.'href="'.$bookmark->link_rss.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">RSS</a>
+                    </button>
+                    ';
+                } else {
+                    $rss_html = '';
+                }
+                $output .= '
+                <div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 mdui-card">
+                  <div class="mdui-card-header">
+                    <div class="mdui-card-header-avatar mdx-links-avatar-card '.$lazy_load.'"></div>
+                    <div class="mdui-card-header-title">'.$bookmark->link_name.'</div>
+                    <div class="mdui-card-header-subtitle">'.$bookmark->link_description.'</div>
+                  </div>
+                  <div class="mdui-card-content">'.$bookmark->link_notes.'</div>
+                  <div class="mdui-card-actions">
+                    <button class="mdui-btn mdui-ripple">
+                      <a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
+                    </button>
+                    '.$rss_html.'
+                  </div>
+                </div>';
+            }
         }
         $output .= '</div>';
     }
@@ -413,11 +441,11 @@ function mdx_blogroll_inner_meta_box($post) {
         $checked = ' checked="checked"';
     else
         $checked = '';
-    ?>
+?>
     <input value="1" id="mdx_blogroll_nofollow_checkbox" name="mdx_blogroll_nofollow_checkbox"
            type="checkbox"<?php echo $checked; ?>> <label
     for="mdx_blogroll_nofollow_checkbox"><?php echo __('添加 <code>nofollow</code> 属性', 'mdx'); ?></label>
-    <?php
+<?php
 }
 
 function mdx_blogroll_save_meta_box($link_rel) {
@@ -443,7 +471,7 @@ function mdx_get_post_excerpt($post, $excerpt_length = 150) {
     }
 
     $post_excerpt = wp_strip_all_tags($post_excerpt);
-	return trim(preg_replace("/[\n\r\t ]+/", ' ', $post_excerpt), ' ');
+    return trim(preg_replace("/[\n\r\t ]+/", ' ', $post_excerpt), ' ');
 }
 
 //PostLazyLoad
@@ -451,7 +479,7 @@ function mdx_lazyload_image($content) {
     if (is_feed()) {
         return $content;
     }
-	return preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[/]?>)#si', 'mdx_process_image', $content);
+    return preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[/]?>)#si', 'mdx_process_image', $content);
 }
 
 function mdx_process_image($matches) {
@@ -487,7 +515,7 @@ function mdx_lazyload_avatar($content) {
     if (is_feed()) {
         return $content;
     }
-	return preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[/]?>)#si', 'mdx_process_avatar', $content);
+    return preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[/]?>)#si', 'mdx_process_avatar', $content);
 }
 
 function mdx_process_avatar($matches) {
@@ -643,9 +671,9 @@ function mdx_shortcode_table($atts, $content = '') {
     $trs = explode("\n&#8212;&#8211;", $content);
     $mdx_table_i = 0;
     foreach ($trs as $tr) {
-	    $tr = trim($tr);
-	    if ($mdx_table_i == 0 && $header == 'true') {
-		    if ($tr !== "") {
+        $tr = trim($tr);
+        if ($mdx_table_i == 0 && $header == 'true') {
+            if ($tr !== "") {
                 $tds = explode("<br />", $tr);
                 $output2 .= '<tr>';
                 foreach ($tds as $td) {
@@ -657,7 +685,7 @@ function mdx_shortcode_table($atts, $content = '') {
                 $output2 .= '</tr>';
             }
         } else {
-		    if ($tr !== "") {
+            if ($tr !== "") {
                 $tds = explode("<br />", $tr);
                 $output .= '<tr>';
                 foreach ($tds as $td) {
@@ -783,7 +811,7 @@ function mdx_post_metaboxes_2() {
 function mdx_post_metaboxes_1() {
     global $post;
     get_post_meta($post->ID, 'settings_value', true);
-    ?>
+?>
     <h4><?php _e('文章主题颜色', 'mdx'); ?></h4>
     <?php $mdx_v_styles = get_post_meta($post->ID, "mdx_styles", true); ?>
     <select name="mdx_styles" id="mdx_styles">
@@ -883,7 +911,7 @@ function mdx_post_metaboxes_1() {
     </select>
     <p class="description"><?php _e('在这里为这篇文章设置展示模式。<br>404 模式：当访客进入此文章时，会显示 404 页面<br>隐藏模式：当访客进入此文章时，会显示“根据相关法律法规，此文章暂时不予显示”<br>对游客隐藏模式：若访问者未登录，则显示“登录后才能查看此文章”<br>若使用前两种模式，这篇文章将可在首页找到或是被搜索到。但无论何种模式都不会发送 HTTP 404 头。', 'mdx'); ?></p>
     </fieldset>
-    <?php
+<?php
 }
 
 function create_meta_box() {
@@ -975,7 +1003,7 @@ function mdx_save_postdata_1($post_id, $post) {
 add_action('save_post', 'mdx_save_postdata_1', 10, 2);
 
 function mdx_colored_cloud($text) {
-	return preg_replace_callback('/<a (.+?)>/i', 'mdx_colored_cloud_call_back', $text);
+    return preg_replace_callback('/<a (.+?)>/i', 'mdx_colored_cloud_call_back', $text);
 }
 
 function mdx_colored_cloud_call_back($matches) {

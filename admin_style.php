@@ -123,6 +123,7 @@ wp_enqueue_script( 'wp-color-picker' );
 			mdx_update_option( 'mdx_footer_say', htmlentities( stripslashes( $_POST['mdx_footer_say'] ) ) );
 		}
 		mdx_update_option( 'mdx_footer', htmlentities( stripslashes( $_POST['mdx_footer'] ) ) );
+        mdx_update_option( 'mdx_friendly_links_style', sanitize_text_field( $_POST['mdx_friendly_links_style'] ) );
 		?>
         <div class="notice notice-success is-dismissible">
             <p><?php _e( '设置已保存。', 'mdx' ); ?></p>
@@ -160,6 +161,7 @@ wp_enqueue_script( 'wp-color-picker' );
         <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-drawer"><?php _e( '抽屉菜单', 'mdx' ); ?></a>
         <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-footer"><?php _e( '页脚', 'mdx' ); ?></a>
         <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-touch-bar-icon"><?php _e( 'Touch Bar 图标', 'mdx' ); ?></a>
+        <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-friendly-links"><?php _e( '友情链接', 'mdx' ); ?></a>
         <a href="#" class="nav-tab mdx-admin-nav" id="mdx-admin-nav-others"><?php _e( '杂项', 'mdx' ); ?></a>
     </nav>
     <form method="post" action="">
@@ -684,6 +686,20 @@ wp_enqueue_script( 'wp-color-picker' );
                     <p class="description" id="mdx_footer"><?php _e( '请设置 Touch Bar 图标背景颜色。16 进制颜色或 RGB 颜色。', 'mdx' ); ?></p>
                 </td>
             </tr>
+            </tbody>
+
+            <tbody class="mdx-admin-section" id="mdx-admin-nav-friendly-links-section">
+                <tr>
+                <th scope="row"><label for="mdx_friendly_links_style"><?php _e('友情链接样式', 'mdx');?></label></th>
+                <td>
+                <?php $mdx_v_friendly_links_style=mdx_get_option('mdx_friendly_links_style');?>
+                <select name="mdx_friendly_links_style" id="mdx_friendly_links_style">
+                    <option value="0" <?php if($mdx_v_friendly_links_style=='0'){?>selected="selected"<?php }?>><?php _e('网格', 'mdx');?></option>
+                    <option value="1" <?php if($mdx_v_friendly_links_style=='1'){?>selected="selected"<?php }?>><?php _e('卡片', 'mdx');?></option>
+                </select>
+                <p class="description"><?php _e('影响友情链接页面样式。目前仅"卡片"样式支持显示描述。', 'mdx');?></p>
+                </td>
+                </tr>
             </tbody>
 
             <tbody class="mdx-admin-section" id="mdx-admin-nav-others-section">

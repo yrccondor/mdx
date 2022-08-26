@@ -38,7 +38,7 @@
          url("../fonts/Montserrat-SemiBold.woff") format("woff");
     font-display: swap;
 }
-.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c, .links-co > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error, main .mdx-postlist-simple.mdx-postlist-simple-sta {
+.mdui-dialog, .mdui-menu, .mdui-card, article div.mdui-panel.mdui-panel-gapless, .mdui-table-fluid, .mdx-author-c, .mdx-hot-posts, .mdx-same-posts, .mdui-img-rounded, .links-c-grid, .links-co-grid > a, .outOfSearch, .mdx-first-simple .mdx-hot-posts, .searchCard, .mdx-github-cot, .mdui-typo pre, #mdx-cookie-notice, article.indexgaid, #login_error, main .mdx-postlist-simple.mdx-postlist-simple-sta {
     border-radius: 8px!important;
 }
 .mdx-first-simple .mdx-postlist-simple.mdx-postlist-simple-has-no-img {
@@ -231,7 +231,7 @@ body.mdui-theme-primary-blue-grey li.current-menu-item.menu-item-has-children.md
 .mdui-theme-layout-dark .mdui-table thead {
     background-color: #3a3a3a;
 }
-.links-des {
+.links-des-grid {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
