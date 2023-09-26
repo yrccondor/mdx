@@ -297,7 +297,7 @@ add_filter('the_generator', 'mdx_remove_wp_version');
 function mdx_remove_wp_version_strings($src) {
     global $wp_version;
     $query_string = parse_url($src, PHP_URL_QUERY);
-    parse_str($query_string, $query);
+    parse_str((string)$query_string, $query);
     if (!empty($query['ver']) && $query['ver'] === $wp_version) {
         $src = str_replace($query_string, str_replace('ver='.$wp_version, 'ver='.get_option('mdx_version_commit'), $query_string), $src);
     }
