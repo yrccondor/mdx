@@ -153,13 +153,17 @@ function addToc(titleList) {
 
 const debouncedReflow = debounce(() => {
     const tabEle = ele('#mdx-toc-select');
-    const halfWidth = tabEle.clientWidth / 2;
-    const borderEle = tabEle.getElementsByClassName('mdui-tab-indicator')[0];
+    if (tabEle) {
+        const halfWidth = tabEle.clientWidth / 2;
+        const borderEle = tabEle.getElementsByClassName('mdui-tab-indicator')[0];
 
-    if (borderEle.style.left !== '0px') {
-        borderEle.style.left = `${halfWidth}px`;
+        if (borderEle) {
+            if (borderEle.style.left !== '0px') {
+                borderEle.style.left = `${halfWidth}px`;
+            }
+            borderEle.style.width = `${halfWidth}px`;
+        }
     }
-    borderEle.style.width = `${halfWidth}px`;
 }, 300);
 
 window.addEventListener('resize', function () {

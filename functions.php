@@ -644,7 +644,7 @@ function mdx_shortcode_hide($atts, $content = null) {
     return '<div class="mdui-panel mdui-panel-gapless" mdui-panel>
     <div class="mdui-panel-item'.$mdx_open.'">
       <div class="mdui-panel-item-header">
-        <div class="mdui-panel-item-title">'.$title.'</div>
+        <div class="mdui-panel-item-title">'.esc_html($title).'</div>
         <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-panel-item-body">
@@ -657,7 +657,7 @@ add_shortcode("mdx_fold", "mdx_shortcode_hide");
 
 function mdx_shortcode_warning($atts, $content = null) {
     extract(shortcode_atts(array("title" => __('警告', 'mdx')), $atts));
-    return '<blockquote class="mdx-warning"><p><i class="mdui-icon material-icons">&#xe002;</i> '.$title.'<br><strong>'.do_shortcode($content).'</strong></p></blockquote>';
+    return '<blockquote class="mdx-warning"><p><i class="mdui-icon material-icons">&#xe002;</i> '.esc_html($title).'<br><strong>'.do_shortcode($content).'</strong></p></blockquote>';
 }
 add_shortcode("mdx_warning", "mdx_shortcode_warning");
 
@@ -713,13 +713,13 @@ add_shortcode('mdx_table', 'mdx_shortcode_table');
 
 function mdx_shortcode_progress($atts, $content = '0') {
     return '<div class="mdui-progress">
-    <div class="mdui-progress-determinate" style="width: '.$content.'%;"></div>
+    <div class="mdui-progress-determinate" style="width: '.esc_attr($content).'%;"></div>
   </div>';
 }
 add_shortcode("mdx_progress", "mdx_shortcode_progress");
 
 function mdx_shortcode_post($atts, $content = '') {
-    return '<div class="mdx-post-cot" data-mdxposturl="'.$content.'"><div class="mdx-post-wait-out-c2"><div class="mdx-post-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="'.$content.'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
+    return '<div class="mdx-post-cot" data-mdxposturl="'.esc_attr($content).'"><div class="mdx-post-wait-out-c2"><div class="mdx-post-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="'.esc_attr($content).'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
 }
 add_shortcode("mdx_post", "mdx_shortcode_post");
 
@@ -729,7 +729,7 @@ function mdx_shortcode_github($atts, $content = '') {
         'project' => '',
         'gateway' => 'https://api.github.com/'
     ), $atts));
-    return '<div class="mdx-github-cot" data-mdxgithuba="'.$author.'" data-mdxgithubp="'.$project.'" data-mdxgithubg="'.$gateway.'"><div class="mdx-github-wait-out-c2"><div class="mdx-github-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="https://github.com/'.$author.'/'.$project.'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
+    return '<div class="mdx-github-cot" data-mdxgithuba="'.esc_attr($author).'" data-mdxgithubp="'.esc_attr($project).'" data-mdxgithubg="'.esc_attr($gateway).'"><div class="mdx-github-wait-out-c2"><div class="mdx-github-wait-out-c mdui-valign"><div class="mdx-github-wait-out"><div class="mdx-github-wait"><a href="https://github.com/'.esc_attr($author).'/'.esc_attr($project).'"><div class="mdui-spinner"></div></a></div></div></div></div></div>';
 }
 add_shortcode("mdx_github", "mdx_shortcode_github");
 
@@ -744,7 +744,7 @@ add_shortcode("mdx_ad", "mdx_shortcode_ad");
 
 function mdx_shortcode_list($atts, $content = '') {
     extract(shortcode_atts(array('height' => ''), $atts));
-    return '<ul class="mdx-sc-list mdui-list mdui-shadow-2"'.($height !== '' ? ' style="height:'.$height.'px"' : '').'>'.do_shortcode(str_replace('<br />', '', $content)).'</ul>';
+    return '<ul class="mdx-sc-list mdui-list mdui-shadow-2"'.($height !== '' ? ' style="height:'.esc_attr($height).'px"' : '').'>'.do_shortcode(str_replace('<br />', '', $content)).'</ul>';
 }
 add_shortcode("mdx_list", "mdx_shortcode_list");
 
@@ -756,9 +756,9 @@ function mdx_shortcode_list_item($atts, $content = '') {
         'title' => '',
         'subtitle' => '',
     ), $atts));
-    $html = '<li class="mdx-sc-list-item mdui-list-item mdui-ripple">'.($avatar !== '' ? '<div class="mdui-list-item-avatar"><img class="mdx-sc-list-avatar" src="'.$avatar.'"></div>' : '').'<div class="mdx-sc-list-content mdui-list-item-content">'.($title !== '' ? '<div class="mdx-sc-list-title mdui-list-item-title">'.$title.'</div>' : '').($subtitle !== '' ? '<div class="mdx-sc-list-subtitle">'.$subtitle.'</div>' : '').($title !== '' || $subtitle !== '' ? '<div class="mdx-sc-list-body mdui-list-item-text">' : '').do_shortcode($content).($title !== '' || $subtitle !== '' ? '</div>' : '').'</div></li>';
+    $html = '<li class="mdx-sc-list-item mdui-list-item mdui-ripple">'.($avatar !== '' ? '<div class="mdui-list-item-avatar"><img class="mdx-sc-list-avatar" src="'.esc_attr($avatar).'"></div>' : '').'<div class="mdx-sc-list-content mdui-list-item-content">'.($title !== '' ? '<div class="mdx-sc-list-title mdui-list-item-title">'.esc_html($title).'</div>' : '').($subtitle !== '' ? '<div class="mdx-sc-list-subtitle">'.esc_html($subtitle).'</div>' : '').($title !== '' || $subtitle !== '' ? '<div class="mdx-sc-list-body mdui-list-item-text">' : '').do_shortcode($content).($title !== '' || $subtitle !== '' ? '</div>' : '').'</div></li>';
     if ($action !== '') {
-        $html = '<a href="'.$action.'"'.($blank === 'true' ? ' target="_blank" rel="noopener"' : '').'>'.$html.'</a>';
+        $html = '<a href="'.esc_attr($action).'"'.($blank === 'true' ? ' target="_blank" rel="noopener"' : '').'>'.$html.'</a>';
     }
     return $html;
 }

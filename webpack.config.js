@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const mdxVersion = '2.0.3';
+const mdxVersion = '2.0.4';
 
 module.exports = {
     entry: {
@@ -22,7 +22,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             cacheGroups: {
-                common: { 
+                common: {
                     name: 'common',
                     chunks (chunk) {
                         return chunk.name !== 'login';
