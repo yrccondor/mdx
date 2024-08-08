@@ -184,19 +184,19 @@ function mdxAjaxPost(i) {
     betterFetch(document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl).then((data) => {
         var htmlParser = new DOMParser();
         var htmlParsed = htmlParser.parseFromString(data, "text/html");
-        var title = htmlParsed.querySelector("meta[property=\"og:title\"]").getAttribute("content");
-        var url = htmlParsed.querySelector("meta[property=\"og:url\"]").getAttribute("content");
+        var title = htmlParsed.querySelector("meta[property=\"og:title\"]")?.getAttribute("content") || htmlParsed.querySelector("meta[itemprop=\"name\"]")?.getAttribute("content");
+        var url = htmlParsed.querySelector("meta[property=\"og:url\"]")?.getAttribute("content") || document.getElementsByClassName("mdx-post-cot")[i].dataset.mdxposturl;
         var shareCard = htmlParsed.getElementsByClassName("mdx-si-sum");
         var desc = "";
         if (shareCard[0]) {
             desc = shareCard[0].innerText;
         } else {
-            desc = htmlParsed.querySelector("meta[property=\"og:description\"]").getAttribute("content");
+            desc = htmlParsed.querySelector("meta[property=\"og:description\"]")?.getAttribute("content") || htmlParsed.querySelector("meta[itemprop=\"description\"]")?.getAttribute("content");
         }
         if (desc === '') {
             desc = mdx_post_i18n_1;
         }
-        var imgDOM = htmlParsed.querySelector("meta[property=\"og:image\"]");
+        var imgDOM = htmlParsed.querySelector("meta[property=\"og:image\"]") || htmlParsed.querySelector("meta[itemprop=\"image\"]");
         var img = "";
         if (imgDOM && imgDOM.getAttribute("content")) {
             img = imgDOM.getAttribute("content");

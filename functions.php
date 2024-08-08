@@ -921,7 +921,7 @@ function create_meta_box() {
 add_action('admin_menu', 'create_meta_box');
 
 function mdx_save_postdata_1($post_id, $post) {
-    if (!wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
+    if (!$_POST['informations_noncename'] || !wp_verify_nonce($_POST['informations_noncename'], plugin_basename(__FILE__))) {
         return $post->ID;
     }
     if ('page' == $_POST['post_type']) {
