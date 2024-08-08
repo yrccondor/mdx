@@ -264,7 +264,7 @@ if (lazyloadImg.length) {
         })
     }
 };
-var lazyloadImg2 = document.querySelectorAll("article > figure.wp-block-image > figure.mdx-lazyload-container img");
+var lazyloadImg2 = document.querySelectorAll("article figure.wp-block-image > figure.mdx-lazyload-container img, article figure.wp-block-image > a > figure.mdx-lazyload-container img");
 if (lazyloadImg2.length) {
     for (let el of lazyloadImg2) {
         el.addEventListener('lazyloaded', function (e) {
@@ -281,7 +281,7 @@ if (lazyloadImg2.length) {
         })
     }
 };
-var lazyloadImg3 = document.querySelectorAll("article > figure.wp-block-image > img, article > figure.wp-block-image > a > img");
+var lazyloadImg3 = document.querySelectorAll("article figure.wp-block-image > img, article figure.wp-block-image > a > img");
 if (lazyloadImg3.length) {
     for (let el of lazyloadImg3) {
         el.addEventListener('lazyloaded', function (e) {
@@ -292,6 +292,28 @@ if (lazyloadImg3.length) {
         })
     }
 };
+
+const findFilter = (el) => {
+    if (el.classList.contains('wp-block-image')) {
+        for (const cn of el.classList) {
+            if (cn.startsWith('wp-duotone-')) {
+                return cn;
+            }
+        }
+        return false;
+    }
+    return false;
+}
+
+const getImgAlt = (el) => {
+    const alt = el.getAttribute('alt');
+    if (alt && alt !== '' && alt !== el.dataset.src) {
+        return el.getAttribute('alt');
+    } else if (el.closest('figure').parentNode.getElementsByTagName('figcaption')) {
+        return el.closest('figure').parentNode.getElementsByTagName('figcaption')[0].innerText;
+    }
+    return '';
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     if (mdx_comment_ajax && ele('#comments-navi>a.prev').getAttribute('href')) {
@@ -379,12 +401,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
                 imgRaw = e.target;
                 imgRaw.style.opacity = 0;
+                const eleFilter = e.target.closest('figure.wp-block-image');
+                let filter = '';
+                if (eleFilter) {
+                    const filterName = findFilter(eleFilter);
+                    if (filterName) {
+                        filter = filterName;
+                    }
+                }
                 ele('div.mdui-drawer', (e) => {
-                    e.insertAdjacentHTML('beforebegin', `<div id="img-box" class="mdui-valign${mdx_img_box_opacity ? ' opacity-bg' : ''}"></div><div class="mdx-img-viewer"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>`);
+                    e.insertAdjacentHTML('beforebegin', `<div id="img-box" class="mdui-valign${mdx_img_box_opacity ? ' opacity-bg' : ''}"></div><div class="mdx-img-viewer${filter === '' ? '' : ` wp-block-image ${filter}`}"></div><div class="mdui-valign mdx-loading-img"><div class="mdui-center"><div class="mdui-spinner"></div></div></div>`);
                 })
                 mdui.updateSpinners();
                 ele('.mdx-img-viewer', (elem) => {
-                    elem.innerHTML += `<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">${(e.target.getAttribute('alt') !== '' && e.target.getAttribute('alt') !== e.target.dataset.src) ? `<div class="image-view-alt">${mdx_img_alt && e.target.getAttribute('alt').replace(/[<>&"]/g, (c) => {return {'<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;'}[c]})}</div>` : ''}`;
+                    elem.innerHTML += `<img src="${e.target.getAttribute("src")}" style="top:${toTopDes}px;left:${toLeftDes}px;width:${e.target.getBoundingClientRect().width}px;height:${e.target.getBoundingClientRect().height}px;" data-raww="${e.target.getBoundingClientRect().width}" data-rawh="${e.target.getBoundingClientRect().height}" data-post="${toTopDes}" data-posl="${toLeftDes}">${getImgAlt(e.target) !== '' ? `<div class="image-view-alt">${mdx_img_alt && getImgAlt(e.target).replace(/[<>&"]/g, (c) => {return {'<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;'}[c]})}</div>` : ''}`;
                 })
                 ele('#img-box').style.display = "flex";
                 ele('#img-box').style.opacity = 1;

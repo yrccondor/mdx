@@ -4186,6 +4186,9 @@ body.mdx-index-void.mdui-theme-layout-dark {
 }
 .blocks-gallery-grid .blocks-gallery-image figcaption, .blocks-gallery-grid .blocks-gallery-item figcaption, .wp-block-gallery .blocks-gallery-image figcaption, .wp-block-gallery .blocks-gallery-item figcaption {
     z-index: 99;
+}
+figure.wp-block-image figcaption {
+    z-index: 99;
     box-sizing: border-box;
 }
 .mdui-table tfoot td, .mdui-table tfoot th {
@@ -4414,6 +4417,12 @@ body.mdx-index-void {
 }
 .wanan-link img {
     vertical-align: sub;
+}
+.wp-block-image .mdx-lazyload-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%!important;
+    margin: 0!important;
 }
 @media (max-width: 800px) {
     .mdx-wide-post-list .post-item {
