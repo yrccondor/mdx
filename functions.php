@@ -343,7 +343,7 @@ function mdx_comment_format($comment, $args, $depth) {
 
 //回复的评论加@
 function comment_add_at($comment_text, $comment) {
-    if ($comment->comment_parent > 0) {
+    if (isset($comment->comment_parent) && $comment->comment_parent > 0) {
         $comment_text = '<a rel="nofollow" class="comment_at" href="#comment-'.$comment->comment_parent.'">@'.get_comment_author($comment->comment_parent).'：</a> '.$comment_text;
     }
     return $comment_text;
