@@ -409,18 +409,20 @@ function get_the_link_items($id = null) {
                     $rss_html = '';
                 }
                 $output .= '
-                <div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 mdui-card">
-                  <div class="mdui-card-header">
-                    <div class="mdui-card-header-avatar mdx-links-avatar-card '.$lazy_load.'"></div>
-                    <div class="mdui-card-header-title">'.$bookmark->link_name.'</div>
-                    <div class="mdui-card-header-subtitle">'.$bookmark->link_description.'</div>
-                  </div>
-                  <div class="mdui-card-content">'.$bookmark->link_notes.'</div>
-                  <div class="mdui-card-actions">
-                    <button class="mdui-btn mdui-ripple">
-                      <a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
-                    </button>
-                    '.$rss_html.'
+                <div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co-card">
+                  <div class="mdui-card">
+                    <div class="mdui-card-header">
+                      <div class="mdui-card-header-avatar mdx-links-avatar-card '.$lazy_load.'"></div>
+                      <div class="mdui-card-header-title">'.$bookmark->link_name.'</div>
+                      <div class="mdui-card-header-subtitle">'.$bookmark->link_description.'</div>
+                    </div>
+                    <div class="mdui-card-content">'.$bookmark->link_notes.'</div>
+                    <div class="mdui-card-actions">
+                      <button class="mdui-btn mdui-ripple">
+                        <a '.$rel.'href="'.$bookmark->link_url.'" title="'.$bookmark->link_name.'" target="'.$bookmark->link_target.'">前往</a>
+                      </button>
+                      '.$rss_html.'
+                    </div>
                   </div>
                 </div>';
             }
