@@ -409,7 +409,7 @@ function get_the_link_items($id = null) {
                     $rss_html = '';
                 }
                 $output .= '
-                <div class="mdui-row mdui-col-xs-6 mdui-col-sm-4 links-co-card">
+                <div class="mdui-row mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4 links-co-card">
                   <div class="mdui-card">
                     <div class="mdui-card-header">
                       <div class="mdui-card-header-avatar mdx-links-avatar-card '.$lazy_load.'"></div>
