@@ -383,7 +383,7 @@ const getImgAlt = (el) => {
     const alt = el.getAttribute('alt');
     if (alt && alt !== '' && alt !== el.dataset.src) {
         return el.getAttribute('alt');
-    } else if (el.closest('figure').parentNode.getElementsByTagName('figcaption')) {
+    } else if (el.closest('figure').parentNode.getElementsByTagName('figcaption').length > 0) {
         return el.closest('figure').parentNode.getElementsByTagName('figcaption')[0].innerText;
     }
     return '';
